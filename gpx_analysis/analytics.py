@@ -40,19 +40,32 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
     frame = df.copy()
     frame["avg_step_grade"] = frame["step_grade"].rolling(rolling_window).mean()
     frame["avg_bearing_change"] = frame["step_turn"].rolling(rolling_window).mean()
+    thresholds = {
+        "light_descent": -0.03,
+        "steep_descent": -0.1,
+        "ultra_steep_descent": -0.2,
+        "turn": 24
+    }
+    on_descent = (frame["step_grade"].round(2) < thresholds["light_descent"])
+    on_steep_descent = (frame["step_grade"].round(2) < thresholds["steep_descent"])
+    on_ultra_steep_descent = (frame["step_grade"].round(2) < thresholds["ultra_steep_descent"])
+    on_turn = (frame["step_turn"].round() > thresholds["turn"])
+    
+    coming_off_descent = (frame["step_grade"].shift(-1).round(2) < np.mean([thresholds["light_descent"], thresholds["steep_descent"]]))
+    coming_off_steep_descent = (frame["step_grade"].shift(-1).round(2) < np.mean([thresholds["steep_descent"], thresholds["ultra_steep_descent"]]))
 
     hazards = {
-        "light_descent": (frame["step_grade"].round(2) < -0.03) | (frame["avg_step_grade"].round(2) < -0.08),
-        "steep_descent": (frame["step_grade"].round(2) < -0.1) | (frame["avg_step_grade"].round(2) < -0.15),
-        "ultra_steep_descent": (frame["step_grade"].round(2) < -0.2) | (frame["avg_step_grade"].round(2) < -0.2),
+        "light_descent": on_descent | (frame["avg_step_grade"].round(2) < -0.08),
+        "steep_descent": on_steep_descent | (frame["avg_step_grade"].round(2) < -0.15),
+        "ultra_steep_descent": on_ultra_steep_descent | (frame["avg_step_grade"].round(2) < -0.2),
         "turn_on_descent": (
-            ((frame["step_turn"].round() > 24) & (frame["step_grade"].shift(-1).round(2) < -0.05))
-            | ((frame["step_turn"].round() > 24) & (frame["step_grade"] < -0.05))
+            (on_turn & coming_off_descent)
+            | (on_turn & on_descent)
             | ((frame["avg_bearing_change"].round() > 24) & (frame["avg_step_grade"].round(2) < -0.05))
         ),
         "turn_on_steep_descent": (
-            ((frame["step_turn"].round() > 24) & (frame["step_grade"].shift(-1).round(2) < -0.1))
-            | ((frame["step_turn"].round() > 24) & (frame["step_grade"].round(2) < -0.1))
+            (on_turn & coming_off_steep_descent)
+            | (on_turn & on_steep_descent)
             | ((frame["avg_bearing_change"].round() > 24) & (frame["avg_step_grade"].round(2) < -0.1))
         ),
     }
