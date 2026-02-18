@@ -9,11 +9,13 @@ dependencies = [
     "geopandas>=1.1.2",
     "gpxpy>=1.6.2",
     "ipykernel>=7.1.0",
+    "jupyter-client>=8.8.0",
     "mapclassify>=2.10.0",
     "matplotlib>=3.10.8",
     "numpy>=2.4.2",
     "osmnx>=2.0.7",
     "pandas>=3.0.0",
+    "pyzmq>=27.1.0",
     "scikit-learn>=1.8.0",
     "shapely>=2.1.2",
 ]
