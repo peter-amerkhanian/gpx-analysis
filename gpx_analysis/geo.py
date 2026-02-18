@@ -1,4 +1,5 @@
 import geopandas as gpd
+import osmnx as ox
 from shapely.geometry import LineString
 
 
@@ -14,3 +15,42 @@ def points_to_segments_lonlat(gdf: gpd.GeoDataFrame, lon: str = "lon", lat: str 
     )
     segments = segments.merge(gdf.drop(columns="geometry"), left_on="end_i", right_on="step", how="left")
     return segments
+
+
+def stop_signs_on_segments(
+    gdf_segments: gpd.GeoDataFrame,
+    network_type: str = "drive",
+    corridor_m: float = 6.0,
+    segment_buffer_m: float = 8.0,
+    include_traffic_signals: bool = True,
+    retain_all: bool = True
+) -> gpd.GeoDataFrame:
+    if gdf_segments.crs is None:
+        raise ValueError("gdf_segments must have a CRS.")
+
+    if gdf_segments.empty:
+        return gpd.GeoDataFrame({"highway": []}, geometry=[], crs=gdf_segments.crs)
+
+    segs_3857 = gdf_segments.to_crs(3857)
+    route_poly_3857 = segs_3857.geometry.union_all().buffer(corridor_m)
+    route_poly = gpd.GeoSeries([route_poly_3857], crs=3857).to_crs(gdf_segments.crs).iloc[0]
+
+    graph = ox.graph_from_polygon(route_poly, network_type=network_type, simplify=False, retain_all=retain_all)
+    nodes, _ = ox.graph_to_gdfs(graph, nodes=True, edges=True)
+
+    if "highway" not in nodes.columns:
+        return nodes.iloc[0:0].to_crs(gdf_segments.crs)
+
+    allowed = {"stop"}
+    if include_traffic_signals:
+        allowed.add("traffic_signals")
+
+    controls = nodes[nodes["highway"].apply(lambda value: value in allowed or (isinstance(value, list) and any(tag in allowed for tag in value)))].copy()
+
+    if controls.empty:
+        return controls.to_crs(gdf_segments.crs)
+
+    route_buffer = segs_3857.geometry.union_all().buffer(segment_buffer_m)
+    controls_3857 = controls.to_crs(3857)
+    controls_on_route = controls_3857[controls_3857.geometry.intersects(route_buffer)].copy()
+    return controls_on_route.to_crs(gdf_segments.crs)

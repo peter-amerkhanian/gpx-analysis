@@ -41,16 +41,20 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
     frame["avg_step_grade"] = frame["step_grade"].rolling(rolling_window).mean()
     frame["avg_bearing_change"] = frame["step_turn"].rolling(rolling_window).mean()
     thresholds = {
-        "light_descent": -0.03,
-        "steep_descent": -0.1,
-        "ultra_steep_descent": -0.2,
-        "turn": 24
+        "light_descent": -0.029,
+        "steep_descent": -0.099,
+        "ultra_steep_descent": -0.199,
+        "turn": 24,
+        "climb": 0.049,
+        "steep_climb": 0.099,
     }
     on_descent = (frame["step_grade"].round(2) < thresholds["light_descent"])
     on_steep_descent = (frame["step_grade"].round(2) < thresholds["steep_descent"])
     on_ultra_steep_descent = (frame["step_grade"].round(2) < thresholds["ultra_steep_descent"])
     on_turn = (frame["step_turn"].round() > thresholds["turn"])
-    
+    on_climb = (frame["step_grade"].round(2) > thresholds["climb"])
+    on_steep_climb = (frame["step_grade"].round(2) > thresholds["steep_climb"])
+
     coming_off_descent = (frame["step_grade"].shift(-1).round(2) < np.mean([thresholds["light_descent"], thresholds["steep_descent"]]))
     coming_off_steep_descent = (frame["step_grade"].shift(-1).round(2) < np.mean([thresholds["steep_descent"], thresholds["ultra_steep_descent"]]))
 
@@ -68,9 +72,11 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
             | (on_turn & on_steep_descent)
             | ((frame["avg_bearing_change"].round() > 24) & (frame["avg_step_grade"].round(2) < -0.1))
         ),
+        "climb": on_climb,
+        "steep_climb": on_steep_climb
     }
 
-    frame["hazard"] = "none"
+    frame["hazard"] = "flat"
     for hazard_name, hazard_condition in hazards.items():
         frame.loc[hazard_condition, "hazard"] = hazard_name
 
