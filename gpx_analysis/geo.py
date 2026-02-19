@@ -1,5 +1,6 @@
 import geopandas as gpd
 import osmnx as ox
+import pandas as pd
 from shapely.geometry import LineString
 
 
@@ -15,6 +16,10 @@ def points_to_segments_lonlat(gdf: gpd.GeoDataFrame, lon: str = "lon", lat: str 
     )
     segments = segments.merge(gdf.drop(columns="geometry"), left_on="end_i", right_on="step", how="left")
     return segments
+
+
+def google_maps_link(lat: pd.Series, lon: pd.Series) -> pd.Series:
+    return ("https://www.google.com/maps?q=" + lat.astype(str) + "," + lon.astype(str))
 
 
 def stop_signs_on_segments(

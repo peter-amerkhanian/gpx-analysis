@@ -16,8 +16,18 @@ def bearing_deg(lat1: np.ndarray, lon1: np.ndarray, lat2: np.ndarray, lon2: np.n
     return (bearing + 360) % 360
 
 
-def compute_step_metrics(df: pd.DataFrame) -> pd.DataFrame:
+def compute_step_metrics(df: pd.DataFrame, min_step_dist_m: float = 2.0) -> pd.DataFrame:
     frame = df.copy()
+    if "time" in frame.columns and frame["time"].notna().any():
+        frame = frame.sort_values("time", kind="stable").reset_index(drop=True)
+    elif "step" in frame.columns:
+        frame = frame.sort_values("step", kind="stable").reset_index(drop=True)
+    else:
+        frame = frame.sort_index().reset_index(drop=True)
+
+    frame["elevation_m"] = pd.to_numeric(frame.get("elevation_m"), errors="coerce")
+    if "elevation_f" in frame.columns:
+        frame["elevation_f"] = pd.to_numeric(frame["elevation_f"], errors="coerce")
     rad_coords = frame[["lat", "lon"]].apply(np.deg2rad)
     step_meters = haversine_distances(rad_coords.iloc[:-1], rad_coords.iloc[1:]).diagonal() * 6371000
 
@@ -33,8 +43,13 @@ def compute_step_metrics(df: pd.DataFrame) -> pd.DataFrame:
     frame["step_dist_m"] = np.array([0, *step_meters])
     frame["step_dist_f"] = frame["step_dist_m"] * 3.28084
     frame["step_elevation_m"] = frame["elevation_m"].diff().fillna(0)
-    frame["step_elevation_f"] = frame["elevation_f"].diff().fillna(0)
-    frame["step_grade"] = frame["step_elevation_m"] / frame["step_dist_m"].replace(0, np.nan)
+    if "elevation_f" in frame.columns:
+        frame["step_elevation_f"] = frame["elevation_f"].diff().fillna(0)
+    else:
+        frame["step_elevation_f"] = frame["step_elevation_m"] * 3.28084
+
+    valid_dist = frame["step_dist_m"] >= min_step_dist_m
+    frame["step_grade"] = np.where(valid_dist, frame["step_elevation_m"] / frame["step_dist_m"], np.nan)
     return frame
 
 
@@ -46,7 +61,7 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
         "light_descent": -0.049,
         "steep_descent": -0.099,
         "ultra_steep_descent": -0.199,
-        "turn": 24,
+        "turn": 19,
         "climb": 0.049,
         "steep_climb": 0.099,
     }
