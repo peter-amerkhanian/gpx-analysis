@@ -1,4 +1,4 @@
-from .analytics import analyze_steps, compute_step_metrics, detect_hazards
+from .analytics import analyze_steps, compute_step_metrics, detect_hazards, aggregate_by_hazard
 from .geo import points_to_segments_lonlat, stop_signs_on_segments
 from .io import read_simple_gpx
 
@@ -6,6 +6,7 @@ __all__ = [
     "analyze_steps",
     "compute_step_metrics",
     "detect_hazards",
+    "aggregate_by_hazard",
     "points_to_segments_lonlat",
     "stop_signs_on_segments",
     "read_simple_gpx",

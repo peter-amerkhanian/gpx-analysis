@@ -61,7 +61,7 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
         "light_descent": -0.049,
         "steep_descent": -0.099,
         "ultra_steep_descent": -0.199,
-        "turn": 19,
+        "turn": 19.9,
         "climb": 0.049,
         "steep_climb": 0.099,
     }
@@ -102,3 +102,23 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
 
 def analyze_steps(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
     return detect_hazards(compute_step_metrics(df), rolling_window=rolling_window)
+
+def aggregate_by_hazard(df: pd.DataFrame, column='distance_m') -> pd.DataFrame:
+    summary = (
+        df.groupby("hazard", dropna=False, as_index=False)[column]
+        .sum()
+        .sort_values(by=column, ascending=False)
+        .rename(columns={column: column})
+    )
+
+    total = summary[column].sum()
+    summary["percent"] = summary[column] / total * 100
+
+    grand_total = pd.DataFrame([{
+        "hazard": "TOTAL",
+        column: total,
+        "percent": 100.0
+    }])
+
+    summary_with_total = pd.concat([summary, grand_total], ignore_index=True).round()
+    return summary_with_total
