@@ -3,57 +3,63 @@ import pandas as pd
 from sklearn.metrics.pairwise import haversine_distances
 
 
-def bearing_deg(lat1: np.ndarray, lon1: np.ndarray, lat2: np.ndarray, lon2: np.ndarray) -> np.ndarray:
-    lat1 = np.deg2rad(lat1)
-    lon1 = np.deg2rad(lon1)
-    lat2 = np.deg2rad(lat2)
-    lon2 = np.deg2rad(lon2)
+def compute_bearing(rad_n: np.ndarray, rad_n_plus_1: np.ndarray) -> np.ndarray:
+    """Compute compass bearing (degrees) from paired start/end radian coordinates."""
+    lat1 = rad_n[:, 0]
+    lon1 = rad_n[:, 1]
+    lat2 = rad_n_plus_1[:, 0]
+    lon2 = rad_n_plus_1[:, 1]
     dlon = lon2 - lon1
-
     y_coord = np.sin(dlon) * np.cos(lat2)
     x_coord = np.cos(lat1) * np.sin(lat2) - np.sin(lat1) * np.cos(lat2) * np.cos(dlon)
     bearing = np.rad2deg(np.arctan2(y_coord, x_coord))
-    return (bearing + 360) % 360
+    normalized_bearing = (bearing + 360) % 360
+    normalized_bearing[normalized_bearing == 0] = np.nan
+    return np.array([np.nan, *normalized_bearing])
 
+def compute_turn(rad_n: np.ndarray, rad_n_plus_1: np.ndarray) -> np.ndarray:
+    """Compute absolute turn angle (degrees) from paired start/end radian coordinates."""
+    step_bearing = compute_bearing(rad_n, rad_n_plus_1)
+    delta_bearing = np.diff(step_bearing, prepend=[np.nan])
+    return np.abs((delta_bearing + 180) % 360 - 180)
+
+def compute_distance(rad_n: np.ndarray, rad_n_plus_1: np.ndarray) -> np.ndarray:
+    """Compute haversine distance in meters from paired start/end radian coordinates."""
+    distance = haversine_distances(rad_n, rad_n_plus_1).diagonal() * 6371000
+    return np.array([0, *distance])
 
 def compute_step_metrics(df: pd.DataFrame, min_step_dist_m: float = 2.0) -> pd.DataFrame:
+    """Add per-step distance, bearing, turn, elevation delta, and grade metrics."""
     frame = df.copy()
+    # Sort the data
     if "time" in frame.columns and frame["time"].notna().any():
         frame = frame.sort_values("time", kind="stable").reset_index(drop=True)
     elif "step" in frame.columns:
         frame = frame.sort_values("step", kind="stable").reset_index(drop=True)
     else:
         frame = frame.sort_index().reset_index(drop=True)
-
+    # Compute elevations
     frame["elevation_m"] = pd.to_numeric(frame.get("elevation_m"), errors="coerce")
-    if "elevation_f" in frame.columns:
-        frame["elevation_f"] = pd.to_numeric(frame["elevation_f"], errors="coerce")
-    rad_coords = frame[["lat", "lon"]].apply(np.deg2rad)
-    step_meters = haversine_distances(rad_coords.iloc[:-1], rad_coords.iloc[1:]).diagonal() * 6371000
-
-    lat = frame["lat"].to_numpy()
-    lon = frame["lon"].to_numpy()
-    bearing = bearing_deg(lat[:-1], lon[:-1], lat[1:], lon[1:])
-
-    frame["step_bearing"] = np.array([*bearing, np.nan])
-    frame["step_bearing"] = frame["step_bearing"].replace({0: np.nan})
-    #  minimum circular difference, always in [0, 180]
-    delta_bearing = frame["step_bearing"].diff()
-    frame["step_turn"] = ((delta_bearing + 180) % 360 - 180).abs()
-    frame["step_dist_m"] = np.array([0, *step_meters])
-    frame["step_dist_f"] = frame["step_dist_m"] * 3.28084
+    frame["elevation_f"] = pd.to_numeric(frame.get("elevation_f"), errors="coerce")
     frame["step_elevation_m"] = frame["elevation_m"].diff().fillna(0)
-    if "elevation_f" in frame.columns:
-        frame["step_elevation_f"] = frame["elevation_f"].diff().fillna(0)
-    else:
-        frame["step_elevation_f"] = frame["step_elevation_m"] * 3.28084
-
+    frame["step_elevation_f"] = frame["elevation_f"].diff().fillna(0)
+    # Create radian inputs for distance and bearing calculations
+    rad_coords = frame[["lat", "lon"]].apply(np.deg2rad).to_numpy()
+    rad_n = rad_coords[:-1]
+    rad_n_plus_1 = rad_coords[1:]
+    # Compute distances
+    frame["step_dist_m"] = compute_distance(rad_n, rad_n_plus_1)
+    frame["step_dist_f"] = frame["step_dist_m"] * 3.28084
+    # Compute grade changes
     valid_dist = frame["step_dist_m"] >= min_step_dist_m
     frame["step_grade"] = np.where(valid_dist, frame["step_elevation_m"] / frame["step_dist_m"], np.nan)
+    # Compute turns
+    frame["step_turn"] = compute_turn(rad_n, rad_n_plus_1)
     return frame
 
 
 def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
+    """Classify each step into hazard categories from grade and turning signals."""
     frame = df.copy()
     frame["avg_step_grade"] = frame["step_grade"].rolling(rolling_window).mean()
     frame["avg_bearing_change"] = frame["step_turn"].rolling(rolling_window).mean()
@@ -101,24 +107,5 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
 
 
 def analyze_steps(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
+    """Compute step metrics and run hazard detection in one call."""
     return detect_hazards(compute_step_metrics(df), rolling_window=rolling_window)
-
-def aggregate_by_hazard(df: pd.DataFrame, column='distance_m') -> pd.DataFrame:
-    summary = (
-        df.groupby("hazard", dropna=False, as_index=False)[column]
-        .sum()
-        .sort_values(by=column, ascending=False)
-        .rename(columns={column: column})
-    )
-
-    total = summary[column].sum()
-    summary["percent"] = summary[column] / total * 100
-
-    grand_total = pd.DataFrame([{
-        "hazard": "TOTAL",
-        column: total,
-        "percent": 100.0
-    }])
-
-    summary_with_total = pd.concat([summary, grand_total], ignore_index=True).round()
-    return summary_with_total

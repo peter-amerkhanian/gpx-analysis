@@ -5,6 +5,7 @@ from gpx_analysis import analyze_steps, read_simple_gpx
 
 
 def resolve_input_path(path: str | None) -> Path:
+    """Return the CLI input path or the first GPX file in gpx_data/."""
     if path:
         return Path(path)
 
@@ -16,6 +17,7 @@ def resolve_input_path(path: str | None) -> Path:
 
 
 def main() -> None:
+    """Run GPX analysis from CLI arguments and print hazard counts."""
     parser = argparse.ArgumentParser(description="Run basic GPX step analysis.")
     parser.add_argument("--path", type=str, default=None, help="Path to a .gpx file")
     parser.add_argument("--rolling-window", type=int, default=3, help="Rolling window for hazard features")

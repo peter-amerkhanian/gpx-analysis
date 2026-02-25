@@ -3,6 +3,7 @@ import gpxpy
 
 
 def read_simple_gpx(path: str, reverse: bool = False) -> pd.DataFrame:
+    """Parse a GPX file into a flat DataFrame of per-point track data."""
     with open(path, "r", encoding="utf-8") as handle:
         gpx = gpxpy.parse(handle)
 
