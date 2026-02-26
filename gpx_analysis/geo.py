@@ -3,11 +3,9 @@ import osmnx as ox
 import pandas as pd
 from shapely.geometry import LineString
 
-
 PROJECTED_CRS = 3857
 
-
-def points_to_segments_lonlat(gdf: gpd.GeoDataFrame, lon: str = "lon", lat: str = "lat", sort_col: str | None = None) -> gpd.GeoDataFrame:
+def points_to_segments(gdf: gpd.GeoDataFrame, lon: str = "lon", lat: str = "lat", sort_col: str | None = None) -> gpd.GeoDataFrame:
     """Convert ordered point rows into consecutive line segments in lon/lat space."""
     frame = gdf.sort_values(sort_col) if sort_col else gdf.sort_index()
     x0, y0 = frame[lon].to_numpy()[:-1], frame[lat].to_numpy()[:-1]
@@ -20,11 +18,6 @@ def points_to_segments_lonlat(gdf: gpd.GeoDataFrame, lon: str = "lon", lat: str 
     )
     segments = segments.merge(gdf.drop(columns="geometry"), left_on="end_i", right_on="step", how="left")
     return segments
-
-
-def google_maps_url(lat: pd.Series, lon: pd.Series) -> pd.Series:
-    """Build Google Maps query URLs for latitude/longitude series pairs."""
-    return ("https://www.google.com/maps?q=" + lat.astype(str) + "," + lon.astype(str))
 
 
 def _normalize_osm_tag(value: object) -> object:
@@ -96,12 +89,11 @@ def enrich_segments_with_osm_edges(
     result = gdf_segments.copy()
 
     # Pre-create output columns so the function always returns a predictable schema.
+    # Nothing to match if either side has no rows.
     output_cols = [f"osm_{col}" for col in edge_attrs]
     for col in output_cols:
         if col not in result.columns:
             result[col] = pd.NA
-
-    # Nothing to match if either side has no rows.
     if result.empty or edges.empty:
         return result
 
