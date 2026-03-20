@@ -1,0 +1,28 @@
+{
+  "route": {
+    "slug": "shepards",
+    "title": "Shepards",
+    "source": "gpx_data/shepards.gpx",
+    "reverse": false
+  },
+  "summary": {
+    "point_count": 236,
+    "segment_count": 235,
+    "distance_m": 7414.99,
+    "distance_mi": 4.61,
+    "elevation_gain_m": 59.6,
+    "elevation_gain_ft": 195.54,
+    "elevation_loss_m": 389.0,
+    "elevation_loss_ft": 1276.25,
+    "max_elevation_m": 375.9,
+    "max_elevation_ft": 1233.27,
+    "start": {
+      "lat": 37.83573,
+      "lon": -122.1848
+    },
+    "end": {
+      "lat": 37.83023,
+      "lon": -122.24735
+    }
+  }
+}

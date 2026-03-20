@@ -1,0 +1,28 @@
+{
+  "route": {
+    "slug": "arlington",
+    "title": "Arlington",
+    "source": "gpx_data/arlington.gpx",
+    "reverse": false
+  },
+  "summary": {
+    "point_count": 196,
+    "segment_count": 195,
+    "distance_m": 5547.0,
+    "distance_mi": 3.45,
+    "elevation_gain_m": 56.0,
+    "elevation_gain_ft": 183.73,
+    "elevation_loss_m": 208.0,
+    "elevation_loss_ft": 682.41,
+    "max_elevation_m": 265.0,
+    "max_elevation_ft": 869.42,
+    "start": {
+      "lat": 37.93077,
+      "lon": -122.29473
+    },
+    "end": {
+      "lat": 37.89028,
+      "lon": -122.27244
+    }
+  }
+}

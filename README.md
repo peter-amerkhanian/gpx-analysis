@@ -1,35 +1,22 @@
 # gpx-analysis
 
-Early-stage Python project for analyzing GPX tracks and visualizing route behavior.
+GPX route analysis project with a **Quarto-first publishing workflow**.
 
-## Current Status
+## Working Model
 
-This repository is in scaffold/prototyping phase:
+- `gpx_analysis/` holds reusable Python analysis code.
+- `gpx_data/` holds curated GPX files.
+- `scripts/build_quarto_data.py` exports route summaries and GeoJSON into `quarto/data/`.
+- `quarto/` holds the source documents and dashboard pages.
+- `docs/` is the rendered output target for Quarto.
 
-- Environment and dependencies are configured in `pyproject.toml`.
-- Exploratory work is notebook-first (`main.ipynb`).
-- Reusable GPX functions now live in a lightweight package (`gpx_analysis/`).
-- Data directories exist for inputs and cached artifacts (`gpx_data/`, `cache/`).
+## Current Focus
 
-## Planned Scope
+The project is being reoriented away from a custom web app and toward:
 
-The dependency stack suggests a workflow around:
-
-- Parsing GPX files (`gpxpy`)
-- Geospatial processing (`geopandas`, `shapely`, `osmnx`)
-- Data analysis and modeling (`pandas`, `numpy`, `scikit-learn`)
-- Mapping and visualization (`folium`, `matplotlib`)
-
-## Project Layout
-
-- `main.ipynb` - exploratory analysis notebook
-- `gpx_analysis/io.py` - GPX parsing helpers
-- `gpx_analysis/analytics.py` - step metrics and hazard detection
-- `gpx_analysis/geo.py` - point-to-segment geospatial helpers
-- `main.py` - simple script entry point using the package
-- `hello_world.py` - simple smoke test script
-- `gpx_data/` - GPX input files
-- `cache/` - intermediate/generated artifacts
+- Quarto documents for route notes and explainers
+- Quarto dashboard pages for cross-route comparisons
+- Python scripts for deterministic, precomputed analytics
 
 ## Setup
 
@@ -39,30 +26,30 @@ This project uses `uv` for dependency management.
 uv sync
 ```
 
-Run analysis using the default first GPX file found in `gpx_data/`:
+## Build Quarto Data
 
 ```powershell
-uv run python main.py
+$env:PYTHONPATH='.'
+.\.venv\Scripts\python.exe scripts\build_quarto_data.py
 ```
 
-Run analysis on a specific file:
+## Preview Quarto Site
 
 ```powershell
-uv run python main.py --path gpx_data/arlington.gpx
+quarto preview quarto
 ```
 
-## Notebook/Script Usage
+## Project Layout
 
-```python
-from gpx_analysis import read_simple_gpx, analyze_steps, points_to_segments_lonlat
+- `main.ipynb` - exploratory notebook
+- `gpx_analysis/` - reusable analysis package
+- `gpx_data/` - curated GPX inputs
+- `scripts/build_quarto_data.py` - exports data artifacts for Quarto
+- `quarto/` - Quarto source files
+- `docs/` - rendered site output
 
-points = read_simple_gpx("gpx_data/arlington.gpx")
-steps = analyze_steps(points, rolling_window=3)
-```
+## Immediate Next Steps
 
-## Next Steps
-
-1. Define concrete analysis goals (distance, speed profile, elevation gain, clustering, etc.).
-2. Continue extracting notebook-only logic into `gpx_analysis/` modules.
-3. Add a richer CLI for selecting outputs and saving summary artifacts.
-4. Add tests for GPX parsing and core metric calculations.
+1. Tighten the route-by-route Quarto pages with real narrative.
+2. Add route-specific charts such as elevation profile or hazard bands.
+3. Decide whether GitHub Pages should publish rendered `docs/` or a Quarto render workflow.

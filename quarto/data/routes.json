@@ -1,0 +1,136 @@
+{
+  "routes": [
+    {
+      "slug": "arlington",
+      "title": "Arlington",
+      "source": "gpx_data/arlington.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 196,
+        "segment_count": 195,
+        "distance_m": 5547.0,
+        "distance_mi": 3.45,
+        "elevation_gain_m": 56.0,
+        "elevation_gain_ft": 183.73,
+        "elevation_loss_m": 208.0,
+        "elevation_loss_ft": 682.41,
+        "max_elevation_m": 265.0,
+        "max_elevation_ft": 869.42,
+        "start": {
+          "lat": 37.93077,
+          "lon": -122.29473
+        },
+        "end": {
+          "lat": 37.89028,
+          "lon": -122.27244
+        }
+      },
+      "paths": {
+        "summary": "data/routes/arlington/summary.json",
+        "hazards": "data/routes/arlington/hazards.json",
+        "points": "data/routes/arlington/points.geojson",
+        "segments": "data/routes/arlington/segments.geojson",
+        "page": "routes/arlington.qmd"
+      }
+    },
+    {
+      "slug": "euclid",
+      "title": "Euclid",
+      "source": "gpx_data/euclid.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 157,
+        "segment_count": 156,
+        "distance_m": 3635.21,
+        "distance_mi": 2.26,
+        "elevation_gain_m": 11.1,
+        "elevation_gain_ft": 36.42,
+        "elevation_loss_m": 186.4,
+        "elevation_loss_ft": 611.55,
+        "max_elevation_m": 270.5,
+        "max_elevation_ft": 887.47,
+        "start": {
+          "lat": 37.90186,
+          "lon": -122.26709
+        },
+        "end": {
+          "lat": 37.87497,
+          "lon": -122.26014
+        }
+      },
+      "paths": {
+        "summary": "data/routes/euclid/summary.json",
+        "hazards": "data/routes/euclid/hazards.json",
+        "points": "data/routes/euclid/points.geojson",
+        "segments": "data/routes/euclid/segments.geojson",
+        "page": "routes/euclid.qmd"
+      }
+    },
+    {
+      "slug": "shepards",
+      "title": "Shepards",
+      "source": "gpx_data/shepards.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 236,
+        "segment_count": 235,
+        "distance_m": 7414.99,
+        "distance_mi": 4.61,
+        "elevation_gain_m": 59.6,
+        "elevation_gain_ft": 195.54,
+        "elevation_loss_m": 389.0,
+        "elevation_loss_ft": 1276.25,
+        "max_elevation_m": 375.9,
+        "max_elevation_ft": 1233.27,
+        "start": {
+          "lat": 37.83573,
+          "lon": -122.1848
+        },
+        "end": {
+          "lat": 37.83023,
+          "lon": -122.24735
+        }
+      },
+      "paths": {
+        "summary": "data/routes/shepards/summary.json",
+        "hazards": "data/routes/shepards/hazards.json",
+        "points": "data/routes/shepards/points.geojson",
+        "segments": "data/routes/shepards/segments.geojson",
+        "page": "routes/shepards.qmd"
+      }
+    },
+    {
+      "slug": "spruce",
+      "title": "Spruce",
+      "source": "gpx_data/spruce.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 174,
+        "segment_count": 173,
+        "distance_m": 2794.99,
+        "distance_mi": 1.74,
+        "elevation_gain_m": 0.1,
+        "elevation_gain_ft": 0.33,
+        "elevation_loss_m": 157.4,
+        "elevation_loss_ft": 516.4,
+        "max_elevation_m": 252.9,
+        "max_elevation_ft": 829.72,
+        "start": {
+          "lat": 37.90426,
+          "lon": -122.26953
+        },
+        "end": {
+          "lat": 37.88242,
+          "lon": -122.26617
+        }
+      },
+      "paths": {
+        "summary": "data/routes/spruce/summary.json",
+        "hazards": "data/routes/spruce/hazards.json",
+        "points": "data/routes/spruce/points.geojson",
+        "segments": "data/routes/spruce/segments.geojson",
+        "page": "routes/spruce.qmd"
+      }
+    }
+  ]
+}

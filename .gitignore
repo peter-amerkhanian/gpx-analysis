@@ -9,3 +9,6 @@ cache/
 
 # Virtual environments
 .venv
+
+# Quarto working files
+quarto/_freeze/

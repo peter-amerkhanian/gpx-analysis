@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: ../docs
+  resources:
+    - data/**
+
+website:
+  title: "GPX Analysis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: routes-dashboard.qmd
+        text: Routes Dashboard
+      - text: Route Notes
+        menu:
+          - href: routes/arlington.qmd
+            text: Arlington
+          - href: routes/euclid.qmd
+            text: Euclid
+          - href: routes/shepards.qmd
+            text: Shepards
+          - href: routes/spruce.qmd
+            text: Spruce
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: false
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto

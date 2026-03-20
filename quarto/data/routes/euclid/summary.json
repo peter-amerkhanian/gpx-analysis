@@ -1,0 +1,28 @@
+{
+  "route": {
+    "slug": "euclid",
+    "title": "Euclid",
+    "source": "gpx_data/euclid.gpx",
+    "reverse": false
+  },
+  "summary": {
+    "point_count": 157,
+    "segment_count": 156,
+    "distance_m": 3635.21,
+    "distance_mi": 2.26,
+    "elevation_gain_m": 11.1,
+    "elevation_gain_ft": 36.42,
+    "elevation_loss_m": 186.4,
+    "elevation_loss_ft": 611.55,
+    "max_elevation_m": 270.5,
+    "max_elevation_ft": 887.47,
+    "start": {
+      "lat": 37.90186,
+      "lon": -122.26709
+    },
+    "end": {
+      "lat": 37.87497,
+      "lon": -122.26014
+    }
+  }
+}

@@ -1,0 +1,49 @@
+---
+title: "GPX Analysis"
+---
+
+```{python}
+from pathlib import Path
+import json
+import pandas as pd
+
+manifest = json.loads(Path("data/routes.json").read_text(encoding="utf-8"))
+routes = pd.DataFrame(manifest["routes"])
+route_cards = routes[["title", "source"]].copy()
+route_cards["distance_mi"] = routes["summary"].apply(lambda item: item["distance_mi"])
+route_cards["elevation_loss_ft"] = routes["summary"].apply(lambda item: item["elevation_loss_ft"])
+route_cards["segment_count"] = routes["summary"].apply(lambda item: item["segment_count"])
+```
+
+This project is now oriented around **Quarto documents and dashboards** rather than a custom browser app.
+The Python package remains the analysis layer; Quarto is the publishing layer.
+
+## Working Model
+
+1. GPX inputs live in `gpx_data/`.
+2. Python scripts export route summaries and GeoJSON into `quarto/data/`.
+3. Quarto pages read those static artifacts and render route notes, maps, and summary dashboards.
+
+## Current Curated Routes
+
+```{python}
+route_cards.rename(
+    columns={
+        "title": "Route",
+        "source": "Source GPX",
+        "distance_mi": "Miles",
+        "elevation_loss_ft": "Descent (ft)",
+        "segment_count": "Segments",
+    }
+)
+```
+
+## Local Authoring Loop
+
+```powershell
+$env:PYTHONPATH='.'
+.\.venv\Scripts\python.exe scripts\build_quarto_data.py
+quarto preview quarto
+```
+
+That keeps the data build separate from the document render, which is the right split for this repo.
