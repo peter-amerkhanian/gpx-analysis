@@ -1,0 +1,295 @@
+---
+title: "Coasting Speed Function Explained (with OpenStax University Physics 1 references)"
+format: gfm
+---
+
+## Overview
+
+This document explains the function below using ideas from **OpenStax _University Physics Volume 1_**:
+
+- [Ch. 5: Newton's Laws of Motion](https://openstax.org/books/university-physics-volume-1/pages/5-introduction)
+- [Sec. 6.2: Friction](https://openstax.org/books/university-physics-volume-1/pages/6-2-friction)
+- [Sec. 6.4: Drag Force and Terminal Speed](https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed)
+- [Sec. 7.2: Kinetic Energy](https://openstax.org/books/university-physics-volume-1/pages/7-2-kinetic-energy)
+- [Sec. 7.3: Work-Energy Theorem](https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem)
+- [Sec. 8.1: Potential Energy of a System](https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system)
+
+Note: earlier drafts referenced "Ch. 4 Newton's Laws." In this OpenStax edition, Newton's laws are covered in **Chapter 5**.
+
+The function models a cyclist **coasting** (no pedaling) across route segments, where each segment has a grade and a length. It compounds the speed: the end speed of one segment becomes the start speed of the next.
+
+---
+
+## The function being explained
+
+```python
+import numpy as np
+
+def compute_coast_speed(df, v0=0.0,
+                        m=85.0,        # kg (rider + bike)
+                        CdA=0.40,      # m^2
+                        Crr=0.005,     # -
+                        rho=1.225,     # kg/m^3
+                        g=9.81):
+    """
+    Coasting speed compounded across segments.
+    Assumes: downhill segments have NEGATIVE grade (e.g., -0.10 for -10%).
+    Requires columns:
+      - step_grade (decimal)
+      - step_dist_m (meters)
+    """
+
+    grade = df["step_grade"].fillna(0).to_numpy(dtype=float)
+    L = df["step_dist_m"].fillna(0).to_numpy(dtype=float)
+
+    speeds = np.empty(len(df), dtype=float)
+    v = float(v0)
+
+    k_drag = rho * CdA / m  # constant in the v^2 drag term
+
+    for i in range(len(df)):
+        # Convert "negative = downhill" into a positive downhill component
+        downhill_component = -grade[i]  # e.g. grade=-0.10 => downhill_component=+0.10
+
+        # Update v^2 using a simple energy/force approximation over distance
+        v2 = (
+            v*v
+            + 2.0 * g * (downhill_component - Crr) * L[i]
+            - k_drag * v*v * L[i]
+        )
+
+        v = np.sqrt(v2) if v2 > 0 else 0.0
+        speeds[i] = v
+
+    df = df.copy()
+    df["coast_speed_mps"] = speeds
+    df["coast_speed_mph"] = speeds * 2.2369362920544
+    return df
+```
+
+---
+
+## 1) Gravity on an incline
+
+**OpenStax references:**
+- [Ch. 5 introduction to forces and Newton's laws](https://openstax.org/books/university-physics-volume-1/pages/5-introduction)
+- [Sec. 5.3 Newton's Second Law](https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law)
+- [Sec. 6.2 Friction](https://openstax.org/books/university-physics-volume-1/pages/6-2-friction)
+
+On an incline, the component of gravity **along the slope** is:
+
+$$
+F_{\parallel} = mg\sin\theta
+$$
+
+For small road angles, a **grade** (rise/run) is well-approximated by:
+
+$$
+\sin\theta \approx \text{grade}
+$$
+
+This code stores downhill as a **negative grade**, so it flips the sign:
+
+```python
+downhill_component = -grade[i]
+```
+
+so that a downhill becomes positive (e.g., `-0.10 -> +0.10`). This makes the downhill acceleration term naturally positive.
+
+---
+
+## 2) Rolling resistance
+
+**OpenStax reference:**
+- [Sec. 6.2 Friction](https://openstax.org/books/university-physics-volume-1/pages/6-2-friction)
+
+Rolling resistance is modeled like a frictional force proportional to the normal force:
+
+$$
+F_{rr} = C_{rr}N
+$$
+
+For gentle slopes, the normal force is approximately:
+
+$$
+N \approx mg
+$$
+
+so:
+
+$$
+F_{rr} \approx C_{rr}mg
+$$
+
+and the associated acceleration magnitude is:
+
+$$
+a_{rr} = \frac{F_{rr}}{m} \approx gC_{rr}
+$$
+
+The code combines gravity and rolling resistance inside:
+
+```python
+2.0 * g * (downhill_component - Crr) * L[i]
+```
+
+---
+
+## 3) Aerodynamic drag (quadratic in speed)
+
+**OpenStax reference:**
+- [Sec. 6.4 Drag Force and Terminal Speed](https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed)
+
+OpenStax gives a common quadratic drag model:
+
+$$
+F_D = \tfrac{1}{2}\rho C_d A v^2
+$$
+
+The function uses `CdA` as the combined factor $C_dA$ and forms a constant:
+
+```python
+k_drag = rho * CdA / m
+```
+
+This is a compact way to keep track of how drag scales with:
+
+- air density $\rho$
+- effective frontal area/drag coefficient $C_dA$
+- inverse mass $1/m$
+
+The drag term appears as a subtraction proportional to $v^2$:
+
+```python
+- k_drag * v*v * L[i]
+```
+
+Because drag grows rapidly with speed, it produces a natural leveling-off of downhill speed.
+
+---
+
+## 4) Why the update is written in terms of $v^2$
+
+**OpenStax references:**
+- [Sec. 7.2 Kinetic Energy](https://openstax.org/books/university-physics-volume-1/pages/7-2-kinetic-energy)
+- [Sec. 7.3 Work-Energy Theorem](https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem)
+
+Kinetic energy is:
+
+$$
+K = \tfrac{1}{2}mv^2
+$$
+
+The work-energy theorem states:
+
+$$
+W_{net} = \Delta K
+$$
+
+If we approximate the net force along the direction of motion as constant over a small segment length $L$:
+
+$$
+W_{net} \approx F_{net}L
+$$
+
+Using $F_{net} = ma$, we get:
+
+$$
+maL = \tfrac{1}{2}m(v^2 - v_0^2)
+$$
+
+Cancel $m$ and multiply by 2:
+
+$$
+v^2 = v_0^2 + 2aL
+$$
+
+That is exactly the structure used in the function: it updates $v^2$ across each segment, then takes a square root to get $v$.
+
+---
+
+## 5) Terminal speed appears naturally
+
+**OpenStax reference:**
+- [Sec. 6.4 Drag Force and Terminal Speed](https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed)
+
+Terminal speed happens when the downhill driving term is balanced by resistive drag (and rolling resistance). In a simplified steady-speed picture:
+
+$$
+g(\text{grade} - C_{rr}) = \tfrac{1}{2}\frac{\rho C_dA}{m}v^2
+$$
+
+Solving for $v$ gives a terminal-speed estimate:
+
+$$
+v_{terminal} = \sqrt{\frac{2mg(\text{grade}-C_{rr})}{\rho C_dA}}
+$$
+
+In the step-by-step simulation, as $v$ increases, the drag term grows until further acceleration is canceled, so the computed speed tends toward a stable value on sustained downhills.
+
+---
+
+## 6) Continuous-equation interpretation (what the code is discretizing)
+
+**OpenStax references:**
+- [Sec. 5.3 Newton's Second Law](https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law)
+- [Sec. 6.4 Drag Force and Terminal Speed](https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed)
+- Related kinematics background: [Ch. 3 introduction](https://openstax.org/books/university-physics-volume-1/pages/3-introduction)
+
+A common downhill-with-drag model is:
+
+$$
+m\frac{dv}{dt}
+=
+mg(\text{grade} - C_{rr})
+-
+\tfrac{1}{2}\rho C_dA v^2
+$$
+
+The code effectively integrates the motion **by distance** in small chunks, using a work/energy-style update over each segment length.
+
+---
+
+## 7) Default parameter values and why they were chosen
+
+These defaults are practical values for a recreational road/gravel rider in near-sea-level conditions. They are not universal constants.
+
+| Parameter | Default | Why this is a reasonable default | When to change it |
+|---|---:|---|---|
+| `v0` | `0.0 m/s` | Conservative start: assumes each run begins from rest. Useful if route starts from a stop sign, trailhead, or paused state. | Set from measured incoming speed if you are stitching this model into a larger simulation. |
+| `m` | `85.0 kg` | Typical combined mass of rider + bike + gear. Mass increases gravitational driving force and inertia together, so speed sensitivity is moderate but real. | Change for lighter/heavier riders, loaded bikes, or e-bikes. |
+| `CdA` | `0.40 m^2` | Common order-of-magnitude for an upright-ish cyclist posture. Captures rider position and bike aero profile in one value. | Lower for aggressive aero position, higher for upright riding, loose clothing, or bags. |
+| `Crr` | `0.002` | Represents low rolling resistance on smooth pavement with efficient tires. Keeps rolling losses present but smaller than gravity on meaningful descents. | Increase for rough pavement, gravel, soft tires, or wider/off-road tires. |
+| `rho` | `1.225 kg/m^3` | Standard sea-level air density used in many textbook drag examples. | Lower at altitude or hotter air; higher in cold dense air. |
+| `g` | `9.81 m/s^2` | Standard Earth gravitational acceleration. | Rarely changed unless modeling another planet or using local geodesy precision. |
+
+Short intuition check:
+
+- On shallow downhills, `Crr` can be a large fraction of the gravity component, so speed may not grow much.
+- On steeper/longer downhills, drag (`CdA`, `rho`) dominates and sets an effective terminal speed.
+- Because `m` is in both driving and drag balance terms, changing mass usually shifts speed less than people expect, while `CdA` often shifts it more.
+
+---
+
+## Chapter mapping summary
+
+| Concept in the code | OpenStax UP1 chapter |
+|---|---|
+| Free-body diagram and net force along slope | [Ch. 5](https://openstax.org/books/university-physics-volume-1/pages/5-introduction), [Sec. 5.3](https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law) |
+| Friction / rolling resistance modeling | [Sec. 6.2](https://openstax.org/books/university-physics-volume-1/pages/6-2-friction) |
+| Quadratic drag force | [Sec. 6.4](https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed) |
+| Terminal speed | [Sec. 6.4](https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed) |
+| Kinetic energy | [Sec. 7.2](https://openstax.org/books/university-physics-volume-1/pages/7-2-kinetic-energy) |
+| Work-Energy Theorem | [Sec. 7.3](https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem) |
+| Gravitational potential energy context | [Sec. 8.1](https://openstax.org/books/university-physics-volume-1/pages/8-1-potential-energy-of-a-system) |
+
+---
+
+## Big picture
+
+This function is best viewed as:
+
+> A **discrete work-energy** update (Ch. 7)
+> using Newtonian forces on an incline (Ch. 5 and Ch. 6)
+> with **rolling resistance** (Sec. 6.2) and **quadratic drag** (Sec. 6.4),
+> compounded segment-by-segment along a route.

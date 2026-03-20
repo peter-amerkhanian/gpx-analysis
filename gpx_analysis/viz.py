@@ -9,14 +9,14 @@ import folium
 
 
 DEFAULT_HAZARD_COLORS = {
-    "flat": "#31D492",
-    "light_descent": "#F9C74F",
-    "steep_descent": "#F9844A",
-    "ultra_steep_descent": "#F94144",
-    "turn_on_descent": "#577590",
-    "turn_on_steep_descent": "#277DA1",
+    "steep_climb": "#012C22",
     "climb": "#2D9966",
-    "steep_climb": "#1B5E20",
+    "flat": "#31D492",
+    "light_descent": "#fee08b",
+    "steep_descent": "#f46d43",
+    "ultra_steep_descent": "#9F0712",
+    "turn_on_descent": "#4F39F6",
+    "turn_on_steep_descent": "#8A0194"
 }
 
 
@@ -56,19 +56,19 @@ def prepare_osm_columns(gdf_segments_enriched: gpd.GeoDataFrame) -> gpd.GeoDataF
     frame["osm_name"].fillna("Unknown Road")
     )
     frame["Road Type"] = (
-    frame["osm_lanes"].fillna('Unknown') +
-    " lane, " +
-    frame["osm_highway"].fillna('unknown') + " road"
+    frame["osm_highway"].str.title().fillna('Unknown type') + " " +
+    frame["osm_lanes"].fillna('unknown') +
+    " lane road"
     )
     frame["Speed Limit"] = (
-    frame["osm_maxspeed"]
+    frame["osm_maxspeed"].fillna("Unknown")
     )
     return frame
 
 
 def make_route_map(
     gdf_segments: gpd.GeoDataFrame,
-    hazard_colors: Mapping[str, str] | None = None,
+    hazard_colors: Mapping[str, str] | None = DEFAULT_HAZARD_COLORS,
     popup_cols: str = [],
     tooltip_fields: list[str] | None = ['Ride Type'],
     tiles: str = "CartoDB positron",

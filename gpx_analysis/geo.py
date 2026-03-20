@@ -57,7 +57,7 @@ def stop_signs_on_segments(
     segment_buffer_m: float = 8.0,
     retain_all: bool = True
 ) -> gpd.GeoDataFrame:
-    """Find stop controls near route segments from the OpenStreetMap network."""
+    """Find stop/traffic light controls near route segments from the OpenStreetMap network."""
     projected_segments, nodes, _ = _build_route_graph(gdf_segments, network_type, corridor_m, retain_all)
 
     if nodes.empty or "highway" not in nodes.columns:
@@ -72,7 +72,20 @@ def stop_signs_on_segments(
     projected_route_buffer = projected_segments.geometry.union_all().buffer(segment_buffer_m)
     projected_controls = controls.to_crs(PROJECTED_CRS)
     controls_on_route = projected_controls[projected_controls.geometry.intersects(projected_route_buffer)].copy()
-    return controls_on_route.to_crs(gdf_segments.crs)
+    controls_on_route = controls_on_route.to_crs(gdf_segments.crs)
+
+    if controls_on_route.empty:
+        return controls_on_route
+
+    controls_wgs84 = controls_on_route.to_crs(4326)
+    controls_on_route["More Details"] = (
+        '<a href="https://www.google.com/maps?q='
+        + controls_wgs84.geometry.y.astype(str)
+        + ","
+        + controls_wgs84.geometry.x.astype(str)
+        + '" target="_blank">📍 Open in Google Maps</a>'
+    )
+    return controls_on_route
 
 
 def enrich_segments_with_osm_edges(
