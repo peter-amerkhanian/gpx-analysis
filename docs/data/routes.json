@@ -2,27 +2,27 @@
   "routes": [
     {
       "slug": "arlington",
-      "title": "Arlington",
-      "source": "gpx_data/arlington.gpx",
+      "title": "Arlington Gravel Loop",
+      "source": "gpx_data\\arlington_gravel_loop.gpx",
       "reverse": false,
       "summary": {
-        "point_count": 196,
-        "segment_count": 195,
-        "distance_m": 5547.0,
-        "distance_mi": 3.45,
-        "elevation_gain_m": 56.0,
-        "elevation_gain_ft": 183.73,
-        "elevation_loss_m": 208.0,
-        "elevation_loss_ft": 682.41,
-        "max_elevation_m": 265.0,
-        "max_elevation_ft": 869.42,
+        "point_count": 883,
+        "segment_count": 882,
+        "distance_m": 23955.45,
+        "distance_mi": 14.89,
+        "elevation_gain_m": 537.0,
+        "elevation_gain_ft": 1761.81,
+        "elevation_loss_m": 538.8,
+        "elevation_loss_ft": 1767.72,
+        "max_elevation_m": 278.5,
+        "max_elevation_ft": 913.71,
         "start": {
-          "lat": 37.93077,
-          "lon": -122.29473
+          "lat": 37.95096,
+          "lon": -122.32259
         },
         "end": {
-          "lat": 37.89028,
-          "lon": -122.27244
+          "lat": 37.95144,
+          "lon": -122.32191
         }
       },
       "paths": {
@@ -30,107 +30,209 @@
         "hazards": "data/routes/arlington/hazards.json",
         "points": "data/routes/arlington/points.geojson",
         "segments": "data/routes/arlington/segments.geojson",
+        "map": "data/routes/arlington/map.html",
         "page": "routes/arlington.qmd"
-      }
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 15394.0,
+          "percent": 64.0,
+          "distance_mi": 9.57
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 5199.0,
+          "percent": 22.0,
+          "distance_mi": 3.23
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 2189.0,
+          "percent": 9.0,
+          "distance_mi": 1.36
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 930.0,
+          "percent": 4.0,
+          "distance_mi": 0.58
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 242.0,
+          "percent": 1.0,
+          "distance_mi": 0.15
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 23955.0,
+          "percent": 100.0,
+          "distance_mi": 14.88
+        }
+      ]
     },
     {
-      "slug": "euclid",
-      "title": "Euclid",
-      "source": "gpx_data/euclid.gpx",
+      "slug": "grizzly",
+      "title": "Grizzly Peak",
+      "source": "gpx_data\\classic_grizzly.gpx",
       "reverse": false,
       "summary": {
-        "point_count": 157,
-        "segment_count": 156,
-        "distance_m": 3635.21,
-        "distance_mi": 2.26,
-        "elevation_gain_m": 11.1,
-        "elevation_gain_ft": 36.42,
-        "elevation_loss_m": 186.4,
-        "elevation_loss_ft": 611.55,
-        "max_elevation_m": 270.5,
-        "max_elevation_ft": 887.47,
+        "point_count": 836,
+        "segment_count": 835,
+        "distance_m": 22389.47,
+        "distance_mi": 13.91,
+        "elevation_gain_m": 445.0,
+        "elevation_gain_ft": 1459.97,
+        "elevation_loss_m": 446.1,
+        "elevation_loss_ft": 1463.58,
+        "max_elevation_m": 509.0,
+        "max_elevation_ft": 1669.95,
         "start": {
-          "lat": 37.90186,
-          "lon": -122.26709
+          "lat": 37.87472,
+          "lon": -122.2835
         },
         "end": {
-          "lat": 37.87497,
-          "lon": -122.26014
+          "lat": 37.87467,
+          "lon": -122.28396
         }
       },
       "paths": {
-        "summary": "data/routes/euclid/summary.json",
-        "hazards": "data/routes/euclid/hazards.json",
-        "points": "data/routes/euclid/points.geojson",
-        "segments": "data/routes/euclid/segments.geojson",
-        "page": "routes/euclid.qmd"
-      }
+        "summary": "data/routes/grizzly/summary.json",
+        "hazards": "data/routes/grizzly/hazards.json",
+        "points": "data/routes/grizzly/points.geojson",
+        "segments": "data/routes/grizzly/segments.geojson",
+        "map": "data/routes/grizzly/map.html",
+        "page": "routes/grizzly.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 15292.0,
+          "percent": 68.0,
+          "distance_mi": 9.5
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 4487.0,
+          "percent": 20.0,
+          "distance_mi": 2.79
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 1928.0,
+          "percent": 9.0,
+          "distance_mi": 1.2
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 508.0,
+          "percent": 2.0,
+          "distance_mi": 0.32
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 175.0,
+          "percent": 1.0,
+          "distance_mi": 0.11
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 22389.0,
+          "percent": 100.0,
+          "distance_mi": 13.91
+        }
+      ]
     },
     {
-      "slug": "shepards",
-      "title": "Shepards",
-      "source": "gpx_data/shepards.gpx",
+      "slug": "tunnel",
+      "title": "Tunnel to Pinehurst",
+      "source": "gpx_data\\tunnel_to_pinehurst.gpx",
       "reverse": false,
       "summary": {
-        "point_count": 236,
-        "segment_count": 235,
-        "distance_m": 7414.99,
-        "distance_mi": 4.61,
-        "elevation_gain_m": 59.6,
-        "elevation_gain_ft": 195.54,
-        "elevation_loss_m": 389.0,
-        "elevation_loss_ft": 1276.25,
-        "max_elevation_m": 375.9,
-        "max_elevation_ft": 1233.27,
+        "point_count": 1296,
+        "segment_count": 1295,
+        "distance_m": 36422.36,
+        "distance_mi": 22.63,
+        "elevation_gain_m": 915.1,
+        "elevation_gain_ft": 3002.3,
+        "elevation_loss_m": 915.1,
+        "elevation_loss_ft": 3002.3,
+        "max_elevation_m": 435.9,
+        "max_elevation_ft": 1430.12,
         "start": {
-          "lat": 37.83573,
-          "lon": -122.1848
+          "lat": 37.84388,
+          "lon": -122.25173
         },
         "end": {
-          "lat": 37.83023,
-          "lon": -122.24735
+          "lat": 37.84338,
+          "lon": -122.25173
         }
       },
       "paths": {
-        "summary": "data/routes/shepards/summary.json",
-        "hazards": "data/routes/shepards/hazards.json",
-        "points": "data/routes/shepards/points.geojson",
-        "segments": "data/routes/shepards/segments.geojson",
-        "page": "routes/shepards.qmd"
-      }
-    },
-    {
-      "slug": "spruce",
-      "title": "Spruce",
-      "source": "gpx_data/spruce.gpx",
-      "reverse": false,
-      "summary": {
-        "point_count": 174,
-        "segment_count": 173,
-        "distance_m": 2794.99,
-        "distance_mi": 1.74,
-        "elevation_gain_m": 0.1,
-        "elevation_gain_ft": 0.33,
-        "elevation_loss_m": 157.4,
-        "elevation_loss_ft": 516.4,
-        "max_elevation_m": 252.9,
-        "max_elevation_ft": 829.72,
-        "start": {
-          "lat": 37.90426,
-          "lon": -122.26953
-        },
-        "end": {
-          "lat": 37.88242,
-          "lon": -122.26617
-        }
+        "summary": "data/routes/tunnel/summary.json",
+        "hazards": "data/routes/tunnel/hazards.json",
+        "points": "data/routes/tunnel/points.geojson",
+        "segments": "data/routes/tunnel/segments.geojson",
+        "map": "data/routes/tunnel/map.html",
+        "page": "routes/tunnel.qmd"
       },
-      "paths": {
-        "summary": "data/routes/spruce/summary.json",
-        "hazards": "data/routes/spruce/hazards.json",
-        "points": "data/routes/spruce/points.geojson",
-        "segments": "data/routes/spruce/segments.geojson",
-        "page": "routes/spruce.qmd"
-      }
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 22585.0,
+          "percent": 62.0,
+          "distance_mi": 14.03
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 6497.0,
+          "percent": 18.0,
+          "distance_mi": 4.04
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 3119.0,
+          "percent": 9.0,
+          "distance_mi": 1.94
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3084.0,
+          "percent": 8.0,
+          "distance_mi": 1.92
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 1137.0,
+          "percent": 3.0,
+          "distance_mi": 0.71
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 36422.0,
+          "percent": 100.0,
+          "distance_mi": 22.63
+        }
+      ]
     }
   ]
 }

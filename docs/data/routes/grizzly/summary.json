@@ -1,0 +1,28 @@
+{
+  "route": {
+    "slug": "grizzly",
+    "title": "Grizzly Peak",
+    "source": "gpx_data\\classic_grizzly.gpx",
+    "reverse": false
+  },
+  "summary": {
+    "point_count": 836,
+    "segment_count": 835,
+    "distance_m": 22389.47,
+    "distance_mi": 13.91,
+    "elevation_gain_m": 445.0,
+    "elevation_gain_ft": 1459.97,
+    "elevation_loss_m": 446.1,
+    "elevation_loss_ft": 1463.58,
+    "max_elevation_m": 509.0,
+    "max_elevation_ft": 1669.95,
+    "start": {
+      "lat": 37.87472,
+      "lon": -122.2835
+    },
+    "end": {
+      "lat": 37.87467,
+      "lon": -122.28396
+    }
+  }
+}

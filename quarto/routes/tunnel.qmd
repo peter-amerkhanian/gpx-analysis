@@ -1,11 +1,11 @@
 ---
-title: "Arlington Gravel Loop"
+title: "Tunnel to Pinehurst"
 ---
-**14.9 miles<br> 1,761.8 ft elevation gain**  
+**22.6 miles<br> 3,002.3 ft elevation gain**  
 
 ## Map
 <iframe
-  src="../data/routes/arlington/map.html"
+  src="../data/routes/tunnel/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
 ></iframe>
@@ -22,28 +22,28 @@ title: "Arlington Gravel Loop"
   <tbody>
     <tr>
       <td>Mellow</td>
-      <td>9.57</td>
-      <td>64.0</td>
+      <td>14.03</td>
+      <td>62.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>3.23</td>
-      <td>22.0</td>
+      <td>4.04</td>
+      <td>18.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.36</td>
+      <td>1.94</td>
       <td>9.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>0.58</td>
-      <td>4.0</td>
+      <td>1.92</td>
+      <td>8.0</td>
     </tr>
     <tr>
       <td>Danger Zone</td>
-      <td>0.15</td>
-      <td>1.0</td>
+      <td>0.71</td>
+      <td>3.0</td>
     </tr>
   </tbody>
 </table>

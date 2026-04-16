@@ -1,49 +1,50 @@
 ---
-title: "GPX Analysis"
+title: "Routes"
+format: dashboard
 ---
 
-```{python}
-from pathlib import Path
-import json
-import pandas as pd
+## Snapshot
 
-manifest = json.loads(Path("data/routes.json").read_text(encoding="utf-8"))
-routes = pd.DataFrame(manifest["routes"])
-route_cards = routes[["title", "source"]].copy()
-route_cards["distance_mi"] = routes["summary"].apply(lambda item: item["distance_mi"])
-route_cards["elevation_loss_ft"] = routes["summary"].apply(lambda item: item["elevation_loss_ft"])
-route_cards["segment_count"] = routes["summary"].apply(lambda item: item["segment_count"])
-```
+### Route Summaries
 
-This project is now oriented around **Quarto documents and dashboards** rather than a custom browser app.
-The Python package remains the analysis layer; Quarto is the publishing layer.
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Route</th>
+      <th>Miles</th>
+      <th>Elevation Gain (ft)</th>
+      <th>Steep Climbing Miles</th>
+      <th>Max Elevation (ft)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="routes/arlington.html">Arlington Gravel Loop</a></td>
+      <td>14.89</td>
+      <td>1761.81</td>
+      <td>0.58</td>
+      <td>913.71</td>
+    </tr>
+    <tr>
+      <td><a href="routes/grizzly.html">Grizzly Peak</a></td>
+      <td>13.91</td>
+      <td>1459.97</td>
+      <td>0.32</td>
+      <td>1669.95</td>
+    </tr>
+    <tr>
+      <td><a href="routes/tunnel.html">Tunnel to Pinehurst</a></td>
+      <td>22.63</td>
+      <td>3002.30</td>
+      <td>1.92</td>
+      <td>1430.12</td>
+    </tr>
+  </tbody>
+</table>
 
-## Working Model
+## Notes
 
-1. GPX inputs live in `gpx_data/`.
-2. Python scripts export route summaries and GeoJSON into `quarto/data/`.
-3. Quarto pages read those static artifacts and render route notes, maps, and summary dashboards.
+### Editorial Direction
 
-## Current Curated Routes
-
-```{python}
-route_cards.rename(
-    columns={
-        "title": "Route",
-        "source": "Source GPX",
-        "distance_mi": "Miles",
-        "elevation_loss_ft": "Descent (ft)",
-        "segment_count": "Segments",
-    }
-)
-```
-
-## Local Authoring Loop
-
-```powershell
-$env:PYTHONPATH='.'
-.\.venv\Scripts\python.exe scripts\build_quarto_data.py
-quarto preview quarto
-```
-
-That keeps the data build separate from the document render, which is the right split for this repo.
+- Use this page for cross-route comparison.
+- Use Route Notes for maps and more route-specific data.

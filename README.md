@@ -1,22 +1,19 @@
 # gpx-analysis
 
-GPX route analysis project with a **Quarto-first publishing workflow**.
+GPX route analysis project with a Python package for analytics, curated route inputs, and a Quarto website for publishing route dashboards.
+
+## What This Repo Contains
+
+- `gpx_analysis/` is the reusable Python package. It holds the analysis, geometry, IO, reporting, physics, and visualization code used to turn GPX tracks into route summaries and map-ready outputs.
+- `gpx_data/` is the curated source data folder. It contains the GPX files that serve as the inputs for route analysis.
+- `quarto/` is the Quarto website source. It contains the homepage, routes comparison dashboard, generated per-route pages, site config, and generated data artifacts under `quarto/data/`.
+- `docs/` is the rendered website output directory. Quarto writes the built site here for publishing.
 
 ## Working Model
 
-- `gpx_analysis/` holds reusable Python analysis code.
-- `gpx_data/` holds curated GPX files.
-- `scripts/build_quarto_data.py` exports route summaries and GeoJSON into `quarto/data/`.
-- `quarto/` holds the source documents and dashboard pages.
-- `docs/` is the rendered output target for Quarto.
-
-## Current Focus
-
-The project is being reoriented away from a custom web app and toward:
-
-- Quarto documents for route notes and explainers
-- Quarto dashboard pages for cross-route comparisons
-- Python scripts for deterministic, precomputed analytics
+1. GPX files live in `gpx_data/`.
+2. `build_quarto_data.py` reads the configured routes, runs the analysis package, and exports summaries, GeoJSON, maps, and generated Quarto pages.
+3. Quarto reads the generated files in `quarto/` and renders the website into `docs/`.
 
 ## Setup
 
@@ -26,14 +23,13 @@ This project uses `uv` for dependency management.
 uv sync
 ```
 
-## Build Quarto Data
+## Build The Quarto Data
 
 ```powershell
-$env:PYTHONPATH='.'
-.\.venv\Scripts\python.exe scripts\build_quarto_data.py
+uv run python build_quarto_data.py
 ```
 
-## Preview Quarto Site
+## Preview The Website
 
 ```powershell
 quarto preview quarto
@@ -41,15 +37,22 @@ quarto preview quarto
 
 ## Project Layout
 
-- `main.ipynb` - exploratory notebook
-- `gpx_analysis/` - reusable analysis package
-- `gpx_data/` - curated GPX inputs
-- `scripts/build_quarto_data.py` - exports data artifacts for Quarto
-- `quarto/` - Quarto source files
-- `docs/` - rendered site output
+- `gpx_analysis/` - installable Python package with the reusable route-analysis logic.
+- `gpx_data/` - GPX route inputs used to build the site data and route pages.
+- `quarto/` - Quarto website source, generated route pages, and route data artifacts.
+- `docs/` - rendered Quarto website output.
+- `build_quarto_data.py` - project build script that analyzes routes and regenerates Quarto content.
+- `main.py` - lightweight top-level script entry point for local experimentation.
+- `main.ipynb` - exploratory notebook for analysis and prototyping.
+- `DRAFT_coast_speed_openstax_explained.qmd` - draft Quarto document that is not part of the main site navigation.
+- `pyproject.toml` - project metadata, dependencies, and packaging configuration.
+- `uv.lock` - locked dependency versions for reproducible installs with `uv`.
+- `.python-version` - local Python version hint for tooling.
+- `.gitignore` - git ignore rules for generated files and local environment artifacts.
+- `.venv/` - local virtual environment created by `uv sync`.
+- `cache/` - local cache or scratch output generated during development.
 
-## Immediate Next Steps
+## Notes
 
-1. Tighten the route-by-route Quarto pages with real narrative.
-2. Add route-specific charts such as elevation profile or hazard bands.
-3. Decide whether GitHub Pages should publish rendered `docs/` or a Quarto render workflow.
+- The Quarto homepage and route dashboard pages are generated artifacts. If you want structural changes to those pages to persist, update `build_quarto_data.py` and then rebuild.
+- The navbar and route pages are generated from the route list in `build_quarto_data.py`, so route additions or removals should start there.

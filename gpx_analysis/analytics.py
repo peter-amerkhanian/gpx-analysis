@@ -7,10 +7,18 @@ def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
     frame = df.copy()
     frame["avg_step_grade"] = frame["step_grade"].rolling(rolling_window).mean()
     frame["avg_bearing_change"] = frame["step_turn"].rolling(rolling_window).mean()
+    # thresholds = {
+    #     "light_descent": -0.049,
+    #     "steep_descent": -0.099,
+    #     "ultra_steep_descent": -0.199,
+    #     "turn": 19.9,
+    #     "climb": 0.049,
+    #     "steep_climb": 0.099,
+    # }
     thresholds = {
         "light_descent": -0.049,
         "steep_descent": -0.099,
-        "ultra_steep_descent": -0.199,
+        "ultra_steep_descent": -0.249,
         "turn": 19.9,
         "climb": 0.049,
         "steep_climb": 0.099,

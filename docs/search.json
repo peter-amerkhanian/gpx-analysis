@@ -1,142 +1,65 @@
 [
   {
-    "objectID": "routes/shepards.html",
-    "href": "routes/shepards.html",
-    "title": "Shepards",
+    "objectID": "routes/tunnel.html",
+    "href": "routes/tunnel.html",
+    "title": "Tunnel to Pinehurst",
     "section": "",
-    "text": "&lt;folium.features.GeoJson at 0x232a24aa2a0&gt;"
+    "text": "22.6 miles 3,002.3 ft elevation gain"
   },
   {
-    "objectID": "routes/shepards.html#summary",
-    "href": "routes/shepards.html#summary",
-    "title": "Shepards",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\n0\nDistance (mi)\n4.61\n\n\n1\nElevation gain (ft)\n195.54\n\n\n2\nElevation loss (ft)\n1276.25\n\n\n3\nMax elevation (ft)\n1233.27\n\n\n4\nSegments\n235.00"
+    "objectID": "routes/tunnel.html#map",
+    "href": "routes/tunnel.html#map",
+    "title": "Tunnel to Pinehurst",
+    "section": "Map",
+    "text": "Map"
   },
   {
-    "objectID": "routes/shepards.html#hazard-mix",
-    "href": "routes/shepards.html#hazard-mix",
-    "title": "Shepards",
-    "section": "Hazard Mix",
-    "text": "Hazard Mix\n\n\n\n\n\n\n\n\n\nhazard\ndistance_m\npercent\ndistance_mi\n\n\n\n\n0\nflat\n3123\n42\n1.94\n\n\n1\nlight_descent\n2500\n34\n1.55\n\n\n2\nsteep_descent\n1126\n15\n0.70\n\n\n3\nturn_on_steep_descent\n258\n3\n0.16\n\n\n4\nclimb\n152\n2\n0.09\n\n\n5\nturn_on_descent\n122\n2\n0.08\n\n\n6\nsteep_climb\n115\n2\n0.07\n\n\n7\nultra_steep_descent\n18\n0\n0.01"
-  },
-  {
-    "objectID": "routes/shepards.html#route-map",
-    "href": "routes/shepards.html#route-map",
-    "title": "Shepards",
-    "section": "Route Map",
-    "text": "Route Map\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+    "objectID": "routes/tunnel.html#data",
+    "href": "routes/tunnel.html#data",
+    "title": "Tunnel to Pinehurst",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.03\n\n\n62.0\n\n\n\n\nClimb\n\n\n4.04\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.94\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.92\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.71\n\n\n3.0"
   },
   {
     "objectID": "routes/arlington.html",
     "href": "routes/arlington.html",
-    "title": "Arlington",
+    "title": "Arlington Gravel Loop",
     "section": "",
-    "text": "&lt;folium.features.GeoJson at 0x136e9ff53a0&gt;"
+    "text": "14.9 miles 1,761.8 ft elevation gain"
   },
   {
-    "objectID": "routes/arlington.html#summary",
-    "href": "routes/arlington.html#summary",
-    "title": "Arlington",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\n0\nDistance (mi)\n3.45\n\n\n1\nElevation gain (ft)\n183.73\n\n\n2\nElevation loss (ft)\n682.41\n\n\n3\nMax elevation (ft)\n869.42\n\n\n4\nSegments\n195.00"
+    "objectID": "routes/arlington.html#map",
+    "href": "routes/arlington.html#map",
+    "title": "Arlington Gravel Loop",
+    "section": "Map",
+    "text": "Map"
   },
   {
-    "objectID": "routes/arlington.html#hazard-mix",
-    "href": "routes/arlington.html#hazard-mix",
-    "title": "Arlington",
-    "section": "Hazard Mix",
-    "text": "Hazard Mix\n\n\n\n\n\n\n\n\n\nhazard\ndistance_m\npercent\ndistance_mi\n\n\n\n\n0\nflat\n2495\n45\n1.55\n\n\n1\nlight_descent\n1830\n33\n1.14\n\n\n2\nclimb\n438\n8\n0.27\n\n\n3\nturn_on_descent\n300\n5\n0.19\n\n\n4\nsteep_descent\n293\n5\n0.18\n\n\n5\nsteep_climb\n166\n3\n0.10\n\n\n6\nturn_on_steep_descent\n25\n0\n0.02"
+    "objectID": "routes/arlington.html#data",
+    "href": "routes/arlington.html#data",
+    "title": "Arlington Gravel Loop",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.57\n\n\n64.0\n\n\n\n\nClimb\n\n\n3.23\n\n\n22.0\n\n\n\n\nDescent\n\n\n1.36\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n0.58\n\n\n4.0\n\n\n\n\nDanger Zone\n\n\n0.15\n\n\n1.0"
   },
   {
-    "objectID": "routes/arlington.html#route-map",
-    "href": "routes/arlington.html#route-map",
-    "title": "Arlington",
-    "section": "Route Map",
-    "text": "Route Map\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GPX Analysis",
+    "objectID": "routes/grizzly.html",
+    "href": "routes/grizzly.html",
+    "title": "Grizzly Peak",
     "section": "",
-    "text": "This project is now oriented around Quarto documents and dashboards rather than a custom browser app. The Python package remains the analysis layer; Quarto is the publishing layer."
+    "text": "13.9 miles 1,460.0 ft elevation gain"
   },
   {
-    "objectID": "index.html#working-model",
-    "href": "index.html#working-model",
-    "title": "GPX Analysis",
-    "section": "Working Model",
-    "text": "Working Model\n\nGPX inputs live in gpx_data/.\nPython scripts export route summaries and GeoJSON into quarto/data/.\nQuarto pages read those static artifacts and render route notes, maps, and summary dashboards."
+    "objectID": "routes/grizzly.html#map",
+    "href": "routes/grizzly.html#map",
+    "title": "Grizzly Peak",
+    "section": "Map",
+    "text": "Map"
   },
   {
-    "objectID": "index.html#current-curated-routes",
-    "href": "index.html#current-curated-routes",
-    "title": "GPX Analysis",
-    "section": "Current Curated Routes",
-    "text": "Current Curated Routes\n\n\n\n\n\n\n\n\n\nRoute\nSource GPX\nMiles\nDescent (ft)\nSegments\n\n\n\n\n0\nArlington\ngpx_data/arlington.gpx\n3.45\n682.41\n195\n\n\n1\nEuclid\ngpx_data/euclid.gpx\n2.26\n611.55\n156\n\n\n2\nShepards\ngpx_data/shepards.gpx\n4.61\n1276.25\n235\n\n\n3\nSpruce\ngpx_data/spruce.gpx\n1.74\n516.40\n173"
-  },
-  {
-    "objectID": "index.html#local-authoring-loop",
-    "href": "index.html#local-authoring-loop",
-    "title": "GPX Analysis",
-    "section": "Local Authoring Loop",
-    "text": "Local Authoring Loop\n$env:PYTHONPATH='.'\n.\\.venv\\Scripts\\python.exe scripts\\build_quarto_data.py\nquarto preview quarto\nThat keeps the data build separate from the document render, which is the right split for this repo."
-  },
-  {
-    "objectID": "routes/euclid.html",
-    "href": "routes/euclid.html",
-    "title": "Euclid",
-    "section": "",
-    "text": "&lt;folium.features.GeoJson at 0x215aacfbec0&gt;"
-  },
-  {
-    "objectID": "routes/euclid.html#summary",
-    "href": "routes/euclid.html#summary",
-    "title": "Euclid",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\n0\nDistance (mi)\n2.26\n\n\n1\nElevation gain (ft)\n36.42\n\n\n2\nElevation loss (ft)\n611.55\n\n\n3\nMax elevation (ft)\n887.47\n\n\n4\nSegments\n156.00"
-  },
-  {
-    "objectID": "routes/euclid.html#hazard-mix",
-    "href": "routes/euclid.html#hazard-mix",
-    "title": "Euclid",
-    "section": "Hazard Mix",
-    "text": "Hazard Mix\n\n\n\n\n\n\n\n\n\nhazard\ndistance_m\npercent\ndistance_mi\n\n\n\n\n0\nflat\n1650\n45\n1.03\n\n\n1\nlight_descent\n1330\n37\n0.83\n\n\n2\nsteep_descent\n398\n11\n0.25\n\n\n3\nturn_on_steep_descent\n97\n3\n0.06\n\n\n4\nturn_on_descent\n80\n2\n0.05\n\n\n5\nclimb\n57\n2\n0.04\n\n\n6\nsteep_climb\n22\n1\n0.01"
-  },
-  {
-    "objectID": "routes/euclid.html#route-map",
-    "href": "routes/euclid.html#route-map",
-    "title": "Euclid",
-    "section": "Route Map",
-    "text": "Route Map\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
-  },
-  {
-    "objectID": "routes/spruce.html",
-    "href": "routes/spruce.html",
-    "title": "Spruce",
-    "section": "",
-    "text": "&lt;folium.features.GeoJson at 0x21e9a4b09e0&gt;"
-  },
-  {
-    "objectID": "routes/spruce.html#summary",
-    "href": "routes/spruce.html#summary",
-    "title": "Spruce",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\n0\nDistance (mi)\n1.74\n\n\n1\nElevation gain (ft)\n0.33\n\n\n2\nElevation loss (ft)\n516.40\n\n\n3\nMax elevation (ft)\n829.72\n\n\n4\nSegments\n173.00"
-  },
-  {
-    "objectID": "routes/spruce.html#hazard-mix",
-    "href": "routes/spruce.html#hazard-mix",
-    "title": "Spruce",
-    "section": "Hazard Mix",
-    "text": "Hazard Mix\n\n\n\n\n\n\n\n\n\nhazard\ndistance_m\npercent\ndistance_mi\n\n\n\n\n0\nlight_descent\n1491\n53\n0.93\n\n\n1\nflat\n1004\n36\n0.62\n\n\n2\nsteep_descent\n212\n8\n0.13\n\n\n3\nturn_on_descent\n88\n3\n0.05"
-  },
-  {
-    "objectID": "routes/spruce.html#route-map",
-    "href": "routes/spruce.html#route-map",
-    "title": "Spruce",
-    "section": "Route Map",
-    "text": "Route Map\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+    "objectID": "routes/grizzly.html#data",
+    "href": "routes/grizzly.html#data",
+    "title": "Grizzly Peak",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.50\n\n\n68.0\n\n\n\n\nClimb\n\n\n2.79\n\n\n20.0\n\n\n\n\nDescent\n\n\n1.20\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n0.32\n\n\n2.0\n\n\n\n\nDanger Zone\n\n\n0.11\n\n\n1.0"
   }
 ]

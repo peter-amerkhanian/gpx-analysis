@@ -1,11 +1,11 @@
 ---
-title: "Arlington Gravel Loop"
+title: "Grizzly Peak"
 ---
-**14.9 miles<br> 1,761.8 ft elevation gain**  
+**13.9 miles<br> 1,460.0 ft elevation gain**  
 
 ## Map
 <iframe
-  src="../data/routes/arlington/map.html"
+  src="../data/routes/grizzly/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
 ></iframe>
@@ -22,27 +22,27 @@ title: "Arlington Gravel Loop"
   <tbody>
     <tr>
       <td>Mellow</td>
-      <td>9.57</td>
-      <td>64.0</td>
+      <td>9.50</td>
+      <td>68.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>3.23</td>
-      <td>22.0</td>
+      <td>2.79</td>
+      <td>20.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.36</td>
+      <td>1.20</td>
       <td>9.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>0.58</td>
-      <td>4.0</td>
+      <td>0.32</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <td>Danger Zone</td>
-      <td>0.15</td>
+      <td>0.11</td>
       <td>1.0</td>
     </tr>
   </tbody>

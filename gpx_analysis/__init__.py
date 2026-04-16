@@ -6,6 +6,10 @@ from .analytics import detect_hazards, analyze_steps
 
 from .viz import (
     DEFAULT_HAZARD_COLORS,
+    DEFAULT_HAZARD_PROFILE,
+    DETAILED_HAZARD_COLORS,
+    SIMPLIFIED_HAZARD_COLORS,
+    apply_hazard_profile,
     google_maps_url,
     make_route_map,
     prepare_segment_display_columns,
@@ -22,9 +26,12 @@ __all__ = [
     "enrich_segments_with_osm_edges",
     "read_simple_gpx",
     "DEFAULT_HAZARD_COLORS",
+    "DEFAULT_HAZARD_PROFILE",
+    "DETAILED_HAZARD_COLORS",
+    "SIMPLIFIED_HAZARD_COLORS",
+    "apply_hazard_profile",
     "google_maps_url",
     "prepare_osm_columns",
     "prepare_segment_display_columns",
     "make_route_map",
-    "add_points_layer"
 ]
