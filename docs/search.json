@@ -1,24 +1,45 @@
 [
   {
-    "objectID": "routes/tunnel.html",
-    "href": "routes/tunnel.html",
-    "title": "Tunnel to Pinehurst",
+    "objectID": "routes/wildwood.html",
+    "href": "routes/wildwood.html",
+    "title": "Wildwood to BBR Loop",
     "section": "",
-    "text": "22.6 miles 3,002.3 ft elevation gain"
+    "text": "17.4 miles 2,245.1 ft elevation gain"
   },
   {
-    "objectID": "routes/tunnel.html#map",
-    "href": "routes/tunnel.html#map",
-    "title": "Tunnel to Pinehurst",
+    "objectID": "routes/wildwood.html#map",
+    "href": "routes/wildwood.html#map",
+    "title": "Wildwood to BBR Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/tunnel.html#data",
-    "href": "routes/tunnel.html#data",
-    "title": "Tunnel to Pinehurst",
+    "objectID": "routes/wildwood.html#data",
+    "href": "routes/wildwood.html#data",
+    "title": "Wildwood to BBR Loop",
     "section": "Data",
-    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.03\n\n\n62.0\n\n\n\n\nClimb\n\n\n4.04\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.94\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.92\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.71\n\n\n3.0"
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n11.09\n\n\n64.0\n\n\n\n\nClimb\n\n\n3.10\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.52\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.32\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.38\n\n\n2.0"
+  },
+  {
+    "objectID": "routes/three_bears.html",
+    "href": "routes/three_bears.html",
+    "title": "Three Bears with Gravel Loop",
+    "section": "",
+    "text": "32.5 miles 3,171.6 ft elevation gain"
+  },
+  {
+    "objectID": "routes/three_bears.html#map",
+    "href": "routes/three_bears.html#map",
+    "title": "Three Bears with Gravel Loop",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/three_bears.html#data",
+    "href": "routes/three_bears.html#data",
+    "title": "Three Bears with Gravel Loop",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n25.53\n\n\n79.0\n\n\n\n\nClimb\n\n\n3.46\n\n\n11.0\n\n\n\n\nDescent\n\n\n1.95\n\n\n6.0\n\n\n\n\nSteep Climb\n\n\n1.36\n\n\n4.0\n\n\n\n\nDanger Zone\n\n\n0.20\n\n\n1.0"
   },
   {
     "objectID": "routes/arlington.html",
@@ -44,22 +65,43 @@
   {
     "objectID": "routes/grizzly.html",
     "href": "routes/grizzly.html",
-    "title": "Grizzly Peak",
+    "title": "Grizzly Peak Loop",
     "section": "",
     "text": "13.9 miles 1,460.0 ft elevation gain"
   },
   {
     "objectID": "routes/grizzly.html#map",
     "href": "routes/grizzly.html#map",
-    "title": "Grizzly Peak",
+    "title": "Grizzly Peak Loop",
     "section": "Map",
     "text": "Map"
   },
   {
     "objectID": "routes/grizzly.html#data",
     "href": "routes/grizzly.html#data",
-    "title": "Grizzly Peak",
+    "title": "Grizzly Peak Loop",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.50\n\n\n68.0\n\n\n\n\nClimb\n\n\n2.79\n\n\n20.0\n\n\n\n\nDescent\n\n\n1.20\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n0.32\n\n\n2.0\n\n\n\n\nDanger Zone\n\n\n0.11\n\n\n1.0"
+  },
+  {
+    "objectID": "routes/tunnel.html",
+    "href": "routes/tunnel.html",
+    "title": "Tunnel to Pinehurst Loop",
+    "section": "",
+    "text": "22.6 miles 3,002.3 ft elevation gain"
+  },
+  {
+    "objectID": "routes/tunnel.html#map",
+    "href": "routes/tunnel.html#map",
+    "title": "Tunnel to Pinehurst Loop",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/tunnel.html#data",
+    "href": "routes/tunnel.html#data",
+    "title": "Tunnel to Pinehurst Loop",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.03\n\n\n62.0\n\n\n\n\nClimb\n\n\n4.04\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.94\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.92\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.71\n\n\n3.0"
   }
 ]

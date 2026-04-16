@@ -14,6 +14,7 @@ format: dashboard
       <th>Miles</th>
       <th>Elevation Gain (ft)</th>
       <th>Steep Climbing Miles</th>
+      <th>Danger Zone Miles</th>
       <th>Max Elevation (ft)</th>
     </tr>
   </thead>
@@ -23,21 +24,40 @@ format: dashboard
       <td>14.89</td>
       <td>1761.81</td>
       <td>0.58</td>
+      <td>0.15</td>
       <td>913.71</td>
     </tr>
     <tr>
-      <td><a href="routes/grizzly.html">Grizzly Peak</a></td>
+      <td><a href="routes/grizzly.html">Grizzly Peak Loop</a></td>
       <td>13.91</td>
       <td>1459.97</td>
       <td>0.32</td>
+      <td>0.11</td>
       <td>1669.95</td>
     </tr>
     <tr>
-      <td><a href="routes/tunnel.html">Tunnel to Pinehurst</a></td>
+      <td><a href="routes/tunnel.html">Tunnel to Pinehurst Loop</a></td>
       <td>22.63</td>
       <td>3002.30</td>
       <td>1.92</td>
+      <td>0.71</td>
       <td>1430.12</td>
+    </tr>
+    <tr>
+      <td><a href="routes/wildwood.html">Wildwood to BBR Loop</a></td>
+      <td>17.41</td>
+      <td>2245.08</td>
+      <td>1.32</td>
+      <td>0.38</td>
+      <td>1468.83</td>
+    </tr>
+    <tr>
+      <td><a href="routes/three_bears.html">Three Bears with Gravel Loop</a></td>
+      <td>32.49</td>
+      <td>3171.59</td>
+      <td>1.36</td>
+      <td>0.20</td>
+      <td>1063.32</td>
     </tr>
   </tbody>
 </table>

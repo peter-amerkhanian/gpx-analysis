@@ -1,7 +1,7 @@
 {
   "route": {
     "slug": "tunnel",
-    "title": "Tunnel to Pinehurst",
+    "title": "Tunnel to Pinehurst Loop",
     "source": "gpx_data\\tunnel_to_pinehurst.gpx",
     "reverse": false
   },

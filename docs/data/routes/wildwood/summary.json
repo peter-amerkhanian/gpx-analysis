@@ -1,0 +1,28 @@
+{
+  "route": {
+    "slug": "wildwood",
+    "title": "Wildwood to BBR Loop",
+    "source": "gpx_data\\Wildwood_to_bbr_loop.gpx",
+    "reverse": false
+  },
+  "summary": {
+    "point_count": 1094,
+    "segment_count": 1093,
+    "distance_m": 28013.15,
+    "distance_mi": 17.41,
+    "elevation_gain_m": 684.3,
+    "elevation_gain_ft": 2245.08,
+    "elevation_loss_m": 684.4,
+    "elevation_loss_ft": 2245.41,
+    "max_elevation_m": 447.7,
+    "max_elevation_ft": 1468.83,
+    "start": {
+      "lat": 37.82895,
+      "lon": -122.26357
+    },
+    "end": {
+      "lat": 37.82971,
+      "lon": -122.2627
+    }
+  }
+}

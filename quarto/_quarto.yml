@@ -14,9 +14,13 @@ website:
       - href: routes/arlington.qmd
         text: Arlington Gravel Loop
       - href: routes/grizzly.qmd
-        text: Grizzly Peak
+        text: Grizzly Peak Loop
       - href: routes/tunnel.qmd
-        text: Tunnel to Pinehurst
+        text: Tunnel to Pinehurst Loop
+      - href: routes/wildwood.qmd
+        text: Wildwood to BBR Loop
+      - href: routes/three_bears.qmd
+        text: Three Bears with Gravel Loop
 format:
   html:
     theme: cosmo

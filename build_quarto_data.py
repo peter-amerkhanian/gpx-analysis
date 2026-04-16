@@ -41,8 +41,10 @@ class RouteConfig:
 
 ROUTES = [
     RouteConfig(slug="arlington", title="Arlington Gravel Loop", source="gpx_data\\arlington_gravel_loop.gpx"),
-    RouteConfig(slug="grizzly", title="Grizzly Peak", source="gpx_data\\classic_grizzly.gpx"),
-    RouteConfig(slug="tunnel", title="Tunnel to Pinehurst", source="gpx_data\\tunnel_to_pinehurst.gpx"),
+    RouteConfig(slug="grizzly", title="Grizzly Peak Loop", source="gpx_data\\classic_grizzly.gpx"),
+    RouteConfig(slug="tunnel", title="Tunnel to Pinehurst Loop", source="gpx_data\\tunnel_to_pinehurst.gpx"),
+    RouteConfig(slug="wildwood", title="Wildwood to BBR Loop", source="gpx_data\\Wildwood_to_bbr_loop.gpx"),
+    RouteConfig(slug="three_bears", title="Three Bears with Gravel Loop", source="gpx_data\\three_bears_with_gravel.gpx")
 ]
 
 
@@ -154,6 +156,14 @@ def write_dashboard_page(routes: list[dict[str, object]], output_path: Path, tit
                         row["distance_mi"]
                         for row in route["hazards"]
                         if row["hazard"] == "steep_climb"
+                    ),
+                    0,
+                ),
+                "Danger Zone Miles": next(
+                    (
+                        row["distance_mi"]
+                        for row in route["hazards"]
+                        if row["hazard"] == "danger_zone"
                     ),
                     0,
                 ),

@@ -80,7 +80,7 @@
     },
     {
       "slug": "grizzly",
-      "title": "Grizzly Peak",
+      "title": "Grizzly Peak Loop",
       "source": "gpx_data\\classic_grizzly.gpx",
       "reverse": false,
       "summary": {
@@ -158,7 +158,7 @@
     },
     {
       "slug": "tunnel",
-      "title": "Tunnel to Pinehurst",
+      "title": "Tunnel to Pinehurst Loop",
       "source": "gpx_data\\tunnel_to_pinehurst.gpx",
       "reverse": false,
       "summary": {
@@ -231,6 +231,162 @@
           "distance_m": 36422.0,
           "percent": 100.0,
           "distance_mi": 22.63
+        }
+      ]
+    },
+    {
+      "slug": "wildwood",
+      "title": "Wildwood to BBR Loop",
+      "source": "gpx_data\\Wildwood_to_bbr_loop.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 1094,
+        "segment_count": 1093,
+        "distance_m": 28013.15,
+        "distance_mi": 17.41,
+        "elevation_gain_m": 684.3,
+        "elevation_gain_ft": 2245.08,
+        "elevation_loss_m": 684.4,
+        "elevation_loss_ft": 2245.41,
+        "max_elevation_m": 447.7,
+        "max_elevation_ft": 1468.83,
+        "start": {
+          "lat": 37.82895,
+          "lon": -122.26357
+        },
+        "end": {
+          "lat": 37.82971,
+          "lon": -122.2627
+        }
+      },
+      "paths": {
+        "summary": "data/routes/wildwood/summary.json",
+        "hazards": "data/routes/wildwood/hazards.json",
+        "points": "data/routes/wildwood/points.geojson",
+        "segments": "data/routes/wildwood/segments.geojson",
+        "map": "data/routes/wildwood/map.html",
+        "page": "routes/wildwood.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 17846.0,
+          "percent": 64.0,
+          "distance_mi": 11.09
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 4993.0,
+          "percent": 18.0,
+          "distance_mi": 3.1
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 2442.0,
+          "percent": 9.0,
+          "distance_mi": 1.52
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 2125.0,
+          "percent": 8.0,
+          "distance_mi": 1.32
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 607.0,
+          "percent": 2.0,
+          "distance_mi": 0.38
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 28013.0,
+          "percent": 100.0,
+          "distance_mi": 17.41
+        }
+      ]
+    },
+    {
+      "slug": "three_bears",
+      "title": "Three Bears with Gravel Loop",
+      "source": "gpx_data\\three_bears_with_gravel.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 1380,
+        "segment_count": 1379,
+        "distance_m": 52294.47,
+        "distance_mi": 32.49,
+        "elevation_gain_m": 966.7,
+        "elevation_gain_ft": 3171.59,
+        "elevation_loss_m": 966.7,
+        "elevation_loss_ft": 3171.59,
+        "max_elevation_m": 324.1,
+        "max_elevation_ft": 1063.32,
+        "start": {
+          "lat": 37.92511,
+          "lon": -122.31685
+        },
+        "end": {
+          "lat": 37.92424,
+          "lon": -122.31615
+        }
+      },
+      "paths": {
+        "summary": "data/routes/three_bears/summary.json",
+        "hazards": "data/routes/three_bears/hazards.json",
+        "points": "data/routes/three_bears/points.geojson",
+        "segments": "data/routes/three_bears/segments.geojson",
+        "map": "data/routes/three_bears/map.html",
+        "page": "routes/three_bears.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 41082.0,
+          "percent": 79.0,
+          "distance_mi": 25.53
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 5575.0,
+          "percent": 11.0,
+          "distance_mi": 3.46
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 3140.0,
+          "percent": 6.0,
+          "distance_mi": 1.95
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 2184.0,
+          "percent": 4.0,
+          "distance_mi": 1.36
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 314.0,
+          "percent": 1.0,
+          "distance_mi": 0.2
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 52294.0,
+          "percent": 100.0,
+          "distance_mi": 32.49
         }
       ]
     }

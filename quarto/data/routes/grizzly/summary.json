@@ -1,7 +1,7 @@
 {
   "route": {
     "slug": "grizzly",
-    "title": "Grizzly Peak",
+    "title": "Grizzly Peak Loop",
     "source": "gpx_data\\classic_grizzly.gpx",
     "reverse": false
   },
