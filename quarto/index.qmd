@@ -14,7 +14,7 @@ format: dashboard
       <th>Miles</th>
       <th>Elevation Gain (ft)</th>
       <th>Steep Climbing Miles</th>
-      <th>Danger Zone Miles</th>
+      <th>Total Climbing Miles</th>
       <th>Max Elevation (ft)</th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@ format: dashboard
       <td>14.89</td>
       <td>1761.81</td>
       <td>0.58</td>
-      <td>0.15</td>
+      <td>3.81</td>
       <td>913.71</td>
     </tr>
     <tr>
@@ -32,7 +32,7 @@ format: dashboard
       <td>13.91</td>
       <td>1459.97</td>
       <td>0.32</td>
-      <td>0.11</td>
+      <td>3.11</td>
       <td>1669.95</td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@ format: dashboard
       <td>22.63</td>
       <td>3002.30</td>
       <td>1.92</td>
-      <td>0.71</td>
+      <td>5.96</td>
       <td>1430.12</td>
     </tr>
     <tr>
@@ -48,7 +48,7 @@ format: dashboard
       <td>17.41</td>
       <td>2245.08</td>
       <td>1.32</td>
-      <td>0.38</td>
+      <td>4.42</td>
       <td>1468.83</td>
     </tr>
     <tr>
@@ -56,7 +56,7 @@ format: dashboard
       <td>32.49</td>
       <td>3171.59</td>
       <td>1.36</td>
-      <td>0.20</td>
+      <td>4.82</td>
       <td>1063.32</td>
     </tr>
   </tbody>

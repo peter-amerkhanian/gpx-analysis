@@ -6,6 +6,7 @@ import geopandas as gpd
 import numpy as np
 import pandas as pd
 import folium
+from folium.plugins import Fullscreen
 
 
 DETAILED_HAZARD_COLORS = {
@@ -180,6 +181,12 @@ def make_route_map(
     style_kwds={"weight": 6},
     escape=False
     )
+    Fullscreen(
+        position="topleft",
+        title="Fullscreen",
+        title_cancel="Exit fullscreen",
+        force_separate_button=True,
+    ).add_to(m)
     third = int(len(frame) / 8)
     start = frame.iloc[0].geometry.coords[0]
 

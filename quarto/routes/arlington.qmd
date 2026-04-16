@@ -8,6 +8,7 @@ title: "Arlington Gravel Loop"
   src="../data/routes/arlington/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allowfullscreen
 ></iframe>
 
 ## Data

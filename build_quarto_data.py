@@ -118,6 +118,7 @@ title: "{route.title}"
   src="../data/routes/{route.slug}/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allowfullscreen
 ></iframe>
 
 ## Data
@@ -159,13 +160,10 @@ def write_dashboard_page(routes: list[dict[str, object]], output_path: Path, tit
                     ),
                     0,
                 ),
-                "Danger Zone Miles": next(
-                    (
-                        row["distance_mi"]
-                        for row in route["hazards"]
-                        if row["hazard"] == "danger_zone"
-                    ),
-                    0,
+                "Total Climbing Miles": sum(
+                    row["distance_mi"]
+                    for row in route["hazards"]
+                    if row["hazard"] in {"steep_climb", "climb"}
                 ),
                 "Max Elevation (ft)": route["summary"]["max_elevation_ft"]
             }

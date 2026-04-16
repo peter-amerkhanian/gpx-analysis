@@ -8,6 +8,7 @@ title: "Three Bears with Gravel Loop"
   src="../data/routes/three_bears/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allowfullscreen
 ></iframe>
 
 ## Data
