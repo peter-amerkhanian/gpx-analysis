@@ -235,6 +235,84 @@
       ]
     },
     {
+      "slug": "spruce_to_euclid",
+      "title": "Spruce up, Euclid Down",
+      "source": "gpx_data\\spruce_up_euclid_down.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 780,
+        "segment_count": 779,
+        "distance_m": 18647.9,
+        "distance_mi": 11.59,
+        "elevation_gain_m": 323.8,
+        "elevation_gain_ft": 1062.34,
+        "elevation_loss_m": 326.0,
+        "elevation_loss_ft": 1069.55,
+        "max_elevation_m": 337.9,
+        "max_elevation_ft": 1108.6,
+        "start": {
+          "lat": 37.87458,
+          "lon": -122.28393
+        },
+        "end": {
+          "lat": 37.85289,
+          "lon": -122.26781
+        }
+      },
+      "paths": {
+        "summary": "data/routes/spruce_to_euclid/summary.json",
+        "hazards": "data/routes/spruce_to_euclid/hazards.json",
+        "points": "data/routes/spruce_to_euclid/points.geojson",
+        "segments": "data/routes/spruce_to_euclid/segments.geojson",
+        "map": "data/routes/spruce_to_euclid/map.html",
+        "page": "routes/spruce_to_euclid.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 13966.0,
+          "percent": 75.0,
+          "distance_mi": 8.68
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 3371.0,
+          "percent": 18.0,
+          "distance_mi": 2.09
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 691.0,
+          "percent": 4.0,
+          "distance_mi": 0.43
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 448.0,
+          "percent": 2.0,
+          "distance_mi": 0.28
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 172.0,
+          "percent": 1.0,
+          "distance_mi": 0.11
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 18648.0,
+          "percent": 100.0,
+          "distance_mi": 11.59
+        }
+      ]
+    },
+    {
       "slug": "wildwood",
       "title": "Wildwood to BBR Loop",
       "source": "gpx_data\\Wildwood_to_bbr_loop.gpx",
@@ -387,6 +465,84 @@
           "distance_m": 52294.0,
           "percent": 100.0,
           "distance_mi": 32.49
+        }
+      ]
+    },
+    {
+      "slug": "redwood",
+      "title": "Redwood -- San Leandro to Macarthur BART",
+      "source": "gpx_data\\redwood_to_macarthur.gpx",
+      "reverse": false,
+      "summary": {
+        "point_count": 1320,
+        "segment_count": 1319,
+        "distance_m": 39506.21,
+        "distance_mi": 24.55,
+        "elevation_gain_m": 805.0,
+        "elevation_gain_ft": 2641.08,
+        "elevation_loss_m": 804.9,
+        "elevation_loss_ft": 2640.75,
+        "max_elevation_m": 350.1,
+        "max_elevation_ft": 1148.62,
+        "start": {
+          "lat": 37.72499,
+          "lon": -122.15587
+        },
+        "end": {
+          "lat": 37.82951,
+          "lon": -122.26642
+        }
+      },
+      "paths": {
+        "summary": "data/routes/redwood/summary.json",
+        "hazards": "data/routes/redwood/hazards.json",
+        "points": "data/routes/redwood/points.geojson",
+        "segments": "data/routes/redwood/segments.geojson",
+        "map": "data/routes/redwood/map.html",
+        "page": "routes/redwood.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 27644.0,
+          "percent": 70.0,
+          "distance_mi": 17.18
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 6872.0,
+          "percent": 17.0,
+          "distance_mi": 4.27
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 2476.0,
+          "percent": 6.0,
+          "distance_mi": 1.54
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 1911.0,
+          "percent": 5.0,
+          "distance_mi": 1.19
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 604.0,
+          "percent": 2.0,
+          "distance_mi": 0.38
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 39506.0,
+          "percent": 100.0,
+          "distance_mi": 24.55
         }
       ]
     }

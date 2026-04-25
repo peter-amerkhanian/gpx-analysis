@@ -42,6 +42,27 @@
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n25.53\n\n\n79.0\n\n\n\n\nClimb\n\n\n3.46\n\n\n11.0\n\n\n\n\nDescent\n\n\n1.95\n\n\n6.0\n\n\n\n\nSteep Climb\n\n\n1.36\n\n\n4.0\n\n\n\n\nDanger Zone\n\n\n0.20\n\n\n1.0"
   },
   {
+    "objectID": "routes/redwood.html",
+    "href": "routes/redwood.html",
+    "title": "Redwood – San Leandro to Macarthur BART",
+    "section": "",
+    "text": "24.6 miles 2,641.1 ft elevation gain"
+  },
+  {
+    "objectID": "routes/redwood.html#map",
+    "href": "routes/redwood.html#map",
+    "title": "Redwood – San Leandro to Macarthur BART",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/redwood.html#data",
+    "href": "routes/redwood.html#data",
+    "title": "Redwood – San Leandro to Macarthur BART",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n17.18\n\n\n70.0\n\n\n\n\nClimb\n\n\n4.27\n\n\n17.0\n\n\n\n\nDescent\n\n\n1.54\n\n\n6.0\n\n\n\n\nSteep Climb\n\n\n1.19\n\n\n5.0\n\n\n\n\nDanger Zone\n\n\n0.38\n\n\n2.0"
+  },
+  {
     "objectID": "routes/arlington.html",
     "href": "routes/arlington.html",
     "title": "Arlington Gravel Loop",
@@ -82,6 +103,27 @@
     "title": "Grizzly Peak Loop",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.50\n\n\n68.0\n\n\n\n\nClimb\n\n\n2.79\n\n\n20.0\n\n\n\n\nDescent\n\n\n1.20\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n0.32\n\n\n2.0\n\n\n\n\nDanger Zone\n\n\n0.11\n\n\n1.0"
+  },
+  {
+    "objectID": "routes/spruce_to_euclid.html",
+    "href": "routes/spruce_to_euclid.html",
+    "title": "Spruce up, Euclid Down",
+    "section": "",
+    "text": "11.6 miles 1,062.3 ft elevation gain"
+  },
+  {
+    "objectID": "routes/spruce_to_euclid.html#map",
+    "href": "routes/spruce_to_euclid.html#map",
+    "title": "Spruce up, Euclid Down",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/spruce_to_euclid.html#data",
+    "href": "routes/spruce_to_euclid.html#data",
+    "title": "Spruce up, Euclid Down",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n8.68\n\n\n75.0\n\n\n\n\nClimb\n\n\n2.09\n\n\n18.0\n\n\n\n\nDescent\n\n\n0.43\n\n\n4.0\n\n\n\n\nSteep Climb\n\n\n0.28\n\n\n2.0\n\n\n\n\nDanger Zone\n\n\n0.11\n\n\n1.0"
   },
   {
     "objectID": "routes/tunnel.html",

@@ -43,8 +43,10 @@ ROUTES = [
     RouteConfig(slug="arlington", title="Arlington Gravel Loop", source="gpx_data\\arlington_gravel_loop.gpx"),
     RouteConfig(slug="grizzly", title="Grizzly Peak Loop", source="gpx_data\\classic_grizzly.gpx"),
     RouteConfig(slug="tunnel", title="Tunnel to Pinehurst Loop", source="gpx_data\\tunnel_to_pinehurst.gpx"),
+    RouteConfig(slug="spruce_to_euclid", title="Spruce up, Euclid Down", source="gpx_data\\spruce_up_euclid_down.gpx"),
     RouteConfig(slug="wildwood", title="Wildwood to BBR Loop", source="gpx_data\\Wildwood_to_bbr_loop.gpx"),
-    RouteConfig(slug="three_bears", title="Three Bears with Gravel Loop", source="gpx_data\\three_bears_with_gravel.gpx")
+    RouteConfig(slug="three_bears", title="Three Bears with Gravel Loop", source="gpx_data\\three_bears_with_gravel.gpx"),
+    RouteConfig(slug="redwood", title="Redwood -- San Leandro to Macarthur BART", source="gpx_data\\redwood_to_macarthur.gpx")
 ]
 
 

@@ -44,6 +44,14 @@ format: dashboard
       <td>1430.12</td>
     </tr>
     <tr>
+      <td><a href="routes/spruce_to_euclid.html">Spruce up, Euclid Down</a></td>
+      <td>11.59</td>
+      <td>1062.34</td>
+      <td>0.28</td>
+      <td>2.37</td>
+      <td>1108.60</td>
+    </tr>
+    <tr>
       <td><a href="routes/wildwood.html">Wildwood to BBR Loop</a></td>
       <td>17.41</td>
       <td>2245.08</td>
@@ -58,6 +66,14 @@ format: dashboard
       <td>1.36</td>
       <td>4.82</td>
       <td>1063.32</td>
+    </tr>
+    <tr>
+      <td><a href="routes/redwood.html">Redwood -- San Leandro to Macarthur BART</a></td>
+      <td>24.55</td>
+      <td>2641.08</td>
+      <td>1.19</td>
+      <td>5.46</td>
+      <td>1148.62</td>
     </tr>
   </tbody>
 </table>

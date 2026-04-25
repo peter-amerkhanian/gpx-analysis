@@ -17,10 +17,14 @@ website:
         text: Grizzly Peak Loop
       - href: routes/tunnel.qmd
         text: Tunnel to Pinehurst Loop
+      - href: routes/spruce_to_euclid.qmd
+        text: Spruce up, Euclid Down
       - href: routes/wildwood.qmd
         text: Wildwood to BBR Loop
       - href: routes/three_bears.qmd
         text: Three Bears with Gravel Loop
+      - href: routes/redwood.qmd
+        text: Redwood -- San Leandro to Macarthur BART
 format:
   html:
     theme: cosmo
