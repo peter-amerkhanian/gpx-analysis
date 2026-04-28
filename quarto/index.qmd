@@ -3,80 +3,236 @@ title: "Routes"
 format: dashboard
 ---
 
+<style>
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.mobile-route-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.mobile-route-controls {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.mobile-route-control {
+  min-width: 0;
+}
+
+.mobile-route-controls label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.mobile-route-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.85rem;
+  padding: 0.95rem 1rem 0.85rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-route-title {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.mobile-route-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mobile-route-title a:hover {
+  text-decoration: underline;
+}
+
+.mobile-route-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 0.9rem;
+}
+
+.mobile-route-metrics p {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.mobile-route-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+</style>
+
 ## Snapshot
 
 ### Route Summaries
 
-<table class="dataframe table table-striped table-sm">
-  <thead>
-    <tr style="text-align: left;">
-      <th>Route</th>
-      <th>Miles</th>
-      <th>Elevation Gain (ft)</th>
-      <th>Steep Climbing Miles</th>
-      <th>Total Climbing Miles</th>
-      <th>Max Elevation (ft)</th>
-    </tr>
-  </thead>
+::: {.desktop-only}
+```{=html}
+<!--| quarto-html-table-processing: none -->
+<table id="itables_e4349c2e_2aad_47a2_b2f8_1618bb7fe4db">
   <tbody>
     <tr>
-      <td><a href="routes/arlington.html">Arlington Gravel Loop</a></td>
-      <td>14.89</td>
-      <td>1761.81</td>
-      <td>0.58</td>
-      <td>3.81</td>
-      <td>913.71</td>
-    </tr>
-    <tr>
-      <td><a href="routes/grizzly.html">Grizzly Peak Loop</a></td>
-      <td>13.91</td>
-      <td>1459.97</td>
-      <td>0.32</td>
-      <td>3.11</td>
-      <td>1669.95</td>
-    </tr>
-    <tr>
-      <td><a href="routes/tunnel.html">Tunnel to Pinehurst Loop</a></td>
-      <td>22.63</td>
-      <td>3002.30</td>
-      <td>1.92</td>
-      <td>5.96</td>
-      <td>1430.12</td>
-    </tr>
-    <tr>
-      <td><a href="routes/spruce_to_euclid.html">Spruce up, Euclid Down</a></td>
-      <td>11.59</td>
-      <td>1062.34</td>
-      <td>0.28</td>
-      <td>2.37</td>
-      <td>1108.60</td>
-    </tr>
-    <tr>
-      <td><a href="routes/wildwood.html">Wildwood to BBR Loop</a></td>
-      <td>17.41</td>
-      <td>2245.08</td>
-      <td>1.32</td>
-      <td>4.42</td>
-      <td>1468.83</td>
-    </tr>
-    <tr>
-      <td><a href="routes/three_bears.html">Three Bears with Gravel Loop</a></td>
-      <td>32.49</td>
-      <td>3171.59</td>
-      <td>1.36</td>
-      <td>4.82</td>
-      <td>1063.32</td>
-    </tr>
-    <tr>
-      <td><a href="routes/redwood.html">Redwood -- San Leandro to Macarthur BART</a></td>
-      <td>24.55</td>
-      <td>2641.08</td>
-      <td>1.19</td>
-      <td>5.46</td>
-      <td>1148.62</td>
+      <td style="vertical-align:middle; text-align:left">
+        Loading ITables v2.7.3 from the internet...
+        (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)
+      </td>
     </tr>
   </tbody>
 </table>
+<link href="https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_e4349c2e_2aad_47a2_b2f8_1618bb7fe4db:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        let dt_args = {
+          "classes": ["display", "nowrap", "compact"],
+          "columnControl": ["order"],
+          "columnDefs": [{"render": "function (data, type, row, meta) { return type === 'sort' || type === 'type' ? data[1] : data[0]; }", "targets": [2, 3, 4, 5]}],
+          "data_json": "[[\"<a href=\\\"routes/arlington.html\\\">Arlington Gravel Loop</a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1761.81\", 1761.81], [\"0.58\", 0.58], [\"0.15\", 0.15]], [\"<a href=\\\"routes/three_bears.html\\\">Three Bears with Gravel Loop</a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3171.59\", 3171.59], [\"1.36\", 1.36], [\"0.20\", 0.2]], [\"<a href=\\\"routes/wildwood.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2245.08\", 2245.08], [\"1.32\", 1.32], [\"0.38\", 0.38]], [\"<a href=\\\"routes/spruce_to_euclid.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1062.34\", 1062.34], [\"0.28\", 0.28], [\"0.11\", 0.11]], [\"<a href=\\\"routes/grizzly.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1459.97\", 1459.97], [\"0.32\", 0.32], [\"0.11\", 0.11]], [\"<a href=\\\"routes/tunnel.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3002.30\", 3002.3], [\"1.92\", 1.92], [\"0.71\", 0.71]], [\"<a href=\\\"routes/redwood.html\\\">Redwood -- San Leandro to Macarthur BART</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2641.08\", 2641.08], [\"1.19\", 1.19], [\"0.38\", 0.38]]]",
+          "keys_to_be_evaluated": [["columnDefs", 0, "render"]],
+          "layout": {"bottomEnd": "paging", "bottomStart": "info", "topEnd": null, "topStart": "search"},
+          "order": [[3, "desc"]],
+          "paging": false,
+          "scrollCollapse": true,
+          "scrollY": "72vh",
+          "style": {"width": "100%"},
+          "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Route</th>\n      <th>BART</th>\n      <th>Miles</th>\n      <th>Elevation Gain (ft)</th>\n      <th>Steep Climbing Miles</th>\n      <th>Dangerous Descent Miles</th>\n    </tr>\n  </thead></table>",
+          "text_in_header_can_be_selected": true
+        };
+        new ITable(table, dt_args);
+    });
+</script>
+
+```
+:::
+
+::: {.mobile-only}
+```{=html}
+<div class="mobile-route-controls">
+<div class="mobile-route-control">
+<label for="mobile-route-sort">Sort routes</label>
+<select id="mobile-route-sort" class="form-select">
+<option value="miles_asc">Miles: shortest</option>
+<option value="miles_desc">Miles: longest</option>
+<option value="elev_asc">Elevation: lowest</option>
+<option value="elev_desc">Elevation: highest</option>
+</select>
+</div>
+<div class="mobile-route-control">
+<label for="mobile-route-bart">BART station</label>
+<select id="mobile-route-bart" class="form-select">
+<option value="">All stations</option>
+<option value="El Cerrito del Norte">El Cerrito del Norte</option>
+<option value="MacArthur">MacArthur</option>
+<option value="North Berkeley">North Berkeley</option>
+<option value="Rockridge">Rockridge</option>
+<option value="San Leandro">San Leandro</option>
+</select>
+</div>
+</div>
+<div class="mobile-route-grid" id="mobile-route-grid">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="14.89" data-elevation="1761.81">
+<p class="mobile-route-title"><a href="routes/arlington.html">Arlington Gravel Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>14.89</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>1761.81 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>0.58 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.15 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
+<p class="mobile-route-title"><a href="routes/three_bears.html">Three Bears with Gravel Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>32.49</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3171.59 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.36 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.2 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="17.41" data-elevation="2245.08">
+<p class="mobile-route-title"><a href="routes/wildwood.html">Wildwood to BBR Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
+<p><span class="mobile-route-label">Miles</span><br>17.41</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>2245.08 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.32 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.38 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1062.34">
+<p class="mobile-route-title"><a href="routes/spruce_to_euclid.html">Spruce up, Euclid Down</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
+<p><span class="mobile-route-label">Miles</span><br>11.59</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>1062.34 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>0.28 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.11 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1459.97">
+<p class="mobile-route-title"><a href="routes/grizzly.html">Grizzly Peak Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
+<p><span class="mobile-route-label">Miles</span><br>13.91</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>1459.97 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>0.32 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.11 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="Rockridge" data-miles="22.63" data-elevation="3002.30">
+<p class="mobile-route-title"><a href="routes/tunnel.html">Tunnel to Pinehurst Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>Rockridge</p>
+<p><span class="mobile-route-label">Miles</span><br>22.63</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3002.3 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.92 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.71 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2641.08">
+<p class="mobile-route-title"><a href="routes/redwood.html">Redwood -- San Leandro to Macarthur BART</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>San Leandro</p>
+<p><span class="mobile-route-label">Miles</span><br>24.55</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>2641.08 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.19 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.38 mi</p>
+</div>
+</article>
+</div>
+```
+:::
 
 ## Notes
 
@@ -84,3 +240,38 @@ format: dashboard
 
 - Use this page for cross-route comparison.
 - Use Route Notes for maps and more route-specific data.
+
+```{=html}
+<script>
+window.addEventListener("load", function () {
+  const sortSelect = document.getElementById("mobile-route-sort");
+  const bartSelect = document.getElementById("mobile-route-bart");
+  const grid = document.getElementById("mobile-route-grid");
+  if (!sortSelect || !bartSelect || !grid) {
+    return;
+  }
+
+  const sorters = {
+    miles_asc: (a, b) => Number(a.dataset.miles) - Number(b.dataset.miles),
+    miles_desc: (a, b) => Number(b.dataset.miles) - Number(a.dataset.miles),
+    elev_asc: (a, b) => Number(a.dataset.elevation) - Number(b.dataset.elevation),
+    elev_desc: (a, b) => Number(b.dataset.elevation) - Number(a.dataset.elevation)
+  };
+
+  function applyMobileControls() {
+    const cards = Array.from(grid.querySelectorAll(".mobile-route-card"));
+    const bart = bartSelect.value;
+    cards.forEach((card) => {
+      const visible = !bart || card.dataset.bart === bart;
+      card.style.display = visible ? "" : "none";
+    });
+    const sorter = sorters[sortSelect.value] || sorters.miles_asc;
+    cards.sort(sorter);
+    cards.forEach((card) => grid.appendChild(card));
+  }
+
+  sortSelect.addEventListener("change", applyMobileControls);
+  bartSelect.addEventListener("change", applyMobileControls);
+});
+</script>
+```

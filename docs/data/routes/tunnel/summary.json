@@ -23,6 +23,7 @@
     "end": {
       "lat": 37.84338,
       "lon": -122.25173
-    }
+    },
+    "bart_station": "Rockridge"
   }
 }

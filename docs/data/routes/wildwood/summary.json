@@ -23,6 +23,7 @@
     "end": {
       "lat": 37.82971,
       "lon": -122.2627
-    }
+    },
+    "bart_station": "MacArthur"
   }
 }

@@ -23,6 +23,7 @@
     "end": {
       "lat": 37.87467,
       "lon": -122.28396
-    }
+    },
+    "bart_station": "North Berkeley"
   }
 }

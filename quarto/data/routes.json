@@ -23,7 +23,8 @@
         "end": {
           "lat": 37.95144,
           "lon": -122.32191
-        }
+        },
+        "bart_station": "El Cerrito del Norte"
       },
       "paths": {
         "summary": "data/routes/arlington/summary.json",
@@ -101,7 +102,8 @@
         "end": {
           "lat": 37.87467,
           "lon": -122.28396
-        }
+        },
+        "bart_station": "North Berkeley"
       },
       "paths": {
         "summary": "data/routes/grizzly/summary.json",
@@ -179,7 +181,8 @@
         "end": {
           "lat": 37.84338,
           "lon": -122.25173
-        }
+        },
+        "bart_station": "Rockridge"
       },
       "paths": {
         "summary": "data/routes/tunnel/summary.json",
@@ -257,7 +260,8 @@
         "end": {
           "lat": 37.85289,
           "lon": -122.26781
-        }
+        },
+        "bart_station": "North Berkeley"
       },
       "paths": {
         "summary": "data/routes/spruce_to_euclid/summary.json",
@@ -335,7 +339,8 @@
         "end": {
           "lat": 37.82971,
           "lon": -122.2627
-        }
+        },
+        "bart_station": "MacArthur"
       },
       "paths": {
         "summary": "data/routes/wildwood/summary.json",
@@ -413,7 +418,8 @@
         "end": {
           "lat": 37.92424,
           "lon": -122.31615
-        }
+        },
+        "bart_station": "El Cerrito del Norte"
       },
       "paths": {
         "summary": "data/routes/three_bears/summary.json",
@@ -491,7 +497,8 @@
         "end": {
           "lat": 37.82951,
           "lon": -122.26642
-        }
+        },
+        "bart_station": "San Leandro"
       },
       "paths": {
         "summary": "data/routes/redwood/summary.json",

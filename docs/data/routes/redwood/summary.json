@@ -23,6 +23,7 @@
     "end": {
       "lat": 37.82951,
       "lon": -122.26642
-    }
+    },
+    "bart_station": "San Leandro"
   }
 }

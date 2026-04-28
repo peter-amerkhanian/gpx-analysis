@@ -23,6 +23,7 @@
     "end": {
       "lat": 37.92424,
       "lon": -122.31615
-    }
+    },
+    "bart_station": "El Cerrito del Norte"
   }
 }

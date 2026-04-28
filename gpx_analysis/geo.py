@@ -1,9 +1,38 @@
 import geopandas as gpd
 import osmnx as ox
 import pandas as pd
+from pathlib import Path
+from functools import lru_cache
 from shapely.geometry import LineString
+from typing import cast
+import fiona
 
 PROJECTED_CRS = 3857
+BART_KML_PATH = Path(__file__).resolve().parent.parent / "data" / "bart_stations.kml"
+BART_STATION_LAYER = "BART Station"
+
+
+@lru_cache(maxsize=1)
+def _load_bart_stations() -> gpd.GeoDataFrame:
+    """Load BART station points from the repo KML in projected CRS."""
+    fiona.drvsupport.supported_drivers.setdefault("KML", "rw")
+    stations = gpd.read_file(BART_KML_PATH, driver="KML", layer=BART_STATION_LAYER)
+    return stations.to_crs(PROJECTED_CRS)
+
+
+def add_bart_station(gdf: gpd.GeoDataFrame, step: int = 0) -> str:
+    """Return the nearest BART station name to the selected route step."""
+    if gdf.crs is None:
+        raise ValueError("gdf must have a CRS.")
+    if gdf.empty:
+        raise ValueError("gdf must not be empty.")
+    if not (-len(gdf) <= step < len(gdf)):
+        raise IndexError(f"step {step} is out of bounds for gdf with {len(gdf)} rows.")
+
+    route_geometry = gdf.to_crs(PROJECTED_CRS).geometry.iloc[step]
+    stations = _load_bart_stations()
+    nearest_station = stations.loc[stations.geometry.distance(route_geometry).idxmin(), "Name"]
+    return cast(str, nearest_station)
 
 def points_to_segments(gdf: gpd.GeoDataFrame, lon: str = "lon", lat: str = "lat", sort_col: str | None = None) -> gpd.GeoDataFrame:
     """Convert ordered point rows into consecutive line segments in lon/lat space."""
