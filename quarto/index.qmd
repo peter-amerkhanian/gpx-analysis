@@ -95,7 +95,7 @@ format: dashboard
 ::: {.desktop-only}
 ```{=html}
 <!--| quarto-html-table-processing: none -->
-<table id="itables_e4349c2e_2aad_47a2_b2f8_1618bb7fe4db">
+<table id="itables_ff97bd28_209e_4e72_84e8_8a9189f6d185">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left">
@@ -109,7 +109,7 @@ format: dashboard
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_e4349c2e_2aad_47a2_b2f8_1618bb7fe4db:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ff97bd28_209e_4e72_84e8_8a9189f6d185:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -233,13 +233,6 @@ format: dashboard
 </div>
 ```
 :::
-
-## Notes
-
-### Editorial Direction
-
-- Use this page for cross-route comparison.
-- Use Route Notes for maps and more route-specific data.
 
 ```{=html}
 <script>

@@ -309,13 +309,6 @@ format: dashboard
 {mobile_summary_cards(routes)}
 :::
 
-## Notes
-
-### Editorial Direction
-
-- Use this page for cross-route comparison.
-- Use Route Notes for maps and more route-specific data.
-
 ```{{=html}}
 <script>
 window.addEventListener("load", function () {{
