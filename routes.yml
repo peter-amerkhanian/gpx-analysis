@@ -1,0 +1,50 @@
+routes:
+  # Required: slug, source.
+  # Optional: title, reverse, links.strava_effort, media.hero_image, media.gallery.
+  # Image paths are relative to quarto/, so a hero image might be images/routes/grizzly/hero.jpg.
+  - slug: arlington-gravel-loop
+    title: Arlington Gravel Loop
+    source: gpx_data/arlington_gravel_loop.gpx
+    links:
+      strava_effort: https://www.strava.com/activities/18162634293
+
+  - slug: grizzly-peak-loop
+    title: Grizzly Peak Loop
+    source: gpx_data/classic_grizzly.gpx
+    # links:
+    #   strava_effort: https://www.strava.com/activities/123456789
+    # media:
+    #   hero_image: images/routes/grizzly-peak-loop/hero.jpg
+    #   gallery:
+    #     - images/routes/grizzly-peak-loop/1.jpg
+    #     - images/routes/grizzly-peak-loop/2.jpg
+
+  - slug: tunnel-pinehurst-loop
+    title: Tunnel to Pinehurst Loop
+    source: gpx_data/tunnel_to_pinehurst.gpx
+
+  - slug: spruce-up-euclid-down
+    title: Spruce up, Euclid Down
+    source: gpx_data/spruce_up_euclid_down.gpx
+
+  - slug: wildwood-bbr-loop
+    title: Wildwood to BBR Loop
+    source: gpx_data/Wildwood_to_bbr_loop.gpx
+
+  - slug: tg-bbr-loop
+    title: Trestle Glen to BBR Loop
+    source: gpx_data/Trestle Glen to BBR Loop.gpx
+
+  - slug: tunnel-to-claremont-loop
+    title: Tunnel Road to Claremont Loop
+    source: gpx_data/Tunnel to Claremont Loop.gpx
+
+  - slug: three-bears-gravel-loop
+    title: Three Bears + Wildcat Canyon Loop
+    source: gpx_data/three_bears_with_gravel.gpx
+
+  - slug: redwood-san-leandro-macarthur-bart
+    title: Redwood Road, San Lorenzo to Temescal
+    source: gpx_data/redwood_to_macarthur.gpx
+    links:
+      strava_effort: https://www.strava.com/activities/18234048917

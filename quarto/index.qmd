@@ -95,7 +95,7 @@ format: dashboard
 ::: {.desktop-only}
 ```{=html}
 <!--| quarto-html-table-processing: none -->
-<table id="itables_ff97bd28_209e_4e72_84e8_8a9189f6d185">
+<table id="itables_bcb6d209_6a63_48a5_b909_a741874aae7d">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left">
@@ -109,7 +109,7 @@ format: dashboard
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_ff97bd28_209e_4e72_84e8_8a9189f6d185:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_bcb6d209_6a63_48a5_b909_a741874aae7d:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -117,10 +117,10 @@ format: dashboard
           "classes": ["display", "nowrap", "compact"],
           "columnControl": ["order"],
           "columnDefs": [{"render": "function (data, type, row, meta) { return type === 'sort' || type === 'type' ? data[1] : data[0]; }", "targets": [2, 3, 4, 5]}],
-          "data_json": "[[\"<a href=\\\"routes/arlington.html\\\">Arlington Gravel Loop</a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1761.81\", 1761.81], [\"0.58\", 0.58], [\"0.15\", 0.15]], [\"<a href=\\\"routes/three_bears.html\\\">Three Bears with Gravel Loop</a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3171.59\", 3171.59], [\"1.36\", 1.36], [\"0.20\", 0.2]], [\"<a href=\\\"routes/wildwood.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2245.08\", 2245.08], [\"1.32\", 1.32], [\"0.38\", 0.38]], [\"<a href=\\\"routes/spruce_to_euclid.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1062.34\", 1062.34], [\"0.28\", 0.28], [\"0.11\", 0.11]], [\"<a href=\\\"routes/grizzly.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1459.97\", 1459.97], [\"0.32\", 0.32], [\"0.11\", 0.11]], [\"<a href=\\\"routes/tunnel.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3002.30\", 3002.3], [\"1.92\", 1.92], [\"0.71\", 0.71]], [\"<a href=\\\"routes/redwood.html\\\">Redwood -- San Leandro to Macarthur BART</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2641.08\", 2641.08], [\"1.19\", 1.19], [\"0.38\", 0.38]]]",
+          "data_json": "[[\"<a href=\\\"routes/tg-bbr-loop.html\\\">Trestle Glen to BBR Loop</a>\", \"19th St/Oakland\", [\"19.87\", 19.87], [\"2099.41\", 2099.41], [\"1.16\", 1.16], [\"0.52\", 0.52]], [\"<a href=\\\"routes/arlington-gravel-loop.html\\\">Arlington Gravel Loop</a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1761.81\", 1761.81], [\"0.58\", 0.58], [\"0.15\", 0.15]], [\"<a href=\\\"routes/three-bears-gravel-loop.html\\\">Three Bears + Wildcat Canyon Loop</a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3171.59\", 3171.59], [\"1.36\", 1.36], [\"0.20\", 0.2]], [\"<a href=\\\"routes/tunnel-to-claremont-loop.html\\\">Tunnel Road to Claremont Loop</a>\", \"MacArthur\", [\"14.16\", 14.16], [\"1502.30\", 1502.3], [\"0.74\", 0.74], [\"0.19\", 0.19]], [\"<a href=\\\"routes/wildwood-bbr-loop.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2245.08\", 2245.08], [\"1.32\", 1.32], [\"0.38\", 0.38]], [\"<a href=\\\"routes/spruce-up-euclid-down.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1062.34\", 1062.34], [\"0.28\", 0.28], [\"0.11\", 0.11]], [\"<a href=\\\"routes/grizzly-peak-loop.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1459.97\", 1459.97], [\"0.32\", 0.32], [\"0.11\", 0.11]], [\"<a href=\\\"routes/tunnel-pinehurst-loop.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3002.30\", 3002.3], [\"1.92\", 1.92], [\"0.71\", 0.71]], [\"<a href=\\\"routes/redwood-san-leandro-macarthur-bart.html\\\">Redwood Road, San Lorenzo to Temescal</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2641.08\", 2641.08], [\"1.19\", 1.19], [\"0.38\", 0.38]]]",
           "keys_to_be_evaluated": [["columnDefs", 0, "render"]],
           "layout": {"bottomEnd": "paging", "bottomStart": "info", "topEnd": null, "topStart": "search"},
-          "order": [[3, "desc"]],
+          "order": [[2, "desc"]],
           "paging": false,
           "scrollCollapse": true,
           "scrollY": "72vh",
@@ -151,47 +151,18 @@ format: dashboard
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
-<option value="El Cerrito del Norte">El Cerrito del Norte</option>
 <option value="MacArthur">MacArthur</option>
 <option value="North Berkeley">North Berkeley</option>
 <option value="Rockridge">Rockridge</option>
+<option value="El Cerrito del Norte">El Cerrito del Norte</option>
 <option value="San Leandro">San Leandro</option>
+<option value="19th St/Oakland">19th St/Oakland</option>
 </select>
 </div>
 </div>
 <div class="mobile-route-grid" id="mobile-route-grid">
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="14.89" data-elevation="1761.81">
-<p class="mobile-route-title"><a href="routes/arlington.html">Arlington Gravel Loop</a></p>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
-<p><span class="mobile-route-label">Miles</span><br>14.89</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>1761.81 ft</p>
-<p><span class="mobile-route-label">Steep Climbing</span><br>0.58 mi</p>
-<p><span class="mobile-route-label">Dangerous Descent</span><br>0.15 mi</p>
-</div>
-</article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
-<p class="mobile-route-title"><a href="routes/three_bears.html">Three Bears with Gravel Loop</a></p>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
-<p><span class="mobile-route-label">Miles</span><br>32.49</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>3171.59 ft</p>
-<p><span class="mobile-route-label">Steep Climbing</span><br>1.36 mi</p>
-<p><span class="mobile-route-label">Dangerous Descent</span><br>0.2 mi</p>
-</div>
-</article>
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="17.41" data-elevation="2245.08">
-<p class="mobile-route-title"><a href="routes/wildwood.html">Wildwood to BBR Loop</a></p>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
-<p><span class="mobile-route-label">Miles</span><br>17.41</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>2245.08 ft</p>
-<p><span class="mobile-route-label">Steep Climbing</span><br>1.32 mi</p>
-<p><span class="mobile-route-label">Dangerous Descent</span><br>0.38 mi</p>
-</div>
-</article>
 <article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1062.34">
-<p class="mobile-route-title"><a href="routes/spruce_to_euclid.html">Spruce up, Euclid Down</a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/spruce-up-euclid-down.html">Spruce up, Euclid Down</a></p>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>11.59</p>
@@ -201,7 +172,7 @@ format: dashboard
 </div>
 </article>
 <article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1459.97">
-<p class="mobile-route-title"><a href="routes/grizzly.html">Grizzly Peak Loop</a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/grizzly-peak-loop.html">Grizzly Peak Loop</a></p>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>13.91</p>
@@ -210,8 +181,48 @@ format: dashboard
 <p><span class="mobile-route-label">Dangerous Descent</span><br>0.11 mi</p>
 </div>
 </article>
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1502.30">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tunnel-to-claremont-loop.html">Tunnel Road to Claremont Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
+<p><span class="mobile-route-label">Miles</span><br>14.16</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>1502.3 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>0.74 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.19 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="14.89" data-elevation="1761.81">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/arlington-gravel-loop.html">Arlington Gravel Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>14.89</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>1761.81 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>0.58 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.15 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="17.41" data-elevation="2245.08">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/wildwood-bbr-loop.html">Wildwood to BBR Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
+<p><span class="mobile-route-label">Miles</span><br>17.41</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>2245.08 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.32 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.38 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="19th St/Oakland" data-miles="19.87" data-elevation="2099.41">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tg-bbr-loop.html">Trestle Glen to BBR Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>19th St/Oakland</p>
+<p><span class="mobile-route-label">Miles</span><br>19.87</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>2099.41 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.16 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.52 mi</p>
+</div>
+</article>
 <article class="mobile-route-card" data-bart="Rockridge" data-miles="22.63" data-elevation="3002.30">
-<p class="mobile-route-title"><a href="routes/tunnel.html">Tunnel to Pinehurst Loop</a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tunnel-pinehurst-loop.html">Tunnel to Pinehurst Loop</a></p>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>Rockridge</p>
 <p><span class="mobile-route-label">Miles</span><br>22.63</p>
@@ -221,13 +232,23 @@ format: dashboard
 </div>
 </article>
 <article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2641.08">
-<p class="mobile-route-title"><a href="routes/redwood.html">Redwood -- San Leandro to Macarthur BART</a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/redwood-san-leandro-macarthur-bart.html">Redwood Road, San Lorenzo to Temescal</a></p>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
 <p><span class="mobile-route-label">Miles</span><br>24.55</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2641.08 ft</p>
 <p><span class="mobile-route-label">Steep Climbing</span><br>1.19 mi</p>
 <p><span class="mobile-route-label">Dangerous Descent</span><br>0.38 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/three-bears-gravel-loop.html">Three Bears + Wildcat Canyon Loop</a></p>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>32.49</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3171.59 ft</p>
+<p><span class="mobile-route-label">Steep Climbing</span><br>1.36 mi</p>
+<p><span class="mobile-route-label">Dangerous Descent</span><br>0.2 mi</p>
 </div>
 </article>
 </div>

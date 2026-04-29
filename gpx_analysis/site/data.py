@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
+import yaml
 
 from .. import (
     aggregate_by_hazard,
@@ -19,22 +20,99 @@ from ..geo import add_bart_station
 
 
 @dataclass(frozen=True)
+class RouteLinks:
+    strava_effort: str | None = None
+
+
+@dataclass(frozen=True)
+class RouteMedia:
+    hero_image: str | None = None
+    gallery: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
 class RouteConfig:
     slug: str
-    title: str
     source: str
+    title: str | None = None
     reverse: bool = False
+    links: RouteLinks = field(default_factory=RouteLinks)
+    media: RouteMedia = field(default_factory=RouteMedia)
 
+    @property
+    def display_title(self) -> str:
+        if self.title:
+            return self.title
 
-ROUTES = [
-    RouteConfig(slug="arlington", title="Arlington Gravel Loop", source="gpx_data\\arlington_gravel_loop.gpx"),
-    RouteConfig(slug="grizzly", title="Grizzly Peak Loop", source="gpx_data\\classic_grizzly.gpx"),
-    RouteConfig(slug="tunnel", title="Tunnel to Pinehurst Loop", source="gpx_data\\tunnel_to_pinehurst.gpx"),
-    RouteConfig(slug="spruce_to_euclid", title="Spruce up, Euclid Down", source="gpx_data\\spruce_up_euclid_down.gpx"),
-    RouteConfig(slug="wildwood", title="Wildwood to BBR Loop", source="gpx_data\\Wildwood_to_bbr_loop.gpx"),
-    RouteConfig(slug="three_bears", title="Three Bears with Gravel Loop", source="gpx_data\\three_bears_with_gravel.gpx"),
-    RouteConfig(slug="redwood", title="Redwood -- San Leandro to Macarthur BART", source="gpx_data\\redwood_to_macarthur.gpx"),
-]
+        stem = Path(self.source).stem.replace("_", " ").replace("-", " ")
+        return " ".join(part.capitalize() for part in stem.split())
+
+def load_routes(manifest_path: Path, root: Path) -> list[RouteConfig]:
+    payload = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
+    raw_routes = payload.get("routes", [])
+    if not isinstance(raw_routes, list):
+        raise ValueError(f"{manifest_path} must define a top-level 'routes' list")
+
+    routes: list[RouteConfig] = []
+    seen_slugs: set[str] = set()
+    for index, raw_route in enumerate(raw_routes, start=1):
+        if not isinstance(raw_route, dict):
+            raise ValueError(f"Route entry #{index} in {manifest_path} must be a mapping")
+
+        slug = str(raw_route.get("slug", "")).strip()
+        source = str(raw_route.get("source", "")).strip()
+        if not slug:
+            raise ValueError(f"Route entry #{index} in {manifest_path} is missing 'slug'")
+        if slug in seen_slugs:
+            raise ValueError(f"Duplicate route slug '{slug}' in {manifest_path}")
+        if not source:
+            raise ValueError(f"Route '{slug}' in {manifest_path} is missing 'source'")
+
+        source_path = root / source
+        if not source_path.exists():
+            raise FileNotFoundError(f"Route '{slug}' source does not exist: {source_path}")
+
+        raw_links = raw_route.get("links") or {}
+        if not isinstance(raw_links, dict):
+            raise ValueError(f"Route '{slug}' links must be a mapping")
+
+        raw_media = raw_route.get("media") or {}
+        if not isinstance(raw_media, dict):
+            raise ValueError(f"Route '{slug}' media must be a mapping")
+
+        hero_image = raw_media.get("hero_image")
+        if hero_image is not None:
+            hero_image = str(hero_image).strip() or None
+            if hero_image and not (root / "quarto" / hero_image).exists():
+                raise FileNotFoundError(
+                    f"Route '{slug}' hero image does not exist under quarto/: {hero_image}"
+                )
+
+        gallery_items = tuple(str(item).strip() for item in raw_media.get("gallery", []) if str(item).strip())
+        for image_path in gallery_items:
+            if not (root / "quarto" / image_path).exists():
+                raise FileNotFoundError(
+                    f"Route '{slug}' gallery image does not exist under quarto/: {image_path}"
+                )
+
+        routes.append(
+            RouteConfig(
+                slug=slug,
+                source=source,
+                title=(str(raw_route.get("title", "")).strip() or None),
+                reverse=bool(raw_route.get("reverse", False)),
+                links=RouteLinks(
+                    strava_effort=(str(raw_links.get("strava_effort", "")).strip() or None),
+                ),
+                media=RouteMedia(
+                    hero_image=hero_image,
+                    gallery=gallery_items,
+                ),
+            )
+        )
+        seen_slugs.add(slug)
+
+    return routes
 
 
 def ensure_dir(path: Path) -> None:
@@ -112,7 +190,9 @@ def build_route(
     segments = prepare_segment_display_columns(segments, hazard_profile=hazard_profile)
 
     summary = compute_route_summary(analyzed, segments)
-    summary["bart_station"] = add_bart_station(points_gdf, step=0)
+    summary["start_bart_station"] = add_bart_station(points_gdf, step=0)
+    summary["end_bart_station"] = add_bart_station(points_gdf, step=len(points_gdf) - 1)
+    summary["bart_station"] = summary["start_bart_station"]
     hazard_summary = aggregate_by_hazard(
         analyzed,
         column="step_dist_m",
@@ -145,9 +225,14 @@ def build_route(
 
     route_bundle = {
         "slug": route.slug,
-        "title": route.title,
+        "title": route.display_title,
         "source": route.source,
         "reverse": route.reverse,
+        "links": asdict(route.links),
+        "media": {
+            "hero_image": route.media.hero_image,
+            "gallery": list(route.media.gallery),
+        },
         "summary": summary,
         "paths": {
             "summary": f"data/routes/{route.slug}/summary.json",
@@ -162,17 +247,21 @@ def build_route(
 
     route_page_context = {
         "route": route,
-        "route_facts_heading": f'{summary["distance_mi"]:,.1f} miles<br> {summary["elevation_gain_ft"]:,.1f} ft elevation gain',
+        "route_facts_heading": f"{summary['distance_mi']:,.1f} miles<br> {summary['elevation_gain_ft']:,.1f} ft elevation gain<br> Start: {summary['start_bart_station']} BART<br> End: {summary['end_bart_station']} BART",
         "summary_table": pd.DataFrame(
             [
                 ["Distance (mi)", summary["distance_mi"]],
                 ["Elevation gain (ft)", summary["elevation_gain_ft"]],
                 ["Elevation loss (ft)", summary["elevation_loss_ft"]],
                 ["Max elevation (ft)", summary["max_elevation_ft"]],
+                ["Start BART", summary["start_bart_station"]],
+                ["End BART", summary["end_bart_station"]],
             ],
             columns=["Metric", "Value"],
         ),
-        "hazards_table": hazard_summary[hazard_summary["hazard"] != "TOTAL"].copy().rename(
+        "hazards_table": hazard_summary[hazard_summary["hazard"] != "TOTAL"]
+        .copy()
+        .rename(
             columns={
                 "hazard_label": "Hazard",
                 "distance_mi": "Distance (mi)",

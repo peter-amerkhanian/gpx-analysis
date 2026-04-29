@@ -3,6 +3,7 @@ project:
   output-dir: ../docs
   resources:
   - data/**
+  - images/**
 website:
   title: GPX Analysis
   navbar:
@@ -11,25 +12,31 @@ website:
       text: Routes
     - text: Route Notes
       menu:
-      - href: routes/arlington.qmd
+      - href: routes/arlington-gravel-loop.qmd
         text: Arlington Gravel Loop
-      - href: routes/grizzly.qmd
+      - href: routes/grizzly-peak-loop.qmd
         text: Grizzly Peak Loop
-      - href: routes/tunnel.qmd
+      - href: routes/tunnel-pinehurst-loop.qmd
         text: Tunnel to Pinehurst Loop
-      - href: routes/spruce_to_euclid.qmd
+      - href: routes/spruce-up-euclid-down.qmd
         text: Spruce up, Euclid Down
-      - href: routes/wildwood.qmd
+      - href: routes/wildwood-bbr-loop.qmd
         text: Wildwood to BBR Loop
-      - href: routes/three_bears.qmd
-        text: Three Bears with Gravel Loop
-      - href: routes/redwood.qmd
-        text: Redwood -- San Leandro to Macarthur BART
+      - href: routes/tg-bbr-loop.qmd
+        text: Trestle Glen to BBR Loop
+      - href: routes/tunnel-to-claremont-loop.qmd
+        text: Tunnel Road to Claremont Loop
+      - href: routes/three-bears-gravel-loop.qmd
+        text: Three Bears + Wildcat Canyon Loop
+      - href: routes/redwood-san-leandro-macarthur-bart.qmd
+        text: Redwood Road, San Lorenzo to Temescal
 format:
   html:
     theme: cosmo
     toc: true
     code-fold: false
+    include-in-header:
+      text: <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
 execute:
   echo: false
   warning: false

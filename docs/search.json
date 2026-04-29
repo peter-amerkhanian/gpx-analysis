@@ -1,149 +1,191 @@
 [
   {
-    "objectID": "routes/wildwood.html",
-    "href": "routes/wildwood.html",
+    "objectID": "routes/wildwood-bbr-loop.html",
+    "href": "routes/wildwood-bbr-loop.html",
     "title": "Wildwood to BBR Loop",
     "section": "",
-    "text": "17.4 miles 2,245.1 ft elevation gain"
+    "text": "17.4 miles 2,245.1 ft elevation gain Start: MacArthur BART End: MacArthur BART"
   },
   {
-    "objectID": "routes/wildwood.html#map",
-    "href": "routes/wildwood.html#map",
+    "objectID": "routes/wildwood-bbr-loop.html#map",
+    "href": "routes/wildwood-bbr-loop.html#map",
     "title": "Wildwood to BBR Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/wildwood.html#data",
-    "href": "routes/wildwood.html#data",
+    "objectID": "routes/wildwood-bbr-loop.html#data",
+    "href": "routes/wildwood-bbr-loop.html#data",
     "title": "Wildwood to BBR Loop",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n11.09\n\n\n64.0\n\n\n\n\nClimb\n\n\n3.10\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.52\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.32\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.38\n\n\n2.0"
   },
   {
-    "objectID": "routes/three_bears.html",
-    "href": "routes/three_bears.html",
-    "title": "Three Bears with Gravel Loop",
+    "objectID": "routes/tunnel-pinehurst-loop.html",
+    "href": "routes/tunnel-pinehurst-loop.html",
+    "title": "Tunnel to Pinehurst Loop",
     "section": "",
-    "text": "32.5 miles 3,171.6 ft elevation gain"
+    "text": "22.6 miles 3,002.3 ft elevation gain Start: Rockridge BART End: Rockridge BART"
   },
   {
-    "objectID": "routes/three_bears.html#map",
-    "href": "routes/three_bears.html#map",
-    "title": "Three Bears with Gravel Loop",
+    "objectID": "routes/tunnel-pinehurst-loop.html#map",
+    "href": "routes/tunnel-pinehurst-loop.html#map",
+    "title": "Tunnel to Pinehurst Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/three_bears.html#data",
-    "href": "routes/three_bears.html#data",
-    "title": "Three Bears with Gravel Loop",
+    "objectID": "routes/tunnel-pinehurst-loop.html#data",
+    "href": "routes/tunnel-pinehurst-loop.html#data",
+    "title": "Tunnel to Pinehurst Loop",
     "section": "Data",
-    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n25.53\n\n\n79.0\n\n\n\n\nClimb\n\n\n3.46\n\n\n11.0\n\n\n\n\nDescent\n\n\n1.95\n\n\n6.0\n\n\n\n\nSteep Climb\n\n\n1.36\n\n\n4.0\n\n\n\n\nDanger Zone\n\n\n0.20\n\n\n1.0"
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.03\n\n\n62.0\n\n\n\n\nClimb\n\n\n4.04\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.94\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.92\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.71\n\n\n3.0"
   },
   {
-    "objectID": "routes/redwood.html",
-    "href": "routes/redwood.html",
-    "title": "Redwood – San Leandro to Macarthur BART",
+    "objectID": "routes/tg-bbr-loop.html",
+    "href": "routes/tg-bbr-loop.html",
+    "title": "Trestle Glen to BBR Loop",
     "section": "",
-    "text": "24.6 miles 2,641.1 ft elevation gain"
+    "text": "19.9 miles 2,099.4 ft elevation gain Start: 19th St/Oakland BART End: 19th St/Oakland BART"
   },
   {
-    "objectID": "routes/redwood.html#map",
-    "href": "routes/redwood.html#map",
-    "title": "Redwood – San Leandro to Macarthur BART",
+    "objectID": "routes/tg-bbr-loop.html#map",
+    "href": "routes/tg-bbr-loop.html#map",
+    "title": "Trestle Glen to BBR Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/redwood.html#data",
-    "href": "routes/redwood.html#data",
-    "title": "Redwood – San Leandro to Macarthur BART",
+    "objectID": "routes/tg-bbr-loop.html#data",
+    "href": "routes/tg-bbr-loop.html#data",
+    "title": "Trestle Glen to BBR Loop",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.06\n\n\n71.0\n\n\n\n\nClimb\n\n\n2.61\n\n\n13.0\n\n\n\n\nDescent\n\n\n1.53\n\n\n8.0\n\n\n\n\nSteep Climb\n\n\n1.16\n\n\n6.0\n\n\n\n\nDanger Zone\n\n\n0.52\n\n\n3.0"
+  },
+  {
+    "objectID": "routes/redwood-san-leandro-macarthur-bart.html",
+    "href": "routes/redwood-san-leandro-macarthur-bart.html",
+    "title": "Redwood Road, San Lorenzo to Temescal",
+    "section": "",
+    "text": "24.6 miles 2,641.1 ft elevation gain Start: San Leandro BART End: MacArthur BART\nExample Strava effort"
+  },
+  {
+    "objectID": "routes/redwood-san-leandro-macarthur-bart.html#map",
+    "href": "routes/redwood-san-leandro-macarthur-bart.html#map",
+    "title": "Redwood Road, San Lorenzo to Temescal",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/redwood-san-leandro-macarthur-bart.html#data",
+    "href": "routes/redwood-san-leandro-macarthur-bart.html#data",
+    "title": "Redwood Road, San Lorenzo to Temescal",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n17.18\n\n\n70.0\n\n\n\n\nClimb\n\n\n4.27\n\n\n17.0\n\n\n\n\nDescent\n\n\n1.54\n\n\n6.0\n\n\n\n\nSteep Climb\n\n\n1.19\n\n\n5.0\n\n\n\n\nDanger Zone\n\n\n0.38\n\n\n2.0"
   },
   {
-    "objectID": "routes/arlington.html",
-    "href": "routes/arlington.html",
+    "objectID": "routes/arlington-gravel-loop.html",
+    "href": "routes/arlington-gravel-loop.html",
     "title": "Arlington Gravel Loop",
     "section": "",
-    "text": "14.9 miles 1,761.8 ft elevation gain"
+    "text": "14.9 miles 1,761.8 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART\nExample Strava effort"
   },
   {
-    "objectID": "routes/arlington.html#map",
-    "href": "routes/arlington.html#map",
+    "objectID": "routes/arlington-gravel-loop.html#map",
+    "href": "routes/arlington-gravel-loop.html#map",
     "title": "Arlington Gravel Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/arlington.html#data",
-    "href": "routes/arlington.html#data",
+    "objectID": "routes/arlington-gravel-loop.html#data",
+    "href": "routes/arlington-gravel-loop.html#data",
     "title": "Arlington Gravel Loop",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.57\n\n\n64.0\n\n\n\n\nClimb\n\n\n3.23\n\n\n22.0\n\n\n\n\nDescent\n\n\n1.36\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n0.58\n\n\n4.0\n\n\n\n\nDanger Zone\n\n\n0.15\n\n\n1.0"
   },
   {
-    "objectID": "routes/grizzly.html",
-    "href": "routes/grizzly.html",
+    "objectID": "routes/grizzly-peak-loop.html",
+    "href": "routes/grizzly-peak-loop.html",
     "title": "Grizzly Peak Loop",
     "section": "",
-    "text": "13.9 miles 1,460.0 ft elevation gain"
+    "text": "13.9 miles 1,460.0 ft elevation gain Start: North Berkeley BART End: North Berkeley BART"
   },
   {
-    "objectID": "routes/grizzly.html#map",
-    "href": "routes/grizzly.html#map",
+    "objectID": "routes/grizzly-peak-loop.html#map",
+    "href": "routes/grizzly-peak-loop.html#map",
     "title": "Grizzly Peak Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/grizzly.html#data",
-    "href": "routes/grizzly.html#data",
+    "objectID": "routes/grizzly-peak-loop.html#data",
+    "href": "routes/grizzly-peak-loop.html#data",
     "title": "Grizzly Peak Loop",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.50\n\n\n68.0\n\n\n\n\nClimb\n\n\n2.79\n\n\n20.0\n\n\n\n\nDescent\n\n\n1.20\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n0.32\n\n\n2.0\n\n\n\n\nDanger Zone\n\n\n0.11\n\n\n1.0"
   },
   {
-    "objectID": "routes/spruce_to_euclid.html",
-    "href": "routes/spruce_to_euclid.html",
+    "objectID": "routes/spruce-up-euclid-down.html",
+    "href": "routes/spruce-up-euclid-down.html",
     "title": "Spruce up, Euclid Down",
     "section": "",
-    "text": "11.6 miles 1,062.3 ft elevation gain"
+    "text": "11.6 miles 1,062.3 ft elevation gain Start: North Berkeley BART End: Ashby BART"
   },
   {
-    "objectID": "routes/spruce_to_euclid.html#map",
-    "href": "routes/spruce_to_euclid.html#map",
+    "objectID": "routes/spruce-up-euclid-down.html#map",
+    "href": "routes/spruce-up-euclid-down.html#map",
     "title": "Spruce up, Euclid Down",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/spruce_to_euclid.html#data",
-    "href": "routes/spruce_to_euclid.html#data",
+    "objectID": "routes/spruce-up-euclid-down.html#data",
+    "href": "routes/spruce-up-euclid-down.html#data",
     "title": "Spruce up, Euclid Down",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n8.68\n\n\n75.0\n\n\n\n\nClimb\n\n\n2.09\n\n\n18.0\n\n\n\n\nDescent\n\n\n0.43\n\n\n4.0\n\n\n\n\nSteep Climb\n\n\n0.28\n\n\n2.0\n\n\n\n\nDanger Zone\n\n\n0.11\n\n\n1.0"
   },
   {
-    "objectID": "routes/tunnel.html",
-    "href": "routes/tunnel.html",
-    "title": "Tunnel to Pinehurst Loop",
+    "objectID": "routes/three-bears-gravel-loop.html",
+    "href": "routes/three-bears-gravel-loop.html",
+    "title": "Three Bears + Wildcat Canyon Loop",
     "section": "",
-    "text": "22.6 miles 3,002.3 ft elevation gain"
+    "text": "32.5 miles 3,171.6 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART"
   },
   {
-    "objectID": "routes/tunnel.html#map",
-    "href": "routes/tunnel.html#map",
-    "title": "Tunnel to Pinehurst Loop",
+    "objectID": "routes/three-bears-gravel-loop.html#map",
+    "href": "routes/three-bears-gravel-loop.html#map",
+    "title": "Three Bears + Wildcat Canyon Loop",
     "section": "Map",
     "text": "Map"
   },
   {
-    "objectID": "routes/tunnel.html#data",
-    "href": "routes/tunnel.html#data",
-    "title": "Tunnel to Pinehurst Loop",
+    "objectID": "routes/three-bears-gravel-loop.html#data",
+    "href": "routes/three-bears-gravel-loop.html#data",
+    "title": "Three Bears + Wildcat Canyon Loop",
     "section": "Data",
-    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.03\n\n\n62.0\n\n\n\n\nClimb\n\n\n4.04\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.94\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.92\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.71\n\n\n3.0"
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n25.53\n\n\n79.0\n\n\n\n\nClimb\n\n\n3.46\n\n\n11.0\n\n\n\n\nDescent\n\n\n1.95\n\n\n6.0\n\n\n\n\nSteep Climb\n\n\n1.36\n\n\n4.0\n\n\n\n\nDanger Zone\n\n\n0.20\n\n\n1.0"
+  },
+  {
+    "objectID": "routes/tunnel-to-claremont-loop.html",
+    "href": "routes/tunnel-to-claremont-loop.html",
+    "title": "Tunnel Road to Claremont Loop",
+    "section": "",
+    "text": "14.2 miles 1,502.3 ft elevation gain Start: MacArthur BART End: MacArthur BART"
+  },
+  {
+    "objectID": "routes/tunnel-to-claremont-loop.html#map",
+    "href": "routes/tunnel-to-claremont-loop.html#map",
+    "title": "Tunnel Road to Claremont Loop",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/tunnel-to-claremont-loop.html#data",
+    "href": "routes/tunnel-to-claremont-loop.html#data",
+    "title": "Tunnel Road to Claremont Loop",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.73\n\n\n69.0\n\n\n\n\nClimb\n\n\n2.32\n\n\n16.0\n\n\n\n\nDescent\n\n\n1.18\n\n\n8.0\n\n\n\n\nSteep Climb\n\n\n0.74\n\n\n5.0\n\n\n\n\nDanger Zone\n\n\n0.19\n\n\n1.0"
   }
 ]

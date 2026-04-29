@@ -1,10 +1,17 @@
 {
   "routes": [
     {
-      "slug": "arlington",
+      "slug": "arlington-gravel-loop",
       "title": "Arlington Gravel Loop",
-      "source": "gpx_data\\arlington_gravel_loop.gpx",
+      "source": "gpx_data/arlington_gravel_loop.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": "https://www.strava.com/activities/18162634293"
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 883,
         "segment_count": 882,
@@ -24,15 +31,17 @@
           "lat": 37.95144,
           "lon": -122.32191
         },
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte"
       },
       "paths": {
-        "summary": "data/routes/arlington/summary.json",
-        "hazards": "data/routes/arlington/hazards.json",
-        "points": "data/routes/arlington/points.geojson",
-        "segments": "data/routes/arlington/segments.geojson",
-        "map": "data/routes/arlington/map.html",
-        "page": "routes/arlington.qmd"
+        "summary": "data/routes/arlington-gravel-loop/summary.json",
+        "hazards": "data/routes/arlington-gravel-loop/hazards.json",
+        "points": "data/routes/arlington-gravel-loop/points.geojson",
+        "segments": "data/routes/arlington-gravel-loop/segments.geojson",
+        "map": "data/routes/arlington-gravel-loop/map.html",
+        "page": "routes/arlington-gravel-loop.qmd"
       },
       "hazards": [
         {
@@ -80,10 +89,17 @@
       ]
     },
     {
-      "slug": "grizzly",
+      "slug": "grizzly-peak-loop",
       "title": "Grizzly Peak Loop",
-      "source": "gpx_data\\classic_grizzly.gpx",
+      "source": "gpx_data/classic_grizzly.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 836,
         "segment_count": 835,
@@ -103,15 +119,17 @@
           "lat": 37.87467,
           "lon": -122.28396
         },
+        "start_bart_station": "North Berkeley",
+        "end_bart_station": "North Berkeley",
         "bart_station": "North Berkeley"
       },
       "paths": {
-        "summary": "data/routes/grizzly/summary.json",
-        "hazards": "data/routes/grizzly/hazards.json",
-        "points": "data/routes/grizzly/points.geojson",
-        "segments": "data/routes/grizzly/segments.geojson",
-        "map": "data/routes/grizzly/map.html",
-        "page": "routes/grizzly.qmd"
+        "summary": "data/routes/grizzly-peak-loop/summary.json",
+        "hazards": "data/routes/grizzly-peak-loop/hazards.json",
+        "points": "data/routes/grizzly-peak-loop/points.geojson",
+        "segments": "data/routes/grizzly-peak-loop/segments.geojson",
+        "map": "data/routes/grizzly-peak-loop/map.html",
+        "page": "routes/grizzly-peak-loop.qmd"
       },
       "hazards": [
         {
@@ -159,10 +177,17 @@
       ]
     },
     {
-      "slug": "tunnel",
+      "slug": "tunnel-pinehurst-loop",
       "title": "Tunnel to Pinehurst Loop",
-      "source": "gpx_data\\tunnel_to_pinehurst.gpx",
+      "source": "gpx_data/tunnel_to_pinehurst.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 1296,
         "segment_count": 1295,
@@ -182,15 +207,17 @@
           "lat": 37.84338,
           "lon": -122.25173
         },
+        "start_bart_station": "Rockridge",
+        "end_bart_station": "Rockridge",
         "bart_station": "Rockridge"
       },
       "paths": {
-        "summary": "data/routes/tunnel/summary.json",
-        "hazards": "data/routes/tunnel/hazards.json",
-        "points": "data/routes/tunnel/points.geojson",
-        "segments": "data/routes/tunnel/segments.geojson",
-        "map": "data/routes/tunnel/map.html",
-        "page": "routes/tunnel.qmd"
+        "summary": "data/routes/tunnel-pinehurst-loop/summary.json",
+        "hazards": "data/routes/tunnel-pinehurst-loop/hazards.json",
+        "points": "data/routes/tunnel-pinehurst-loop/points.geojson",
+        "segments": "data/routes/tunnel-pinehurst-loop/segments.geojson",
+        "map": "data/routes/tunnel-pinehurst-loop/map.html",
+        "page": "routes/tunnel-pinehurst-loop.qmd"
       },
       "hazards": [
         {
@@ -238,10 +265,17 @@
       ]
     },
     {
-      "slug": "spruce_to_euclid",
+      "slug": "spruce-up-euclid-down",
       "title": "Spruce up, Euclid Down",
-      "source": "gpx_data\\spruce_up_euclid_down.gpx",
+      "source": "gpx_data/spruce_up_euclid_down.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 780,
         "segment_count": 779,
@@ -261,15 +295,17 @@
           "lat": 37.85289,
           "lon": -122.26781
         },
+        "start_bart_station": "North Berkeley",
+        "end_bart_station": "Ashby",
         "bart_station": "North Berkeley"
       },
       "paths": {
-        "summary": "data/routes/spruce_to_euclid/summary.json",
-        "hazards": "data/routes/spruce_to_euclid/hazards.json",
-        "points": "data/routes/spruce_to_euclid/points.geojson",
-        "segments": "data/routes/spruce_to_euclid/segments.geojson",
-        "map": "data/routes/spruce_to_euclid/map.html",
-        "page": "routes/spruce_to_euclid.qmd"
+        "summary": "data/routes/spruce-up-euclid-down/summary.json",
+        "hazards": "data/routes/spruce-up-euclid-down/hazards.json",
+        "points": "data/routes/spruce-up-euclid-down/points.geojson",
+        "segments": "data/routes/spruce-up-euclid-down/segments.geojson",
+        "map": "data/routes/spruce-up-euclid-down/map.html",
+        "page": "routes/spruce-up-euclid-down.qmd"
       },
       "hazards": [
         {
@@ -317,10 +353,17 @@
       ]
     },
     {
-      "slug": "wildwood",
+      "slug": "wildwood-bbr-loop",
       "title": "Wildwood to BBR Loop",
-      "source": "gpx_data\\Wildwood_to_bbr_loop.gpx",
+      "source": "gpx_data/Wildwood_to_bbr_loop.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 1094,
         "segment_count": 1093,
@@ -340,15 +383,17 @@
           "lat": 37.82971,
           "lon": -122.2627
         },
+        "start_bart_station": "MacArthur",
+        "end_bart_station": "MacArthur",
         "bart_station": "MacArthur"
       },
       "paths": {
-        "summary": "data/routes/wildwood/summary.json",
-        "hazards": "data/routes/wildwood/hazards.json",
-        "points": "data/routes/wildwood/points.geojson",
-        "segments": "data/routes/wildwood/segments.geojson",
-        "map": "data/routes/wildwood/map.html",
-        "page": "routes/wildwood.qmd"
+        "summary": "data/routes/wildwood-bbr-loop/summary.json",
+        "hazards": "data/routes/wildwood-bbr-loop/hazards.json",
+        "points": "data/routes/wildwood-bbr-loop/points.geojson",
+        "segments": "data/routes/wildwood-bbr-loop/segments.geojson",
+        "map": "data/routes/wildwood-bbr-loop/map.html",
+        "page": "routes/wildwood-bbr-loop.qmd"
       },
       "hazards": [
         {
@@ -396,10 +441,193 @@
       ]
     },
     {
-      "slug": "three_bears",
-      "title": "Three Bears with Gravel Loop",
-      "source": "gpx_data\\three_bears_with_gravel.gpx",
+      "slug": "tg-bbr-loop",
+      "title": "Trestle Glen to BBR Loop",
+      "source": "gpx_data/Trestle Glen to BBR Loop.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1328,
+        "segment_count": 1327,
+        "distance_m": 31983.92,
+        "distance_mi": 19.87,
+        "elevation_gain_m": 639.9,
+        "elevation_gain_ft": 2099.41,
+        "elevation_loss_m": 639.7,
+        "elevation_loss_ft": 2098.75,
+        "max_elevation_m": 446.3,
+        "max_elevation_ft": 1464.24,
+        "start": {
+          "lat": 37.809,
+          "lon": -122.26817
+        },
+        "end": {
+          "lat": 37.80888,
+          "lon": -122.26783
+        },
+        "start_bart_station": "19th St/Oakland",
+        "end_bart_station": "19th St/Oakland",
+        "bart_station": "19th St/Oakland"
+      },
+      "paths": {
+        "summary": "data/routes/tg-bbr-loop/summary.json",
+        "hazards": "data/routes/tg-bbr-loop/hazards.json",
+        "points": "data/routes/tg-bbr-loop/points.geojson",
+        "segments": "data/routes/tg-bbr-loop/segments.geojson",
+        "map": "data/routes/tg-bbr-loop/map.html",
+        "page": "routes/tg-bbr-loop.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 22627.0,
+          "percent": 71.0,
+          "distance_mi": 14.06
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 4207.0,
+          "percent": 13.0,
+          "distance_mi": 2.61
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 2456.0,
+          "percent": 8.0,
+          "distance_mi": 1.53
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 1859.0,
+          "percent": 6.0,
+          "distance_mi": 1.16
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 835.0,
+          "percent": 3.0,
+          "distance_mi": 0.52
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 31984.0,
+          "percent": 100.0,
+          "distance_mi": 19.87
+        }
+      ]
+    },
+    {
+      "slug": "tunnel-to-claremont-loop",
+      "title": "Tunnel Road to Claremont Loop",
+      "source": "gpx_data/Tunnel to Claremont Loop.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 845,
+        "segment_count": 844,
+        "distance_m": 22786.99,
+        "distance_mi": 14.16,
+        "elevation_gain_m": 457.9,
+        "elevation_gain_ft": 1502.3,
+        "elevation_loss_m": 458.6,
+        "elevation_loss_ft": 1504.59,
+        "max_elevation_m": 446.2,
+        "max_elevation_ft": 1463.91,
+        "start": {
+          "lat": 37.82936,
+          "lon": -122.26615
+        },
+        "end": {
+          "lat": 37.82929,
+          "lon": -122.26566
+        },
+        "start_bart_station": "MacArthur",
+        "end_bart_station": "MacArthur",
+        "bart_station": "MacArthur"
+      },
+      "paths": {
+        "summary": "data/routes/tunnel-to-claremont-loop/summary.json",
+        "hazards": "data/routes/tunnel-to-claremont-loop/hazards.json",
+        "points": "data/routes/tunnel-to-claremont-loop/points.geojson",
+        "segments": "data/routes/tunnel-to-claremont-loop/segments.geojson",
+        "map": "data/routes/tunnel-to-claremont-loop/map.html",
+        "page": "routes/tunnel-to-claremont-loop.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 15657.0,
+          "percent": 69.0,
+          "distance_mi": 9.73
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 3738.0,
+          "percent": 16.0,
+          "distance_mi": 2.32
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 1904.0,
+          "percent": 8.0,
+          "distance_mi": 1.18
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 1188.0,
+          "percent": 5.0,
+          "distance_mi": 0.74
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 301.0,
+          "percent": 1.0,
+          "distance_mi": 0.19
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 22787.0,
+          "percent": 100.0,
+          "distance_mi": 14.16
+        }
+      ]
+    },
+    {
+      "slug": "three-bears-gravel-loop",
+      "title": "Three Bears + Wildcat Canyon Loop",
+      "source": "gpx_data/three_bears_with_gravel.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 1380,
         "segment_count": 1379,
@@ -419,15 +647,17 @@
           "lat": 37.92424,
           "lon": -122.31615
         },
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte"
       },
       "paths": {
-        "summary": "data/routes/three_bears/summary.json",
-        "hazards": "data/routes/three_bears/hazards.json",
-        "points": "data/routes/three_bears/points.geojson",
-        "segments": "data/routes/three_bears/segments.geojson",
-        "map": "data/routes/three_bears/map.html",
-        "page": "routes/three_bears.qmd"
+        "summary": "data/routes/three-bears-gravel-loop/summary.json",
+        "hazards": "data/routes/three-bears-gravel-loop/hazards.json",
+        "points": "data/routes/three-bears-gravel-loop/points.geojson",
+        "segments": "data/routes/three-bears-gravel-loop/segments.geojson",
+        "map": "data/routes/three-bears-gravel-loop/map.html",
+        "page": "routes/three-bears-gravel-loop.qmd"
       },
       "hazards": [
         {
@@ -475,10 +705,17 @@
       ]
     },
     {
-      "slug": "redwood",
-      "title": "Redwood -- San Leandro to Macarthur BART",
-      "source": "gpx_data\\redwood_to_macarthur.gpx",
+      "slug": "redwood-san-leandro-macarthur-bart",
+      "title": "Redwood Road, San Lorenzo to Temescal",
+      "source": "gpx_data/redwood_to_macarthur.gpx",
       "reverse": false,
+      "links": {
+        "strava_effort": "https://www.strava.com/activities/18234048917"
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
       "summary": {
         "point_count": 1320,
         "segment_count": 1319,
@@ -498,15 +735,17 @@
           "lat": 37.82951,
           "lon": -122.26642
         },
+        "start_bart_station": "San Leandro",
+        "end_bart_station": "MacArthur",
         "bart_station": "San Leandro"
       },
       "paths": {
-        "summary": "data/routes/redwood/summary.json",
-        "hazards": "data/routes/redwood/hazards.json",
-        "points": "data/routes/redwood/points.geojson",
-        "segments": "data/routes/redwood/segments.geojson",
-        "map": "data/routes/redwood/map.html",
-        "page": "routes/redwood.qmd"
+        "summary": "data/routes/redwood-san-leandro-macarthur-bart/summary.json",
+        "hazards": "data/routes/redwood-san-leandro-macarthur-bart/hazards.json",
+        "points": "data/routes/redwood-san-leandro-macarthur-bart/points.geojson",
+        "segments": "data/routes/redwood-san-leandro-macarthur-bart/segments.geojson",
+        "map": "data/routes/redwood-san-leandro-macarthur-bart/map.html",
+        "page": "routes/redwood-san-leandro-macarthur-bart.qmd"
       },
       "hazards": [
         {

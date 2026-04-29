@@ -50,7 +50,7 @@ def interactive_table_html(frame: pd.DataFrame) -> str:
         paging=False,
         scrollY="72vh",
         scrollCollapse=True,
-        order=[[3, "desc"]],
+        order=[[2, "desc"]],
         layout={"topStart": "search", "topEnd": None},
         showIndex=False,
         style={"width": "100%"},
@@ -64,7 +64,7 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
         '<option value="">All stations</option>',
         *[
             f'<option value="{station}">{station}</option>'
-            for station in sorted({str(route["summary"]["bart_station"]) for route in routes})
+            for station in {str(route["summary"]["bart_station"]) for route in routes}
         ],
     ]
     cards: list[str] = [
@@ -88,7 +88,7 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
         "</div>",
         '<div class="mobile-route-grid" id="mobile-route-grid">',
     ]
-    sorted_routes = sorted(routes, key=lambda item: (str(item["summary"]["bart_station"]), float(item["summary"]["distance_mi"])))
+    sorted_routes = sorted(routes, key=lambda item: float(item["summary"]["distance_mi"]))
     for route in sorted_routes:
         steep_climbing = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "steep_climb"), 0)
         dangerous_descent = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "danger_zone"), 0)
@@ -101,7 +101,7 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
                     f'data-elevation="{float(route["summary"]["elevation_gain_ft"]):.2f}">'
                 ),
                 (
-                    f'<p class="mobile-route-title"><a href="{route["paths"]["page"].replace(".qmd", ".html")}">'
+                    f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{route["paths"]["page"].replace(".qmd", ".html")}">'
                     f'{route["title"]}</a></p>'
                 ),
                 '<div class="mobile-route-metrics">',
@@ -139,10 +139,45 @@ def route_page_content(
     summary_table_html: str,
     hazards_table_html: str,
 ) -> str:
+    hero_html = ""
+    if route.media.hero_image:
+        hero_html = f"""
+## Photo
+![{route.display_title}]({route.media.hero_image})
+"""
+
+    links_lines: list[str] = []
+    if route.links.strava_effort:
+        links_lines.append(
+            '<a href="'
+            f'{route.links.strava_effort}'
+            '" target="_blank" rel="noopener noreferrer">'
+            '<i class="fa-brands fa-strava"></i> Example Strava effort'
+            "</a>"
+        )
+    links_html = ""
+    if links_lines:
+        links_html = "\n".join(links_lines) + "\n"
+
+    gallery_html = ""
+    if route.media.gallery:
+        gallery_blocks = "\n".join(
+            f"![{route.display_title}]({image_path})"
+            for image_path in route.media.gallery
+        )
+        gallery_html = f"""
+## Gallery
+{gallery_blocks}
+"""
+
     return f"""---
-title: "{route.title}"
+title: "{route.display_title}"
 ---
 **{route_facts_heading}**  
+
+{hero_html}
+
+{links_html}
 
 ## Map
 <iframe
@@ -154,6 +189,8 @@ title: "{route.title}"
 
 ## Data
 {hazards_table_html}
+
+{gallery_html}
 """
 
 
@@ -204,7 +241,7 @@ def write_dashboard_page(routes: list[dict[str, object]], output_path: Path, tit
             }
             for route in routes
         ]
-    )
+    ).sort_values(by="Miles")
 
     output_path.write_text(
         f"""---
@@ -353,7 +390,7 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
         "project": {
             "type": "website",
             "output-dir": "../docs",
-            "resources": ["data/**"],
+            "resources": ["data/**", "images/**"],
         },
         "website": {
             "title": "GPX Analysis",
@@ -365,7 +402,7 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
                         "menu": [
                             {
                                 "href": f"routes/{route.slug}.qmd",
-                                "text": route.title,
+                                "text": route.display_title,
                             }
                             for route in routes
                         ],
@@ -378,6 +415,9 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
                 "theme": "cosmo",
                 "toc": True,
                 "code-fold": False,
+                "include-in-header": {
+                    "text": '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">',
+                },
             },
         },
         "execute": {

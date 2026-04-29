@@ -1,0 +1,56 @@
+---
+title: "Wildwood to BBR Loop"
+---
+**17.4 miles<br> 2,245.1 ft elevation gain<br> Start: MacArthur BART<br> End: MacArthur BART**  
+
+
+
+
+
+## Map
+<iframe
+  src="../data/routes/wildwood-bbr-loop/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+## Data
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellow</td>
+      <td>11.09</td>
+      <td>64.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>3.10</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>1.52</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>1.32</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>Danger Zone</td>
+      <td>0.38</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+
+

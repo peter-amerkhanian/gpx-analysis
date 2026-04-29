@@ -1,0 +1,38 @@
+{
+  "route": {
+    "slug": "redwood-san-leandro-macarthur-bart",
+    "source": "gpx_data/redwood_to_macarthur.gpx",
+    "title": "Redwood Road, San Lorenzo to Temescal",
+    "reverse": false,
+    "links": {
+      "strava_effort": "https://www.strava.com/activities/18234048917"
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1320,
+    "segment_count": 1319,
+    "distance_m": 39506.21,
+    "distance_mi": 24.55,
+    "elevation_gain_m": 805.0,
+    "elevation_gain_ft": 2641.08,
+    "elevation_loss_m": 804.9,
+    "elevation_loss_ft": 2640.75,
+    "max_elevation_m": 350.1,
+    "max_elevation_ft": 1148.62,
+    "start": {
+      "lat": 37.72499,
+      "lon": -122.15587
+    },
+    "end": {
+      "lat": 37.82951,
+      "lon": -122.26642
+    },
+    "start_bart_station": "San Leandro",
+    "end_bart_station": "MacArthur",
+    "bart_station": "San Leandro"
+  }
+}

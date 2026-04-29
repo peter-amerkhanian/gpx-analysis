@@ -1,0 +1,56 @@
+---
+title: "Trestle Glen to BBR Loop"
+---
+**19.9 miles<br> 2,099.4 ft elevation gain<br> Start: 19th St/Oakland BART<br> End: 19th St/Oakland BART**  
+
+
+
+
+
+## Map
+<iframe
+  src="../data/routes/tg-bbr-loop/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+## Data
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellow</td>
+      <td>14.06</td>
+      <td>71.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>2.61</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>1.53</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>1.16</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <td>Danger Zone</td>
+      <td>0.52</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+
+

@@ -1,0 +1,38 @@
+{
+  "route": {
+    "slug": "tg-bbr-loop",
+    "source": "gpx_data/Trestle Glen to BBR Loop.gpx",
+    "title": "Trestle Glen to BBR Loop",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1328,
+    "segment_count": 1327,
+    "distance_m": 31983.92,
+    "distance_mi": 19.87,
+    "elevation_gain_m": 639.9,
+    "elevation_gain_ft": 2099.41,
+    "elevation_loss_m": 639.7,
+    "elevation_loss_ft": 2098.75,
+    "max_elevation_m": 446.3,
+    "max_elevation_ft": 1464.24,
+    "start": {
+      "lat": 37.809,
+      "lon": -122.26817
+    },
+    "end": {
+      "lat": 37.80888,
+      "lon": -122.26783
+    },
+    "start_bart_station": "19th St/Oakland",
+    "end_bart_station": "19th St/Oakland",
+    "bart_station": "19th St/Oakland"
+  }
+}
