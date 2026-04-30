@@ -104,6 +104,11 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
                     f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{route["paths"]["page"].replace(".qmd", ".html")}">'
                     f'{route["title"]}</a></p>'
                 ),
+                (
+                    '<div class="mobile-route-elevation" aria-hidden="true">'
+                    f'{route.get("elevation_profile_svg", "")}'
+                    "</div>"
+                ),
                 '<div class="mobile-route-metrics">',
                 (
                     f'<p><span class="mobile-route-label">BART</span><br>'
@@ -117,12 +122,12 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
                     f'<p><span class="mobile-route-label">Elevation Gain</span><br>'
                     f'{route["summary"]["elevation_gain_ft"]} ft</p>'
                 ),
+                # (
+                #     f'<p><span class="mobile-route-label">Steep Climbing</span><br>'
+                #     f'{steep_climbing} mi</p>'
+                # ),
                 (
-                    f'<p><span class="mobile-route-label">Steep Climbing</span><br>'
-                    f'{steep_climbing} mi</p>'
-                ),
-                (
-                    f'<p><span class="mobile-route-label">Dangerous Descent</span><br>'
+                    f'<p><span class="mobile-route-label">Tech Descents</span><br>'
                     f'{dangerous_descent} mi</p>'
                 ),
                 "</div>",
@@ -302,6 +307,17 @@ format: dashboard
 
 .mobile-route-title a:hover {{
   text-decoration: underline;
+}}
+
+.mobile-route-elevation {{
+  margin-bottom: 0.75rem;
+}}
+
+.mobile-route-elevation svg {{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 18vh;
 }}
 
 .mobile-route-metrics {{

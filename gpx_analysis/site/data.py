@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import io
 import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 import geopandas as gpd
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import yaml
 
@@ -144,6 +147,49 @@ def write_geojson(path: Path, frame: gpd.GeoDataFrame) -> None:
     path.write_text(cleaned.to_json(), encoding="utf-8")
 
 
+def route_elevation_svg(points: pd.DataFrame) -> str:
+    elevation = pd.to_numeric(points.get("elevation_f"), errors="coerce")
+    if elevation is None or elevation.notna().sum() < 2:
+        return ""
+
+    distance_mi = pd.to_numeric(points.get("step_dist_m"), errors="coerce").fillna(0).cumsum() / 1609.344
+    smooth_window = max(3, min(12, len(elevation)))
+    smooth_elevation = elevation.interpolate(limit_direction="both").rolling(
+        smooth_window,
+        min_periods=1,
+    ).mean()
+    baseline = np.full(len(smooth_elevation), float(np.nanmin(elevation)))
+
+    fig, ax = plt.subplots(figsize=(4, 1))
+    ax.plot(distance_mi, smooth_elevation, linewidth=2.5, alpha=.8, color="tab:blue")
+    ax.plot(
+        distance_mi,
+        baseline,
+        linewidth=2,
+        color="#8d99ae",
+        linestyle=":",
+        alpha=0.7,
+    )
+    ax.set_axis_off()
+
+    svg_buffer = io.StringIO()
+    fig.savefig(
+        svg_buffer,
+        format="svg",
+        transparent=True,
+        bbox_inches="tight",
+        pad_inches=0,
+    )
+    plt.close(fig)
+
+    svg = svg_buffer.getvalue()
+    # return "\n".join(
+    #     line for line in svg.splitlines()
+    #     if not line.startswith("<?xml") and not line.startswith("<!DOCTYPE")
+    # )
+    return svg
+
+
 def compute_route_summary(points: pd.DataFrame, segments: gpd.GeoDataFrame) -> dict[str, object]:
     total_distance_m = float(points["step_dist_m"].sum())
     climbing = points["step_elevation_m"].diff().clip(lower=0)
@@ -243,6 +289,7 @@ def build_route(
             "page": f"routes/{route.slug}.qmd",
         },
         "hazards": hazard_summary.to_dict(orient="records"),
+        "elevation_profile_svg": route_elevation_svg(analyzed),
     }
 
     route_page_context = {
