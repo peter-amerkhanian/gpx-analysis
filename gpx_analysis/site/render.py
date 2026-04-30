@@ -409,7 +409,7 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
             "resources": ["data/**", "images/**"],
         },
         "website": {
-            "title": "GPX Analysis",
+            "title": "🚇BART Rides🚲",
             "navbar": {
                 "left": [
                     {"href": "index.qmd", "text": "Routes"},

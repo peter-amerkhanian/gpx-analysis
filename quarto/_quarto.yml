@@ -5,7 +5,7 @@ project:
   - data/**
   - images/**
 website:
-  title: GPX Analysis
+  title: "\U0001F687BART Rides\U0001F6B2"
   navbar:
     left:
     - href: index.qmd
