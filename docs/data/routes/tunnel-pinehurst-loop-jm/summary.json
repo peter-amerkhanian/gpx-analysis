@@ -1,0 +1,38 @@
+{
+  "route": {
+    "slug": "tunnel-pinehurst-loop-jm",
+    "source": "gpx_data/tunnel_to_pinehurst_joaquin_miller.gpx",
+    "title": "Tunnel to Pinehurst w/ Joaquin Miller Descent",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1446,
+    "segment_count": 1445,
+    "distance_m": 40380.7,
+    "distance_mi": 25.09,
+    "elevation_gain_m": 921.0,
+    "elevation_gain_ft": 3021.65,
+    "elevation_loss_m": 921.0,
+    "elevation_loss_ft": 3021.65,
+    "max_elevation_m": 435.3,
+    "max_elevation_ft": 1428.15,
+    "start": {
+      "lat": 37.82933,
+      "lon": -122.26592
+    },
+    "end": {
+      "lat": 37.82928,
+      "lon": -122.26556
+    },
+    "start_bart_station": "MacArthur",
+    "end_bart_station": "MacArthur",
+    "bart_station": "MacArthur"
+  }
+}

@@ -18,6 +18,10 @@ website:
         text: Grizzly Peak Loop
       - href: routes/tunnel-pinehurst-loop.qmd
         text: Tunnel to Pinehurst Loop
+      - href: routes/tunnel-pinehurst-loop-jm.qmd
+        text: Tunnel to Pinehurst w/ Joaquin Miller Descent
+      - href: routes/tunnel-pinehurst-loop-sheps.qmd
+        text: Tunnel to Pinehurst w/ Shepards Canyon Descent
       - href: routes/spruce-up-euclid-down.qmd
         text: Spruce up, Euclid Down
       - href: routes/wildwood-bbr-loop.qmd
@@ -27,7 +31,7 @@ website:
       - href: routes/tunnel-to-claremont-loop.qmd
         text: Tunnel Road to Claremont Loop
       - href: routes/three-bears-gravel-loop.qmd
-        text: Three Bears + Wildcat Canyon Loop
+        text: Three Wild Bears w/ Gravel
       - href: routes/redwood-san-leandro-macarthur-bart.qmd
         text: Redwood Road, San Lorenzo to Temescal
 format:

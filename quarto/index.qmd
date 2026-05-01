@@ -106,7 +106,7 @@ format: dashboard
 ::: {.desktop-only}
 ```{=html}
 <!--| quarto-html-table-processing: none -->
-<table id="itables_afe70fd6_be69_452e_9672_d4b999c407f6">
+<table id="itables_b9fe93d8_2652_44e0_ba61_0068916d1a87">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left">
@@ -120,7 +120,7 @@ format: dashboard
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_afe70fd6_be69_452e_9672_d4b999c407f6:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_b9fe93d8_2652_44e0_ba61_0068916d1a87:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -128,7 +128,7 @@ format: dashboard
           "classes": ["display", "nowrap", "compact"],
           "columnControl": ["order"],
           "columnDefs": [{"render": "function (data, type, row, meta) { return type === 'sort' || type === 'type' ? data[1] : data[0]; }", "targets": [2, 3, 4, 5]}],
-          "data_json": "[[\"<a href=\\\"routes/tg-bbr-loop.html\\\">Trestle Glen to BBR Loop</a>\", \"19th St/Oakland\", [\"19.87\", 19.87], [\"2099.41\", 2099.41], [\"1.16\", 1.16], [\"0.52\", 0.52]], [\"<a href=\\\"routes/arlington-gravel-loop.html\\\">Arlington Gravel Loop</a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1761.81\", 1761.81], [\"0.58\", 0.58], [\"0.15\", 0.15]], [\"<a href=\\\"routes/three-bears-gravel-loop.html\\\">Three Bears + Wildcat Canyon Loop</a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3171.59\", 3171.59], [\"1.36\", 1.36], [\"0.20\", 0.2]], [\"<a href=\\\"routes/tunnel-to-claremont-loop.html\\\">Tunnel Road to Claremont Loop</a>\", \"MacArthur\", [\"14.16\", 14.16], [\"1502.30\", 1502.3], [\"0.74\", 0.74], [\"0.19\", 0.19]], [\"<a href=\\\"routes/wildwood-bbr-loop.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2245.08\", 2245.08], [\"1.32\", 1.32], [\"0.38\", 0.38]], [\"<a href=\\\"routes/spruce-up-euclid-down.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1062.34\", 1062.34], [\"0.28\", 0.28], [\"0.11\", 0.11]], [\"<a href=\\\"routes/grizzly-peak-loop.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1459.97\", 1459.97], [\"0.32\", 0.32], [\"0.11\", 0.11]], [\"<a href=\\\"routes/tunnel-pinehurst-loop.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3002.30\", 3002.3], [\"1.92\", 1.92], [\"0.71\", 0.71]], [\"<a href=\\\"routes/redwood-san-leandro-macarthur-bart.html\\\">Redwood Road, San Lorenzo to Temescal</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2641.08\", 2641.08], [\"1.19\", 1.19], [\"0.38\", 0.38]]]",
+          "data_json": "[[\"<a href=\\\"routes/tg-bbr-loop.html\\\">Trestle Glen to BBR Loop</a>\", \"19th St/Oakland\", [\"19.87\", 19.87], [\"2099.41\", 2099.41], [\"1.16\", 1.16], [\"0.52\", 0.52]], [\"<a href=\\\"routes/arlington-gravel-loop.html\\\">Arlington Gravel Loop</a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1761.81\", 1761.81], [\"0.58\", 0.58], [\"0.15\", 0.15]], [\"<a href=\\\"routes/three-bears-gravel-loop.html\\\">Three Wild Bears w/ Gravel</a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3171.59\", 3171.59], [\"1.36\", 1.36], [\"0.20\", 0.2]], [\"<a href=\\\"routes/tunnel-to-claremont-loop.html\\\">Tunnel Road to Claremont Loop</a>\", \"MacArthur\", [\"14.16\", 14.16], [\"1502.30\", 1502.3], [\"0.74\", 0.74], [\"0.19\", 0.19]], [\"<a href=\\\"routes/wildwood-bbr-loop.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2245.08\", 2245.08], [\"1.32\", 1.32], [\"0.38\", 0.38]], [\"<a href=\\\"routes/tunnel-pinehurst-loop-jm.html\\\">Tunnel to Pinehurst w/ Joaquin Miller Descent</a>\", \"MacArthur\", [\"25.09\", 25.09], [\"3021.65\", 3021.65], [\"1.92\", 1.92], [\"0.66\", 0.66]], [\"<a href=\\\"routes/tunnel-pinehurst-loop-sheps.html\\\">Tunnel to Pinehurst w/ Shepards Canyon Descent</a>\", \"MacArthur\", [\"27.96\", 27.96], [\"3127.62\", 3127.62], [\"2.24\", 2.24], [\"0.67\", 0.67]], [\"<a href=\\\"routes/spruce-up-euclid-down.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1062.34\", 1062.34], [\"0.28\", 0.28], [\"0.11\", 0.11]], [\"<a href=\\\"routes/grizzly-peak-loop.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1459.97\", 1459.97], [\"0.32\", 0.32], [\"0.11\", 0.11]], [\"<a href=\\\"routes/tunnel-pinehurst-loop.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3002.30\", 3002.3], [\"1.92\", 1.92], [\"0.71\", 0.71]], [\"<a href=\\\"routes/redwood-san-leandro-macarthur-bart.html\\\">Redwood Road, San Lorenzo to Temescal</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2641.08\", 2641.08], [\"1.19\", 1.19], [\"0.38\", 0.38]]]",
           "keys_to_be_evaluated": [["columnDefs", 0, "render"]],
           "layout": {"bottomEnd": "paging", "bottomStart": "info", "topEnd": null, "topStart": "search"},
           "order": [[2, "desc"]],
@@ -162,12 +162,12 @@ format: dashboard
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
-<option value="San Leandro">San Leandro</option>
-<option value="MacArthur">MacArthur</option>
-<option value="19th St/Oakland">19th St/Oakland</option>
 <option value="North Berkeley">North Berkeley</option>
-<option value="Rockridge">Rockridge</option>
+<option value="MacArthur">MacArthur</option>
+<option value="San Leandro">San Leandro</option>
+<option value="19th St/Oakland">19th St/Oakland</option>
 <option value="El Cerrito del Norte">El Cerrito del Norte</option>
+<option value="Rockridge">Rockridge</option>
 </select>
 </div>
 </div>
@@ -182,7 +182,7 @@ format: dashboard
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:35.682153</dc:date>
+    <dc:date>2026-05-01T14:19:56.322097</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -438,18 +438,18 @@ L 208.485346 48.526635
 L 209.512068 48.712864 
 L 213.054545 49.157365 
 L 213.054545 49.157365 
-" clip-path="url(#p14acf4e762)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p5803c82030)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#p14acf4e762)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p5803c82030)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p14acf4e762">
+  <clipPath id="p5803c82030">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -472,7 +472,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:34.897081</dc:date>
+    <dc:date>2026-05-01T14:19:54.344598</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -743,18 +743,18 @@ L 211.779333 51.646897
 L 211.999938 51.95145 
 L 213.054545 52.312664 
 L 213.054545 52.312664 
-" clip-path="url(#pa4de7bdbee)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#pc3a29c4324)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#pa4de7bdbee)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#pc3a29c4324)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pa4de7bdbee">
+  <clipPath id="pc3a29c4324">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -777,7 +777,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:36.900372</dc:date>
+    <dc:date>2026-05-01T14:19:57.552798</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -1059,18 +1059,18 @@ L 211.184321 52.561061
 L 211.471056 52.632849 
 L 213.054545 52.775427 
 L 213.054545 52.775427 
-" clip-path="url(#pb5436a71fd)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p9793202b13)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#pb5436a71fd)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p9793202b13)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pb5436a71fd">
+  <clipPath id="p9793202b13">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -1093,7 +1093,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:34.464094</dc:date>
+    <dc:date>2026-05-01T14:19:53.958147</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -1436,18 +1436,18 @@ L 211.96099 50.989441
 L 212.315162 51.448481 
 L 213.054545 51.572496 
 L 213.054545 51.572496 
-" clip-path="url(#p6aca18818b)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p7855f925bf)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#p6aca18818b)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p7855f925bf)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p6aca18818b">
+  <clipPath id="p7855f925bf">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -1470,7 +1470,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:36.072009</dc:date>
+    <dc:date>2026-05-01T14:19:56.708530</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -1810,18 +1810,18 @@ L 208.372144 50.530965
 L 208.448904 50.598973 
 L 213.054545 51.080861 
 L 213.054545 51.080861 
-" clip-path="url(#p61e95f5eae)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#pca034a527b)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#p61e95f5eae)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#pca034a527b)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p61e95f5eae">
+  <clipPath id="pca034a527b">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -1844,7 +1844,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:36.535224</dc:date>
+    <dc:date>2026-05-01T14:19:57.158770</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -2163,18 +2163,18 @@ L 208.712238 52.858436
 L 211.173762 52.760881 
 L 213.054545 52.631123 
 L 213.054545 52.631123 
-" clip-path="url(#pf0e4089c13)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p8dc5896985)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#pf0e4089c13)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p8dc5896985)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pf0e4089c13">
+  <clipPath id="p8dc5896985">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -2197,7 +2197,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:35.343387</dc:date>
+    <dc:date>2026-05-01T14:19:54.767932</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -2599,18 +2599,18 @@ L 212.558046 52.289176
 L 213.030086 52.101225 
 L 213.054545 52.011571 
 L 213.054545 52.011571 
-" clip-path="url(#p294d9f6385)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p570a4b2644)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#p294d9f6385)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p570a4b2644)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p294d9f6385">
+  <clipPath id="p570a4b2644">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -2633,7 +2633,7 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:37.975111</dc:date>
+    <dc:date>2026-05-01T14:19:58.740649</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -3050,18 +3050,18 @@ L 211.029607 50.652151
 L 212.226549 50.760144 
 L 213.054545 50.937202 
 L 213.054545 50.937202 
-" clip-path="url(#pfe529b57e5)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p6ac999cb24)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#pfe529b57e5)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p6ac999cb24)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pfe529b57e5">
+  <clipPath id="p6ac999cb24">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>
@@ -3074,8 +3074,8 @@ L 213.054545 52.92
 <p><span class="mobile-route-label">Tech Descents</span><br>0.38 mi</p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/three-bears-gravel-loop.html">Three Bears + Wildcat Canyon Loop</a></p>
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="25.09" data-elevation="3021.65">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tunnel-pinehurst-loop-jm.html">Tunnel to Pinehurst w/ Joaquin Miller Descent</a></p>
 <div class="mobile-route-elevation" aria-hidden="true"><?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -3084,7 +3084,957 @@ L 213.054545 52.92
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-30T16:40:37.482353</dc:date>
+    <dc:date>2026-05-01T14:19:55.274828</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 55.44 
+L 223.2 55.44 
+L 223.2 0 
+L 0 0 
+L 0 55.44 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 10.145455 52.92 
+L 11.763819 52.532536 
+L 13.427326 52.355205 
+L 14.483616 52.241426 
+L 15.870666 52.017968 
+L 17.664051 51.469574 
+L 17.701938 51.421397 
+L 18.447004 51.187689 
+L 18.498264 51.050334 
+L 19.532946 50.92528 
+L 19.585116 50.745898 
+L 20.879439 50.568567 
+L 20.933352 50.336909 
+L 21.971926 50.110376 
+L 22.153873 49.93202 
+L 22.569134 49.547631 
+L 23.315779 49.178618 
+L 24.050339 49.031013 
+L 24.258105 48.95106 
+L 25.177049 48.79423 
+L 25.895656 48.546171 
+L 26.2126 47.747668 
+L 26.320325 46.913288 
+L 26.613181 46.359769 
+L 26.684375 46.106585 
+L 27.145022 45.621743 
+L 27.186668 45.499764 
+L 28.594818 44.760713 
+L 29.066598 44.411175 
+L 29.62095 43.771553 
+L 30.157142 42.9915 
+L 30.669649 42.662464 
+L 31.660729 40.315131 
+L 31.99524 39.916392 
+L 32.799458 39.733936 
+L 33.445517 39.170166 
+L 33.753211 38.952858 
+L 34.733147 38.567445 
+L 35.092711 37.825318 
+L 35.853601 36.116583 
+L 36.192093 35.251453 
+L 37.629545 32.48078 
+L 38.789176 32.311649 
+L 39.478139 32.714488 
+L 39.950395 32.667337 
+L 40.319514 32.443879 
+L 40.541094 32.168144 
+L 40.677653 31.672027 
+L 40.879238 31.333765 
+L 41.111766 30.879674 
+L 42.229332 29.727533 
+L 42.568065 29.543027 
+L 42.788318 29.343145 
+L 43.040983 29.054084 
+L 43.178504 28.626644 
+L 43.431457 28.394986 
+L 43.688769 28.115151 
+L 44.180452 27.869143 
+L 44.415958 26.957886 
+L 44.961835 26.536596 
+L 45.396147 26.6473 
+L 45.871489 26.418717 
+L 46.165145 26.030228 
+L 46.251932 25.631489 
+L 46.460403 25.109746 
+L 46.78619 24.559301 
+L 47.040829 24.5224 
+L 47.421419 24.311242 
+L 47.665508 24.126736 
+L 48.463055 23.448162 
+L 48.671443 22.291921 
+L 48.960535 22.119715 
+L 50.272002 19.919988 
+L 50.668018 19.727281 
+L 51.003954 19.814409 
+L 51.057283 19.918963 
+L 51.320047 19.744707 
+L 51.383987 19.501773 
+L 51.852778 19.145061 
+L 51.950479 18.863176 
+L 52.323826 18.546439 
+L 52.967102 18.235853 
+L 53.507819 18.246104 
+L 53.770757 18.070823 
+L 53.989371 17.659783 
+L 54.130221 17.302046 
+L 54.359893 16.756726 
+L 54.893797 16.085328 
+L 55.994487 13.536063 
+L 56.888911 13.045071 
+L 57.262865 12.798037 
+L 57.504638 12.246568 
+L 58.026637 10.967322 
+L 58.310614 10.586009 
+L 58.469789 10.417903 
+L 59.027397 10.351276 
+L 59.284053 9.909485 
+L 60.237011 8.307354 
+L 60.838892 8.017269 
+L 61.379797 7.256692 
+L 61.498915 6.942006 
+L 61.712773 6.622194 
+L 61.917327 6.159903 
+L 62.937964 5.08669 
+L 63.030316 4.769954 
+L 63.513488 4.330214 
+L 63.603297 4.103681 
+L 63.932142 3.640364 
+L 63.991932 3.433307 
+L 65.317863 2.571252 
+L 66.255043 2.611228 
+L 66.491357 2.703481 
+L 67.051864 2.992542 
+L 67.335831 3.22625 
+L 67.6318 4.128282 
+L 68.278963 5.314248 
+L 68.502601 6.166053 
+L 69.216226 7.384821 
+L 69.482633 7.676957 
+L 70.55923 7.439148 
+L 70.908848 7.318194 
+L 71.118011 7.283343 
+L 71.31789 7.441198 
+L 71.48405 7.750759 
+L 71.812245 8.125922 
+L 72.05564 8.746069 
+L 72.376547 9.099707 
+L 73.841041 9.120207 
+L 74.227767 8.942876 
+L 74.790481 9.389792 
+L 75.542253 9.522022 
+L 75.83073 9.457444 
+L 76.83219 9.561998 
+L 77.578577 9.931011 
+L 78.198643 9.917686 
+L 78.935642 9.789556 
+L 79.401308 9.90846 
+L 79.578157 10.344101 
+L 79.803683 11.049325 
+L 79.916184 11.889855 
+L 80.241802 12.238367 
+L 80.435111 12.823663 
+L 80.7169 13.228552 
+L 80.966879 13.809748 
+L 81.204612 14.192086 
+L 81.357663 14.667703 
+L 81.558622 14.657452 
+L 81.722125 14.555974 
+L 82.309844 14.696404 
+L 82.591972 14.976239 
+L 82.705422 15.73169 
+L 82.768282 16.527118 
+L 83.405081 17.098063 
+L 83.687112 18.073898 
+L 83.792205 17.883241 
+L 83.970962 17.659783 
+L 84.123125 17.948843 
+L 84.479088 18.739146 
+L 84.659861 19.26499 
+L 84.760186 19.726256 
+L 85.099916 19.942539 
+L 85.328955 20.144471 
+L 85.671175 20.41508 
+L 85.705823 20.538085 
+L 85.952091 20.728741 
+L 86.49459 22.896693 
+L 86.579172 22.858766 
+L 87.303264 22.308322 
+L 87.62542 22.326773 
+L 87.82728 22.594307 
+L 88.026124 23.080174 
+L 89.015343 24.24769 
+L 89.232039 24.529575 
+L 89.701453 24.756108 
+L 90.530812 25.380355 
+L 90.719115 26.031253 
+L 94.741017 28.445213 
+L 95.116853 28.887004 
+L 95.998726 29.297018 
+L 96.738012 29.721383 
+L 96.841972 29.859763 
+L 97.759471 30.376381 
+L 97.856568 30.61829 
+L 98.959025 31.010878 
+L 99.101916 31.235361 
+L 99.602881 31.663826 
+L 100.50438 32.355726 
+L 103.033711 33.122453 
+L 103.509321 33.316185 
+L 103.575758 33.394087 
+L 106.691962 34.648732 
+L 106.76382 34.779936 
+L 107.184577 35.055671 
+L 107.268154 35.195076 
+L 109.147268 36.113508 
+L 110.417418 36.376942 
+L 110.742268 36.755181 
+L 110.78356 36.855634 
+L 111.481997 37.15392 
+L 111.93151 37.173395 
+L 112.862014 36.86486 
+L 113.107527 36.580925 
+L 113.653413 36.221137 
+L 114.457047 34.976743 
+L 114.698408 34.307394 
+L 114.955806 33.642146 
+L 115.038597 33.501716 
+L 115.768345 33.018924 
+L 116.029359 32.600709 
+L 116.587032 31.843208 
+L 116.973078 31.386042 
+L 117.219127 30.904275 
+L 117.75991 30.352805 
+L 118.208917 30.316929 
+L 118.463431 29.985842 
+L 118.735037 29.414897 
+L 118.923902 29.117637 
+L 119.138071 28.862403 
+L 119.948788 28.026998 
+L 120.040107 27.752289 
+L 120.581028 27.295123 
+L 120.895279 26.817456 
+L 121.332299 26.458693 
+L 121.667923 25.996402 
+L 122.210793 25.52796 
+L 122.54641 25.407006 
+L 123.434443 25.419306 
+L 123.716678 25.65404 
+L 124.144128 26.917909 
+L 124.609867 27.162893 
+L 124.884586 27.620059 
+L 125.366631 27.928595 
+L 125.756424 28.292483 
+L 126.030688 28.670721 
+L 126.320372 29.272417 
+L 126.738729 29.519451 
+L 126.858716 29.938691 
+L 127.25257 30.210325 
+L 127.71532 30.802796 
+L 127.791104 30.877624 
+L 128.534369 31.181034 
+L 128.90883 31.490595 
+L 129.272434 31.726354 
+L 129.44527 32.001063 
+L 129.727929 32.19787 
+L 130.032016 33.083501 
+L 131.173761 33.775401 
+L 131.550015 34.827088 
+L 131.966977 35.46876 
+L 132.602959 35.674793 
+L 133.11794 35.87365 
+L 133.359445 35.966928 
+L 135.275928 35.475936 
+L 135.638376 35.227877 
+L 135.775695 35.080272 
+L 136.220012 34.73996 
+L 136.578607 34.177215 
+L 136.88444 33.778476 
+L 136.962774 33.60012 
+L 138.259524 32.971772 
+L 139.220056 32.783166 
+L 139.770822 32.381352 
+L 142.169385 30.50041 
+L 142.732929 30.269777 
+L 143.041335 29.841312 
+L 143.342869 29.406697 
+L 143.435419 29.192464 
+L 143.878863 28.752724 
+L 144.180641 28.171528 
+L 144.270989 27.977797 
+L 145.054321 27.501155 
+L 145.395095 27.036813 
+L 145.672243 26.780554 
+L 145.746464 26.65755 
+L 146.571647 26.112231 
+L 146.96318 25.423407 
+L 147.426795 25.183548 
+L 147.691632 24.891413 
+L 147.789428 24.599278 
+L 148.476718 23.626518 
+L 148.767907 23.008422 
+L 148.86066 22.740887 
+L 149.637856 21.977235 
+L 151.857081 20.319752 
+L 152.130739 19.422845 
+L 152.250187 19.080483 
+L 152.652544 18.776048 
+L 154.001765 18.258404 
+L 154.039904 18.023671 
+L 154.397111 17.740761 
+L 154.544015 17.442476 
+L 156.617942 15.72554 
+L 156.959375 14.554949 
+L 157.055943 14.047556 
+L 158.13533 13.685718 
+L 158.941743 13.407933 
+L 159.139966 13.214202 
+L 159.664693 13.330031 
+L 160.150435 13.754396 
+L 161.273505 15.347302 
+L 161.818533 15.734765 
+L 162.657734 18.098499 
+L 162.883029 18.898027 
+L 163.109371 19.736506 
+L 163.592497 20.242874 
+L 163.914863 21.489318 
+L 164.276458 22.340098 
+L 164.398129 22.764463 
+L 165.443827 24.749958 
+L 165.561998 25.613038 
+L 166.366826 26.909709 
+L 166.869155 29.051009 
+L 167.368509 30.159073 
+L 167.75202 30.716693 
+L 167.782937 30.76487 
+L 169.329265 30.930926 
+L 170.755904 31.89651 
+L 170.897671 32.207096 
+L 171.196777 32.544332 
+L 171.753889 32.942046 
+L 171.902696 33.356161 
+L 172.796691 34.253068 
+L 173.349615 36.077632 
+L 173.81606 36.564524 
+L 175.401938 36.397443 
+L 175.510753 36.223187 
+L 176.046158 35.952577 
+L 176.417214 35.471836 
+L 177.113584 35.240177 
+L 177.158492 35.117173 
+L 177.694467 34.669232 
+L 177.961863 33.875854 
+L 178.625469 33.334635 
+L 179.208555 33.074276 
+L 179.862956 32.581234 
+L 180.388975 31.747879 
+L 180.857058 31.442419 
+L 181.745305 31.570548 
+L 181.907564 31.729429 
+L 182.464616 31.967237 
+L 182.493096 32.215296 
+L 182.696869 32.48078 
+L 182.803541 33.012774 
+L 183.054046 33.290559 
+L 183.583745 33.596019 
+L 183.597984 33.892255 
+L 183.725481 34.16799 
+L 184.371829 34.761485 
+L 185.323879 35.04132 
+L 185.678901 35.284254 
+L 185.92657 35.618416 
+L 186.057174 35.687093 
+L 187.288135 35.884925 
+L 187.706993 36.298015 
+L 188.289694 36.539923 
+L 188.417469 36.783882 
+L 189.002644 37.175446 
+L 189.179709 37.309725 
+L 190.266752 37.441955 
+L 190.975268 37.060641 
+L 191.289919 36.650627 
+L 191.582719 36.243688 
+L 191.653004 36.141184 
+L 192.156759 36.147334 
+L 192.71783 36.346191 
+L 193.18599 37.213372 
+L 193.427563 38.29376 
+L 193.922695 38.797053 
+L 194.667992 39.343397 
+L 194.997025 41.310441 
+L 195.066915 41.657928 
+L 195.412236 42.056667 
+L 195.825442 43.300036 
+L 196.057266 44.241019 
+L 196.517364 45.289631 
+L 197.111759 45.730397 
+L 197.288051 45.935404 
+L 197.994771 46.158862 
+L 198.048208 46.25829 
+L 199.250598 46.374119 
+L 201.361039 46.38437 
+L 201.909092 46.644729 
+L 202.817666 48.24276 
+L 202.895521 48.658925 
+L 203.507751 49.24217 
+L 204.006341 49.496379 
+L 204.236697 49.834641 
+L 204.279608 49.956621 
+L 204.96555 50.542941 
+L 205.046314 50.796125 
+L 206.211847 51.037009 
+L 206.254758 51.139512 
+L 206.845989 51.374246 
+L 207.052406 51.591553 
+L 207.114324 51.737108 
+L 207.937885 52.018993 
+L 207.98341 52.07537 
+L 209.526198 52.406457 
+L 211.869094 52.515111 
+L 213.054545 52.77547 
+L 213.054545 52.77547 
+" clip-path="url(#pafa610887a)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 10.145455 52.92 
+L 213.054545 52.92 
+L 213.054545 52.92 
+" clip-path="url(#pafa610887a)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pafa610887a">
+   <rect x="0" y="-0" width="223.2" height="55.44"/>
+  </clipPath>
+ </defs>
+</svg>
+</div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
+<p><span class="mobile-route-label">Miles</span><br>25.09</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3021.65 ft</p>
+<p><span class="mobile-route-label">Tech Descents</span><br>0.66 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="27.96" data-elevation="3127.62">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tunnel-pinehurst-loop-sheps.html">Tunnel to Pinehurst w/ Shepards Canyon Descent</a></p>
+<div class="mobile-route-elevation" aria-hidden="true"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="223.2pt" height="55.44pt" viewBox="0 0 223.2 55.44" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-05-01T14:19:56.002498</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 55.44 
+L 223.2 55.44 
+L 223.2 0 
+L 0 0 
+L 0 55.44 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 10.145455 52.92 
+L 11.682497 52.550967 
+L 15.283946 52.042299 
+L 16.893544 51.513683 
+L 16.927548 51.465809 
+L 17.596259 51.237407 
+L 17.642266 51.107746 
+L 18.570914 50.978086 
+L 18.617737 50.794567 
+L 19.779418 50.626008 
+L 19.827806 50.404588 
+L 20.759947 50.184165 
+L 20.923248 50.016604 
+L 21.534403 49.440114 
+L 22.811837 49.081054 
+L 23.636608 48.929451 
+L 24.281572 48.689081 
+L 24.566036 47.924085 
+L 24.662721 47.138143 
+L 24.925565 46.606535 
+L 24.989463 46.355194 
+L 25.402903 45.881434 
+L 25.440281 45.76075 
+L 26.320758 45.190245 
+L 27.02787 44.859112 
+L 28.10634 43.299197 
+L 28.566325 42.965072 
+L 29.455839 40.668088 
+L 29.756069 40.235222 
+L 30.477871 40.057687 
+L 31.057722 39.519098 
+L 31.333884 39.308649 
+L 32.213396 38.9456 
+L 32.472752 38.493783 
+L 32.710636 37.854457 
+L 33.522828 35.751964 
+L 34.812969 33.0271 
+L 35.853761 32.861534 
+L 36.695608 33.369204 
+L 37.159211 33.18768 
+L 37.729634 31.981838 
+L 38.021022 31.358471 
+L 38.184962 31.119098 
+L 38.218965 31.027338 
+L 38.453908 30.82786 
+L 38.58326 30.554576 
+L 39.629529 29.759658 
+L 39.79327 29.269941 
+L 40.020301 29.042536 
+L 40.251244 28.722375 
+L 40.692539 28.445101 
+L 40.903909 27.623253 
+L 41.500319 27.359943 
+L 41.658216 27.434747 
+L 42.210278 27.175426 
+L 42.473839 26.856262 
+L 42.655789 26.395469 
+L 43.063187 25.453935 
+L 43.643757 25.181648 
+L 43.820445 25.139758 
+L 44.35286 24.87944 
+L 44.53626 24.490458 
+L 44.723291 23.111071 
+L 45.076462 22.754006 
+L 45.878135 21.185115 
+L 46.515258 20.856975 
+L 46.816767 20.751251 
+L 46.864631 20.707366 
+L 47.131559 20.546787 
+L 47.157853 20.47298 
+L 47.538204 20.101952 
+L 47.666291 19.742892 
+L 48.001377 19.533441 
+L 48.447808 19.093593 
+L 48.894127 19.100575 
+L 49.300027 18.932016 
+L 49.496237 18.534058 
+L 49.775873 17.793997 
+L 49.999937 17.399031 
+L 50.259216 17.16664 
+L 50.608579 15.997701 
+L 51.187064 14.578418 
+L 51.637352 14.070748 
+L 52.098632 14.021876 
+L 52.434263 13.816414 
+L 52.651259 13.338665 
+L 53.119763 12.169727 
+L 53.374639 11.822636 
+L 53.517501 11.581268 
+L 54.017966 11.377801 
+L 54.545289 10.107129 
+L 55.885485 8.906274 
+L 56.524475 7.644578 
+L 57.491788 6.634225 
+L 57.610665 5.964977 
+L 58.044321 5.45631 
+L 58.124926 5.217934 
+L 58.420071 4.801026 
+L 58.473734 4.616509 
+L 59.663783 3.862484 
+L 60.417768 3.903377 
+L 60.998871 4.218551 
+L 61.47495 4.617507 
+L 61.740587 5.581981 
+L 62.32143 6.699055 
+L 62.662246 7.719383 
+L 63.401747 8.792572 
+L 65.048927 8.681862 
+L 65.198058 9.015987 
+L 65.520366 9.460822 
+L 65.921218 10.260727 
+L 66.277564 10.307604 
+L 69.408355 10.568919 
+L 69.755986 10.678632 
+L 71.089881 10.895065 
+L 71.675936 10.818266 
+L 71.886009 10.983833 
+L 72.303954 11.259112 
+L 72.462679 11.729879 
+L 72.703783 12.583643 
+L 72.766065 13.086326 
+L 73.058314 13.406488 
+L 73.231813 13.835365 
+L 73.484724 14.228335 
+L 73.709085 14.971389 
+L 73.922455 15.306512 
+L 74.146465 16.007675 
+L 74.386933 15.916913 
+L 74.623953 15.825153 
+L 74.914423 15.936861 
+L 75.167638 16.236077 
+L 75.269462 16.805585 
+L 75.32588 17.359136 
+L 75.897419 17.757093 
+L 76.104586 18.401406 
+L 76.150548 18.659729 
+L 76.190954 18.596894 
+L 76.381994 18.606868 
+L 77.023609 20.09896 
+L 77.113653 20.443059 
+L 77.345327 20.620594 
+L 77.624135 21.40853 
+L 77.893783 21.597036 
+L 77.962381 21.987015 
+L 78.183411 22.21043 
+L 78.501782 23.316533 
+L 78.670315 23.461154 
+L 79.062788 23.278632 
+L 79.685257 23.372387 
+L 80.01671 23.767352 
+L 80.230916 24.064574 
+L 80.83832 24.570249 
+L 81.127229 25.251465 
+L 81.548538 25.45194 
+L 82.092613 25.881814 
+L 82.364748 26.277777 
+L 82.46191 26.649803 
+L 82.710048 26.812377 
+L 82.760075 26.981933 
+L 83.450345 27.397844 
+L 83.925973 27.80777 
+L 85.086685 28.334391 
+L 85.78367 28.874975 
+L 86.22117 29.303852 
+L 86.735337 29.679867 
+L 87.486614 30.050895 
+L 87.577531 30.164597 
+L 87.957295 30.433892 
+L 88.780769 31.022351 
+L 88.867915 31.281672 
+L 89.857392 31.645718 
+L 89.985639 31.879107 
+L 90.526569 32.357853 
+L 91.11494 32.829618 
+L 91.692873 33.063006 
+L 92.376237 33.401121 
+L 93.800607 33.744222 
+L 94.689148 34.251893 
+L 95.679908 34.632895 
+L 96.026784 34.859302 
+L 96.797856 35.163505 
+L 96.86235 35.300147 
+L 97.239988 35.588392 
+L 97.314999 35.725034 
+L 99.360485 36.581791 
+L 100.230335 36.875023 
+L 100.614378 37.385685 
+L 101.416426 37.60511 
+L 102.3356 37.307889 
+L 102.555952 37.031612 
+L 103.045896 36.671555 
+L 103.767173 35.512591 
+L 103.9838 34.81043 
+L 104.21482 34.149162 
+L 104.289127 34.005538 
+L 105.143028 33.336291 
+L 105.558694 32.305989 
+L 105.850018 31.826246 
+L 106.457352 31.634747 
+L 106.731558 31.290648 
+L 106.930205 31.023348 
+L 107.134551 30.735103 
+L 107.362983 30.346122 
+L 107.606754 29.843439 
+L 108.736238 28.771247 
+L 108.778081 28.631612 
+L 109.263567 28.102997 
+L 109.545614 27.599316 
+L 109.937848 27.187395 
+L 110.239077 26.717625 
+L 110.876883 26.132159 
+L 111.486241 26.118195 
+L 112.032742 26.250848 
+L 112.407763 27.523515 
+L 112.46152 27.740945 
+L 112.87953 27.96835 
+L 113.558741 28.863006 
+L 114.154745 29.58711 
+L 114.414743 30.078822 
+L 114.790226 30.299245 
+L 114.897917 30.5456 
+L 115.251409 30.704184 
+L 115.734753 31.233797 
+L 116.401849 31.662674 
+L 116.737935 32.231185 
+L 117.064276 32.449613 
+L 117.219401 32.637122 
+L 117.473093 32.818646 
+L 117.746017 33.63052 
+L 118.065158 33.886849 
+L 118.198959 33.930734 
+L 118.727048 34.16512 
+L 119.108451 35.368967 
+L 119.482683 36.109029 
+L 120.115703 36.204778 
+L 120.73245 36.457117 
+L 122.15412 36.073123 
+L 122.668994 35.765927 
+L 122.901082 35.482669 
+L 123.299865 35.176471 
+L 123.966509 34.247903 
+L 127.282892 32.466569 
+L 128.639545 31.238784 
+L 129.145338 31.039307 
+L 129.422138 30.619406 
+L 129.692771 30.175569 
+L 129.775836 29.973099 
+L 130.173836 29.574144 
+L 130.444688 29.07146 
+L 130.525776 28.911878 
+L 131.228832 28.293498 
+L 131.534684 27.82672 
+L 131.78343 27.548449 
+L 131.850045 27.41081 
+L 132.659679 26.750539 
+L 132.942071 26.263814 
+L 133.595871 25.740185 
+L 133.683646 25.504802 
+L 134.069392 24.915346 
+L 134.485155 24.182265 
+L 134.645097 23.609765 
+L 135.229787 22.961463 
+L 136.494003 21.914206 
+L 136.602906 21.748639 
+L 137.061896 21.505277 
+L 137.334444 21.227005 
+L 137.627608 20.090981 
+L 137.864902 19.777801 
+L 138.048389 19.617222 
+L 139.259341 19.092596 
+L 139.293571 18.858209 
+L 139.614172 18.600883 
+L 139.746021 18.329594 
+L 141.158224 17.096823 
+L 141.607411 16.701857 
+L 142.587888 13.744602 
+L 142.912419 13.427433 
+L 143.12785 12.389152 
+L 143.519451 10.982835 
+L 143.844924 10.651703 
+L 143.980898 10.504089 
+L 144.009083 10.534011 
+L 144.980604 10.376424 
+L 145.306215 10.018361 
+L 145.933875 8.771627 
+L 146.468816 8.487371 
+L 146.981118 7.272553 
+L 147.007415 6.96037 
+L 147.511497 5.985923 
+L 147.89783 4.799031 
+L 148.240508 4.590577 
+L 148.724499 3.485471 
+L 149.109247 3.222161 
+L 149.806818 3.018694 
+L 150.740576 3.180271 
+L 151.171359 3.307936 
+L 151.596493 3.157331 
+L 151.884869 3.00473 
+L 152.45312 3.037644 
+L 152.969361 3.065571 
+L 153.371185 2.98578 
+L 153.682059 2.536956 
+L 154.198157 2.593807 
+L 155.459588 3.845528 
+L 156.038937 4.105847 
+L 157.032974 4.468896 
+L 157.267776 4.678347 
+L 157.307895 4.790055 
+L 157.874837 4.98255 
+L 158.096415 5.113208 
+L 158.382438 5.082289 
+L 158.772403 4.615512 
+L 159.310439 4.134771 
+L 159.620559 4.157711 
+L 159.856385 4.329261 
+L 159.981798 4.482859 
+L 160.391619 4.714253 
+L 160.471229 4.775094 
+L 160.924429 4.914728 
+L 161.105195 5.021449 
+L 161.548126 5.313683 
+L 162.929646 7.781221 
+L 163.518475 7.982693 
+L 163.714804 8.210097 
+L 164.011232 8.501335 
+L 165.180812 10.065239 
+L 165.852387 9.960513 
+L 166.192662 9.957521 
+L 166.292084 10.157996 
+L 166.84607 10.769394 
+L 167.015347 11.196276 
+L 167.051343 11.414704 
+L 167.288061 11.94332 
+L 167.484297 12.886849 
+L 168.271905 15.754339 
+L 168.444466 15.926887 
+L 168.716712 16.033607 
+L 168.947589 16.145315 
+L 169.255281 16.313873 
+L 169.520032 16.749732 
+L 170.466878 18.33857 
+L 171.3472 21.260917 
+L 171.572427 21.665856 
+L 171.673981 22.341088 
+L 172.002345 22.882669 
+L 172.083405 23.088131 
+L 173.393318 24.266046 
+L 174.257294 24.435602 
+L 174.665421 24.774714 
+L 175.25379 25.319288 
+L 175.501322 25.957616 
+L 176.560265 27.574381 
+L 177.117419 28.092026 
+L 177.208033 28.594709 
+L 177.673208 29.057497 
+L 178.344807 31.128074 
+L 178.494171 31.636742 
+L 179.294508 32.406725 
+L 180.100695 32.919383 
+L 180.170959 33.003163 
+L 180.697535 33.25251 
+L 181.027644 33.639497 
+L 181.382717 33.959658 
+L 181.549465 34.0963 
+L 181.964953 33.958661 
+L 183.070016 33.307366 
+L 183.255855 32.954291 
+L 183.727967 32.173336 
+L 183.965227 32.014752 
+L 184.306788 32.009765 
+L 184.94523 32.126459 
+L 185.09086 32.271081 
+L 185.590826 32.511451 
+L 185.616387 32.766782 
+L 185.799278 33.040066 
+L 185.895017 33.587632 
+L 186.11985 33.87488 
+L 186.595266 34.175094 
+L 186.943486 34.719668 
+L 187.302549 35.136576 
+L 188.427099 35.621306 
+L 188.697959 36.106037 
+L 188.815179 36.177848 
+L 189.919991 36.369347 
+L 190.295924 36.739378 
+L 190.81891 36.972767 
+L 190.933591 37.217127 
+L 192.124944 37.851465 
+L 192.895801 37.752724 
+L 193.347367 37.442536 
+L 193.774466 36.833132 
+L 193.837607 36.67754 
+L 194.289738 36.668563 
+L 194.79331 36.862057 
+L 195.213493 37.691883 
+L 195.43031 38.710216 
+L 195.874701 39.174999 
+L 196.543619 39.704612 
+L 196.90166 41.976661 
+L 197.211592 42.349684 
+L 197.582453 43.526602 
+L 197.79052 44.435222 
+L 198.203467 45.456547 
+L 198.624405 45.802641 
+L 198.895174 46.122802 
+L 199.529469 46.332254 
+L 199.57743 46.428003 
+L 200.87635 46.557663 
+L 202.550761 46.647428 
+L 203.04265 46.905752 
+L 203.858113 48.426768 
+L 203.927989 48.795801 
+L 204.477478 49.373289 
+L 204.924973 49.616652 
+L 205.131722 49.936813 
+L 205.170235 50.048521 
+L 205.785882 50.602071 
+L 205.858369 50.842441 
+L 206.904457 51.082812 
+L 206.942971 51.18654 
+L 207.473613 51.410952 
+L 207.658876 51.619406 
+L 207.714448 51.758043 
+L 208.453611 52.027338 
+L 208.49447 52.07621 
+L 209.879116 52.419311 
+L 212.058757 52.535008 
+L 212.276848 52.596846 
+L 212.83196 52.737478 
+L 213.054545 52.781363 
+L 213.054545 52.781363 
+" clip-path="url(#p93911afe9a)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 10.145455 52.92 
+L 213.054545 52.92 
+L 213.054545 52.92 
+" clip-path="url(#p93911afe9a)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p93911afe9a">
+   <rect x="0" y="-0" width="223.2" height="55.44"/>
+  </clipPath>
+ </defs>
+</svg>
+</div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
+<p><span class="mobile-route-label">Miles</span><br>27.96</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3127.62 ft</p>
+<p><span class="mobile-route-label">Tech Descents</span><br>0.67 mi</p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/three-bears-gravel-loop.html">Three Wild Bears w/ Gravel</a></p>
+<div class="mobile-route-elevation" aria-hidden="true"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="223.2pt" height="55.44pt" viewBox="0 0 223.2 55.44" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-05-01T14:19:58.099614</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -3496,18 +4446,18 @@ L 211.459724 51.948457
 L 212.473961 52.474997 
 L 213.054545 52.664331 
 L 213.054545 52.664331 
-" clip-path="url(#pa599ecb94a)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p9f192de044)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#pa599ecb94a)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p9f192de044)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pa599ecb94a">
+  <clipPath id="p9f192de044">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>

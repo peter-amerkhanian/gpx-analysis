@@ -1,0 +1,38 @@
+{
+  "route": {
+    "slug": "tunnel-pinehurst-loop-sheps",
+    "source": "gpx_data/tunnel_to_pinehurst_skyline_to_shepards.gpx",
+    "title": "Tunnel to Pinehurst w/ Shepards Canyon Descent",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1661,
+    "segment_count": 1660,
+    "distance_m": 44991.43,
+    "distance_mi": 27.96,
+    "elevation_gain_m": 953.3,
+    "elevation_gain_ft": 3127.62,
+    "elevation_loss_m": 953.3,
+    "elevation_loss_ft": 3127.62,
+    "max_elevation_m": 445.4,
+    "max_elevation_ft": 1461.29,
+    "start": {
+      "lat": 37.82933,
+      "lon": -122.26592
+    },
+    "end": {
+      "lat": 37.82927,
+      "lon": -122.26554
+    },
+    "start_bart_station": "MacArthur",
+    "end_bart_station": "MacArthur",
+    "bart_station": "MacArthur"
+  }
+}

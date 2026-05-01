@@ -1,0 +1,56 @@
+---
+title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
+---
+**28.0 miles<br> 3,127.6 ft elevation gain<br> Start: MacArthur BART<br> End: MacArthur BART**  
+
+
+
+
+
+## Map
+<iframe
+  src="../data/routes/tunnel-pinehurst-loop-sheps/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+## Data
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellow</td>
+      <td>19.14</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>3.90</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>2.24</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>2.00</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>Danger Zone</td>
+      <td>0.67</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+
+

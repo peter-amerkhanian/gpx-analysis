@@ -23,6 +23,14 @@ routes:
     title: Tunnel to Pinehurst Loop
     source: gpx_data/tunnel_to_pinehurst.gpx
 
+  - slug: tunnel-pinehurst-loop-jm
+    title: Tunnel to Pinehurst w/ Joaquin Miller Descent
+    source: gpx_data/tunnel_to_pinehurst_joaquin_miller.gpx
+  
+  - slug: tunnel-pinehurst-loop-sheps
+    title: Tunnel to Pinehurst w/ Shepards Canyon Descent
+    source: gpx_data/tunnel_to_pinehurst_skyline_to_shepards.gpx
+
   - slug: spruce-up-euclid-down
     title: Spruce up, Euclid Down
     source: gpx_data/spruce_up_euclid_down.gpx
@@ -40,7 +48,7 @@ routes:
     source: gpx_data/Tunnel to Claremont Loop.gpx
 
   - slug: three-bears-gravel-loop
-    title: Three Bears + Wildcat Canyon Loop
+    title: Three Wild Bears w/ Gravel
     source: gpx_data/three_bears_with_gravel.gpx
 
   - slug: redwood-san-leandro-macarthur-bart

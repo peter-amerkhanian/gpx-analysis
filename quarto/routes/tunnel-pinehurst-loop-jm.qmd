@@ -1,0 +1,56 @@
+---
+title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
+---
+**25.1 miles<br> 3,021.7 ft elevation gain<br> Start: MacArthur BART<br> End: MacArthur BART**  
+
+
+
+
+
+## Map
+<iframe
+  src="../data/routes/tunnel-pinehurst-loop-jm/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+## Data
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellow</td>
+      <td>16.87</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>3.75</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>1.92</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>1.90</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>Danger Zone</td>
+      <td>0.66</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
