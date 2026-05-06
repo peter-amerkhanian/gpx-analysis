@@ -151,6 +151,86 @@ def prepare_osm_columns(gdf_segments_enriched: gpd.GeoDataFrame) -> gpd.GeoDataF
     return frame
 
 
+def _marker_point_and_normal(
+    segment: object,
+    fallback_sign: int,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Return a segment start point and a unit normal for label offsets."""
+    coords = np.asarray(segment.coords, dtype=float)
+    start = coords[0]
+    end = coords[-1]
+    direction = end - start
+    norm = np.linalg.norm(direction)
+    if norm == 0:
+        return start, np.array([0.0, float(fallback_sign)])
+    unit_direction = direction / norm
+    normal = np.array([-unit_direction[1], unit_direction[0]])
+    return start, normal
+
+
+def _resolve_number_marker_locations(
+    frame: gpd.GeoDataFrame,
+    marker_indexes: list[int],
+    min_spacing_m: float = 520.0,
+    base_offset_m: float = 18.0,
+    offset_step_m: float = 28.0,
+    max_attempts: int = 6,
+) -> list[list[float]]:
+    """Place number markers near their segments while avoiding overlap."""
+    projected = frame[["geometry"]].to_crs(3857)
+    placed_points: list[np.ndarray] = []
+    locations: list[list[float]] = []
+
+    for marker_order, marker_index in enumerate(marker_indexes):
+        segment = projected.iloc[marker_index].geometry
+        base_point, normal = _marker_point_and_normal(
+            segment,
+            fallback_sign=1 if marker_order % 2 == 0 else -1,
+        )
+
+        candidate = base_point
+        for attempt in range(max_attempts):
+            offset_scale = base_offset_m + (attempt * offset_step_m)
+            if marker_order % 2 == 1:
+                offset_scale *= -1
+            candidate = base_point + (normal * offset_scale)
+            if all(np.linalg.norm(candidate - placed) >= min_spacing_m for placed in placed_points):
+                break
+
+        placed_points.append(candidate)
+        point_wgs84 = (
+            gpd.GeoSeries([Point(candidate[0], candidate[1])], crs=3857)
+            .to_crs(4326)
+            .iloc[0]
+        )
+        locations.append([point_wgs84.y, point_wgs84.x])
+
+    return locations
+
+
+def _number_marker_count(frame: gpd.GeoDataFrame) -> int:
+    """Return the number of numbered route markers based on route length."""
+    distance_m = pd.to_numeric(frame.get("step_dist_m"), errors="coerce").fillna(0).sum()
+    distance_mi = distance_m / 1609.344
+    return max(3, 3 + int(distance_mi // 15))
+
+
+def _number_marker_indexes(frame: gpd.GeoDataFrame) -> list[int]:
+    """Spread numbered markers across the route, excluding the start marker."""
+    marker_count = _number_marker_count(frame)
+    last_index = len(frame) - 1
+    if last_index <= 0:
+        return [0] * marker_count
+
+    fractions = np.linspace(
+        1 / (marker_count + 10),
+        marker_count / (marker_count + 1),
+        marker_count,
+    )
+    indexes = [min(max(1, int(round(last_index * fraction))), last_index) for fraction in fractions]
+    return indexes
+
+
 def make_route_map(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
@@ -187,42 +267,24 @@ def make_route_map(
         title_cancel="Exit fullscreen",
         force_separate_button=True,
     ).add_to(m)
-    third = int(len(frame) / 8)
     start = frame.iloc[0].geometry.coords[0]
+    marker_indexes = _number_marker_indexes(frame)
+    marker_locations = _resolve_number_marker_locations(frame, marker_indexes)
 
     folium.Marker(
         location=[start[1], start[0]],  # folium uses [lat, lon]
         icon=folium.Icon(color="green", icon="arrow-right", prefix="fa"),
     ).add_to(m)
-    number_style = "font-size:51px; font-weight:700; color:#C96A1B; opacity:0.65;"
-    folium.Marker(
-        location=[frame.iloc[third].geometry.coords[0][1], frame.iloc[third].geometry.coords[0][0]],  # folium uses [lat, lon]
-        icon=folium.DivIcon(
-            html=(
-                f'<div style="{number_style}">'
-                '1'
-                '</div>'
+    number_style = "font-size:41px; font-weight:700; color:#C96A1B; opacity:0.60;"
+    for marker_number, marker_location in enumerate(marker_locations, start=1):
+        folium.Marker(
+            location=marker_location,
+            icon=folium.DivIcon(
+                html=(
+                    f'<div style="{number_style}">'
+                    f"{marker_number}"
+                    '</div>'
+                )
             )
-        ),
-    ).add_to(m)
-    folium.Marker(
-        location=[frame.iloc[third*4].geometry.coords[0][1], frame.iloc[third*4].geometry.coords[0][0]],  # folium uses [lat, lon]
-        icon=folium.DivIcon(
-            html=(
-                f'<div style="{number_style}">'
-                '2'
-                '</div>'
-            )
-        ),
-    ).add_to(m)
-    folium.Marker(
-        location=[frame.iloc[third*7].geometry.coords[0][1], frame.iloc[third*7].geometry.coords[0][0]],  # folium uses [lat, lon]
-        icon=folium.DivIcon(
-            html=(
-                f'<div style="{number_style}">'
-                '3'
-                '</div>'
-            )
-        ),
-    ).add_to(m)
+        ).add_to(m)
     return m
