@@ -11,6 +11,15 @@ routes:
   - slug: grizzly-peak-loop
     title: Grizzly Peak Loop
     source: gpx_data/classic_grizzly.gpx
+
+  - slug: wildcat-havey-nimitz-meadow-loop
+    title: Alvarado to Tilden via Havey Canyon
+    source: gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx
+
+  - slug: wildcat-conlon-nimitz-meadow-loop
+    title: Alvarado to Tilden via Conlon Trail
+    source: gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx
+    
     # links:
     #   strava_effort: https://www.strava.com/activities/123456789
     # media:

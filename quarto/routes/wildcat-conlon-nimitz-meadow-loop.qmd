@@ -1,0 +1,56 @@
+---
+title: "Alvarado to Tilden via Conlon Trail"
+---
+**18.1 miles<br> 2,057.4 ft elevation gain<br> Start: El Cerrito del Norte BART<br> End: El Cerrito del Norte BART**  
+
+
+
+
+
+## Map
+<iframe
+  src="../data/routes/wildcat-conlon-nimitz-meadow-loop/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+## Data
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellow</td>
+      <td>12.93</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>2.11</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>1.45</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>1.24</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>Danger Zone</td>
+      <td>0.33</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+
+

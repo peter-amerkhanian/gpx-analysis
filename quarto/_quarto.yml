@@ -16,6 +16,10 @@ website:
         text: Arlington Gravel Loop
       - href: routes/grizzly-peak-loop.qmd
         text: Grizzly Peak Loop
+      - href: routes/wildcat-havey-nimitz-meadow-loop.qmd
+        text: Alvarado to Tilden via Havey Canyon
+      - href: routes/wildcat-conlon-nimitz-meadow-loop.qmd
+        text: Alvarado to Tilden via Conlon Trail
       - href: routes/tunnel-pinehurst-loop.qmd
         text: Tunnel to Pinehurst Loop
       - href: routes/tunnel-pinehurst-loop-jm.qmd

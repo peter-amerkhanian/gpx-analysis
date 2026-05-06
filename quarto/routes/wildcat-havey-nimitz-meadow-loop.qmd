@@ -1,0 +1,56 @@
+---
+title: "Alvarado to Tilden via Havey Canyon"
+---
+**18.8 miles<br> 1,875.7 ft elevation gain<br> Start: El Cerrito del Norte BART<br> End: El Cerrito del Norte BART**  
+
+
+
+
+
+## Map
+<iframe
+  src="../data/routes/wildcat-havey-nimitz-meadow-loop/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+## Data
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellow</td>
+      <td>14.41</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>1.99</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>1.27</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>0.97</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <td>Danger Zone</td>
+      <td>0.19</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+

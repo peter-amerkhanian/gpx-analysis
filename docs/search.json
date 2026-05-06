@@ -21,6 +21,27 @@
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n11.09\n\n\n64.0\n\n\n\n\nClimb\n\n\n3.10\n\n\n18.0\n\n\n\n\nDescent\n\n\n1.52\n\n\n9.0\n\n\n\n\nSteep Climb\n\n\n1.32\n\n\n8.0\n\n\n\n\nDanger Zone\n\n\n0.38\n\n\n2.0"
   },
   {
+    "objectID": "routes/wildcat-conlon-nimitz-meadow-loop.html",
+    "href": "routes/wildcat-conlon-nimitz-meadow-loop.html",
+    "title": "Alvarado to Tilden via Conlon Trail",
+    "section": "",
+    "text": "18.1 miles 2,057.4 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART"
+  },
+  {
+    "objectID": "routes/wildcat-conlon-nimitz-meadow-loop.html#map",
+    "href": "routes/wildcat-conlon-nimitz-meadow-loop.html#map",
+    "title": "Alvarado to Tilden via Conlon Trail",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/wildcat-conlon-nimitz-meadow-loop.html#data",
+    "href": "routes/wildcat-conlon-nimitz-meadow-loop.html#data",
+    "title": "Alvarado to Tilden via Conlon Trail",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n12.93\n\n\n72.0\n\n\n\n\nClimb\n\n\n2.11\n\n\n12.0\n\n\n\n\nDescent\n\n\n1.45\n\n\n8.0\n\n\n\n\nSteep Climb\n\n\n1.24\n\n\n7.0\n\n\n\n\nDanger Zone\n\n\n0.33\n\n\n2.0"
+  },
+  {
     "objectID": "routes/tunnel-pinehurst-loop.html",
     "href": "routes/tunnel-pinehurst-loop.html",
     "title": "Tunnel to Pinehurst Loop",
@@ -229,5 +250,26 @@
     "title": "Tunnel Road to Claremont Loop",
     "section": "Data",
     "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n9.73\n\n\n69.0\n\n\n\n\nClimb\n\n\n2.32\n\n\n16.0\n\n\n\n\nDescent\n\n\n1.18\n\n\n8.0\n\n\n\n\nSteep Climb\n\n\n0.74\n\n\n5.0\n\n\n\n\nDanger Zone\n\n\n0.19\n\n\n1.0"
+  },
+  {
+    "objectID": "routes/wildcat-havey-nimitz-meadow-loop.html",
+    "href": "routes/wildcat-havey-nimitz-meadow-loop.html",
+    "title": "Alvarado to Tilden via Havey Canyon",
+    "section": "",
+    "text": "18.8 miles 1,875.7 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART"
+  },
+  {
+    "objectID": "routes/wildcat-havey-nimitz-meadow-loop.html#map",
+    "href": "routes/wildcat-havey-nimitz-meadow-loop.html#map",
+    "title": "Alvarado to Tilden via Havey Canyon",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "routes/wildcat-havey-nimitz-meadow-loop.html#data",
+    "href": "routes/wildcat-havey-nimitz-meadow-loop.html#data",
+    "title": "Alvarado to Tilden via Havey Canyon",
+    "section": "Data",
+    "text": "Data\n\n\n\n\nHazard\n\n\nDistance (mi)\n\n\nPercent\n\n\n\n\n\n\nMellow\n\n\n14.41\n\n\n77.0\n\n\n\n\nClimb\n\n\n1.99\n\n\n11.0\n\n\n\n\nDescent\n\n\n1.27\n\n\n7.0\n\n\n\n\nSteep Climb\n\n\n0.97\n\n\n5.0\n\n\n\n\nDanger Zone\n\n\n0.19\n\n\n1.0"
   }
 ]

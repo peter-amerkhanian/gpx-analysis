@@ -1,0 +1,38 @@
+{
+  "route": {
+    "slug": "wildcat-conlon-nimitz-meadow-loop",
+    "source": "gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx",
+    "title": "Alvarado to Tilden via Conlon Trail",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 965,
+    "segment_count": 964,
+    "distance_m": 29042.34,
+    "distance_mi": 18.05,
+    "elevation_gain_m": 627.1,
+    "elevation_gain_ft": 2057.41,
+    "elevation_loss_m": 626.9,
+    "elevation_loss_ft": 2056.76,
+    "max_elevation_m": 346.4,
+    "max_elevation_ft": 1136.48,
+    "start": {
+      "lat": 37.92594,
+      "lon": -122.31571
+    },
+    "end": {
+      "lat": 37.92619,
+      "lon": -122.31606
+    },
+    "start_bart_station": "El Cerrito del Norte",
+    "end_bart_station": "El Cerrito del Norte",
+    "bart_station": "El Cerrito del Norte"
+  }
+}
