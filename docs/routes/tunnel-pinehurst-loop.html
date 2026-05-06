@@ -69,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -194,7 +195,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>22.6 miles<br> 3,002.3 ft elevation gain<br> Start: Rockridge BART<br> End: Rockridge BART</strong></p>
+<article class="mobile-route-card" data-bart="Rockridge" data-miles="22.63" data-elevation="3002.30">
+
+<div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/tunnel-pinehurst-loop/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>Rockridge</p>
+<p><span class="mobile-route-label">Miles</span><br>22.63</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3002.3 ft</p>
+<p><span class="mobile-route-label">Tech Descents</span><br>0.71 mi</p>
+</div>
+</article>
 <section id="map" class="level2">
 <h2 class="anchored" data-anchor-id="map">Map</h2>
 <iframe src="../data/routes/tunnel-pinehurst-loop/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">

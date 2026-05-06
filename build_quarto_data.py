@@ -37,6 +37,7 @@ def main() -> None:
         route_bundle, route_page_context = build_route(route, ROOT, ROUTES_DIR, HAZARD_PROFILE)
         write_route_page(
             route_page_context["route"],
+            route_page_context["route_bundle"],
             route_page_context["route_facts_heading"],
             html_table(route_page_context["summary_table"]),
             html_table(route_page_context["hazards_table"]),

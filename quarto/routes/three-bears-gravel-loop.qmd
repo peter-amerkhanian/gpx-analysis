@@ -1,11 +1,23 @@
 ---
 title: "Three Wild Bears w/ Gravel"
 ---
-**32.5 miles<br> 3,171.6 ft elevation gain<br> Start: El Cerrito del Norte BART<br> End: El Cerrito del Norte BART**  
 
 
 
 
+
+```{=html}
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
+
+<div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/three-bears-gravel-loop/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>32.49</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3171.59 ft</p>
+<p><span class="mobile-route-label">Tech Descents</span><br>0.2 mi</p>
+</div>
+</article>
+```
 
 ## Map
 <iframe

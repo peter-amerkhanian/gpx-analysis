@@ -148,6 +148,10 @@ def write_geojson(path: Path, frame: gpd.GeoDataFrame) -> None:
     path.write_text(cleaned.to_json(), encoding="utf-8")
 
 
+def write_text(path: Path, content: str) -> None:
+    path.write_text(content, encoding="utf-8")
+
+
 def route_elevation_svg(segments: gpd.GeoDataFrame) -> str:
     elevation = pd.to_numeric(segments.get("elevation_f"), errors="coerce")
     if elevation is None or elevation.notna().sum() < 2:
@@ -178,8 +182,8 @@ def route_elevation_svg(segments: gpd.GeoDataFrame) -> str:
         if not breaks_i or breaks_i[-1] != len(frame):
             breaks_i.append(len(frame))
         for i in range(len(breaks_i) - 1):
-            start = breaks_i[i]
-            stop = breaks_i[i + 1]
+            start = breaks_i[i] + 1
+            stop = breaks_i[i + 1] - 1
             subset = frame.iloc[start:stop, :]
             if len(subset) == 0:
                 continue
@@ -294,6 +298,8 @@ def build_route(
     )
     write_geojson(route_dir / "points.geojson", points_gdf)
     write_geojson(route_dir / "segments.geojson", segments)
+    elevation_profile_svg = route_elevation_svg(segments)
+    write_text(route_dir / "profile.svg", elevation_profile_svg)
     route_map.save(str(route_dir / "map.html"))
 
     route_bundle = {
@@ -313,14 +319,15 @@ def build_route(
             "points": f"data/routes/{route.slug}/points.geojson",
             "segments": f"data/routes/{route.slug}/segments.geojson",
             "map": f"data/routes/{route.slug}/map.html",
+            "profile_svg": f"data/routes/{route.slug}/profile.svg",
             "page": f"routes/{route.slug}.qmd",
         },
         "hazards": hazard_summary.to_dict(orient="records"),
-        "elevation_profile_svg": route_elevation_svg(segments),
     }
 
     route_page_context = {
         "route": route,
+        "route_bundle": route_bundle,
         "route_facts_heading": f"{summary['distance_mi']:,.1f} miles<br> {summary['elevation_gain_ft']:,.1f} ft elevation gain<br> Start: {summary['start_bart_station']} BART<br> End: {summary['end_bart_station']} BART",
         "summary_table": pd.DataFrame(
             [

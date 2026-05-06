@@ -4,7 +4,7 @@
     "href": "routes/wildwood-bbr-loop.html",
     "title": "Wildwood to BBR Loop",
     "section": "",
-    "text": "17.4 miles 2,245.1 ft elevation gain Start: MacArthur BART End: MacArthur BART"
+    "text": "BARTMacArthur\nMiles17.41\nElevation Gain2245.08 ft\nTech Descents0.38 mi"
   },
   {
     "objectID": "routes/wildwood-bbr-loop.html#map",
@@ -25,7 +25,7 @@
     "href": "routes/wildcat-conlon-nimitz-meadow-loop.html",
     "title": "Alvarado to Tilden via Conlon Trail",
     "section": "",
-    "text": "18.1 miles 2,057.4 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART"
+    "text": "BARTEl Cerrito del Norte\nMiles18.05\nElevation Gain2057.41 ft\nTech Descents0.33 mi"
   },
   {
     "objectID": "routes/wildcat-conlon-nimitz-meadow-loop.html#map",
@@ -46,7 +46,7 @@
     "href": "routes/tunnel-pinehurst-loop.html",
     "title": "Tunnel to Pinehurst Loop",
     "section": "",
-    "text": "22.6 miles 3,002.3 ft elevation gain Start: Rockridge BART End: Rockridge BART"
+    "text": "BARTRockridge\nMiles22.63\nElevation Gain3002.3 ft\nTech Descents0.71 mi"
   },
   {
     "objectID": "routes/tunnel-pinehurst-loop.html#map",
@@ -67,7 +67,7 @@
     "href": "routes/tunnel-pinehurst-loop-jm.html",
     "title": "Tunnel to Pinehurst w/ Joaquin Miller Descent",
     "section": "",
-    "text": "25.1 miles 3,021.7 ft elevation gain Start: MacArthur BART End: MacArthur BART"
+    "text": "BARTMacArthur\nMiles25.09\nElevation Gain3021.65 ft\nTech Descents0.66 mi"
   },
   {
     "objectID": "routes/tunnel-pinehurst-loop-jm.html#map",
@@ -88,7 +88,7 @@
     "href": "routes/tg-bbr-loop.html",
     "title": "Trestle Glen to BBR Loop",
     "section": "",
-    "text": "19.9 miles 2,099.4 ft elevation gain Start: 19th St/Oakland BART End: 19th St/Oakland BART"
+    "text": "BART19th St/Oakland\nMiles19.87\nElevation Gain2099.41 ft\nTech Descents0.52 mi"
   },
   {
     "objectID": "routes/tg-bbr-loop.html#map",
@@ -109,7 +109,7 @@
     "href": "routes/redwood-san-leandro-macarthur-bart.html",
     "title": "Redwood Road, San Lorenzo to Temescal",
     "section": "",
-    "text": "24.6 miles 2,641.1 ft elevation gain Start: San Leandro BART End: MacArthur BART\nExample Strava effort"
+    "text": "Example Strava effort"
   },
   {
     "objectID": "routes/redwood-san-leandro-macarthur-bart.html#map",
@@ -130,7 +130,7 @@
     "href": "routes/arlington-gravel-loop.html",
     "title": "Arlington Gravel Loop",
     "section": "",
-    "text": "14.9 miles 1,761.8 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART\nExample Strava effort"
+    "text": "Example Strava effort"
   },
   {
     "objectID": "routes/arlington-gravel-loop.html#map",
@@ -151,7 +151,7 @@
     "href": "routes/grizzly-peak-loop.html",
     "title": "Grizzly Peak Loop",
     "section": "",
-    "text": "13.9 miles 1,460.0 ft elevation gain Start: North Berkeley BART End: North Berkeley BART"
+    "text": "BARTNorth Berkeley\nMiles13.91\nElevation Gain1459.97 ft\nTech Descents0.11 mi"
   },
   {
     "objectID": "routes/grizzly-peak-loop.html#map",
@@ -172,7 +172,7 @@
     "href": "routes/spruce-up-euclid-down.html",
     "title": "Spruce up, Euclid Down",
     "section": "",
-    "text": "11.6 miles 1,062.3 ft elevation gain Start: North Berkeley BART End: Ashby BART"
+    "text": "BARTNorth Berkeley\nMiles11.59\nElevation Gain1062.34 ft\nTech Descents0.11 mi"
   },
   {
     "objectID": "routes/spruce-up-euclid-down.html#map",
@@ -193,7 +193,7 @@
     "href": "routes/three-bears-gravel-loop.html",
     "title": "Three Wild Bears w/ Gravel",
     "section": "",
-    "text": "32.5 miles 3,171.6 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART"
+    "text": "BARTEl Cerrito del Norte\nMiles32.49\nElevation Gain3171.59 ft\nTech Descents0.2 mi"
   },
   {
     "objectID": "routes/three-bears-gravel-loop.html#map",
@@ -214,7 +214,7 @@
     "href": "routes/tunnel-pinehurst-loop-sheps.html",
     "title": "Tunnel to Pinehurst w/ Shepards Canyon Descent",
     "section": "",
-    "text": "28.0 miles 3,127.6 ft elevation gain Start: MacArthur BART End: MacArthur BART"
+    "text": "BARTMacArthur\nMiles27.96\nElevation Gain3127.62 ft\nTech Descents0.67 mi"
   },
   {
     "objectID": "routes/tunnel-pinehurst-loop-sheps.html#map",
@@ -235,7 +235,7 @@
     "href": "routes/tunnel-to-claremont-loop.html",
     "title": "Tunnel Road to Claremont Loop",
     "section": "",
-    "text": "14.2 miles 1,502.3 ft elevation gain Start: MacArthur BART End: MacArthur BART"
+    "text": "BARTMacArthur\nMiles14.16\nElevation Gain1502.3 ft\nTech Descents0.19 mi"
   },
   {
     "objectID": "routes/tunnel-to-claremont-loop.html#map",
@@ -256,7 +256,7 @@
     "href": "routes/wildcat-havey-nimitz-meadow-loop.html",
     "title": "Alvarado to Tilden via Havey Canyon",
     "section": "",
-    "text": "18.8 miles 1,875.7 ft elevation gain Start: El Cerrito del Norte BART End: El Cerrito del Norte BART"
+    "text": "BARTEl Cerrito del Norte\nMiles18.83\nElevation Gain1875.66 ft\nTech Descents0.19 mi"
   },
   {
     "objectID": "routes/wildcat-havey-nimitz-meadow-loop.html#map",

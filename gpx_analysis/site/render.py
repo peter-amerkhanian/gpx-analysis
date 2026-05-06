@@ -1,12 +1,9 @@
 from __future__ import annotations
-
 import shutil
 from pathlib import Path
-
 import pandas as pd
 from itables import to_html_datatable
 import yaml
-
 from .data import RouteConfig
 
 
@@ -57,6 +54,45 @@ def interactive_table_html(frame: pd.DataFrame) -> str:
     )
     return f"```{{=html}}\n{table_html}\n```"
 
+def summary_card(route: dict[str, object], path_prefix: str = "", title=True) -> list[str]:
+    steep_climbing = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "steep_climb"), 0)
+    dangerous_descent = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "danger_zone"), 0)
+    page_href = f'{path_prefix}{route["paths"]["page"].replace(".qmd", ".html")}'
+    profile_src = f'{path_prefix}{route["paths"]["profile_svg"]}'
+    return [(
+        f'<article class="mobile-route-card" '
+        f'data-bart="{route["summary"]["bart_station"]}" '
+        f'data-miles="{float(route["summary"]["distance_mi"]):.2f}" '
+        f'data-elevation="{float(route["summary"]["elevation_gain_ft"]):.2f}">'
+    ),
+    (
+        f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{page_href}">'
+        f'{route["title"]}</a></p>'
+    ) if title else '',
+    (
+        '<div class="mobile-route-elevation" aria-hidden="true">'
+        f'<img src="{profile_src}" alt="" loading="lazy">'
+        "</div>"
+    ) if not title else '',
+    '<div class="mobile-route-metrics">',
+    (
+        f'<p><span class="mobile-route-label">BART</span><br>'
+        f'{route["summary"]["bart_station"]}</p>'
+    ),
+    (
+        f'<p><span class="mobile-route-label">Miles</span><br>'
+        f'{route["summary"]["distance_mi"]}</p>'
+    ),
+    (
+        f'<p><span class="mobile-route-label">Elevation Gain</span><br>'
+        f'{route["summary"]["elevation_gain_ft"]} ft</p>'
+    ),
+    (
+        f'<p><span class="mobile-route-label">Tech Descents</span><br>'
+        f'{dangerous_descent} mi</p>'
+    ),
+    "</div>",
+    "</article>"]
 
 def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
     """Render compact route cards for small screens as raw HTML inside Quarto blocks."""
@@ -90,49 +126,8 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
     ]
     sorted_routes = sorted(routes, key=lambda item: float(item["summary"]["distance_mi"]))
     for route in sorted_routes:
-        steep_climbing = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "steep_climb"), 0)
-        dangerous_descent = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "danger_zone"), 0)
         cards.extend(
-            [
-                (
-                    f'<article class="mobile-route-card" '
-                    f'data-bart="{route["summary"]["bart_station"]}" '
-                    f'data-miles="{float(route["summary"]["distance_mi"]):.2f}" '
-                    f'data-elevation="{float(route["summary"]["elevation_gain_ft"]):.2f}">'
-                ),
-                (
-                    f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{route["paths"]["page"].replace(".qmd", ".html")}">'
-                    f'{route["title"]}</a></p>'
-                ),
-                (
-                    '<div class="mobile-route-elevation" aria-hidden="true">'
-                    f'{route.get("elevation_profile_svg", "")}'
-                    "</div>"
-                ),
-                '<div class="mobile-route-metrics">',
-                (
-                    f'<p><span class="mobile-route-label">BART</span><br>'
-                    f'{route["summary"]["bart_station"]}</p>'
-                ),
-                (
-                    f'<p><span class="mobile-route-label">Miles</span><br>'
-                    f'{route["summary"]["distance_mi"]}</p>'
-                ),
-                (
-                    f'<p><span class="mobile-route-label">Elevation Gain</span><br>'
-                    f'{route["summary"]["elevation_gain_ft"]} ft</p>'
-                ),
-                # (
-                #     f'<p><span class="mobile-route-label">Steep Climbing</span><br>'
-                #     f'{steep_climbing} mi</p>'
-                # ),
-                (
-                    f'<p><span class="mobile-route-label">Tech Descents</span><br>'
-                    f'{dangerous_descent} mi</p>'
-                ),
-                "</div>",
-                "</article>",
-            ]
+            summary_card(route)
         )
     cards.extend(["</div>", "```"])
     return "\n".join(cards)
@@ -140,6 +135,7 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
 
 def route_page_content(
     route: RouteConfig,
+    route_bundle: dict[str, object],
     route_facts_heading: str,
     summary_table_html: str,
     hazards_table_html: str,
@@ -178,11 +174,14 @@ def route_page_content(
     return f"""---
 title: "{route.display_title}"
 ---
-**{route_facts_heading}**  
 
 {hero_html}
 
 {links_html}
+
+```{{=html}}
+{chr(10).join(summary_card(route_bundle, path_prefix="../", title=False))}
+```
 
 ## Map
 <iframe
@@ -201,6 +200,7 @@ title: "{route.display_title}"
 
 def write_route_page(
     route: RouteConfig,
+    route_bundle: dict[str, object],
     route_facts_heading: str,
     summary_table_html: str,
     hazards_table_html: str,
@@ -208,7 +208,7 @@ def write_route_page(
 ) -> None:
     ensure_dir(route_pages_dir)
     (route_pages_dir / f"{route.slug}.qmd").write_text(
-        route_page_content(route, route_facts_heading, summary_table_html, hazards_table_html),
+        route_page_content(route, route_bundle, route_facts_heading, summary_table_html, hazards_table_html),
         encoding="utf-8",
     )
 
@@ -251,104 +251,11 @@ def write_dashboard_page(routes: list[dict[str, object]], output_path: Path, tit
     output_path.write_text(
         f"""---
 title: "{title}"
-format: dashboard
+format:
+  dashboard:
+    css: styles.css
+    include-after-body: scripts/routes-dashboard.html
 ---
-
-<style>
-.desktop-only {{
-  display: block;
-}}
-
-.mobile-only {{
-  display: none;
-}}
-
-.mobile-route-grid {{
-  display: grid;
-  gap: 0.9rem;
-}}
-
-.mobile-route-controls {{
-  display: grid;
-  gap: 0.75rem;
-  margin-bottom: 0.9rem;
-}}
-
-.mobile-route-control {{
-  min-width: 0;
-}}
-
-.mobile-route-controls label {{
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}}
-
-.mobile-route-card {{
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0.85rem;
-  padding: 0.95rem 1rem 0.85rem;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-}}
-
-.mobile-route-title {{
-  margin-top: 0;
-  margin-bottom: 0.65rem;
-  font-size: 1rem;
-  line-height: 1.25;
-  font-weight: 700;
-}}
-
-.mobile-route-title a {{
-  color: inherit;
-  text-decoration: none;
-}}
-
-.mobile-route-title a:hover {{
-  text-decoration: underline;
-}}
-
-.mobile-route-elevation {{
-  margin-bottom: 0.75rem;
-}}
-
-.mobile-route-elevation svg {{
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 18vh;
-}}
-
-.mobile-route-metrics {{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem 0.9rem;
-}}
-
-.mobile-route-metrics p {{
-  margin: 0;
-  line-height: 1.25;
-}}
-
-.mobile-route-label {{
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.62);
-}}
-
-@media (max-width: 900px) {{
-  .desktop-only {{
-    display: none;
-  }}
-
-  .mobile-only {{
-    display: block;
-  }}
-}}
-</style>
 
 ## Snapshot
 
@@ -361,41 +268,6 @@ format: dashboard
 ::: {{.mobile-only}}
 {mobile_summary_cards(routes)}
 :::
-
-```{{=html}}
-<script>
-window.addEventListener("load", function () {{
-  const sortSelect = document.getElementById("mobile-route-sort");
-  const bartSelect = document.getElementById("mobile-route-bart");
-  const grid = document.getElementById("mobile-route-grid");
-  if (!sortSelect || !bartSelect || !grid) {{
-    return;
-  }}
-
-  const sorters = {{
-    miles_asc: (a, b) => Number(a.dataset.miles) - Number(b.dataset.miles),
-    miles_desc: (a, b) => Number(b.dataset.miles) - Number(a.dataset.miles),
-    elev_asc: (a, b) => Number(a.dataset.elevation) - Number(b.dataset.elevation),
-    elev_desc: (a, b) => Number(b.dataset.elevation) - Number(a.dataset.elevation)
-  }};
-
-  function applyMobileControls() {{
-    const cards = Array.from(grid.querySelectorAll(".mobile-route-card"));
-    const bart = bartSelect.value;
-    cards.forEach((card) => {{
-      const visible = !bart || card.dataset.bart === bart;
-      card.style.display = visible ? "" : "none";
-    }});
-    const sorter = sorters[sortSelect.value] || sorters.miles_asc;
-    cards.sort(sorter);
-    cards.forEach((card) => grid.appendChild(card));
-  }}
-
-  sortSelect.addEventListener("change", applyMobileControls);
-  bartSelect.addEventListener("change", applyMobileControls);
-}});
-</script>
-```
 """,
         encoding="utf-8",
     )
@@ -431,6 +303,7 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
                 "theme": "cosmo",
                 "toc": True,
                 "code-fold": False,
+                "css": "styles.css",
                 "include-in-header": {
                     "text": '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">',
                 },

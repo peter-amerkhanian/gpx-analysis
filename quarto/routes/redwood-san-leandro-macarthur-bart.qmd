@@ -1,12 +1,24 @@
 ---
 title: "Redwood Road, San Lorenzo to Temescal"
 ---
-**24.6 miles<br> 2,641.1 ft elevation gain<br> Start: San Leandro BART<br> End: MacArthur BART**  
 
 
 
 <a href="https://www.strava.com/activities/18234048917" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-strava"></i> Example Strava effort</a>
 
+
+```{=html}
+<article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2641.08">
+
+<div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/redwood-san-leandro-macarthur-bart/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>San Leandro</p>
+<p><span class="mobile-route-label">Miles</span><br>24.55</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>2641.08 ft</p>
+<p><span class="mobile-route-label">Tech Descents</span><br>0.38 mi</p>
+</div>
+</article>
+```
 
 ## Map
 <iframe
