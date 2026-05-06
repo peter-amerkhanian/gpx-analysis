@@ -24,4 +24,5 @@ dependencies = [
     "pyzmq>=27.1.0",
     "scikit-learn>=1.8.0",
     "shapely>=2.1.2",
+    "pyarrow>=24.0.0",
 ]

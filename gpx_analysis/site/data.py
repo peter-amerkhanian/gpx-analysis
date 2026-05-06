@@ -14,6 +14,7 @@ import yaml
 from .. import (
     aggregate_by_hazard,
     analyze_steps,
+    enrich_segments_with_osm_edges,
     make_route_map,
     points_to_segments,
     prepare_segment_display_columns,
@@ -147,23 +148,52 @@ def write_geojson(path: Path, frame: gpd.GeoDataFrame) -> None:
     path.write_text(cleaned.to_json(), encoding="utf-8")
 
 
-def route_elevation_svg(points: pd.DataFrame) -> str:
-    elevation = pd.to_numeric(points.get("elevation_f"), errors="coerce")
+def route_elevation_svg(segments: gpd.GeoDataFrame) -> str:
+    elevation = pd.to_numeric(segments.get("elevation_f"), errors="coerce")
     if elevation is None or elevation.notna().sum() < 2:
         return ""
 
-    distance_mi = pd.to_numeric(points.get("step_dist_m"), errors="coerce").fillna(0).cumsum() / 1609.344
-    smooth_window = max(3, min(12, len(elevation)))
-    smooth_elevation = elevation.interpolate(limit_direction="both").rolling(
-        smooth_window,
-        min_periods=1,
-    ).mean()
-    baseline = np.full(len(smooth_elevation), float(np.nanmin(elevation)))
+    frame = segments.copy()
+    color_map = {
+        "gravel": "chocolate",
+        "road": "tab:blue",
+    }
+    if "road_type" in frame.columns:
+        color_col = "road_type"
+    elif "track" in frame.columns:
+        color_col = "track"
+    else:
+        color_col = None
+    frame["roll_elevation"] = elevation.interpolate(limit_direction="both").rolling(10, min_periods=1).mean()
+
+    x = np.arange(len(frame))
+    baseline = np.full(len(frame), float(np.nanmin(elevation)))
 
     fig, ax = plt.subplots(figsize=(4, 1))
-    ax.plot(distance_mi, smooth_elevation, linewidth=2.5, alpha=.8, color="tab:blue")
+    if color_col is None:
+        ax.plot(x, frame["roll_elevation"], linewidth=2.5, alpha=0.9, color="tab:blue")
+    else:
+        breaks = frame[color_col] != frame[color_col].shift(-1)
+        breaks_i = [0] + list(breaks[breaks].index)
+        if not breaks_i or breaks_i[-1] != len(frame):
+            breaks_i.append(len(frame))
+        for i in range(len(breaks_i) - 1):
+            start = breaks_i[i]
+            stop = breaks_i[i + 1]
+            subset = frame.iloc[start:stop, :]
+            if len(subset) == 0:
+                continue
+            subset_x = x[start:stop]
+            ax.plot(
+                subset_x,
+                subset["roll_elevation"],
+                linewidth=2.5,
+                alpha=0.9,
+                color=color_map.get(subset[color_col].iloc[-1], "tab:blue"),
+            )
+
     ax.plot(
-        distance_mi,
+        x,
         baseline,
         linewidth=2,
         color="#8d99ae",
@@ -183,10 +213,6 @@ def route_elevation_svg(points: pd.DataFrame) -> str:
     plt.close(fig)
 
     svg = svg_buffer.getvalue()
-    # return "\n".join(
-    #     line for line in svg.splitlines()
-    #     if not line.startswith("<?xml") and not line.startswith("<!DOCTYPE")
-    # )
     return svg
 
 
@@ -233,6 +259,7 @@ def build_route(
     analyzed = analyze_steps(points, rolling_window=3)
     points_gdf = points_frame(analyzed)
     segments = points_to_segments(points_gdf)
+    segments = enrich_segments_with_osm_edges(segments)
     segments = prepare_segment_display_columns(segments, hazard_profile=hazard_profile)
 
     summary = compute_route_summary(analyzed, segments)
@@ -289,7 +316,7 @@ def build_route(
             "page": f"routes/{route.slug}.qmd",
         },
         "hazards": hazard_summary.to_dict(orient="records"),
-        "elevation_profile_svg": route_elevation_svg(analyzed),
+        "elevation_profile_svg": route_elevation_svg(segments),
     }
 
     route_page_context = {

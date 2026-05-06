@@ -12,3 +12,6 @@ cache/
 
 # Quarto working files
 quarto/_freeze/
+
+# Local OSM cache
+data/osm/
