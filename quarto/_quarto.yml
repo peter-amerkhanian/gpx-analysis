@@ -4,6 +4,9 @@ project:
   resources:
   - data/**
   - images/**
+  render:
+  - index.qmd
+  - routes/*.qmd
 website:
   title: "\U0001F687BART Rides\U0001F6B2"
   navbar:

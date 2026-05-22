@@ -1,8 +1,15 @@
 from .physics import compute_step_metrics
 from .reporting import aggregate_by_hazard
-from .geo import points_to_segments, build_route_graph, stop_signs_on_segments, enrich_segments_with_osm_edges
+from .geo import (
+    points_frame,
+    points_to_segments,
+    build_route_graph,
+    stop_signs_on_segments,
+    enrich_segments_with_osm_edges,
+    enrich_segments_with_mtc_streets,
+)
 from .io import read_simple_gpx
-from .analytics import detect_hazards, analyze_steps
+from .analytics import detect_hazards, analyze_steps, detect_chunks, analyze_chunks
 
 from .viz import (
     DEFAULT_HAZARD_COLORS,
@@ -10,7 +17,7 @@ from .viz import (
     DETAILED_HAZARD_COLORS,
     SIMPLIFIED_HAZARD_COLORS,
     apply_hazard_profile,
-    google_maps_url,
+    google_maps_link,
     make_route_map,
     prepare_segment_display_columns,
     prepare_osm_columns
@@ -18,20 +25,24 @@ from .viz import (
 
 __all__ = [
     "analyze_steps",
+    "analyze_chunks",
     "compute_step_metrics",
+    "detect_chunks",
     "detect_hazards",
+    "points_frame",
     "aggregate_by_hazard",
     "points_to_segments",
     "stop_signs_on_segments",
     "build_route_graph",
     "enrich_segments_with_osm_edges",
+    "enrich_segments_with_mtc_streets",
     "read_simple_gpx",
     "DEFAULT_HAZARD_COLORS",
     "DEFAULT_HAZARD_PROFILE",
     "DETAILED_HAZARD_COLORS",
     "SIMPLIFIED_HAZARD_COLORS",
     "apply_hazard_profile",
-    "google_maps_url",
+    "google_maps_link",
     "prepare_osm_columns",
     "prepare_segment_display_columns",
     "make_route_map",

@@ -89,19 +89,21 @@ That script downloads the configured Alameda and Contra Costa county network wit
 Regenerate all route data and Quarto source:
 
 ```powershell
-uv run python build_quarto_data.py
+uv run build_quarto_data.py
 ```
 
 Preview the site locally:
 
 ```powershell
-quarto preview quarto
+uv run quarto preview quarto
 ```
+
+For CSS or client-side behavior changes, leave `uv run quarto preview quarto` running and edit the checked-in Quarto files directly. For template or partial changes under `quarto/templates/` or `quarto/partials/`, rerun `uv run build_quarto_data.py` so the generated `.qmd` pages pick up the new layout.
 
 Render the site into `docs/` without starting preview:
 
 ```powershell
-quarto render quarto
+uv run quarto render quarto
 ```
 
 ## Editing Guide
@@ -111,6 +113,9 @@ Edit these by hand:
 - `routes.yml` to add, remove, rename, reverse, or annotate routes
 - `gpx_data/*.gpx` to change the source rides
 - `gpx_analysis/` when changing analysis logic, hazard rules, enrichment, or visual output
+- `quarto/partials/*.qmd` for shared page structure and section layout
+- `quarto/templates/*.j2` for page-level Quarto templates rendered by Python
+- `quarto/styles.css` and `quarto/scripts/*` for presentation and client-side behavior
 - checked-in assets under `quarto/images/` if you add route media
 
 Treat these as generated artifacts:
@@ -121,7 +126,7 @@ Treat these as generated artifacts:
 - `quarto/data/**`
 - `docs/**`
 
-If you want a structural change to the route pages, dashboard, or navbar to persist, change the generators in `gpx_analysis/site/` or `build_quarto_data.py`, then rebuild.
+If you want a structural change to the route pages or dashboard to persist, prefer editing `quarto/templates/` and `quarto/partials/` first. Use `gpx_analysis/site/` when you need to change the data passed into those templates.
 
 ## Route Manifest
 

@@ -7,6 +7,9 @@ wheels/
 *.egg-info
 cache/
 
+# big files
+sandbox.ipynb
+
 # Virtual environments
 .venv
 
@@ -15,3 +18,6 @@ quarto/_freeze/
 
 # Local OSM cache
 data/osm/
+
+# Local OSM cache
+data/vital-signs/sandbox.ipynb

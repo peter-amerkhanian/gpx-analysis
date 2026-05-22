@@ -1,6 +1,7 @@
 from __future__ import annotations
 import shutil
 from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
 import pandas as pd
 from itables import to_html_datatable
 import yaml
@@ -9,6 +10,11 @@ from .data import RouteConfig
 
 def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
+
+
+def write_text(path: Path, content: str) -> None:
+    ensure_dir(path.parent)
+    path.write_text(content, encoding="utf-8")
 
 
 def remove_stale_children(parent: Path, keep: set[str], suffix: str | None = None) -> None:
@@ -54,6 +60,16 @@ def interactive_table_html(frame: pd.DataFrame) -> str:
     )
     return f"```{{=html}}\n{table_html}\n```"
 
+
+def render_template(template_root: Path, template_name: str, **context: object) -> str:
+    environment = Environment(
+        loader=FileSystemLoader(str(template_root)),
+        autoescape=False,
+        trim_blocks=True,
+        lstrip_blocks=True,
+    )
+    return environment.get_template(template_name).render(**context).strip() + "\n"
+
 def summary_card(route: dict[str, object], path_prefix: str = "", title=True) -> list[str]:
     steep_climbing = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "steep_climb"), 0)
     dangerous_descent = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "danger_zone"), 0)
@@ -73,7 +89,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         '<div class="mobile-route-elevation" aria-hidden="true">'
         f'<img src="{profile_src}" alt="" loading="lazy">'
         "</div>"
-    ) if not title else '',
+    ),
     '<div class="mobile-route-metrics">',
     (
         f'<p><span class="mobile-route-label">BART</span><br>'
@@ -133,83 +149,28 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
     return "\n".join(cards)
 
 
-def route_page_content(
-    route: RouteConfig,
-    route_bundle: dict[str, object],
-    route_facts_heading: str,
-    summary_table_html: str,
-    hazards_table_html: str,
-) -> str:
-    hero_html = ""
-    if route.media.hero_image:
-        hero_html = f"""
-## Photo
-![{route.display_title}]({route.media.hero_image})
-"""
-
-    links_lines: list[str] = []
-    if route.links.strava_effort:
-        links_lines.append(
-            '<a href="'
-            f'{route.links.strava_effort}'
-            '" target="_blank" rel="noopener noreferrer">'
-            '<i class="fa-brands fa-strava"></i> Example Strava effort'
-            "</a>"
-        )
-    links_html = ""
-    if links_lines:
-        links_html = "\n".join(links_lines) + "\n"
-
-    gallery_html = ""
-    if route.media.gallery:
-        gallery_blocks = "\n".join(
-            f"![{route.display_title}]({image_path})"
-            for image_path in route.media.gallery
-        )
-        gallery_html = f"""
-## Gallery
-{gallery_blocks}
-"""
-
-    return f"""---
-title: "{route.display_title}"
----
-
-{hero_html}
-
-{links_html}
-
-```{{=html}}
-{chr(10).join(summary_card(route_bundle, path_prefix="../", title=False))}
-```
-
-## Map
-<iframe
-  src="../data/routes/{route.slug}/map.html"
-  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
-  loading="lazy"
-  allowfullscreen
-></iframe>
-
-## Data
-{hazards_table_html}
-
-{gallery_html}
-"""
-
-
 def write_route_page(
+    quarto_dir: Path,
     route: RouteConfig,
     route_bundle: dict[str, object],
-    route_facts_heading: str,
-    summary_table_html: str,
     hazards_table_html: str,
     route_pages_dir: Path,
 ) -> None:
     ensure_dir(route_pages_dir)
-    (route_pages_dir / f"{route.slug}.qmd").write_text(
-        route_page_content(route, route_bundle, route_facts_heading, summary_table_html, hazards_table_html),
-        encoding="utf-8",
+    write_text(
+        route_pages_dir / f"{route.slug}.qmd",
+        render_template(
+            quarto_dir,
+            "templates/route-page.qmd.j2",
+            title=route.display_title,
+            hero_image=route.media.hero_image,
+            strava_effort=route.links.strava_effort,
+            summary_card_html="\n".join(summary_card(route_bundle, path_prefix="../", title=False)),
+            map_src=f"../data/routes/{route.slug}/map.html",
+            hazards_table_html=hazards_table_html,
+            gallery_images=route.media.gallery,
+            gallery_title=route.display_title,
+        ),
     )
 
 
@@ -219,7 +180,12 @@ def write_route_pages_index(route_pages_dir: Path, routes: list[RouteConfig]) ->
     remove_stale_children(route_pages_dir, keep=keep, suffix=".qmd")
 
 
-def write_dashboard_page(routes: list[dict[str, object]], output_path: Path, title: str) -> None:
+def write_dashboard_page(
+    quarto_dir: Path,
+    routes: list[dict[str, object]],
+    output_path: Path,
+    title: str,
+) -> None:
     summary_table = pd.DataFrame(
         [
             {
@@ -248,28 +214,15 @@ def write_dashboard_page(routes: list[dict[str, object]], output_path: Path, tit
         ]
     ).sort_values(by="Miles")
 
-    output_path.write_text(
-        f"""---
-title: "{title}"
-format:
-  dashboard:
-    css: styles.css
-    include-after-body: scripts/routes-dashboard.html
----
-
-## Snapshot
-
-### Route Summaries
-
-::: {{.desktop-only}}
-{interactive_table_html(summary_table.sort_values(by=["BART", "Miles"]))}
-:::
-
-::: {{.mobile-only}}
-{mobile_summary_cards(routes)}
-:::
-""",
-        encoding="utf-8",
+    write_text(
+        output_path,
+        render_template(
+            quarto_dir,
+            "templates/dashboard.qmd.j2",
+            title=title,
+            desktop_table_html=interactive_table_html(summary_table.sort_values(by=["BART", "Miles"])),
+            mobile_cards_html=mobile_summary_cards(routes),
+        ),
     )
 
 
@@ -279,6 +232,7 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
             "type": "website",
             "output-dir": "../docs",
             "resources": ["data/**", "images/**"],
+            "render": ["index.qmd", "routes/*.qmd"],
         },
         "website": {
             "title": "🚇BART Rides🚲",

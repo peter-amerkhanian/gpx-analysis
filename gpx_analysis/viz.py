@@ -1,13 +1,25 @@
 from __future__ import annotations
 
 from typing import Literal, Mapping
-from shapely.geometry import Point
+from shapely.geometry import LineString, Point
 import geopandas as gpd
 import numpy as np
 import pandas as pd
 import folium
+from branca.element import MacroElement, Template
 from folium.plugins import Fullscreen
 
+ROAD_QUALITY_COLORS = {
+    'Excellent': '#1a9850',
+    'Very Good': '#91cf60',
+    'Good': '#d9ef8b',
+    'Fair': '#ffffbf',
+    'At Risk': '#fee08b',
+    'Poor': '#fc8d59',
+    'Failed': '#d73027',
+    'Gravel': "#712f00",
+    'Cycleway': "#0078da",
+}
 
 DETAILED_HAZARD_COLORS = {
     "steep_climb": "#012C22",
@@ -93,6 +105,15 @@ def resolve_hazard_profile(
     labels = dict(HAZARD_PROFILE_LABELS[hazard_profile])
     return remap, colors, labels
 
+def resolve_road_quality_profile(gdf_segments: gpd.GeoDataFrame):
+    colors = ROAD_QUALITY_COLORS.copy()
+    for val in gdf_segments['mtc_pci_info'].unique():
+        if val not in ROAD_QUALITY_COLORS:
+            colors[val] = "#8a8a8a"
+    for pci, _ in ROAD_QUALITY_COLORS.items():
+        if pci not in gdf_segments['mtc_pci_info'].unique():
+            del colors[pci]
+    return colors
 
 def apply_hazard_profile(
     frame: pd.DataFrame,
@@ -108,9 +129,15 @@ def apply_hazard_profile(
     return result
 
 
-def google_maps_url(lat: pd.Series, lon: pd.Series) -> pd.Series:
+def google_maps_link(lat: pd.Series, lon: pd.Series) -> pd.Series:
     """Build Google Maps query URLs for latitude/longitude series pairs."""
-    return "https://www.google.com/maps?q=" + lat.astype(str) + "," + lon.astype(str)
+    gmaps_url = (
+        "https://www.google.com/maps?q=" + lat.astype(str) + "," + lon.astype(str)
+    )
+    gmaps_link = (
+        '<a href="' + gmaps_url + '" target="_blank">📍 Open in Google Maps</a>'
+    )
+    return gmaps_link
 
 
 def prepare_segment_display_columns(
@@ -120,12 +147,12 @@ def prepare_segment_display_columns(
 ) -> gpd.GeoDataFrame:
     """Return a copy with presentation columns used by folium visualizations."""
     frame = apply_hazard_profile(gdf_segments, hazard_profile=hazard_profile)
-    frame["Segment"] = frame["step"].astype("Int64").astype(str)
-    frame["More Details"] = (
-    '<a href="' +
-    google_maps_url(frame['lat'], frame['lon']) +
-    '" target="_blank">📍 Open in Google Maps</a>'
+    _, colors, _ = resolve_hazard_profile(
+        hazard_profile=hazard_profile,
+        hazard_colors=hazard_colors,
     )
+    frame["Segment"] = frame["step"].astype("Int64").astype(str)
+    frame["More Details"] = google_maps_link(frame['lat'], frame['lon'])
     frame["Turn"] = (
         frame["step_turn"].round(2).astype(str) + "°"
     )
@@ -133,6 +160,7 @@ def prepare_segment_display_columns(
         frame["step_grade"].multiply(100).round(2).astype(str) + "%"
     )
     frame["Ride Type"] = frame["hazard_label"]
+    frame["_display_color"] = frame["hazard"].map(colors).fillna("#8a8a8a")
     return frame
 
 def prepare_osm_columns(gdf_segments_enriched: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
@@ -231,10 +259,454 @@ def _number_marker_indexes(frame: gpd.GeoDataFrame) -> list[int]:
     return indexes
 
 
+def _route_chevron_dimensions(frame: gpd.GeoDataFrame) -> tuple[float, float]:
+    """Scale chevron geometry by overall route length, anchored to a ~30 mile route."""
+    distance_m = pd.to_numeric(frame.get("step_dist_m"), errors="coerce").fillna(0.0).sum()
+    distance_mi = distance_m / 1609.344
+    scale = float(np.clip(distance_mi / 30.0, 0.55, 1.15))
+    return 350.0 * scale, 250.0 * scale
+
+
+def _chevron_paths_for_segment(
+    segment: object,
+    chevron_length_m: float,
+    chevron_half_width_m: float,
+) -> list[list[list[float]]]:
+    """Return two WGS84 line paths forming a centered chevron for the segment."""
+    coords = np.asarray(segment.coords, dtype=float)
+    if len(coords) < 2:
+        return []
+
+    start = coords[0]
+    end = coords[-1]
+    direction = end - start
+    norm = np.linalg.norm(direction)
+    if norm == 0:
+        return []
+
+    unit_direction = direction / norm
+    unit_normal = np.array([-unit_direction[1], unit_direction[0]])
+    midpoint = (start + end) / 2.0
+    tip = midpoint + (unit_direction * (chevron_length_m / 2.0))
+    tail_center = midpoint - (unit_direction * (chevron_length_m / 2.0))
+    left = tail_center + (unit_normal * chevron_half_width_m)
+    right = tail_center - (unit_normal * chevron_half_width_m)
+
+    chevron_lines = gpd.GeoSeries(
+        [
+            LineString([tuple(left), tuple(tip)]),
+            LineString([tuple(right), tuple(tip)]),
+        ],
+        crs=3857,
+    ).to_crs(4326)
+    return [[[lat, lon] for lon, lat in line.coords] for line in chevron_lines]
+
+
+def _chevron_midpoint(segment: object) -> np.ndarray | None:
+    """Return the projected midpoint of a segment for chevron overlap checks."""
+    coords = np.asarray(segment.coords, dtype=float)
+    if len(coords) < 2:
+        return None
+    start = coords[0]
+    end = coords[-1]
+    if np.allclose(end, start):
+        return None
+    return (start + end) / 2.0
+
+
+def _segment_indexes_with_route_overlap(
+    projected: gpd.GeoDataFrame,
+    overlap_proximity_m: float = 20.0,
+    min_shared_length_m: float = 25.0,
+) -> set[int]:
+    """Return segment indexes that truly share route geometry with non-adjacent segments."""
+    if projected.empty:
+        return set()
+
+    buffered = projected[["geometry"]].copy()
+    buffered["geometry"] = buffered.geometry.buffer(overlap_proximity_m)
+    overlap_indexes: set[int] = set()
+    joined = gpd.sjoin(
+        projected[["geometry"]],
+        buffered[["geometry"]],
+        how="inner",
+        predicate="intersects",
+        lsuffix="left",
+        rsuffix="right",
+    )
+    joined = joined[
+        (joined.index != joined["index_right"])
+        & ((joined.index - joined["index_right"]).abs() > 1)
+    ]
+    if joined.empty:
+        return overlap_indexes
+
+    geometries = projected.geometry
+    for segment_index, match_index in joined[["index_right"]].itertuples(index=True, name=None):
+        left = geometries.loc[segment_index]
+        right = geometries.loc[match_index]
+        shared_length_m = left.intersection(right).length
+        if shared_length_m >= min_shared_length_m:
+            overlap_indexes.add(int(segment_index))
+            overlap_indexes.add(int(match_index))
+    return overlap_indexes
+
+
+def _frames_share_route_overlap(
+    left: gpd.GeoDataFrame,
+    right: gpd.GeoDataFrame,
+    overlap_proximity_m: float = 20.0,
+    min_shared_length_m: float = 25.0,
+) -> bool:
+    """Return True when two route halves truly share geometry for a meaningful length."""
+    if left.empty or right.empty:
+        return False
+
+    right_buffered = right[["geometry"]].copy()
+    right_buffered["geometry"] = right_buffered.geometry.buffer(overlap_proximity_m)
+    joined = gpd.sjoin(
+        left[["geometry"]],
+        right_buffered[["geometry"]],
+        how="inner",
+        predicate="intersects",
+        lsuffix="left",
+        rsuffix="right",
+    )
+    if joined.empty:
+        return False
+
+    left_geometries = left.geometry
+    right_geometries = right.geometry
+    for left_index, right_index in joined[["index_right"]].itertuples(index=True, name=None):
+        shared_length_m = left_geometries.loc[left_index].intersection(right_geometries.loc[right_index]).length
+        if shared_length_m >= min_shared_length_m:
+            return True
+    return False
+
+
+def _chevron_marker_segments(
+    frame: gpd.GeoDataFrame,
+    spacing_fraction: int = 9,
+    min_segment_length_m: float = 100.0,
+) -> list[list[list[list[float]]]]:
+    """Return route-spaced chevron paths for sufficiently long, non-overlapping segments."""
+    if frame.empty:
+        return []
+
+    projected = frame[["geometry"]].to_crs(3857).copy()
+    projected["segment_length_m"] = projected.geometry.length
+    overlapping_indexes = _segment_indexes_with_route_overlap(projected)
+    eligible = projected[projected["segment_length_m"] >= min_segment_length_m].copy()
+    if overlapping_indexes:
+        eligible = eligible[~eligible.index.isin(overlapping_indexes)]
+    if eligible.empty:
+        return []
+
+    chevron_length_m, chevron_half_width_m = _route_chevron_dimensions(frame)
+    min_chevron_spacing_m = chevron_length_m * 0.9
+    target_count = max(1, spacing_fraction - 1)
+    route_distances = pd.to_numeric(frame.get("step_dist_m"), errors="coerce").fillna(0.0)
+    cumulative_end_m = route_distances.cumsum()
+    total_distance_m = float(cumulative_end_m.iloc[-1]) if not cumulative_end_m.empty else 0.0
+    if total_distance_m <= 0:
+        target_indexes = list(eligible.index[:target_count])
+    else:
+        target_positions = np.linspace(
+            total_distance_m / spacing_fraction,
+            total_distance_m * (spacing_fraction - 1) / spacing_fraction,
+            target_count,
+        )
+        eligible_end_m = cumulative_end_m.loc[eligible.index]
+        used_indexes: set[int] = set()
+        target_indexes: list[int] = []
+        for target_position in target_positions:
+            ranked_indexes = (
+                (eligible_end_m - target_position)
+                .abs()
+                .sort_values()
+                .index
+            )
+            for segment_index in ranked_indexes:
+                if int(segment_index) not in used_indexes:
+                    used_indexes.add(int(segment_index))
+                    target_indexes.append(int(segment_index))
+                    break
+
+    chevrons: list[list[list[list[float]]]] = []
+    accepted_midpoints: list[np.ndarray] = []
+    for segment_index in target_indexes:
+        segment = projected.loc[segment_index, "geometry"]
+        midpoint = _chevron_midpoint(segment)
+        if midpoint is None:
+            continue
+        if any(np.linalg.norm(midpoint - accepted) < min_chevron_spacing_m for accepted in accepted_midpoints):
+            continue
+        chevron_paths = _chevron_paths_for_segment(
+            segment,
+            chevron_length_m=chevron_length_m,
+            chevron_half_width_m=chevron_half_width_m,
+        )
+        if chevron_paths:
+            accepted_midpoints.append(midpoint)
+            chevrons.append(chevron_paths)
+    return chevrons
+
+
+def _split_outbound_return(frame: gpd.GeoDataFrame) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
+    """Split ordered route segments into outbound and return halves by cumulative distance."""
+    if frame.empty:
+        return frame.copy(), frame.iloc[0:0].copy()
+
+    route_distances = pd.to_numeric(frame.get("step_dist_m"), errors="coerce").fillna(0.0)
+    cumulative_end_m = route_distances.cumsum()
+    total_distance_m = float(cumulative_end_m.iloc[-1]) if not cumulative_end_m.empty else 0.0
+    split_distance_m = total_distance_m / 2.0
+    outbound_mask = cumulative_end_m <= split_distance_m
+    if outbound_mask.sum() == 0:
+        outbound_mask.iloc[0] = True
+    if outbound_mask.sum() == len(frame):
+        outbound_mask.iloc[-1] = False
+    outbound = frame.loc[outbound_mask].copy()
+    returning = frame.loc[~outbound_mask].copy()
+    return outbound, returning
+
+
+def _remove_geojson_layers(m: folium.Map) -> None:
+    """Remove existing GeoJson layers so split overlays can replace the default route layer."""
+    geojson_child_keys = [
+        key for key, child in m._children.items()
+        if isinstance(child, folium.features.GeoJson)
+    ]
+    for key in geojson_child_keys:
+        m._children.pop(key, None)
+
+
+def _add_whole_route_backdrop(m: folium.Map, frame: gpd.GeoDataFrame) -> None:
+    """Add an always-on light-gray route backdrop behind directional overlays."""
+    folium.GeoJson(
+        data=frame[["geometry"]].to_json(),
+        name="Whole Route",
+        control=False,
+        style_function=lambda _: {
+            "color": "#c7c7c7",
+            "weight": 6,
+            "opacity": 0.45,
+        },
+    ).add_to(m)
+
+
+def _add_direction_radio_control(
+    m: folium.Map,
+    outbound_layer: folium.FeatureGroup,
+    return_layer: folium.FeatureGroup,
+) -> None:
+    """Add a custom radio control so exactly one highlighted direction stays visible."""
+    map_name = m.get_name()
+    outbound_name = outbound_layer.get_name()
+    return_name = return_layer.get_name()
+    template = Template(
+        f"""
+        {{% macro script(this, kwargs) %}}
+        (function() {{
+            var map = {map_name};
+            var outboundLayer = {outbound_name};
+            var returnLayer = {return_name};
+            var control = L.control({{position: 'topright'}});
+
+            control.onAdd = function() {{
+                var div = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                div.style.background = 'white';
+                div.style.padding = '8px 10px';
+                div.style.fontSize = '13px';
+                div.style.lineHeight = '1.4';
+                div.innerHTML = `
+                    <div style="font-weight:600; margin-bottom:4px;">Route Pass</div>
+                    <label style="display:block; cursor:pointer;">
+                        <input type="radio" name="route-pass-toggle" value="outbound" checked> Outbound
+                    </label>
+                    <label style="display:block; cursor:pointer;">
+                        <input type="radio" name="route-pass-toggle" value="return"> Return
+                    </label>
+                `;
+                L.DomEvent.disableClickPropagation(div);
+                return div;
+            }};
+
+            control.addTo(map);
+
+            function setPass(passName) {{
+                if (passName === 'return') {{
+                    if (map.hasLayer(outboundLayer)) map.removeLayer(outboundLayer);
+                    if (!map.hasLayer(returnLayer)) map.addLayer(returnLayer);
+                }} else {{
+                    if (map.hasLayer(returnLayer)) map.removeLayer(returnLayer);
+                    if (!map.hasLayer(outboundLayer)) map.addLayer(outboundLayer);
+                }}
+            }}
+
+            setPass('outbound');
+            var radios = document.getElementsByName('route-pass-toggle');
+            for (var i = 0; i < radios.length; i++) {{
+                radios[i].addEventListener('change', function(evt) {{
+                    setPass(evt.target.value);
+                }});
+            }}
+        }})();
+        {{% endmacro %}}
+        """
+    )
+    control = MacroElement()
+    control._template = template
+    m.add_child(control)
+
+
+def _ensure_map_pane(m: folium.Map, pane_name: str, z_index: int) -> None:
+    """Create a custom Leaflet pane with the requested z-index when needed."""
+    map_name = m.get_name()
+    template = Template(
+        f"""
+        {{% macro script(this, kwargs) %}}
+        (function() {{
+            var map = {map_name};
+            if (!map.getPane('{pane_name}')) {{
+                map.createPane('{pane_name}');
+            }}
+            map.getPane('{pane_name}').style.zIndex = {z_index};
+        }})();
+        {{% endmacro %}}
+        """
+    )
+    pane = MacroElement()
+    pane._template = template
+    m.add_child(pane)
+
+
+def _add_direction_layers(
+    m: folium.Map,
+    frame: gpd.GeoDataFrame,
+    column: str,
+    tooltip_fields: list[str] | None,
+    popup_cols: list[str] | None,
+    categories: list[str] | None,
+    cmap: list[str] | None,
+    style_kwds: dict[str, object] | None,
+    escape: bool,
+) -> folium.Map:
+    """Replace the default route layer with outbound/return overlays when the route overlaps itself."""
+    projected = frame[["geometry"]].to_crs(3857)
+    outbound, returning = _split_outbound_return(frame)
+    if outbound.empty or returning.empty:
+        return m
+    projected_outbound = outbound[["geometry"]].to_crs(3857)
+    projected_returning = returning[["geometry"]].to_crs(3857)
+    if not _frames_share_route_overlap(projected_outbound, projected_returning):
+        return m
+
+    _remove_geojson_layers(m)
+    _add_whole_route_backdrop(m, frame)
+    explore_kwargs = {
+        "column": column,
+        "tooltip": tooltip_fields,
+        "popup": popup_cols,
+        "categorical": True,
+        "legend": False,
+        "style_kwds": style_kwds or {"weight": 4},
+        "escape": escape,
+    }
+    if categories is not None:
+        explore_kwargs["categories"] = categories
+    if cmap is not None:
+        explore_kwargs["cmap"] = cmap
+
+    outbound_layer = folium.FeatureGroup(name="Outbound", overlay=True, control=False, show=True)
+    outbound_layer.add_to(m)
+    outbound.explore(
+        m=outbound_layer,
+        **explore_kwargs,
+    )
+    return_layer = folium.FeatureGroup(name="Return", overlay=True, control=False, show=False)
+    return_layer.add_to(m)
+    returning.explore(
+        m=return_layer,
+        **explore_kwargs,
+    )
+    _add_direction_radio_control(m, outbound_layer, return_layer)
+    return m
+
+
+def add_map_elements(
+    m: folium.Map,
+    frame: gpd.GeoDataFrame,
+    show_numbers: bool = True,
+    show_route_pass_control: bool = False,
+    layer_column: str | None = None,
+    tooltip_fields: list[str] | None = None,
+    popup_cols: list[str] | None = None,
+    categories: list[str] | None = None,
+    cmap: list[str] | None = None,
+    style_kwds: dict[str, object] | None = None,
+    escape: bool = False,
+) -> None:
+    if show_route_pass_control and layer_column:
+        m = _add_direction_layers(
+            m,
+            frame,
+            column=layer_column,
+            tooltip_fields=tooltip_fields,
+            popup_cols=popup_cols,
+            categories=categories,
+            cmap=cmap,
+            style_kwds=style_kwds,
+            escape=escape,
+        )
+    # Fullscreen control
+    Fullscreen(
+        position="topleft",
+        title="Fullscreen",
+        title_cancel="Exit fullscreen",
+        force_separate_button=True,
+    ).add_to(m)
+    # Start
+    start = frame.iloc[0].geometry.coords[0]
+    folium.Marker(
+        location=[start[1], start[0]],  # folium uses [lat, lon]
+        icon=folium.Icon(color="green", icon="arrow-right", prefix="fa"),
+    ).add_to(m)
+    # Numbers
+    if show_numbers:
+        marker_indexes = _number_marker_indexes(frame)
+        marker_locations = _resolve_number_marker_locations(frame, marker_indexes)
+        number_style = "font-size:41px; font-weight:700; color:#C96A1B; opacity:0.30;"
+        for marker_number, marker_location in enumerate(marker_locations, start=1):
+            folium.Marker(
+                location=marker_location,
+                icon=folium.DivIcon(
+                    html=(
+                        f'<div style="{number_style}">'
+                        f"{marker_number}"
+                        '</div>'
+                    )
+                )
+            ).add_to(m)
+    # Direction chevrons
+    _ensure_map_pane(m, pane_name="route-chevrons", z_index=650)
+    for chevron_paths in _chevron_marker_segments(frame):
+        for chevron_path in chevron_paths:
+            folium.PolyLine(
+                locations=chevron_path,
+                color="#111111",
+                weight=2,
+                opacity=0.95,
+                line_cap="square",
+                line_join="round",
+                pane="route-chevrons",
+            ).add_to(m)
+    return m
+
 def make_route_map(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
-    popup_cols: list[str] | None = None,
+    popup_cols: list[str] | None = ["Ride Type", "Turn", "Grade", "More Details"],
     tooltip_fields: list[str] | None = ['Segment', 'Ride Type'],
     tiles: str = "CartoDB Voyager",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
@@ -252,39 +724,57 @@ def make_route_map(
     m = frame.explore(
     column='hazard',
     tooltip=tooltip_fields,
-    popup=popup_cols or [],
+    popup=popup_cols,
     tiles=tiles,
     categorical=True,
     cmap=list(colors.values()),
     categories=list(colors.keys()),
     legend=True,
-    style_kwds={"weight": 6},
+    style_kwds={"weight": 4},
     escape=False
     )
-    Fullscreen(
-        position="topleft",
-        title="Fullscreen",
-        title_cancel="Exit fullscreen",
-        force_separate_button=True,
-    ).add_to(m)
-    start = frame.iloc[0].geometry.coords[0]
-    marker_indexes = _number_marker_indexes(frame)
-    marker_locations = _resolve_number_marker_locations(frame, marker_indexes)
+    m = add_map_elements(
+        m,
+        frame,
+        show_route_pass_control=True,
+        layer_column="hazard",
+        tooltip_fields=tooltip_fields,
+        popup_cols=popup_cols,
+        categories=list(colors.keys()),
+        cmap=list(colors.values()),
+        style_kwds={"weight": 4},
+        escape=False,
+    )
+    return m
 
-    folium.Marker(
-        location=[start[1], start[0]],  # folium uses [lat, lon]
-        icon=folium.Icon(color="green", icon="arrow-right", prefix="fa"),
-    ).add_to(m)
-    number_style = "font-size:41px; font-weight:700; color:#C96A1B; opacity:0.60;"
-    for marker_number, marker_location in enumerate(marker_locations, start=1):
-        folium.Marker(
-            location=marker_location,
-            icon=folium.DivIcon(
-                html=(
-                    f'<div style="{number_style}">'
-                    f"{marker_number}"
-                    '</div>'
-                )
-            )
-        ).add_to(m)
+def make_road_quality_map(
+    gdf_segments: gpd.GeoDataFrame,
+    popup_cols: list[str] | None = ["mtc_road_name", 'mtc_pci_info', 'mtc_pci_date',"Ride Type", "Turn", "Grade", "More Details"],
+    tooltip_fields: list[str] | None = ['Segment', 'mtc_pci_info'],
+    tiles: str = "Cartodb Positron",
+    hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
+) -> folium.Map:
+    """Build a Folium map with hazard-colored segments and route popups/tooltips."""
+    frame = prepare_segment_display_columns(
+        gdf_segments,
+        hazard_profile=hazard_profile,
+    )
+    colors = resolve_road_quality_profile(frame)
+    frame["_display_color"] = frame["mtc_pci_info"].map(colors).fillna("#8a8a8a")
+    m = frame.explore(
+    column='mtc_pci_info',
+    tooltip=tooltip_fields,
+    popup=popup_cols,
+    tiles=tiles,
+    categorical=True,
+    cmap=list(colors.values()),
+    categories=list(colors.keys()),
+    legend=True,
+    style_kwds={"weight": 4},
+    escape=False
+    )
+    m = add_map_elements(
+        m,
+        frame,
+    )
     return m

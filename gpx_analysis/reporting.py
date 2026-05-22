@@ -5,7 +5,7 @@ from .viz import DEFAULT_HAZARD_PROFILE, apply_hazard_profile
 
 def aggregate_by_hazard(
     df: pd.DataFrame,
-    column: str = 'distance_m',
+    column: str = 'step_dist_m',
     hazard_profile: str = DEFAULT_HAZARD_PROFILE,
 ) -> pd.DataFrame:
     """Summarize a numeric column by hazard label with percentages and total."""

@@ -36,17 +36,16 @@ def main() -> None:
     for route in routes_config:
         route_bundle, route_page_context = build_route(route, ROOT, ROUTES_DIR, HAZARD_PROFILE)
         write_route_page(
+            QUARTO_DIR,
             route_page_context["route"],
             route_page_context["route_bundle"],
-            route_page_context["route_facts_heading"],
-            html_table(route_page_context["summary_table"]),
             html_table(route_page_context["hazards_table"]),
             ROUTE_PAGES_DIR,
         )
         routes.append(route_bundle)
 
     write_json(DATA_DIR / "routes.json", {"routes": routes})
-    write_dashboard_page(routes, INDEX_PAGE_PATH, "Routes")
+    write_dashboard_page(QUARTO_DIR, routes, INDEX_PAGE_PATH, "Routes")
     if DASHBOARD_PAGE_PATH.exists():
         DASHBOARD_PAGE_PATH.unlink()
     write_quarto_config(routes_config, QUARTO_CONFIG_PATH)

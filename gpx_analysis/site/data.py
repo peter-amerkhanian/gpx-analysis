@@ -14,6 +14,7 @@ import yaml
 from .. import (
     aggregate_by_hazard,
     analyze_steps,
+    points_frame,
     enrich_segments_with_osm_edges,
     make_route_map,
     points_to_segments,
@@ -121,14 +122,6 @@ def load_routes(manifest_path: Path, root: Path) -> list[RouteConfig]:
 
 def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
-
-
-def points_frame(points: pd.DataFrame) -> gpd.GeoDataFrame:
-    return gpd.GeoDataFrame(
-        points.copy(),
-        geometry=gpd.points_from_xy(points["lon"], points["lat"]),
-        crs="EPSG:4326",
-    )
 
 
 def json_ready_frame(frame: pd.DataFrame) -> pd.DataFrame:

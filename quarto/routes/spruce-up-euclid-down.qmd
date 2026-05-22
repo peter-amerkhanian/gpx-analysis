@@ -4,8 +4,6 @@ title: "Spruce up, Euclid Down"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1062.34">
 
@@ -18,7 +16,6 @@ title: "Spruce up, Euclid Down"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/spruce-up-euclid-down/map.html"
@@ -26,7 +23,6 @@ title: "Spruce up, Euclid Down"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Spruce up, Euclid Down"
     </tr>
   </tbody>
 </table>
-
-

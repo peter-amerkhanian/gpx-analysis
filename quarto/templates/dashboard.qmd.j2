@@ -1,0 +1,11 @@
+---
+title: "{{ title }}"
+format:
+  dashboard:
+    css: styles.css
+    include-after-body: scripts/routes-dashboard.html
+---
+
+{% include "partials/dashboard-intro.qmd" %}
+
+{% include "partials/dashboard-route-summaries.qmd" %}

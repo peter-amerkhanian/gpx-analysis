@@ -3,9 +3,9 @@ title: "Arlington Gravel Loop"
 ---
 
 
-
-<a href="https://www.strava.com/activities/18162634293" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-strava"></i> Example Strava effort</a>
-
+<a href="https://www.strava.com/activities/18162634293" target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-strava"></i> Example Strava effort
+</a>
 
 ```{=html}
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="14.89" data-elevation="1761.81">
@@ -19,7 +19,6 @@ title: "Arlington Gravel Loop"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/arlington-gravel-loop/map.html"
@@ -27,7 +26,6 @@ title: "Arlington Gravel Loop"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -65,5 +63,3 @@ title: "Arlington Gravel Loop"
     </tr>
   </tbody>
 </table>
-
-

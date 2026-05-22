@@ -1,0 +1,4 @@
+{% if hero_image %}
+## Photo
+![{{ title }}]({{ hero_image }})
+{% endif %}

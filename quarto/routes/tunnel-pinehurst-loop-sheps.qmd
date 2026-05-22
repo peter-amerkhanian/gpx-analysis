@@ -4,8 +4,6 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="27.96" data-elevation="3127.62">
 
@@ -18,7 +16,6 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/tunnel-pinehurst-loop-sheps/map.html"
@@ -26,7 +23,6 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
   </tbody>
 </table>
-
-

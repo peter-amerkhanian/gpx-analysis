@@ -1,0 +1,5 @@
+{% if strava_effort %}
+<a href="{{ strava_effort }}" target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-strava"></i> Example Strava effort
+</a>
+{% endif %}

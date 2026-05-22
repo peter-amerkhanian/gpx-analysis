@@ -4,8 +4,6 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="25.09" data-elevation="3021.65">
 
@@ -18,7 +16,6 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/tunnel-pinehurst-loop-jm/map.html"
@@ -26,7 +23,6 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
     </tr>
   </tbody>
 </table>
-
-

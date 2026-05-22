@@ -4,8 +4,6 @@ title: "Alvarado to Tilden via Havey Canyon"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.83" data-elevation="1875.66">
 
@@ -18,7 +16,6 @@ title: "Alvarado to Tilden via Havey Canyon"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/wildcat-havey-nimitz-meadow-loop/map.html"
@@ -26,7 +23,6 @@ title: "Alvarado to Tilden via Havey Canyon"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Alvarado to Tilden via Havey Canyon"
     </tr>
   </tbody>
 </table>
-
-

@@ -7,6 +7,7 @@ from datetime import datetime, UTC
 import geopandas as gpd
 import numpy as np
 import osmnx as ox
+import pandas as pd
 from pathlib import Path
 
 from gpx_analysis.geo import (
@@ -20,12 +21,21 @@ from gpx_analysis.geo import (
 )
 
 BAY_AREA_COUNTIES = [
+    "Marin County, California, USA",
+    "San Francisco County, California, USA",
     "Alameda County, California, USA",
     "Contra Costa County, California, USA",
 ]
 BOUNDARY_PATH = OSM_DATA_DIR / "sf_bay_area_boundary.geojson"
 METADATA_PATH = OSM_DATA_DIR / "sf_bay_area_all_public.metadata.json"
 PARQUET_ROW_GROUP_SIZE = 50_000
+
+
+def _load_existing_metadata() -> dict[str, object]:
+    """Return previously built cache metadata when available."""
+    if not METADATA_PATH.exists():
+        return {}
+    return json.loads(METADATA_PATH.read_text(encoding="utf-8"))
 
 
 def _spatially_sort_nodes(nodes: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
@@ -69,6 +79,50 @@ def _write_tiled_parquet(frame: gpd.GeoDataFrame, out_dir: Path) -> int:
     return tile_count
 
 
+def _combine_nodes(existing: gpd.GeoDataFrame, new: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Merge node frames and keep one row per OSM node id."""
+    if existing.empty:
+        return new.reset_index(drop=True)
+    if new.empty:
+        return existing.reset_index(drop=True)
+    combined = gpd.GeoDataFrame(
+        pd.concat([existing, new], ignore_index=True),
+        geometry="geometry",
+        crs=existing.crs or new.crs,
+    )
+    return combined.drop_duplicates(subset=["osmid"], keep="first").reset_index(drop=True)
+
+
+def _combine_edges(existing: gpd.GeoDataFrame, new: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Merge edge frames and keep one row per OSM edge key."""
+    if existing.empty:
+        return new.reset_index(drop=True)
+    if new.empty:
+        return existing.reset_index(drop=True)
+    combined = gpd.GeoDataFrame(
+        pd.concat([existing, new], ignore_index=True),
+        geometry="geometry",
+        crs=existing.crs or new.crs,
+    )
+    return combined.drop_duplicates(subset=["u", "v", "key"], keep="first").reset_index(drop=True)
+
+
+def _download_county_graph(county: str) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
+    """Download one county network and return node/edge GeoDataFrames."""
+    print(f"Geocoding boundary for {county}...")
+    county_gdf = ox.geocode_to_gdf(county)
+    county_boundary = county_gdf.geometry.union_all()
+    print(f"Downloading {LOCAL_OSM_NETWORK_TYPE} network for {county}...")
+    graph = ox.graph_from_polygon(
+        county_boundary,
+        network_type=LOCAL_OSM_NETWORK_TYPE,
+        simplify=False,
+        retain_all=True,
+    )
+    nodes, edges = ox.graph_to_gdfs(graph, nodes=True, edges=True)
+    return nodes.reset_index(), edges.reset_index()
+
+
 def main() -> None:
     OSM_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -77,17 +131,43 @@ def main() -> None:
     boundary = boundary_gdf.geometry.union_all()
     boundary_crs = boundary_gdf.crs
 
-    print(f"Downloading {LOCAL_OSM_NETWORK_TYPE} network for configured counties...")
-    graph = ox.graph_from_polygon(
-        boundary,
-        network_type=LOCAL_OSM_NETWORK_TYPE,
-        simplify=False,
-        retain_all=True,
+    existing_metadata = _load_existing_metadata()
+    existing_counties = set(existing_metadata.get("counties", []))
+    configured_counties = set(BAY_AREA_COUNTIES)
+    existing_cache_available = (
+        LOCAL_OSM_NODES_PATH.exists()
+        and LOCAL_OSM_EDGES_PATH.exists()
+        and existing_counties.issubset(configured_counties)
     )
+    if existing_cache_available:
+        print(f"Loading existing nodes from {LOCAL_OSM_NODES_PATH}...")
+        nodes_out = gpd.read_parquet(LOCAL_OSM_NODES_PATH)
+        print(f"Loading existing edges from {LOCAL_OSM_EDGES_PATH}...")
+        edges_out = gpd.read_parquet(LOCAL_OSM_EDGES_PATH)
+    else:
+        if existing_counties:
+            print("Existing metadata does not match current configured counties; rebuilding configured cache.")
+        nodes_out = gpd.GeoDataFrame(geometry=[], crs=boundary_crs)
+        edges_out = gpd.GeoDataFrame(geometry=[], crs=boundary_crs)
+        existing_counties = set()
 
-    nodes, edges = ox.graph_to_gdfs(graph, nodes=True, edges=True)
-    nodes_out = _spatially_sort_nodes(nodes.reset_index())
-    edges_out = _spatially_sort_edges(edges.reset_index())
+    missing_counties = [county for county in BAY_AREA_COUNTIES if county not in existing_counties]
+    if missing_counties:
+        print(f"Downloading {len(missing_counties)} county network(s) one at a time...")
+    else:
+        print("Configured counties already exist in the local cache. Rewriting outputs from existing data.")
+
+    for county in missing_counties:
+        county_nodes, county_edges = _download_county_graph(county)
+        nodes_out = _combine_nodes(nodes_out, county_nodes)
+        edges_out = _combine_edges(edges_out, county_edges)
+        print(
+            f"Merged {county}: {len(county_nodes):,} nodes, {len(county_edges):,} edges. "
+            f"Current cache: {len(nodes_out):,} nodes, {len(edges_out):,} edges."
+        )
+
+    nodes_out = _spatially_sort_nodes(nodes_out)
+    edges_out = _spatially_sort_edges(edges_out)
 
     print(f"Saving nodes to {LOCAL_OSM_NODES_PATH}...")
     nodes_out.to_parquet(
@@ -121,11 +201,11 @@ def main() -> None:
         "boundary_path": str(BOUNDARY_PATH),
         "network_type": LOCAL_OSM_NETWORK_TYPE,
         "counties": BAY_AREA_COUNTIES,
-        "node_count": graph.number_of_nodes(),
-        "edge_count": graph.number_of_edges(),
+        "node_count": int(len(nodes_out)),
+        "edge_count": int(len(edges_out)),
         "created_utc": datetime.now(UTC).isoformat(),
         "osmnx_version": ox.__version__,
-        "build_method": "osmnx Overpass download -> GeoParquet cache",
+        "build_method": "osmnx county-by-county Overpass download -> merged GeoParquet cache",
         "parquet_row_group_size": PARQUET_ROW_GROUP_SIZE,
         "tile_size_degrees": LOCAL_OSM_TILE_SIZE_DEG,
         "node_tile_count": node_tile_count,

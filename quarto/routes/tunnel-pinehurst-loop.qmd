@@ -4,8 +4,6 @@ title: "Tunnel to Pinehurst Loop"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="Rockridge" data-miles="22.63" data-elevation="3002.30">
 
@@ -18,7 +16,6 @@ title: "Tunnel to Pinehurst Loop"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/tunnel-pinehurst-loop/map.html"
@@ -26,7 +23,6 @@ title: "Tunnel to Pinehurst Loop"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Tunnel to Pinehurst Loop"
     </tr>
   </tbody>
 </table>
-
-

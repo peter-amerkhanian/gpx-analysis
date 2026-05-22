@@ -4,8 +4,6 @@ title: "Wildwood to BBR Loop"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="17.41" data-elevation="2245.08">
 
@@ -18,7 +16,6 @@ title: "Wildwood to BBR Loop"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/wildwood-bbr-loop/map.html"
@@ -26,7 +23,6 @@ title: "Wildwood to BBR Loop"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Wildwood to BBR Loop"
     </tr>
   </tbody>
 </table>
-
-

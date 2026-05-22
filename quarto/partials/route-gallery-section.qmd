@@ -1,0 +1,6 @@
+{% if gallery_images %}
+## Gallery
+{% for image_path in gallery_images %}
+![{{ gallery_title }}]({{ image_path }})
+{% endfor %}
+{% endif %}

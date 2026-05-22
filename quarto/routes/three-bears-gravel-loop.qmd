@@ -4,8 +4,6 @@ title: "Three Wild Bears w/ Gravel"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3171.59">
 
@@ -18,7 +16,6 @@ title: "Three Wild Bears w/ Gravel"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/three-bears-gravel-loop/map.html"
@@ -26,7 +23,6 @@ title: "Three Wild Bears w/ Gravel"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Three Wild Bears w/ Gravel"
     </tr>
   </tbody>
 </table>
-
-

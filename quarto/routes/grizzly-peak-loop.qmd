@@ -4,8 +4,6 @@ title: "Grizzly Peak Loop"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1459.97">
 
@@ -18,7 +16,6 @@ title: "Grizzly Peak Loop"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/grizzly-peak-loop/map.html"
@@ -26,7 +23,6 @@ title: "Grizzly Peak Loop"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Grizzly Peak Loop"
     </tr>
   </tbody>
 </table>
-
-

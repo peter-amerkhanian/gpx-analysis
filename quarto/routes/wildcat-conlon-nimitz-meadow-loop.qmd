@@ -4,8 +4,6 @@ title: "Alvarado to Tilden via Conlon Trail"
 
 
 
-
-
 ```{=html}
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.05" data-elevation="2057.41">
 
@@ -18,7 +16,6 @@ title: "Alvarado to Tilden via Conlon Trail"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/wildcat-conlon-nimitz-meadow-loop/map.html"
@@ -26,7 +23,6 @@ title: "Alvarado to Tilden via Conlon Trail"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -64,5 +60,3 @@ title: "Alvarado to Tilden via Conlon Trail"
     </tr>
   </tbody>
 </table>
-
-

@@ -3,9 +3,9 @@ title: "Redwood Road, San Lorenzo to Temescal"
 ---
 
 
-
-<a href="https://www.strava.com/activities/18234048917" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-strava"></i> Example Strava effort</a>
-
+<a href="https://www.strava.com/activities/18234048917" target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-strava"></i> Example Strava effort
+</a>
 
 ```{=html}
 <article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2641.08">
@@ -19,7 +19,6 @@ title: "Redwood Road, San Lorenzo to Temescal"
 </div>
 </article>
 ```
-
 ## Map
 <iframe
   src="../data/routes/redwood-san-leandro-macarthur-bart/map.html"
@@ -27,7 +26,6 @@ title: "Redwood Road, San Lorenzo to Temescal"
   loading="lazy"
   allowfullscreen
 ></iframe>
-
 ## Data
 <table class="dataframe table table-striped table-sm">
   <thead>
@@ -65,5 +63,3 @@ title: "Redwood Road, San Lorenzo to Temescal"
     </tr>
   </tbody>
 </table>
-
-
