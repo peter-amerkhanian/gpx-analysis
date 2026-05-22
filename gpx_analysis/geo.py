@@ -18,6 +18,13 @@ LOCAL_OSM_NODES_PATH = OSM_DATA_DIR / "sf_bay_area_all_public_nodes.parquet"
 LOCAL_OSM_EDGES_PATH = OSM_DATA_DIR / "sf_bay_area_all_public_edges.parquet"
 LOCAL_MTC_STREETS_PATH = VITAL_SIGNS_DATA_DIR / "Streets_and_Roads_20260512.geojson"
 LOCAL_MTC_STREETS_PARQUET_PATH = VITAL_SIGNS_DATA_DIR / "Streets_and_Roads_20260512.parquet"
+LOCAL_MTC_STREET_ATTRS = [
+    "start_location",
+    "end_location",
+    "road_name",
+    "pci_date",
+    "pci_info",
+]
 LOCAL_OSM_NETWORK_TYPE = "all_public"
 LOCAL_OSM_CRS = 4326
 LOCAL_OSM_TILE_SIZE_DEG = 0.05
@@ -345,10 +352,11 @@ def _load_local_osm_nodes_for_edges(route_poly: object, edges: gpd.GeoDataFrame)
 def _load_local_mtc_streets(route_poly: object) -> gpd.GeoDataFrame:
     """Load only the local MTC streets intersecting the route bbox."""
     parquet_path = _ensure_local_mtc_streets_parquet()
+    columns = LOCAL_MTC_STREET_ATTRS + ["geometry"]
     try:
-        streets = gpd.read_parquet(parquet_path, bbox=route_poly.bounds)
+        streets = gpd.read_parquet(parquet_path, columns=columns, bbox=route_poly.bounds)
     except ValueError:
-        streets = gpd.read_parquet(parquet_path)
+        streets = gpd.read_parquet(parquet_path, columns=columns)
         streets = streets[streets.intersects(route_poly)].copy()
     if streets.empty:
         return gpd.GeoDataFrame(geometry=[], crs=LOCAL_OSM_CRS)
@@ -743,13 +751,7 @@ def enrich_segments_with_mtc_streets(
     match_window_size: int = 10,
 ) -> gpd.GeoDataFrame:
     """Return a copy of route segments enriched with best-scoring MTC street attributes."""
-    street_attrs = [
-        "start_location",
-        "end_location",
-        "road_name",
-        "pci_date",
-        "pci_info",
-    ]
+    street_attrs = LOCAL_MTC_STREET_ATTRS
     result = gdf_segments.copy()
 
     output_cols = [f"mtc_{col}" for col in street_attrs]

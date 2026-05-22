@@ -13,13 +13,19 @@ import yaml
 
 from .. import (
     aggregate_by_hazard,
+    aggregate_by_road_quality,
     analyze_steps,
     points_frame,
     enrich_segments_with_osm_edges,
+    enrich_segments_with_mtc_streets,
+    make_chunk_map,
+    make_road_quality_map,
     make_route_map,
     points_to_segments,
     prepare_segment_display_columns,
     read_simple_gpx,
+    road_quality_score,
+    summarize_chunk_sections,
 )
 from ..geo import add_bart_station
 
@@ -242,6 +248,23 @@ def compute_route_summary(points: pd.DataFrame, segments: gpd.GeoDataFrame) -> d
     }
 
 
+def route_display_title(base_title: str, gravel_percent: float) -> str:
+    """Return the route title with gravel percentage appended when meaningfully gravel-heavy."""
+    if gravel_percent > 10.0:
+        return f"{base_title} ({round(gravel_percent)}% Gravel)"
+    return base_title
+
+
+def route_display_title_html(base_title: str, gravel_percent: float) -> str:
+    """Return HTML title markup with a chocolate gravel suffix when applicable."""
+    if gravel_percent > 10.0:
+        return (
+            f'{base_title} '
+            f'<span style="color: chocolate;">({round(gravel_percent)}% Gravel)</span>'
+        )
+    return base_title
+
+
 def build_route(
     route: RouteConfig,
     root: Path,
@@ -257,12 +280,25 @@ def build_route(
     points_gdf = points_frame(analyzed)
     segments = points_to_segments(points_gdf)
     segments = enrich_segments_with_osm_edges(segments)
+    segments = enrich_segments_with_mtc_streets(segments)
     segments = prepare_segment_display_columns(segments, hazard_profile=hazard_profile)
 
     summary = compute_route_summary(analyzed, segments)
+    total_segment_distance_m = float(pd.to_numeric(segments.get("step_dist_m"), errors="coerce").fillna(0).sum())
+    gravel_distance_m = float(
+        pd.to_numeric(
+            segments.loc[segments.get("road_type").eq("gravel"), "step_dist_m"],
+            errors="coerce",
+        ).fillna(0).sum()
+    ) if "road_type" in segments.columns else 0.0
+    gravel_percent = (gravel_distance_m / total_segment_distance_m * 100.0) if total_segment_distance_m > 0 else 0.0
+    summary["gravel_percent"] = round(gravel_percent, 1)
+    summary["road_quality_score"] = int(round(road_quality_score(segments) * 100))
     summary["start_bart_station"] = add_bart_station(points_gdf, step=0)
     summary["end_bart_station"] = add_bart_station(points_gdf, step=len(points_gdf) - 1)
     summary["bart_station"] = summary["start_bart_station"]
+    display_title = route_display_title(route.display_title, gravel_percent)
+    display_title_html = route_display_title_html(route.display_title, gravel_percent)
     hazard_summary = aggregate_by_hazard(
         analyzed,
         column="step_dist_m",
@@ -277,6 +313,10 @@ def build_route(
         popup_cols=ride_cols,
         hazard_profile=hazard_profile,
     )
+    road_quality_map = make_road_quality_map(segments)
+    chunk_map = make_chunk_map(segments)
+    road_quality_summary = aggregate_by_road_quality(segments).reset_index()
+    chunk_sections_summary = summarize_chunk_sections(segments)
 
     write_json(
         route_dir / "summary.json",
@@ -294,10 +334,13 @@ def build_route(
     elevation_profile_svg = route_elevation_svg(segments)
     write_text(route_dir / "profile.svg", elevation_profile_svg)
     route_map.save(str(route_dir / "map.html"))
+    road_quality_map.save(str(route_dir / "road_quality_map.html"))
+    chunk_map.save(str(route_dir / "chunk_map.html"))
 
     route_bundle = {
         "slug": route.slug,
-        "title": route.display_title,
+        "title": display_title,
+        "title_html": display_title_html,
         "source": route.source,
         "reverse": route.reverse,
         "links": asdict(route.links),
@@ -312,6 +355,8 @@ def build_route(
             "points": f"data/routes/{route.slug}/points.geojson",
             "segments": f"data/routes/{route.slug}/segments.geojson",
             "map": f"data/routes/{route.slug}/map.html",
+            "road_quality_map": f"data/routes/{route.slug}/road_quality_map.html",
+            "chunk_map": f"data/routes/{route.slug}/chunk_map.html",
             "profile_svg": f"data/routes/{route.slug}/profile.svg",
             "page": f"routes/{route.slug}.qmd",
         },
@@ -342,5 +387,7 @@ def build_route(
                 "percent": "Percent",
             }
         )[["Hazard", "Distance (mi)", "Percent"]],
+        "road_quality_table": road_quality_summary,
+        "chunk_sections_table": chunk_sections_summary,
     }
     return route_bundle, route_page_context

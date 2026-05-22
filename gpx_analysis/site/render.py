@@ -71,10 +71,9 @@ def render_template(template_root: Path, template_name: str, **context: object) 
     return environment.get_template(template_name).render(**context).strip() + "\n"
 
 def summary_card(route: dict[str, object], path_prefix: str = "", title=True) -> list[str]:
-    steep_climbing = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "steep_climb"), 0)
-    dangerous_descent = next((row["distance_mi"] for row in route["hazards"] if row["hazard"] == "danger_zone"), 0)
     page_href = f'{path_prefix}{route["paths"]["page"].replace(".qmd", ".html")}'
     profile_src = f'{path_prefix}{route["paths"]["profile_svg"]}'
+    title_html = str(route.get("title_html", route["title"]))
     return [(
         f'<article class="mobile-route-card" '
         f'data-bart="{route["summary"]["bart_station"]}" '
@@ -83,7 +82,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
     ),
     (
         f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{page_href}">'
-        f'{route["title"]}</a></p>'
+        f'{title_html}</a></p>'
     ) if title else '',
     (
         '<div class="mobile-route-elevation" aria-hidden="true">'
@@ -104,8 +103,8 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         f'{route["summary"]["elevation_gain_ft"]} ft</p>'
     ),
     (
-        f'<p><span class="mobile-route-label">Tech Descents</span><br>'
-        f'{dangerous_descent} mi</p>'
+        f'<p><span class="mobile-route-label">Road Quality</span><br>'
+        f'{route["summary"]["road_quality_score"]}/100</p>'
     ),
     "</div>",
     "</article>"]
@@ -154,6 +153,8 @@ def write_route_page(
     route: RouteConfig,
     route_bundle: dict[str, object],
     hazards_table_html: str,
+    road_quality_table_html: str,
+    chunk_sections_table_html: str,
     route_pages_dir: Path,
 ) -> None:
     ensure_dir(route_pages_dir)
@@ -162,14 +163,18 @@ def write_route_page(
         render_template(
             quarto_dir,
             "templates/route-page.qmd.j2",
-            title=route.display_title,
+            title=str(route_bundle["title"]),
             hero_image=route.media.hero_image,
             strava_effort=route.links.strava_effort,
             summary_card_html="\n".join(summary_card(route_bundle, path_prefix="../", title=False)),
             map_src=f"../data/routes/{route.slug}/map.html",
+            road_quality_map_src=f"../data/routes/{route.slug}/road_quality_map.html",
+            chunk_map_src=f"../data/routes/{route.slug}/chunk_map.html",
             hazards_table_html=hazards_table_html,
+            road_quality_table_html=road_quality_table_html,
+            chunk_sections_table_html=chunk_sections_table_html,
             gallery_images=route.media.gallery,
-            gallery_title=route.display_title,
+            gallery_title=str(route_bundle["title"]),
         ),
     )
 
@@ -189,7 +194,10 @@ def write_dashboard_page(
     summary_table = pd.DataFrame(
         [
             {
-                "Route": f'<a href="{route["paths"]["page"].replace(".qmd", ".html")}">{route["title"]}</a>',
+                "Route": (
+                    f'<a href="{route["paths"]["page"].replace(".qmd", ".html")}">'
+                    f'{route.get("title_html", route["title"])}</a>'
+                ),
                 "BART": route["summary"]["bart_station"],
                 "Miles": route["summary"]["distance_mi"],
                 "Elevation Gain (ft)": route["summary"]["elevation_gain_ft"],

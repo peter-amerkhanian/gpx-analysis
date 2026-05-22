@@ -21,6 +21,17 @@ ROAD_QUALITY_COLORS = {
     'Cycleway': "#0078da",
 }
 
+SIMPLIFIED_ROAD_QUALITY_COLORS = {
+    "Great": "#1a9850",
+    "Good": "#d9ef8b",
+    "Ok": "#fee08b",
+    "Poor": "#d73027",
+    "Roadway (Unknown)": "#8a8a8a",
+    "Gravel": "#712f00",
+    "Cycleway": "#0078da",
+    "Cycleway (Unknown)": "#0078da",
+}
+
 DETAILED_HAZARD_COLORS = {
     "steep_climb": "#012C22",
     "climb": "#2D9966",
@@ -38,6 +49,13 @@ SIMPLIFIED_HAZARD_COLORS = {
     "mellow": "#31D492",
     "descent": "#f46d43",
     "danger_zone": "#9F0712",
+}
+
+CHUNK_STATE_COLORS = {
+    "flat or descent": "#bdbdbd",
+    "climb (easy)": "#9bd770",
+    "climb (medium)": "#0C9000",
+    "climb (hard)": "#052C01",
 }
 
 DEFAULT_HAZARD_COLORS = DETAILED_HAZARD_COLORS
@@ -114,6 +132,34 @@ def resolve_road_quality_profile(gdf_segments: gpd.GeoDataFrame):
         if pci not in gdf_segments['mtc_pci_info'].unique():
             del colors[pci]
     return colors
+
+
+def simplify_road_quality_category(value: object) -> str | object:
+    """Collapse detailed PCI labels into simpler map categories."""
+    if value is None or pd.isna(value):
+        return value
+
+    text = str(value)
+    if text in {"Gravel", "Cycleway", "Cycleway (Unknown)"}:
+        return text
+    if text in {"Excellent", "Very Good"}:
+        return "Great"
+    if text in {"Good", "Fair"}:
+        return "Good"
+    if text == "At Risk":
+        return "Ok"
+    if text in {"Poor", "Failed"}:
+        return "Poor"
+    if text.endswith(" (Unknown)"):
+        return "Roadway (Unknown)"
+    return text
+
+
+def resolve_simplified_road_quality_profile(gdf_segments: gpd.GeoDataFrame) -> dict[str, str]:
+    """Return colors for simplified road-quality map categories present in the frame."""
+    colors = SIMPLIFIED_ROAD_QUALITY_COLORS.copy()
+    present = set(gdf_segments["road_quality_simple"].dropna().astype(str).unique())
+    return {label: color for label, color in colors.items() if label in present}
 
 def apply_hazard_profile(
     frame: pd.DataFrame,
@@ -357,8 +403,10 @@ def _frames_share_route_overlap(
     right: gpd.GeoDataFrame,
     overlap_proximity_m: float = 20.0,
     min_shared_length_m: float = 25.0,
+    column: str | None = None,
+    ignore_value: str | None = None,
 ) -> bool:
-    """Return True when two route halves truly share geometry for a meaningful length."""
+    """Return True when two route halves share meaningful geometry that merits a pass control."""
     if left.empty or right.empty:
         return False
 
@@ -377,11 +425,20 @@ def _frames_share_route_overlap(
 
     left_geometries = left.geometry
     right_geometries = right.geometry
+    has_meaningful_overlap = False
     for left_index, right_index in joined[["index_right"]].itertuples(index=True, name=None):
         shared_length_m = left_geometries.loc[left_index].intersection(right_geometries.loc[right_index]).length
         if shared_length_m >= min_shared_length_m:
-            return True
-    return False
+            has_meaningful_overlap = True
+            if column is None or ignore_value is None:
+                return True
+
+            left_value = left.loc[left_index, column] if column in left.columns else None
+            right_value = right.loc[right_index, column] if column in right.columns else None
+            if not (left_value == ignore_value and right_value == ignore_value):
+                return True
+
+    return False if has_meaningful_overlap else False
 
 
 def _chevron_marker_segments(
@@ -581,6 +638,21 @@ def _ensure_map_pane(m: folium.Map, pane_name: str, z_index: int) -> None:
     m.add_child(pane)
 
 
+def _route_is_close_ended(frame: gpd.GeoDataFrame, close_distance_m: float = 250.0) -> bool:
+    """Return True when the route end is close enough to the start to treat it as a loop."""
+    if frame.empty:
+        return False
+
+    start = Point(frame.iloc[0].geometry.coords[0])
+    end = Point(frame.iloc[-1].geometry.coords[-1])
+    endpoints = gpd.GeoSeries([start, end], crs=frame.crs)
+    try:
+        projected = endpoints.to_crs(3857)
+    except ValueError:
+        return False
+    return float(projected.iloc[0].distance(projected.iloc[1])) <= close_distance_m
+
+
 def _add_direction_layers(
     m: folium.Map,
     frame: gpd.GeoDataFrame,
@@ -599,7 +671,17 @@ def _add_direction_layers(
         return m
     projected_outbound = outbound[["geometry"]].to_crs(3857)
     projected_returning = returning[["geometry"]].to_crs(3857)
-    if not _frames_share_route_overlap(projected_outbound, projected_returning):
+    overlap_column = column if column in frame.columns else None
+    ignore_value = "mellow" if column == "hazard" else None
+    if overlap_column is not None:
+        projected_outbound[overlap_column] = outbound[overlap_column]
+        projected_returning[overlap_column] = returning[overlap_column]
+    if not _frames_share_route_overlap(
+        projected_outbound,
+        projected_returning,
+        column=overlap_column,
+        ignore_value=ignore_value,
+    ):
         return m
 
     _remove_geojson_layers(m)
@@ -666,12 +748,18 @@ def add_map_elements(
         title_cancel="Exit fullscreen",
         force_separate_button=True,
     ).add_to(m)
-    # Start
+    # Start / end
     start = frame.iloc[0].geometry.coords[0]
     folium.Marker(
         location=[start[1], start[0]],  # folium uses [lat, lon]
         icon=folium.Icon(color="green", icon="arrow-right", prefix="fa"),
     ).add_to(m)
+    if not _route_is_close_ended(frame):
+        end = frame.iloc[-1].geometry.coords[-1]
+        folium.Marker(
+            location=[end[1], end[0]],  # folium uses [lat, lon]
+            icon=folium.Icon(color="red", icon="stop", prefix="fa"),
+        ).add_to(m)
     # Numbers
     if show_numbers:
         marker_indexes = _number_marker_indexes(frame)
@@ -749,8 +837,8 @@ def make_route_map(
 
 def make_road_quality_map(
     gdf_segments: gpd.GeoDataFrame,
-    popup_cols: list[str] | None = ["mtc_road_name", 'mtc_pci_info', 'mtc_pci_date',"Ride Type", "Turn", "Grade", "More Details"],
-    tooltip_fields: list[str] | None = ['Segment', 'mtc_pci_info'],
+    popup_cols: list[str] | None = ["mtc_road_name", 'Road Quality', 'mtc_pci_info', 'mtc_pci_date',"Ride Type", "Turn", "Grade", "More Details"],
+    tooltip_fields: list[str] | None = ['Segment', 'Road Quality'],
     tiles: str = "Cartodb Positron",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
 ) -> folium.Map:
@@ -759,10 +847,12 @@ def make_road_quality_map(
         gdf_segments,
         hazard_profile=hazard_profile,
     )
-    colors = resolve_road_quality_profile(frame)
-    frame["_display_color"] = frame["mtc_pci_info"].map(colors).fillna("#8a8a8a")
+    frame["road_quality_simple"] = frame["mtc_pci_info"].apply(simplify_road_quality_category)
+    frame["Road Quality"] = frame["road_quality_simple"]
+    colors = resolve_simplified_road_quality_profile(frame)
+    frame["_display_color"] = frame["road_quality_simple"].map(colors).fillna("#8a8a8a")
     m = frame.explore(
-    column='mtc_pci_info',
+    column='road_quality_simple',
     tooltip=tooltip_fields,
     popup=popup_cols,
     tiles=tiles,
@@ -772,6 +862,66 @@ def make_road_quality_map(
     legend=True,
     style_kwds={"weight": 4},
     escape=False
+    )
+    m = add_map_elements(
+        m,
+        frame,
+    )
+    return m
+
+
+def make_chunk_map(
+    gdf_segments: gpd.GeoDataFrame,
+    popup_cols: list[str] | None = None,
+    tooltip_fields: list[str] | None = None,
+    tiles: str = "CartoDB Voyager",
+) -> folium.Map:
+    """Build a Folium map with chunk-state colored segments and chunk detail popups/tooltips."""
+    if "chunk_state" in gdf_segments.columns:
+        frame = gdf_segments.copy()
+    else:
+        from .analytics import detect_chunks
+        frame = detect_chunks(gdf_segments)
+    frame["Segment"] = frame["step"].astype("Int64").astype(str)
+    frame["More Details"] = google_maps_link(frame["lat"], frame["lon"])
+    frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
+    frame["Turn"] = frame["step_turn"].round(2).astype(str) + "°"
+    frame["Grade"] = frame["step_grade"].multiply(100).round(2).astype(str) + "%"
+    frame["Chunk Avg Grade"] = frame["chunk_avg_grade"].multiply(100).round(2).astype(str) + "%"
+    frame["Chunk Distance (ft)"] = frame["chunk_dist_ft"].round(0).astype("Int64").astype(str)
+    frame["Candidate Chunk Distance (ft)"] = frame["candidate_chunk_dist_ft"].round(0).astype("Int64").astype(str)
+    frame["_display_color"] = frame["chunk_state"].map(CHUNK_STATE_COLORS).fillna("#8a8a8a")
+
+    if tooltip_fields is None:
+        tooltip_fields = [
+            "chunk_state",
+            "Road Name",
+            "Chunk Distance (ft)",
+            "Chunk Avg Grade",
+            "Grade",
+        ]
+    if popup_cols is None:
+        popup_cols = [
+            "chunk_state",
+            "Road Name",
+            "Chunk Distance (ft)",
+            "Chunk Avg Grade",
+            "Candidate Chunk Distance (ft)",
+            "Grade",
+            "More Details",
+        ]
+
+    m = frame.explore(
+        column="chunk_state",
+        tooltip=tooltip_fields,
+        popup=popup_cols,
+        tiles=tiles,
+        categorical=True,
+        cmap=list(CHUNK_STATE_COLORS.values()),
+        categories=list(CHUNK_STATE_COLORS.keys()),
+        legend=True,
+        style_kwds={"weight": 4},
+        escape=False,
     )
     m = add_map_elements(
         m,

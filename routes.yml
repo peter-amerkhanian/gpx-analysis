@@ -3,7 +3,7 @@ routes:
   # Optional: title, reverse, links.strava_effort, media.hero_image, media.gallery.
   # Image paths are relative to quarto/, so a hero image might be images/routes/grizzly/hero.jpg.
   - slug: arlington-gravel-loop
-    title: Arlington Gravel Loop
+    title: Arlington Loop
     source: gpx_data/arlington_gravel_loop.gpx
     links:
       strava_effort: https://www.strava.com/activities/18162634293
@@ -13,11 +13,11 @@ routes:
     source: gpx_data/classic_grizzly.gpx
 
   - slug: wildcat-havey-nimitz-meadow-loop
-    title: Alvarado to Tilden via Havey Canyon
+    title: Havey Canyon Loop
     source: gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx
 
   - slug: wildcat-conlon-nimitz-meadow-loop
-    title: Alvarado to Tilden via Conlon Trail
+    title: Conlon Trail Loop
     source: gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx
     
     # links:
@@ -31,6 +31,10 @@ routes:
   - slug: tunnel-pinehurst-loop
     title: Tunnel to Pinehurst Loop
     source: gpx_data/tunnel_to_pinehurst.gpx
+
+  - slug: richmond-marin-conzelman-emb
+    title: Richmond to EMB
+    source: gpx_data/richmond_to_marin.gpx
 
   - slug: tunnel-pinehurst-loop-jm
     title: Tunnel to Pinehurst w/ Joaquin Miller Descent
@@ -53,11 +57,11 @@ routes:
     source: gpx_data/Trestle Glen to BBR Loop.gpx
 
   - slug: tunnel-to-claremont-loop
-    title: Tunnel Road to Claremont Loop
+    title: Tunnel to Claremont Loop
     source: gpx_data/Tunnel to Claremont Loop.gpx
 
   - slug: three-bears-gravel-loop
-    title: Three Wild Bears w/ Gravel
+    title: Three Wild Bears
     source: gpx_data/three_bears_with_gravel.gpx
 
   - slug: redwood-san-leandro-macarthur-bart

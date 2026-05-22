@@ -20,4 +20,4 @@ quarto/_freeze/
 data/osm/
 
 # Local OSM cache
-data/vital-signs/sandbox.ipynb
+data/vital-signs/

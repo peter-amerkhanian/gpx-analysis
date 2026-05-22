@@ -1,5 +1,5 @@
 from .physics import compute_step_metrics
-from .reporting import aggregate_by_hazard
+from .reporting import aggregate_by_hazard, aggregate_by_road_quality, road_quality_score, summarize_chunk_sections
 from .geo import (
     points_frame,
     points_to_segments,
@@ -18,6 +18,8 @@ from .viz import (
     SIMPLIFIED_HAZARD_COLORS,
     apply_hazard_profile,
     google_maps_link,
+    make_chunk_map,
+    make_road_quality_map,
     make_route_map,
     prepare_segment_display_columns,
     prepare_osm_columns
@@ -31,6 +33,9 @@ __all__ = [
     "detect_hazards",
     "points_frame",
     "aggregate_by_hazard",
+    "aggregate_by_road_quality",
+    "road_quality_score",
+    "summarize_chunk_sections",
     "points_to_segments",
     "stop_signs_on_segments",
     "build_route_graph",
@@ -43,6 +48,8 @@ __all__ = [
     "SIMPLIFIED_HAZARD_COLORS",
     "apply_hazard_profile",
     "google_maps_link",
+    "make_chunk_map",
+    "make_road_quality_map",
     "prepare_osm_columns",
     "prepare_segment_display_columns",
     "make_route_map",

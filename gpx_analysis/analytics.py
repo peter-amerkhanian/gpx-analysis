@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 from .physics import compute_step_metrics
 
-DEFAULT_CHUNK_CLIMB_THRESHOLD = 0.05
-DEFAULT_CHUNK_HARD_CLIMB_THRESHOLD = 0.08
+DEFAULT_CHUNK_CLIMB_THRESHOLD = 0.039
+DEFAULT_CHUNK_HARD_CLIMB_THRESHOLD = 0.07
+DEFAULT_CHUNK_AVG_CLIMB_THRESHOLD = 0.04
 DEFAULT_CHUNK_FLAT_RECOVERY_FT = 700.0
 DEFAULT_CHUNK_MIN_DIST_FT = 1000.0
-DEFAULT_CHUNK_MIN_AVG_GRADE = 0.019
+DEFAULT_CHUNK_MIN_AVG_GRADE = 0.02
 
 
 def _weighted_grade_average(frame: pd.DataFrame) -> float:
@@ -20,6 +21,30 @@ def _weighted_grade_average(frame: pd.DataFrame) -> float:
     if total_distance <= 0:
         return np.nan
     return float((frame.loc[valid, "step_grade"] * distances).sum() / total_distance)
+
+
+def _weighted_grade_median(frame: pd.DataFrame) -> float:
+    """Return the distance-weighted median grade for a chunk."""
+    valid = frame["step_grade"].notna() & frame["step_dist_m"].notna()
+    if not valid.any():
+        return np.nan
+
+    ordered = (
+        pd.DataFrame({
+            "grade": frame.loc[valid, "step_grade"],
+            "distance": frame.loc[valid, "step_dist_m"],
+        })
+        .sort_values("grade", kind="stable")
+        .reset_index(drop=True)
+    )
+    total_distance = float(ordered["distance"].sum())
+    if total_distance <= 0:
+        return np.nan
+
+    cutoff = total_distance / 2.0
+    cumulative = ordered["distance"].cumsum()
+    median_index = cumulative.ge(cutoff).idxmax()
+    return float(ordered.loc[median_index, "grade"])
 
 
 def _merge_short_flat_recoveries(
@@ -116,6 +141,7 @@ def detect_chunks(
     df: pd.DataFrame,
     climb_threshold: float = DEFAULT_CHUNK_CLIMB_THRESHOLD,
     hard_climb_threshold: float = DEFAULT_CHUNK_HARD_CLIMB_THRESHOLD,
+    avg_climb_threshold: float = DEFAULT_CHUNK_AVG_CLIMB_THRESHOLD,
     flat_recovery_ft: float = DEFAULT_CHUNK_FLAT_RECOVERY_FT,
     min_chunk_dist_ft: float = DEFAULT_CHUNK_MIN_DIST_FT,
     min_chunk_avg_grade: float = DEFAULT_CHUNK_MIN_AVG_GRADE,
@@ -131,13 +157,14 @@ def detect_chunks(
     else:
         frame = frame.sort_index(kind="stable")
     frame["hazard"] = "flat"
-    frame["chunk_label"] = "flat"
+    frame["chunk_label"] = "flat or descent"
     frame["chunk_avg_grade"] = np.nan
+    frame["chunk_median_grade"] = np.nan
     frame["chunk_dist_ft"] = np.nan
     frame["candidate_chunk_dist_ft"] = np.nan
     frame["chunk_id"] = pd.Series(pd.NA, index=frame.index, dtype="Int64")
     frame["chunk_base"] = "flat"
-    frame["chunk_state"] = "flat"
+    frame["chunk_state"] = "flat or descent"
 
     grade = pd.to_numeric(frame["step_grade"], errors="coerce")
     frame.loc[grade >= climb_threshold, "chunk_base"] = "climb"
@@ -157,18 +184,32 @@ def detect_chunks(
             return
 
         avg_grade = _weighted_grade_average(chunk)
-        if pd.isna(avg_grade) or avg_grade <= min_chunk_avg_grade:
+        median_grade = _weighted_grade_median(chunk)
+        climb_score = max(avg_grade, median_grade) if pd.notna(median_grade) else avg_grade
+        if pd.isna(climb_score) or climb_score <= min_chunk_avg_grade:
             return
-        if state == "hard_climb" and avg_grade < hard_climb_threshold:
+        if state == "hard_climb" and climb_score <= hard_climb_threshold:
             return
-        label = "sustained_hard_climb" if state == "hard_climb" else "sustained_climb"
+        if state == "hard_climb":
+            hazard = "steep_climb"
+            chunk_state = "climb (hard)"
+            label = "climb (hard)"
+        elif climb_score >= avg_climb_threshold:
+            hazard = "climb"
+            chunk_state = "climb (medium)"
+            label = "climb (medium)"
+        else:
+            hazard = "mellow"
+            chunk_state = "climb (easy)"
+            label = "climb (easy)"
 
-        frame.loc[indices, "hazard"] = label
+        frame.loc[indices, "hazard"] = hazard
         frame.loc[indices, "chunk_label"] = label
         frame.loc[indices, "chunk_avg_grade"] = avg_grade
+        frame.loc[indices, "chunk_median_grade"] = median_grade
         frame.loc[indices, "chunk_dist_ft"] = chunk_distance_ft
         frame.loc[indices, "chunk_id"] = next_chunk_id
-        frame.loc[indices, "chunk_state"] = state
+        frame.loc[indices, "chunk_state"] = chunk_state
         next_chunk_id += 1
 
     def _run_chunk_pass(state: str, start_threshold: float) -> None:
@@ -240,6 +281,7 @@ def analyze_chunks(
     df: pd.DataFrame,
     climb_threshold: float = DEFAULT_CHUNK_CLIMB_THRESHOLD,
     hard_climb_threshold: float = DEFAULT_CHUNK_HARD_CLIMB_THRESHOLD,
+    avg_climb_threshold: float = DEFAULT_CHUNK_AVG_CLIMB_THRESHOLD,
     flat_recovery_ft: float = DEFAULT_CHUNK_FLAT_RECOVERY_FT,
     min_chunk_dist_ft: float = DEFAULT_CHUNK_MIN_DIST_FT,
     min_chunk_avg_grade: float = DEFAULT_CHUNK_MIN_AVG_GRADE,
@@ -249,6 +291,7 @@ def analyze_chunks(
         compute_step_metrics(df),
         climb_threshold=climb_threshold,
         hard_climb_threshold=hard_climb_threshold,
+        avg_climb_threshold=avg_climb_threshold,
         flat_recovery_ft=flat_recovery_ft,
         min_chunk_dist_ft=min_chunk_dist_ft,
         min_chunk_avg_grade=min_chunk_avg_grade,
