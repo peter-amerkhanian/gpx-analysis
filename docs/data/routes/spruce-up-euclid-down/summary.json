@@ -31,6 +31,8 @@
       "lat": 37.85289,
       "lon": -122.26781
     },
+    "gravel_percent": 0.9,
+    "road_quality_score": 83,
     "start_bart_station": "North Berkeley",
     "end_bart_station": "Ashby",
     "bart_station": "North Berkeley"

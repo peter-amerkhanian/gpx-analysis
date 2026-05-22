@@ -1,5 +1,5 @@
 ---
-title: "Alvarado to Tilden via Havey Canyon"
+title: "Havey Canyon Loop (55% Gravel)"
 ---
 
 
@@ -12,18 +12,21 @@ title: "Alvarado to Tilden via Havey Canyon"
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>18.83</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1875.66 ft</p>
-<p><span class="mobile-route-label">Tech Descents</span><br>0.19 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br>31/100</p>
 </div>
 </article>
 ```
-## Map
+::: {.panel-tabset}
+
+## Route
+
 <iframe
   src="../data/routes/wildcat-havey-nimitz-meadow-loop/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allowfullscreen
 ></iframe>
-## Data
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -60,3 +63,163 @@ title: "Alvarado to Tilden via Havey Canyon"
     </tr>
   </tbody>
 </table>
+
+## Climb Chunks
+
+<iframe
+  src="../data/routes/wildcat-havey-nimitz-meadow-loop/chunk_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>route_part</th>
+      <th>road_name</th>
+      <th>distance_mi</th>
+      <th>time_low_min</th>
+      <th>time_fast_min</th>
+      <th>rest_time_after_min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>TOTAL</td>
+      <td>4.2</td>
+      <td>82.0</td>
+      <td>35.0</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <td>climb (easy)</td>
+      <td>McBryde Avenue</td>
+      <td>0.5</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>climb (hard)</td>
+      <td>Wildcat Canyon Parkway</td>
+      <td>0.6</td>
+      <td>19.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <td>climb (hard)</td>
+      <td>Wildcat Creek Trail</td>
+      <td>1.1</td>
+      <td>33.0</td>
+      <td>13.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>climb (easy)</td>
+      <td>Havey Canyon Trail</td>
+      <td>1.1</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>climb (easy)</td>
+      <td>Eagle's Nest Trail</td>
+      <td>0.5</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>37.0</td>
+    </tr>
+    <tr>
+      <td>climb (easy)</td>
+      <td>Wildcat Creek Trail</td>
+      <td>0.2</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>climb (easy)</td>
+      <td>Wildcat Creek Trail</td>
+      <td>0.2</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>26.0</td>
+    </tr>
+  </tbody>
+</table>
+
+## Street Quality
+
+<iframe
+  src="../data/routes/wildcat-havey-nimitz-meadow-loop/road_quality_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>pci_available</th>
+      <th>mtc_pci_info</th>
+      <th>Miles</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PCI Available</td>
+      <td>Gravel</td>
+      <td>10.3</td>
+      <td>54.6</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Cycleway</td>
+      <td>3.2</td>
+      <td>17.1</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Poor</td>
+      <td>1.9</td>
+      <td>10.2</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Good</td>
+      <td>1.1</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Fair</td>
+      <td>1.0</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>At Risk</td>
+      <td>0.6</td>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Excellent</td>
+      <td>0.5</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <td>PCI Unknown</td>
+      <td>Service (Unknown)</td>
+      <td>0.2</td>
+      <td>1.1</td>
+    </tr>
+  </tbody>
+</table>
+
+:::

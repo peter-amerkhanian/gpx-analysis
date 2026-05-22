@@ -1,0 +1,36 @@
+::: {.panel-tabset}
+
+## Route
+
+<iframe
+  src="{{ map_src }}"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+{{ hazards_table_html }}
+
+## Climb Chunks
+
+<iframe
+  src="{{ chunk_map_src }}"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+{{ chunk_sections_table_html }}
+
+## Street Quality
+
+<iframe
+  src="{{ road_quality_map_src }}"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+{{ road_quality_table_html }}
+
+:::

@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-route-notes">    
         <li>
     <a class="dropdown-item" href="../routes/arlington-gravel-loop.html">
- <span class="dropdown-text">Arlington Gravel Loop</span></a>
+ <span class="dropdown-text">Arlington Loop</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/grizzly-peak-loop.html">
@@ -108,15 +108,19 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/wildcat-havey-nimitz-meadow-loop.html">
- <span class="dropdown-text">Alvarado to Tilden via Havey Canyon</span></a>
+ <span class="dropdown-text">Havey Canyon Loop</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/wildcat-conlon-nimitz-meadow-loop.html">
- <span class="dropdown-text">Alvarado to Tilden via Conlon Trail</span></a>
+ <span class="dropdown-text">Conlon Trail Loop</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/tunnel-pinehurst-loop.html">
  <span class="dropdown-text">Tunnel to Pinehurst Loop</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../routes/richmond-marin-conzelman-emb.html">
+ <span class="dropdown-text">Richmond to EMB</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/tunnel-pinehurst-loop-jm.html">
@@ -140,11 +144,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/tunnel-to-claremont-loop.html">
- <span class="dropdown-text">Tunnel Road to Claremont Loop</span></a>
+ <span class="dropdown-text">Tunnel to Claremont Loop</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/three-bears-gravel-loop.html">
- <span class="dropdown-text">Three Wild Bears w/ Gravel</span></a>
+ <span class="dropdown-text">Three Wild Bears</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../routes/redwood-san-leandro-macarthur-bart.html">
@@ -163,15 +167,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#map" id="toc-map" class="nav-link active" data-scroll-target="#map">Map</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -202,16 +199,15 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="mobile-route-label">BART</span><br>19th St/Oakland</p>
 <p><span class="mobile-route-label">Miles</span><br>19.87</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2099.41 ft</p>
-<p><span class="mobile-route-label">Tech Descents</span><br>0.52 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br>38/100</p>
 </div>
 </article>
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map">Map</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Route</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Climb Chunks</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Street Quality</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <iframe src="../data/routes/tg-bbr-loop/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">
 </iframe>
-</section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
 <table class="dataframe table table-striped table-sm small">
 <thead>
 <tr>
@@ -284,9 +280,311 @@ Danger Zone
 </tr>
 </tbody>
 </table>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<iframe src="../data/routes/tg-bbr-loop/chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">
+</iframe>
+<table class="dataframe table table-striped table-sm small">
+<thead>
+<tr>
+<th>
+route_part
+</th>
+<th>
+road_name
+</th>
+<th>
+distance_mi
+</th>
+<th>
+time_low_min
+</th>
+<th>
+time_fast_min
+</th>
+<th>
+rest_time_after_min
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+TOTAL
+</td>
+<td>
+6.8
+</td>
+<td>
+81.0
+</td>
+<td>
+40.0
+</td>
+<td>
+64.0
+</td>
+</tr>
+<tr>
+<td>
+climb (medium)
+</td>
+<td>
+Trestle Glen Road
+</td>
+<td>
+2.7
+</td>
+<td>
+32.0
+</td>
+<td>
+16.0
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+climb (medium)
+</td>
+<td>
+Monterey Boulevard
+</td>
+<td>
+0.3
+</td>
+<td>
+3.0
+</td>
+<td>
+2.0
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+climb (medium)
+</td>
+<td>
+Warren Freeway
+</td>
+<td>
+2.9
+</td>
+<td>
+35.0
+</td>
+<td>
+17.0
+</td>
+<td>
+2.0
+</td>
+</tr>
+<tr>
+<td>
+climb (medium)
+</td>
+<td>
+Skyline Boulevard
+</td>
+<td>
+0.4
+</td>
+<td>
+5.0
+</td>
+<td>
+2.0
+</td>
+<td>
+35.0
+</td>
+</tr>
+<tr>
+<td>
+climb (easy)
+</td>
+<td>
+Saint James Drive
+</td>
+<td>
+0.5
+</td>
+<td>
+6.0
+</td>
+<td>
+3.0
+</td>
+<td>
+25.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<iframe src="../data/routes/tg-bbr-loop/road_quality_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">
+</iframe>
+<table class="dataframe table table-striped table-sm small">
+<thead>
+<tr>
+<th>
+pci_available
+</th>
+<th>
+mtc_pci_info
+</th>
+<th>
+Miles
+</th>
+<th>
+Percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Poor
+</td>
+<td>
+7.1
+</td>
+<td>
+35.5
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Excellent
+</td>
+<td>
+3.5
+</td>
+<td>
+17.7
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Failed
+</td>
+<td>
+1.9
+</td>
+<td>
+9.6
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+At Risk
+</td>
+<td>
+1.8
+</td>
+<td>
+9.1
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Good
+</td>
+<td>
+1.5
+</td>
+<td>
+7.8
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Cycleway
+</td>
+<td>
+1.5
+</td>
+<td>
+7.4
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Very Good
+</td>
+<td>
+1.3
+</td>
+<td>
+6.5
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Fair
+</td>
+<td>
+1.2
+</td>
+<td>
+6.1
+</td>
+</tr>
+<tr>
+<td>
+PCI Available
+</td>
+<td>
+Gravel
+</td>
+<td>
+0.0
+</td>
+<td>
+0.2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

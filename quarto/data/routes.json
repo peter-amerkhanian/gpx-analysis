@@ -2,7 +2,8 @@
   "routes": [
     {
       "slug": "arlington-gravel-loop",
-      "title": "Arlington Gravel Loop",
+      "title": "Arlington Loop (28% Gravel)",
+      "title_html": "Arlington Loop <span style=\"color: chocolate;\">(28% Gravel)</span>",
       "source": "gpx_data/arlington_gravel_loop.gpx",
       "reverse": false,
       "links": {
@@ -31,6 +32,8 @@
           "lat": 37.95144,
           "lon": -122.32191
         },
+        "gravel_percent": 28.4,
+        "road_quality_score": 83,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte"
@@ -41,6 +44,8 @@
         "points": "data/routes/arlington-gravel-loop/points.geojson",
         "segments": "data/routes/arlington-gravel-loop/segments.geojson",
         "map": "data/routes/arlington-gravel-loop/map.html",
+        "road_quality_map": "data/routes/arlington-gravel-loop/road_quality_map.html",
+        "chunk_map": "data/routes/arlington-gravel-loop/chunk_map.html",
         "profile_svg": "data/routes/arlington-gravel-loop/profile.svg",
         "page": "routes/arlington-gravel-loop.qmd"
       },
@@ -92,6 +97,7 @@
     {
       "slug": "grizzly-peak-loop",
       "title": "Grizzly Peak Loop",
+      "title_html": "Grizzly Peak Loop",
       "source": "gpx_data/classic_grizzly.gpx",
       "reverse": false,
       "links": {
@@ -120,6 +126,8 @@
           "lat": 37.87467,
           "lon": -122.28396
         },
+        "gravel_percent": 0.0,
+        "road_quality_score": 85,
         "start_bart_station": "North Berkeley",
         "end_bart_station": "North Berkeley",
         "bart_station": "North Berkeley"
@@ -130,6 +138,8 @@
         "points": "data/routes/grizzly-peak-loop/points.geojson",
         "segments": "data/routes/grizzly-peak-loop/segments.geojson",
         "map": "data/routes/grizzly-peak-loop/map.html",
+        "road_quality_map": "data/routes/grizzly-peak-loop/road_quality_map.html",
+        "chunk_map": "data/routes/grizzly-peak-loop/chunk_map.html",
         "profile_svg": "data/routes/grizzly-peak-loop/profile.svg",
         "page": "routes/grizzly-peak-loop.qmd"
       },
@@ -180,7 +190,8 @@
     },
     {
       "slug": "wildcat-havey-nimitz-meadow-loop",
-      "title": "Alvarado to Tilden via Havey Canyon",
+      "title": "Havey Canyon Loop (55% Gravel)",
+      "title_html": "Havey Canyon Loop <span style=\"color: chocolate;\">(55% Gravel)</span>",
       "source": "gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx",
       "reverse": false,
       "links": {
@@ -209,6 +220,8 @@
           "lat": 37.92623,
           "lon": -122.31614
         },
+        "gravel_percent": 54.6,
+        "road_quality_score": 31,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte"
@@ -219,6 +232,8 @@
         "points": "data/routes/wildcat-havey-nimitz-meadow-loop/points.geojson",
         "segments": "data/routes/wildcat-havey-nimitz-meadow-loop/segments.geojson",
         "map": "data/routes/wildcat-havey-nimitz-meadow-loop/map.html",
+        "road_quality_map": "data/routes/wildcat-havey-nimitz-meadow-loop/road_quality_map.html",
+        "chunk_map": "data/routes/wildcat-havey-nimitz-meadow-loop/chunk_map.html",
         "profile_svg": "data/routes/wildcat-havey-nimitz-meadow-loop/profile.svg",
         "page": "routes/wildcat-havey-nimitz-meadow-loop.qmd"
       },
@@ -269,7 +284,8 @@
     },
     {
       "slug": "wildcat-conlon-nimitz-meadow-loop",
-      "title": "Alvarado to Tilden via Conlon Trail",
+      "title": "Conlon Trail Loop (59% Gravel)",
+      "title_html": "Conlon Trail Loop <span style=\"color: chocolate;\">(59% Gravel)</span>",
       "source": "gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx",
       "reverse": false,
       "links": {
@@ -298,6 +314,8 @@
           "lat": 37.92619,
           "lon": -122.31606
         },
+        "gravel_percent": 58.5,
+        "road_quality_score": 35,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte"
@@ -308,6 +326,8 @@
         "points": "data/routes/wildcat-conlon-nimitz-meadow-loop/points.geojson",
         "segments": "data/routes/wildcat-conlon-nimitz-meadow-loop/segments.geojson",
         "map": "data/routes/wildcat-conlon-nimitz-meadow-loop/map.html",
+        "road_quality_map": "data/routes/wildcat-conlon-nimitz-meadow-loop/road_quality_map.html",
+        "chunk_map": "data/routes/wildcat-conlon-nimitz-meadow-loop/chunk_map.html",
         "profile_svg": "data/routes/wildcat-conlon-nimitz-meadow-loop/profile.svg",
         "page": "routes/wildcat-conlon-nimitz-meadow-loop.qmd"
       },
@@ -359,6 +379,7 @@
     {
       "slug": "tunnel-pinehurst-loop",
       "title": "Tunnel to Pinehurst Loop",
+      "title_html": "Tunnel to Pinehurst Loop",
       "source": "gpx_data/tunnel_to_pinehurst.gpx",
       "reverse": false,
       "links": {
@@ -387,6 +408,8 @@
           "lat": 37.84338,
           "lon": -122.25173
         },
+        "gravel_percent": 0.0,
+        "road_quality_score": 71,
         "start_bart_station": "Rockridge",
         "end_bart_station": "Rockridge",
         "bart_station": "Rockridge"
@@ -397,6 +420,8 @@
         "points": "data/routes/tunnel-pinehurst-loop/points.geojson",
         "segments": "data/routes/tunnel-pinehurst-loop/segments.geojson",
         "map": "data/routes/tunnel-pinehurst-loop/map.html",
+        "road_quality_map": "data/routes/tunnel-pinehurst-loop/road_quality_map.html",
+        "chunk_map": "data/routes/tunnel-pinehurst-loop/chunk_map.html",
         "profile_svg": "data/routes/tunnel-pinehurst-loop/profile.svg",
         "page": "routes/tunnel-pinehurst-loop.qmd"
       },
@@ -446,8 +471,103 @@
       ]
     },
     {
+      "slug": "richmond-marin-conzelman-emb",
+      "title": "Richmond to EMB",
+      "title_html": "Richmond to EMB",
+      "source": "gpx_data/richmond_to_marin.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1288,
+        "segment_count": 1287,
+        "distance_m": 47735.06,
+        "distance_mi": 29.66,
+        "elevation_gain_m": 479.7,
+        "elevation_gain_ft": 1573.82,
+        "elevation_loss_m": 479.5,
+        "elevation_loss_ft": 1573.16,
+        "max_elevation_m": 74.3,
+        "max_elevation_ft": 243.77,
+        "start": {
+          "lat": 37.93921,
+          "lon": -122.35903
+        },
+        "end": {
+          "lat": 37.79493,
+          "lon": -122.39349
+        },
+        "gravel_percent": 1.2,
+        "road_quality_score": 22,
+        "start_bart_station": "Richmond",
+        "end_bart_station": "Embarcadero",
+        "bart_station": "Richmond"
+      },
+      "paths": {
+        "summary": "data/routes/richmond-marin-conzelman-emb/summary.json",
+        "hazards": "data/routes/richmond-marin-conzelman-emb/hazards.json",
+        "points": "data/routes/richmond-marin-conzelman-emb/points.geojson",
+        "segments": "data/routes/richmond-marin-conzelman-emb/segments.geojson",
+        "map": "data/routes/richmond-marin-conzelman-emb/map.html",
+        "road_quality_map": "data/routes/richmond-marin-conzelman-emb/road_quality_map.html",
+        "chunk_map": "data/routes/richmond-marin-conzelman-emb/chunk_map.html",
+        "profile_svg": "data/routes/richmond-marin-conzelman-emb/profile.svg",
+        "page": "routes/richmond-marin-conzelman-emb.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "mellow",
+          "hazard_label": "Mellow",
+          "distance_m": 43025.0,
+          "percent": 90.0,
+          "distance_mi": 26.73
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 1941.0,
+          "percent": 4.0,
+          "distance_mi": 1.21
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 1381.0,
+          "percent": 3.0,
+          "distance_mi": 0.86
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 1059.0,
+          "percent": 2.0,
+          "distance_mi": 0.66
+        },
+        {
+          "hazard": "danger_zone",
+          "hazard_label": "Danger Zone",
+          "distance_m": 329.0,
+          "percent": 1.0,
+          "distance_mi": 0.2
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 47735.0,
+          "percent": 100.0,
+          "distance_mi": 29.66
+        }
+      ]
+    },
+    {
       "slug": "tunnel-pinehurst-loop-jm",
       "title": "Tunnel to Pinehurst w/ Joaquin Miller Descent",
+      "title_html": "Tunnel to Pinehurst w/ Joaquin Miller Descent",
       "source": "gpx_data/tunnel_to_pinehurst_joaquin_miller.gpx",
       "reverse": false,
       "links": {
@@ -476,6 +596,8 @@
           "lat": 37.82928,
           "lon": -122.26556
         },
+        "gravel_percent": 0.0,
+        "road_quality_score": 70,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur"
@@ -486,6 +608,8 @@
         "points": "data/routes/tunnel-pinehurst-loop-jm/points.geojson",
         "segments": "data/routes/tunnel-pinehurst-loop-jm/segments.geojson",
         "map": "data/routes/tunnel-pinehurst-loop-jm/map.html",
+        "road_quality_map": "data/routes/tunnel-pinehurst-loop-jm/road_quality_map.html",
+        "chunk_map": "data/routes/tunnel-pinehurst-loop-jm/chunk_map.html",
         "profile_svg": "data/routes/tunnel-pinehurst-loop-jm/profile.svg",
         "page": "routes/tunnel-pinehurst-loop-jm.qmd"
       },
@@ -537,6 +661,7 @@
     {
       "slug": "tunnel-pinehurst-loop-sheps",
       "title": "Tunnel to Pinehurst w/ Shepards Canyon Descent",
+      "title_html": "Tunnel to Pinehurst w/ Shepards Canyon Descent",
       "source": "gpx_data/tunnel_to_pinehurst_skyline_to_shepards.gpx",
       "reverse": false,
       "links": {
@@ -565,6 +690,8 @@
           "lat": 37.82927,
           "lon": -122.26554
         },
+        "gravel_percent": 0.0,
+        "road_quality_score": 65,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur"
@@ -575,6 +702,8 @@
         "points": "data/routes/tunnel-pinehurst-loop-sheps/points.geojson",
         "segments": "data/routes/tunnel-pinehurst-loop-sheps/segments.geojson",
         "map": "data/routes/tunnel-pinehurst-loop-sheps/map.html",
+        "road_quality_map": "data/routes/tunnel-pinehurst-loop-sheps/road_quality_map.html",
+        "chunk_map": "data/routes/tunnel-pinehurst-loop-sheps/chunk_map.html",
         "profile_svg": "data/routes/tunnel-pinehurst-loop-sheps/profile.svg",
         "page": "routes/tunnel-pinehurst-loop-sheps.qmd"
       },
@@ -626,6 +755,7 @@
     {
       "slug": "spruce-up-euclid-down",
       "title": "Spruce up, Euclid Down",
+      "title_html": "Spruce up, Euclid Down",
       "source": "gpx_data/spruce_up_euclid_down.gpx",
       "reverse": false,
       "links": {
@@ -654,6 +784,8 @@
           "lat": 37.85289,
           "lon": -122.26781
         },
+        "gravel_percent": 0.9,
+        "road_quality_score": 83,
         "start_bart_station": "North Berkeley",
         "end_bart_station": "Ashby",
         "bart_station": "North Berkeley"
@@ -664,6 +796,8 @@
         "points": "data/routes/spruce-up-euclid-down/points.geojson",
         "segments": "data/routes/spruce-up-euclid-down/segments.geojson",
         "map": "data/routes/spruce-up-euclid-down/map.html",
+        "road_quality_map": "data/routes/spruce-up-euclid-down/road_quality_map.html",
+        "chunk_map": "data/routes/spruce-up-euclid-down/chunk_map.html",
         "profile_svg": "data/routes/spruce-up-euclid-down/profile.svg",
         "page": "routes/spruce-up-euclid-down.qmd"
       },
@@ -715,6 +849,7 @@
     {
       "slug": "wildwood-bbr-loop",
       "title": "Wildwood to BBR Loop",
+      "title_html": "Wildwood to BBR Loop",
       "source": "gpx_data/Wildwood_to_bbr_loop.gpx",
       "reverse": false,
       "links": {
@@ -743,6 +878,8 @@
           "lat": 37.82971,
           "lon": -122.2627
         },
+        "gravel_percent": 0.0,
+        "road_quality_score": 51,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur"
@@ -753,6 +890,8 @@
         "points": "data/routes/wildwood-bbr-loop/points.geojson",
         "segments": "data/routes/wildwood-bbr-loop/segments.geojson",
         "map": "data/routes/wildwood-bbr-loop/map.html",
+        "road_quality_map": "data/routes/wildwood-bbr-loop/road_quality_map.html",
+        "chunk_map": "data/routes/wildwood-bbr-loop/chunk_map.html",
         "profile_svg": "data/routes/wildwood-bbr-loop/profile.svg",
         "page": "routes/wildwood-bbr-loop.qmd"
       },
@@ -804,6 +943,7 @@
     {
       "slug": "tg-bbr-loop",
       "title": "Trestle Glen to BBR Loop",
+      "title_html": "Trestle Glen to BBR Loop",
       "source": "gpx_data/Trestle Glen to BBR Loop.gpx",
       "reverse": false,
       "links": {
@@ -832,6 +972,8 @@
           "lat": 37.80888,
           "lon": -122.26783
         },
+        "gravel_percent": 0.2,
+        "road_quality_score": 38,
         "start_bart_station": "19th St/Oakland",
         "end_bart_station": "19th St/Oakland",
         "bart_station": "19th St/Oakland"
@@ -842,6 +984,8 @@
         "points": "data/routes/tg-bbr-loop/points.geojson",
         "segments": "data/routes/tg-bbr-loop/segments.geojson",
         "map": "data/routes/tg-bbr-loop/map.html",
+        "road_quality_map": "data/routes/tg-bbr-loop/road_quality_map.html",
+        "chunk_map": "data/routes/tg-bbr-loop/chunk_map.html",
         "profile_svg": "data/routes/tg-bbr-loop/profile.svg",
         "page": "routes/tg-bbr-loop.qmd"
       },
@@ -892,7 +1036,8 @@
     },
     {
       "slug": "tunnel-to-claremont-loop",
-      "title": "Tunnel Road to Claremont Loop",
+      "title": "Tunnel to Claremont Loop",
+      "title_html": "Tunnel to Claremont Loop",
       "source": "gpx_data/Tunnel to Claremont Loop.gpx",
       "reverse": false,
       "links": {
@@ -921,6 +1066,8 @@
           "lat": 37.82929,
           "lon": -122.26566
         },
+        "gravel_percent": 0.1,
+        "road_quality_score": 55,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur"
@@ -931,6 +1078,8 @@
         "points": "data/routes/tunnel-to-claremont-loop/points.geojson",
         "segments": "data/routes/tunnel-to-claremont-loop/segments.geojson",
         "map": "data/routes/tunnel-to-claremont-loop/map.html",
+        "road_quality_map": "data/routes/tunnel-to-claremont-loop/road_quality_map.html",
+        "chunk_map": "data/routes/tunnel-to-claremont-loop/chunk_map.html",
         "profile_svg": "data/routes/tunnel-to-claremont-loop/profile.svg",
         "page": "routes/tunnel-to-claremont-loop.qmd"
       },
@@ -981,7 +1130,8 @@
     },
     {
       "slug": "three-bears-gravel-loop",
-      "title": "Three Wild Bears w/ Gravel",
+      "title": "Three Wild Bears (13% Gravel)",
+      "title_html": "Three Wild Bears <span style=\"color: chocolate;\">(13% Gravel)</span>",
       "source": "gpx_data/three_bears_with_gravel.gpx",
       "reverse": false,
       "links": {
@@ -1010,6 +1160,8 @@
           "lat": 37.92424,
           "lon": -122.31615
         },
+        "gravel_percent": 13.1,
+        "road_quality_score": 89,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte"
@@ -1020,6 +1172,8 @@
         "points": "data/routes/three-bears-gravel-loop/points.geojson",
         "segments": "data/routes/three-bears-gravel-loop/segments.geojson",
         "map": "data/routes/three-bears-gravel-loop/map.html",
+        "road_quality_map": "data/routes/three-bears-gravel-loop/road_quality_map.html",
+        "chunk_map": "data/routes/three-bears-gravel-loop/chunk_map.html",
         "profile_svg": "data/routes/three-bears-gravel-loop/profile.svg",
         "page": "routes/three-bears-gravel-loop.qmd"
       },
@@ -1071,6 +1225,7 @@
     {
       "slug": "redwood-san-leandro-macarthur-bart",
       "title": "Redwood Road, San Lorenzo to Temescal",
+      "title_html": "Redwood Road, San Lorenzo to Temescal",
       "source": "gpx_data/redwood_to_macarthur.gpx",
       "reverse": false,
       "links": {
@@ -1099,6 +1254,8 @@
           "lat": 37.82951,
           "lon": -122.26642
         },
+        "gravel_percent": 0.0,
+        "road_quality_score": 85,
         "start_bart_station": "San Leandro",
         "end_bart_station": "MacArthur",
         "bart_station": "San Leandro"
@@ -1109,6 +1266,8 @@
         "points": "data/routes/redwood-san-leandro-macarthur-bart/points.geojson",
         "segments": "data/routes/redwood-san-leandro-macarthur-bart/segments.geojson",
         "map": "data/routes/redwood-san-leandro-macarthur-bart/map.html",
+        "road_quality_map": "data/routes/redwood-san-leandro-macarthur-bart/road_quality_map.html",
+        "chunk_map": "data/routes/redwood-san-leandro-macarthur-bart/chunk_map.html",
         "profile_svg": "data/routes/redwood-san-leandro-macarthur-bart/profile.svg",
         "page": "routes/redwood-san-leandro-macarthur-bart.qmd"
       },

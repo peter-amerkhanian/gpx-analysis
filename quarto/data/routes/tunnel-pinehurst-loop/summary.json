@@ -31,6 +31,8 @@
       "lat": 37.84338,
       "lon": -122.25173
     },
+    "gravel_percent": 0.0,
+    "road_quality_score": 71,
     "start_bart_station": "Rockridge",
     "end_bart_station": "Rockridge",
     "bart_station": "Rockridge"

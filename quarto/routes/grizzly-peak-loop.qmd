@@ -12,18 +12,21 @@ title: "Grizzly Peak Loop"
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>13.91</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1459.97 ft</p>
-<p><span class="mobile-route-label">Tech Descents</span><br>0.11 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br>85/100</p>
 </div>
 </article>
 ```
-## Map
+::: {.panel-tabset}
+
+## Route
+
 <iframe
   src="../data/routes/grizzly-peak-loop/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allowfullscreen
 ></iframe>
-## Data
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -60,3 +63,137 @@ title: "Grizzly Peak Loop"
     </tr>
   </tbody>
 </table>
+
+## Climb Chunks
+
+<iframe
+  src="../data/routes/grizzly-peak-loop/chunk_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>route_part</th>
+      <th>road_name</th>
+      <th>distance_mi</th>
+      <th>time_low_min</th>
+      <th>time_fast_min</th>
+      <th>rest_time_after_min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>TOTAL</td>
+      <td>6.6</td>
+      <td>77.0</td>
+      <td>39.0</td>
+      <td>44.0</td>
+    </tr>
+    <tr>
+      <td>climb (easy)</td>
+      <td>Virginia Street</td>
+      <td>1.2</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>climb (medium)</td>
+      <td>Spruce Street</td>
+      <td>3.0</td>
+      <td>35.0</td>
+      <td>18.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>climb (medium)</td>
+      <td>Grizzly Peak Boulevard</td>
+      <td>2.4</td>
+      <td>28.0</td>
+      <td>14.0</td>
+      <td>41.0</td>
+    </tr>
+  </tbody>
+</table>
+
+## Street Quality
+
+<iframe
+  src="../data/routes/grizzly-peak-loop/road_quality_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>pci_available</th>
+      <th>mtc_pci_info</th>
+      <th>Miles</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PCI Available</td>
+      <td>Good</td>
+      <td>5.2</td>
+      <td>37.4</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Fair</td>
+      <td>2.6</td>
+      <td>18.7</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Excellent</td>
+      <td>2.6</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Very Good</td>
+      <td>1.4</td>
+      <td>9.8</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>At Risk</td>
+      <td>1.0</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Poor</td>
+      <td>0.6</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Failed</td>
+      <td>0.3</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Gravel</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>PCI Unknown</td>
+      <td>Tertiary (Unknown)</td>
+      <td>0.2</td>
+      <td>1.6</td>
+    </tr>
+  </tbody>
+</table>
+
+:::

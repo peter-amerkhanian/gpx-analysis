@@ -2,7 +2,7 @@
   "route": {
     "slug": "three-bears-gravel-loop",
     "source": "gpx_data/three_bears_with_gravel.gpx",
-    "title": "Three Wild Bears w/ Gravel",
+    "title": "Three Wild Bears",
     "reverse": false,
     "links": {
       "strava_effort": null
@@ -31,6 +31,8 @@
       "lat": 37.92424,
       "lon": -122.31615
     },
+    "gravel_percent": 13.1,
+    "road_quality_score": 89,
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "El Cerrito del Norte"

@@ -1,5 +1,5 @@
 ---
-title: "Tunnel Road to Claremont Loop"
+title: "Tunnel to Claremont Loop"
 ---
 
 
@@ -12,18 +12,21 @@ title: "Tunnel Road to Claremont Loop"
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>14.16</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1502.3 ft</p>
-<p><span class="mobile-route-label">Tech Descents</span><br>0.19 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br>55/100</p>
 </div>
 </article>
 ```
-## Map
+::: {.panel-tabset}
+
+## Route
+
 <iframe
   src="../data/routes/tunnel-to-claremont-loop/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allowfullscreen
 ></iframe>
-## Data
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -60,3 +63,127 @@ title: "Tunnel Road to Claremont Loop"
     </tr>
   </tbody>
 </table>
+
+## Climb Chunks
+
+<iframe
+  src="../data/routes/tunnel-to-claremont-loop/chunk_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>route_part</th>
+      <th>road_name</th>
+      <th>distance_mi</th>
+      <th>time_low_min</th>
+      <th>time_fast_min</th>
+      <th>rest_time_after_min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>TOTAL</td>
+      <td>5.2</td>
+      <td>62.0</td>
+      <td>31.0</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <td>climb (medium)</td>
+      <td>Keith Avenue</td>
+      <td>5.2</td>
+      <td>62.0</td>
+      <td>31.0</td>
+      <td>42.0</td>
+    </tr>
+  </tbody>
+</table>
+
+## Street Quality
+
+<iframe
+  src="../data/routes/tunnel-to-claremont-loop/road_quality_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>pci_available</th>
+      <th>mtc_pci_info</th>
+      <th>Miles</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PCI Available</td>
+      <td>Poor</td>
+      <td>3.7</td>
+      <td>26.1</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Very Good</td>
+      <td>2.5</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Excellent</td>
+      <td>2.3</td>
+      <td>16.3</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Fair</td>
+      <td>1.9</td>
+      <td>13.2</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Failed</td>
+      <td>1.4</td>
+      <td>9.9</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Good</td>
+      <td>1.1</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>At Risk</td>
+      <td>0.9</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Cycleway</td>
+      <td>0.0</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>PCI Available</td>
+      <td>Gravel</td>
+      <td>0.0</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <td>PCI Unknown</td>
+      <td>Secondary (Unknown)</td>
+      <td>0.3</td>
+      <td>1.8</td>
+    </tr>
+  </tbody>
+</table>
+
+:::

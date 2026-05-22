@@ -31,6 +31,8 @@
       "lat": 37.82928,
       "lon": -122.26556
     },
+    "gravel_percent": 0.0,
+    "road_quality_score": 70,
     "start_bart_station": "MacArthur",
     "end_bart_station": "MacArthur",
     "bart_station": "MacArthur"
