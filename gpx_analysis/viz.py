@@ -890,6 +890,15 @@ def make_chunk_map(
     frame["Chunk Avg Grade"] = frame["chunk_avg_grade"].multiply(100).round(2).astype(str) + "%"
     frame["Chunk Distance (ft)"] = frame["chunk_dist_ft"].round(0).astype("Int64").astype(str)
     frame["Candidate Chunk Distance (ft)"] = frame["candidate_chunk_dist_ft"].round(0).astype("Int64").astype(str)
+    if "section_road_name" in frame.columns:
+        frame["Section Road Name"] = frame["section_road_name"].fillna(frame["Road Name"])
+    if "section_distance_mi" in frame.columns:
+        frame["Section Distance (mi)"] = pd.to_numeric(
+            frame["section_distance_mi"],
+            errors="coerce",
+        ).round(1)
+    if "section_time_min" in frame.columns:
+        frame["Section Time (min)"] = frame["section_time_min"].fillna("")
     frame["_display_color"] = frame["chunk_state"].map(CHUNK_STATE_COLORS).fillna("#8a8a8a")
 
     if tooltip_fields is None:
@@ -901,15 +910,24 @@ def make_chunk_map(
             "Grade",
         ]
     if popup_cols is None:
-        popup_cols = [
-            "chunk_state",
-            "Road Name",
-            "Chunk Distance (ft)",
+        popup_cols = ["chunk_state"]
+        if "Section Road Name" in frame.columns:
+            popup_cols.extend([
+                "Section Road Name",
+                "Section Distance (mi)",
+                "Section Time (min)",
+            ])
+        else:
+            popup_cols.extend([
+                "Road Name",
+                "Chunk Distance (ft)",
+            ])
+        popup_cols.extend([
             "Chunk Avg Grade",
             "Candidate Chunk Distance (ft)",
             "Grade",
             "More Details",
-        ]
+        ])
 
     m = frame.explore(
         column="chunk_state",

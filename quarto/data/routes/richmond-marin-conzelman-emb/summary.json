@@ -32,6 +32,7 @@
       "lon": -122.39349
     },
     "gravel_percent": 1.2,
+    "cycleway_percent": 43.0,
     "road_quality_score": 22,
     "start_bart_station": "Richmond",
     "end_bart_station": "Embarcadero",

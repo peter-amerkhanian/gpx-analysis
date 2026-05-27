@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-05-22T13:28:45.287637</dc:date>
+    <dc:date>2026-05-27T12:09:08.525113</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -31,21 +31,11 @@ z
   </g>
   <g id="axes_1">
    <g id="line2d_1">
-    <path d="M 10.267763 52.758327 
-L 10.390071 52.736372 
-L 10.512379 52.725394 
+    <path d="M 10.145455 52.812218 
 L 10.634687 52.716412 
-L 10.756995 52.710424 
-L 10.879303 52.704436 
-L 11.001611 52.699945 
-" clip-path="url(#p2ee61af3bf)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_2">
-    <path d="M 11.613151 52.65294 
-L 14.181621 52.378695 
-L 15.52701 51.900863 
-L 16.872398 51.34399 
-L 18.462403 50.522452 
+L 12.95854 52.497256 
+L 14.915469 52.130797 
+L 18.095479 50.784721 
 L 20.052408 49.512895 
 L 21.153181 49.15482 
 L 21.397797 48.896144 
@@ -311,20 +301,20 @@ L 206.327602 51.821823
 L 207.183758 52.219418 
 L 208.406839 52.482885 
 L 210.486076 52.515219 
-L 212.809929 52.811021 
-L 212.809929 52.811021 
-" clip-path="url(#p2ee61af3bf)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+L 213.054545 52.861319 
+L 213.054545 52.861319 
+" clip-path="url(#pbf3d8a294f)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_3">
+   <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#p2ee61af3bf)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#pbf3d8a294f)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p2ee61af3bf">
+  <clipPath id="pbf3d8a294f">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>

@@ -3,7 +3,7 @@
     {
       "slug": "arlington-gravel-loop",
       "title": "Arlington Loop (28% Gravel)",
-      "title_html": "Arlington Loop <span style=\"color: chocolate;\">(28% Gravel)</span>",
+      "title_html": "Arlington Loop <span>(<span style=\"color: chocolate;\">28% Gravel</span>)</span>",
       "source": "gpx_data/arlington_gravel_loop.gpx",
       "reverse": false,
       "links": {
@@ -33,6 +33,7 @@
           "lon": -122.32191
         },
         "gravel_percent": 28.4,
+        "cycleway_percent": 0.0,
         "road_quality_score": 83,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
@@ -127,6 +128,7 @@
           "lon": -122.28396
         },
         "gravel_percent": 0.0,
+        "cycleway_percent": 0.0,
         "road_quality_score": 85,
         "start_bart_station": "North Berkeley",
         "end_bart_station": "North Berkeley",
@@ -191,7 +193,7 @@
     {
       "slug": "wildcat-havey-nimitz-meadow-loop",
       "title": "Havey Canyon Loop (55% Gravel)",
-      "title_html": "Havey Canyon Loop <span style=\"color: chocolate;\">(55% Gravel)</span>",
+      "title_html": "Havey Canyon Loop <span>(<span style=\"color: chocolate;\">55% Gravel</span>)</span>",
       "source": "gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx",
       "reverse": false,
       "links": {
@@ -221,6 +223,7 @@
           "lon": -122.31614
         },
         "gravel_percent": 54.6,
+        "cycleway_percent": 17.1,
         "road_quality_score": 31,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
@@ -285,7 +288,7 @@
     {
       "slug": "wildcat-conlon-nimitz-meadow-loop",
       "title": "Conlon Trail Loop (59% Gravel)",
-      "title_html": "Conlon Trail Loop <span style=\"color: chocolate;\">(59% Gravel)</span>",
+      "title_html": "Conlon Trail Loop <span>(<span style=\"color: chocolate;\">59% Gravel</span>)</span>",
       "source": "gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx",
       "reverse": false,
       "links": {
@@ -315,6 +318,7 @@
           "lon": -122.31606
         },
         "gravel_percent": 58.5,
+        "cycleway_percent": 12.2,
         "road_quality_score": 35,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
@@ -409,6 +413,7 @@
           "lon": -122.25173
         },
         "gravel_percent": 0.0,
+        "cycleway_percent": 0.0,
         "road_quality_score": 71,
         "start_bart_station": "Rockridge",
         "end_bart_station": "Rockridge",
@@ -472,8 +477,8 @@
     },
     {
       "slug": "richmond-marin-conzelman-emb",
-      "title": "Richmond to EMB",
-      "title_html": "Richmond to EMB",
+      "title": "Richmond to EMB (43% Cycleway)",
+      "title_html": "Richmond to EMB <span>(<span style=\"color: forestgreen;\">43% Cycleway</span>)</span>",
       "source": "gpx_data/richmond_to_marin.gpx",
       "reverse": false,
       "links": {
@@ -503,6 +508,7 @@
           "lon": -122.39349
         },
         "gravel_percent": 1.2,
+        "cycleway_percent": 43.0,
         "road_quality_score": 22,
         "start_bart_station": "Richmond",
         "end_bart_station": "Embarcadero",
@@ -597,6 +603,7 @@
           "lon": -122.26556
         },
         "gravel_percent": 0.0,
+        "cycleway_percent": 0.1,
         "road_quality_score": 70,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
@@ -691,6 +698,7 @@
           "lon": -122.26554
         },
         "gravel_percent": 0.0,
+        "cycleway_percent": 0.4,
         "road_quality_score": 65,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
@@ -785,6 +793,7 @@
           "lon": -122.26781
         },
         "gravel_percent": 0.9,
+        "cycleway_percent": 0.0,
         "road_quality_score": 83,
         "start_bart_station": "North Berkeley",
         "end_bart_station": "Ashby",
@@ -879,6 +888,7 @@
           "lon": -122.2627
         },
         "gravel_percent": 0.0,
+        "cycleway_percent": 0.6,
         "road_quality_score": 51,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
@@ -973,6 +983,7 @@
           "lon": -122.26783
         },
         "gravel_percent": 0.2,
+        "cycleway_percent": 7.4,
         "road_quality_score": 38,
         "start_bart_station": "19th St/Oakland",
         "end_bart_station": "19th St/Oakland",
@@ -1067,6 +1078,7 @@
           "lon": -122.26566
         },
         "gravel_percent": 0.1,
+        "cycleway_percent": 0.2,
         "road_quality_score": 55,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
@@ -1131,7 +1143,7 @@
     {
       "slug": "three-bears-gravel-loop",
       "title": "Three Wild Bears (13% Gravel)",
-      "title_html": "Three Wild Bears <span style=\"color: chocolate;\">(13% Gravel)</span>",
+      "title_html": "Three Wild Bears <span>(<span style=\"color: chocolate;\">13% Gravel</span>)</span>",
       "source": "gpx_data/three_bears_with_gravel.gpx",
       "reverse": false,
       "links": {
@@ -1161,6 +1173,7 @@
           "lon": -122.31615
         },
         "gravel_percent": 13.1,
+        "cycleway_percent": 0.2,
         "road_quality_score": 89,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
@@ -1255,6 +1268,7 @@
           "lon": -122.26642
         },
         "gravel_percent": 0.0,
+        "cycleway_percent": 0.0,
         "road_quality_score": 85,
         "start_bart_station": "San Leandro",
         "end_bart_station": "MacArthur",

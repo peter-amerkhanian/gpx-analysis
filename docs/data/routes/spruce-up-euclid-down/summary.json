@@ -32,6 +32,7 @@
       "lon": -122.26781
     },
     "gravel_percent": 0.9,
+    "cycleway_percent": 0.0,
     "road_quality_score": 83,
     "start_bart_station": "North Berkeley",
     "end_bart_station": "Ashby",

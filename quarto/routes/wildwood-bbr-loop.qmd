@@ -12,7 +12,7 @@ title: "Wildwood to BBR Loop"
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>17.41</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2245.08 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>51/100</p>
+<p><span class="mobile-route-label">Road Quality</span><br>51%</p>
 </div>
 </article>
 ```
@@ -76,12 +76,10 @@ title: "Wildwood to BBR Loop"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>route_part</th>
-      <th>road_name</th>
-      <th>distance_mi</th>
-      <th>time_low_min</th>
-      <th>time_fast_min</th>
-      <th>rest_time_after_min</th>
+      <th>Workout</th>
+      <th>Road</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
     </tr>
   </thead>
   <tbody>
@@ -89,73 +87,55 @@ title: "Wildwood to BBR Loop"
       <td>TOTAL</td>
       <td>TOTAL</td>
       <td>7.0</td>
-      <td>84.0</td>
-      <td>42.0</td>
-      <td>60.0</td>
+      <td></td>
     </tr>
     <tr>
       <td>climb (easy)</td>
-      <td>Broadway</td>
+      <td>40th Street</td>
       <td>0.2</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>6.0</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>Wildwood Avenue</td>
       <td>1.4</td>
-      <td>17.0</td>
-      <td>8.0</td>
-      <td>4.0</td>
+      <td>19 ± 9</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Saint James Drive</td>
+      <td>Leimert Boulevard</td>
       <td>1.5</td>
-      <td>18.0</td>
-      <td>9.0</td>
-      <td>1.0</td>
+      <td>20 ± 10</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>Monterey Boulevard</td>
       <td>0.3</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Warren Freeway</td>
+      <td>Butters Drive</td>
       <td>2.9</td>
-      <td>35.0</td>
-      <td>18.0</td>
-      <td>3.0</td>
+      <td>39 ± 19</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Skyline Boulevard</td>
       <td>0.2</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>23.0</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>Mountain Boulevard</td>
       <td>0.3</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>8.0</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Warren Freeway</td>
+      <td>Broadway Terrace</td>
       <td>0.2</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>14.0</td>
+      <td>3 ± 1</td>
     </tr>
   </tbody>
 </table>
@@ -172,7 +152,6 @@ title: "Wildwood to BBR Loop"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>pci_available</th>
       <th>mtc_pci_info</th>
       <th>Miles</th>
       <th>Percent</th>
@@ -180,49 +159,41 @@ title: "Wildwood to BBR Loop"
   </thead>
   <tbody>
     <tr>
-      <td>PCI Available</td>
       <td>Poor</td>
       <td>6.3</td>
       <td>36.2</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Very Good</td>
       <td>3.4</td>
       <td>19.3</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Good</td>
       <td>2.7</td>
       <td>15.3</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>At Risk</td>
       <td>1.6</td>
       <td>9.2</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Fair</td>
       <td>1.5</td>
       <td>8.6</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Excellent</td>
       <td>1.3</td>
       <td>7.3</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Failed</td>
       <td>0.6</td>
       <td>3.6</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Cycleway</td>
       <td>0.1</td>
       <td>0.6</td>

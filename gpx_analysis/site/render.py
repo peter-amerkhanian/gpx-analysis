@@ -104,7 +104,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
     ),
     (
         f'<p><span class="mobile-route-label">Road Quality</span><br>'
-        f'{route["summary"]["road_quality_score"]}/100</p>'
+        f'{route["summary"]["road_quality_score"]}%</p>'
     ),
     "</div>",
     "</article>"]

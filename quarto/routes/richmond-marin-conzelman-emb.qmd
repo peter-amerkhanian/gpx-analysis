@@ -1,5 +1,5 @@
 ---
-title: "Richmond to EMB"
+title: "Richmond to EMB (43% Cycleway)"
 ---
 
 
@@ -12,7 +12,7 @@ title: "Richmond to EMB"
 <p><span class="mobile-route-label">BART</span><br>Richmond</p>
 <p><span class="mobile-route-label">Miles</span><br>29.66</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1573.82 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>22/100</p>
+<p><span class="mobile-route-label">Road Quality</span><br>22%</p>
 </div>
 </article>
 ```
@@ -76,12 +76,10 @@ title: "Richmond to EMB"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>route_part</th>
-      <th>road_name</th>
-      <th>distance_mi</th>
-      <th>time_low_min</th>
-      <th>time_fast_min</th>
-      <th>rest_time_after_min</th>
+      <th>Workout</th>
+      <th>Road</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
     </tr>
   </thead>
   <tbody>
@@ -89,73 +87,55 @@ title: "Richmond to EMB"
       <td>TOTAL</td>
       <td>TOTAL</td>
       <td>3.9</td>
-      <td>56.0</td>
-      <td>26.0</td>
-      <td>140.0</td>
+      <td></td>
     </tr>
     <tr>
       <td>climb (easy)</td>
-      <td>Tewksbury Avenue</td>
+      <td>John T. Knox Freeway</td>
       <td>0.5</td>
-      <td>6.0</td>
-      <td>3.0</td>
-      <td>33.0</td>
+      <td>6 ± 2</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>John T. Knox Freeway</td>
       <td>0.3</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>8.0</td>
+      <td>3 ± 2</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Unknown Road</td>
       <td>0.4</td>
-      <td>5.0</td>
-      <td>2.0</td>
-      <td>15.0</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Meadowsweet Drive</td>
       <td>0.9</td>
-      <td>11.0</td>
-      <td>5.0</td>
-      <td>36.0</td>
+      <td>10 ± 4</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
-      <td>Bridgeway</td>
+      <td>South Street</td>
       <td>0.7</td>
-      <td>8.0</td>
-      <td>4.0</td>
-      <td>7.0</td>
+      <td>8 ± 3</td>
     </tr>
     <tr>
       <td>climb (hard)</td>
-      <td>Moore Road</td>
+      <td>Golden Gate Bridge</td>
       <td>0.6</td>
-      <td>17.0</td>
-      <td>7.0</td>
-      <td>27.0</td>
+      <td>10 ± 7</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>McDowell Road Southwest</td>
       <td>0.2</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
+      <td>3 ± 2</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
-      <td>Van Ness Avenue</td>
+      <td>North Point Street</td>
       <td>0.3</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>12.0</td>
+      <td>3 ± 1</td>
     </tr>
   </tbody>
 </table>
@@ -172,7 +152,6 @@ title: "Richmond to EMB"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>pci_available</th>
       <th>mtc_pci_info</th>
       <th>Miles</th>
       <th>Percent</th>
@@ -180,100 +159,54 @@ title: "Richmond to EMB"
   </thead>
   <tbody>
     <tr>
-      <td>PCI Available</td>
       <td>Cycleway</td>
       <td>12.8</td>
       <td>43.0</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>At Risk</td>
       <td>3.5</td>
       <td>12.0</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Poor</td>
       <td>2.6</td>
       <td>8.6</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Good</td>
       <td>2.1</td>
       <td>7.1</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Fair</td>
       <td>1.9</td>
       <td>6.5</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Very Good</td>
       <td>1.3</td>
       <td>4.3</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Excellent</td>
       <td>1.1</td>
       <td>3.6</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Gravel</td>
       <td>0.4</td>
       <td>1.2</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Failed</td>
       <td>0.1</td>
       <td>0.3</td>
     </tr>
     <tr>
-      <td>PCI Unknown</td>
-      <td>Unclassified (Unknown)</td>
-      <td>1.3</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <td>PCI Unknown</td>
-      <td>Service (Unknown)</td>
-      <td>1.2</td>
-      <td>4.2</td>
-    </tr>
-    <tr>
-      <td>PCI Unknown</td>
-      <td>Primary (Unknown)</td>
-      <td>0.5</td>
-      <td>1.6</td>
-    </tr>
-    <tr>
-      <td>PCI Unknown</td>
-      <td>Motorway (Unknown)</td>
-      <td>0.4</td>
-      <td>1.5</td>
-    </tr>
-    <tr>
-      <td>PCI Unknown</td>
-      <td>Tertiary (Unknown)</td>
-      <td>0.4</td>
-      <td>1.3</td>
-    </tr>
-    <tr>
-      <td>PCI Unknown</td>
-      <td>Residential (Unknown)</td>
-      <td>0.1</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <td>PCI Unknown</td>
-      <td>Secondary (Unknown)</td>
-      <td>0.1</td>
-      <td>0.2</td>
+      <td>Unknown</td>
+      <td>4.0</td>
+      <td>13.5</td>
     </tr>
   </tbody>
 </table>

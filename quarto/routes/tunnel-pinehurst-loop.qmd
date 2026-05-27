@@ -12,7 +12,7 @@ title: "Tunnel to Pinehurst Loop"
 <p><span class="mobile-route-label">BART</span><br>Rockridge</p>
 <p><span class="mobile-route-label">Miles</span><br>22.63</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3002.3 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>71/100</p>
+<p><span class="mobile-route-label">Road Quality</span><br>71%</p>
 </div>
 </article>
 ```
@@ -76,12 +76,10 @@ title: "Tunnel to Pinehurst Loop"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>route_part</th>
-      <th>road_name</th>
-      <th>distance_mi</th>
-      <th>time_low_min</th>
-      <th>time_fast_min</th>
-      <th>rest_time_after_min</th>
+      <th>Workout</th>
+      <th>Road</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
     </tr>
   </thead>
   <tbody>
@@ -89,73 +87,55 @@ title: "Tunnel to Pinehurst Loop"
       <td>TOTAL</td>
       <td>TOTAL</td>
       <td>10.0</td>
-      <td>131.0</td>
-      <td>64.0</td>
-      <td>74.0</td>
+      <td></td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Keith Avenue</td>
+      <td>Broadway</td>
       <td>1.6</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>2.0</td>
+      <td>22 ± 11</td>
     </tr>
     <tr>
       <td>climb (hard)</td>
       <td>Tunnel Road</td>
       <td>0.5</td>
-      <td>16.0</td>
-      <td>6.0</td>
-      <td>1.0</td>
+      <td>9 ± 7</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Tunnel Road</td>
+      <td>Skyline Boulevard</td>
       <td>2.5</td>
-      <td>30.0</td>
-      <td>15.0</td>
-      <td>3.0</td>
+      <td>33 ± 17</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Skyline Boulevard</td>
       <td>0.2</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>30.0</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>Pinehurst Road</td>
       <td>1.4</td>
-      <td>17.0</td>
-      <td>9.0</td>
-      <td>6.0</td>
+      <td>19 ± 10</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Pinehurst Road</td>
+      <td>Redwood Road</td>
       <td>3.2</td>
-      <td>38.0</td>
-      <td>19.0</td>
-      <td>14.0</td>
+      <td>42 ± 21</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
       <td>Mountain Boulevard</td>
       <td>0.4</td>
-      <td>5.0</td>
-      <td>3.0</td>
-      <td>7.0</td>
+      <td>6 ± 3</td>
     </tr>
     <tr>
       <td>climb (medium)</td>
-      <td>Warren Freeway</td>
+      <td>Broadway Terrace</td>
       <td>0.2</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>11.0</td>
+      <td>3 ± 1</td>
     </tr>
   </tbody>
 </table>
@@ -172,7 +152,6 @@ title: "Tunnel to Pinehurst Loop"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>pci_available</th>
       <th>mtc_pci_info</th>
       <th>Miles</th>
       <th>Percent</th>
@@ -180,50 +159,42 @@ title: "Tunnel to Pinehurst Loop"
   </thead>
   <tbody>
     <tr>
-      <td>PCI Available</td>
       <td>Very Good</td>
       <td>6.9</td>
       <td>30.5</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Poor</td>
       <td>5.5</td>
       <td>24.2</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Good</td>
       <td>5.0</td>
       <td>22.0</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Fair</td>
       <td>3.6</td>
       <td>15.9</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Excellent</td>
       <td>0.6</td>
       <td>2.9</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>At Risk</td>
       <td>0.4</td>
       <td>1.8</td>
     </tr>
     <tr>
-      <td>PCI Available</td>
       <td>Failed</td>
       <td>0.4</td>
       <td>1.7</td>
     </tr>
     <tr>
-      <td>PCI Unknown</td>
-      <td>Secondary (Unknown)</td>
+      <td>Unknown</td>
       <td>0.3</td>
       <td>1.2</td>
     </tr>

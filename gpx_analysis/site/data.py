@@ -15,6 +15,7 @@ from .. import (
     aggregate_by_hazard,
     aggregate_by_road_quality,
     analyze_steps,
+    attach_chunk_section_details,
     points_frame,
     enrich_segments_with_osm_edges,
     enrich_segments_with_mtc_streets,
@@ -28,6 +29,12 @@ from .. import (
     summarize_chunk_sections,
 )
 from ..geo import add_bart_station
+
+GRAVEL_TITLE_THRESHOLD_PERCENT = 10.0
+CYCLEWAY_TITLE_THRESHOLD_PERCENT = 20.0
+PROFILE_HIGHLIGHT_THRESHOLD_PERCENT = 20.0
+GRAVEL_HIGHLIGHT_COLOR = "chocolate"
+CYCLEWAY_HIGHLIGHT_COLOR = "forestgreen"
 
 
 @dataclass(frozen=True)
@@ -151,18 +158,33 @@ def write_text(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
-def route_elevation_svg(segments: gpd.GeoDataFrame) -> str:
+def route_elevation_svg(segments: gpd.GeoDataFrame, debug=False) -> str:
     elevation = pd.to_numeric(segments.get("elevation_f"), errors="coerce")
     if elevation is None or elevation.notna().sum() < 2:
         return ""
 
     frame = segments.copy()
     color_map = {
-        "gravel": "chocolate",
+        "gravel": GRAVEL_HIGHLIGHT_COLOR,
         "road": "tab:blue",
     }
     if "road_type" in frame.columns:
-        color_col = "road_type"
+        frame["profile_surface"] = "road"
+        total_segment_distance_m = float(
+            pd.to_numeric(frame.get("step_dist_m"), errors="coerce").fillna(0).sum()
+        )
+        gravel_percent = 0.0
+        if total_segment_distance_m > 0:
+            gravel_distance_m = float(
+                pd.to_numeric(
+                    frame.loc[frame["road_type"].eq("gravel"), "step_dist_m"],
+                    errors="coerce",
+                ).fillna(0).sum()
+            )
+            gravel_percent = gravel_distance_m / total_segment_distance_m * 100.0
+        if gravel_percent > PROFILE_HIGHLIGHT_THRESHOLD_PERCENT:
+            frame.loc[frame["road_type"].eq("gravel"), "profile_surface"] = "gravel"
+        color_col = "profile_surface"
     elif "track" in frame.columns:
         color_col = "track"
     else:
@@ -176,17 +198,13 @@ def route_elevation_svg(segments: gpd.GeoDataFrame) -> str:
     if color_col is None:
         ax.plot(x, frame["roll_elevation"], linewidth=2.5, alpha=0.9, color="tab:blue")
     else:
-        breaks = frame[color_col] != frame[color_col].shift(-1)
-        breaks_i = [0] + list(breaks[breaks].index)
-        if not breaks_i or breaks_i[-1] != len(frame):
-            breaks_i.append(len(frame))
-        for i in range(len(breaks_i) - 1):
-            start = breaks_i[i] + 1
-            stop = breaks_i[i + 1] - 1
-            subset = frame.iloc[start:stop, :]
+        frame["_profile_group"] = frame[color_col].ne(frame[color_col].shift()).cumsum()
+        for _, subset in frame.groupby("_profile_group", sort=False):
             if len(subset) == 0:
                 continue
-            subset_x = x[start:stop]
+            start = int(subset.index[0])
+            stop = int(subset.index[-1])
+            subset_x = x[start:stop + 1]
             ax.plot(
                 subset_x,
                 subset["roll_elevation"],
@@ -204,18 +222,20 @@ def route_elevation_svg(segments: gpd.GeoDataFrame) -> str:
         alpha=0.7,
     )
     ax.set_axis_off()
+    if debug:
+        return ax
+    else:
+        svg_buffer = io.StringIO()
+        fig.savefig(
+            svg_buffer,
+            format="svg",
+            transparent=True,
+            bbox_inches="tight",
+            pad_inches=0,
+        )
+        plt.close(fig)
 
-    svg_buffer = io.StringIO()
-    fig.savefig(
-        svg_buffer,
-        format="svg",
-        transparent=True,
-        bbox_inches="tight",
-        pad_inches=0,
-    )
-    plt.close(fig)
-
-    svg = svg_buffer.getvalue()
+        svg = svg_buffer.getvalue()
     return svg
 
 
@@ -248,20 +268,39 @@ def compute_route_summary(points: pd.DataFrame, segments: gpd.GeoDataFrame) -> d
     }
 
 
-def route_display_title(base_title: str, gravel_percent: float) -> str:
-    """Return the route title with gravel percentage appended when meaningfully gravel-heavy."""
-    if gravel_percent > 10.0:
-        return f"{base_title} ({round(gravel_percent)}% Gravel)"
+def route_display_title(
+    base_title: str,
+    gravel_percent: float,
+    cycleway_percent: float,
+) -> str:
+    """Return the route title with gravel/cycleway suffixes when those route types are prominent."""
+    notes: list[str] = []
+    if gravel_percent > GRAVEL_TITLE_THRESHOLD_PERCENT:
+        notes.append(f"{round(gravel_percent)}% Gravel")
+    if cycleway_percent > CYCLEWAY_TITLE_THRESHOLD_PERCENT:
+        notes.append(f"{round(cycleway_percent)}% Cycleway")
+    if notes:
+        return f"{base_title} ({', '.join(notes)})"
     return base_title
 
 
-def route_display_title_html(base_title: str, gravel_percent: float) -> str:
-    """Return HTML title markup with a chocolate gravel suffix when applicable."""
-    if gravel_percent > 10.0:
-        return (
-            f'{base_title} '
-            f'<span style="color: chocolate;">({round(gravel_percent)}% Gravel)</span>'
+def route_display_title_html(
+    base_title: str,
+    gravel_percent: float,
+    cycleway_percent: float,
+) -> str:
+    """Return HTML title markup with colored gravel/cycleway suffixes when applicable."""
+    notes: list[str] = []
+    if gravel_percent > GRAVEL_TITLE_THRESHOLD_PERCENT:
+        notes.append(
+            f'<span style="color: {GRAVEL_HIGHLIGHT_COLOR};">{round(gravel_percent)}% Gravel</span>'
         )
+    if cycleway_percent > CYCLEWAY_TITLE_THRESHOLD_PERCENT:
+        notes.append(
+            f'<span style="color: {CYCLEWAY_HIGHLIGHT_COLOR};">{round(cycleway_percent)}% Cycleway</span>'
+        )
+    if notes:
+        return f'{base_title} <span>({", ".join(notes)})</span>'
     return base_title
 
 
@@ -282,6 +321,7 @@ def build_route(
     segments = enrich_segments_with_osm_edges(segments)
     segments = enrich_segments_with_mtc_streets(segments)
     segments = prepare_segment_display_columns(segments, hazard_profile=hazard_profile)
+    segments = attach_chunk_section_details(segments)
 
     summary = compute_route_summary(analyzed, segments)
     total_segment_distance_m = float(pd.to_numeric(segments.get("step_dist_m"), errors="coerce").fillna(0).sum())
@@ -291,14 +331,22 @@ def build_route(
             errors="coerce",
         ).fillna(0).sum()
     ) if "road_type" in segments.columns else 0.0
+    cycleway_distance_m = float(
+        pd.to_numeric(
+            segments.loc[segments.get("osm_highway").eq("cycleway"), "step_dist_m"],
+            errors="coerce",
+        ).fillna(0).sum()
+    ) if "osm_highway" in segments.columns else 0.0
     gravel_percent = (gravel_distance_m / total_segment_distance_m * 100.0) if total_segment_distance_m > 0 else 0.0
+    cycleway_percent = (cycleway_distance_m / total_segment_distance_m * 100.0) if total_segment_distance_m > 0 else 0.0
     summary["gravel_percent"] = round(gravel_percent, 1)
+    summary["cycleway_percent"] = round(cycleway_percent, 1)
     summary["road_quality_score"] = int(round(road_quality_score(segments) * 100))
     summary["start_bart_station"] = add_bart_station(points_gdf, step=0)
     summary["end_bart_station"] = add_bart_station(points_gdf, step=len(points_gdf) - 1)
     summary["bart_station"] = summary["start_bart_station"]
-    display_title = route_display_title(route.display_title, gravel_percent)
-    display_title_html = route_display_title_html(route.display_title, gravel_percent)
+    display_title = route_display_title(route.display_title, gravel_percent, cycleway_percent)
+    display_title_html = route_display_title_html(route.display_title, gravel_percent, cycleway_percent)
     hazard_summary = aggregate_by_hazard(
         analyzed,
         column="step_dist_m",

@@ -32,6 +32,7 @@
       "lon": -122.26642
     },
     "gravel_percent": 0.0,
+    "cycleway_percent": 0.0,
     "road_quality_score": 85,
     "start_bart_station": "San Leandro",
     "end_bart_station": "MacArthur",

@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-05-22T13:28:59.901768</dc:date>
+    <dc:date>2026-05-27T12:09:30.434890</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -31,25 +31,14 @@ z
   </g>
   <g id="axes_1">
    <g id="line2d_1">
-    <path d="M 10.386153 52.854224 
-L 10.626852 52.856217 
-L 10.867551 52.809377 
+    <path d="M 10.145455 52.848244 
 L 11.10825 52.781272 
-L 11.348949 52.762536 
-L 11.589647 52.749153 
-L 11.830346 52.737621 
-L 12.071045 52.728651 
-L 12.311744 52.721476 
-" clip-path="url(#p844928b279)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_2">
-    <path d="M 13.515238 52.635369 
-L 19.05131 52.307685 
-L 21.217599 51.896286 
-L 23.383889 51.403563 
-L 25.309479 50.947914 
-L 27.23507 50.360714 
-L 29.882756 49.545091 
+L 17.12572 52.422494 
+L 19.292009 52.274199 
+L 24.828082 51.073487 
+L 27.475768 50.278195 
+L 29.16066 49.701757 
+L 30.604853 49.467355 
 L 31.808347 49.276007 
 L 32.530443 48.930384 
 L 34.696732 46.517001 
@@ -166,20 +155,20 @@ L 198.13122 50.857024
 L 202.945196 51.950102 
 L 206.555678 52.412926 
 L 209.684762 52.597099 
-L 212.573148 52.754962 
-L 212.573148 52.754962 
-" clip-path="url(#p844928b279)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+L 213.054545 52.799211 
+L 213.054545 52.799211 
+" clip-path="url(#pc0e24d9624)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_3">
+   <g id="line2d_2">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#p844928b279)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#pc0e24d9624)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p844928b279">
+  <clipPath id="pc0e24d9624">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>

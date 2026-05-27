@@ -32,6 +32,7 @@
       "lon": -122.26566
     },
     "gravel_percent": 0.1,
+    "cycleway_percent": 0.2,
     "road_quality_score": 55,
     "start_bart_station": "MacArthur",
     "end_bart_station": "MacArthur",

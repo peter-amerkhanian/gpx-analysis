@@ -1,5 +1,11 @@
 from .physics import compute_step_metrics
-from .reporting import aggregate_by_hazard, aggregate_by_road_quality, road_quality_score, summarize_chunk_sections
+from .reporting import (
+    aggregate_by_hazard,
+    aggregate_by_road_quality,
+    attach_chunk_section_details,
+    road_quality_score,
+    summarize_chunk_sections,
+)
 from .geo import (
     points_frame,
     points_to_segments,
@@ -34,6 +40,7 @@ __all__ = [
     "points_frame",
     "aggregate_by_hazard",
     "aggregate_by_road_quality",
+    "attach_chunk_section_details",
     "road_quality_score",
     "summarize_chunk_sections",
     "points_to_segments",
