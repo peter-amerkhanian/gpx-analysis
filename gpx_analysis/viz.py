@@ -225,6 +225,15 @@ def prepare_osm_columns(gdf_segments_enriched: gpd.GeoDataFrame) -> gpd.GeoDataF
     return frame
 
 
+def _select_present_columns(
+    frame: gpd.GeoDataFrame,
+    columns: list[str],
+) -> gpd.GeoDataFrame:
+    """Return a frame with just the requested columns that are present."""
+    keep = [column for column in columns if column in frame.columns]
+    return frame.loc[:, keep].copy()
+
+
 def _marker_point_and_normal(
     segment: object,
     fallback_sign: int,
@@ -638,6 +647,26 @@ def _ensure_map_pane(m: folium.Map, pane_name: str, z_index: int) -> None:
     m.add_child(pane)
 
 
+def _disable_tooltips_on_touch(m: folium.Map) -> None:
+    """Hide Leaflet tooltips on touch devices while preserving desktop hover."""
+    style = Template(
+        """
+        {% macro header(this, kwargs) %}
+        <style>
+        @media (hover: none), (pointer: coarse) {
+            .leaflet-tooltip {
+                display: none !important;
+            }
+        }
+        </style> 
+        {% endmacro %}
+        """
+    )
+    style_element = MacroElement()
+    style_element._template = style
+    m.add_child(style_element)
+
+
 def _route_is_close_ended(frame: gpd.GeoDataFrame, close_distance_m: float = 250.0) -> bool:
     """Return True when the route end is close enough to the start to treat it as a loop."""
     if frame.empty:
@@ -789,6 +818,7 @@ def add_map_elements(
                 line_join="round",
                 pane="route-chevrons",
             ).add_to(m)
+    _disable_tooltips_on_touch(m)
     return m
 
 def make_route_map(
@@ -804,6 +834,20 @@ def make_route_map(
         gdf_segments,
         hazard_colors=hazard_colors,
         hazard_profile=hazard_profile,
+    )
+    frame = _select_present_columns(
+        frame,
+        [
+            "geometry",
+            "step_dist_m",
+            "Segment",
+            "Ride Type",
+            "Turn",
+            "Grade",
+            "More Details",
+            "hazard",
+            "_display_color",
+        ],
     )
     _, colors, _ = resolve_hazard_profile(
         hazard_profile=hazard_profile,
@@ -851,6 +895,24 @@ def make_road_quality_map(
     frame["Road Quality"] = frame["road_quality_simple"]
     colors = resolve_simplified_road_quality_profile(frame)
     frame["_display_color"] = frame["road_quality_simple"].map(colors).fillna("#8a8a8a")
+    frame = _select_present_columns(
+        frame,
+        [
+            "geometry",
+            "step_dist_m",
+            "Segment",
+            "Road Quality",
+            "mtc_road_name",
+            "mtc_pci_info",
+            "mtc_pci_date",
+            "Ride Type",
+            "Turn",
+            "Grade",
+            "More Details",
+            "road_quality_simple",
+            "_display_color",
+        ],
+    )
     m = frame.explore(
     column='road_quality_simple',
     tooltip=tooltip_fields,
