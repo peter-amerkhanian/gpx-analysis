@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-## Route
+## Hazards
 
 <iframe
   src="{{ map_src }}"

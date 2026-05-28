@@ -1,4 +1,4 @@
-from .physics import compute_step_metrics
+from .physics import compute_elevation_totals, compute_step_metrics
 from .reporting import (
     aggregate_by_hazard,
     aggregate_by_road_quality,
@@ -34,6 +34,7 @@ from .viz import (
 __all__ = [
     "analyze_steps",
     "analyze_chunks",
+    "compute_elevation_totals",
     "compute_step_metrics",
     "detect_chunks",
     "detect_hazards",

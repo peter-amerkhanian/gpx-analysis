@@ -31,6 +31,23 @@ def compute_distance(rad_n: np.ndarray, rad_n_plus_1: np.ndarray) -> np.ndarray:
 def compute_speed(grade, distances, params:dict, v_0=0):
     pass
 
+
+def compute_elevation_totals(
+    frame: pd.DataFrame,
+    elevation_delta_column: str = "step_elevation_m",
+) -> dict[str, float]:
+    """Return total climbing and descending from per-step elevation deltas."""
+    deltas = pd.to_numeric(frame.get(elevation_delta_column), errors="coerce").fillna(0)
+    climbing_m = float(deltas.clip(lower=0).sum())
+    descending_m = float(deltas.clip(upper=0).abs().sum())
+    return {
+        "elevation_gain_m": climbing_m,
+        "elevation_gain_ft": climbing_m * 3.28084,
+        "elevation_loss_m": descending_m,
+        "elevation_loss_ft": descending_m * 3.28084,
+    }
+
+
 def compute_step_metrics(df: pd.DataFrame, min_step_dist_m: float = 2.0) -> pd.DataFrame:
     """Add per-step distance, bearing, turn, elevation delta, and grade metrics."""
     frame = df.copy()

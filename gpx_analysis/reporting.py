@@ -1,6 +1,8 @@
+from typing import Literal
+
 import pandas as pd
 
-from .analytics import detect_chunks
+from .analytics import detect_chunks, detect_hazards
 from .viz import DEFAULT_HAZARD_PROFILE, apply_hazard_profile
 
 
@@ -9,6 +11,13 @@ DEFAULT_SEGMENT_SPEED_RANGES_MPH = {
     "climb (easy)": (4.0, 7.0),
     "climb (medium)": (3.0, 6.0),
     "climb (hard)": (2.0, 5.0),
+}
+
+DEFAULT_HAZARD_SPEED_RANGES_MPH = {
+    "descent": (12.0, 17.0),
+    "mellow": (9.0, 14.0),
+    "climb": (4.0, 7.0),
+    "steep_climb": (2.0, 5.0),
 }
 
 
@@ -24,12 +33,24 @@ def _middle_non_empty_value(values: pd.Series, fallback: str = "Unknown Road") -
     return filtered[len(filtered) // 2]
 
 
+def _resolve_timing_hazard_frame(df: pd.DataFrame) -> pd.DataFrame:
+    """Return segment hazards aligned to the input frame for timing estimates."""
+    if "hazard" in df.columns:
+        return apply_hazard_profile(df, hazard_profile=DEFAULT_HAZARD_PROFILE)
+    return apply_hazard_profile(
+        detect_hazards(df),
+        hazard_profile=DEFAULT_HAZARD_PROFILE,
+    )
+
+
 def _resolve_chunk_section_frame(
     df: pd.DataFrame,
     distance_column: str = "step_dist_f",
+    timing_basis: Literal["hazard", "chunk"] = "hazard",
     speed_ranges_mph: dict[str, tuple[float, float]] | None = None,
 ) -> pd.DataFrame:
     """Return ordered chunk sections with shared distance and timing metadata."""
+    timing_frame = _resolve_timing_hazard_frame(df) if timing_basis == "hazard" else None
     if "chunk_state" in df.columns:
         frame = df.copy()
     else:
@@ -44,10 +65,6 @@ def _resolve_chunk_section_frame(
     else:
         frame = frame.sort_index(kind="stable")
 
-    speed_lookup = DEFAULT_SEGMENT_SPEED_RANGES_MPH.copy()
-    if speed_ranges_mph:
-        speed_lookup.update(speed_ranges_mph)
-
     frame["section_id"] = frame["chunk_state"].ne(frame["chunk_state"].shift()).cumsum()
     summary = (
         frame.groupby(["section_id", "chunk_state"], as_index=False)
@@ -58,19 +75,63 @@ def _resolve_chunk_section_frame(
         .rename(columns={"chunk_state": "route_part"})
     )
     summary["distance_mi"] = summary["distance_ft"] / 5280.0
-    summary["low_mph"] = summary["route_part"].map(
-        lambda part: speed_lookup.get(part, DEFAULT_SEGMENT_SPEED_RANGES_MPH["flat or descent"])[0]
-    )
-    summary["fast_mph"] = summary["route_part"].map(
-        lambda part: speed_lookup.get(part, DEFAULT_SEGMENT_SPEED_RANGES_MPH["flat or descent"])[1]
-    )
-    summary["avg_mph"] = (summary["low_mph"] + summary["fast_mph"]) / 2.0
-    summary["time_avg_min"] = summary["distance_mi"] / summary["avg_mph"] * 60.0
-    summary["time_std_min"] = summary["distance_mi"] / summary["low_mph"] * 60.0 - summary["time_avg_min"]
+
+    if timing_basis == "hazard":
+        speed_lookup = DEFAULT_HAZARD_SPEED_RANGES_MPH.copy()
+        default_speed_range = DEFAULT_HAZARD_SPEED_RANGES_MPH["mellow"]
+        if speed_ranges_mph:
+            speed_lookup.update(speed_ranges_mph)
+
+        if timing_frame is None:
+            raise ValueError("Hazard timing frame was not resolved")
+
+        frame["timing_hazard"] = timing_frame.loc[frame.index, "hazard"]
+        frame["timing_low_mph"] = frame["timing_hazard"].map(
+            lambda hazard: speed_lookup.get(hazard, default_speed_range)[0]
+        )
+        frame["timing_fast_mph"] = frame["timing_hazard"].map(
+            lambda hazard: speed_lookup.get(hazard, default_speed_range)[1]
+        )
+        frame["timing_avg_mph"] = (frame["timing_low_mph"] + frame["timing_fast_mph"]) / 2.0
+        distance_mi = pd.to_numeric(frame[distance_column], errors="coerce").fillna(0) / 5280.0
+        frame["segment_time_low_min"] = distance_mi / frame["timing_low_mph"] * 60.0
+        frame["segment_time_fast_min"] = distance_mi / frame["timing_fast_mph"] * 60.0
+        frame["segment_time_avg_min"] = distance_mi / frame["timing_avg_mph"] * 60.0
+
+        time_summary = (
+            frame.groupby("section_id", as_index=False)
+            .agg(
+                time_low_min=("segment_time_low_min", "sum"),
+                time_fast_min=("segment_time_fast_min", "sum"),
+                time_avg_min=("segment_time_avg_min", "sum"),
+            )
+        )
+        summary = summary.merge(time_summary, on="section_id", how="left")
+        summary["low_mph"] = summary["distance_mi"] / (summary["time_low_min"] / 60.0)
+        summary["fast_mph"] = summary["distance_mi"] / (summary["time_fast_min"] / 60.0)
+        summary["avg_mph"] = summary["distance_mi"] / (summary["time_avg_min"] / 60.0)
+        summary["time_std_min"] = summary["time_low_min"] - summary["time_avg_min"]
+    else:
+        speed_lookup = DEFAULT_SEGMENT_SPEED_RANGES_MPH.copy()
+        if speed_ranges_mph:
+            speed_lookup.update(speed_ranges_mph)
+
+        summary["low_mph"] = summary["route_part"].map(
+            lambda part: speed_lookup.get(part, DEFAULT_SEGMENT_SPEED_RANGES_MPH["flat or descent"])[0]
+        )
+        summary["fast_mph"] = summary["route_part"].map(
+            lambda part: speed_lookup.get(part, DEFAULT_SEGMENT_SPEED_RANGES_MPH["flat or descent"])[1]
+        )
+        summary["avg_mph"] = (summary["low_mph"] + summary["fast_mph"]) / 2.0
+        summary["time_avg_min"] = summary["distance_mi"] / summary["avg_mph"] * 60.0
+        summary["time_std_min"] = summary["distance_mi"] / summary["low_mph"] * 60.0 - summary["time_avg_min"]
+
     summary["time (min)"] = summary.apply(
-        lambda row: ""
-        if row["route_part"] == "flat or descent"
-        else f"{row['time_avg_min']:.0f} \N{PLUS-MINUS SIGN} {row['time_std_min']:.0f}",
+        lambda row: (
+            f"{row['time_avg_min']:.0f}"
+            if row["route_part"] == "flat or descent"
+            else f"{row['time_avg_min']:.0f} \N{PLUS-MINUS SIGN} {row['time_std_min']:.0f}"
+        ),
         axis=1,
     )
     return summary
@@ -79,12 +140,14 @@ def _resolve_chunk_section_frame(
 def attach_chunk_section_details(
     df: pd.DataFrame,
     distance_column: str = "step_dist_f",
+    timing_basis: Literal["hazard", "chunk"] = "hazard",
     speed_ranges_mph: dict[str, tuple[float, float]] | None = None,
 ) -> pd.DataFrame:
     """Attach shared chunk-section metadata to each segment row."""
     summary = _resolve_chunk_section_frame(
         df,
         distance_column=distance_column,
+        timing_basis=timing_basis,
         speed_ranges_mph=speed_ranges_mph,
     )
     annotated = summary[[
@@ -104,7 +167,11 @@ def attach_chunk_section_details(
     if "chunk_state" in df.columns:
         frame = df.copy()
     else:
+        original_frame = df.copy()
         frame = detect_chunks(df)
+        for column in ["hazard", "hazard_raw", "hazard_label", "Ride Type", "_display_color"]:
+            if column in original_frame.columns:
+                frame[column] = original_frame.loc[frame.index, column]
 
     if "time" in frame.columns and frame["time"].notna().any():
         frame = frame.sort_values("time", kind="stable")
@@ -202,16 +269,28 @@ def road_quality_score(
 def summarize_chunk_sections(
     df: pd.DataFrame,
     distance_column: str = "step_dist_f",
+    timing_basis: Literal["hazard", "chunk"] = "hazard",
     speed_ranges_mph: dict[str, tuple[float, float]] | None = None,
 ) -> pd.DataFrame:
     """Summarize climb sections with distance, road name, and speed/time estimates."""
     summary = _resolve_chunk_section_frame(
         df,
         distance_column=distance_column,
+        timing_basis=timing_basis,
         speed_ranges_mph=speed_ranges_mph,
     )
-    climbs_only = summary[summary["route_part"] != "flat or descent"].copy()
-    climbs_only = climbs_only[[
+    summary = summary[summary["distance_mi"] > 0].copy()
+    sections = summary[[
+        "route_part",
+        "road_name",
+        "distance_mi",
+        "time (min)",
+    ]].copy()
+    sections["road_name"] = sections.apply(
+        lambda row: " " if row["route_part"] == "flat or descent" else row["road_name"],
+        axis=1,
+    )
+    sections = sections[[
         "route_part",
         "road_name",
         "distance_mi",
@@ -228,8 +307,9 @@ def summarize_chunk_sections(
     total_row = pd.DataFrame([{
         "Workout": "TOTAL",
         "Road": "TOTAL",
-        "Distance (mi)": climbs_only["Distance (mi)"].sum(),
-        "Time (Min)": "",
+        "Distance (mi)": sections["Distance (mi)"].sum(),
+        "Time (Min)": f"{summary['time_avg_min'].sum():.0f} \N{PLUS-MINUS SIGN} {summary['time_std_min'].sum():.0f}",
     }]).round({"Distance (mi)": 1})
-
-    return pd.concat([total_row, climbs_only], ignore_index=True)
+    df = pd.concat([total_row, sections], ignore_index=True)
+    df = df[df['Distance (mi)'] > 0]
+    return df

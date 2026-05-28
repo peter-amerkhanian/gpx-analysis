@@ -16,6 +16,7 @@ from .. import (
     aggregate_by_road_quality,
     analyze_steps,
     attach_chunk_section_details,
+    compute_elevation_totals,
     points_frame,
     enrich_segments_with_osm_edges,
     enrich_segments_with_mtc_streets,
@@ -241,8 +242,7 @@ def route_elevation_svg(segments: gpd.GeoDataFrame, debug=False) -> str:
 
 def compute_route_summary(points: pd.DataFrame, segments: gpd.GeoDataFrame) -> dict[str, object]:
     total_distance_m = float(points["step_dist_m"].sum())
-    climbing = points["step_elevation_m"].diff().clip(lower=0)
-    descending = points["step_elevation_m"].diff().clip(upper=0).abs()
+    elevation_totals = compute_elevation_totals(points)
 
     max_row = points.loc[points["elevation_m"].fillna(float("-inf")).idxmax()] if points["elevation_m"].notna().any() else None
 
@@ -251,10 +251,10 @@ def compute_route_summary(points: pd.DataFrame, segments: gpd.GeoDataFrame) -> d
         "segment_count": int(len(segments)),
         "distance_m": round(total_distance_m, 2),
         "distance_mi": round(total_distance_m / 1609.344, 2),
-        "elevation_gain_m": round(float(climbing.sum()), 2),
-        "elevation_gain_ft": round(float(climbing.sum()) * 3.28084, 2),
-        "elevation_loss_m": round(float(descending.sum()), 2),
-        "elevation_loss_ft": round(float(descending.sum()) * 3.28084, 2),
+        "elevation_gain_m": round(elevation_totals["elevation_gain_m"], 2),
+        "elevation_gain_ft": round(elevation_totals["elevation_gain_ft"], 2),
+        "elevation_loss_m": round(elevation_totals["elevation_loss_m"], 2),
+        "elevation_loss_ft": round(elevation_totals["elevation_loss_ft"], 2),
         "max_elevation_m": None if max_row is None else round(float(max_row["elevation_m"]), 2),
         "max_elevation_ft": None if max_row is None else round(float(max_row["elevation_f"]), 2),
         "start": {

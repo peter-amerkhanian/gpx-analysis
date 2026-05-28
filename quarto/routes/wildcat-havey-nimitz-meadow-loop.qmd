@@ -5,20 +5,20 @@ title: "Havey Canyon Loop (55% Gravel)"
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.83" data-elevation="1875.66">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.83" data-elevation="2072.18">
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/wildcat-havey-nimitz-meadow-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>18.83</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>1875.66 ft</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>2072.18 ft</p>
 <p><span class="mobile-route-label">Road Quality</span><br>31%</p>
 </div>
 </article>
 ```
 ::: {.panel-tabset}
 
-## Route
+## Hazards
 
 <iframe
   src="../data/routes/wildcat-havey-nimitz-meadow-loop/map.html"
@@ -86,38 +86,68 @@ title: "Havey Canyon Loop (55% Gravel)"
     <tr>
       <td>TOTAL</td>
       <td>TOTAL</td>
-      <td>4.2</td>
+      <td>18.8</td>
+      <td>120 ± 43</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
       <td></td>
+      <td>1.9</td>
+      <td>10</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Park Avenue</td>
       <td>0.5</td>
-      <td>5 ± 2</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>climb (hard)</td>
       <td>Wildcat Creek Trail</td>
       <td>0.6</td>
-      <td>11 ± 8</td>
+      <td>7 ± 4</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>1.6</td>
+      <td>10</td>
     </tr>
     <tr>
       <td>climb (hard)</td>
       <td>Havey Canyon Trail</td>
       <td>1.1</td>
-      <td>19 ± 14</td>
+      <td>12 ± 7</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Nimitz Way</td>
       <td>1.1</td>
-      <td>12 ± 4</td>
+      <td>8 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.1</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
       <td>Nimitz Way</td>
       <td>0.5</td>
-      <td>6 ± 2</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>6.2</td>
+      <td>36</td>
     </tr>
     <tr>
       <td>climb (easy)</td>
@@ -126,10 +156,22 @@ title: "Havey Canyon Loop (55% Gravel)"
       <td>2 ± 1</td>
     </tr>
     <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.3</td>
+      <td>1</td>
+    </tr>
+    <tr>
       <td>climb (easy)</td>
       <td>Wildcat Creek Trail</td>
       <td>0.2</td>
-      <td>3 ± 1</td>
+      <td>1 ± 0</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>4.3</td>
+      <td>25</td>
     </tr>
   </tbody>
 </table>
