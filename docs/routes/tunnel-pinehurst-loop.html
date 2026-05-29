@@ -199,13 +199,13 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="mobile-route-label">BART</span><br>Rockridge</p>
 <p><span class="mobile-route-label">Miles</span><br>22.63</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3394.36 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>71%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">71%</span></p>
 </div>
 </article>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Hazards</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Climb Chunks</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Street Quality</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Hazards</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Climb Chunks</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Street Quality</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <iframe src="../data/routes/tunnel-pinehurst-loop/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">
 </iframe>
 <table class="dataframe table table-striped table-sm small">
@@ -281,17 +281,21 @@ Danger Zone
 </tbody>
 </table>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <iframe src="../data/routes/tunnel-pinehurst-loop/chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">
 </iframe>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Climbs Only</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">With Rest Periods</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <table class="dataframe table table-striped table-sm small">
 <thead>
 <tr>
 <th>
-Workout
+Section
 </th>
 <th>
-Road
+Climb (ft)
 </th>
 <th>
 Distance (mi)
@@ -307,7 +311,155 @@ Time (Min)
 TOTAL
 </td>
 <td>
+2,871
+</td>
+<td>
+10.0
+</td>
+<td>
+94 ± 44
+</td>
+</tr>
+<tr>
+<td>
+Broadway: climb (medium)
+</td>
+<td>
+502
+</td>
+<td>
+1.6
+</td>
+<td>
+15 ± 7
+</td>
+</tr>
+<tr>
+<td>
+Tunnel Road: climb (hard)
+</td>
+<td>
+212
+</td>
+<td>
+0.5
+</td>
+<td>
+6 ± 4
+</td>
+</tr>
+<tr>
+<td>
+Skyline Boulevard: climb (medium)
+</td>
+<td>
+818
+</td>
+<td>
+2.5
+</td>
+<td>
+25 ± 14
+</td>
+</tr>
+<tr>
+<td>
+Skyline Boulevard: climb (easy)
+</td>
+<td>
+38
+</td>
+<td>
+0.2
+</td>
+<td>
+2 ± 1
+</td>
+</tr>
+<tr>
+<td>
+Pinehurst Road: climb (medium)
+</td>
+<td>
+420
+</td>
+<td>
+1.4
+</td>
+<td>
+13 ± 6
+</td>
+</tr>
+<tr>
+<td>
+Redwood Road: climb (medium)
+</td>
+<td>
+718
+</td>
+<td>
+3.2
+</td>
+<td>
+27 ± 11
+</td>
+</tr>
+<tr>
+<td>
+Mountain Boulevard: climb (medium)
+</td>
+<td>
+111
+</td>
+<td>
+0.4
+</td>
+<td>
+4 ± 1
+</td>
+</tr>
+<tr>
+<td>
+Broadway Terrace: climb (medium)
+</td>
+<td>
+54
+</td>
+<td>
+0.2
+</td>
+<td>
+2 ± 1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<table class="dataframe table table-striped table-sm small">
+<thead>
+<tr>
+<th>
+Section
+</th>
+<th>
+Climb (ft)
+</th>
+<th>
+Distance (mi)
+</th>
+<th>
+Time (Min)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
 TOTAL
+</td>
+<td>
+2,871
 </td>
 <td>
 22.5
@@ -331,10 +483,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (medium)
+Broadway: climb (medium)
 </td>
 <td>
-Broadway
+502
 </td>
 <td>
 1.6
@@ -358,10 +510,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (hard)
+Tunnel Road: climb (hard)
 </td>
 <td>
-Tunnel Road
+212
 </td>
 <td>
 0.5
@@ -385,10 +537,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (medium)
+Skyline Boulevard: climb (medium)
 </td>
 <td>
-Skyline Boulevard
+818
 </td>
 <td>
 2.5
@@ -412,10 +564,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (easy)
+Skyline Boulevard: climb (easy)
 </td>
 <td>
-Skyline Boulevard
+38
 </td>
 <td>
 0.2
@@ -439,10 +591,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (medium)
+Pinehurst Road: climb (medium)
 </td>
 <td>
-Pinehurst Road
+420
 </td>
 <td>
 1.4
@@ -466,10 +618,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (medium)
+Redwood Road: climb (medium)
 </td>
 <td>
-Redwood Road
+718
 </td>
 <td>
 3.2
@@ -493,10 +645,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (medium)
+Mountain Boulevard: climb (medium)
 </td>
 <td>
-Mountain Boulevard
+111
 </td>
 <td>
 0.4
@@ -520,10 +672,10 @@ flat or descent
 </tr>
 <tr>
 <td>
-climb (medium)
+Broadway Terrace: climb (medium)
 </td>
 <td>
-Broadway Terrace
+54
 </td>
 <td>
 0.2
@@ -548,7 +700,10 @@ flat or descent
 </tbody>
 </table>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <iframe src="../data/routes/tunnel-pinehurst-loop/road_quality_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allowfullscreen="">
 </iframe>
 <table class="dataframe table table-striped table-sm small">

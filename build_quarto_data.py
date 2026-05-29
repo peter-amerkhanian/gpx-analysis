@@ -47,6 +47,7 @@ def main() -> None:
             route_page_context["route_bundle"],
             html_table(route_page_context["hazards_table"]),
             html_table(route_page_context["road_quality_table"]),
+            html_table(route_page_context["climb_only_sections_table"]),
             html_table(route_page_context["chunk_sections_table"]),
             ROUTE_PAGES_DIR,
         )

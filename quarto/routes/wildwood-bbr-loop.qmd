@@ -12,7 +12,7 @@ title: "Wildwood to BBR Loop"
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>17.41</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2444.23 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>51%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#ffffbf;">51%</span></p>
 </div>
 </article>
 ```
@@ -73,11 +73,15 @@ title: "Wildwood to BBR Loop"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -85,7 +89,76 @@ title: "Wildwood to BBR Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>2,071</td>
+      <td>7.0</td>
+      <td>66 ± 31</td>
+    </tr>
+    <tr>
+      <td>40th Street: climb (easy)</td>
+      <td>39</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Wildwood Avenue: climb (medium)</td>
+      <td>372</td>
+      <td>1.4</td>
+      <td>13 ± 5</td>
+    </tr>
+    <tr>
+      <td>Leimert Boulevard: climb (medium)</td>
+      <td>467</td>
+      <td>1.5</td>
+      <td>14 ± 7</td>
+    </tr>
+    <tr>
+      <td>Monterey Boulevard: climb (medium)</td>
+      <td>75</td>
+      <td>0.3</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Butters Drive: climb (medium)</td>
+      <td>960</td>
+      <td>2.9</td>
+      <td>30 ± 15</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (easy)</td>
+      <td>40</td>
+      <td>0.2</td>
+      <td>1 ± 1</td>
+    </tr>
+    <tr>
+      <td>Mountain Boulevard: climb (medium)</td>
+      <td>66</td>
+      <td>0.3</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Broadway Terrace: climb (medium)</td>
+      <td>51</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>2,071</td>
       <td>17.4</td>
       <td>123 ± 48</td>
     </tr>
@@ -96,8 +169,8 @@ title: "Wildwood to BBR Loop"
       <td>2</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>40th Street</td>
+      <td>40th Street: climb (easy)</td>
+      <td>39</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -108,8 +181,8 @@ title: "Wildwood to BBR Loop"
       <td>6</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Wildwood Avenue</td>
+      <td>Wildwood Avenue: climb (medium)</td>
+      <td>372</td>
       <td>1.4</td>
       <td>13 ± 5</td>
     </tr>
@@ -120,8 +193,8 @@ title: "Wildwood to BBR Loop"
       <td>4</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Leimert Boulevard</td>
+      <td>Leimert Boulevard: climb (medium)</td>
+      <td>467</td>
       <td>1.5</td>
       <td>14 ± 7</td>
     </tr>
@@ -132,8 +205,8 @@ title: "Wildwood to BBR Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Monterey Boulevard</td>
+      <td>Monterey Boulevard: climb (medium)</td>
+      <td>75</td>
       <td>0.3</td>
       <td>3 ± 1</td>
     </tr>
@@ -144,8 +217,8 @@ title: "Wildwood to BBR Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Butters Drive</td>
+      <td>Butters Drive: climb (medium)</td>
+      <td>960</td>
       <td>2.9</td>
       <td>30 ± 15</td>
     </tr>
@@ -156,8 +229,8 @@ title: "Wildwood to BBR Loop"
       <td>3</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Skyline Boulevard</td>
+      <td>Skyline Boulevard: climb (easy)</td>
+      <td>40</td>
       <td>0.2</td>
       <td>1 ± 1</td>
     </tr>
@@ -168,8 +241,8 @@ title: "Wildwood to BBR Loop"
       <td>21</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Mountain Boulevard</td>
+      <td>Mountain Boulevard: climb (medium)</td>
+      <td>66</td>
       <td>0.3</td>
       <td>2 ± 1</td>
     </tr>
@@ -180,8 +253,8 @@ title: "Wildwood to BBR Loop"
       <td>6</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Broadway Terrace</td>
+      <td>Broadway Terrace: climb (medium)</td>
+      <td>51</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -193,6 +266,8 @@ title: "Wildwood to BBR Loop"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

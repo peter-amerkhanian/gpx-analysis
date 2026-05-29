@@ -33,6 +33,13 @@ def _middle_non_empty_value(values: pd.Series, fallback: str = "Unknown Road") -
     return filtered[len(filtered) // 2]
 
 
+def _chunk_section_label(route_part: str, road_name: str) -> str:
+    """Return a single display label for a chunk section."""
+    if route_part == "flat or descent":
+        return route_part
+    return f"{road_name}: {route_part}"
+
+
 def _resolve_timing_hazard_frame(df: pd.DataFrame) -> pd.DataFrame:
     """Return segment hazards aligned to the input frame for timing estimates."""
     if "hazard" in df.columns:
@@ -66,11 +73,13 @@ def _resolve_chunk_section_frame(
         frame = frame.sort_index(kind="stable")
 
     frame["section_id"] = frame["chunk_state"].ne(frame["chunk_state"].shift()).cumsum()
+    frame["climb_gain_ft"] = pd.to_numeric(frame.get("step_elevation_f"), errors="coerce").clip(lower=0).fillna(0)
     summary = (
         frame.groupby(["section_id", "chunk_state"], as_index=False)
         .agg(
             distance_ft=(distance_column, "sum"),
             road_name=("osm_name", _middle_non_empty_value),
+            climb_gain_ft=("climb_gain_ft", "sum"),
         )
         .rename(columns={"chunk_state": "route_part"})
     )
@@ -271,8 +280,9 @@ def summarize_chunk_sections(
     distance_column: str = "step_dist_f",
     timing_basis: Literal["hazard", "chunk"] = "hazard",
     speed_ranges_mph: dict[str, tuple[float, float]] | None = None,
+    include_rest_periods: bool = True,
 ) -> pd.DataFrame:
-    """Summarize climb sections with distance, road name, and speed/time estimates."""
+    """Summarize chunk sections with merged labels and climb gain for climb chunks."""
     summary = _resolve_chunk_section_frame(
         df,
         distance_column=distance_column,
@@ -280,36 +290,48 @@ def summarize_chunk_sections(
         speed_ranges_mph=speed_ranges_mph,
     )
     summary = summary[summary["distance_mi"] > 0].copy()
+    if not include_rest_periods:
+        summary = summary[summary["route_part"] != "flat or descent"].copy()
     sections = summary[[
         "route_part",
         "road_name",
+        "climb_gain_ft",
         "distance_mi",
         "time (min)",
     ]].copy()
-    sections["road_name"] = sections.apply(
-        lambda row: " " if row["route_part"] == "flat or descent" else row["road_name"],
+    sections["section"] = sections.apply(
+        lambda row: _chunk_section_label(row["route_part"], row["road_name"]),
+        axis=1,
+    )
+    sections["climb_gain_ft"] = sections.apply(
+        lambda row: row["climb_gain_ft"] if row["route_part"] != "flat or descent" else pd.NA,
         axis=1,
     )
     sections = sections[[
-        "route_part",
-        "road_name",
+        "section",
+        "climb_gain_ft",
         "distance_mi",
         "time (min)",
-    ]].round({"distance_mi": 1}).rename(
+    ]].round({"climb_gain_ft": 0, "distance_mi": 1}).rename(
         columns={
-            "route_part": "Workout",
-            "road_name": "Road",
+            "section": "Section",
+            "climb_gain_ft": "Climb (ft)",
             "distance_mi": "Distance (mi)",
             "time (min)": "Time (Min)",
         }
     )
+    sections["Climb (ft)"] = sections["Climb (ft)"].apply(
+        lambda value: f"{value:,.0f}" if pd.notna(value) else pd.NA
+    )
 
     total_row = pd.DataFrame([{
-        "Workout": "TOTAL",
-        "Road": "TOTAL",
+        "Section": "TOTAL",
+        "Climb (ft)": f"{summary.loc[summary['route_part'] != 'flat or descent', 'climb_gain_ft'].sum():,.0f}",
         "Distance (mi)": sections["Distance (mi)"].sum(),
         "Time (Min)": f"{summary['time_avg_min'].sum():.0f} \N{PLUS-MINUS SIGN} {summary['time_std_min'].sum():.0f}",
-    }]).round({"Distance (mi)": 1})
+    }])
     df = pd.concat([total_row, sections], ignore_index=True)
     df = df[df['Distance (mi)'] > 0]
+    df = df.round({"Distance (mi)": 1})
+    df["Climb (ft)"] = df["Climb (ft)"].fillna("")
     return df

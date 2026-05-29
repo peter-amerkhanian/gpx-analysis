@@ -12,7 +12,7 @@ format:
 ::: {.desktop-only}
 ```{=html}
 <!--| quarto-html-table-processing: none -->
-<table id="itables_5261390d_d8cd_4ba8_a2af_1445913ba40b">
+<table id="itables_44dca4d1_d94c_40e0_9d72_399ae85441fd">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left">
@@ -26,7 +26,7 @@ format:
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_5261390d_d8cd_4ba8_a2af_1445913ba40b:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_44dca4d1_d94c_40e0_9d72_399ae85441fd:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -68,10 +68,10 @@ format:
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
-<option value="19th St/Oakland">19th St/Oakland</option>
-<option value="Richmond">Richmond</option>
 <option value="North Berkeley">North Berkeley</option>
 <option value="San Leandro">San Leandro</option>
+<option value="Richmond">Richmond</option>
+<option value="19th St/Oakland">19th St/Oakland</option>
 <option value="MacArthur">MacArthur</option>
 <option value="El Cerrito del Norte">El Cerrito del Norte</option>
 <option value="Rockridge">Rockridge</option>
@@ -86,7 +86,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>11.59</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1246.39 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>83%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">83%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70">
@@ -96,7 +96,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>13.91</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1747.7 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>85%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">85%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54">
@@ -106,7 +106,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>14.16</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1716.54 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>55%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#d9ef8b;">55%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="14.89" data-elevation="1921.92">
@@ -116,7 +116,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>14.89</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1921.92 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>83%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">83%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="17.41" data-elevation="2444.23">
@@ -126,7 +126,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>17.41</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2444.23 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>51%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#ffffbf;">51%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.05" data-elevation="2176.84">
@@ -136,7 +136,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>18.05</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2176.84 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>35%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#fee08b;">35%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.83" data-elevation="2072.18">
@@ -146,7 +146,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>18.83</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2072.18 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>31%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#fee08b;">31%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="19th St/Oakland" data-miles="19.87" data-elevation="2356.30">
@@ -156,7 +156,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>19th St/Oakland</p>
 <p><span class="mobile-route-label">Miles</span><br>19.87</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2356.3 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>38%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#fee08b;">38%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="Rockridge" data-miles="22.63" data-elevation="3394.36">
@@ -166,7 +166,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>Rockridge</p>
 <p><span class="mobile-route-label">Miles</span><br>22.63</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3394.36 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>71%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">71%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2958.33">
@@ -176,7 +176,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
 <p><span class="mobile-route-label">Miles</span><br>24.55</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2958.33 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>85%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">85%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="25.09" data-elevation="3424.21">
@@ -186,7 +186,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>25.09</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3424.21 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>70%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">70%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="27.96" data-elevation="3596.13">
@@ -196,7 +196,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>27.96</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3596.13 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>65%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#d9ef8b;">65%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86">
@@ -206,7 +206,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>Richmond</p>
 <p><span class="mobile-route-label">Miles</span><br>29.66</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1466.86 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>22%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#fc8d59;">22%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3321.19">
@@ -216,7 +216,7 @@ format:
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>32.49</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3321.19 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>89%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">89%</span></p>
 </div>
 </article>
 </div>

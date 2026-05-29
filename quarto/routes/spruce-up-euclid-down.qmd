@@ -12,7 +12,7 @@ title: "Spruce up, Euclid Down"
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>11.59</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1246.39 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>83%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">83%</span></p>
 </div>
 </article>
 ```
@@ -73,11 +73,15 @@ title: "Spruce up, Euclid Down"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -85,7 +89,40 @@ title: "Spruce up, Euclid Down"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>1,110</td>
+      <td>5.0</td>
+      <td>41 ± 16</td>
+    </tr>
+    <tr>
+      <td>Gilman Street: climb (easy)</td>
+      <td>32</td>
+      <td>0.3</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Spruce Street: climb (medium)</td>
+      <td>1,078</td>
+      <td>4.7</td>
+      <td>39 ± 15</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>1,110</td>
       <td>11.5</td>
       <td>75 ± 25</td>
     </tr>
@@ -96,8 +133,8 @@ title: "Spruce up, Euclid Down"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Gilman Street</td>
+      <td>Gilman Street: climb (easy)</td>
+      <td>32</td>
       <td>0.3</td>
       <td>2 ± 1</td>
     </tr>
@@ -108,8 +145,8 @@ title: "Spruce up, Euclid Down"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Spruce Street</td>
+      <td>Spruce Street: climb (medium)</td>
+      <td>1,078</td>
       <td>4.7</td>
       <td>39 ± 15</td>
     </tr>
@@ -121,6 +158,8 @@ title: "Spruce up, Euclid Down"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

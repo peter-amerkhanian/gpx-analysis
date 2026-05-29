@@ -15,7 +15,7 @@ title: "Redwood Road, San Lorenzo to Temescal"
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
 <p><span class="mobile-route-label">Miles</span><br>24.55</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2958.33 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>85%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">85%</span></p>
 </div>
 </article>
 ```
@@ -76,11 +76,15 @@ title: "Redwood Road, San Lorenzo to Temescal"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -88,7 +92,94 @@ title: "Redwood Road, San Lorenzo to Temescal"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>2,357</td>
+      <td>8.9</td>
+      <td>80 ± 35</td>
+    </tr>
+    <tr>
+      <td>Lake Chabot Road: climb (medium)</td>
+      <td>277</td>
+      <td>0.9</td>
+      <td>9 ± 4</td>
+    </tr>
+    <tr>
+      <td>Walnut Road: climb (medium)</td>
+      <td>253</td>
+      <td>0.9</td>
+      <td>8 ± 3</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (medium)</td>
+      <td>709</td>
+      <td>2.3</td>
+      <td>22 ± 11</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (medium)</td>
+      <td>117</td>
+      <td>0.6</td>
+      <td>5 ± 2</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (medium)</td>
+      <td>69</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (easy)</td>
+      <td>27</td>
+      <td>0.2</td>
+      <td>1 ± 0</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (easy)</td>
+      <td>83</td>
+      <td>0.3</td>
+      <td>3 ± 2</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (medium)</td>
+      <td>596</td>
+      <td>2.6</td>
+      <td>22 ± 9</td>
+    </tr>
+    <tr>
+      <td>Leimert Boulevard: climb (medium)</td>
+      <td>62</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>La Salle Avenue: climb (medium)</td>
+      <td>68</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Linda Avenue: climb (medium)</td>
+      <td>95</td>
+      <td>0.5</td>
+      <td>3 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>2,357</td>
       <td>24.5</td>
       <td>165 ± 59</td>
     </tr>
@@ -99,8 +190,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>6</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Lake Chabot Road</td>
+      <td>Lake Chabot Road: climb (medium)</td>
+      <td>277</td>
       <td>0.9</td>
       <td>9 ± 4</td>
     </tr>
@@ -111,8 +202,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>16</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Walnut Road</td>
+      <td>Walnut Road: climb (medium)</td>
+      <td>253</td>
       <td>0.9</td>
       <td>8 ± 3</td>
     </tr>
@@ -123,8 +214,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>12</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Redwood Road</td>
+      <td>Redwood Road: climb (medium)</td>
+      <td>709</td>
       <td>2.3</td>
       <td>22 ± 11</td>
     </tr>
@@ -135,8 +226,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>3</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Redwood Road</td>
+      <td>Redwood Road: climb (medium)</td>
+      <td>117</td>
       <td>0.6</td>
       <td>5 ± 2</td>
     </tr>
@@ -147,8 +238,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>2</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Redwood Road</td>
+      <td>Redwood Road: climb (medium)</td>
+      <td>69</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -159,8 +250,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>6</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Redwood Road</td>
+      <td>Redwood Road: climb (easy)</td>
+      <td>27</td>
       <td>0.2</td>
       <td>1 ± 0</td>
     </tr>
@@ -171,8 +262,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>4</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Redwood Road</td>
+      <td>Redwood Road: climb (easy)</td>
+      <td>83</td>
       <td>0.3</td>
       <td>3 ± 2</td>
     </tr>
@@ -183,8 +274,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Redwood Road</td>
+      <td>Redwood Road: climb (medium)</td>
+      <td>596</td>
       <td>2.6</td>
       <td>22 ± 9</td>
     </tr>
@@ -195,8 +286,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>11</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Leimert Boulevard</td>
+      <td>Leimert Boulevard: climb (medium)</td>
+      <td>62</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -207,8 +298,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>11</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>La Salle Avenue</td>
+      <td>La Salle Avenue: climb (medium)</td>
+      <td>68</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -219,8 +310,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>8</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Linda Avenue</td>
+      <td>Linda Avenue: climb (medium)</td>
+      <td>95</td>
       <td>0.5</td>
       <td>3 ± 1</td>
     </tr>
@@ -232,6 +323,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

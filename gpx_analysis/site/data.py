@@ -33,7 +33,7 @@ from ..geo import add_bart_station
 
 GRAVEL_TITLE_THRESHOLD_PERCENT = 10.0
 CYCLEWAY_TITLE_THRESHOLD_PERCENT = 20.0
-PROFILE_HIGHLIGHT_THRESHOLD_PERCENT = 20.0
+PROFILE_HIGHLIGHT_THRESHOLD_PERCENT = 10.0
 GRAVEL_HIGHLIGHT_COLOR = "chocolate"
 CYCLEWAY_HIGHLIGHT_COLOR = "forestgreen"
 
@@ -365,6 +365,7 @@ def build_route(
     chunk_map = make_chunk_map(segments)
     road_quality_summary = aggregate_by_road_quality(segments).reset_index()
     chunk_sections_summary = summarize_chunk_sections(segments)
+    climb_only_sections_summary = summarize_chunk_sections(segments, include_rest_periods=False)
 
     write_json(
         route_dir / "summary.json",
@@ -437,5 +438,6 @@ def build_route(
         )[["Hazard", "Distance (mi)", "Percent"]],
         "road_quality_table": road_quality_summary,
         "chunk_sections_table": chunk_sections_summary,
+        "climb_only_sections_table": climb_only_sections_summary,
     }
     return route_bundle, route_page_context

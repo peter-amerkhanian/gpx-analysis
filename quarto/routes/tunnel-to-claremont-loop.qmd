@@ -12,7 +12,7 @@ title: "Tunnel to Claremont Loop"
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>14.16</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1716.54 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>55%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#d9ef8b;">55%</span></p>
 </div>
 </article>
 ```
@@ -73,11 +73,15 @@ title: "Tunnel to Claremont Loop"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -85,7 +89,34 @@ title: "Tunnel to Claremont Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>1,378</td>
+      <td>5.2</td>
+      <td>46 ± 20</td>
+    </tr>
+    <tr>
+      <td>Tunnel Road: climb (medium)</td>
+      <td>1,378</td>
+      <td>5.2</td>
+      <td>46 ± 20</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>1,378</td>
       <td>14.2</td>
       <td>95 ± 34</td>
     </tr>
@@ -96,8 +127,8 @@ title: "Tunnel to Claremont Loop"
       <td>10</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Tunnel Road</td>
+      <td>Tunnel Road: climb (medium)</td>
+      <td>1,378</td>
       <td>5.2</td>
       <td>46 ± 20</td>
     </tr>
@@ -109,6 +140,8 @@ title: "Tunnel to Claremont Loop"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

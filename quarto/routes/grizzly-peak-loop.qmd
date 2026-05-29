@@ -12,7 +12,7 @@ title: "Grizzly Peak Loop"
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>13.91</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1747.7 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>85%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">85%</span></p>
 </div>
 </article>
 ```
@@ -73,11 +73,15 @@ title: "Grizzly Peak Loop"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -85,13 +89,52 @@ title: "Grizzly Peak Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>1,610</td>
+      <td>6.6</td>
+      <td>54 ± 20</td>
+    </tr>
+    <tr>
+      <td>Shattuck Avenue: climb (easy)</td>
+      <td>203</td>
+      <td>1.2</td>
+      <td>7 ± 2</td>
+    </tr>
+    <tr>
+      <td>Spruce Street: climb (medium)</td>
+      <td>778</td>
+      <td>3.0</td>
+      <td>25 ± 10</td>
+    </tr>
+    <tr>
+      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>629</td>
+      <td>2.4</td>
+      <td>21 ± 9</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>1,610</td>
       <td>14.0</td>
       <td>91 ± 30</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Shattuck Avenue</td>
+      <td>Shattuck Avenue: climb (easy)</td>
+      <td>203</td>
       <td>1.2</td>
       <td>7 ± 2</td>
     </tr>
@@ -102,8 +145,8 @@ title: "Grizzly Peak Loop"
       <td>2</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Spruce Street</td>
+      <td>Spruce Street: climb (medium)</td>
+      <td>778</td>
       <td>3.0</td>
       <td>25 ± 10</td>
     </tr>
@@ -114,8 +157,8 @@ title: "Grizzly Peak Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Grizzly Peak Boulevard</td>
+      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>629</td>
       <td>2.4</td>
       <td>21 ± 9</td>
     </tr>
@@ -127,6 +170,8 @@ title: "Grizzly Peak Loop"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

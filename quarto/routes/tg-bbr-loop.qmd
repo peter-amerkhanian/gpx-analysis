@@ -12,7 +12,7 @@ title: "Trestle Glen to BBR Loop"
 <p><span class="mobile-route-label">BART</span><br>19th St/Oakland</p>
 <p><span class="mobile-route-label">Miles</span><br>19.87</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2356.3 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>38%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#fee08b;">38%</span></p>
 </div>
 </article>
 ```
@@ -73,11 +73,15 @@ title: "Trestle Glen to BBR Loop"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -85,7 +89,58 @@ title: "Trestle Glen to BBR Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>1,899</td>
+      <td>6.8</td>
+      <td>61 ± 28</td>
+    </tr>
+    <tr>
+      <td>Leimert Boulevard: climb (medium)</td>
+      <td>722</td>
+      <td>2.7</td>
+      <td>22 ± 10</td>
+    </tr>
+    <tr>
+      <td>Monterey Boulevard: climb (medium)</td>
+      <td>73</td>
+      <td>0.3</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Butters Drive: climb (medium)</td>
+      <td>945</td>
+      <td>2.9</td>
+      <td>29 ± 15</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (medium)</td>
+      <td>62</td>
+      <td>0.4</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Saint James Drive: climb (easy)</td>
+      <td>96</td>
+      <td>0.5</td>
+      <td>4 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>1,899</td>
       <td>19.8</td>
       <td>131 ± 48</td>
     </tr>
@@ -96,8 +151,8 @@ title: "Trestle Glen to BBR Loop"
       <td>13</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Leimert Boulevard</td>
+      <td>Leimert Boulevard: climb (medium)</td>
+      <td>722</td>
       <td>2.7</td>
       <td>22 ± 10</td>
     </tr>
@@ -108,8 +163,8 @@ title: "Trestle Glen to BBR Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Monterey Boulevard</td>
+      <td>Monterey Boulevard: climb (medium)</td>
+      <td>73</td>
       <td>0.3</td>
       <td>3 ± 1</td>
     </tr>
@@ -120,8 +175,8 @@ title: "Trestle Glen to BBR Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Butters Drive</td>
+      <td>Butters Drive: climb (medium)</td>
+      <td>945</td>
       <td>2.9</td>
       <td>29 ± 15</td>
     </tr>
@@ -132,8 +187,8 @@ title: "Trestle Glen to BBR Loop"
       <td>2</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Skyline Boulevard</td>
+      <td>Skyline Boulevard: climb (medium)</td>
+      <td>62</td>
       <td>0.4</td>
       <td>3 ± 1</td>
     </tr>
@@ -144,8 +199,8 @@ title: "Trestle Glen to BBR Loop"
       <td>32</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Saint James Drive</td>
+      <td>Saint James Drive: climb (easy)</td>
+      <td>96</td>
       <td>0.5</td>
       <td>4 ± 1</td>
     </tr>
@@ -157,6 +212,8 @@ title: "Trestle Glen to BBR Loop"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

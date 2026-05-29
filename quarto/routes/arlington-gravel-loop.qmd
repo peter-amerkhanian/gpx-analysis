@@ -15,7 +15,7 @@ title: "Arlington Loop (28% Gravel)"
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>14.89</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1921.92 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br>83%</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">83%</span></p>
 </div>
 </article>
 ```
@@ -76,11 +76,15 @@ title: "Arlington Loop (28% Gravel)"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
+### Climbs Only
+
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Workout</th>
-      <th>Road</th>
+      <th>Section</th>
+      <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
     </tr>
@@ -88,13 +92,70 @@ title: "Arlington Loop (28% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
+      <td>1,564</td>
+      <td>5.5</td>
+      <td>51 ± 21</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>80</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (medium)</td>
+      <td>291</td>
+      <td>0.9</td>
+      <td>9 ± 4</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>390</td>
+      <td>0.9</td>
+      <td>11 ± 6</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (medium)</td>
+      <td>83</td>
+      <td>0.3</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Spruce Street: climb (medium)</td>
+      <td>641</td>
+      <td>2.8</td>
+      <td>23 ± 9</td>
+    </tr>
+    <tr>
+      <td>Wildcat Creek Trail: climb (easy)</td>
+      <td>79</td>
+      <td>0.4</td>
+      <td>3 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TOTAL</td>
+      <td>1,564</td>
       <td>14.7</td>
       <td>101 ± 36</td>
     </tr>
     <tr>
-      <td>climb (hard)</td>
-      <td>Arlington Boulevard</td>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>80</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -105,8 +166,8 @@ title: "Arlington Loop (28% Gravel)"
       <td>1</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Arlington Boulevard</td>
+      <td>Arlington Boulevard: climb (medium)</td>
+      <td>291</td>
       <td>0.9</td>
       <td>9 ± 4</td>
     </tr>
@@ -117,8 +178,8 @@ title: "Arlington Loop (28% Gravel)"
       <td>3</td>
     </tr>
     <tr>
-      <td>climb (hard)</td>
-      <td>Arlington Boulevard</td>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>390</td>
       <td>0.9</td>
       <td>11 ± 6</td>
     </tr>
@@ -129,8 +190,8 @@ title: "Arlington Loop (28% Gravel)"
       <td>2</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Arlington Boulevard</td>
+      <td>Arlington Boulevard: climb (medium)</td>
+      <td>83</td>
       <td>0.3</td>
       <td>3 ± 1</td>
     </tr>
@@ -141,8 +202,8 @@ title: "Arlington Loop (28% Gravel)"
       <td>13</td>
     </tr>
     <tr>
-      <td>climb (medium)</td>
-      <td>Spruce Street</td>
+      <td>Spruce Street: climb (medium)</td>
+      <td>641</td>
       <td>2.8</td>
       <td>23 ± 9</td>
     </tr>
@@ -153,8 +214,8 @@ title: "Arlington Loop (28% Gravel)"
       <td>15</td>
     </tr>
     <tr>
-      <td>climb (easy)</td>
-      <td>Wildcat Creek Trail</td>
+      <td>Wildcat Creek Trail: climb (easy)</td>
+      <td>79</td>
       <td>0.4</td>
       <td>3 ± 1</td>
     </tr>
@@ -166,6 +227,8 @@ title: "Arlington Loop (28% Gravel)"
     </tr>
   </tbody>
 </table>
+
+:::
 
 ## Street Quality
 

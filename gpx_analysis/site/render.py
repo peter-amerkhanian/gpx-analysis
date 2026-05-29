@@ -70,10 +70,29 @@ def render_template(template_root: Path, template_name: str, **context: object) 
     )
     return environment.get_template(template_name).render(**context).strip() + "\n"
 
+
+def road_quality_color(score: float) -> str:
+    """Return the summary-card text color for a road quality percentage."""
+    if score < 10:
+        return "#d73027"
+    if score < 25:
+        return "#fc8d59"
+    if score < 40:
+        return "#fee08b"
+    if score < 55:
+        return "#ffffbf"
+    if score < 70:
+        return "#d9ef8b"
+    if score < 85:
+        return "#91cf60"
+    return "#1a9850"
+
 def summary_card(route: dict[str, object], path_prefix: str = "", title=True) -> list[str]:
     page_href = f'{path_prefix}{route["paths"]["page"].replace(".qmd", ".html")}'
     profile_src = f'{path_prefix}{route["paths"]["profile_svg"]}'
     title_html = str(route.get("title_html", route["title"]))
+    road_quality_score = float(route["summary"]["road_quality_score"])
+    road_quality_style = f"color:{road_quality_color(road_quality_score)};"
     return [(
         f'<article class="mobile-route-card" '
         f'data-bart="{route["summary"]["bart_station"]}" '
@@ -104,7 +123,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
     ),
     (
         f'<p><span class="mobile-route-label">Road Quality</span><br>'
-        f'{route["summary"]["road_quality_score"]}%</p>'
+        f'<span style="{road_quality_style}">{route["summary"]["road_quality_score"]}%</span></p>'
     ),
     "</div>",
     "</article>"]
@@ -154,6 +173,7 @@ def write_route_page(
     route_bundle: dict[str, object],
     hazards_table_html: str,
     road_quality_table_html: str,
+    climb_only_sections_table_html: str,
     chunk_sections_table_html: str,
     route_pages_dir: Path,
 ) -> None:
@@ -172,6 +192,7 @@ def write_route_page(
             chunk_map_src=f"../{route_bundle['paths']['chunk_map']}",
             hazards_table_html=hazards_table_html,
             road_quality_table_html=road_quality_table_html,
+            climb_only_sections_table_html=climb_only_sections_table_html,
             chunk_sections_table_html=chunk_sections_table_html,
             gallery_images=route.media.gallery,
             gallery_title=str(route_bundle["title"]),
