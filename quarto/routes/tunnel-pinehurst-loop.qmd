@@ -37,9 +37,9 @@ title: "Tunnel to Pinehurst Loop"
   </thead>
   <tbody>
     <tr>
-      <td>Mellow</td>
-      <td>14.03</td>
-      <td>62.0</td>
+      <td>Flat</td>
+      <td>10.64</td>
+      <td>47.0</td>
     </tr>
     <tr>
       <td>Climb</td>
@@ -47,19 +47,24 @@ title: "Tunnel to Pinehurst Loop"
       <td>18.0</td>
     </tr>
     <tr>
-      <td>Descent</td>
-      <td>1.94</td>
-      <td>9.0</td>
+      <td>Light Descent</td>
+      <td>2.61</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>1.92</td>
-      <td>8.0</td>
+      <td>2.40</td>
+      <td>11.0</td>
     </tr>
     <tr>
-      <td>Danger Zone</td>
-      <td>0.71</td>
-      <td>3.0</td>
+      <td>Descent</td>
+      <td>2.40</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <td>Steep Descent</td>
+      <td>0.54</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
@@ -91,25 +96,25 @@ title: "Tunnel to Pinehurst Loop"
       <td>TOTAL</td>
       <td>2,871</td>
       <td>10.0</td>
-      <td>94 ± 44</td>
+      <td>99 ± 49</td>
     </tr>
     <tr>
       <td>Broadway: climb (medium)</td>
       <td>502</td>
       <td>1.6</td>
-      <td>15 ± 7</td>
+      <td>17 ± 8</td>
     </tr>
     <tr>
       <td>Tunnel Road: climb (hard)</td>
       <td>212</td>
       <td>0.5</td>
-      <td>6 ± 4</td>
+      <td>7 ± 4</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (medium)</td>
       <td>818</td>
       <td>2.5</td>
-      <td>25 ± 14</td>
+      <td>26 ± 15</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (easy)</td>
@@ -121,13 +126,13 @@ title: "Tunnel to Pinehurst Loop"
       <td>Pinehurst Road: climb (medium)</td>
       <td>420</td>
       <td>1.4</td>
-      <td>13 ± 6</td>
+      <td>14 ± 7</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
       <td>718</td>
       <td>3.2</td>
-      <td>27 ± 11</td>
+      <td>28 ± 11</td>
     </tr>
     <tr>
       <td>Mountain Boulevard: climb (medium)</td>
@@ -160,7 +165,7 @@ title: "Tunnel to Pinehurst Loop"
       <td>TOTAL</td>
       <td>2,871</td>
       <td>22.5</td>
-      <td>162 ± 64</td>
+      <td>167 ± 69</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -172,7 +177,7 @@ title: "Tunnel to Pinehurst Loop"
       <td>Broadway: climb (medium)</td>
       <td>502</td>
       <td>1.6</td>
-      <td>15 ± 7</td>
+      <td>17 ± 8</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -184,7 +189,7 @@ title: "Tunnel to Pinehurst Loop"
       <td>Tunnel Road: climb (hard)</td>
       <td>212</td>
       <td>0.5</td>
-      <td>6 ± 4</td>
+      <td>7 ± 4</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -196,7 +201,7 @@ title: "Tunnel to Pinehurst Loop"
       <td>Skyline Boulevard: climb (medium)</td>
       <td>818</td>
       <td>2.5</td>
-      <td>25 ± 14</td>
+      <td>26 ± 15</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -214,25 +219,25 @@ title: "Tunnel to Pinehurst Loop"
       <td>flat or descent</td>
       <td></td>
       <td>5.0</td>
-      <td>29</td>
+      <td>28</td>
     </tr>
     <tr>
       <td>Pinehurst Road: climb (medium)</td>
       <td>420</td>
       <td>1.4</td>
-      <td>13 ± 6</td>
+      <td>14 ± 7</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
       <td>1.0</td>
-      <td>6</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
       <td>718</td>
       <td>3.2</td>
-      <td>27 ± 11</td>
+      <td>28 ± 11</td>
     </tr>
     <tr>
       <td>flat or descent</td>

@@ -37,29 +37,34 @@ title: "Trestle Glen to BBR Loop"
   </thead>
   <tbody>
     <tr>
-      <td>Mellow</td>
-      <td>14.06</td>
-      <td>71.0</td>
+      <td>Flat</td>
+      <td>11.74</td>
+      <td>59.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>2.61</td>
-      <td>13.0</td>
+      <td>2.40</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td>Light Descent</td>
+      <td>2.30</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.53</td>
+      <td>1.52</td>
       <td>8.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>1.16</td>
-      <td>6.0</td>
+      <td>1.52</td>
+      <td>8.0</td>
     </tr>
     <tr>
-      <td>Danger Zone</td>
-      <td>0.52</td>
-      <td>3.0</td>
+      <td>Steep Descent</td>
+      <td>0.40</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
@@ -91,13 +96,13 @@ title: "Trestle Glen to BBR Loop"
       <td>TOTAL</td>
       <td>1,899</td>
       <td>6.8</td>
-      <td>61 ± 28</td>
+      <td>65 ± 32</td>
     </tr>
     <tr>
       <td>Leimert Boulevard: climb (medium)</td>
       <td>722</td>
       <td>2.7</td>
-      <td>22 ± 10</td>
+      <td>24 ± 12</td>
     </tr>
     <tr>
       <td>Monterey Boulevard: climb (medium)</td>
@@ -109,7 +114,7 @@ title: "Trestle Glen to BBR Loop"
       <td>Butters Drive: climb (medium)</td>
       <td>945</td>
       <td>2.9</td>
-      <td>29 ± 15</td>
+      <td>31 ± 17</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (medium)</td>
@@ -142,7 +147,7 @@ title: "Trestle Glen to BBR Loop"
       <td>TOTAL</td>
       <td>1,899</td>
       <td>19.8</td>
-      <td>131 ± 48</td>
+      <td>133 ± 51</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -154,7 +159,7 @@ title: "Trestle Glen to BBR Loop"
       <td>Leimert Boulevard: climb (medium)</td>
       <td>722</td>
       <td>2.7</td>
-      <td>22 ± 10</td>
+      <td>24 ± 12</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -178,7 +183,7 @@ title: "Trestle Glen to BBR Loop"
       <td>Butters Drive: climb (medium)</td>
       <td>945</td>
       <td>2.9</td>
-      <td>29 ± 15</td>
+      <td>31 ± 17</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -196,7 +201,7 @@ title: "Trestle Glen to BBR Loop"
       <td>flat or descent</td>
       <td></td>
       <td>5.8</td>
-      <td>32</td>
+      <td>31</td>
     </tr>
     <tr>
       <td>Saint James Drive: climb (easy)</td>

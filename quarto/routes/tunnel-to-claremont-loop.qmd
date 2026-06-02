@@ -37,28 +37,33 @@ title: "Tunnel to Claremont Loop"
   </thead>
   <tbody>
     <tr>
-      <td>Mellow</td>
-      <td>9.73</td>
-      <td>69.0</td>
+      <td>Flat</td>
+      <td>7.92</td>
+      <td>56.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>2.32</td>
+      <td>2.30</td>
       <td>16.0</td>
     </tr>
     <tr>
+      <td>Light Descent</td>
+      <td>1.48</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
       <td>Descent</td>
-      <td>1.18</td>
-      <td>8.0</td>
+      <td>1.26</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>0.74</td>
-      <td>5.0</td>
+      <td>1.06</td>
+      <td>7.0</td>
     </tr>
     <tr>
-      <td>Danger Zone</td>
-      <td>0.19</td>
+      <td>Steep Descent</td>
+      <td>0.13</td>
       <td>1.0</td>
     </tr>
   </tbody>
@@ -91,13 +96,13 @@ title: "Tunnel to Claremont Loop"
       <td>TOTAL</td>
       <td>1,378</td>
       <td>5.2</td>
-      <td>46 ± 20</td>
+      <td>51 ± 24</td>
     </tr>
     <tr>
       <td>Tunnel Road: climb (medium)</td>
       <td>1,378</td>
       <td>5.2</td>
-      <td>46 ± 20</td>
+      <td>51 ± 24</td>
     </tr>
   </tbody>
 </table>
@@ -118,7 +123,7 @@ title: "Tunnel to Claremont Loop"
       <td>TOTAL</td>
       <td>1,378</td>
       <td>14.2</td>
-      <td>95 ± 34</td>
+      <td>98 ± 38</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -130,7 +135,7 @@ title: "Tunnel to Claremont Loop"
       <td>Tunnel Road: climb (medium)</td>
       <td>1,378</td>
       <td>5.2</td>
-      <td>46 ± 20</td>
+      <td>51 ± 24</td>
     </tr>
     <tr>
       <td>flat or descent</td>

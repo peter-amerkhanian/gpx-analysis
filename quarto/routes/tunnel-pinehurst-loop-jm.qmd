@@ -37,29 +37,34 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
   </thead>
   <tbody>
     <tr>
-      <td>Mellow</td>
-      <td>16.87</td>
-      <td>67.0</td>
+      <td>Flat</td>
+      <td>12.77</td>
+      <td>51.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>3.75</td>
-      <td>15.0</td>
+      <td>4.39</td>
+      <td>18.0</td>
     </tr>
     <tr>
-      <td>Steep Climb</td>
-      <td>1.92</td>
-      <td>8.0</td>
+      <td>Light Descent</td>
+      <td>3.06</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.90</td>
-      <td>8.0</td>
+      <td>2.25</td>
+      <td>9.0</td>
     </tr>
     <tr>
-      <td>Danger Zone</td>
-      <td>0.66</td>
-      <td>3.0</td>
+      <td>Steep Climb</td>
+      <td>2.14</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>Steep Descent</td>
+      <td>0.49</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
@@ -91,25 +96,25 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
       <td>TOTAL</td>
       <td>2,788</td>
       <td>10.5</td>
-      <td>93 ± 42</td>
+      <td>100 ± 46</td>
     </tr>
     <tr>
       <td>Tunnel Road: climb (medium)</td>
       <td>1,525</td>
       <td>5.1</td>
-      <td>48 ± 24</td>
+      <td>51 ± 27</td>
     </tr>
     <tr>
       <td>Pinehurst Road: climb (medium)</td>
       <td>399</td>
       <td>1.3</td>
-      <td>12 ± 6</td>
+      <td>13 ± 6</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (easy)</td>
       <td>670</td>
       <td>3.2</td>
-      <td>25 ± 10</td>
+      <td>27 ± 11</td>
     </tr>
     <tr>
       <td>Mountain Boulevard: climb (medium)</td>
@@ -142,7 +147,7 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
       <td>TOTAL</td>
       <td>2,788</td>
       <td>25.2</td>
-      <td>173 ± 67</td>
+      <td>178 ± 71</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -154,19 +159,19 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
       <td>Tunnel Road: climb (medium)</td>
       <td>1,525</td>
       <td>5.1</td>
-      <td>48 ± 24</td>
+      <td>51 ± 27</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
       <td>5.7</td>
-      <td>34</td>
+      <td>33</td>
     </tr>
     <tr>
       <td>Pinehurst Road: climb (medium)</td>
       <td>399</td>
       <td>1.3</td>
-      <td>12 ± 6</td>
+      <td>13 ± 6</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -178,13 +183,13 @@ title: "Tunnel to Pinehurst w/ Joaquin Miller Descent"
       <td>Redwood Road: climb (easy)</td>
       <td>670</td>
       <td>3.2</td>
-      <td>25 ± 10</td>
+      <td>27 ± 11</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
       <td>2.2</td>
-      <td>11</td>
+      <td>10</td>
     </tr>
     <tr>
       <td>Mountain Boulevard: climb (medium)</td>

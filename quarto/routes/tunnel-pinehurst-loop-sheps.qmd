@@ -37,28 +37,33 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   </thead>
   <tbody>
     <tr>
-      <td>Mellow</td>
-      <td>19.14</td>
-      <td>68.0</td>
+      <td>Flat</td>
+      <td>15.27</td>
+      <td>55.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>3.90</td>
-      <td>14.0</td>
+      <td>4.29</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <td>Light Descent</td>
+      <td>3.20</td>
+      <td>11.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>2.24</td>
-      <td>8.0</td>
+      <td>2.47</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>2.00</td>
-      <td>7.0</td>
+      <td>2.28</td>
+      <td>8.0</td>
     </tr>
     <tr>
-      <td>Danger Zone</td>
-      <td>0.67</td>
+      <td>Steep Descent</td>
+      <td>0.44</td>
       <td>2.0</td>
     </tr>
   </tbody>
@@ -91,7 +96,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>TOTAL</td>
       <td>2,967</td>
       <td>10.1</td>
-      <td>96 ± 46</td>
+      <td>101 ± 50</td>
     </tr>
     <tr>
       <td>Broadway: climb (medium)</td>
@@ -103,7 +108,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Broadway: climb (hard)</td>
       <td>162</td>
       <td>0.3</td>
-      <td>4 ± 3</td>
+      <td>5 ± 3</td>
     </tr>
     <tr>
       <td>Broadway: climb (medium)</td>
@@ -115,7 +120,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Tunnel Road: climb (medium)</td>
       <td>989</td>
       <td>3.2</td>
-      <td>31 ± 16</td>
+      <td>33 ± 18</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (easy)</td>
@@ -133,19 +138,19 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Redwood Road: climb (easy)</td>
       <td>424</td>
       <td>1.9</td>
-      <td>16 ± 7</td>
+      <td>17 ± 7</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
       <td>195</td>
       <td>0.7</td>
-      <td>6 ± 2</td>
+      <td>7 ± 3</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (medium)</td>
       <td>363</td>
       <td>1.0</td>
-      <td>11 ± 6</td>
+      <td>12 ± 6</td>
     </tr>
     <tr>
       <td>Mountain Boulevard: climb (medium)</td>
@@ -178,7 +183,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>TOTAL</td>
       <td>2,967</td>
       <td>28.0</td>
-      <td>193 ± 75</td>
+      <td>197 ± 78</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -202,7 +207,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Broadway: climb (hard)</td>
       <td>162</td>
       <td>0.3</td>
-      <td>4 ± 3</td>
+      <td>5 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -220,13 +225,13 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>flat or descent</td>
       <td></td>
       <td>0.3</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Tunnel Road: climb (medium)</td>
       <td>989</td>
       <td>3.2</td>
-      <td>31 ± 16</td>
+      <td>33 ± 18</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -244,7 +249,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>flat or descent</td>
       <td></td>
       <td>5.0</td>
-      <td>28</td>
+      <td>27</td>
     </tr>
     <tr>
       <td>Pinehurst Road: climb (medium)</td>
@@ -262,7 +267,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Redwood Road: climb (easy)</td>
       <td>424</td>
       <td>1.9</td>
-      <td>16 ± 7</td>
+      <td>17 ± 7</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -274,7 +279,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Redwood Road: climb (medium)</td>
       <td>195</td>
       <td>0.7</td>
-      <td>6 ± 2</td>
+      <td>7 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -286,7 +291,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>Skyline Boulevard: climb (medium)</td>
       <td>363</td>
       <td>1.0</td>
-      <td>11 ± 6</td>
+      <td>12 ± 6</td>
     </tr>
     <tr>
       <td>flat or descent</td>

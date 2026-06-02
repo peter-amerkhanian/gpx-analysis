@@ -35,20 +35,21 @@ SIMPLIFIED_ROAD_QUALITY_COLORS = {
 DETAILED_HAZARD_COLORS = {
     "steep_climb": "#012C22",
     "climb": "#2D9966",
-    "flat": "#31D492",
-    "light_descent": "#fee08b",
-    "steep_descent": "#f46d43",
+    "flat": "#79DFB7",
+    "light_descent": "#f99860",
+    "steep_descent": "#fc5b2a",
     "ultra_steep_descent": "#9F0712",
-    "turn_on_descent": "#4F39F6",
-    "turn_on_steep_descent": "#8A0194",
+    "turn_on_descent": "#fc5b2a",
+    "turn_on_steep_descent": "#9F0712",
 }
 
 SIMPLIFIED_HAZARD_COLORS = {
     "steep_climb": "#012C22",
-    "climb": "#29865B",
-    "mellow": "#31D492",
-    "descent": "#f46d43",
-    "danger_zone": "#9F0712",
+    "climb": "#2D9966",
+    "flat": "#79DFB7",
+    "light_descent": "#f99860",
+    "descent": "#fc5b2a",
+    "steep_descent": "#9F0712",
 }
 
 CHUNK_STATE_COLORS = {
@@ -75,9 +76,10 @@ HAZARD_PROFILE_LABELS = {
     "simplified": {
         "steep_climb": "Steep Climb",
         "climb": "Climb",
-        "mellow": "Mellow",
+        "flat": "Flat",
+        "light_descent": "Light Descent",
         "descent": "Descent",
-        "danger_zone": "Danger Zone",
+        "steep_descent": "Steep Descent",
     },
 }
 
@@ -95,12 +97,12 @@ HAZARD_PROFILE_REMAPS = {
     "simplified": {
         "steep_climb": "steep_climb",
         "climb": "climb",
-        "flat": "mellow",
-        "light_descent": "mellow",
+        "flat": "flat",
+        "light_descent": "light_descent",
         "steep_descent": "descent",
         "turn_on_descent": "descent",
-        "ultra_steep_descent": "danger_zone",
-        "turn_on_steep_descent": "danger_zone",
+        "ultra_steep_descent": "steep_descent",
+        "turn_on_steep_descent": "steep_descent",
     },
 }
 
@@ -204,6 +206,10 @@ def prepare_segment_display_columns(
     )
     frame["Grade"] = (
         frame["step_grade"].multiply(100).round(2).astype(str) + "%"
+    )
+    hazard_grade_source = frame["hazard_grade"] if "hazard_grade" in frame.columns else frame["step_grade"]
+    frame["Hazard Grade"] = (
+        pd.to_numeric(hazard_grade_source, errors="coerce").multiply(100).round(2).astype(str) + "%"
     )
     frame["Ride Type"] = frame["hazard_label"]
     frame["_display_color"] = frame["hazard"].map(colors).fillna("#8a8a8a")
@@ -448,6 +454,13 @@ def _frames_share_route_overlap(
                 return True
 
     return False if has_meaningful_overlap else False
+
+
+def _overlap_ignore_value(column: str | None) -> str | None:
+    """Return the route category that should not trigger pass splitting on shared geometry."""
+    if column == "hazard":
+        return "flat"
+    return None
 
 
 def _chevron_marker_segments(
@@ -701,7 +714,7 @@ def _add_direction_layers(
     projected_outbound = outbound[["geometry"]].to_crs(3857)
     projected_returning = returning[["geometry"]].to_crs(3857)
     overlap_column = column if column in frame.columns else None
-    ignore_value = "mellow" if column == "hazard" else None
+    ignore_value = _overlap_ignore_value(column)
     if overlap_column is not None:
         projected_outbound[overlap_column] = outbound[overlap_column]
         projected_returning[overlap_column] = returning[overlap_column]
@@ -824,7 +837,7 @@ def add_map_elements(
 def make_route_map(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
-    popup_cols: list[str] | None = ["Ride Type", "Turn", "Grade", "More Details"],
+    popup_cols: list[str] | None = ["Ride Type", "Turn", "Grade", "Hazard Grade", "More Details"],
     tooltip_fields: list[str] | None = ['Segment', 'Ride Type'],
     tiles: str = "CartoDB Voyager",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
@@ -844,6 +857,7 @@ def make_route_map(
             "Ride Type",
             "Turn",
             "Grade",
+            "Hazard Grade",
             "More Details",
             "hazard",
             "_display_color",

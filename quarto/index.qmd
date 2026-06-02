@@ -12,7 +12,7 @@ format:
 ::: {.desktop-only}
 ```{=html}
 <!--| quarto-html-table-processing: none -->
-<table id="itables_44dca4d1_d94c_40e0_9d72_399ae85441fd">
+<table id="itables_3a0802a1_01e7_45be_ba46_59b56813f2d9">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left">
@@ -26,15 +26,15 @@ format:
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_44dca4d1_d94c_40e0_9d72_399ae85441fd:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_3a0802a1_01e7_45be_ba46_59b56813f2d9:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         let dt_args = {
           "classes": ["display", "nowrap", "compact"],
           "columnControl": ["order"],
-          "columnDefs": [{"render": "function (data, type, row, meta) { return type === 'sort' || type === 'type' ? data[1] : data[0]; }", "targets": [2, 3, 4, 5]}],
-          "data_json": "[[\"<a href=\\\"routes/tg-bbr-loop.html\\\">Trestle Glen to BBR Loop</a>\", \"19th St/Oakland\", [\"19.87\", 19.87], [\"2356.30\", 2356.3], [\"1.16\", 1.16], [\"0.52\", 0.52]], [\"<a href=\\\"routes/arlington-gravel-loop.html\\\">Arlington Loop <span>(<span style=\\\"color: chocolate;\\\">28% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1921.92\", 1921.92], [\"0.58\", 0.58], [\"0.15\", 0.15]], [\"<a href=\\\"routes/wildcat-conlon-nimitz-meadow-loop.html\\\">Conlon Trail Loop <span>(<span style=\\\"color: chocolate;\\\">59% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"18.05\", 18.05], [\"2176.84\", 2176.84], [\"1.24\", 1.24], [\"0.33\", 0.33]], [\"<a href=\\\"routes/wildcat-havey-nimitz-meadow-loop.html\\\">Havey Canyon Loop <span>(<span style=\\\"color: chocolate;\\\">55% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"18.83\", 18.83], [\"2072.18\", 2072.18], [\"0.97\", 0.97], [\"0.19\", 0.19]], [\"<a href=\\\"routes/three-bears-gravel-loop.html\\\">Three Wild Bears <span>(<span style=\\\"color: chocolate;\\\">13% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3321.19\", 3321.19], [\"1.36\", 1.36], [\"0.20\", 0.2]], [\"<a href=\\\"routes/tunnel-to-claremont-loop.html\\\">Tunnel to Claremont Loop</a>\", \"MacArthur\", [\"14.16\", 14.16], [\"1716.54\", 1716.54], [\"0.74\", 0.74], [\"0.19\", 0.19]], [\"<a href=\\\"routes/wildwood-bbr-loop.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2444.23\", 2444.23], [\"1.32\", 1.32], [\"0.38\", 0.38]], [\"<a href=\\\"routes/tunnel-pinehurst-loop-jm.html\\\">Tunnel to Pinehurst w/ Joaquin Miller Descent</a>\", \"MacArthur\", [\"25.09\", 25.09], [\"3424.21\", 3424.21], [\"1.92\", 1.92], [\"0.66\", 0.66]], [\"<a href=\\\"routes/tunnel-pinehurst-loop-sheps.html\\\">Tunnel to Pinehurst w/ Shepards Canyon Descent</a>\", \"MacArthur\", [\"27.96\", 27.96], [\"3596.13\", 3596.13], [\"2.24\", 2.24], [\"0.67\", 0.67]], [\"<a href=\\\"routes/spruce-up-euclid-down.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1246.39\", 1246.39], [\"0.28\", 0.28], [\"0.11\", 0.11]], [\"<a href=\\\"routes/grizzly-peak-loop.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1747.70\", 1747.7], [\"0.32\", 0.32], [\"0.11\", 0.11]], [\"<a href=\\\"routes/richmond-marin-conzelman-emb.html\\\">Richmond to EMB <span>(<span style=\\\"color: forestgreen;\\\">43% Cycleway</span>)</span></a>\", \"Richmond\", [\"29.66\", 29.66], [\"1466.86\", 1466.86], [\"0.86\", 0.86], [\"0.20\", 0.2]], [\"<a href=\\\"routes/tunnel-pinehurst-loop.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3394.36\", 3394.36], [\"1.92\", 1.92], [\"0.71\", 0.71]], [\"<a href=\\\"routes/redwood-san-leandro-macarthur-bart.html\\\">Redwood Road, San Lorenzo to Temescal</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2958.33\", 2958.33], [\"1.19\", 1.19], [\"0.38\", 0.38]]]",
+          "columnDefs": [{"render": "function (data, type, row, meta) { return type === 'sort' || type === 'type' ? data[1] : data[0]; }", "targets": [2, 3, 4]}],
+          "data_json": "[[\"<a href=\\\"routes/tg-bbr-loop.html\\\">Trestle Glen to BBR Loop</a>\", \"19th St/Oakland\", [\"19.87\", 19.87], [\"2356.30\", 2356.3], [\"1.52\", 1.52], 0], [\"<a href=\\\"routes/arlington-gravel-loop.html\\\">Arlington Loop <span>(<span style=\\\"color: chocolate;\\\">28% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"14.89\", 14.89], [\"1921.92\", 1921.92], [\"1.18\", 1.18], 0], [\"<a href=\\\"routes/wildcat-conlon-nimitz-meadow-loop.html\\\">Conlon Trail Loop <span>(<span style=\\\"color: chocolate;\\\">59% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"18.05\", 18.05], [\"2176.84\", 2176.84], [\"1.60\", 1.6], 0], [\"<a href=\\\"routes/wildcat-havey-nimitz-meadow-loop.html\\\">Havey Canyon Loop <span>(<span style=\\\"color: chocolate;\\\">55% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"18.83\", 18.83], [\"2072.18\", 2072.18], [\"0.98\", 0.98], 0], [\"<a href=\\\"routes/three-bears-gravel-loop.html\\\">Three Wild Bears <span>(<span style=\\\"color: chocolate;\\\">13% Gravel</span>)</span></a>\", \"El Cerrito del Norte\", [\"32.49\", 32.49], [\"3321.19\", 3321.19], [\"1.41\", 1.41], 0], [\"<a href=\\\"routes/tunnel-to-claremont-loop.html\\\">Tunnel to Claremont Loop</a>\", \"MacArthur\", [\"14.16\", 14.16], [\"1716.54\", 1716.54], [\"1.06\", 1.06], 0], [\"<a href=\\\"routes/wildwood-bbr-loop.html\\\">Wildwood to BBR Loop</a>\", \"MacArthur\", [\"17.41\", 17.41], [\"2444.23\", 2444.23], [\"1.56\", 1.56], 0], [\"<a href=\\\"routes/tunnel-pinehurst-loop-jm.html\\\">Tunnel to Pinehurst w/ Joaquin Miller Descent</a>\", \"MacArthur\", [\"25.09\", 25.09], [\"3424.21\", 3424.21], [\"2.14\", 2.14], 0], [\"<a href=\\\"routes/tunnel-pinehurst-loop-sheps.html\\\">Tunnel to Pinehurst w/ Shepards Canyon Descent</a>\", \"MacArthur\", [\"27.96\", 27.96], [\"3596.13\", 3596.13], [\"2.47\", 2.47], 0], [\"<a href=\\\"routes/spruce-up-euclid-down.html\\\">Spruce up, Euclid Down</a>\", \"North Berkeley\", [\"11.59\", 11.59], [\"1246.39\", 1246.39], [\"0.53\", 0.53], 0], [\"<a href=\\\"routes/grizzly-peak-loop.html\\\">Grizzly Peak Loop</a>\", \"North Berkeley\", [\"13.91\", 13.91], [\"1747.70\", 1747.7], [\"0.72\", 0.72], 0], [\"<a href=\\\"routes/richmond-marin-conzelman-emb.html\\\">Richmond to EMB <span>(<span style=\\\"color: forestgreen;\\\">43% Cycleway</span>)</span></a>\", \"Richmond\", [\"29.66\", 29.66], [\"1466.86\", 1466.86], [\"0.87\", 0.87], 0], [\"<a href=\\\"routes/tunnel-pinehurst-loop.html\\\">Tunnel to Pinehurst Loop</a>\", \"Rockridge\", [\"22.63\", 22.63], [\"3394.36\", 3394.36], [\"2.40\", 2.4], 0], [\"<a href=\\\"routes/redwood-san-leandro-macarthur-bart.html\\\">Redwood Road, San Lorenzo to Temescal</a>\", \"San Leandro\", [\"24.55\", 24.55], [\"2958.33\", 2958.33], [\"1.29\", 1.29], 0]]",
           "keys_to_be_evaluated": [["columnDefs", 0, "render"]],
           "layout": {"bottomEnd": "paging", "bottomStart": "info", "topEnd": null, "topStart": "search"},
           "order": [[2, "desc"]],
@@ -68,13 +68,13 @@ format:
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
-<option value="North Berkeley">North Berkeley</option>
+<option value="MacArthur">MacArthur</option>
+<option value="Rockridge">Rockridge</option>
 <option value="San Leandro">San Leandro</option>
+<option value="North Berkeley">North Berkeley</option>
+<option value="El Cerrito del Norte">El Cerrito del Norte</option>
 <option value="Richmond">Richmond</option>
 <option value="19th St/Oakland">19th St/Oakland</option>
-<option value="MacArthur">MacArthur</option>
-<option value="El Cerrito del Norte">El Cerrito del Norte</option>
-<option value="Rockridge">Rockridge</option>
 </select>
 </div>
 </div>

@@ -9,6 +9,8 @@ DEFAULT_CHUNK_FLAT_RECOVERY_FT = 700.0
 DEFAULT_CHUNK_MIN_DIST_FT = 1000.0
 DEFAULT_CHUNK_MIN_AVG_GRADE = 0.02
 
+DEFAULT_HAZARD_SHORT_SEGMENT_M = 100
+
 
 def _weighted_grade_average(frame: pd.DataFrame) -> float:
     """Return the distance-weighted average grade for a chunk."""
@@ -47,6 +49,30 @@ def _weighted_grade_median(frame: pd.DataFrame) -> float:
     return float(ordered.loc[median_index, "grade"])
 
 
+def _smooth_short_segment_grades(
+    frame: pd.DataFrame,
+    rolling_window: int,
+    short_segment_threshold_m: float,
+) -> pd.Series:
+    """Smooth only short segments with a centered distance-weighted rolling grade."""
+    grade = pd.to_numeric(frame["step_grade"], errors="coerce")
+    distance = pd.to_numeric(frame["step_dist_m"], errors="coerce")
+    effective_grade = grade.copy()
+
+    if rolling_window <= 1:
+        return effective_grade
+
+    valid_distance = distance.where(grade.notna())
+    weighted_grade = grade.mul(valid_distance)
+    rolling_distance = valid_distance.rolling(rolling_window, center=True, min_periods=1).sum()
+    rolling_grade = weighted_grade.rolling(rolling_window, center=True, min_periods=1).sum()
+    smoothed_grade = rolling_grade.div(rolling_distance.where(rolling_distance > 0))
+
+    short_segment_mask = distance.le(short_segment_threshold_m) & grade.notna()
+    effective_grade.loc[short_segment_mask] = smoothed_grade.loc[short_segment_mask]
+    return effective_grade
+
+
 def _merge_short_flat_recoveries(
     base_state: pd.Series,
     step_dist_f: pd.Series,
@@ -81,58 +107,41 @@ def _merge_short_flat_recoveries(
     return merged_state
 
 
-def detect_hazards(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
-    """Classify each step into hazard categories from grade and turning signals."""
+def detect_hazards(
+    df: pd.DataFrame,
+    rolling_window: int = 5,
+    short_segment_threshold_m: float = DEFAULT_HAZARD_SHORT_SEGMENT_M,
+) -> pd.DataFrame:
+    """Classify each step from one effective grade signal plus same-step turns."""
     frame = df.copy()
-    frame["avg_step_grade"] = frame["step_grade"].rolling(rolling_window).mean()
-    frame["avg_bearing_change"] = frame["step_turn"].rolling(rolling_window).mean()
-    # thresholds = {
-    #     "light_descent": -0.049,
-    #     "steep_descent": -0.099,
-    #     "ultra_steep_descent": -0.199,
-    #     "turn": 19.9,
-    #     "climb": 0.049,
-    #     "steep_climb": 0.099,
-    # }
+    frame["hazard_grade"] = _smooth_short_segment_grades(
+        frame,
+        rolling_window=rolling_window,
+        short_segment_threshold_m=short_segment_threshold_m,
+    )
+    frame["avg_step_grade"] = frame["hazard_grade"]
+    frame["avg_bearing_change"] = frame["step_turn"]
     thresholds = {
-        "light_descent": -0.049,
-        "steep_descent": -0.099,
-        "ultra_steep_descent": -0.249,
+        "light_descent": -0.04,
+        "steep_descent": -0.079,
+        "ultra_steep_descent": -0.199,
         "turn": 19.9,
-        "climb": 0.049,
-        "steep_climb": 0.099,
+        "climb": 0.04,
+        "steep_climb": 0.079,
     }
-    on_descent = (frame["step_grade"].round(2) < thresholds["light_descent"])
-    on_steep_descent = (frame["step_grade"].round(2) < thresholds["steep_descent"])
-    on_ultra_steep_descent = (frame["step_grade"].round(2) < thresholds["ultra_steep_descent"])
-    on_turn = (frame["step_turn"].round() > thresholds["turn"])
-    on_climb = (frame["step_grade"].round(2) > thresholds["climb"])
-    on_steep_climb = (frame["step_grade"].round(2) > thresholds["steep_climb"])
-
-    coming_off_descent = (frame["step_grade"].shift(-1).round(2) < np.mean([thresholds["light_descent"], thresholds["steep_descent"]]))
-    coming_off_steep_descent = (frame["step_grade"].shift(-1).round(2) < np.mean([thresholds["steep_descent"], thresholds["ultra_steep_descent"]]))
-    coming_off_ultra_steep_descent = (frame["step_grade"].shift(-1).round(2) < (thresholds["ultra_steep_descent"] * 1.1))
-    hazards = {
-        "light_descent": on_descent | coming_off_descent,
-        "steep_descent": on_steep_descent | coming_off_steep_descent,
-        "ultra_steep_descent": on_ultra_steep_descent | coming_off_ultra_steep_descent,
-        "turn_on_descent": (
-            (on_turn & coming_off_descent)
-            | (on_turn & on_descent)
-            | ((frame["avg_bearing_change"].round() > thresholds["turn"]) & (frame["avg_step_grade"].round(2) < thresholds["light_descent"]))
-        ),
-        "turn_on_steep_descent": (
-            (on_turn & coming_off_steep_descent)
-            | (on_turn & on_steep_descent)
-            | ((frame["avg_bearing_change"].round() > thresholds["turn"]) & (frame["avg_step_grade"].round(2) < thresholds["steep_descent"]))
-        ),
-        "climb": on_climb,
-        "steep_climb": on_steep_climb
-    }
+    round_n = 5
+    hazard_grade = frame["hazard_grade"]
+    grade_rounded = hazard_grade.round(round_n)
+    on_turn = frame["step_turn"].round() > thresholds["turn"]
 
     frame["hazard"] = "flat"
-    for hazard_name, hazard_condition in hazards.items():
-        frame.loc[hazard_condition, "hazard"] = hazard_name
+    frame.loc[grade_rounded <= thresholds["light_descent"], "hazard"] = "light_descent"
+    frame.loc[grade_rounded <= thresholds["steep_descent"], "hazard"] = "steep_descent"
+    frame.loc[grade_rounded <= thresholds["ultra_steep_descent"], "hazard"] = "ultra_steep_descent"
+    frame.loc[grade_rounded >= thresholds["climb"], "hazard"] = "climb"
+    frame.loc[grade_rounded >= thresholds["steep_climb"], "hazard"] = "steep_climb"
+    frame.loc[on_turn & (grade_rounded <= thresholds["light_descent"]), "hazard"] = "turn_on_descent"
+    frame.loc[on_turn & (grade_rounded <= thresholds["steep_descent"]), "hazard"] = "turn_on_steep_descent"
 
     return frame
 
@@ -272,9 +281,17 @@ def detect_chunks(
     return frame
 
 
-def analyze_steps(df: pd.DataFrame, rolling_window: int = 3) -> pd.DataFrame:
+def analyze_steps(
+    df: pd.DataFrame,
+    rolling_window: int = 3,
+    short_segment_threshold_m: float = DEFAULT_HAZARD_SHORT_SEGMENT_M,
+) -> pd.DataFrame:
     """Compute step metrics and run hazard detection in one call."""
-    return detect_hazards(compute_step_metrics(df), rolling_window=rolling_window)
+    return detect_hazards(
+        compute_step_metrics(df),
+        rolling_window=rolling_window,
+        short_segment_threshold_m=short_segment_threshold_m,
+    )
 
 
 def analyze_chunks(
