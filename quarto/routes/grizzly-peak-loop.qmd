@@ -43,22 +43,22 @@ title: "Grizzly Peak Loop"
     </tr>
     <tr>
       <td>Climb</td>
-      <td>2.87</td>
+      <td>2.92</td>
       <td>21.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.56</td>
-      <td>11.0</td>
+      <td>1.61</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <td>Light Descent</td>
-      <td>1.55</td>
+      <td>1.49</td>
       <td>11.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>0.72</td>
+      <td>0.66</td>
       <td>5.0</td>
     </tr>
     <tr>
@@ -94,21 +94,27 @@ title: "Grizzly Peak Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,610</td>
-      <td>6.6</td>
-      <td>59 ± 25</td>
+      <td>1,601</td>
+      <td>6.5</td>
+      <td>58 ± 25</td>
     </tr>
     <tr>
       <td>Shattuck Avenue: climb (easy)</td>
       <td>203</td>
       <td>1.2</td>
-      <td>8 ± 3</td>
+      <td>8 ± 2</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (medium)</td>
-      <td>778</td>
-      <td>3.0</td>
-      <td>28 ± 12</td>
+      <td>Spruce Street: climb (hard)</td>
+      <td>291</td>
+      <td>0.8</td>
+      <td>10 ± 6</td>
+    </tr>
+    <tr>
+      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>479</td>
+      <td>2.1</td>
+      <td>17 ± 6</td>
     </tr>
     <tr>
       <td>Grizzly Peak Boulevard: climb (medium)</td>
@@ -133,15 +139,15 @@ title: "Grizzly Peak Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,610</td>
+      <td>1,601</td>
       <td>14.0</td>
-      <td>96 ± 35</td>
+      <td>95 ± 34</td>
     </tr>
     <tr>
       <td>Shattuck Avenue: climb (easy)</td>
       <td>203</td>
       <td>1.2</td>
-      <td>8 ± 3</td>
+      <td>8 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -150,10 +156,22 @@ title: "Grizzly Peak Loop"
       <td>2</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (medium)</td>
-      <td>778</td>
-      <td>3.0</td>
-      <td>28 ± 12</td>
+      <td>Spruce Street: climb (hard)</td>
+      <td>291</td>
+      <td>0.8</td>
+      <td>10 ± 6</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>479</td>
+      <td>2.1</td>
+      <td>17 ± 6</td>
     </tr>
     <tr>
       <td>flat or descent</td>

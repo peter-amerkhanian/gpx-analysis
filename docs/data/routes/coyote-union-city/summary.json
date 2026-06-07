@@ -1,0 +1,41 @@
+{
+  "route": {
+    "slug": "coyote-union-city",
+    "source": "gpx_data\\union_city_gravel.gpx",
+    "title": "Coyote Hills Loop",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1978,
+    "segment_count": 1977,
+    "distance_m": 40576.46,
+    "distance_mi": 25.21,
+    "elevation_gain_m": 167.3,
+    "elevation_gain_ft": 548.88,
+    "elevation_loss_m": 167.4,
+    "elevation_loss_ft": 549.21,
+    "max_elevation_m": 49.6,
+    "max_elevation_ft": 162.73,
+    "start": {
+      "lat": 37.59052,
+      "lon": -122.01756
+    },
+    "end": {
+      "lat": 37.59043,
+      "lon": -122.01745
+    },
+    "gravel_percent": 76.8,
+    "cycleway_percent": 2.3,
+    "road_quality_score": 36,
+    "start_bart_station": "Union City",
+    "end_bart_station": "Union City",
+    "bart_station": "Union City"
+  }
+}

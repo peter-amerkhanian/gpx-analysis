@@ -38,8 +38,8 @@ title: "Havey Canyon Loop (55% Gravel)"
   <tbody>
     <tr>
       <td>Flat</td>
-      <td>12.07</td>
-      <td>64.0</td>
+      <td>11.94</td>
+      <td>63.0</td>
     </tr>
     <tr>
       <td>Climb</td>
@@ -53,13 +53,13 @@ title: "Havey Canyon Loop (55% Gravel)"
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.20</td>
-      <td>6.0</td>
+      <td>1.26</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>0.98</td>
-      <td>5.0</td>
+      <td>1.04</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <td>Steep Descent</td>
@@ -94,27 +94,45 @@ title: "Havey Canyon Loop (55% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,141</td>
-      <td>4.2</td>
-      <td>40 ± 19</td>
+      <td>1,176</td>
+      <td>4.3</td>
+      <td>40 ± 20</td>
     </tr>
     <tr>
       <td>Park Avenue: climb (easy)</td>
       <td>84</td>
       <td>0.5</td>
+      <td>4 ± 1</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Parkway: climb (hard)</td>
+      <td>163</td>
+      <td>0.3</td>
+      <td>5 ± 3</td>
+    </tr>
+    <tr>
+      <td>Wildcat Creek Trail: climb (medium)</td>
+      <td>95</td>
+      <td>0.3</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Wildcat Creek Trail: climb (hard)</td>
-      <td>259</td>
-      <td>0.6</td>
-      <td>8 ± 5</td>
+      <td>Havey Canyon Trail: climb (hard)</td>
+      <td>143</td>
+      <td>0.4</td>
+      <td>5 ± 3</td>
+    </tr>
+    <tr>
+      <td>Havey Canyon Trail: climb (medium)</td>
+      <td>58</td>
+      <td>0.3</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>Havey Canyon Trail: climb (hard)</td>
-      <td>450</td>
-      <td>1.1</td>
-      <td>14 ± 8</td>
+      <td>240</td>
+      <td>0.4</td>
+      <td>6 ± 4</td>
     </tr>
     <tr>
       <td>Nimitz Way: climb (easy)</td>
@@ -127,6 +145,12 @@ title: "Havey Canyon Loop (55% Gravel)"
       <td>84</td>
       <td>0.5</td>
       <td>4 ± 1</td>
+    </tr>
+    <tr>
+      <td>Nimitz Way: climb (hard)</td>
+      <td>44</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>Wildcat Creek Trail: climb (easy)</td>
@@ -157,8 +181,8 @@ title: "Havey Canyon Loop (55% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,141</td>
-      <td>18.8</td>
+      <td>1,176</td>
+      <td>18.9</td>
       <td>122 ± 44</td>
     </tr>
     <tr>
@@ -171,25 +195,49 @@ title: "Havey Canyon Loop (55% Gravel)"
       <td>Park Avenue: climb (easy)</td>
       <td>84</td>
       <td>0.5</td>
-      <td>3 ± 1</td>
+      <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>Wildcat Creek Trail: climb (hard)</td>
-      <td>259</td>
-      <td>0.6</td>
-      <td>8 ± 5</td>
+      <td>Wildcat Canyon Parkway: climb (hard)</td>
+      <td>163</td>
+      <td>0.3</td>
+      <td>5 ± 3</td>
+    </tr>
+    <tr>
+      <td>Wildcat Creek Trail: climb (medium)</td>
+      <td>95</td>
+      <td>0.3</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
       <td>1.6</td>
-      <td>9</td>
+      <td>10</td>
     </tr>
     <tr>
       <td>Havey Canyon Trail: climb (hard)</td>
-      <td>450</td>
-      <td>1.1</td>
-      <td>14 ± 8</td>
+      <td>143</td>
+      <td>0.4</td>
+      <td>5 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Havey Canyon Trail: climb (medium)</td>
+      <td>58</td>
+      <td>0.3</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Havey Canyon Trail: climb (hard)</td>
+      <td>240</td>
+      <td>0.4</td>
+      <td>6 ± 4</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -218,8 +266,20 @@ title: "Havey Canyon Loop (55% Gravel)"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>6.2</td>
-      <td>36</td>
+      <td>1.8</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Nimitz Way: climb (hard)</td>
+      <td>44</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>4.3</td>
+      <td>23</td>
     </tr>
     <tr>
       <td>Wildcat Creek Trail: climb (easy)</td>
@@ -243,7 +303,7 @@ title: "Havey Canyon Loop (55% Gravel)"
       <td>flat or descent</td>
       <td></td>
       <td>4.3</td>
-      <td>24</td>
+      <td>25</td>
     </tr>
   </tbody>
 </table>

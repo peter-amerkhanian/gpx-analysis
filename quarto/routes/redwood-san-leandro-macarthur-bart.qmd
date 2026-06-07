@@ -1,5 +1,5 @@
 ---
-title: "Redwood Road, San Lorenzo to Temescal"
+title: "Redwood Road to Temescal"
 ---
 
 
@@ -46,7 +46,7 @@ title: "Redwood Road, San Lorenzo to Temescal"
     </tr>
     <tr>
       <td>Climb</td>
-      <td>4.45</td>
+      <td>4.40</td>
       <td>18.0</td>
     </tr>
     <tr>
@@ -61,7 +61,7 @@ title: "Redwood Road, San Lorenzo to Temescal"
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>1.29</td>
+      <td>1.34</td>
       <td>5.0</td>
     </tr>
     <tr>
@@ -97,38 +97,68 @@ title: "Redwood Road, San Lorenzo to Temescal"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,357</td>
-      <td>8.9</td>
-      <td>84 ± 37</td>
+      <td>2,201</td>
+      <td>7.6</td>
+      <td>77 ± 35</td>
     </tr>
     <tr>
-      <td>Lake Chabot Road: climb (medium)</td>
-      <td>277</td>
-      <td>0.9</td>
-      <td>9 ± 5</td>
+      <td>Estudillo Avenue: climb (medium)</td>
+      <td>38</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Lake Chabot Road: climb (hard)</td>
+      <td>138</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Lake Chabot Road: climb (hard)</td>
+      <td>55</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Walnut Road: climb (hard)</td>
+      <td>83</td>
+      <td>0.2</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>Walnut Road: climb (medium)</td>
-      <td>253</td>
-      <td>0.9</td>
-      <td>9 ± 4</td>
-    </tr>
-    <tr>
-      <td>Redwood Road: climb (medium)</td>
-      <td>709</td>
-      <td>2.3</td>
-      <td>24 ± 12</td>
-    </tr>
-    <tr>
-      <td>Redwood Road: climb (medium)</td>
-      <td>117</td>
-      <td>0.6</td>
+      <td>130</td>
+      <td>0.5</td>
       <td>5 ± 2</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
-      <td>69</td>
+      <td>43</td>
       <td>0.2</td>
+      <td>1 ± 0</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>110</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (medium)</td>
+      <td>556</td>
+      <td>1.8</td>
+      <td>19 ± 10</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>53</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>58</td>
+      <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
@@ -138,16 +168,34 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>1 ± 0</td>
     </tr>
     <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>71</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
       <td>Redwood Road: climb (easy)</td>
-      <td>83</td>
-      <td>0.3</td>
-      <td>3 ± 1</td>
+      <td>202</td>
+      <td>1.1</td>
+      <td>8 ± 3</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>67</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
-      <td>596</td>
-      <td>2.6</td>
-      <td>23 ± 9</td>
+      <td>324</td>
+      <td>1.2</td>
+      <td>12 ± 5</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>48</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>Leimert Boulevard: climb (medium)</td>
@@ -156,10 +204,10 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>La Salle Avenue: climb (medium)</td>
-      <td>68</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
+      <td>Saint James Drive: climb (hard)</td>
+      <td>40</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>Linda Avenue: climb (medium)</td>
@@ -184,9 +232,9 @@ title: "Redwood Road, San Lorenzo to Temescal"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,357</td>
-      <td>24.5</td>
-      <td>166 ± 61</td>
+      <td>2,201</td>
+      <td>24.2</td>
+      <td>167 ± 61</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -195,22 +243,46 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>6</td>
     </tr>
     <tr>
-      <td>Lake Chabot Road: climb (medium)</td>
-      <td>277</td>
-      <td>0.9</td>
-      <td>9 ± 5</td>
+      <td>Estudillo Avenue: climb (medium)</td>
+      <td>38</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Lake Chabot Road: climb (hard)</td>
+      <td>138</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>2.7</td>
-      <td>15</td>
+      <td>0.1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Lake Chabot Road: climb (hard)</td>
+      <td>55</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>2.9</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>Walnut Road: climb (hard)</td>
+      <td>83</td>
+      <td>0.2</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>Walnut Road: climb (medium)</td>
-      <td>253</td>
-      <td>0.9</td>
-      <td>9 ± 4</td>
+      <td>130</td>
+      <td>0.5</td>
+      <td>5 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -220,32 +292,44 @@ title: "Redwood Road, San Lorenzo to Temescal"
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
-      <td>709</td>
-      <td>2.3</td>
-      <td>24 ± 12</td>
+      <td>43</td>
+      <td>0.2</td>
+      <td>1 ± 0</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>110</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (medium)</td>
+      <td>556</td>
+      <td>1.8</td>
+      <td>19 ± 10</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.5</td>
+      <td>0.6</td>
       <td>3</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
-      <td>117</td>
-      <td>0.6</td>
-      <td>5 ± 2</td>
+      <td>Redwood Road: climb (hard)</td>
+      <td>53</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.5</td>
-      <td>2</td>
+      <td>0.9</td>
+      <td>5</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
-      <td>69</td>
-      <td>0.2</td>
+      <td>Redwood Road: climb (hard)</td>
+      <td>58</td>
+      <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
@@ -267,10 +351,28 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>4</td>
     </tr>
     <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>71</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
       <td>Redwood Road: climb (easy)</td>
-      <td>83</td>
-      <td>0.3</td>
-      <td>3 ± 1</td>
+      <td>202</td>
+      <td>1.1</td>
+      <td>8 ± 3</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>67</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -280,15 +382,27 @@ title: "Redwood Road, San Lorenzo to Temescal"
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
-      <td>596</td>
-      <td>2.6</td>
-      <td>23 ± 9</td>
+      <td>324</td>
+      <td>1.2</td>
+      <td>12 ± 5</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>1.9</td>
-      <td>10</td>
+      <td>0.1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>48</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>1.7</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>Leimert Boulevard: climb (medium)</td>
@@ -303,16 +417,16 @@ title: "Redwood Road, San Lorenzo to Temescal"
       <td>10</td>
     </tr>
     <tr>
-      <td>La Salle Avenue: climb (medium)</td>
-      <td>68</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
+      <td>Saint James Drive: climb (hard)</td>
+      <td>40</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>1.6</td>
-      <td>8</td>
+      <td>1.7</td>
+      <td>9</td>
     </tr>
     <tr>
       <td>Linda Avenue: climb (medium)</td>
@@ -351,8 +465,8 @@ title: "Redwood Road, San Lorenzo to Temescal"
   <tbody>
     <tr>
       <td>Good</td>
-      <td>13.3</td>
-      <td>54.0</td>
+      <td>13.2</td>
+      <td>53.9</td>
     </tr>
     <tr>
       <td>Very Good</td>
@@ -367,7 +481,7 @@ title: "Redwood Road, San Lorenzo to Temescal"
     <tr>
       <td>Excellent</td>
       <td>1.6</td>
-      <td>6.4</td>
+      <td>6.5</td>
     </tr>
     <tr>
       <td>Fair</td>

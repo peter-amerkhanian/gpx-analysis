@@ -1,0 +1,41 @@
+{
+  "route": {
+    "slug": "arlington-to-southpark",
+    "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
+    "title": "Arlington into Tilden",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1397,
+    "segment_count": 1396,
+    "distance_m": 32326.08,
+    "distance_mi": 20.09,
+    "elevation_gain_m": 1131.7,
+    "elevation_gain_ft": 3712.93,
+    "elevation_loss_m": 1099.1,
+    "elevation_loss_ft": 3605.97,
+    "max_elevation_m": 379.8,
+    "max_elevation_ft": 1246.06,
+    "start": {
+      "lat": 37.92525,
+      "lon": -122.31637
+    },
+    "end": {
+      "lat": 37.95169,
+      "lon": -122.32115
+    },
+    "gravel_percent": 44.6,
+    "cycleway_percent": 0.0,
+    "road_quality_score": 71,
+    "start_bart_station": "El Cerrito del Norte",
+    "end_bart_station": "El Cerrito del Norte",
+    "bart_station": "El Cerrito del Norte"
+  }
+}

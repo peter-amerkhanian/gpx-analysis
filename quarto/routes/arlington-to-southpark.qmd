@@ -1,0 +1,398 @@
+---
+title: "Arlington into Tilden (45% Gravel)"
+---
+
+
+
+```{=html}
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="20.09" data-elevation="3712.93">
+
+<div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/arlington-to-southpark/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>20.09</p>
+<p><span class="mobile-route-label">Elevation Gain</span><br>3712.93 ft</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">71%</span></p>
+</div>
+</article>
+```
+::: {.panel-tabset}
+
+## Hazards
+
+<iframe
+  src="../data/routes/arlington-to-southpark/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flat</td>
+      <td>8.86</td>
+      <td>44.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>2.94</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>2.86</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <td>Light Descent</td>
+      <td>2.54</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>2.28</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <td>Steep Descent</td>
+      <td>0.61</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+
+## Climb Chunks
+
+<iframe
+  src="../data/routes/arlington-to-southpark/chunk_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+::: {.panel-tabset}
+
+### Climbs Only
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>1,954</td>
+      <td>6.1</td>
+      <td>64 ± 35</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>78</td>
+      <td>0.2</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>93</td>
+      <td>0.2</td>
+      <td>3 ± 2</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (medium)</td>
+      <td>139</td>
+      <td>0.5</td>
+      <td>5 ± 3</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>372</td>
+      <td>0.8</td>
+      <td>12 ± 7</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (easy)</td>
+      <td>69</td>
+      <td>0.4</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Terrace Drive: climb (hard)</td>
+      <td>123</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Grizzly Peak Boulevard: climb (hard)</td>
+      <td>55</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (easy)</td>
+      <td>438</td>
+      <td>1.6</td>
+      <td>16 ± 8</td>
+    </tr>
+    <tr>
+      <td>Golf Course Trail: climb (easy)</td>
+      <td>252</td>
+      <td>0.9</td>
+      <td>8 ± 4</td>
+    </tr>
+    <tr>
+      <td>Quarry Trail: climb (easy)</td>
+      <td>179</td>
+      <td>0.7</td>
+      <td>7 ± 4</td>
+    </tr>
+    <tr>
+      <td>Lone Oak Drive: climb (hard)</td>
+      <td>94</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Park Avenue: climb (hard)</td>
+      <td>61</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+
+### With Rest Periods
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>1,954</td>
+      <td>20.1</td>
+      <td>153 ± 68</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>2.1</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>78</td>
+      <td>0.2</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>93</td>
+      <td>0.2</td>
+      <td>3 ± 2</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (medium)</td>
+      <td>139</td>
+      <td>0.5</td>
+      <td>5 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (hard)</td>
+      <td>372</td>
+      <td>0.8</td>
+      <td>12 ± 7</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.5</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Arlington Boulevard: climb (easy)</td>
+      <td>69</td>
+      <td>0.4</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Terrace Drive: climb (hard)</td>
+      <td>123</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>1.0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Grizzly Peak Boulevard: climb (hard)</td>
+      <td>55</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>1.3</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (easy)</td>
+      <td>438</td>
+      <td>1.6</td>
+      <td>16 ± 8</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Golf Course Trail: climb (easy)</td>
+      <td>252</td>
+      <td>0.9</td>
+      <td>8 ± 4</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Quarry Trail: climb (easy)</td>
+      <td>179</td>
+      <td>0.7</td>
+      <td>7 ± 4</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>2.0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Lone Oak Drive: climb (hard)</td>
+      <td>94</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>5.1</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>Park Avenue: climb (hard)</td>
+      <td>61</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+
+:::
+
+## Street Quality
+
+<iframe
+  src="../data/routes/arlington-to-southpark/road_quality_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
+
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>mtc_pci_info</th>
+      <th>Miles</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gravel</td>
+      <td>9.0</td>
+      <td>44.6</td>
+    </tr>
+    <tr>
+      <td>Good</td>
+      <td>2.9</td>
+      <td>14.6</td>
+    </tr>
+    <tr>
+      <td>Fair</td>
+      <td>2.7</td>
+      <td>13.2</td>
+    </tr>
+    <tr>
+      <td>Very Good</td>
+      <td>1.7</td>
+      <td>8.4</td>
+    </tr>
+    <tr>
+      <td>Poor</td>
+      <td>1.2</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <td>Excellent</td>
+      <td>0.7</td>
+      <td>3.3</td>
+    </tr>
+    <tr>
+      <td>At Risk</td>
+      <td>0.5</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <td>Unknown</td>
+      <td>1.5</td>
+      <td>7.5</td>
+    </tr>
+  </tbody>
+</table>
+
+:::

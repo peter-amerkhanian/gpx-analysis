@@ -1,7 +1,1 @@
-::: {.desktop-only}
-{{ desktop_table_html }}
-:::
-
-::: {.mobile-only}
 {{ mobile_cards_html }}
-:::

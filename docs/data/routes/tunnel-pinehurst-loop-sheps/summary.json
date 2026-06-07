@@ -33,7 +33,7 @@
     },
     "gravel_percent": 0.0,
     "cycleway_percent": 0.4,
-    "road_quality_score": 65,
+    "road_quality_score": 67,
     "start_bart_station": "MacArthur",
     "end_bart_station": "MacArthur",
     "bart_station": "MacArthur"

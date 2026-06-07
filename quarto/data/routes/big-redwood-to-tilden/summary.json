@@ -1,0 +1,41 @@
+{
+  "route": {
+    "slug": "big-redwood-to-tilden",
+    "source": "gpx_data\\redwood_big_gravel_ride.gpx",
+    "title": "Redwood Road to Tilden",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 2923,
+    "segment_count": 2922,
+    "distance_m": 62134.7,
+    "distance_mi": 38.61,
+    "elevation_gain_m": 1714.4,
+    "elevation_gain_ft": 5624.67,
+    "elevation_loss_m": 1708.8,
+    "elevation_loss_ft": 5606.3,
+    "max_elevation_m": 558.5,
+    "max_elevation_ft": 1832.35,
+    "start": {
+      "lat": 37.72169,
+      "lon": -122.16039
+    },
+    "end": {
+      "lat": 37.92515,
+      "lon": -122.3166
+    },
+    "gravel_percent": 24.0,
+    "cycleway_percent": 0.1,
+    "road_quality_score": 76,
+    "start_bart_station": "San Leandro",
+    "end_bart_station": "El Cerrito del Norte",
+    "bart_station": "San Leandro"
+  }
+}

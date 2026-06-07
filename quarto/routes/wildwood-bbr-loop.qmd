@@ -38,23 +38,23 @@ title: "Wildwood to BBR Loop"
   <tbody>
     <tr>
       <td>Flat</td>
-      <td>8.43</td>
-      <td>48.0</td>
+      <td>8.48</td>
+      <td>49.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>3.05</td>
-      <td>18.0</td>
+      <td>2.76</td>
+      <td>16.0</td>
     </tr>
     <tr>
       <td>Light Descent</td>
-      <td>2.50</td>
-      <td>14.0</td>
+      <td>2.56</td>
+      <td>15.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>1.56</td>
-      <td>9.0</td>
+      <td>1.75</td>
+      <td>10.0</td>
     </tr>
     <tr>
       <td>Descent</td>
@@ -94,9 +94,9 @@ title: "Wildwood to BBR Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,071</td>
-      <td>7.0</td>
-      <td>69 ± 34</td>
+      <td>1,976</td>
+      <td>6.4</td>
+      <td>66 ± 34</td>
     </tr>
     <tr>
       <td>40th Street: climb (easy)</td>
@@ -123,10 +123,28 @@ title: "Wildwood to BBR Loop"
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Butters Drive: climb (medium)</td>
-      <td>960</td>
-      <td>2.9</td>
-      <td>31 ± 17</td>
+      <td>Burdeck Drive: climb (medium)</td>
+      <td>120</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Burdeck Drive: climb (hard)</td>
+      <td>44</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
+    </tr>
+    <tr>
+      <td>Butters Drive: climb (hard)</td>
+      <td>280</td>
+      <td>0.6</td>
+      <td>8 ± 5</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>421</td>
+      <td>1.2</td>
+      <td>14 ± 8</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (easy)</td>
@@ -163,9 +181,9 @@ title: "Wildwood to BBR Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,071</td>
+      <td>1,976</td>
       <td>17.4</td>
-      <td>125 ± 50</td>
+      <td>125 ± 51</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -222,16 +240,46 @@ title: "Wildwood to BBR Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>Butters Drive: climb (medium)</td>
-      <td>960</td>
-      <td>2.9</td>
-      <td>31 ± 17</td>
+      <td>Burdeck Drive: climb (medium)</td>
+      <td>120</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Burdeck Drive: climb (hard)</td>
+      <td>44</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.5</td>
-      <td>3</td>
+      <td>0.1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Butters Drive: climb (hard)</td>
+      <td>280</td>
+      <td>0.6</td>
+      <td>8 ± 5</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>421</td>
+      <td>1.2</td>
+      <td>14 ± 8</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.7</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (easy)</td>

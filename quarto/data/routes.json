@@ -54,30 +54,30 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 12181.0,
-          "percent": 51.0,
-          "distance_mi": 7.57
+          "distance_m": 11905.0,
+          "percent": 50.0,
+          "distance_mi": 7.4
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 4342.0,
-          "percent": 18.0,
-          "distance_mi": 2.7
+          "distance_m": 4618.0,
+          "percent": 19.0,
+          "distance_mi": 2.87
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 3333.0,
-          "percent": 14.0,
-          "distance_mi": 2.07
+          "distance_m": 3233.0,
+          "percent": 13.0,
+          "distance_mi": 2.01
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 1981.0,
-          "percent": 8.0,
-          "distance_mi": 1.23
+          "distance_m": 2081.0,
+          "percent": 9.0,
+          "distance_mi": 1.29
         },
         {
           "hazard": "steep_climb",
@@ -156,37 +156,37 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 11391.0,
+          "distance_m": 11400.0,
           "percent": 51.0,
           "distance_mi": 7.08
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 4614.0,
+          "distance_m": 4705.0,
           "percent": 21.0,
-          "distance_mi": 2.87
+          "distance_mi": 2.92
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2503.0,
-          "percent": 11.0,
-          "distance_mi": 1.56
+          "distance_m": 2598.0,
+          "percent": 12.0,
+          "distance_mi": 1.61
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 2491.0,
+          "distance_m": 2396.0,
           "percent": 11.0,
-          "distance_mi": 1.55
+          "distance_mi": 1.49
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 1160.0,
+          "distance_m": 1061.0,
           "percent": 5.0,
-          "distance_mi": 0.72
+          "distance_mi": 0.66
         },
         {
           "hazard": "steep_descent",
@@ -258,37 +258,37 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 19420.0,
-          "percent": 64.0,
-          "distance_mi": 12.07
+          "distance_m": 19219.0,
+          "percent": 63.0,
+          "distance_mi": 11.94
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 3733.0,
+          "distance_m": 3735.0,
           "percent": 12.0,
           "distance_mi": 2.32
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 3153.0,
+          "distance_m": 3160.0,
           "percent": 10.0,
           "distance_mi": 1.96
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 1931.0,
-          "percent": 6.0,
-          "distance_mi": 1.2
+          "distance_m": 2022.0,
+          "percent": 7.0,
+          "distance_mi": 1.26
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 1578.0,
-          "percent": 5.0,
-          "distance_mi": 0.98
+          "distance_m": 1677.0,
+          "percent": 6.0,
+          "distance_mi": 1.04
         },
         {
           "hazard": "steep_descent",
@@ -360,23 +360,23 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 17634.0,
-          "percent": 61.0,
-          "distance_mi": 10.96
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3108.0,
-          "percent": 11.0,
-          "distance_mi": 1.93
+          "distance_m": 17524.0,
+          "percent": 60.0,
+          "distance_mi": 10.89
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 3043.0,
+          "distance_m": 3062.0,
+          "percent": 11.0,
+          "distance_mi": 1.9
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 3008.0,
           "percent": 10.0,
-          "distance_mi": 1.89
+          "distance_mi": 1.87
         },
         {
           "hazard": "steep_climb",
@@ -388,9 +388,9 @@
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2165.0,
-          "percent": 7.0,
-          "distance_mi": 1.35
+          "distance_m": 2357.0,
+          "percent": 8.0,
+          "distance_mi": 1.46
         },
         {
           "hazard": "steep_descent",
@@ -405,108 +405,6 @@
           "distance_m": 29042.0,
           "percent": 100.0,
           "distance_mi": 18.05
-        }
-      ]
-    },
-    {
-      "slug": "tunnel-pinehurst-loop",
-      "title": "Tunnel to Pinehurst Loop",
-      "title_html": "Tunnel to Pinehurst Loop",
-      "source": "gpx_data/tunnel_to_pinehurst.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1296,
-        "segment_count": 1295,
-        "distance_m": 36422.36,
-        "distance_mi": 22.63,
-        "elevation_gain_m": 1034.6,
-        "elevation_gain_ft": 3394.36,
-        "elevation_loss_m": 1034.4,
-        "elevation_loss_ft": 3393.7,
-        "max_elevation_m": 435.9,
-        "max_elevation_ft": 1430.12,
-        "start": {
-          "lat": 37.84388,
-          "lon": -122.25173
-        },
-        "end": {
-          "lat": 37.84338,
-          "lon": -122.25173
-        },
-        "gravel_percent": 0.0,
-        "cycleway_percent": 0.0,
-        "road_quality_score": 71,
-        "start_bart_station": "Rockridge",
-        "end_bart_station": "Rockridge",
-        "bart_station": "Rockridge"
-      },
-      "paths": {
-        "summary": "data/routes/tunnel-pinehurst-loop/summary.json",
-        "hazards": "data/routes/tunnel-pinehurst-loop/hazards.json",
-        "points": "data/routes/tunnel-pinehurst-loop/points.geojson",
-        "segments": "data/routes/tunnel-pinehurst-loop/segments.geojson",
-        "map": "data/routes/tunnel-pinehurst-loop/map.html",
-        "road_quality_map": "data/routes/tunnel-pinehurst-loop/road_quality_map.html",
-        "chunk_map": "data/routes/tunnel-pinehurst-loop/chunk_map.html",
-        "profile_svg": "data/routes/tunnel-pinehurst-loop/profile.svg",
-        "page": "routes/tunnel-pinehurst-loop.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 17130.0,
-          "percent": 47.0,
-          "distance_mi": 10.64
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 6494.0,
-          "percent": 18.0,
-          "distance_mi": 4.04
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 4197.0,
-          "percent": 12.0,
-          "distance_mi": 2.61
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 3867.0,
-          "percent": 11.0,
-          "distance_mi": 2.4
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 3865.0,
-          "percent": 11.0,
-          "distance_mi": 2.4
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 870.0,
-          "percent": 2.0,
-          "distance_mi": 0.54
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 36422.0,
-          "percent": 100.0,
-          "distance_mi": 22.63
         }
       ]
     },
@@ -564,23 +462,23 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 42050.0,
+          "distance_m": 41966.0,
           "percent": 88.0,
-          "distance_mi": 26.13
+          "distance_mi": 26.08
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 1829.0,
+          "distance_m": 1744.0,
           "percent": 4.0,
-          "distance_mi": 1.14
+          "distance_mi": 1.08
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 1563.0,
+          "distance_m": 1646.0,
           "percent": 3.0,
-          "distance_mi": 0.97
+          "distance_mi": 1.02
         },
         {
           "hazard": "steep_climb",
@@ -592,9 +490,9 @@
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 789.0,
+          "distance_m": 874.0,
           "percent": 2.0,
-          "distance_mi": 0.49
+          "distance_mi": 0.54
         },
         {
           "hazard": "steep_descent",
@@ -609,108 +507,6 @@
           "distance_m": 47735.0,
           "percent": 100.0,
           "distance_mi": 29.66
-        }
-      ]
-    },
-    {
-      "slug": "tunnel-pinehurst-loop-jm",
-      "title": "Tunnel to Pinehurst w/ Joaquin Miller Descent",
-      "title_html": "Tunnel to Pinehurst w/ Joaquin Miller Descent",
-      "source": "gpx_data/tunnel_to_pinehurst_joaquin_miller.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1446,
-        "segment_count": 1445,
-        "distance_m": 40380.7,
-        "distance_mi": 25.09,
-        "elevation_gain_m": 1043.7,
-        "elevation_gain_ft": 3424.21,
-        "elevation_loss_m": 1043.3,
-        "elevation_loss_ft": 3422.9,
-        "max_elevation_m": 435.3,
-        "max_elevation_ft": 1428.15,
-        "start": {
-          "lat": 37.82933,
-          "lon": -122.26592
-        },
-        "end": {
-          "lat": 37.82928,
-          "lon": -122.26556
-        },
-        "gravel_percent": 0.0,
-        "cycleway_percent": 0.1,
-        "road_quality_score": 70,
-        "start_bart_station": "MacArthur",
-        "end_bart_station": "MacArthur",
-        "bart_station": "MacArthur"
-      },
-      "paths": {
-        "summary": "data/routes/tunnel-pinehurst-loop-jm/summary.json",
-        "hazards": "data/routes/tunnel-pinehurst-loop-jm/hazards.json",
-        "points": "data/routes/tunnel-pinehurst-loop-jm/points.geojson",
-        "segments": "data/routes/tunnel-pinehurst-loop-jm/segments.geojson",
-        "map": "data/routes/tunnel-pinehurst-loop-jm/map.html",
-        "road_quality_map": "data/routes/tunnel-pinehurst-loop-jm/road_quality_map.html",
-        "chunk_map": "data/routes/tunnel-pinehurst-loop-jm/chunk_map.html",
-        "profile_svg": "data/routes/tunnel-pinehurst-loop-jm/profile.svg",
-        "page": "routes/tunnel-pinehurst-loop-jm.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 20550.0,
-          "percent": 51.0,
-          "distance_mi": 12.77
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 7067.0,
-          "percent": 18.0,
-          "distance_mi": 4.39
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 4926.0,
-          "percent": 12.0,
-          "distance_mi": 3.06
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 3615.0,
-          "percent": 9.0,
-          "distance_mi": 2.25
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 3438.0,
-          "percent": 9.0,
-          "distance_mi": 2.14
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 784.0,
-          "percent": 2.0,
-          "distance_mi": 0.49
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 40381.0,
-          "percent": 100.0,
-          "distance_mi": 25.09
         }
       ]
     },
@@ -748,7 +544,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 0.4,
-        "road_quality_score": 65,
+        "road_quality_score": 67,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur"
@@ -768,30 +564,30 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 24573.0,
+          "distance_m": 24581.0,
           "percent": 55.0,
           "distance_mi": 15.27
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 6909.0,
+          "distance_m": 6623.0,
           "percent": 15.0,
-          "distance_mi": 4.29
+          "distance_mi": 4.12
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 5154.0,
-          "percent": 11.0,
-          "distance_mi": 3.2
+          "distance_m": 5239.0,
+          "percent": 12.0,
+          "distance_mi": 3.26
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 3975.0,
+          "distance_m": 4167.0,
           "percent": 9.0,
-          "distance_mi": 2.47
+          "distance_mi": 2.59
         },
         {
           "hazard": "descent",
@@ -870,23 +666,23 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 10979.0,
-          "percent": 59.0,
-          "distance_mi": 6.82
+          "distance_m": 10791.0,
+          "percent": 58.0,
+          "distance_mi": 6.71
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 3316.0,
+          "distance_m": 3407.0,
           "percent": 18.0,
-          "distance_mi": 2.06
+          "distance_mi": 2.12
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 2480.0,
-          "percent": 13.0,
-          "distance_mi": 1.54
+          "distance_m": 2577.0,
+          "percent": 14.0,
+          "distance_mi": 1.6
         },
         {
           "hazard": "descent",
@@ -972,30 +768,30 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 13574.0,
-          "percent": 48.0,
-          "distance_mi": 8.43
+          "distance_m": 13648.0,
+          "percent": 49.0,
+          "distance_mi": 8.48
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 4907.0,
-          "percent": 18.0,
-          "distance_mi": 3.05
+          "distance_m": 4441.0,
+          "percent": 16.0,
+          "distance_mi": 2.76
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 4024.0,
-          "percent": 14.0,
-          "distance_mi": 2.5
+          "distance_m": 4120.0,
+          "percent": 15.0,
+          "distance_mi": 2.56
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 2517.0,
-          "percent": 9.0,
-          "distance_mi": 1.56
+          "distance_m": 2813.0,
+          "percent": 10.0,
+          "distance_mi": 1.75
         },
         {
           "hazard": "descent",
@@ -1017,108 +813,6 @@
           "distance_m": 28013.0,
           "percent": 100.0,
           "distance_mi": 17.41
-        }
-      ]
-    },
-    {
-      "slug": "tg-bbr-loop",
-      "title": "Trestle Glen to BBR Loop",
-      "title_html": "Trestle Glen to BBR Loop",
-      "source": "gpx_data/Trestle Glen to BBR Loop.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1328,
-        "segment_count": 1327,
-        "distance_m": 31983.92,
-        "distance_mi": 19.87,
-        "elevation_gain_m": 718.2,
-        "elevation_gain_ft": 2356.3,
-        "elevation_loss_m": 718.7,
-        "elevation_loss_ft": 2357.94,
-        "max_elevation_m": 446.3,
-        "max_elevation_ft": 1464.24,
-        "start": {
-          "lat": 37.809,
-          "lon": -122.26817
-        },
-        "end": {
-          "lat": 37.80888,
-          "lon": -122.26783
-        },
-        "gravel_percent": 0.2,
-        "cycleway_percent": 7.4,
-        "road_quality_score": 38,
-        "start_bart_station": "19th St/Oakland",
-        "end_bart_station": "19th St/Oakland",
-        "bart_station": "19th St/Oakland"
-      },
-      "paths": {
-        "summary": "data/routes/tg-bbr-loop/summary.json",
-        "hazards": "data/routes/tg-bbr-loop/hazards.json",
-        "points": "data/routes/tg-bbr-loop/points.geojson",
-        "segments": "data/routes/tg-bbr-loop/segments.geojson",
-        "map": "data/routes/tg-bbr-loop/map.html",
-        "road_quality_map": "data/routes/tg-bbr-loop/road_quality_map.html",
-        "chunk_map": "data/routes/tg-bbr-loop/chunk_map.html",
-        "profile_svg": "data/routes/tg-bbr-loop/profile.svg",
-        "page": "routes/tg-bbr-loop.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 18889.0,
-          "percent": 59.0,
-          "distance_mi": 11.74
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 3868.0,
-          "percent": 12.0,
-          "distance_mi": 2.4
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3695.0,
-          "percent": 12.0,
-          "distance_mi": 2.3
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 2444.0,
-          "percent": 8.0,
-          "distance_mi": 1.52
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 2441.0,
-          "percent": 8.0,
-          "distance_mi": 1.52
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 647.0,
-          "percent": 2.0,
-          "distance_mi": 0.4
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 31984.0,
-          "percent": 100.0,
-          "distance_mi": 19.87
         }
       ]
     },
@@ -1176,9 +870,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 12750.0,
+          "distance_m": 12661.0,
           "percent": 56.0,
-          "distance_mi": 7.92
+          "distance_mi": 7.87
         },
         {
           "hazard": "climb",
@@ -1190,9 +884,9 @@
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 2387.0,
-          "percent": 10.0,
-          "distance_mi": 1.48
+          "distance_m": 2476.0,
+          "percent": 11.0,
+          "distance_mi": 1.54
         },
         {
           "hazard": "descent",
@@ -1278,37 +972,37 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 35490.0,
+          "distance_m": 35394.0,
           "percent": 68.0,
-          "distance_mi": 22.05
+          "distance_mi": 21.99
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 5359.0,
-          "percent": 10.0,
-          "distance_mi": 3.33
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 5268.0,
+          "distance_m": 5263.0,
           "percent": 10.0,
           "distance_mi": 3.27
         },
         {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4986.0,
+          "percent": 10.0,
+          "distance_mi": 3.1
+        },
+        {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 3630.0,
+          "distance_m": 3921.0,
           "percent": 7.0,
-          "distance_mi": 2.26
+          "distance_mi": 2.44
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 2264.0,
-          "percent": 4.0,
-          "distance_mi": 1.41
+          "distance_m": 2447.0,
+          "percent": 5.0,
+          "distance_mi": 1.52
         },
         {
           "hazard": "steep_descent",
@@ -1327,9 +1021,315 @@
       ]
     },
     {
+      "slug": "arlington-to-southpark",
+      "title": "Arlington into Tilden (45% Gravel)",
+      "title_html": "Arlington into Tilden <span>(<span style=\"color: chocolate;\">45% Gravel</span>)</span>",
+      "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1397,
+        "segment_count": 1396,
+        "distance_m": 32326.08,
+        "distance_mi": 20.09,
+        "elevation_gain_m": 1131.7,
+        "elevation_gain_ft": 3712.93,
+        "elevation_loss_m": 1099.1,
+        "elevation_loss_ft": 3605.97,
+        "max_elevation_m": 379.8,
+        "max_elevation_ft": 1246.06,
+        "start": {
+          "lat": 37.92525,
+          "lon": -122.31637
+        },
+        "end": {
+          "lat": 37.95169,
+          "lon": -122.32115
+        },
+        "gravel_percent": 44.6,
+        "cycleway_percent": 0.0,
+        "road_quality_score": 71,
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
+        "bart_station": "El Cerrito del Norte"
+      },
+      "paths": {
+        "summary": "data/routes/arlington-to-southpark/summary.json",
+        "hazards": "data/routes/arlington-to-southpark/hazards.json",
+        "points": "data/routes/arlington-to-southpark/points.geojson",
+        "segments": "data/routes/arlington-to-southpark/segments.geojson",
+        "map": "data/routes/arlington-to-southpark/map.html",
+        "road_quality_map": "data/routes/arlington-to-southpark/road_quality_map.html",
+        "chunk_map": "data/routes/arlington-to-southpark/chunk_map.html",
+        "profile_svg": "data/routes/arlington-to-southpark/profile.svg",
+        "page": "routes/arlington-to-southpark.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 14257.0,
+          "percent": 44.0,
+          "distance_mi": 8.86
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 4738.0,
+          "percent": 15.0,
+          "distance_mi": 2.94
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 4600.0,
+          "percent": 14.0,
+          "distance_mi": 2.86
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4081.0,
+          "percent": 13.0,
+          "distance_mi": 2.54
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 3674.0,
+          "percent": 11.0,
+          "distance_mi": 2.28
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 976.0,
+          "percent": 3.0,
+          "distance_mi": 0.61
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 32326.0,
+          "percent": 100.0,
+          "distance_mi": 20.09
+        }
+      ]
+    },
+    {
+      "slug": "big-redwood-to-tilden",
+      "title": "Redwood Road to Tilden (24% Gravel)",
+      "title_html": "Redwood Road to Tilden <span>(<span style=\"color: chocolate;\">24% Gravel</span>)</span>",
+      "source": "gpx_data\\redwood_big_gravel_ride.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 2923,
+        "segment_count": 2922,
+        "distance_m": 62134.7,
+        "distance_mi": 38.61,
+        "elevation_gain_m": 1714.4,
+        "elevation_gain_ft": 5624.67,
+        "elevation_loss_m": 1708.8,
+        "elevation_loss_ft": 5606.3,
+        "max_elevation_m": 558.5,
+        "max_elevation_ft": 1832.35,
+        "start": {
+          "lat": 37.72169,
+          "lon": -122.16039
+        },
+        "end": {
+          "lat": 37.92515,
+          "lon": -122.3166
+        },
+        "gravel_percent": 24.0,
+        "cycleway_percent": 0.1,
+        "road_quality_score": 76,
+        "start_bart_station": "San Leandro",
+        "end_bart_station": "El Cerrito del Norte",
+        "bart_station": "San Leandro"
+      },
+      "paths": {
+        "summary": "data/routes/big-redwood-to-tilden/summary.json",
+        "hazards": "data/routes/big-redwood-to-tilden/hazards.json",
+        "points": "data/routes/big-redwood-to-tilden/points.geojson",
+        "segments": "data/routes/big-redwood-to-tilden/segments.geojson",
+        "map": "data/routes/big-redwood-to-tilden/map.html",
+        "road_quality_map": "data/routes/big-redwood-to-tilden/road_quality_map.html",
+        "chunk_map": "data/routes/big-redwood-to-tilden/chunk_map.html",
+        "profile_svg": "data/routes/big-redwood-to-tilden/profile.svg",
+        "page": "routes/big-redwood-to-tilden.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 33326.0,
+          "percent": 54.0,
+          "distance_mi": 20.71
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 9685.0,
+          "percent": 16.0,
+          "distance_mi": 6.02
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 6689.0,
+          "percent": 11.0,
+          "distance_mi": 4.16
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 5591.0,
+          "percent": 9.0,
+          "distance_mi": 3.47
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 5434.0,
+          "percent": 9.0,
+          "distance_mi": 3.38
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 1410.0,
+          "percent": 2.0,
+          "distance_mi": 0.88
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 62135.0,
+          "percent": 100.0,
+          "distance_mi": 38.61
+        }
+      ]
+    },
+    {
+      "slug": "coyote-union-city",
+      "title": "Coyote Hills Loop (77% Gravel)",
+      "title_html": "Coyote Hills Loop <span>(<span style=\"color: chocolate;\">77% Gravel</span>)</span>",
+      "source": "gpx_data\\union_city_gravel.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1978,
+        "segment_count": 1977,
+        "distance_m": 40576.46,
+        "distance_mi": 25.21,
+        "elevation_gain_m": 167.3,
+        "elevation_gain_ft": 548.88,
+        "elevation_loss_m": 167.4,
+        "elevation_loss_ft": 549.21,
+        "max_elevation_m": 49.6,
+        "max_elevation_ft": 162.73,
+        "start": {
+          "lat": 37.59052,
+          "lon": -122.01756
+        },
+        "end": {
+          "lat": 37.59043,
+          "lon": -122.01745
+        },
+        "gravel_percent": 76.8,
+        "cycleway_percent": 2.3,
+        "road_quality_score": 36,
+        "start_bart_station": "Union City",
+        "end_bart_station": "Union City",
+        "bart_station": "Union City"
+      },
+      "paths": {
+        "summary": "data/routes/coyote-union-city/summary.json",
+        "hazards": "data/routes/coyote-union-city/hazards.json",
+        "points": "data/routes/coyote-union-city/points.geojson",
+        "segments": "data/routes/coyote-union-city/segments.geojson",
+        "map": "data/routes/coyote-union-city/map.html",
+        "road_quality_map": "data/routes/coyote-union-city/road_quality_map.html",
+        "chunk_map": "data/routes/coyote-union-city/chunk_map.html",
+        "profile_svg": "data/routes/coyote-union-city/profile.svg",
+        "page": "routes/coyote-union-city.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 39318.0,
+          "percent": 97.0,
+          "distance_mi": 24.43
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 394.0,
+          "percent": 1.0,
+          "distance_mi": 0.24
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 302.0,
+          "percent": 1.0,
+          "distance_mi": 0.19
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 227.0,
+          "percent": 1.0,
+          "distance_mi": 0.14
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 223.0,
+          "percent": 1.0,
+          "distance_mi": 0.14
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 112.0,
+          "percent": 0.0,
+          "distance_mi": 0.07
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 40576.0,
+          "percent": 100.0,
+          "distance_mi": 25.21
+        }
+      ]
+    },
+    {
       "slug": "redwood-san-leandro-macarthur-bart",
-      "title": "Redwood Road, San Lorenzo to Temescal",
-      "title_html": "Redwood Road, San Lorenzo to Temescal",
+      "title": "Redwood Road to Temescal",
+      "title_html": "Redwood Road to Temescal",
       "source": "gpx_data/redwood_to_macarthur.gpx",
       "reverse": false,
       "links": {
@@ -1387,9 +1387,9 @@
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 7157.0,
+          "distance_m": 7077.0,
           "percent": 18.0,
-          "distance_mi": 4.45
+          "distance_mi": 4.4
         },
         {
           "hazard": "light_descent",
@@ -1408,9 +1408,9 @@
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 2075.0,
+          "distance_m": 2155.0,
           "percent": 5.0,
-          "distance_mi": 1.29
+          "distance_mi": 1.34
         },
         {
           "hazard": "steep_descent",

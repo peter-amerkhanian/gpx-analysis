@@ -139,6 +139,7 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
     ]
     cards: list[str] = [
         "```{=html}",
+        '<div class="route-browser">',
         '<div class="mobile-route-controls">',
         '<div class="mobile-route-control">',
         '<label for="mobile-route-sort">Sort routes</label>',
@@ -163,7 +164,7 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
         cards.extend(
             summary_card(route)
         )
-    cards.extend(["</div>", "```"])
+    cards.extend(["</div>", "</div>", "```"])
     return "\n".join(cards)
 
 

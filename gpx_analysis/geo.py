@@ -16,8 +16,8 @@ OSM_DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "osm"
 VITAL_SIGNS_DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "vital-signs"
 LOCAL_OSM_NODES_PATH = OSM_DATA_DIR / "sf_bay_area_all_public_nodes.parquet"
 LOCAL_OSM_EDGES_PATH = OSM_DATA_DIR / "sf_bay_area_all_public_edges.parquet"
-LOCAL_MTC_STREETS_PATH = VITAL_SIGNS_DATA_DIR / "Streets_and_Roads_20260512.geojson"
-LOCAL_MTC_STREETS_PARQUET_PATH = VITAL_SIGNS_DATA_DIR / "Streets_and_Roads_20260512.parquet"
+LOCAL_MTC_STREETS_PATH = VITAL_SIGNS_DATA_DIR / "Streets_and_Roads_2026.geojson"
+LOCAL_MTC_STREETS_PARQUET_PATH = VITAL_SIGNS_DATA_DIR / "Streets_and_Roads_2026.parquet"
 LOCAL_MTC_STREET_ATTRS = [
     "start_location",
     "end_location",
@@ -165,6 +165,11 @@ def _ensure_local_mtc_streets_parquet() -> Path:
             f"{LOCAL_MTC_STREETS_PATH}."
         )
 
+    print(
+        "Warning: local MTC streets parquet not found. "
+        f"Reading {LOCAL_MTC_STREETS_PATH} and doing a one-time conversion to "
+        f"{LOCAL_MTC_STREETS_PARQUET_PATH}."
+    )
     streets = gpd.read_file(LOCAL_MTC_STREETS_PATH)
     if streets.crs is None:
         streets = streets.set_crs(LOCAL_OSM_CRS)
@@ -529,6 +534,41 @@ def _select_best_mtc_match_per_segment(
     return scored.drop_duplicates(subset=["_segment_index"], keep="first")
 
 
+def _unknown_pci_label_from_osm_highway(value: object) -> str:
+    """Return a stable unknown PCI label even when OSM matching also failed."""
+    if isinstance(value, (list, tuple, set)):
+        value = ";".join(str(item) for item in value)
+    if value is None or pd.isna(value):
+        return "Roadway (Unknown)"
+    text = str(value).strip()
+    if not text or text == "<NA>":
+        return "Roadway (Unknown)"
+    return f"{text.title()} (Unknown)"
+
+
+def _finalize_mtc_unknowns(result: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Fill unmatched MTC PCI rows so maps and reports never have blank categories."""
+    result_gdf = result.copy()
+    if "mtc_pci_info" not in result_gdf.columns:
+        result_gdf["mtc_pci_info"] = pd.NA
+    if "pci_available" not in result_gdf.columns:
+        result_gdf["pci_available"] = "PCI Available"
+
+    if "road_type" in result_gdf.columns:
+        result_gdf.loc[result_gdf["road_type"] == "gravel", "mtc_pci_info"] = "Gravel"
+    if "osm_highway" in result_gdf.columns:
+        result_gdf.loc[result_gdf["osm_highway"] == "cycleway", "mtc_pci_info"] = "Cycleway"
+
+    missing_pci = result_gdf["mtc_pci_info"].isna()
+    result_gdf.loc[missing_pci, "pci_available"] = "PCI Unknown"
+    if "osm_highway" in result_gdf.columns:
+        unknown_labels = result_gdf.loc[missing_pci, "osm_highway"].apply(_unknown_pci_label_from_osm_highway)
+    else:
+        unknown_labels = pd.Series("Roadway (Unknown)", index=result_gdf.index[missing_pci], dtype="object")
+    result_gdf.loc[missing_pci, "mtc_pci_info"] = unknown_labels
+    return gpd.GeoDataFrame(result_gdf, geometry="geometry", crs=result.crs)
+
+
 def _restore_graph_indexes(
     nodes: gpd.GeoDataFrame,
     edges: gpd.GeoDataFrame,
@@ -667,14 +707,15 @@ def enrich_segments_with_osm_edges(
         raise ValueError("gdf_segments must have a CRS.")
 
     projected_segments = gdf_segments.to_crs(PROJECTED_CRS)
-    route_bbox_poly = _route_bbox_polygon(projected_segments, corridor_m)
+    candidate_corridor_m = max(corridor_m, match_max_distance_m)
+    route_bbox_poly = _route_bbox_polygon(projected_segments, candidate_corridor_m)
 
     # network_type is retained for API compatibility, but all local OSM work
     # uses the prebuilt all_public Bay Area graph.
     _ = (network_type, retain_all)
 
     edges = _load_local_osm_edges(route_bbox_poly)
-    edges = _filter_edges_to_segment_corridor(edges, projected_segments, corridor_m)
+    edges = _filter_edges_to_segment_corridor(edges, projected_segments, candidate_corridor_m)
     if edges.empty:
         return result
 
@@ -759,21 +800,22 @@ def enrich_segments_with_mtc_streets(
         if col not in result.columns:
             result[col] = pd.NA
     if result.empty:
-        return result
+        return _finalize_mtc_unknowns(result)
 
     if gdf_segments.crs is None:
         raise ValueError("gdf_segments must have a CRS.")
 
     projected_segments = gdf_segments.to_crs(PROJECTED_CRS)
-    route_bbox_poly = _route_bbox_polygon(projected_segments, corridor_m)
+    candidate_corridor_m = max(corridor_m, match_max_distance_m)
+    route_bbox_poly = _route_bbox_polygon(projected_segments, candidate_corridor_m)
     streets = _load_local_mtc_streets(route_bbox_poly)
-    streets = _filter_edges_to_segment_corridor(streets, projected_segments, corridor_m)
+    streets = _filter_edges_to_segment_corridor(streets, projected_segments, candidate_corridor_m)
     if streets.empty:
-        return result
+        return _finalize_mtc_unknowns(result)
 
     available_street_attrs = [col for col in street_attrs if col in streets.columns]
     if not available_street_attrs:
-        return result
+        return _finalize_mtc_unknowns(result)
 
     streets_subset = streets[available_street_attrs + ["geometry"]].copy()
     left = _build_match_windows(projected_segments, match_window_size)
@@ -788,7 +830,7 @@ def enrich_segments_with_mtc_streets(
         max_distance_m=match_max_distance_m,
     )
     if matched.empty:
-        return result
+        return _finalize_mtc_unknowns(result)
 
     matched = _select_best_mtc_match_per_segment(
         matched,
@@ -796,7 +838,7 @@ def enrich_segments_with_mtc_streets(
         match_preference_tolerance_m=match_preference_tolerance_m,
     )
     if matched.empty:
-        return result
+        return _finalize_mtc_unknowns(result)
 
     attrs = pd.DataFrame({"_segment_index": matched["_segment_index"]})
     for col in available_street_attrs:
@@ -817,13 +859,4 @@ def enrich_segments_with_mtc_streets(
     result = result.set_index("_segment_index")
     result.index.name = gdf_segments.index.name
     result_gdf = gpd.GeoDataFrame(result, geometry="geometry", crs=gdf_segments.crs)
-    if "road_type" in result_gdf.columns:
-        result_gdf.loc[(result_gdf["road_type"] == "gravel"), "mtc_pci_info"] = "Gravel"
-        result_gdf.loc[(result_gdf["osm_highway"] == "cycleway"), "mtc_pci_info"] = "Cycleway"
-        missing_pci = result_gdf["mtc_pci_info"].isna()
-        result_gdf["pci_available"] = "PCI Available"
-        result_gdf.loc[missing_pci, "pci_available"] = "PCI Unknown"
-        result_gdf.loc[result_gdf["mtc_pci_info"].isna(), "mtc_pci_info"] = (
-            result_gdf.loc[missing_pci, "osm_highway"].str.title() + " (Unknown)"
-        )
-    return result_gdf
+    return _finalize_mtc_unknowns(result_gdf)

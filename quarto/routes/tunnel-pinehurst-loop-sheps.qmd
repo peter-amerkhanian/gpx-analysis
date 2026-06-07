@@ -12,7 +12,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>27.96</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>3596.13 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#d9ef8b;">65%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#d9ef8b;">67%</span></p>
 </div>
 </article>
 ```
@@ -43,17 +43,17 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Climb</td>
-      <td>4.29</td>
+      <td>4.12</td>
       <td>15.0</td>
     </tr>
     <tr>
       <td>Light Descent</td>
-      <td>3.20</td>
-      <td>11.0</td>
+      <td>3.26</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>2.47</td>
+      <td>2.59</td>
       <td>9.0</td>
     </tr>
     <tr>
@@ -94,9 +94,9 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,967</td>
-      <td>10.1</td>
-      <td>101 ± 50</td>
+      <td>2,877</td>
+      <td>9.3</td>
+      <td>96 ± 50</td>
     </tr>
     <tr>
       <td>Broadway: climb (medium)</td>
@@ -106,25 +106,61 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Broadway: climb (hard)</td>
-      <td>162</td>
-      <td>0.3</td>
-      <td>5 ± 3</td>
+      <td>81</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>Broadway: climb (medium)</td>
-      <td>202</td>
-      <td>0.6</td>
-      <td>6 ± 3</td>
+      <td>81</td>
+      <td>0.2</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>Warren Freeway: climb (medium)</td>
+      <td>62</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Broadway: climb (hard)</td>
+      <td>132</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>Tunnel Road: climb (medium)</td>
-      <td>989</td>
-      <td>3.2</td>
-      <td>33 ± 18</td>
+      <td>258</td>
+      <td>1.0</td>
+      <td>10 ± 5</td>
+    </tr>
+    <tr>
+      <td>Tunnel Road: climb (hard)</td>
+      <td>373</td>
+      <td>0.9</td>
+      <td>11 ± 6</td>
+    </tr>
+    <tr>
+      <td>Broadway Terrace: climb (hard)</td>
+      <td>137</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>134</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (easy)</td>
       <td>38</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Pinehurst Road: climb (hard)</td>
+      <td>69</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
@@ -136,9 +172,15 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Redwood Road: climb (easy)</td>
-      <td>424</td>
-      <td>1.9</td>
-      <td>17 ± 7</td>
+      <td>300</td>
+      <td>1.6</td>
+      <td>13 ± 5</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>123</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
     </tr>
     <tr>
       <td>Redwood Road: climb (medium)</td>
@@ -147,10 +189,16 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>7 ± 3</td>
     </tr>
     <tr>
-      <td>Skyline Boulevard: climb (medium)</td>
-      <td>363</td>
-      <td>1.0</td>
-      <td>12 ± 6</td>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>176</td>
+      <td>0.5</td>
+      <td>6 ± 3</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>123</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
     </tr>
     <tr>
       <td>Mountain Boulevard: climb (medium)</td>
@@ -181,9 +229,9 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,967</td>
-      <td>28.0</td>
-      <td>197 ± 78</td>
+      <td>2,877</td>
+      <td>27.9</td>
+      <td>197 ± 79</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -205,9 +253,15 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Broadway: climb (hard)</td>
-      <td>162</td>
-      <td>0.3</td>
-      <td>5 ± 3</td>
+      <td>81</td>
+      <td>0.1</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Broadway: climb (medium)</td>
+      <td>81</td>
+      <td>0.2</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -216,10 +270,16 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>1</td>
     </tr>
     <tr>
-      <td>Broadway: climb (medium)</td>
-      <td>202</td>
-      <td>0.6</td>
-      <td>6 ± 3</td>
+      <td>Warren Freeway: climb (medium)</td>
+      <td>62</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Broadway: climb (hard)</td>
+      <td>132</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -229,15 +289,45 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Tunnel Road: climb (medium)</td>
-      <td>989</td>
-      <td>3.2</td>
-      <td>33 ± 18</td>
+      <td>258</td>
+      <td>1.0</td>
+      <td>10 ± 5</td>
+    </tr>
+    <tr>
+      <td>Tunnel Road: climb (hard)</td>
+      <td>373</td>
+      <td>0.9</td>
+      <td>11 ± 6</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.5</td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Broadway Terrace: climb (hard)</td>
+      <td>137</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>134</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.7</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>Skyline Boulevard: climb (easy)</td>
@@ -248,8 +338,20 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>5.0</td>
-      <td>27</td>
+      <td>1.1</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Pinehurst Road: climb (hard)</td>
+      <td>69</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>3.7</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>Pinehurst Road: climb (medium)</td>
@@ -265,9 +367,15 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Redwood Road: climb (easy)</td>
-      <td>424</td>
-      <td>1.9</td>
-      <td>17 ± 7</td>
+      <td>300</td>
+      <td>1.6</td>
+      <td>13 ± 5</td>
+    </tr>
+    <tr>
+      <td>Redwood Road: climb (hard)</td>
+      <td>123</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -288,16 +396,28 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>1</td>
     </tr>
     <tr>
-      <td>Skyline Boulevard: climb (medium)</td>
-      <td>363</td>
-      <td>1.0</td>
-      <td>12 ± 6</td>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>176</td>
+      <td>0.5</td>
+      <td>6 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>4.5</td>
-      <td>24</td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Skyline Boulevard: climb (hard)</td>
+      <td>123</td>
+      <td>0.3</td>
+      <td>4 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>4.6</td>
+      <td>25</td>
     </tr>
     <tr>
       <td>Mountain Boulevard: climb (medium)</td>
@@ -348,8 +468,8 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   <tbody>
     <tr>
       <td>Poor</td>
-      <td>7.7</td>
-      <td>27.4</td>
+      <td>7.6</td>
+      <td>27.2</td>
     </tr>
     <tr>
       <td>Very Good</td>
@@ -358,8 +478,8 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Good</td>
-      <td>6.0</td>
-      <td>21.6</td>
+      <td>6.2</td>
+      <td>22.3</td>
     </tr>
     <tr>
       <td>Fair</td>
@@ -368,13 +488,13 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Failed</td>
-      <td>1.1</td>
-      <td>3.9</td>
+      <td>1.0</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>Excellent</td>
-      <td>0.8</td>
-      <td>2.7</td>
+      <td>0.9</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>At Risk</td>
@@ -393,8 +513,8 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Unknown</td>
-      <td>0.4</td>
-      <td>1.6</td>
+      <td>0.2</td>
+      <td>0.9</td>
     </tr>
   </tbody>
 </table>

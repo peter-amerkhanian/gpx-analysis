@@ -2,9 +2,9 @@
   {
     "hazard": "flat",
     "hazard_label": "Flat",
-    "distance_m": 12750.0,
+    "distance_m": 12661.0,
     "percent": 56.0,
-    "distance_mi": 7.92
+    "distance_mi": 7.87
   },
   {
     "hazard": "climb",
@@ -16,9 +16,9 @@
   {
     "hazard": "light_descent",
     "hazard_label": "Light Descent",
-    "distance_m": 2387.0,
-    "percent": 10.0,
-    "distance_mi": 1.48
+    "distance_m": 2476.0,
+    "percent": 11.0,
+    "distance_mi": 1.54
   },
   {
     "hazard": "descent",

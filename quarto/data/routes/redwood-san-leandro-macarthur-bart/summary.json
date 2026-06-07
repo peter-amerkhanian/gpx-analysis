@@ -2,7 +2,7 @@
   "route": {
     "slug": "redwood-san-leandro-macarthur-bart",
     "source": "gpx_data/redwood_to_macarthur.gpx",
-    "title": "Redwood Road, San Lorenzo to Temescal",
+    "title": "Redwood Road to Temescal",
     "reverse": false,
     "links": {
       "strava_effort": "https://www.strava.com/activities/18234048917"

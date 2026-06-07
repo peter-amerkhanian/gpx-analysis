@@ -38,28 +38,28 @@ title: "Three Wild Bears (13% Gravel)"
   <tbody>
     <tr>
       <td>Flat</td>
-      <td>22.05</td>
+      <td>21.99</td>
       <td>68.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>3.33</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <td>Light Descent</td>
       <td>3.27</td>
       <td>10.0</td>
     </tr>
     <tr>
+      <td>Light Descent</td>
+      <td>3.10</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
       <td>Descent</td>
-      <td>2.26</td>
+      <td>2.44</td>
       <td>7.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>1.41</td>
-      <td>4.0</td>
+      <td>1.52</td>
+      <td>5.0</td>
     </tr>
     <tr>
       <td>Steep Descent</td>
@@ -94,9 +94,9 @@ title: "Three Wild Bears (13% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,369</td>
-      <td>8.4</td>
-      <td>77 ± 36</td>
+      <td>2,138</td>
+      <td>7.3</td>
+      <td>70 ± 34</td>
     </tr>
     <tr>
       <td>Castro Ranch Road: climb (easy)</td>
@@ -106,9 +106,9 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Castro Ranch Road: climb (hard)</td>
-      <td>143</td>
-      <td>0.3</td>
-      <td>4 ± 3</td>
+      <td>123</td>
+      <td>0.2</td>
+      <td>3 ± 3</td>
     </tr>
     <tr>
       <td>Alhambra Valley Road: climb (easy)</td>
@@ -136,21 +136,27 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Bear Creek Road: climb (hard)</td>
-      <td>191</td>
+      <td>185</td>
       <td>0.3</td>
       <td>5 ± 3</td>
     </tr>
     <tr>
-      <td>Bear Creek Road: climb (medium)</td>
-      <td>122</td>
-      <td>0.3</td>
-      <td>3 ± 1</td>
+      <td>Bear Creek Road: climb (hard)</td>
+      <td>64</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>Bear Creek Road: climb (medium)</td>
-      <td>315</td>
-      <td>1.2</td>
-      <td>10 ± 3</td>
+      <td>174</td>
+      <td>0.6</td>
+      <td>6 ± 2</td>
+    </tr>
+    <tr>
+      <td>Bear Creek Road: climb (hard)</td>
+      <td>59</td>
+      <td>0.1</td>
+      <td>2 ± 2</td>
     </tr>
     <tr>
       <td>Bear Creek Road: climb (medium)</td>
@@ -159,10 +165,34 @@ title: "Three Wild Bears (13% Gravel)"
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Wildcat Canyon Road: climb (medium)</td>
-      <td>649</td>
-      <td>2.0</td>
-      <td>20 ± 10</td>
+      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>314</td>
+      <td>0.7</td>
+      <td>9 ± 5</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>113</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (easy)</td>
+      <td>40</td>
+      <td>0.3</td>
+      <td>2 ± 0</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>79</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (easy)</td>
+      <td>50</td>
+      <td>0.3</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>Wildcat Canyon Road: climb (easy)</td>
@@ -184,9 +214,9 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Solano Avenue: climb (hard)</td>
-      <td>81</td>
-      <td>0.2</td>
-      <td>3 ± 2</td>
+      <td>71</td>
+      <td>0.1</td>
+      <td>2 ± 2</td>
     </tr>
   </tbody>
 </table>
@@ -205,9 +235,9 @@ title: "Three Wild Bears (13% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,369</td>
-      <td>32.5</td>
-      <td>203 ± 71</td>
+      <td>2,138</td>
+      <td>32.6</td>
+      <td>203 ± 72</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -223,15 +253,15 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Castro Ranch Road: climb (hard)</td>
-      <td>143</td>
-      <td>0.3</td>
-      <td>4 ± 3</td>
+      <td>123</td>
+      <td>0.2</td>
+      <td>3 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>3.4</td>
-      <td>18</td>
+      <td>3.6</td>
+      <td>19</td>
     </tr>
     <tr>
       <td>Alhambra Valley Road: climb (easy)</td>
@@ -277,21 +307,21 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Bear Creek Road: climb (hard)</td>
-      <td>191</td>
+      <td>185</td>
       <td>0.3</td>
       <td>5 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.5</td>
-      <td>3</td>
+      <td>0.7</td>
+      <td>5</td>
     </tr>
     <tr>
-      <td>Bear Creek Road: climb (medium)</td>
-      <td>122</td>
-      <td>0.3</td>
-      <td>3 ± 1</td>
+      <td>Bear Creek Road: climb (hard)</td>
+      <td>64</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -301,15 +331,21 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Bear Creek Road: climb (medium)</td>
-      <td>315</td>
-      <td>1.2</td>
-      <td>10 ± 3</td>
+      <td>174</td>
+      <td>0.6</td>
+      <td>6 ± 2</td>
+    </tr>
+    <tr>
+      <td>Bear Creek Road: climb (hard)</td>
+      <td>59</td>
+      <td>0.1</td>
+      <td>2 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.3</td>
-      <td>1</td>
+      <td>0.8</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>Bear Creek Road: climb (medium)</td>
@@ -320,14 +356,44 @@ title: "Three Wild Bears (13% Gravel)"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>2.0</td>
+      <td>2.1</td>
       <td>10</td>
     </tr>
     <tr>
-      <td>Wildcat Canyon Road: climb (medium)</td>
-      <td>649</td>
-      <td>2.0</td>
-      <td>20 ± 10</td>
+      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>314</td>
+      <td>0.7</td>
+      <td>9 ± 5</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>113</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (easy)</td>
+      <td>40</td>
+      <td>0.3</td>
+      <td>2 ± 0</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>79</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
+    </tr>
+    <tr>
+      <td>Wildcat Canyon Road: climb (easy)</td>
+      <td>50</td>
+      <td>0.3</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -373,9 +439,9 @@ title: "Three Wild Bears (13% Gravel)"
     </tr>
     <tr>
       <td>Solano Avenue: climb (hard)</td>
-      <td>81</td>
-      <td>0.2</td>
-      <td>3 ± 2</td>
+      <td>71</td>
+      <td>0.1</td>
+      <td>2 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -419,7 +485,7 @@ title: "Three Wild Bears (13% Gravel)"
     <tr>
       <td>Good</td>
       <td>5.2</td>
-      <td>16.0</td>
+      <td>16.1</td>
     </tr>
     <tr>
       <td>Gravel</td>
@@ -434,7 +500,7 @@ title: "Three Wild Bears (13% Gravel)"
     <tr>
       <td>Poor</td>
       <td>1.0</td>
-      <td>3.1</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <td>At Risk</td>

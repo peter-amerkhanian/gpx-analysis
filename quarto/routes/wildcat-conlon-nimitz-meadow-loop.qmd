@@ -38,17 +38,17 @@ title: "Conlon Trail Loop (59% Gravel)"
   <tbody>
     <tr>
       <td>Flat</td>
-      <td>10.96</td>
-      <td>61.0</td>
-    </tr>
-    <tr>
-      <td>Light Descent</td>
-      <td>1.93</td>
-      <td>11.0</td>
+      <td>10.89</td>
+      <td>60.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>1.89</td>
+      <td>1.90</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <td>Light Descent</td>
+      <td>1.87</td>
       <td>10.0</td>
     </tr>
     <tr>
@@ -58,8 +58,8 @@ title: "Conlon Trail Loop (59% Gravel)"
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.35</td>
-      <td>7.0</td>
+      <td>1.46</td>
+      <td>8.0</td>
     </tr>
     <tr>
       <td>Steep Descent</td>
@@ -94,21 +94,27 @@ title: "Conlon Trail Loop (59% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,500</td>
-      <td>4.6</td>
-      <td>48 ± 26</td>
+      <td>1,480</td>
+      <td>4.2</td>
+      <td>47 ± 26</td>
     </tr>
     <tr>
       <td>McBryde Avenue: climb (easy)</td>
       <td>88</td>
       <td>0.5</td>
-      <td>3 ± 1</td>
+      <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>Wildcat Creek Trail: climb (hard)</td>
-      <td>266</td>
-      <td>0.6</td>
-      <td>8 ± 5</td>
+      <td>Wildcat Canyon Parkway: climb (hard)</td>
+      <td>182</td>
+      <td>0.4</td>
+      <td>6 ± 3</td>
+    </tr>
+    <tr>
+      <td>Belgum Trail: climb (medium)</td>
+      <td>84</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>Wildcat Creek Trail: climb (easy)</td>
@@ -118,9 +124,15 @@ title: "Conlon Trail Loop (59% Gravel)"
     </tr>
     <tr>
       <td>Conlon Trail: climb (hard)</td>
-      <td>802</td>
-      <td>1.8</td>
-      <td>24 ± 16</td>
+      <td>767</td>
+      <td>1.5</td>
+      <td>23 ± 15</td>
+    </tr>
+    <tr>
+      <td>Conlon Trail: climb (medium)</td>
+      <td>34</td>
+      <td>0.2</td>
+      <td>1 ± 0</td>
     </tr>
     <tr>
       <td>Nimitz Way: climb (easy)</td>
@@ -129,10 +141,10 @@ title: "Conlon Trail Loop (59% Gravel)"
       <td>5 ± 2</td>
     </tr>
     <tr>
-      <td>Nimitz Way: climb (easy)</td>
-      <td>60</td>
-      <td>0.4</td>
-      <td>2 ± 1</td>
+      <td>Nimitz Way: climb (hard)</td>
+      <td>41</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>Wildcat Creek Trail: climb (medium)</td>
@@ -157,8 +169,8 @@ title: "Conlon Trail Loop (59% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,500</td>
-      <td>18.0</td>
+      <td>1,480</td>
+      <td>17.8</td>
       <td>122 ± 48</td>
     </tr>
     <tr>
@@ -171,13 +183,19 @@ title: "Conlon Trail Loop (59% Gravel)"
       <td>McBryde Avenue: climb (easy)</td>
       <td>88</td>
       <td>0.5</td>
-      <td>3 ± 1</td>
+      <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>Wildcat Creek Trail: climb (hard)</td>
-      <td>266</td>
-      <td>0.6</td>
-      <td>8 ± 5</td>
+      <td>Wildcat Canyon Parkway: climb (hard)</td>
+      <td>182</td>
+      <td>0.4</td>
+      <td>6 ± 3</td>
+    </tr>
+    <tr>
+      <td>Belgum Trail: climb (medium)</td>
+      <td>84</td>
+      <td>0.2</td>
+      <td>2 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -199,15 +217,21 @@ title: "Conlon Trail Loop (59% Gravel)"
     </tr>
     <tr>
       <td>Conlon Trail: climb (hard)</td>
-      <td>802</td>
-      <td>1.8</td>
-      <td>24 ± 16</td>
+      <td>767</td>
+      <td>1.5</td>
+      <td>23 ± 15</td>
+    </tr>
+    <tr>
+      <td>Conlon Trail: climb (medium)</td>
+      <td>34</td>
+      <td>0.2</td>
+      <td>1 ± 0</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
       <td>1.4</td>
-      <td>8</td>
+      <td>7</td>
     </tr>
     <tr>
       <td>Nimitz Way: climb (easy)</td>
@@ -218,20 +242,20 @@ title: "Conlon Trail Loop (59% Gravel)"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.1</td>
+      <td>0.2</td>
       <td>1</td>
     </tr>
     <tr>
-      <td>Nimitz Way: climb (easy)</td>
-      <td>60</td>
-      <td>0.4</td>
-      <td>2 ± 1</td>
+      <td>Nimitz Way: climb (hard)</td>
+      <td>41</td>
+      <td>0.1</td>
+      <td>1 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>5.8</td>
-      <td>32</td>
+      <td>5.9</td>
+      <td>33</td>
     </tr>
     <tr>
       <td>Wildcat Creek Trail: climb (medium)</td>

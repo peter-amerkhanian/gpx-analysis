@@ -905,6 +905,10 @@ def make_road_quality_map(
         gdf_segments,
         hazard_profile=hazard_profile,
     )
+    if "mtc_pci_info" not in frame.columns:
+        frame["mtc_pci_info"] = "Roadway (Unknown)"
+    else:
+        frame["mtc_pci_info"] = frame["mtc_pci_info"].fillna("Roadway (Unknown)")
     frame["road_quality_simple"] = frame["mtc_pci_info"].apply(simplify_road_quality_category)
     frame["Road Quality"] = frame["road_quality_simple"]
     colors = resolve_simplified_road_quality_profile(frame)

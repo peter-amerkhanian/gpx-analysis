@@ -2,23 +2,23 @@
   {
     "hazard": "flat",
     "hazard_label": "Flat",
-    "distance_m": 10979.0,
-    "percent": 59.0,
-    "distance_mi": 6.82
+    "distance_m": 10791.0,
+    "percent": 58.0,
+    "distance_mi": 6.71
   },
   {
     "hazard": "climb",
     "hazard_label": "Climb",
-    "distance_m": 3316.0,
+    "distance_m": 3407.0,
     "percent": 18.0,
-    "distance_mi": 2.06
+    "distance_mi": 2.12
   },
   {
     "hazard": "light_descent",
     "hazard_label": "Light Descent",
-    "distance_m": 2480.0,
-    "percent": 13.0,
-    "distance_mi": 1.54
+    "distance_m": 2577.0,
+    "percent": 14.0,
+    "distance_mi": 1.6
   },
   {
     "hazard": "descent",

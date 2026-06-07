@@ -9,9 +9,9 @@
   {
     "hazard": "climb",
     "hazard_label": "Climb",
-    "distance_m": 7157.0,
+    "distance_m": 7077.0,
     "percent": 18.0,
-    "distance_mi": 4.45
+    "distance_mi": 4.4
   },
   {
     "hazard": "light_descent",
@@ -30,9 +30,9 @@
   {
     "hazard": "steep_climb",
     "hazard_label": "Steep Climb",
-    "distance_m": 2075.0,
+    "distance_m": 2155.0,
     "percent": 5.0,
-    "distance_mi": 1.29
+    "distance_mi": 1.34
   },
   {
     "hazard": "steep_descent",

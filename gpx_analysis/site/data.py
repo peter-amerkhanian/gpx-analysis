@@ -34,6 +34,8 @@ from ..geo import add_bart_station
 GRAVEL_TITLE_THRESHOLD_PERCENT = 10.0
 CYCLEWAY_TITLE_THRESHOLD_PERCENT = 20.0
 PROFILE_HIGHLIGHT_THRESHOLD_PERCENT = 10.0
+PROFILE_FIXED_YLIM_MAX_ELEVATION_FT = 250.0
+PROFILE_FIXED_YLIM_FT = (0.0, 500.0)
 GRAVEL_HIGHLIGHT_COLOR = "chocolate"
 CYCLEWAY_HIGHLIGHT_COLOR = "forestgreen"
 
@@ -159,6 +161,13 @@ def write_text(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def _route_elevation_ylim(elevation: pd.Series) -> tuple[float, float] | None:
+    max_elevation_ft = pd.to_numeric(elevation, errors="coerce").max()
+    if pd.notna(max_elevation_ft) and max_elevation_ft < PROFILE_FIXED_YLIM_MAX_ELEVATION_FT:
+        return PROFILE_FIXED_YLIM_FT
+    return None
+
+
 def route_elevation_svg(segments: gpd.GeoDataFrame, debug=False) -> str:
     elevation = pd.to_numeric(segments.get("elevation_f"), errors="coerce")
     if elevation is None or elevation.notna().sum() < 2:
@@ -222,6 +231,9 @@ def route_elevation_svg(segments: gpd.GeoDataFrame, debug=False) -> str:
         linestyle=":",
         alpha=0.7,
     )
+    profile_ylim = _route_elevation_ylim(elevation)
+    if profile_ylim is not None:
+        ax.set_ylim(profile_ylim)
     ax.set_axis_off()
     if debug:
         return ax

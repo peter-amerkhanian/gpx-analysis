@@ -84,6 +84,20 @@ uv run python download_bay_area_osm.py
 
 That script downloads the configured Alameda and Contra Costa county network with OSMnx, writes GeoParquet node/edge files, and also creates tiled parquet shards so route-scoped reads stay fast.
 
+## MTC Vital Signs Prerequisite
+
+Road quality enrichment also depends on a local MTC Vital Signs streets file under `data/vital-signs/`.
+
+Download the GeoJSON manually from:
+
+`https://data.bayareametro.gov/dataset/Vital-Signs-Street-Pavement-Condition-Streets-and-/s7d2-ex4k/about_data`
+
+Then place it at:
+
+`data/vital-signs/Streets_and_Roads_2026.geojson`
+
+If the source download has a different filename, rename it to match that exact path. The first time MTC street enrichment runs, the project will automatically convert that GeoJSON into `data/vital-signs/Streets_and_Roads_2026.parquet` for faster subsequent reads.
+
 ## Build Commands
 
 Regenerate all route data and Quarto source:
