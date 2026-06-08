@@ -13,6 +13,47 @@ window.addEventListener("load", function () {
     elev_desc: (a, b) => Number(b.dataset.elevation) - Number(a.dataset.elevation),
   };
 
+  function setSharedMinHeight(elements) {
+    elements.forEach((element) => {
+      element.style.minHeight = "";
+    });
+    const maxHeight = Math.max(
+      0,
+      ...elements.map((element) => element.getBoundingClientRect().height),
+    );
+    elements.forEach((element) => {
+      element.style.minHeight = `${maxHeight}px`;
+    });
+  }
+
+  function equalizeCardTextHeights() {
+    const cards = Array.from(grid.querySelectorAll(".mobile-route-card"));
+    const cardStates = cards.map((card) => ({
+      display: card.style.display,
+      visibility: card.style.visibility,
+    }));
+    cards.forEach((card) => {
+      card.style.display = "";
+      card.style.visibility = "hidden";
+    });
+
+    setSharedMinHeight(
+      cards
+        .map((card) => card.querySelector(".mobile-route-title"))
+        .filter(Boolean),
+    );
+    setSharedMinHeight(
+      cards
+        .map((card) => card.querySelector(".mobile-route-metrics p:first-child"))
+        .filter(Boolean),
+    );
+
+    cards.forEach((card, index) => {
+      card.style.display = cardStates[index].display;
+      card.style.visibility = cardStates[index].visibility;
+    });
+  }
+
   function applyMobileControls() {
     const cards = Array.from(grid.querySelectorAll(".mobile-route-card"));
     const bart = bartSelect.value;
@@ -27,4 +68,9 @@ window.addEventListener("load", function () {
 
   sortSelect.addEventListener("change", applyMobileControls);
   bartSelect.addEventListener("change", applyMobileControls);
+  window.addEventListener("resize", function () {
+    equalizeCardTextHeights();
+    applyMobileControls();
+  });
+  equalizeCardTextHeights();
 });
