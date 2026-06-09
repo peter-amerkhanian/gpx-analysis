@@ -36,6 +36,8 @@
     "road_quality_score": 85,
     "start_bart_station": "San Leandro",
     "end_bart_station": "MacArthur",
-    "bart_station": "San Leandro"
+    "bart_station": "San Leandro",
+    "estimated_time_min": 167.0,
+    "estimated_time_display": "2:47"
   }
 }

@@ -33,6 +33,8 @@ website:
         text: Wildwood to BBR Loop
       - href: routes/tunnel-to-claremont-loop.qmd
         text: Tunnel to Claremont Loop
+      - href: routes/san-pedro-loop.qmd
+        text: San Pedro Loop
       - href: routes/three-bears-gravel-loop.qmd
         text: Three Wild Bears
       - href: routes/arlington-to-southpark.qmd

@@ -36,6 +36,8 @@
     "road_quality_score": 51,
     "start_bart_station": "MacArthur",
     "end_bart_station": "MacArthur",
-    "bart_station": "MacArthur"
+    "bart_station": "MacArthur",
+    "estimated_time_min": 125.0,
+    "estimated_time_display": "2:05"
   }
 }

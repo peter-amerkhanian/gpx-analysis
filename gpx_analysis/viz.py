@@ -950,6 +950,116 @@ def make_road_quality_map(
     return m
 
 
+def _combine_linestrings(geometries: pd.Series) -> LineString:
+    """Combine ordered segment geometries into one continuous route section."""
+    coords: list[tuple[float, float]] = []
+    for geometry in geometries:
+        if geometry is None or geometry.is_empty:
+            continue
+        line_geometries = getattr(geometry, "geoms", [geometry])
+        for line in line_geometries:
+            if not hasattr(line, "coords"):
+                continue
+            for coord in line.coords:
+                point = (coord[0], coord[1])
+                if coords and coords[-1] == point:
+                    continue
+                coords.append(point)
+
+    if len(coords) < 2:
+        return LineString()
+    return LineString(coords)
+
+
+def _numbered_chunk_section_label(route_part: str, road_name: str, climb_number: int | None) -> str:
+    if route_part == "flat or descent":
+        return route_part
+    label = f"{road_name}: {route_part}"
+    if climb_number is None:
+        return label
+    return f"{climb_number}. {label}"
+
+
+def _safe_float(value: object, default: float = 0.0) -> float:
+    numeric = pd.to_numeric(value, errors="coerce")
+    if pd.isna(numeric):
+        return default
+    return float(numeric)
+
+
+def _format_percent(value: object) -> str:
+    numeric = pd.to_numeric(value, errors="coerce")
+    if pd.isna(numeric):
+        return ""
+    return f"{float(numeric) * 100:.2f}%"
+
+
+def _chunk_section_map_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Return one map feature per contiguous chunk section."""
+    if "time" in frame.columns and frame["time"].notna().any():
+        frame = frame.sort_values("time", kind="stable")
+    elif "step" in frame.columns:
+        frame = frame.sort_values("step", kind="stable")
+    elif "end_i" in frame.columns:
+        frame = frame.sort_values("end_i", kind="stable")
+    else:
+        frame = frame.sort_index(kind="stable")
+
+    if "section_id" not in frame.columns:
+        frame["section_id"] = frame["chunk_state"].ne(frame["chunk_state"].shift()).cumsum()
+    if "section_distance_mi" not in frame.columns:
+        frame["section_distance_mi"] = pd.to_numeric(
+            frame.get("step_dist_f"),
+            errors="coerce",
+        ).fillna(0).groupby(frame["section_id"]).transform("sum") / 5280.0
+    if "section_climb_gain_ft" not in frame.columns:
+        frame["section_climb_gain_ft"] = pd.to_numeric(
+            frame.get("step_elevation_f"),
+            errors="coerce",
+        ).clip(lower=0).fillna(0).groupby(frame["section_id"]).transform("sum")
+    if "section_road_name" not in frame.columns:
+        frame["section_road_name"] = frame.get("osm_name", pd.Series(index=frame.index)).fillna("Unknown Road")
+    if "section_label" not in frame.columns:
+        section_states = frame.groupby("section_id")["chunk_state"].first()
+        climb_numbers = {
+            section_id: number
+            for number, section_id in enumerate(
+                section_states[section_states != "flat or descent"].index,
+                start=1,
+            )
+        }
+        frame["section_label"] = frame.apply(
+            lambda row: _numbered_chunk_section_label(
+                row["chunk_state"],
+                row["section_road_name"],
+                climb_numbers.get(row["section_id"]),
+            ),
+            axis=1,
+        )
+
+    rows: list[dict[str, object]] = []
+    for _, group in frame.groupby("section_id", sort=False):
+        first = group.iloc[0]
+        route_part = first["chunk_state"]
+        climb_gain = _safe_float(first["section_climb_gain_ft"])
+        distance_mi = _safe_float(first["section_distance_mi"])
+        is_climb = route_part != "flat or descent"
+        rows.append({
+            "section_id": first["section_id"],
+            "chunk_state": route_part,
+            "Section": first["section_label"],
+            "Distance (mi)": round(distance_mi, 1),
+            "Climb (ft)": f"{climb_gain:,.0f}" if is_climb else "",
+            "Average Grade": _format_percent(first.get("chunk_avg_grade")) if is_climb else "",
+            "Median Grade": _format_percent(first.get("chunk_median_grade")) if is_climb else "",
+            "Section Time (min)": first.get("section_time_min", ""),
+            "_display_color": CHUNK_STATE_COLORS.get(route_part, "#8a8a8a"),
+            "geometry": _combine_linestrings(group.geometry),
+        })
+
+    return gpd.GeoDataFrame(rows, geometry="geometry", crs=frame.crs)
+
+
 def make_chunk_map(
     gdf_segments: gpd.GeoDataFrame,
     popup_cols: list[str] | None = None,
@@ -980,36 +1090,27 @@ def make_chunk_map(
     if "section_time_min" in frame.columns:
         frame["Section Time (min)"] = frame["section_time_min"].fillna("")
     frame["_display_color"] = frame["chunk_state"].map(CHUNK_STATE_COLORS).fillna("#8a8a8a")
+    section_frame = _chunk_section_map_frame(frame)
 
     if tooltip_fields is None:
         tooltip_fields = [
-            "chunk_state",
-            "Road Name",
-            "Chunk Distance (ft)",
-            "Chunk Avg Grade",
-            "Grade",
+            "Section",
+            "Distance (mi)",
+            "Climb (ft)",
+            "Average Grade",
+            "Median Grade",
         ]
     if popup_cols is None:
-        popup_cols = ["chunk_state"]
-        if "Section Road Name" in frame.columns:
-            popup_cols.extend([
-                "Section Road Name",
-                "Section Distance (mi)",
-                "Section Time (min)",
-            ])
-        else:
-            popup_cols.extend([
-                "Road Name",
-                "Chunk Distance (ft)",
-            ])
-        popup_cols.extend([
-            "Chunk Avg Grade",
-            "Candidate Chunk Distance (ft)",
-            "Grade",
-            "More Details",
-        ])
+        popup_cols = [
+            "Section",
+            "Distance (mi)",
+            "Climb (ft)",
+            "Average Grade",
+            "Median Grade",
+            "Section Time (min)",
+        ]
 
-    m = frame.explore(
+    m = section_frame.explore(
         column="chunk_state",
         tooltip=tooltip_fields,
         popup=popup_cols,

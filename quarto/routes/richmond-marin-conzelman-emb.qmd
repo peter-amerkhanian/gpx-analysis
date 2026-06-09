@@ -5,14 +5,16 @@ title: "Richmond to EMB (43% Cycleway)"
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86">
+<article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86" data-time="170" data-has-gravel="false">
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/richmond-marin-conzelman-emb/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>Richmond</p>
 <p><span class="mobile-route-label">Miles</span><br>29.66</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1466.86 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#fc8d59;">22%</span></p>
+<p><span class="mobile-route-label">Time</span><br>~2:50</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.07 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fc8d59;">22%</span></p>
 </div>
 </article>
 ```
@@ -27,6 +29,7 @@ title: "Richmond to EMB (43% Cycleway)"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -68,8 +71,9 @@ title: "Richmond to EMB (43% Cycleway)"
     </tr>
   </tbody>
 </table>
+```
 
-## Climb Chunks
+## Climbs
 
 <iframe
   src="../data/routes/richmond-marin-conzelman-emb/chunk_map.html"
@@ -78,10 +82,9 @@ title: "Richmond to EMB (43% Cycleway)"
   allowfullscreen
 ></iframe>
 
-::: {.panel-tabset}
-
 ### Climbs Only
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -99,64 +102,66 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>32 ± 16</td>
     </tr>
     <tr>
-      <td>John T. Knox Freeway: climb (easy)</td>
+      <td>1. John T. Knox Freeway: climb (easy)</td>
       <td>85</td>
       <td>0.5</td>
       <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>John T. Knox Freeway: climb (medium)</td>
+      <td>2. John T. Knox Freeway: climb (medium)</td>
       <td>73</td>
       <td>0.3</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Unknown Road: climb (easy)</td>
+      <td>3. Unknown Road: climb (easy)</td>
       <td>48</td>
       <td>0.4</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Meadowsweet Drive: climb (easy)</td>
+      <td>4. Meadowsweet Drive: climb (easy)</td>
       <td>211</td>
       <td>0.9</td>
       <td>8 ± 4</td>
     </tr>
     <tr>
-      <td>2nd Street: climb (hard)</td>
+      <td>5. 2nd Street: climb (hard)</td>
       <td>135</td>
       <td>0.4</td>
       <td>3 ± 2</td>
     </tr>
     <tr>
-      <td>Alexander Avenue: climb (easy)</td>
+      <td>6. Alexander Avenue: climb (easy)</td>
       <td>24</td>
       <td>0.2</td>
       <td>1 ± 0</td>
     </tr>
     <tr>
-      <td>Golden Gate Bridge: climb (hard)</td>
+      <td>7. Golden Gate Bridge: climb (hard)</td>
       <td>226</td>
       <td>0.6</td>
       <td>7 ± 4</td>
     </tr>
     <tr>
-      <td>Unknown Road: climb (medium)</td>
+      <td>8. Unknown Road: climb (medium)</td>
       <td>70</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Van Ness Avenue: climb (hard)</td>
+      <td>9. Van Ness Avenue: climb (hard)</td>
       <td>55</td>
       <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
   </tbody>
 </table>
+```
 
 ### With Rest Periods
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -180,7 +185,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>13</td>
     </tr>
     <tr>
-      <td>John T. Knox Freeway: climb (easy)</td>
+      <td>1. John T. Knox Freeway: climb (easy)</td>
       <td>85</td>
       <td>0.5</td>
       <td>4 ± 1</td>
@@ -192,7 +197,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>28</td>
     </tr>
     <tr>
-      <td>John T. Knox Freeway: climb (medium)</td>
+      <td>2. John T. Knox Freeway: climb (medium)</td>
       <td>73</td>
       <td>0.3</td>
       <td>3 ± 1</td>
@@ -204,7 +209,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>7</td>
     </tr>
     <tr>
-      <td>Unknown Road: climb (easy)</td>
+      <td>3. Unknown Road: climb (easy)</td>
       <td>48</td>
       <td>0.4</td>
       <td>2 ± 1</td>
@@ -216,7 +221,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>13</td>
     </tr>
     <tr>
-      <td>Meadowsweet Drive: climb (easy)</td>
+      <td>4. Meadowsweet Drive: climb (easy)</td>
       <td>211</td>
       <td>0.9</td>
       <td>8 ± 4</td>
@@ -228,13 +233,13 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>33</td>
     </tr>
     <tr>
-      <td>2nd Street: climb (hard)</td>
+      <td>5. 2nd Street: climb (hard)</td>
       <td>135</td>
       <td>0.4</td>
       <td>3 ± 2</td>
     </tr>
     <tr>
-      <td>Alexander Avenue: climb (easy)</td>
+      <td>6. Alexander Avenue: climb (easy)</td>
       <td>24</td>
       <td>0.2</td>
       <td>1 ± 0</td>
@@ -246,7 +251,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>7</td>
     </tr>
     <tr>
-      <td>Golden Gate Bridge: climb (hard)</td>
+      <td>7. Golden Gate Bridge: climb (hard)</td>
       <td>226</td>
       <td>0.6</td>
       <td>7 ± 4</td>
@@ -258,7 +263,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>24</td>
     </tr>
     <tr>
-      <td>Unknown Road: climb (medium)</td>
+      <td>8. Unknown Road: climb (medium)</td>
       <td>70</td>
       <td>0.2</td>
       <td>2 ± 1</td>
@@ -270,7 +275,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>2</td>
     </tr>
     <tr>
-      <td>Van Ness Avenue: climb (hard)</td>
+      <td>9. Van Ness Avenue: climb (hard)</td>
       <td>55</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -283,8 +288,7 @@ title: "Richmond to EMB (43% Cycleway)"
     </tr>
   </tbody>
 </table>
-
-:::
+```
 
 ## Street Quality
 
@@ -295,6 +299,7 @@ title: "Richmond to EMB (43% Cycleway)"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -356,5 +361,6 @@ title: "Richmond to EMB (43% Cycleway)"
     </tr>
   </tbody>
 </table>
+```
 
 :::

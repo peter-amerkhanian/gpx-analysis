@@ -33,11 +33,14 @@ def _middle_non_empty_value(values: pd.Series, fallback: str = "Unknown Road") -
     return filtered[len(filtered) // 2]
 
 
-def _chunk_section_label(route_part: str, road_name: str) -> str:
+def _chunk_section_label(route_part: str, road_name: str, climb_number: int | None = None) -> str:
     """Return a single display label for a chunk section."""
     if route_part == "flat or descent":
         return route_part
-    return f"{road_name}: {route_part}"
+    label = f"{road_name}: {route_part}"
+    if climb_number is None:
+        return label
+    return f"{climb_number}. {label}"
 
 
 def _resolve_timing_hazard_frame(df: pd.DataFrame) -> pd.DataFrame:
@@ -84,6 +87,17 @@ def _resolve_chunk_section_frame(
         .rename(columns={"chunk_state": "route_part"})
     )
     summary["distance_mi"] = summary["distance_ft"] / 5280.0
+    is_climb = summary["route_part"] != "flat or descent"
+    summary["climb_number"] = pd.NA
+    summary.loc[is_climb, "climb_number"] = range(1, int(is_climb.sum()) + 1)
+    summary["section"] = summary.apply(
+        lambda row: _chunk_section_label(
+            row["route_part"],
+            row["road_name"],
+            int(row["climb_number"]) if pd.notna(row["climb_number"]) else None,
+        ),
+        axis=1,
+    )
 
     if timing_basis == "hazard":
         speed_lookup = DEFAULT_HAZARD_SPEED_RANGES_MPH.copy()
@@ -162,11 +176,15 @@ def attach_chunk_section_details(
     annotated = summary[[
         "section_id",
         "route_part",
+        "section",
+        "climb_gain_ft",
         "road_name",
         "distance_mi",
         "time (min)",
     ]].rename(
         columns={
+            "section": "section_label",
+            "climb_gain_ft": "section_climb_gain_ft",
             "road_name": "section_road_name",
             "distance_mi": "section_distance_mi",
             "time (min)": "section_time_min",
@@ -293,16 +311,12 @@ def summarize_chunk_sections(
     if not include_rest_periods:
         summary = summary[summary["route_part"] != "flat or descent"].copy()
     sections = summary[[
+        "section",
         "route_part",
-        "road_name",
         "climb_gain_ft",
         "distance_mi",
         "time (min)",
     ]].copy()
-    sections["section"] = sections.apply(
-        lambda row: _chunk_section_label(row["route_part"], row["road_name"]),
-        axis=1,
-    )
     sections["climb_gain_ft"] = sections.apply(
         lambda row: row["climb_gain_ft"] if row["route_part"] != "flat or descent" else pd.NA,
         axis=1,

@@ -280,6 +280,24 @@ def compute_route_summary(points: pd.DataFrame, segments: gpd.GeoDataFrame) -> d
     }
 
 
+def format_duration_hhmm(minutes: float) -> str:
+    """Return a duration like 1:30, preserving a leading zero hour for short rides."""
+    total_minutes = max(0, int(round(minutes)))
+    hours, remaining_minutes = divmod(total_minutes, 60)
+    return f"{hours}:{remaining_minutes:02d}"
+
+
+def total_estimated_time_minutes(chunk_sections_summary: pd.DataFrame) -> float:
+    total_rows = chunk_sections_summary[chunk_sections_summary["Section"].eq("TOTAL")]
+    if total_rows.empty:
+        return 0.0
+
+    total_time = str(total_rows.iloc[0]["Time (Min)"]).strip()
+    if not total_time:
+        return 0.0
+    return float(total_time.split()[0])
+
+
 def route_display_title(
     base_title: str,
     gravel_percent: float,
@@ -378,6 +396,9 @@ def build_route(
     road_quality_summary = aggregate_by_road_quality(segments).reset_index()
     chunk_sections_summary = summarize_chunk_sections(segments)
     climb_only_sections_summary = summarize_chunk_sections(segments, include_rest_periods=False)
+    estimated_time_min = total_estimated_time_minutes(chunk_sections_summary)
+    summary["estimated_time_min"] = round(estimated_time_min, 0)
+    summary["estimated_time_display"] = format_duration_hhmm(estimated_time_min)
 
     write_json(
         route_dir / "summary.json",

@@ -48,6 +48,10 @@ routes:
     title: Tunnel to Claremont Loop
     source: gpx_data/Tunnel to Claremont Loop.gpx
 
+  - slug: san-pedro-loop
+    title: San Pedro Loop
+    source: gpx_data/Point_San_Pedro_Loop.gpx
+
   - slug: three-bears-gravel-loop
     title: Three Wild Bears
     source: gpx_data/three_bears_with_gravel.gpx

@@ -36,6 +36,8 @@
     "road_quality_score": 71,
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
-    "bart_station": "El Cerrito del Norte"
+    "bart_station": "El Cerrito del Norte",
+    "estimated_time_min": 153.0,
+    "estimated_time_display": "2:33"
   }
 }

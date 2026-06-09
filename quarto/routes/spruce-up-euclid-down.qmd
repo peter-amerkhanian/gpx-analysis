@@ -5,14 +5,16 @@ title: "Spruce up, Euclid Down"
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1246.39">
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1246.39" data-time="78" data-has-gravel="false">
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/spruce-up-euclid-down/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>11.59</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1246.39 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#91cf60;">83%</span></p>
+<p><span class="mobile-route-label">Time</span><br>~1:18</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.07 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">83%</span></p>
 </div>
 </article>
 ```
@@ -27,6 +29,7 @@ title: "Spruce up, Euclid Down"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -68,8 +71,9 @@ title: "Spruce up, Euclid Down"
     </tr>
   </tbody>
 </table>
+```
 
-## Climb Chunks
+## Climbs
 
 <iframe
   src="../data/routes/spruce-up-euclid-down/chunk_map.html"
@@ -78,10 +82,9 @@ title: "Spruce up, Euclid Down"
   allowfullscreen
 ></iframe>
 
-::: {.panel-tabset}
-
 ### Climbs Only
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -99,46 +102,48 @@ title: "Spruce up, Euclid Down"
       <td>30 ± 14</td>
     </tr>
     <tr>
-      <td>Gilman Street: climb (easy)</td>
+      <td>1. Gilman Street: climb (easy)</td>
       <td>32</td>
       <td>0.3</td>
       <td>2 ± 0</td>
     </tr>
     <tr>
-      <td>Monterey Avenue: climb (medium)</td>
+      <td>2. Monterey Avenue: climb (medium)</td>
       <td>194</td>
       <td>0.8</td>
       <td>8 ± 3</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (hard)</td>
+      <td>3. Spruce Street: climb (hard)</td>
       <td>291</td>
       <td>0.8</td>
       <td>10 ± 6</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (medium)</td>
+      <td>4. Spruce Street: climb (medium)</td>
       <td>85</td>
       <td>0.4</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (hard)</td>
+      <td>5. Spruce Street: climb (hard)</td>
       <td>54</td>
       <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>6. Wildcat Canyon Road: climb (hard)</td>
       <td>188</td>
       <td>0.5</td>
       <td>6 ± 3</td>
     </tr>
   </tbody>
 </table>
+```
 
 ### With Rest Periods
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -162,7 +167,7 @@ title: "Spruce up, Euclid Down"
       <td>1</td>
     </tr>
     <tr>
-      <td>Gilman Street: climb (easy)</td>
+      <td>1. Gilman Street: climb (easy)</td>
       <td>32</td>
       <td>0.3</td>
       <td>2 ± 0</td>
@@ -174,25 +179,25 @@ title: "Spruce up, Euclid Down"
       <td>1</td>
     </tr>
     <tr>
-      <td>Monterey Avenue: climb (medium)</td>
+      <td>2. Monterey Avenue: climb (medium)</td>
       <td>194</td>
       <td>0.8</td>
       <td>8 ± 3</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (hard)</td>
+      <td>3. Spruce Street: climb (hard)</td>
       <td>291</td>
       <td>0.8</td>
       <td>10 ± 6</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (medium)</td>
+      <td>4. Spruce Street: climb (medium)</td>
       <td>85</td>
       <td>0.4</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (hard)</td>
+      <td>5. Spruce Street: climb (hard)</td>
       <td>54</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -204,7 +209,7 @@ title: "Spruce up, Euclid Down"
       <td>14</td>
     </tr>
     <tr>
-      <td>Wildcat Canyon Road: climb (hard)</td>
+      <td>6. Wildcat Canyon Road: climb (hard)</td>
       <td>188</td>
       <td>0.5</td>
       <td>6 ± 3</td>
@@ -217,8 +222,7 @@ title: "Spruce up, Euclid Down"
     </tr>
   </tbody>
 </table>
-
-:::
+```
 
 ## Street Quality
 
@@ -229,6 +233,7 @@ title: "Spruce up, Euclid Down"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -285,5 +290,6 @@ title: "Spruce up, Euclid Down"
     </tr>
   </tbody>
 </table>
+```
 
 :::

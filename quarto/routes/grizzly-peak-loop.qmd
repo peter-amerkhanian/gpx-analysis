@@ -5,14 +5,16 @@ title: "Grizzly Peak Loop"
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70">
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70" data-time="95" data-has-gravel="false">
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/grizzly-peak-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
 <p><span class="mobile-route-label">Miles</span><br>13.91</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>1747.7 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">85%</span></p>
+<p><span class="mobile-route-label">Time</span><br>~1:35</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.14 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">85%</span></p>
 </div>
 </article>
 ```
@@ -27,6 +29,7 @@ title: "Grizzly Peak Loop"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -68,8 +71,9 @@ title: "Grizzly Peak Loop"
     </tr>
   </tbody>
 </table>
+```
 
-## Climb Chunks
+## Climbs
 
 <iframe
   src="../data/routes/grizzly-peak-loop/chunk_map.html"
@@ -78,10 +82,9 @@ title: "Grizzly Peak Loop"
   allowfullscreen
 ></iframe>
 
-::: {.panel-tabset}
-
 ### Climbs Only
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -99,34 +102,36 @@ title: "Grizzly Peak Loop"
       <td>58 ± 25</td>
     </tr>
     <tr>
-      <td>Shattuck Avenue: climb (easy)</td>
+      <td>1. Shattuck Avenue: climb (easy)</td>
       <td>203</td>
       <td>1.2</td>
       <td>8 ± 2</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (hard)</td>
+      <td>2. Spruce Street: climb (hard)</td>
       <td>291</td>
       <td>0.8</td>
       <td>10 ± 6</td>
     </tr>
     <tr>
-      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>3. Grizzly Peak Boulevard: climb (medium)</td>
       <td>479</td>
       <td>2.1</td>
       <td>17 ± 6</td>
     </tr>
     <tr>
-      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>4. Grizzly Peak Boulevard: climb (medium)</td>
       <td>629</td>
       <td>2.4</td>
       <td>23 ± 10</td>
     </tr>
   </tbody>
 </table>
+```
 
 ### With Rest Periods
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -144,7 +149,7 @@ title: "Grizzly Peak Loop"
       <td>95 ± 34</td>
     </tr>
     <tr>
-      <td>Shattuck Avenue: climb (easy)</td>
+      <td>1. Shattuck Avenue: climb (easy)</td>
       <td>203</td>
       <td>1.2</td>
       <td>8 ± 2</td>
@@ -156,7 +161,7 @@ title: "Grizzly Peak Loop"
       <td>2</td>
     </tr>
     <tr>
-      <td>Spruce Street: climb (hard)</td>
+      <td>2. Spruce Street: climb (hard)</td>
       <td>291</td>
       <td>0.8</td>
       <td>10 ± 6</td>
@@ -168,7 +173,7 @@ title: "Grizzly Peak Loop"
       <td>0</td>
     </tr>
     <tr>
-      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>3. Grizzly Peak Boulevard: climb (medium)</td>
       <td>479</td>
       <td>2.1</td>
       <td>17 ± 6</td>
@@ -180,7 +185,7 @@ title: "Grizzly Peak Loop"
       <td>1</td>
     </tr>
     <tr>
-      <td>Grizzly Peak Boulevard: climb (medium)</td>
+      <td>4. Grizzly Peak Boulevard: climb (medium)</td>
       <td>629</td>
       <td>2.4</td>
       <td>23 ± 10</td>
@@ -193,8 +198,7 @@ title: "Grizzly Peak Loop"
     </tr>
   </tbody>
 </table>
-
-:::
+```
 
 ## Street Quality
 
@@ -205,6 +209,7 @@ title: "Grizzly Peak Loop"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -261,5 +266,6 @@ title: "Grizzly Peak Loop"
     </tr>
   </tbody>
 </table>
+```
 
 :::

@@ -37,7 +37,9 @@
         "road_quality_score": 83,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte"
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 106.0,
+        "estimated_time_display": "1:46"
       },
       "paths": {
         "summary": "data/routes/arlington-gravel-loop/summary.json",
@@ -139,7 +141,9 @@
         "road_quality_score": 85,
         "start_bart_station": "North Berkeley",
         "end_bart_station": "North Berkeley",
-        "bart_station": "North Berkeley"
+        "bart_station": "North Berkeley",
+        "estimated_time_min": 95.0,
+        "estimated_time_display": "1:35"
       },
       "paths": {
         "summary": "data/routes/grizzly-peak-loop/summary.json",
@@ -241,7 +245,9 @@
         "road_quality_score": 31,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte"
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 122.0,
+        "estimated_time_display": "2:02"
       },
       "paths": {
         "summary": "data/routes/wildcat-havey-nimitz-meadow-loop/summary.json",
@@ -343,7 +349,9 @@
         "road_quality_score": 35,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte"
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 122.0,
+        "estimated_time_display": "2:02"
       },
       "paths": {
         "summary": "data/routes/wildcat-conlon-nimitz-meadow-loop/summary.json",
@@ -445,7 +453,9 @@
         "road_quality_score": 22,
         "start_bart_station": "Richmond",
         "end_bart_station": "Embarcadero",
-        "bart_station": "Richmond"
+        "bart_station": "Richmond",
+        "estimated_time_min": 170.0,
+        "estimated_time_display": "2:50"
       },
       "paths": {
         "summary": "data/routes/richmond-marin-conzelman-emb/summary.json",
@@ -547,7 +557,9 @@
         "road_quality_score": 67,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
-        "bart_station": "MacArthur"
+        "bart_station": "MacArthur",
+        "estimated_time_min": 197.0,
+        "estimated_time_display": "3:17"
       },
       "paths": {
         "summary": "data/routes/tunnel-pinehurst-loop-sheps/summary.json",
@@ -649,7 +661,9 @@
         "road_quality_score": 83,
         "start_bart_station": "North Berkeley",
         "end_bart_station": "Ashby",
-        "bart_station": "North Berkeley"
+        "bart_station": "North Berkeley",
+        "estimated_time_min": 78.0,
+        "estimated_time_display": "1:18"
       },
       "paths": {
         "summary": "data/routes/spruce-up-euclid-down/summary.json",
@@ -751,7 +765,9 @@
         "road_quality_score": 51,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
-        "bart_station": "MacArthur"
+        "bart_station": "MacArthur",
+        "estimated_time_min": 125.0,
+        "estimated_time_display": "2:05"
       },
       "paths": {
         "summary": "data/routes/wildwood-bbr-loop/summary.json",
@@ -853,7 +869,9 @@
         "road_quality_score": 55,
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
-        "bart_station": "MacArthur"
+        "bart_station": "MacArthur",
+        "estimated_time_min": 98.0,
+        "estimated_time_display": "1:38"
       },
       "paths": {
         "summary": "data/routes/tunnel-to-claremont-loop/summary.json",
@@ -919,6 +937,110 @@
       ]
     },
     {
+      "slug": "san-pedro-loop",
+      "title": "San Pedro Loop (39% Cycleway)",
+      "title_html": "San Pedro Loop <span>(<span style=\"color: forestgreen;\">39% Cycleway</span>)</span>",
+      "source": "gpx_data/Point_San_Pedro_Loop.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 2949,
+        "segment_count": 2948,
+        "distance_m": 57426.15,
+        "distance_mi": 35.68,
+        "elevation_gain_m": 482.9,
+        "elevation_gain_ft": 1584.32,
+        "elevation_loss_m": 484.4,
+        "elevation_loss_ft": 1589.24,
+        "max_elevation_m": 62.7,
+        "max_elevation_ft": 205.71,
+        "start": {
+          "lat": 37.93683,
+          "lon": -122.35426
+        },
+        "end": {
+          "lat": 37.9361,
+          "lon": -122.35522
+        },
+        "gravel_percent": 1.3,
+        "cycleway_percent": 39.4,
+        "road_quality_score": 32,
+        "start_bart_station": "Richmond",
+        "end_bart_station": "Richmond",
+        "bart_station": "Richmond",
+        "estimated_time_min": 201.0,
+        "estimated_time_display": "3:21"
+      },
+      "paths": {
+        "summary": "data/routes/san-pedro-loop/summary.json",
+        "hazards": "data/routes/san-pedro-loop/hazards.json",
+        "points": "data/routes/san-pedro-loop/points.geojson",
+        "segments": "data/routes/san-pedro-loop/segments.geojson",
+        "map": "data/routes/san-pedro-loop/map.html",
+        "road_quality_map": "data/routes/san-pedro-loop/road_quality_map.html",
+        "chunk_map": "data/routes/san-pedro-loop/chunk_map.html",
+        "profile_svg": "data/routes/san-pedro-loop/profile.svg",
+        "page": "routes/san-pedro-loop.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 51531.0,
+          "percent": 90.0,
+          "distance_mi": 32.02
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 1618.0,
+          "percent": 3.0,
+          "distance_mi": 1.01
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 1546.0,
+          "percent": 3.0,
+          "distance_mi": 0.96
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 1379.0,
+          "percent": 2.0,
+          "distance_mi": 0.86
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 1179.0,
+          "percent": 2.0,
+          "distance_mi": 0.73
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 173.0,
+          "percent": 0.0,
+          "distance_mi": 0.11
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 57426.0,
+          "percent": 100.0,
+          "distance_mi": 35.68
+        }
+      ]
+    },
+    {
       "slug": "three-bears-gravel-loop",
       "title": "Three Wild Bears (13% Gravel)",
       "title_html": "Three Wild Bears <span>(<span style=\"color: chocolate;\">13% Gravel</span>)</span>",
@@ -955,7 +1077,9 @@
         "road_quality_score": 89,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte"
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 203.0,
+        "estimated_time_display": "3:23"
       },
       "paths": {
         "summary": "data/routes/three-bears-gravel-loop/summary.json",
@@ -1057,7 +1181,9 @@
         "road_quality_score": 71,
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte"
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 153.0,
+        "estimated_time_display": "2:33"
       },
       "paths": {
         "summary": "data/routes/arlington-to-southpark/summary.json",
@@ -1159,7 +1285,9 @@
         "road_quality_score": 76,
         "start_bart_station": "San Leandro",
         "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "San Leandro"
+        "bart_station": "San Leandro",
+        "estimated_time_min": 271.0,
+        "estimated_time_display": "4:31"
       },
       "paths": {
         "summary": "data/routes/big-redwood-to-tilden/summary.json",
@@ -1261,7 +1389,9 @@
         "road_quality_score": 36,
         "start_bart_station": "Union City",
         "end_bart_station": "Union City",
-        "bart_station": "Union City"
+        "bart_station": "Union City",
+        "estimated_time_min": 135.0,
+        "estimated_time_display": "2:15"
       },
       "paths": {
         "summary": "data/routes/coyote-union-city/summary.json",
@@ -1363,7 +1493,9 @@
         "road_quality_score": 85,
         "start_bart_station": "San Leandro",
         "end_bart_station": "MacArthur",
-        "bart_station": "San Leandro"
+        "bart_station": "San Leandro",
+        "estimated_time_min": 167.0,
+        "estimated_time_display": "2:47"
       },
       "paths": {
         "summary": "data/routes/redwood-san-leandro-macarthur-bart/summary.json",

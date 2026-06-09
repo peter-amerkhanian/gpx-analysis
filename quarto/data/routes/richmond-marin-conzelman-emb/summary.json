@@ -36,6 +36,8 @@
     "road_quality_score": 22,
     "start_bart_station": "Richmond",
     "end_bart_station": "Embarcadero",
-    "bart_station": "Richmond"
+    "bart_station": "Richmond",
+    "estimated_time_min": 170.0,
+    "estimated_time_display": "2:50"
   }
 }

@@ -1,6 +1,9 @@
 window.addEventListener("load", function () {
   const sortSelect = document.getElementById("mobile-route-sort");
   const bartSelect = document.getElementById("mobile-route-bart");
+  const gravelRadios = Array.from(
+    document.querySelectorAll('input[name="mobile-route-gravel"]'),
+  );
   const grid = document.getElementById("mobile-route-grid");
   if (!sortSelect || !bartSelect || !grid) {
     return;
@@ -11,6 +14,8 @@ window.addEventListener("load", function () {
     miles_desc: (a, b) => Number(b.dataset.miles) - Number(a.dataset.miles),
     elev_asc: (a, b) => Number(a.dataset.elevation) - Number(b.dataset.elevation),
     elev_desc: (a, b) => Number(b.dataset.elevation) - Number(a.dataset.elevation),
+    time_asc: (a, b) => Number(a.dataset.time) - Number(b.dataset.time),
+    time_desc: (a, b) => Number(b.dataset.time) - Number(a.dataset.time),
   };
 
   function setSharedMinHeight(elements) {
@@ -57,8 +62,13 @@ window.addEventListener("load", function () {
   function applyMobileControls() {
     const cards = Array.from(grid.querySelectorAll(".mobile-route-card"));
     const bart = bartSelect.value;
+    const gravelMode =
+      gravelRadios.find((radio) => radio.checked)?.value || "include";
     cards.forEach((card) => {
-      const visible = !bart || card.dataset.bart === bart;
+      const matchesBart = !bart || card.dataset.bart === bart;
+      const matchesGravel =
+        gravelMode === "include" || card.dataset.hasGravel !== "true";
+      const visible = matchesBart && matchesGravel;
       card.style.display = visible ? "" : "none";
     });
     const sorter = sorters[sortSelect.value] || sorters.miles_asc;
@@ -68,6 +78,9 @@ window.addEventListener("load", function () {
 
   sortSelect.addEventListener("change", applyMobileControls);
   bartSelect.addEventListener("change", applyMobileControls);
+  gravelRadios.forEach((radio) => {
+    radio.addEventListener("change", applyMobileControls);
+  });
   window.addEventListener("resize", function () {
     equalizeCardTextHeights();
     applyMobileControls();

@@ -8,14 +8,16 @@ title: "Redwood Road to Temescal"
 </a>
 
 ```{=html}
-<article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2958.33">
+<article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2958.33" data-time="167" data-has-gravel="false">
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/redwood-san-leandro-macarthur-bart/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
 <p><span class="mobile-route-label">Miles</span><br>24.55</p>
 <p><span class="mobile-route-label">Elevation Gain</span><br>2958.33 ft</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span style="color:#1a9850;">85%</span></p>
+<p><span class="mobile-route-label">Time</span><br>~2:47</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.25 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">85%</span></p>
 </div>
 </article>
 ```
@@ -30,6 +32,7 @@ title: "Redwood Road to Temescal"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -71,8 +74,9 @@ title: "Redwood Road to Temescal"
     </tr>
   </tbody>
 </table>
+```
 
-## Climb Chunks
+## Climbs
 
 <iframe
   src="../data/routes/redwood-san-leandro-macarthur-bart/chunk_map.html"
@@ -81,10 +85,9 @@ title: "Redwood Road to Temescal"
   allowfullscreen
 ></iframe>
 
-::: {.panel-tabset}
-
 ### Climbs Only
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -102,124 +105,126 @@ title: "Redwood Road to Temescal"
       <td>77 ± 35</td>
     </tr>
     <tr>
-      <td>Estudillo Avenue: climb (medium)</td>
+      <td>1. Estudillo Avenue: climb (medium)</td>
       <td>38</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Lake Chabot Road: climb (hard)</td>
+      <td>2. Lake Chabot Road: climb (hard)</td>
       <td>138</td>
       <td>0.3</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
-      <td>Lake Chabot Road: climb (hard)</td>
+      <td>3. Lake Chabot Road: climb (hard)</td>
       <td>55</td>
       <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Walnut Road: climb (hard)</td>
+      <td>4. Walnut Road: climb (hard)</td>
       <td>83</td>
       <td>0.2</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Walnut Road: climb (medium)</td>
+      <td>5. Walnut Road: climb (medium)</td>
       <td>130</td>
       <td>0.5</td>
       <td>5 ± 2</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
+      <td>6. Redwood Road: climb (medium)</td>
       <td>43</td>
       <td>0.2</td>
       <td>1 ± 0</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>7. Redwood Road: climb (hard)</td>
       <td>110</td>
       <td>0.3</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
+      <td>8. Redwood Road: climb (medium)</td>
       <td>556</td>
       <td>1.8</td>
       <td>19 ± 10</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>9. Redwood Road: climb (hard)</td>
       <td>53</td>
       <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>10. Redwood Road: climb (hard)</td>
       <td>58</td>
       <td>0.1</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (easy)</td>
+      <td>11. Redwood Road: climb (easy)</td>
       <td>27</td>
       <td>0.2</td>
       <td>1 ± 0</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>12. Redwood Road: climb (hard)</td>
       <td>71</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (easy)</td>
+      <td>13. Redwood Road: climb (easy)</td>
       <td>202</td>
       <td>1.1</td>
       <td>8 ± 3</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>14. Redwood Road: climb (hard)</td>
       <td>67</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
+      <td>15. Redwood Road: climb (medium)</td>
       <td>324</td>
       <td>1.2</td>
       <td>12 ± 5</td>
     </tr>
     <tr>
-      <td>Skyline Boulevard: climb (hard)</td>
+      <td>16. Skyline Boulevard: climb (hard)</td>
       <td>48</td>
       <td>0.1</td>
       <td>1 ± 1</td>
     </tr>
     <tr>
-      <td>Leimert Boulevard: climb (medium)</td>
+      <td>17. Leimert Boulevard: climb (medium)</td>
       <td>62</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Saint James Drive: climb (hard)</td>
+      <td>18. Saint James Drive: climb (hard)</td>
       <td>40</td>
       <td>0.1</td>
       <td>1 ± 1</td>
     </tr>
     <tr>
-      <td>Linda Avenue: climb (medium)</td>
+      <td>19. Linda Avenue: climb (medium)</td>
       <td>95</td>
       <td>0.5</td>
       <td>4 ± 1</td>
     </tr>
   </tbody>
 </table>
+```
 
 ### With Rest Periods
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -243,13 +248,13 @@ title: "Redwood Road to Temescal"
       <td>6</td>
     </tr>
     <tr>
-      <td>Estudillo Avenue: climb (medium)</td>
+      <td>1. Estudillo Avenue: climb (medium)</td>
       <td>38</td>
       <td>0.2</td>
       <td>2 ± 1</td>
     </tr>
     <tr>
-      <td>Lake Chabot Road: climb (hard)</td>
+      <td>2. Lake Chabot Road: climb (hard)</td>
       <td>138</td>
       <td>0.3</td>
       <td>4 ± 2</td>
@@ -261,7 +266,7 @@ title: "Redwood Road to Temescal"
       <td>1</td>
     </tr>
     <tr>
-      <td>Lake Chabot Road: climb (hard)</td>
+      <td>3. Lake Chabot Road: climb (hard)</td>
       <td>55</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -273,13 +278,13 @@ title: "Redwood Road to Temescal"
       <td>17</td>
     </tr>
     <tr>
-      <td>Walnut Road: climb (hard)</td>
+      <td>4. Walnut Road: climb (hard)</td>
       <td>83</td>
       <td>0.2</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>Walnut Road: climb (medium)</td>
+      <td>5. Walnut Road: climb (medium)</td>
       <td>130</td>
       <td>0.5</td>
       <td>5 ± 2</td>
@@ -291,19 +296,19 @@ title: "Redwood Road to Temescal"
       <td>12</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
+      <td>6. Redwood Road: climb (medium)</td>
       <td>43</td>
       <td>0.2</td>
       <td>1 ± 0</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>7. Redwood Road: climb (hard)</td>
       <td>110</td>
       <td>0.3</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
+      <td>8. Redwood Road: climb (medium)</td>
       <td>556</td>
       <td>1.8</td>
       <td>19 ± 10</td>
@@ -315,7 +320,7 @@ title: "Redwood Road to Temescal"
       <td>3</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>9. Redwood Road: climb (hard)</td>
       <td>53</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -327,7 +332,7 @@ title: "Redwood Road to Temescal"
       <td>5</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>10. Redwood Road: climb (hard)</td>
       <td>58</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -339,7 +344,7 @@ title: "Redwood Road to Temescal"
       <td>6</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (easy)</td>
+      <td>11. Redwood Road: climb (easy)</td>
       <td>27</td>
       <td>0.2</td>
       <td>1 ± 0</td>
@@ -351,7 +356,7 @@ title: "Redwood Road to Temescal"
       <td>4</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>12. Redwood Road: climb (hard)</td>
       <td>71</td>
       <td>0.2</td>
       <td>2 ± 1</td>
@@ -363,13 +368,13 @@ title: "Redwood Road to Temescal"
       <td>1</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (easy)</td>
+      <td>13. Redwood Road: climb (easy)</td>
       <td>202</td>
       <td>1.1</td>
       <td>8 ± 3</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (hard)</td>
+      <td>14. Redwood Road: climb (hard)</td>
       <td>67</td>
       <td>0.2</td>
       <td>2 ± 1</td>
@@ -381,7 +386,7 @@ title: "Redwood Road to Temescal"
       <td>1</td>
     </tr>
     <tr>
-      <td>Redwood Road: climb (medium)</td>
+      <td>15. Redwood Road: climb (medium)</td>
       <td>324</td>
       <td>1.2</td>
       <td>12 ± 5</td>
@@ -393,7 +398,7 @@ title: "Redwood Road to Temescal"
       <td>1</td>
     </tr>
     <tr>
-      <td>Skyline Boulevard: climb (hard)</td>
+      <td>16. Skyline Boulevard: climb (hard)</td>
       <td>48</td>
       <td>0.1</td>
       <td>1 ± 1</td>
@@ -405,7 +410,7 @@ title: "Redwood Road to Temescal"
       <td>8</td>
     </tr>
     <tr>
-      <td>Leimert Boulevard: climb (medium)</td>
+      <td>17. Leimert Boulevard: climb (medium)</td>
       <td>62</td>
       <td>0.2</td>
       <td>2 ± 1</td>
@@ -417,7 +422,7 @@ title: "Redwood Road to Temescal"
       <td>10</td>
     </tr>
     <tr>
-      <td>Saint James Drive: climb (hard)</td>
+      <td>18. Saint James Drive: climb (hard)</td>
       <td>40</td>
       <td>0.1</td>
       <td>1 ± 1</td>
@@ -429,7 +434,7 @@ title: "Redwood Road to Temescal"
       <td>9</td>
     </tr>
     <tr>
-      <td>Linda Avenue: climb (medium)</td>
+      <td>19. Linda Avenue: climb (medium)</td>
       <td>95</td>
       <td>0.5</td>
       <td>4 ± 1</td>
@@ -442,8 +447,7 @@ title: "Redwood Road to Temescal"
     </tr>
   </tbody>
 </table>
-
-:::
+```
 
 ## Street Quality
 
@@ -454,6 +458,7 @@ title: "Redwood Road to Temescal"
   allowfullscreen
 ></iframe>
 
+```{=html}
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
@@ -500,5 +505,6 @@ title: "Redwood Road to Temescal"
     </tr>
   </tbody>
 </table>
+```
 
 :::
