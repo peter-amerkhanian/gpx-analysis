@@ -113,12 +113,7 @@
 }
 
 .mobile-route-metrics p span:not(.mobile-route-label) {
-  font-weight: 900 !important;
-  text-shadow:
-    -.4px -.4px 0 #4d4d4d,
-    .4px -.4px 0 #4d4d4d,
-    -.4px .4px 0 #4d4d4d,
-    .4px .4px 0 #4d4d4d !important;
+  font-weight: 950 !important;
 }
 
 .mobile-route-quality {

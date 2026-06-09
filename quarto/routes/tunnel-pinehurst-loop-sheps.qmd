@@ -11,8 +11,8 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>27.96</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>3596.13 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~3:17</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>3596.13 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~3:20</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.44 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">67%</span></p>
 </div>
@@ -82,6 +82,8 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
+
 ### Climbs Only
 
 ```{=html}
@@ -108,7 +110,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>2. Broadway: climb (hard)</td>
+      <td>2. Golden Gate Avenue: climb (hard)</td>
       <td>81</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -257,7 +259,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>1</td>
     </tr>
     <tr>
-      <td>2. Broadway: climb (hard)</td>
+      <td>2. Golden Gate Avenue: climb (hard)</td>
       <td>81</td>
       <td>0.1</td>
       <td>2 ± 1</td>
@@ -451,6 +453,8 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 

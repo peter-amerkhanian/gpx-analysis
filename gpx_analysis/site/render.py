@@ -136,7 +136,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         f'{route["summary"]["distance_mi"]}</p>'
     ),
     (
-        f'<p><span class="mobile-route-label">Elevation Gain</span><br>'
+        f'<p><span class="mobile-route-label">Elev. Gain</span><br>'
         f'{route["summary"]["elevation_gain_ft"]} ft</p>'
     ),
     (

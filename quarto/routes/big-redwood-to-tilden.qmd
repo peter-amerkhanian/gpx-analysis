@@ -11,8 +11,8 @@ title: "Redwood Road to Tilden (24% Gravel)"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
 <p><span class="mobile-route-label">Miles</span><br>38.61</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>5624.67 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~4:31</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>5624.67 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~4:30</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.88 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">76%</span></p>
 </div>
@@ -81,6 +81,8 @@ title: "Redwood Road to Tilden (24% Gravel)"
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+::: {.panel-tabset}
 
 ### Climbs Only
 
@@ -349,6 +351,8 @@ title: "Redwood Road to Tilden (24% Gravel)"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 

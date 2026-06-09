@@ -11,8 +11,8 @@ title: "Wildwood to BBR Loop"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>17.41</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>2444.23 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~2:05</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2444.23 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~2:00</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.31 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">51%</span></p>
 </div>
@@ -81,6 +81,8 @@ title: "Wildwood to BBR Loop"
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+::: {.panel-tabset}
 
 ### Climbs Only
 
@@ -325,6 +327,8 @@ title: "Wildwood to BBR Loop"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 

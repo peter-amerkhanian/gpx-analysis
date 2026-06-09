@@ -11,8 +11,8 @@ title: "Three Wild Bears (13% Gravel)"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>32.49</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>3321.19 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~3:23</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>3321.19 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~3:20</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.18 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">89%</span></p>
 </div>
@@ -81,6 +81,8 @@ title: "Three Wild Bears (13% Gravel)"
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+::: {.panel-tabset}
 
 ### Climbs Only
 
@@ -457,6 +459,8 @@ title: "Three Wild Bears (13% Gravel)"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 

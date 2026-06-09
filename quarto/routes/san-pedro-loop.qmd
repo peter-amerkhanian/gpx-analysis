@@ -11,8 +11,8 @@ title: "San Pedro Loop (39% Cycleway)"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>Richmond</p>
 <p><span class="mobile-route-label">Miles</span><br>35.68</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>1584.32 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~3:21</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>1584.32 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~3:20</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.11 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">32%</span></p>
 </div>
@@ -81,6 +81,8 @@ title: "San Pedro Loop (39% Cycleway)"
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+::: {.panel-tabset}
 
 ### Climbs Only
 
@@ -205,6 +207,8 @@ title: "San Pedro Loop (39% Cycleway)"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 
