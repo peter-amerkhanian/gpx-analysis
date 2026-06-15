@@ -288,7 +288,12 @@ def format_duration_hhmm(minutes: float) -> str:
 
 
 def total_estimated_time_minutes(chunk_sections_summary: pd.DataFrame) -> float:
-    total_rows = chunk_sections_summary[chunk_sections_summary["Section"].eq("TOTAL")]
+    section_column = (
+        "Section (avg grade)"
+        if "Section (avg grade)" in chunk_sections_summary.columns
+        else "Section"
+    )
+    total_rows = chunk_sections_summary[chunk_sections_summary[section_column].eq("TOTAL")]
     if total_rows.empty:
         return 0.0
 

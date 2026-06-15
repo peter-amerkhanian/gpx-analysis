@@ -20,6 +20,7 @@
   allowfullscreen
 ></iframe>
 
+::: {.panel-tabset}
 ### Climbs Only
 
 {{ climb_only_sections_table_html }}
@@ -27,6 +28,8 @@
 ### With Rest Periods
 
 {{ chunk_sections_table_html }}
+
+:::
 
 ## Street Quality
 

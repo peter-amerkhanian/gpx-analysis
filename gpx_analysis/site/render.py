@@ -298,13 +298,14 @@ def write_quarto_config(routes: list[RouteConfig], quarto_config_path: Path) -> 
             "type": "website",
             "output-dir": "../docs",
             "resources": ["data/**", "images/**"],
-            "render": ["index.qmd", "routes/*.qmd"],
+            "render": ["index.qmd", "about.qmd", "routes/*.qmd"],
         },
         "website": {
             "title": "🚇BART Rides🚲",
             "navbar": {
                 "left": [
                     {"href": "index.qmd", "text": "Routes"},
+                    {"href": "about.qmd", "text": "About"},
                     {
                         "text": "Route Notes",
                         "menu": [

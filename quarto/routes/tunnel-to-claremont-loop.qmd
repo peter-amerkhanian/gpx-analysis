@@ -88,7 +88,7 @@ title: "Tunnel to Claremont Loop"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -97,51 +97,27 @@ title: "Tunnel to Claremont Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,376</td>
+      <td>1,362</td>
       <td>5.1</td>
       <td>50 ± 24</td>
     </tr>
     <tr>
-      <td>1. Broadway: climb (medium)</td>
-      <td>98</td>
-      <td>0.5</td>
+      <td>1. Broadway (4% avg)</td>
+      <td>87</td>
+      <td>0.4</td>
       <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>2. Broadway: climb (hard)</td>
-      <td>115</td>
-      <td>0.3</td>
+      <td>2. Broadway (7% avg)</td>
+      <td>132</td>
+      <td>0.4</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
-      <td>3. Tunnel Road: climb (medium)</td>
-      <td>484</td>
-      <td>1.9</td>
-      <td>18 ± 9</td>
-    </tr>
-    <tr>
-      <td>4. Tunnel Road: climb (hard)</td>
-      <td>47</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>5. Skyline Boulevard: climb (medium)</td>
-      <td>486</td>
-      <td>1.7</td>
-      <td>18 ± 8</td>
-    </tr>
-    <tr>
-      <td>6. Skyline Boulevard: climb (hard)</td>
-      <td>93</td>
-      <td>0.3</td>
-      <td>3 ± 2</td>
-    </tr>
-    <tr>
-      <td>7. Grizzly Peak Boulevard: climb (easy)</td>
-      <td>54</td>
-      <td>0.3</td>
-      <td>2 ± 1</td>
+      <td>3. Tunnel Road (5% avg)</td>
+      <td>1,142</td>
+      <td>4.3</td>
+      <td>42 ± 20</td>
     </tr>
   </tbody>
 </table>
@@ -153,7 +129,7 @@ title: "Tunnel to Claremont Loop"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -162,8 +138,8 @@ title: "Tunnel to Claremont Loop"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,376</td>
-      <td>14.2</td>
+      <td>1,362</td>
+      <td>14.3</td>
       <td>98 ± 38</td>
     </tr>
     <tr>
@@ -173,52 +149,28 @@ title: "Tunnel to Claremont Loop"
       <td>10</td>
     </tr>
     <tr>
-      <td>1. Broadway: climb (medium)</td>
-      <td>98</td>
-      <td>0.5</td>
+      <td>1. Broadway (4% avg)</td>
+      <td>87</td>
+      <td>0.4</td>
       <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>2. Broadway: climb (hard)</td>
-      <td>115</td>
-      <td>0.3</td>
+      <td>2. Broadway (7% avg)</td>
+      <td>132</td>
+      <td>0.4</td>
       <td>4 ± 2</td>
-    </tr>
-    <tr>
-      <td>3. Tunnel Road: climb (medium)</td>
-      <td>484</td>
-      <td>1.9</td>
-      <td>18 ± 9</td>
-    </tr>
-    <tr>
-      <td>4. Tunnel Road: climb (hard)</td>
-      <td>47</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>5. Skyline Boulevard: climb (medium)</td>
-      <td>486</td>
-      <td>1.7</td>
-      <td>18 ± 8</td>
-    </tr>
-    <tr>
-      <td>6. Skyline Boulevard: climb (hard)</td>
-      <td>93</td>
-      <td>0.3</td>
-      <td>3 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.1</td>
-      <td>0</td>
+      <td>0.2</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>7. Grizzly Peak Boulevard: climb (easy)</td>
-      <td>54</td>
-      <td>0.3</td>
-      <td>2 ± 1</td>
+      <td>3. Tunnel Road (5% avg)</td>
+      <td>1,142</td>
+      <td>4.3</td>
+      <td>42 ± 20</td>
     </tr>
     <tr>
       <td>flat or descent</td>

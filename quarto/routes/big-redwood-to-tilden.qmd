@@ -88,7 +88,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -97,81 +97,63 @@ title: "Redwood Road to Tilden (24% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>3,334</td>
-      <td>11.5</td>
-      <td>113 ± 55</td>
+      <td>3,254</td>
+      <td>11.6</td>
+      <td>112 ± 54</td>
     </tr>
     <tr>
-      <td>1. Lake Chabot Road: climb (hard)</td>
-      <td>153</td>
-      <td>0.4</td>
-      <td>5 ± 2</td>
+      <td>1. Lake Chabot Road (7% avg)</td>
+      <td>250</td>
+      <td>0.7</td>
+      <td>8 ± 4</td>
     </tr>
     <tr>
-      <td>2. Lake Chabot Road: climb (hard)</td>
-      <td>64</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>3. Walnut Road: climb (medium)</td>
+      <td>2. Walnut Road (5% avg)</td>
       <td>314</td>
       <td>1.2</td>
       <td>12 ± 6</td>
     </tr>
     <tr>
-      <td>4. Redwood Road: climb (medium)</td>
+      <td>3. Redwood Road (5% avg)</td>
       <td>636</td>
       <td>2.3</td>
       <td>22 ± 10</td>
     </tr>
     <tr>
-      <td>5. Redwood Road: climb (hard)</td>
-      <td>41</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>6. Redwood Road: climb (medium)</td>
+      <td>4. Redwood Road (4% avg)</td>
       <td>640</td>
       <td>2.8</td>
       <td>24 ± 10</td>
     </tr>
     <tr>
-      <td>7. Skyline Boulevard: climb (hard)</td>
+      <td>5. Skyline Boulevard (6% avg)</td>
       <td>344</td>
       <td>1.0</td>
       <td>11 ± 6</td>
     </tr>
     <tr>
-      <td>8. Skyline Boulevard: climb (easy)</td>
+      <td>6. Skyline Boulevard (3% avg)</td>
       <td>257</td>
       <td>1.2</td>
       <td>10 ± 5</td>
     </tr>
     <tr>
-      <td>9. Grizzly Peak Boulevard: climb (medium)</td>
-      <td>569</td>
-      <td>1.7</td>
-      <td>18 ± 9</td>
+      <td>7. Grizzly Peak Boulevard (6% avg)</td>
+      <td>563</td>
+      <td>1.6</td>
+      <td>17 ± 9</td>
     </tr>
     <tr>
-      <td>10. Seaview Trail: climb (medium)</td>
-      <td>158</td>
+      <td>8. Seaview Trail (7% avg)</td>
+      <td>147</td>
       <td>0.4</td>
       <td>5 ± 3</td>
     </tr>
     <tr>
-      <td>11. Lone Oak Drive: climb (hard)</td>
-      <td>94</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>12. Park Avenue: climb (hard)</td>
-      <td>64</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
+      <td>9. Lone Oak Drive (1% avg)</td>
+      <td>101</td>
+      <td>0.4</td>
+      <td>3 ± 2</td>
     </tr>
   </tbody>
 </table>
@@ -183,7 +165,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -192,8 +174,8 @@ title: "Redwood Road to Tilden (24% Gravel)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>3,334</td>
-      <td>38.4</td>
+      <td>3,254</td>
+      <td>38.7</td>
       <td>271 ± 108</td>
     </tr>
     <tr>
@@ -203,22 +185,10 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>9</td>
     </tr>
     <tr>
-      <td>1. Lake Chabot Road: climb (hard)</td>
-      <td>153</td>
-      <td>0.4</td>
-      <td>5 ± 2</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>0.1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>2. Lake Chabot Road: climb (hard)</td>
-      <td>64</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
+      <td>1. Lake Chabot Road (7% avg)</td>
+      <td>250</td>
+      <td>0.7</td>
+      <td>8 ± 4</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -227,7 +197,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>14</td>
     </tr>
     <tr>
-      <td>3. Walnut Road: climb (medium)</td>
+      <td>2. Walnut Road (5% avg)</td>
       <td>314</td>
       <td>1.2</td>
       <td>12 ± 6</td>
@@ -239,7 +209,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>11</td>
     </tr>
     <tr>
-      <td>4. Redwood Road: climb (medium)</td>
+      <td>3. Redwood Road (5% avg)</td>
       <td>636</td>
       <td>2.3</td>
       <td>22 ± 10</td>
@@ -247,23 +217,11 @@ title: "Redwood Road to Tilden (24% Gravel)"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>1.7</td>
-      <td>10</td>
+      <td>4.2</td>
+      <td>24</td>
     </tr>
     <tr>
-      <td>5. Redwood Road: climb (hard)</td>
-      <td>41</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>2.4</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>6. Redwood Road: climb (medium)</td>
+      <td>4. Redwood Road (4% avg)</td>
       <td>640</td>
       <td>2.8</td>
       <td>24 ± 10</td>
@@ -275,7 +233,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>1</td>
     </tr>
     <tr>
-      <td>7. Skyline Boulevard: climb (hard)</td>
+      <td>5. Skyline Boulevard (6% avg)</td>
       <td>344</td>
       <td>1.0</td>
       <td>11 ± 6</td>
@@ -287,7 +245,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>21</td>
     </tr>
     <tr>
-      <td>8. Skyline Boulevard: climb (easy)</td>
+      <td>6. Skyline Boulevard (3% avg)</td>
       <td>257</td>
       <td>1.2</td>
       <td>10 ± 5</td>
@@ -299,52 +257,40 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>12</td>
     </tr>
     <tr>
-      <td>9. Grizzly Peak Boulevard: climb (medium)</td>
-      <td>569</td>
-      <td>1.7</td>
-      <td>18 ± 9</td>
+      <td>7. Grizzly Peak Boulevard (6% avg)</td>
+      <td>563</td>
+      <td>1.6</td>
+      <td>17 ± 9</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.7</td>
-      <td>3</td>
+      <td>0.8</td>
+      <td>4</td>
     </tr>
     <tr>
-      <td>10. Seaview Trail: climb (medium)</td>
-      <td>158</td>
+      <td>8. Seaview Trail (7% avg)</td>
+      <td>147</td>
       <td>0.4</td>
       <td>5 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>2.8</td>
-      <td>15</td>
+      <td>2.7</td>
+      <td>14</td>
     </tr>
     <tr>
-      <td>11. Lone Oak Drive: climb (hard)</td>
-      <td>94</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>5.1</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <td>12. Park Avenue: climb (hard)</td>
-      <td>64</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
+      <td>9. Lone Oak Drive (1% avg)</td>
+      <td>101</td>
+      <td>0.4</td>
+      <td>3 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>2.2</td>
-      <td>12</td>
+      <td>7.5</td>
+      <td>49</td>
     </tr>
   </tbody>
 </table>

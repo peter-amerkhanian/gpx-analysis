@@ -695,6 +695,83 @@ def _route_is_close_ended(frame: gpd.GeoDataFrame, close_distance_m: float = 250
     return float(projected.iloc[0].distance(projected.iloc[1])) <= close_distance_m
 
 
+def _present_interaction_fields(
+    frame: gpd.GeoDataFrame,
+    fields: list[str] | None,
+) -> list[str] | None:
+    """Return popup/tooltip fields present in the frame."""
+    if fields is None:
+        return None
+    present = [field for field in fields if field in frame.columns]
+    return present or None
+
+
+def _add_touch_target_layer(
+    parent: folium.Map | folium.FeatureGroup,
+    frame: gpd.GeoDataFrame,
+    popup_cols: list[str] | None,
+    tooltip_fields: list[str] | None,
+) -> None:
+    """Add an invisible, touch-only wide route layer for easier mobile taps."""
+    popup_fields = _present_interaction_fields(frame, popup_cols)
+    tooltip_fields = _present_interaction_fields(frame, tooltip_fields)
+    if not popup_fields and not tooltip_fields:
+        return
+    display_fields = [*(popup_fields or []), *(tooltip_fields or [])]
+    display_fields = list(dict.fromkeys(display_fields))
+    target_frame = frame[["geometry", *display_fields]].copy()
+    for column in display_fields:
+        if pd.api.types.is_datetime64_any_dtype(target_frame[column]):
+            target_frame[column] = target_frame[column].astype(str)
+    folium.GeoJson(
+        data=target_frame.to_json(),
+        name="Route Touch Target",
+        control=False,
+        style_function=lambda _: {
+            "color": "#000000",
+            "weight": 18,
+            "opacity": 0,
+            "fillOpacity": 0,
+            "className": "route-touch-target",
+        },
+        pane="route-touch-targets",
+        tooltip=(
+            folium.GeoJsonTooltip(fields=tooltip_fields, sticky=True)
+            if tooltip_fields
+            else None
+        ),
+        popup=(
+            folium.GeoJsonPopup(fields=popup_fields, max_width=320)
+            if popup_fields
+            else None
+        ),
+    ).add_to(parent)
+
+
+def _enable_touch_target_styles(m: folium.Map) -> None:
+    """Make wide route hit targets interactive only on coarse pointers."""
+    _ensure_map_pane(m, pane_name="route-touch-targets", z_index=575)
+    style = Template(
+        """
+        {% macro header(this, kwargs) %}
+        <style>
+        .route-touch-target {
+            pointer-events: none;
+        }
+        @media (hover: none), (pointer: coarse) {
+            .route-touch-target {
+                pointer-events: stroke;
+            }
+        }
+        </style>
+        {% endmacro %}
+        """
+    )
+    style_element = MacroElement()
+    style_element._template = style
+    m.add_child(style_element)
+
+
 def _add_direction_layers(
     m: folium.Map,
     frame: gpd.GeoDataFrame,
@@ -705,12 +782,12 @@ def _add_direction_layers(
     cmap: list[str] | None,
     style_kwds: dict[str, object] | None,
     escape: bool,
-) -> folium.Map:
+) -> tuple[folium.Map, bool]:
     """Replace the default route layer with outbound/return overlays when the route overlaps itself."""
     projected = frame[["geometry"]].to_crs(3857)
     outbound, returning = _split_outbound_return(frame)
     if outbound.empty or returning.empty:
-        return m
+        return m, False
     projected_outbound = outbound[["geometry"]].to_crs(3857)
     projected_returning = returning[["geometry"]].to_crs(3857)
     overlap_column = column if column in frame.columns else None
@@ -724,10 +801,11 @@ def _add_direction_layers(
         column=overlap_column,
         ignore_value=ignore_value,
     ):
-        return m
+        return m, False
 
     _remove_geojson_layers(m)
     _add_whole_route_backdrop(m, frame)
+    _enable_touch_target_styles(m)
     explore_kwargs = {
         "column": column,
         "tooltip": tooltip_fields,
@@ -748,14 +826,16 @@ def _add_direction_layers(
         m=outbound_layer,
         **explore_kwargs,
     )
+    _add_touch_target_layer(outbound_layer, outbound, popup_cols, tooltip_fields)
     return_layer = folium.FeatureGroup(name="Return", overlay=True, control=False, show=False)
     return_layer.add_to(m)
     returning.explore(
         m=return_layer,
         **explore_kwargs,
     )
+    _add_touch_target_layer(return_layer, returning, popup_cols, tooltip_fields)
     _add_direction_radio_control(m, outbound_layer, return_layer)
-    return m
+    return m, True
 
 
 def add_map_elements(
@@ -769,10 +849,12 @@ def add_map_elements(
     categories: list[str] | None = None,
     cmap: list[str] | None = None,
     style_kwds: dict[str, object] | None = None,
+    touch_target_frame: gpd.GeoDataFrame | None = None,
     escape: bool = False,
 ) -> None:
+    has_split_direction_layers = False
     if show_route_pass_control and layer_column:
-        m = _add_direction_layers(
+        m, has_split_direction_layers = _add_direction_layers(
             m,
             frame,
             column=layer_column,
@@ -782,6 +864,14 @@ def add_map_elements(
             cmap=cmap,
             style_kwds=style_kwds,
             escape=escape,
+        )
+    if not has_split_direction_layers:
+        _enable_touch_target_styles(m)
+        _add_touch_target_layer(
+            m,
+            touch_target_frame if touch_target_frame is not None else frame,
+            popup_cols,
+            tooltip_fields,
         )
     # Fullscreen control
     Fullscreen(
@@ -830,6 +920,7 @@ def add_map_elements(
                 line_cap="square",
                 line_join="round",
                 pane="route-chevrons",
+                interactive=False,
             ).add_to(m)
     _disable_tooltips_on_touch(m)
     return m
@@ -946,6 +1037,8 @@ def make_road_quality_map(
     m = add_map_elements(
         m,
         frame,
+        popup_cols=popup_cols,
+        tooltip_fields=tooltip_fields,
     )
     return m
 
@@ -975,6 +1068,66 @@ def _numbered_chunk_section_label(route_part: str, road_name: str, climb_number:
     if route_part == "flat or descent":
         return route_part
     label = f"{road_name}: {route_part}"
+    if climb_number is None:
+        return label
+    return f"{climb_number}. {label}"
+
+
+def _middle_non_empty_value(values: pd.Series, fallback: str = "Unknown Road") -> str:
+    filtered = [
+        str(value).strip()
+        for value in values
+        if pd.notna(value) and str(value).strip()
+    ]
+    if not filtered:
+        return fallback
+    return filtered[len(filtered) // 2]
+
+
+def _road_name_from_section_label(value: object) -> str | None:
+    if pd.isna(value):
+        return None
+
+    text = str(value).strip()
+    if not text or text == "flat or descent":
+        return None
+
+    if ". " in text:
+        prefix, remainder = text.split(". ", 1)
+        if prefix.isdigit():
+            text = remainder
+
+    if ": " in text:
+        road_name, _ = text.split(": ", 1)
+        road_name = road_name.strip()
+        return road_name or None
+
+    if " (" in text:
+        road_name, _ = text.split(" (", 1)
+        road_name = road_name.strip()
+        return road_name or None
+
+    return text
+
+
+def _format_average_grade_label(value: object) -> str:
+    numeric = pd.to_numeric(value, errors="coerce")
+    if pd.isna(numeric):
+        return ""
+    return f"{float(numeric) * 100:.0f}% avg"
+
+
+def _chunk_map_section_label(
+    route_part: str,
+    road_name: str,
+    average_grade: object,
+    climb_number: int | None,
+) -> str:
+    if route_part == "flat or descent":
+        return route_part
+
+    grade_label = _format_average_grade_label(average_grade)
+    label = f"{road_name} ({grade_label})" if grade_label else road_name
     if climb_number is None:
         return label
     return f"{climb_number}. {label}"
@@ -1018,7 +1171,13 @@ def _chunk_section_map_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
             errors="coerce",
         ).clip(lower=0).fillna(0).groupby(frame["section_id"]).transform("sum")
     if "section_road_name" not in frame.columns:
-        frame["section_road_name"] = frame.get("osm_name", pd.Series(index=frame.index)).fillna("Unknown Road")
+        section_label_road_names = (
+            frame["section_label"].apply(_road_name_from_section_label)
+            if "section_label" in frame.columns
+            else pd.Series(index=frame.index, dtype="object")
+        )
+        osm_road_names = frame.get("osm_name", pd.Series(index=frame.index, dtype="object"))
+        frame["section_road_name"] = section_label_road_names.combine_first(osm_road_names).fillna("Unknown Road")
     if "section_label" not in frame.columns:
         section_states = frame.groupby("section_id")["chunk_state"].first()
         climb_numbers = {
@@ -1038,16 +1197,26 @@ def _chunk_section_map_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
         )
 
     rows: list[dict[str, object]] = []
+    climb_number = 0
     for _, group in frame.groupby("section_id", sort=False):
         first = group.iloc[0]
         route_part = first["chunk_state"]
         climb_gain = _safe_float(first["section_climb_gain_ft"])
         distance_mi = _safe_float(first["section_distance_mi"])
         is_climb = route_part != "flat or descent"
+        if is_climb:
+            climb_number += 1
+        road_name = _middle_non_empty_value(group["section_road_name"])
+        section_label = _chunk_map_section_label(
+            route_part,
+            road_name,
+            first.get("chunk_avg_grade"),
+            climb_number if is_climb else None,
+        )
         rows.append({
             "section_id": first["section_id"],
             "chunk_state": route_part,
-            "Section": first["section_label"],
+            "Section": section_label,
             "Distance (mi)": round(distance_mi, 1),
             "Climb (ft)": f"{climb_gain:,.0f}" if is_climb else "",
             "Average Grade": _format_percent(first.get("chunk_avg_grade")) if is_climb else "",
@@ -1125,5 +1294,8 @@ def make_chunk_map(
     m = add_map_elements(
         m,
         frame,
+        popup_cols=popup_cols,
+        tooltip_fields=tooltip_fields,
+        touch_target_frame=section_frame,
     )
     return m

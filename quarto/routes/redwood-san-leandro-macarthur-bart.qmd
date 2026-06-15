@@ -91,7 +91,7 @@ title: "Redwood Road to Temescal"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -100,120 +100,54 @@ title: "Redwood Road to Temescal"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,201</td>
-      <td>7.6</td>
-      <td>77 ± 35</td>
+      <td>1,836</td>
+      <td>6.6</td>
+      <td>65 ± 30</td>
     </tr>
     <tr>
-      <td>1. Estudillo Avenue: climb (medium)</td>
-      <td>38</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>2. Lake Chabot Road: climb (hard)</td>
+      <td>1. Lake Chabot Road (8% avg)</td>
       <td>138</td>
       <td>0.3</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
-      <td>3. Lake Chabot Road: climb (hard)</td>
-      <td>55</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
+      <td>2. Walnut Road (7% avg)</td>
+      <td>204</td>
+      <td>0.6</td>
+      <td>7 ± 3</td>
     </tr>
     <tr>
-      <td>4. Walnut Road: climb (hard)</td>
-      <td>83</td>
-      <td>0.2</td>
-      <td>3 ± 1</td>
+      <td>3. Redwood Road (6% avg)</td>
+      <td>611</td>
+      <td>1.8</td>
+      <td>21 ± 11</td>
     </tr>
     <tr>
-      <td>5. Walnut Road: climb (medium)</td>
-      <td>130</td>
-      <td>0.5</td>
+      <td>4. Redwood Road (2% avg)</td>
+      <td>117</td>
+      <td>0.6</td>
       <td>5 ± 2</td>
     </tr>
     <tr>
-      <td>6. Redwood Road: climb (medium)</td>
-      <td>43</td>
-      <td>0.2</td>
-      <td>1 ± 0</td>
-    </tr>
-    <tr>
-      <td>7. Redwood Road: climb (hard)</td>
-      <td>110</td>
+      <td>5. Redwood Road (2% avg)</td>
+      <td>83</td>
       <td>0.3</td>
-      <td>4 ± 2</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
-      <td>8. Redwood Road: climb (medium)</td>
-      <td>556</td>
-      <td>1.8</td>
-      <td>19 ± 10</td>
+      <td>6. Redwood Road (4% avg)</td>
+      <td>402</td>
+      <td>1.9</td>
+      <td>15 ± 6</td>
     </tr>
     <tr>
-      <td>9. Redwood Road: climb (hard)</td>
-      <td>53</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
+      <td>7. Redwood Road (6% avg)</td>
+      <td>184</td>
+      <td>0.6</td>
+      <td>7 ± 3</td>
     </tr>
     <tr>
-      <td>10. Redwood Road: climb (hard)</td>
-      <td>58</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>11. Redwood Road: climb (easy)</td>
-      <td>27</td>
-      <td>0.2</td>
-      <td>1 ± 0</td>
-    </tr>
-    <tr>
-      <td>12. Redwood Road: climb (hard)</td>
-      <td>71</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>13. Redwood Road: climb (easy)</td>
-      <td>202</td>
-      <td>1.1</td>
-      <td>8 ± 3</td>
-    </tr>
-    <tr>
-      <td>14. Redwood Road: climb (hard)</td>
-      <td>67</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>15. Redwood Road: climb (medium)</td>
-      <td>324</td>
-      <td>1.2</td>
-      <td>12 ± 5</td>
-    </tr>
-    <tr>
-      <td>16. Skyline Boulevard: climb (hard)</td>
-      <td>48</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>17. Leimert Boulevard: climb (medium)</td>
-      <td>62</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>18. Saint James Drive: climb (hard)</td>
-      <td>40</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>19. Linda Avenue: climb (medium)</td>
+      <td>8. Linda Avenue (4% avg)</td>
       <td>95</td>
       <td>0.5</td>
       <td>4 ± 1</td>
@@ -228,7 +162,7 @@ title: "Redwood Road to Temescal"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -237,24 +171,18 @@ title: "Redwood Road to Temescal"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,201</td>
-      <td>24.2</td>
+      <td>1,836</td>
+      <td>24.6</td>
       <td>167 ± 61</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>1.1</td>
-      <td>6</td>
+      <td>1.3</td>
+      <td>7</td>
     </tr>
     <tr>
-      <td>1. Estudillo Avenue: climb (medium)</td>
-      <td>38</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>2. Lake Chabot Road: climb (hard)</td>
+      <td>1. Lake Chabot Road (8% avg)</td>
       <td>138</td>
       <td>0.3</td>
       <td>4 ± 2</td>
@@ -262,68 +190,26 @@ title: "Redwood Road to Temescal"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.1</td>
-      <td>1</td>
+      <td>3.1</td>
+      <td>19</td>
     </tr>
     <tr>
-      <td>3. Lake Chabot Road: climb (hard)</td>
-      <td>55</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>2.9</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <td>4. Walnut Road: climb (hard)</td>
-      <td>83</td>
-      <td>0.2</td>
-      <td>3 ± 1</td>
-    </tr>
-    <tr>
-      <td>5. Walnut Road: climb (medium)</td>
-      <td>130</td>
-      <td>0.5</td>
-      <td>5 ± 2</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>2.2</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>6. Redwood Road: climb (medium)</td>
-      <td>43</td>
-      <td>0.2</td>
-      <td>1 ± 0</td>
-    </tr>
-    <tr>
-      <td>7. Redwood Road: climb (hard)</td>
-      <td>110</td>
-      <td>0.3</td>
-      <td>4 ± 2</td>
-    </tr>
-    <tr>
-      <td>8. Redwood Road: climb (medium)</td>
-      <td>556</td>
-      <td>1.8</td>
-      <td>19 ± 10</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
+      <td>2. Walnut Road (7% avg)</td>
+      <td>204</td>
       <td>0.6</td>
-      <td>3</td>
+      <td>7 ± 3</td>
     </tr>
     <tr>
-      <td>9. Redwood Road: climb (hard)</td>
-      <td>53</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
+      <td>flat or descent</td>
+      <td></td>
+      <td>2.7</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>3. Redwood Road (6% avg)</td>
+      <td>611</td>
+      <td>1.8</td>
+      <td>21 ± 11</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -332,52 +218,22 @@ title: "Redwood Road to Temescal"
       <td>5</td>
     </tr>
     <tr>
-      <td>10. Redwood Road: climb (hard)</td>
-      <td>58</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
+      <td>4. Redwood Road (2% avg)</td>
+      <td>117</td>
+      <td>0.6</td>
+      <td>5 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>1.2</td>
-      <td>6</td>
+      <td>2.8</td>
+      <td>16</td>
     </tr>
     <tr>
-      <td>11. Redwood Road: climb (easy)</td>
-      <td>27</td>
-      <td>0.2</td>
-      <td>1 ± 0</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>0.7</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>12. Redwood Road: climb (hard)</td>
-      <td>71</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>0.2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>13. Redwood Road: climb (easy)</td>
-      <td>202</td>
-      <td>1.1</td>
-      <td>8 ± 3</td>
-    </tr>
-    <tr>
-      <td>14. Redwood Road: climb (hard)</td>
-      <td>67</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
+      <td>5. Redwood Road (2% avg)</td>
+      <td>83</td>
+      <td>0.3</td>
+      <td>3 ± 1</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -386,55 +242,25 @@ title: "Redwood Road to Temescal"
       <td>1</td>
     </tr>
     <tr>
-      <td>15. Redwood Road: climb (medium)</td>
-      <td>324</td>
-      <td>1.2</td>
-      <td>12 ± 5</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>0.1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>16. Skyline Boulevard: climb (hard)</td>
-      <td>48</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>1.7</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>17. Leimert Boulevard: climb (medium)</td>
-      <td>62</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
+      <td>6. Redwood Road (4% avg)</td>
+      <td>402</td>
       <td>1.9</td>
-      <td>10</td>
+      <td>15 ± 6</td>
     </tr>
     <tr>
-      <td>18. Saint James Drive: climb (hard)</td>
-      <td>40</td>
-      <td>0.1</td>
-      <td>1 ± 1</td>
+      <td>7. Redwood Road (6% avg)</td>
+      <td>184</td>
+      <td>0.6</td>
+      <td>7 ± 3</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>1.7</td>
-      <td>9</td>
+      <td>5.9</td>
+      <td>33</td>
     </tr>
     <tr>
-      <td>19. Linda Avenue: climb (medium)</td>
+      <td>8. Linda Avenue (4% avg)</td>
       <td>95</td>
       <td>0.5</td>
       <td>4 ± 1</td>

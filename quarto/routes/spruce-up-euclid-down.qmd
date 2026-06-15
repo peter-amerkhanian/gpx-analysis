@@ -88,7 +88,7 @@ title: "Spruce up, Euclid Down"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -97,42 +97,36 @@ title: "Spruce up, Euclid Down"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>844</td>
-      <td>2.9</td>
-      <td>30 ± 14</td>
+      <td>1,110</td>
+      <td>5.0</td>
+      <td>44 ± 19</td>
     </tr>
     <tr>
-      <td>1. Gilman Street: climb (easy)</td>
+      <td>1. Gilman Street (1% avg)</td>
       <td>32</td>
       <td>0.3</td>
       <td>2 ± 0</td>
     </tr>
     <tr>
-      <td>2. Monterey Avenue: climb (medium)</td>
-      <td>194</td>
-      <td>0.8</td>
-      <td>8 ± 3</td>
+      <td>2. Monterey Avenue (5% avg)</td>
+      <td>143</td>
+      <td>0.6</td>
+      <td>6 ± 2</td>
     </tr>
     <tr>
-      <td>3. Spruce Street: climb (hard)</td>
-      <td>291</td>
-      <td>0.8</td>
-      <td>10 ± 6</td>
+      <td>3. Spruce Street (7% avg)</td>
+      <td>346</td>
+      <td>1.0</td>
+      <td>12 ± 6</td>
     </tr>
     <tr>
-      <td>4. Spruce Street: climb (medium)</td>
-      <td>85</td>
-      <td>0.4</td>
-      <td>3 ± 1</td>
+      <td>4. Wildcat Canyon Road (2% avg)</td>
+      <td>402</td>
+      <td>2.6</td>
+      <td>18 ± 6</td>
     </tr>
     <tr>
-      <td>5. Spruce Street: climb (hard)</td>
-      <td>54</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>6. Wildcat Canyon Road: climb (hard)</td>
+      <td>5. Wildcat Canyon Road (6% avg)</td>
       <td>188</td>
       <td>0.5</td>
       <td>6 ± 3</td>
@@ -147,7 +141,7 @@ title: "Spruce up, Euclid Down"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -156,7 +150,7 @@ title: "Spruce up, Euclid Down"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>844</td>
+      <td>1,110</td>
       <td>11.5</td>
       <td>78 ± 28</td>
     </tr>
@@ -167,7 +161,7 @@ title: "Spruce up, Euclid Down"
       <td>1</td>
     </tr>
     <tr>
-      <td>1. Gilman Street: climb (easy)</td>
+      <td>1. Gilman Street (1% avg)</td>
       <td>32</td>
       <td>0.3</td>
       <td>2 ± 0</td>
@@ -179,37 +173,25 @@ title: "Spruce up, Euclid Down"
       <td>1</td>
     </tr>
     <tr>
-      <td>2. Monterey Avenue: climb (medium)</td>
-      <td>194</td>
-      <td>0.8</td>
-      <td>8 ± 3</td>
+      <td>2. Monterey Avenue (5% avg)</td>
+      <td>143</td>
+      <td>0.6</td>
+      <td>6 ± 2</td>
     </tr>
     <tr>
-      <td>3. Spruce Street: climb (hard)</td>
-      <td>291</td>
-      <td>0.8</td>
-      <td>10 ± 6</td>
+      <td>3. Spruce Street (7% avg)</td>
+      <td>346</td>
+      <td>1.0</td>
+      <td>12 ± 6</td>
     </tr>
     <tr>
-      <td>4. Spruce Street: climb (medium)</td>
-      <td>85</td>
-      <td>0.4</td>
-      <td>3 ± 1</td>
+      <td>4. Wildcat Canyon Road (2% avg)</td>
+      <td>402</td>
+      <td>2.6</td>
+      <td>18 ± 6</td>
     </tr>
     <tr>
-      <td>5. Spruce Street: climb (hard)</td>
-      <td>54</td>
-      <td>0.1</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>2.1</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>6. Wildcat Canyon Road: climb (hard)</td>
+      <td>5. Wildcat Canyon Road (6% avg)</td>
       <td>188</td>
       <td>0.5</td>
       <td>6 ± 3</td>

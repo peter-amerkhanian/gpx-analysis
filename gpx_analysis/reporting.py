@@ -43,6 +43,30 @@ def _chunk_section_label(route_part: str, road_name: str, climb_number: int | No
     return f"{climb_number}. {label}"
 
 
+def _format_average_grade(value: object) -> str:
+    numeric = pd.to_numeric(value, errors="coerce")
+    if pd.isna(numeric):
+        return ""
+    return f"{numeric * 100:.0f}% avg"
+
+
+def _chunk_table_section_label(
+    route_part: str,
+    road_name: str,
+    average_grade: object,
+    climb_number: int | None = None,
+) -> str:
+    """Return the chunk table section label with average grade instead of class."""
+    if route_part == "flat or descent":
+        return route_part
+
+    grade_label = _format_average_grade(average_grade)
+    label = f"{road_name} ({grade_label})" if grade_label else road_name
+    if climb_number is None:
+        return label
+    return f"{climb_number}. {label}"
+
+
 def _resolve_timing_hazard_frame(df: pd.DataFrame) -> pd.DataFrame:
     """Return segment hazards aligned to the input frame for timing estimates."""
     if "hazard" in df.columns:
@@ -77,12 +101,15 @@ def _resolve_chunk_section_frame(
 
     frame["section_id"] = frame["chunk_state"].ne(frame["chunk_state"].shift()).cumsum()
     frame["climb_gain_ft"] = pd.to_numeric(frame.get("step_elevation_f"), errors="coerce").clip(lower=0).fillna(0)
+    if "chunk_avg_grade" not in frame.columns:
+        frame["chunk_avg_grade"] = pd.NA
     summary = (
         frame.groupby(["section_id", "chunk_state"], as_index=False)
         .agg(
             distance_ft=(distance_column, "sum"),
             road_name=("osm_name", _middle_non_empty_value),
             climb_gain_ft=("climb_gain_ft", "sum"),
+            chunk_avg_grade=("chunk_avg_grade", "first"),
         )
         .rename(columns={"chunk_state": "route_part"})
     )
@@ -313,10 +340,22 @@ def summarize_chunk_sections(
     sections = summary[[
         "section",
         "route_part",
+        "road_name",
+        "chunk_avg_grade",
+        "climb_number",
         "climb_gain_ft",
         "distance_mi",
         "time (min)",
     ]].copy()
+    sections["section"] = sections.apply(
+        lambda row: _chunk_table_section_label(
+            row["route_part"],
+            row["road_name"],
+            row["chunk_avg_grade"],
+            int(row["climb_number"]) if pd.notna(row["climb_number"]) else None,
+        ),
+        axis=1,
+    )
     sections["climb_gain_ft"] = sections.apply(
         lambda row: row["climb_gain_ft"] if row["route_part"] != "flat or descent" else pd.NA,
         axis=1,
@@ -328,7 +367,7 @@ def summarize_chunk_sections(
         "time (min)",
     ]].round({"climb_gain_ft": 0, "distance_mi": 1}).rename(
         columns={
-            "section": "Section",
+            "section": "Section (avg grade)",
             "climb_gain_ft": "Climb (ft)",
             "distance_mi": "Distance (mi)",
             "time (min)": "Time (Min)",
@@ -339,7 +378,7 @@ def summarize_chunk_sections(
     )
 
     total_row = pd.DataFrame([{
-        "Section": "TOTAL",
+        "Section (avg grade)": "TOTAL",
         "Climb (ft)": f"{summary.loc[summary['route_part'] != 'flat or descent', 'climb_gain_ft'].sum():,.0f}",
         "Distance (mi)": sections["Distance (mi)"].sum(),
         "Time (Min)": f"{summary['time_avg_min'].sum():.0f} \N{PLUS-MINUS SIGN} {summary['time_std_min'].sum():.0f}",

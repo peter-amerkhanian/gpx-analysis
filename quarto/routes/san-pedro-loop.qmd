@@ -88,7 +88,7 @@ title: "San Pedro Loop (39% Cycleway)"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -97,33 +97,15 @@ title: "San Pedro Loop (39% Cycleway)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>403</td>
-      <td>1.6</td>
-      <td>13 ± 6</td>
-    </tr>
-    <tr>
-      <td>1. Bellevue Avenue: climb (medium)</td>
-      <td>70</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>2. Point San Pedro Road: climb (easy)</td>
-      <td>41</td>
-      <td>0.3</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>3. Merrydale Road: climb (easy)</td>
       <td>207</td>
       <td>0.9</td>
       <td>8 ± 4</td>
     </tr>
     <tr>
-      <td>4. Tewksbury Avenue: climb (hard)</td>
-      <td>86</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
+      <td>1. Merrydale Road (3% avg)</td>
+      <td>207</td>
+      <td>0.9</td>
+      <td>8 ± 4</td>
     </tr>
   </tbody>
 </table>
@@ -135,7 +117,7 @@ title: "San Pedro Loop (39% Cycleway)"
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Section</th>
+      <th>Section (avg grade)</th>
       <th>Climb (ft)</th>
       <th>Distance (mi)</th>
       <th>Time (Min)</th>
@@ -144,42 +126,18 @@ title: "San Pedro Loop (39% Cycleway)"
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>403</td>
+      <td>207</td>
       <td>35.7</td>
       <td>201 ± 64</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>13.5</td>
-      <td>72</td>
+      <td>22.1</td>
+      <td>124</td>
     </tr>
     <tr>
-      <td>1. Bellevue Avenue: climb (medium)</td>
-      <td>70</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>0.6</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>2. Point San Pedro Road: climb (easy)</td>
-      <td>41</td>
-      <td>0.3</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>7.5</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <td>3. Merrydale Road: climb (easy)</td>
+      <td>1. Merrydale Road (3% avg)</td>
       <td>207</td>
       <td>0.9</td>
       <td>8 ± 4</td>
@@ -187,20 +145,8 @@ title: "San Pedro Loop (39% Cycleway)"
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>9.8</td>
-      <td>53</td>
-    </tr>
-    <tr>
-      <td>4. Tewksbury Avenue: climb (hard)</td>
-      <td>86</td>
-      <td>0.2</td>
-      <td>2 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>2.7</td>
-      <td>14</td>
+      <td>12.7</td>
+      <td>69</td>
     </tr>
   </tbody>
 </table>

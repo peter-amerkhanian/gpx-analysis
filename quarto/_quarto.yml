@@ -6,6 +6,7 @@ project:
   - images/**
   render:
   - index.qmd
+  - about.qmd
   - routes/*.qmd
 website:
   title: "\U0001F687BART Rides\U0001F6B2"
@@ -13,6 +14,8 @@ website:
     left:
     - href: index.qmd
       text: Routes
+    - href: about.qmd
+      text: About
     - text: Route Notes
       menu:
       - href: routes/arlington-gravel-loop.qmd

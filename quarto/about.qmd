@@ -1,0 +1,81 @@
+---
+title: "About the Maps"
+---
+
+This site turns GPX rides into route notes for BART-accessible cycling. Each route page starts from the recorded track points in the source GPX file, computes per-step distance, grade, bearing change, and elevation gain, then converts adjacent points into mapped route segments.
+
+The maps are meant to help compare routes before a ride. They are not turn-by-turn navigation, and they inherit the usual limitations of GPS tracks, barometric or device elevation data, OpenStreetMap coverage, and public pavement-condition datasets.
+
+## Route Processing
+
+For each published route, the build process:
+
+- reads the GPX track points, optionally reversing the route when configured in `routes.yml`;
+- computes step distance, elevation change, grade, and bearing change between adjacent points;
+- converts point pairs into route segments;
+- enriches those segments with nearby OpenStreetMap road attributes;
+- enriches roadway segments with MTC pavement-condition records where a good match is available;
+- writes the route maps, summary tables, elevation profile, and route data files used by the Quarto site.
+
+Distances are summed from the step distances. Elevation gain is the sum of positive elevation changes, so it depends on the source GPX elevation signal and any noise in that signal.
+
+## Hazards Map
+
+The Hazards map colors each short route segment by ride type. The classification is based primarily on effective grade, with extra attention to sharp turns on descents.
+
+Before classification, short segments are smoothed with a centered distance-weighted rolling grade. This reduces the effect of tiny GPS segments where a small elevation wobble can create an unrealistic grade spike.
+
+The raw grade categories are:
+
+- `Flat`: everything not caught by the climb or descent thresholds.
+- `Light Descent`: grade at or below -4.0%.
+- `Descent`: grade at or below -7.9%, including sharp turns on descents in the simplified site profile.
+- `Steep Descent`: grade at or below -19.9%, including sharp turns on steep descents in the simplified site profile.
+- `Climb`: grade at or above 4.0%.
+- `Steep Climb`: grade at or above 7.9%.
+
+A turn is treated as notable when the bearing change rounds above 19.9 degrees. In the published simplified profile, turn-on-descent cases are folded into the descent categories so the map stays readable.
+
+The table under the map sums route distance by these categories. It is a distance summary, not a risk score. A short, awkward descent may matter more in practice than its mileage suggests.
+
+## Climbs Map
+
+The Climbs map is a more ride-planning-oriented view. Instead of coloring every small segment by instantaneous grade, it groups sustained climbing into sections.
+
+The chunk detector looks for climbing runs using these defaults:
+
+- climb starts at about 3.9% grade;
+- hard climbing starts at 6.0% grade;
+- short flatter recoveries up to 700 feet can be included inside a climb;
+- a climb section must be longer than 0.3 miles;
+- the section must have at least 2.0% average or distance-weighted median grade;
+- medium climbs require at least 4.0% average or median grade;
+- hard climbs require at least 6.0% average or median grade.
+
+The map displays one feature per contiguous climb or rest section. The "Climbs Only" table removes flat and descent periods, while "With Rest Periods" keeps the full sequence of route sections. Time estimates come from simple speed ranges by section type, so they are best read as rough planning estimates rather than predictions.
+
+## Street Quality Map
+
+The Street Quality map combines route geometry with two outside data sources:
+
+- OpenStreetMap, used to identify nearby road names, road types, gravel, and cycleways.
+- MTC Vital Signs pavement-condition data, used where a route segment can be matched to a public roadway record.
+
+For each route segment, the build searches a narrow corridor around the route, scores candidate street matches by overlap, bearing, distance, and name similarity, and keeps the best candidate. When no pavement-condition record can be matched, the segment is marked as unknown rather than left blank.
+
+The detailed pavement labels are simplified on the map:
+
+- `Great`: Excellent or Very Good.
+- `Good`: Good or Fair.
+- `Ok`: At Risk.
+- `Poor`: Poor or Failed.
+- `Gravel`: route segments identified as gravel.
+- `Cycleway`: route segments identified as cycleways.
+- `Roadway (Unknown)` or `Cycleway (Unknown)`: places where the route is known but pavement condition is not.
+
+The road-quality score shown on route cards is the share of rated, non-gravel roadway miles that are Excellent, Very Good, Good, or Fair. Gravel and unknown cycleway miles are excluded from that denominator so mixed-surface routes are not automatically penalized for being intentionally off-road or separated from the street network.
+
+## Direction Markers
+
+Some routes overlap themselves. When the outbound and return portions share meaningful geometry, the map may show a Route Pass control so only one direction is highlighted at a time. Number markers and chevrons are added to help show route order and direction, especially on loopier routes.
+
