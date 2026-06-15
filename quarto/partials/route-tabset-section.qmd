@@ -21,10 +21,7 @@
 ></iframe>
 
 ::: {.panel-tabset}
-<<<<<<< HEAD
-=======
 
->>>>>>> de17f9223efdd740c55d9891e15e6bda41d4390c
 ### Climbs Only
 
 {{ climb_only_sections_table_html }}

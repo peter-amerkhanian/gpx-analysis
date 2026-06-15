@@ -83,10 +83,7 @@ title: "Wildwood to BBR Loop"
 ></iframe>
 
 ::: {.panel-tabset}
-<<<<<<< HEAD
-=======
 
->>>>>>> de17f9223efdd740c55d9891e15e6bda41d4390c
 ### Climbs Only
 
 ```{=html}
