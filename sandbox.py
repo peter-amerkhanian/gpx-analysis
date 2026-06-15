@@ -1,4 +1,5 @@
 import gpx_analysis as gpxa
+from gpx_analysis import compute_elevation_totals
 
 def test_data_set(paths):
     points = gpxa.io.read_simple_gpx(paths[0])
@@ -19,14 +20,8 @@ def test_data_set(paths):
     return segments
 
 # site.route_elevation_svg(segments, debug=True);
-# from gpx_analysis import compute_elevation_totals
-
-# compute_elevation_totals(segments)
 # gpxa.viz.make_route_map(segments, hazard_profile="simplified")
-# from gpx_analysis import compute_elevation_totals
-
 # raw = compute_elevation_totals(segments)
-
 # thresholded = compute_elevation_totals(
 #     segments.assign(
 #         step_elevation_m=segments["step_elevation_m"].where(
@@ -34,15 +29,8 @@ def test_data_set(paths):
 #         )
 #     )
 # )
-
-# raw, thresholded
-
 # gpxa.reporting.summarize_chunk_sections(segments, include_rest_periods=True)
-
 # gpxa.viz.make_chunk_map(segments)
-
 # gpxa.viz.make_road_quality_map(segments)
-
 # gpxa.reporting.aggregate_by_road_quality(segments)
-
 # gpxa.reporting.road_quality_score(segments)

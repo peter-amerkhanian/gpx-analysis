@@ -14,8 +14,8 @@ title: "Redwood Road to Temescal"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
 <p><span class="mobile-route-label">Miles</span><br>24.55</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>2958.33 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~2:47</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2958.33 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~2:50</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.25 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">85%</span></p>
 </div>
@@ -84,6 +84,8 @@ title: "Redwood Road to Temescal"
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+::: {.panel-tabset}
 
 ### Climbs Only
 
@@ -274,6 +276,8 @@ title: "Redwood Road to Temescal"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 

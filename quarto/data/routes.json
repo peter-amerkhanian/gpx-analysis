@@ -39,7 +39,7 @@
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
         "estimated_time_min": 106.0,
-        "estimated_time_display": "1:46"
+        "estimated_time_display": "1:50"
       },
       "paths": {
         "summary": "data/routes/arlington-gravel-loop/summary.json",
@@ -143,7 +143,7 @@
         "end_bart_station": "North Berkeley",
         "bart_station": "North Berkeley",
         "estimated_time_min": 95.0,
-        "estimated_time_display": "1:35"
+        "estimated_time_display": "1:40"
       },
       "paths": {
         "summary": "data/routes/grizzly-peak-loop/summary.json",
@@ -247,7 +247,7 @@
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
         "estimated_time_min": 122.0,
-        "estimated_time_display": "2:02"
+        "estimated_time_display": "2:00"
       },
       "paths": {
         "summary": "data/routes/wildcat-havey-nimitz-meadow-loop/summary.json",
@@ -351,7 +351,7 @@
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
         "estimated_time_min": 122.0,
-        "estimated_time_display": "2:02"
+        "estimated_time_display": "2:00"
       },
       "paths": {
         "summary": "data/routes/wildcat-conlon-nimitz-meadow-loop/summary.json",
@@ -559,7 +559,7 @@
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur",
         "estimated_time_min": 197.0,
-        "estimated_time_display": "3:17"
+        "estimated_time_display": "3:20"
       },
       "paths": {
         "summary": "data/routes/tunnel-pinehurst-loop-sheps/summary.json",
@@ -663,7 +663,7 @@
         "end_bart_station": "Ashby",
         "bart_station": "North Berkeley",
         "estimated_time_min": 78.0,
-        "estimated_time_display": "1:18"
+        "estimated_time_display": "1:20"
       },
       "paths": {
         "summary": "data/routes/spruce-up-euclid-down/summary.json",
@@ -767,7 +767,7 @@
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur",
         "estimated_time_min": 125.0,
-        "estimated_time_display": "2:05"
+        "estimated_time_display": "2:00"
       },
       "paths": {
         "summary": "data/routes/wildwood-bbr-loop/summary.json",
@@ -871,7 +871,7 @@
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur",
         "estimated_time_min": 98.0,
-        "estimated_time_display": "1:38"
+        "estimated_time_display": "1:40"
       },
       "paths": {
         "summary": "data/routes/tunnel-to-claremont-loop/summary.json",
@@ -975,7 +975,7 @@
         "end_bart_station": "Richmond",
         "bart_station": "Richmond",
         "estimated_time_min": 201.0,
-        "estimated_time_display": "3:21"
+        "estimated_time_display": "3:20"
       },
       "paths": {
         "summary": "data/routes/san-pedro-loop/summary.json",
@@ -1079,7 +1079,7 @@
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
         "estimated_time_min": 203.0,
-        "estimated_time_display": "3:23"
+        "estimated_time_display": "3:20"
       },
       "paths": {
         "summary": "data/routes/three-bears-gravel-loop/summary.json",
@@ -1183,7 +1183,7 @@
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
         "estimated_time_min": 153.0,
-        "estimated_time_display": "2:33"
+        "estimated_time_display": "2:30"
       },
       "paths": {
         "summary": "data/routes/arlington-to-southpark/summary.json",
@@ -1287,7 +1287,7 @@
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "San Leandro",
         "estimated_time_min": 271.0,
-        "estimated_time_display": "4:31"
+        "estimated_time_display": "4:30"
       },
       "paths": {
         "summary": "data/routes/big-redwood-to-tilden/summary.json",
@@ -1391,7 +1391,7 @@
         "end_bart_station": "Union City",
         "bart_station": "Union City",
         "estimated_time_min": 135.0,
-        "estimated_time_display": "2:15"
+        "estimated_time_display": "2:20"
       },
       "paths": {
         "summary": "data/routes/coyote-union-city/summary.json",
@@ -1495,7 +1495,7 @@
         "end_bart_station": "MacArthur",
         "bart_station": "San Leandro",
         "estimated_time_min": 167.0,
-        "estimated_time_display": "2:47"
+        "estimated_time_display": "2:50"
       },
       "paths": {
         "summary": "data/routes/redwood-san-leandro-macarthur-bart/summary.json",

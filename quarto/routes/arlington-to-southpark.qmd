@@ -11,8 +11,8 @@ title: "Arlington into Tilden (45% Gravel)"
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>20.09</p>
-<p><span class="mobile-route-label">Elevation Gain</span><br>3712.93 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~2:33</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>3712.93 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~2:30</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.61 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">71%</span></p>
 </div>
@@ -81,6 +81,8 @@ title: "Arlington into Tilden (45% Gravel)"
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+::: {.panel-tabset}
 
 ### Climbs Only
 
@@ -253,6 +255,8 @@ title: "Arlington into Tilden (45% Gravel)"
   </tbody>
 </table>
 ```
+
+:::
 
 ## Street Quality
 
