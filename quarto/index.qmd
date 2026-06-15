@@ -27,21 +27,12 @@ format:
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
-<<<<<<< HEAD
-<option value="Richmond">Richmond</option>
-<option value="Union City">Union City</option>
-<option value="MacArthur">MacArthur</option>
-<option value="El Cerrito del Norte">El Cerrito del Norte</option>
-<option value="San Leandro">San Leandro</option>
-<option value="North Berkeley">North Berkeley</option>
-=======
-<option value="El Cerrito del Norte">El Cerrito del Norte</option>
-<option value="Union City">Union City</option>
 <option value="MacArthur">MacArthur</option>
 <option value="San Leandro">San Leandro</option>
-<option value="North Berkeley">North Berkeley</option>
 <option value="Richmond">Richmond</option>
->>>>>>> de17f9223efdd740c55d9891e15e6bda41d4390c
+<option value="Union City">Union City</option>
+<option value="El Cerrito del Norte">El Cerrito del Norte</option>
+<option value="North Berkeley">North Berkeley</option>
 </select>
 </div>
 <div class="mobile-route-control">
