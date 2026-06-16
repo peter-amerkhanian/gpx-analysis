@@ -9,6 +9,19 @@ window.addEventListener("load", function () {
     return;
   }
 
+  function ensureSortOption(value, label) {
+    if (sortSelect.querySelector(`option[value="${value}"]`)) {
+      return;
+    }
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = label;
+    sortSelect.appendChild(option);
+  }
+
+  ensureSortOption("road_quality_desc", "Road Quality: highest");
+  ensureSortOption("road_quality_asc", "Road Quality: lowest");
+
   const sorters = {
     miles_asc: (a, b) => Number(a.dataset.miles) - Number(b.dataset.miles),
     miles_desc: (a, b) => Number(b.dataset.miles) - Number(a.dataset.miles),
@@ -16,6 +29,10 @@ window.addEventListener("load", function () {
     elev_desc: (a, b) => Number(b.dataset.elevation) - Number(a.dataset.elevation),
     time_asc: (a, b) => Number(a.dataset.time) - Number(b.dataset.time),
     time_desc: (a, b) => Number(b.dataset.time) - Number(a.dataset.time),
+    road_quality_asc: (a, b) =>
+      Number(a.dataset.roadQuality) - Number(b.dataset.roadQuality),
+    road_quality_desc: (a, b) =>
+      Number(b.dataset.roadQuality) - Number(a.dataset.roadQuality),
   };
 
   function setSharedMinHeight(elements) {
@@ -65,6 +82,10 @@ window.addEventListener("load", function () {
     const gravelMode =
       gravelRadios.find((radio) => radio.checked)?.value || "include";
     cards.forEach((card) => {
+      if (!card.dataset.roadQuality) {
+        const quality = card.querySelector(".mobile-route-quality");
+        card.dataset.roadQuality = quality?.textContent.replace("%", "").trim() || "0";
+      }
       const matchesBart = !bart || card.dataset.bart === bart;
       const matchesGravel =
         gravelMode === "include" || card.dataset.hasGravel !== "true";

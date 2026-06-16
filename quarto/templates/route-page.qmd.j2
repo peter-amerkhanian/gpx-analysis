@@ -2,6 +2,21 @@
 title: "{{ title }}"
 ---
 
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".quarto-title h1.title");
+  if (!title) {
+    return;
+  }
+  title.innerHTML = title.textContent.replace(
+    /(\d+% Gravel)/g,
+    '<span style="color: chocolate;">$1</span>',
+  );
+});
+</script>
+```
+
 {% include "partials/route-hero.qmd" %}
 
 {% include "partials/route-links.qmd" %}
