@@ -1,5 +1,5 @@
 ---
-title: "Havey Canyon Loop (55% Gravel)"
+title: "Havey Canyon Loop (53% Gravel)"
 ---
 
 
@@ -14,7 +14,7 @@ title: "Havey Canyon Loop (55% Gravel)"
 <p><span class="mobile-route-label">Elev. Gain</span><br>2072.18 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:00</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.30 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">31%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">29%</span></p>
 </div>
 </article>
 ```
@@ -279,43 +279,43 @@ title: "Havey Canyon Loop (55% Gravel)"
   <tbody>
     <tr>
       <td>Gravel</td>
-      <td>10.3</td>
-      <td>54.6</td>
+      <td>10.0</td>
+      <td>53.3</td>
     </tr>
     <tr>
       <td>Cycleway</td>
-      <td>3.2</td>
-      <td>17.1</td>
+      <td>3.5</td>
+      <td>18.8</td>
     </tr>
     <tr>
       <td>Poor</td>
       <td>1.9</td>
-      <td>10.2</td>
-    </tr>
-    <tr>
-      <td>Good</td>
-      <td>1.1</td>
-      <td>5.6</td>
+      <td>10.3</td>
     </tr>
     <tr>
       <td>Fair</td>
-      <td>1.0</td>
-      <td>5.4</td>
+      <td>1.2</td>
+      <td>6.3</td>
+    </tr>
+    <tr>
+      <td>Good</td>
+      <td>0.9</td>
+      <td>4.7</td>
     </tr>
     <tr>
       <td>At Risk</td>
       <td>0.6</td>
-      <td>3.4</td>
+      <td>3.1</td>
     </tr>
     <tr>
       <td>Excellent</td>
-      <td>0.5</td>
-      <td>2.7</td>
+      <td>0.4</td>
+      <td>2.3</td>
     </tr>
     <tr>
       <td>Unknown</td>
       <td>0.2</td>
-      <td>1.1</td>
+      <td>1.2</td>
     </tr>
   </tbody>
 </table>

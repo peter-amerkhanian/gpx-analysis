@@ -32,8 +32,8 @@
       "lon": -122.28396
     },
     "gravel_percent": 0.0,
-    "cycleway_percent": 0.0,
-    "road_quality_score": 85,
+    "cycleway_percent": 0.4,
+    "road_quality_score": 78,
     "start_bart_station": "North Berkeley",
     "end_bart_station": "North Berkeley",
     "bart_station": "North Berkeley",

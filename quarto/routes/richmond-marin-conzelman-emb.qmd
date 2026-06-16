@@ -1,5 +1,5 @@
 ---
-title: "Richmond to EMB (43% Cycleway)"
+title: "Richmond to EMB (49% Cycleway)"
 ---
 
 
@@ -14,7 +14,7 @@ title: "Richmond to EMB (43% Cycleway)"
 <p><span class="mobile-route-label">Elev. Gain</span><br>1466.86 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:50</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.07 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fc8d59;">22%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fc8d59;">18%</span></p>
 </div>
 </article>
 ```
@@ -110,7 +110,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>4 ± 1</td>
     </tr>
     <tr>
-      <td>2. Unknown Road (2% avg)</td>
+      <td>2. Cal Park Hill Tunnel (2% avg)</td>
       <td>48</td>
       <td>0.4</td>
       <td>2 ± 1</td>
@@ -122,7 +122,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>8 ± 4</td>
     </tr>
     <tr>
-      <td>4. South Street (3% avg)</td>
+      <td>4. 2nd Street (3% avg)</td>
       <td>163</td>
       <td>0.7</td>
       <td>5 ± 2</td>
@@ -175,7 +175,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>38</td>
     </tr>
     <tr>
-      <td>2. Unknown Road (2% avg)</td>
+      <td>2. Cal Park Hill Tunnel (2% avg)</td>
       <td>48</td>
       <td>0.4</td>
       <td>2 ± 1</td>
@@ -199,7 +199,7 @@ title: "Richmond to EMB (43% Cycleway)"
       <td>32</td>
     </tr>
     <tr>
-      <td>4. South Street (3% avg)</td>
+      <td>4. 2nd Street (3% avg)</td>
       <td>163</td>
       <td>0.7</td>
       <td>5 ± 2</td>
@@ -249,43 +249,38 @@ title: "Richmond to EMB (43% Cycleway)"
   <tbody>
     <tr>
       <td>Cycleway</td>
-      <td>12.8</td>
-      <td>43.0</td>
+      <td>14.4</td>
+      <td>48.7</td>
     </tr>
     <tr>
       <td>At Risk</td>
-      <td>3.6</td>
-      <td>12.1</td>
-    </tr>
-    <tr>
-      <td>Poor</td>
-      <td>2.7</td>
-      <td>9.2</td>
-    </tr>
-    <tr>
-      <td>Good</td>
-      <td>2.0</td>
-      <td>6.9</td>
+      <td>2.9</td>
+      <td>9.7</td>
     </tr>
     <tr>
       <td>Fair</td>
-      <td>1.9</td>
-      <td>6.5</td>
+      <td>2.3</td>
+      <td>7.8</td>
     </tr>
     <tr>
-      <td>Very Good</td>
+      <td>Poor</td>
+      <td>2.2</td>
+      <td>7.6</td>
+    </tr>
+    <tr>
+      <td>Good</td>
       <td>1.3</td>
-      <td>4.3</td>
+      <td>4.5</td>
     </tr>
     <tr>
       <td>Excellent</td>
-      <td>1.1</td>
-      <td>3.8</td>
+      <td>0.9</td>
+      <td>2.9</td>
     </tr>
     <tr>
-      <td>Gravel</td>
-      <td>0.4</td>
-      <td>1.2</td>
+      <td>Very Good</td>
+      <td>0.8</td>
+      <td>2.6</td>
     </tr>
     <tr>
       <td>Failed</td>
@@ -294,8 +289,8 @@ title: "Richmond to EMB (43% Cycleway)"
     </tr>
     <tr>
       <td>Unknown</td>
-      <td>3.8</td>
-      <td>12.8</td>
+      <td>4.7</td>
+      <td>15.9</td>
     </tr>
   </tbody>
 </table>

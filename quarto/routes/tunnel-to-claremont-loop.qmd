@@ -14,7 +14,7 @@ title: "Tunnel to Claremont Loop"
 <p><span class="mobile-route-label">Elev. Gain</span><br>1716.54 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~1:40</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.13 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">55%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">52%</span></p>
 </div>
 </article>
 ```
@@ -207,53 +207,48 @@ title: "Tunnel to Claremont Loop"
   <tbody>
     <tr>
       <td>Poor</td>
-      <td>3.7</td>
-      <td>26.1</td>
+      <td>3.5</td>
+      <td>24.7</td>
     </tr>
     <tr>
       <td>Very Good</td>
-      <td>2.5</td>
-      <td>17.7</td>
-    </tr>
-    <tr>
-      <td>Excellent</td>
       <td>2.3</td>
       <td>16.3</td>
     </tr>
     <tr>
+      <td>Excellent</td>
+      <td>2.1</td>
+      <td>14.8</td>
+    </tr>
+    <tr>
       <td>Fair</td>
-      <td>1.9</td>
-      <td>13.2</td>
+      <td>1.8</td>
+      <td>12.7</td>
     </tr>
     <tr>
       <td>Failed</td>
-      <td>1.4</td>
-      <td>9.9</td>
-    </tr>
-    <tr>
-      <td>Good</td>
-      <td>1.1</td>
-      <td>8.0</td>
+      <td>1.3</td>
+      <td>9.3</td>
     </tr>
     <tr>
       <td>At Risk</td>
-      <td>0.9</td>
-      <td>6.7</td>
+      <td>1.3</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>Good</td>
+      <td>1.2</td>
+      <td>8.6</td>
     </tr>
     <tr>
       <td>Cycleway</td>
-      <td>0.0</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <td>Gravel</td>
-      <td>0.0</td>
       <td>0.1</td>
+      <td>0.7</td>
     </tr>
     <tr>
       <td>Unknown</td>
-      <td>0.3</td>
-      <td>1.8</td>
+      <td>0.5</td>
+      <td>3.7</td>
     </tr>
   </tbody>
 </table>

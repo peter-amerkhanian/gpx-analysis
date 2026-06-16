@@ -11,11 +11,7 @@ def test_data_set(paths):
         segments, corridor_m=5, match_max_distance_m=1
     )
     segments = gpxa.geo.enrich_segments_with_mtc_streets(
-        segments,
-        corridor_m=10.0,
-        match_max_distance_m=25.0,
-        match_preference_tolerance_m=8.0,
-        match_window_size=10,
+        segments
     )
     return segments
 

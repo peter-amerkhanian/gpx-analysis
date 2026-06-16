@@ -14,7 +14,7 @@ title: "Grizzly Peak Loop"
 <p><span class="mobile-route-label">Elev. Gain</span><br>1747.7 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~1:40</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.14 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">85%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">78%</span></p>
 </div>
 </article>
 ```
@@ -104,7 +104,7 @@ title: "Grizzly Peak Loop"
       <td>57 ± 24</td>
     </tr>
     <tr>
-      <td>1. Shattuck Avenue (3% avg)</td>
+      <td>1. Virginia Street (3% avg)</td>
       <td>203</td>
       <td>1.2</td>
       <td>8 ± 2</td>
@@ -163,7 +163,7 @@ title: "Grizzly Peak Loop"
       <td>95 ± 34</td>
     </tr>
     <tr>
-      <td>1. Shattuck Avenue (3% avg)</td>
+      <td>1. Virginia Street (3% avg)</td>
       <td>203</td>
       <td>1.2</td>
       <td>8 ± 2</td>
@@ -256,32 +256,32 @@ title: "Grizzly Peak Loop"
     <tr>
       <td>Good</td>
       <td>5.2</td>
-      <td>37.4</td>
+      <td>37.6</td>
     </tr>
     <tr>
       <td>Fair</td>
-      <td>2.6</td>
-      <td>18.7</td>
+      <td>2.3</td>
+      <td>16.3</td>
     </tr>
     <tr>
       <td>Excellent</td>
-      <td>2.6</td>
-      <td>18.5</td>
-    </tr>
-    <tr>
-      <td>Very Good</td>
-      <td>1.4</td>
-      <td>9.8</td>
+      <td>2.2</td>
+      <td>15.8</td>
     </tr>
     <tr>
       <td>At Risk</td>
-      <td>1.0</td>
-      <td>7.2</td>
+      <td>1.3</td>
+      <td>9.4</td>
+    </tr>
+    <tr>
+      <td>Very Good</td>
+      <td>1.1</td>
+      <td>7.8</td>
     </tr>
     <tr>
       <td>Poor</td>
       <td>0.6</td>
-      <td>4.2</td>
+      <td>4.5</td>
     </tr>
     <tr>
       <td>Failed</td>
@@ -289,14 +289,14 @@ title: "Grizzly Peak Loop"
       <td>2.5</td>
     </tr>
     <tr>
-      <td>Gravel</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>Cycleway</td>
+      <td>0.1</td>
+      <td>0.4</td>
     </tr>
     <tr>
       <td>Unknown</td>
-      <td>0.2</td>
-      <td>1.6</td>
+      <td>0.8</td>
+      <td>5.6</td>
     </tr>
   </tbody>
 </table>

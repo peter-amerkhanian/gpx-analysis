@@ -152,7 +152,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>5 ± 3</td>
     </tr>
     <tr>
-      <td>9. Lone Oak Drive (1% avg)</td>
+      <td>9. Meadows Canyon Trail (1% avg)</td>
       <td>101</td>
       <td>0.4</td>
       <td>3 ± 2</td>
@@ -283,7 +283,7 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>14</td>
     </tr>
     <tr>
-      <td>9. Lone Oak Drive (1% avg)</td>
+      <td>9. Meadows Canyon Trail (1% avg)</td>
       <td>101</td>
       <td>0.4</td>
       <td>3 ± 2</td>
@@ -321,38 +321,38 @@ title: "Redwood Road to Tilden (24% Gravel)"
   <tbody>
     <tr>
       <td>Good</td>
-      <td>15.5</td>
-      <td>40.2</td>
+      <td>15.6</td>
+      <td>40.4</td>
     </tr>
     <tr>
       <td>Gravel</td>
-      <td>9.3</td>
-      <td>24.0</td>
+      <td>9.4</td>
+      <td>24.3</td>
     </tr>
     <tr>
       <td>Poor</td>
-      <td>5.3</td>
-      <td>13.8</td>
+      <td>5.1</td>
+      <td>13.1</td>
     </tr>
     <tr>
       <td>Very Good</td>
-      <td>4.6</td>
-      <td>11.8</td>
+      <td>4.5</td>
+      <td>11.7</td>
     </tr>
     <tr>
       <td>Excellent</td>
       <td>1.4</td>
-      <td>3.7</td>
-    </tr>
-    <tr>
-      <td>At Risk</td>
-      <td>0.8</td>
-      <td>2.2</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>Fair</td>
-      <td>0.8</td>
-      <td>2.0</td>
+      <td>0.9</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <td>At Risk</td>
+      <td>0.6</td>
+      <td>1.6</td>
     </tr>
     <tr>
       <td>Failed</td>
@@ -360,14 +360,9 @@ title: "Redwood Road to Tilden (24% Gravel)"
       <td>0.2</td>
     </tr>
     <tr>
-      <td>Cycleway</td>
-      <td>0.0</td>
-      <td>0.1</td>
-    </tr>
-    <tr>
       <td>Unknown</td>
-      <td>0.8</td>
-      <td>2.1</td>
+      <td>1.1</td>
+      <td>2.8</td>
     </tr>
   </tbody>
 </table>

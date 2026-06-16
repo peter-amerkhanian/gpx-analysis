@@ -6,7 +6,7 @@ from pathlib import Path
 from functools import lru_cache
 from shapely.geometry import box
 from shapely.geometry import LineString
-from typing import cast
+from typing import Sequence, cast
 import fiona
 
 PROJECTED_CRS = 3857
@@ -191,6 +191,52 @@ def _normalize_match_text(value: object) -> str | None:
         return None
     text = str(value).strip().lower()
     return text or None
+
+
+ROAD_NAME_SUFFIXES = {
+    "ave",
+    "avenue",
+    "blvd",
+    "boulevard",
+    "cir",
+    "circle",
+    "ct",
+    "court",
+    "dr",
+    "drive",
+    "hwy",
+    "highway",
+    "ln",
+    "lane",
+    "pkwy",
+    "parkway",
+    "pl",
+    "place",
+    "rd",
+    "road",
+    "st",
+    "street",
+    "ter",
+    "terrace",
+    "trl",
+    "trail",
+    "way",
+}
+
+
+def _road_name_key(value: object) -> str | None:
+    """Return a normalized key that treats common road suffix variants as equal."""
+    text = _normalize_match_text(value)
+    if text is None:
+        return None
+    tokens = [
+        token
+        for token in "".join(char if char.isalnum() else " " for char in text).split()
+        if token and token not in ROAD_NAME_SUFFIXES
+    ]
+    if not tokens:
+        return text
+    return " ".join(tokens)
 
 
 def _levenshtein_distance(left: str | None, right: str | None) -> int | None:
@@ -448,22 +494,26 @@ def _join_candidates_within_distance(
         geometry=left.geometry.buffer(max_distance_m),
         crs=left.crs,
     )
+    right_with_key = right.reset_index(drop=True).copy()
+    right_with_key["_candidate_index"] = right_with_key.index
     matched = gpd.sjoin(
         left_buffered,
-        right,
+        right_with_key,
         how="inner",
         predicate="intersects",
     )
     if matched.empty:
         return matched
 
-    right_indexed = right.reset_index().rename(columns={"index": "_candidate_index"}).set_index("_candidate_index")
+    right_indexed = right_with_key.set_index("_candidate_index")
     left_geometry_by_segment = left.set_index("_segment_index").geometry
     matched["_route_geometry"] = matched["_segment_index"].map(left_geometry_by_segment)
-    matched["_candidate_geometry"] = matched["index_right"].map(right_indexed.geometry)
-    matched["_candidate_dist_m"] = matched.apply(
-        lambda row: row["_route_geometry"].distance(row["_candidate_geometry"]),
-        axis=1,
+    matched["_candidate_geometry"] = matched["_candidate_index"].map(right_indexed.geometry)
+    route_geometry = gpd.GeoSeries(matched["_route_geometry"], crs=left.crs)
+    candidate_geometry = gpd.GeoSeries(matched["_candidate_geometry"], crs=right.crs)
+    matched["_candidate_dist_m"] = route_geometry.distance(
+        candidate_geometry,
+        align=False,
     )
     return matched[matched["_candidate_dist_m"] <= max_distance_m].copy()
 
@@ -491,17 +541,141 @@ def _score_mtc_match_candidates(
         lambda row: _overlap_length_m(row["_route_geometry"], row["_candidate_geometry"], overlap_buffer_m),
         axis=1,
     )
+    matched["_route_length_m"] = matched["_route_geometry"].apply(lambda geometry: getattr(geometry, "length", 0.0))
     matched["_osm_name_norm"] = matched.get("osm_name", pd.Series(index=matched.index, dtype="object")).apply(_normalize_match_text)
     matched["_mtc_road_name_norm"] = matched.get("road_name", pd.Series(index=matched.index, dtype="object")).apply(_normalize_match_text)
+    matched["_osm_name_key"] = matched.get("osm_name", pd.Series(index=matched.index, dtype="object")).apply(_road_name_key)
+    matched["_mtc_road_name_key"] = matched.get("road_name", pd.Series(index=matched.index, dtype="object")).apply(_road_name_key)
     matched["_name_distance"] = matched.apply(
-        lambda row: _levenshtein_distance(row["_osm_name_norm"], row["_mtc_road_name_norm"]),
+        lambda row: _levenshtein_distance(row["_osm_name_key"], row["_mtc_road_name_key"]),
         axis=1,
     )
     matched["_has_name_distance"] = matched["_name_distance"].notna()
     matched["_name_distance_rank"] = matched["_name_distance"].fillna(999)
+    matched["_name_key_match"] = (
+        matched["_osm_name_key"].notna()
+        & matched["_mtc_road_name_key"].notna()
+        & (matched["_osm_name_key"] == matched["_mtc_road_name_key"])
+    )
+    matched["_name_key_match_rank"] = (~matched["_name_key_match"]).astype(int)
     matched["_tolerance_rank"] = (~matched["_within_pref_tolerance"]).astype(int)
     matched["_name_rank"] = (~matched["_has_name_distance"]).astype(int)
     return matched
+
+
+def _score_osm_match_candidates(
+    matched: pd.DataFrame,
+    overlap_buffer_m: float,
+    match_preference_tolerance_m: float,
+) -> pd.DataFrame:
+    """Score route-to-OSM-edge candidates using distance, highway type, overlap, and bearing."""
+    if matched.empty:
+        return matched
+
+    scored = matched.copy()
+    scored["_min_candidate_dist_m"] = scored.groupby("_segment_index")["_candidate_dist_m"].transform("min")
+    scored["_within_pref_tolerance"] = (
+        scored["_candidate_dist_m"] <= scored["_min_candidate_dist_m"] + match_preference_tolerance_m
+    )
+    scored["_candidate_priority"] = scored["_highway_priority"].where(scored["_within_pref_tolerance"], 999)
+    scored["_bearing_diff_deg"] = scored.apply(
+        lambda row: _bearing_difference_degrees(row["_route_geometry"], row["_candidate_geometry"]),
+        axis=1,
+    )
+    scored["_bearing_diff_deg"] = scored["_bearing_diff_deg"].fillna(999.0)
+    _ = overlap_buffer_m
+    scored["_overlap_length_m"] = 0.0
+    return scored
+
+
+def _candidate_name_key(value: object) -> str | None:
+    """Return the first normalized road name from scalar or semicolon-delimited OSM/MTC values."""
+    if value is None or pd.isna(value):
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    first_name = text.split(";")[0].strip()
+    return _road_name_key(first_name)
+
+
+def _select_with_name_continuity(
+    scored: pd.DataFrame,
+    name_column: str,
+    sort_columns: list[str],
+    ascending: list[bool],
+    match_preference_tolerance_m: float,
+    max_continuity_bearing_diff_deg: float = 55.0,
+) -> pd.DataFrame:
+    """Select candidates while resisting one-segment jumps to crossing streets."""
+    if scored.empty:
+        return scored
+
+    scored = scored.copy()
+    name_values = scored[name_column] if name_column in scored.columns else pd.Series(pd.NA, index=scored.index)
+    scored["_candidate_name_key"] = name_values.apply(_candidate_name_key)
+    selected_rows: list[pd.Series] = []
+    selected_by_segment: dict[object, pd.Series] = {}
+    previous_name: str | None = None
+
+    for segment_index, group in scored.groupby("_segment_index", sort=True):
+        ranked = group.sort_values(
+            by=sort_columns,
+            ascending=ascending,
+            kind="stable",
+        )
+        chosen = ranked.iloc[0]
+        if previous_name is not None:
+            continuity_candidates = ranked[
+                (ranked["_candidate_name_key"] == previous_name)
+                & ranked["_within_pref_tolerance"]
+                & (ranked["_bearing_diff_deg"] <= max_continuity_bearing_diff_deg)
+            ]
+            if not continuity_candidates.empty:
+                chosen = continuity_candidates.iloc[0]
+
+        selected_by_segment[segment_index] = chosen
+        selected_rows.append(chosen)
+        if chosen["_candidate_name_key"] is not None:
+            previous_name = chosen["_candidate_name_key"]
+
+    selected = pd.DataFrame(selected_rows)
+    if selected.empty:
+        return selected
+
+    segment_indexes = list(selected["_segment_index"])
+    for idx in range(1, len(segment_indexes) - 1):
+        current_segment = segment_indexes[idx]
+        previous_row = selected_by_segment[segment_indexes[idx - 1]]
+        current_row = selected_by_segment[current_segment]
+        next_row = selected_by_segment[segment_indexes[idx + 1]]
+        previous_name = previous_row["_candidate_name_key"]
+        current_name = current_row["_candidate_name_key"]
+        next_name = next_row["_candidate_name_key"]
+        if previous_name is None or previous_name != next_name or current_name == previous_name:
+            continue
+
+        group = scored[scored["_segment_index"] == current_segment].sort_values(
+            by=sort_columns,
+            ascending=ascending,
+            kind="stable",
+        )
+        replacement_candidates = group[
+            (group["_candidate_name_key"] == previous_name)
+            & (
+                group["_candidate_dist_m"]
+                <= float(current_row["_candidate_dist_m"]) + match_preference_tolerance_m
+            )
+            & (group["_bearing_diff_deg"] <= max_continuity_bearing_diff_deg)
+        ]
+        if replacement_candidates.empty:
+            continue
+
+        replacement = replacement_candidates.iloc[0]
+        selected_by_segment[current_segment] = replacement
+        selected.iloc[idx] = replacement
+
+    return selected.drop(columns=["_candidate_name_key"], errors="ignore")
 
 
 def _select_best_mtc_match_per_segment(
@@ -517,21 +691,63 @@ def _select_best_mtc_match_per_segment(
     )
     if scored.empty:
         return scored
+    overlap_ratio = scored["_overlap_length_m"].div(scored["_route_length_m"].where(scored["_route_length_m"] > 0))
+    cross_street_mismatch = (
+        scored["_osm_name_key"].notna()
+        & (~scored["_name_key_match"])
+        & (scored["_name_distance_rank"] > 4)
+        & (
+            (scored["_bearing_diff_deg"] > 60.0)
+            | (overlap_ratio.fillna(0.0) < 0.45)
+        )
+    )
+    scored = scored[~cross_street_mismatch].copy()
+    if scored.empty:
+        return scored
 
-    scored = scored.sort_values(
-        by=[
-            "_segment_index",
+    return _select_with_name_continuity(
+        scored,
+        name_column="road_name",
+        sort_columns=[
             "_tolerance_rank",
-            "_overlap_length_m",
-            "_bearing_diff_deg",
+            "_name_key_match_rank",
             "_name_rank",
             "_name_distance_rank",
+            "_overlap_length_m",
+            "_bearing_diff_deg",
             "_candidate_dist_m",
         ],
-        ascending=[True, True, False, True, True, True, True],
-        kind="stable",
+        ascending=[True, True, True, True, False, True, True],
+        match_preference_tolerance_m=match_preference_tolerance_m,
     )
-    return scored.drop_duplicates(subset=["_segment_index"], keep="first")
+
+
+def _select_best_osm_match_per_segment(
+    matched: pd.DataFrame,
+    overlap_buffer_m: float,
+    match_preference_tolerance_m: float,
+) -> pd.DataFrame:
+    """Return one best-scoring OSM edge candidate row per route segment."""
+    scored = _score_osm_match_candidates(
+        matched,
+        overlap_buffer_m=overlap_buffer_m,
+        match_preference_tolerance_m=match_preference_tolerance_m,
+    )
+    if scored.empty:
+        return scored
+
+    return _select_with_name_continuity(
+        scored,
+        name_column="name",
+        sort_columns=[
+            "_candidate_priority",
+            "_overlap_length_m",
+            "_bearing_diff_deg",
+            "_candidate_dist_m",
+        ],
+        ascending=[True, False, True, True],
+        match_preference_tolerance_m=match_preference_tolerance_m,
+    )
 
 
 def _unknown_pci_label_from_osm_highway(value: object) -> str:
@@ -566,6 +782,66 @@ def _finalize_mtc_unknowns(result: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     else:
         unknown_labels = pd.Series("Roadway (Unknown)", index=result_gdf.index[missing_pci], dtype="object")
     result_gdf.loc[missing_pci, "mtc_pci_info"] = unknown_labels
+    return gpd.GeoDataFrame(result_gdf, geometry="geometry", crs=result.crs)
+
+
+def _fill_mtc_gaps_from_osm_continuity(
+    result: gpd.GeoDataFrame,
+    street_attrs: Sequence[str] = LOCAL_MTC_STREET_ATTRS,
+) -> gpd.GeoDataFrame:
+    """Bridge short unmatched MTC runs when OSM and both MTC neighbors agree on the road."""
+    result_gdf = result.copy()
+    if "osm_name" not in result_gdf.columns or "mtc_road_name" not in result_gdf.columns:
+        return gpd.GeoDataFrame(result_gdf, geometry="geometry", crs=result.crs)
+
+    mtc_attr_cols = [f"mtc_{col}" for col in street_attrs if f"mtc_{col}" in result_gdf.columns]
+    if not mtc_attr_cols:
+        return gpd.GeoDataFrame(result_gdf, geometry="geometry", crs=result.crs)
+
+    missing_mtc_name = result_gdf["mtc_road_name"].isna()
+    if not missing_mtc_name.any():
+        return gpd.GeoDataFrame(result_gdf, geometry="geometry", crs=result.crs)
+
+    row_labels = list(result_gdf.index)
+
+    pos = 0
+    while pos < len(row_labels):
+        label = row_labels[pos]
+        if not bool(missing_mtc_name.loc[label]):
+            pos += 1
+            continue
+
+        run_start = pos
+        while pos < len(row_labels) and bool(missing_mtc_name.loc[row_labels[pos]]):
+            pos += 1
+        run_end = pos
+
+        prev_pos = run_start - 1
+        next_pos = run_end
+        if prev_pos < 0 or next_pos >= len(row_labels):
+            continue
+
+        prev_label = row_labels[prev_pos]
+        next_label = row_labels[next_pos]
+        prev_key = _road_name_key(result_gdf.at[prev_label, "mtc_road_name"])
+        next_key = _road_name_key(result_gdf.at[next_label, "mtc_road_name"])
+        if prev_key is None or prev_key != next_key:
+            continue
+
+        run_labels = row_labels[run_start:run_end]
+        run_osm_keys = {
+            key
+            for key in result_gdf.loc[run_labels, "osm_name"].apply(_road_name_key)
+            if key is not None
+        }
+        if run_osm_keys != {prev_key}:
+            continue
+
+        for run_label in run_labels:
+            for col in mtc_attr_cols:
+                if pd.isna(result_gdf.at[run_label, col]):
+                    result_gdf.at[run_label, col] = result_gdf.at[prev_label, col]
+
     return gpd.GeoDataFrame(result_gdf, geometry="geometry", crs=result.crs)
 
 
@@ -742,26 +1018,21 @@ def enrich_segments_with_osm_edges(
     left = _build_match_windows(projected_segments, match_window_size)
     right = gpd.GeoDataFrame(edges_subset, geometry="geometry", crs=edges.crs).to_crs(PROJECTED_CRS)
 
-    # For each segment, find the nearest OSM edge within max distance.
-    matched = gpd.sjoin_nearest(
+    matched = _join_candidates_within_distance(
         left,
         right,
-        how="left",
-        max_distance=match_max_distance_m,
-        distance_col="_edge_dist_m",
-        exclusive=False,
+        max_distance_m=match_max_distance_m,
     )
+    if matched.empty:
+        return result
 
-    # If multiple candidates are near-tied, prefer road-like highway classes over path-like ones.
-    matched["_min_edge_dist_m"] = matched.groupby("_segment_index")["_edge_dist_m"].transform("min")
-    matched["_within_pref_tolerance"] = (
-        matched["_edge_dist_m"] <= matched["_min_edge_dist_m"] + match_preference_tolerance_m
+    matched = _select_best_osm_match_per_segment(
+        matched,
+        overlap_buffer_m=corridor_m,
+        match_preference_tolerance_m=match_preference_tolerance_m,
     )
-    matched["_candidate_priority"] = matched["_highway_priority"].where(matched["_within_pref_tolerance"], 999)
-    matched = matched.sort_values(
-        by=["_segment_index", "_candidate_priority", "_edge_dist_m"],
-        kind="stable",
-    ).drop_duplicates(subset=["_segment_index"], keep="first")
+    if matched.empty:
+        return result
 
     # Build a compact table of matched attributes to merge back onto segments.
     attrs = pd.DataFrame({"_segment_index": matched["_segment_index"]})
@@ -859,4 +1130,5 @@ def enrich_segments_with_mtc_streets(
     result = result.set_index("_segment_index")
     result.index.name = gdf_segments.index.name
     result_gdf = gpd.GeoDataFrame(result, geometry="geometry", crs=gdf_segments.crs)
+    result_gdf = _fill_mtc_gaps_from_osm_continuity(result_gdf, available_street_attrs)
     return _finalize_mtc_unknowns(result_gdf)

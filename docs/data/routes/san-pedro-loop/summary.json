@@ -31,9 +31,9 @@
       "lat": 37.9361,
       "lon": -122.35522
     },
-    "gravel_percent": 1.3,
-    "cycleway_percent": 39.4,
-    "road_quality_score": 32,
+    "gravel_percent": 0.4,
+    "cycleway_percent": 42.2,
+    "road_quality_score": 31,
     "start_bart_station": "Richmond",
     "end_bart_station": "Richmond",
     "bart_station": "Richmond",

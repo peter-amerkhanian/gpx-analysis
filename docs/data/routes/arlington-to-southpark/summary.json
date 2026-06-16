@@ -31,9 +31,9 @@
       "lat": 37.95169,
       "lon": -122.32115
     },
-    "gravel_percent": 44.6,
+    "gravel_percent": 46.0,
     "cycleway_percent": 0.0,
-    "road_quality_score": 71,
+    "road_quality_score": 74,
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "El Cerrito del Norte",

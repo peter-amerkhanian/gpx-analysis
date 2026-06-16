@@ -14,7 +14,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
 <p><span class="mobile-route-label">Elev. Gain</span><br>3596.13 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:20</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.44 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">67%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">65%</span></p>
 </div>
 </article>
 ```
@@ -104,7 +104,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>92 ± 47</td>
     </tr>
     <tr>
-      <td>1. Broadway (5% avg)</td>
+      <td>1. Keith Avenue (5% avg)</td>
       <td>106</td>
       <td>0.4</td>
       <td>4 ± 1</td>
@@ -193,7 +193,7 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
       <td>9</td>
     </tr>
     <tr>
-      <td>1. Broadway (5% avg)</td>
+      <td>1. Keith Avenue (5% avg)</td>
       <td>106</td>
       <td>0.4</td>
       <td>4 ± 1</td>
@@ -333,18 +333,18 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
   <tbody>
     <tr>
       <td>Poor</td>
-      <td>7.6</td>
-      <td>27.2</td>
+      <td>7.7</td>
+      <td>27.4</td>
     </tr>
     <tr>
       <td>Very Good</td>
-      <td>6.9</td>
-      <td>24.8</td>
+      <td>7.1</td>
+      <td>25.3</td>
     </tr>
     <tr>
       <td>Good</td>
-      <td>6.2</td>
-      <td>22.3</td>
+      <td>5.8</td>
+      <td>20.9</td>
     </tr>
     <tr>
       <td>Fair</td>
@@ -353,33 +353,28 @@ title: "Tunnel to Pinehurst w/ Shepards Canyon Descent"
     </tr>
     <tr>
       <td>Failed</td>
-      <td>1.0</td>
-      <td>3.5</td>
+      <td>1.1</td>
+      <td>4.0</td>
     </tr>
     <tr>
       <td>Excellent</td>
-      <td>0.9</td>
-      <td>3.3</td>
+      <td>0.6</td>
+      <td>2.2</td>
     </tr>
     <tr>
       <td>At Risk</td>
+      <td>0.5</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <td>Cycleway</td>
       <td>0.4</td>
       <td>1.5</td>
     </tr>
     <tr>
-      <td>Cycleway</td>
-      <td>0.1</td>
-      <td>0.4</td>
-    </tr>
-    <tr>
-      <td>Gravel</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
       <td>Unknown</td>
       <td>0.2</td>
-      <td>0.9</td>
+      <td>0.8</td>
     </tr>
   </tbody>
 </table>
