@@ -2,7 +2,7 @@
   "route": {
     "slug": "arlington-to-southpark",
     "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
-    "title": "Arlington into Tilden",
+    "title": "Arli-griz Plays Golf",
     "reverse": false,
     "links": {
       "strava_effort": null
@@ -34,6 +34,18 @@
     "gravel_percent": 46.0,
     "cycleway_percent": 0.0,
     "road_quality_score": 74,
+    "route_tags": [
+      {
+        "label": "Wildcat Creek Trail",
+        "distance_ft": 21490.8,
+        "threshold_ft": 20000.0
+      },
+      {
+        "label": "Meadows Canyon Trail",
+        "distance_ft": 7749.0,
+        "threshold_ft": 7000.0
+      }
+    ],
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "El Cerrito del Norte",

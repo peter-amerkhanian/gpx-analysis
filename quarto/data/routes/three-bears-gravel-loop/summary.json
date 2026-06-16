@@ -1,7 +1,7 @@
 {
   "route": {
     "slug": "three-bears-gravel-loop",
-    "source": "gpx_data/three_bears_with_gravel.gpx",
+    "source": "gpx_data\\Three_Wild_Bears.gpx",
     "title": "Three Wild Bears",
     "reverse": false,
     "links": {
@@ -13,31 +13,43 @@
     }
   },
   "summary": {
-    "point_count": 1380,
-    "segment_count": 1379,
-    "distance_m": 52294.47,
-    "distance_mi": 32.49,
-    "elevation_gain_m": 1012.3,
-    "elevation_gain_ft": 3321.19,
-    "elevation_loss_m": 1013.6,
-    "elevation_loss_ft": 3325.46,
-    "max_elevation_m": 324.1,
-    "max_elevation_ft": 1063.32,
+    "point_count": 5476,
+    "segment_count": 5475,
+    "distance_m": 50765.0,
+    "distance_mi": 31.54,
+    "elevation_gain_m": 1653.2,
+    "elevation_gain_ft": 5423.88,
+    "elevation_loss_m": 1653.2,
+    "elevation_loss_ft": 5423.88,
+    "max_elevation_m": 319.5,
+    "max_elevation_ft": 1048.23,
     "start": {
-      "lat": 37.92511,
-      "lon": -122.31685
+      "lat": 37.92601,
+      "lon": -122.31568
     },
     "end": {
-      "lat": 37.92424,
-      "lon": -122.31615
+      "lat": 37.92601,
+      "lon": -122.31568
     },
-    "gravel_percent": 13.4,
+    "gravel_percent": 20.5,
     "cycleway_percent": 0.0,
-    "road_quality_score": 88,
+    "road_quality_score": 91,
+    "route_tags": [
+      {
+        "label": "Wildcat Creek Trail",
+        "distance_ft": 21406.3,
+        "threshold_ft": 20000.0
+      },
+      {
+        "label": "Meadows Canyon Trail",
+        "distance_ft": 7548.5,
+        "threshold_ft": 7000.0
+      }
+    ],
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "El Cerrito del Norte",
-    "estimated_time_min": 203.0,
-    "estimated_time_display": "3:20"
+    "estimated_time_min": 219.0,
+    "estimated_time_display": "3:40"
   }
 }

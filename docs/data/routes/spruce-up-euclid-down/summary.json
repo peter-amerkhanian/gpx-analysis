@@ -34,6 +34,7 @@
     "gravel_percent": 0.7,
     "cycleway_percent": 0.0,
     "road_quality_score": 82,
+    "route_tags": [],
     "start_bart_station": "North Berkeley",
     "end_bart_station": "Ashby",
     "bart_station": "North Berkeley",

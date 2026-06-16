@@ -34,6 +34,7 @@
     "gravel_percent": 0.0,
     "cycleway_percent": 48.7,
     "road_quality_score": 18,
+    "route_tags": [],
     "start_bart_station": "Richmond",
     "end_bart_station": "Embarcadero",
     "bart_station": "Richmond",

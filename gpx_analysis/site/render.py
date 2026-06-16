@@ -1,4 +1,5 @@
 from __future__ import annotations
+from html import escape
 import shutil
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
@@ -102,6 +103,21 @@ def route_hazard_miles(route: dict[str, object], hazard: str) -> float:
     )
 
 
+def route_tags_html(route: dict[str, object]) -> str:
+    tags = route["summary"].get("route_tags", [])
+    if not tags:
+        return ""
+    tag_buttons = []
+    for tag in tags:
+        label = escape(str(tag.get("label", "") if isinstance(tag, dict) else tag))
+        if not label:
+            continue
+        tag_buttons.append(f'<span class="mobile-route-tag">{label}</span>')
+    if not tag_buttons:
+        return ""
+    return f'<div class="mobile-route-tags">{"".join(tag_buttons)}</div>'
+
+
 def summary_card(route: dict[str, object], path_prefix: str = "", title=True) -> list[str]:
     page_href = f'{path_prefix}{route["paths"]["page"].replace(".qmd", ".html")}'
     profile_src = f'{path_prefix}{route["paths"]["profile_svg"]}'
@@ -109,6 +125,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
     road_quality_score = float(route["summary"]["road_quality_score"])
     road_quality_style = f"background-color:{road_quality_color(road_quality_score)};"
     steep_descent_miles = route_hazard_miles(route, "steep_descent")
+    tags_html = route_tags_html(route)
     return [(
         f'<article class="mobile-route-card" '
         f'data-bart="{route["summary"]["bart_station"]}" '
@@ -122,6 +139,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{page_href}">'
         f'{title_html}</a></p>'
     ) if title else '',
+    tags_html,
     (
         '<div class="mobile-route-elevation" aria-hidden="true">'
         f'<img src="{profile_src}" alt="" loading="lazy">'

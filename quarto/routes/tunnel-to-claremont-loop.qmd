@@ -2,10 +2,26 @@
 title: "Tunnel to Claremont Loop"
 ---
 
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".quarto-title h1.title");
+  if (!title) {
+    return;
+  }
+  title.innerHTML = title.textContent.replace(
+    /(\d+% Gravel)/g,
+    '<span style="color: chocolate;">$1</span>',
+  );
+});
+</script>
+```
+
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54" data-time="98" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54" data-time="98" data-road-quality="52" data-has-gravel="false">
+
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/tunnel-to-claremont-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">

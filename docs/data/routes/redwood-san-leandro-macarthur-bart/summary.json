@@ -34,6 +34,13 @@
     "gravel_percent": 0.0,
     "cycleway_percent": 0.0,
     "road_quality_score": 84,
+    "route_tags": [
+      {
+        "label": "Redwood Road",
+        "distance_ft": 56398.2,
+        "threshold_ft": 54000.0
+      }
+    ],
     "start_bart_station": "San Leandro",
     "end_bart_station": "MacArthur",
     "bart_station": "San Leandro",

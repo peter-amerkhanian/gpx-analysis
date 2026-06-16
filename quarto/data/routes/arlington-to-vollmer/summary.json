@@ -1,0 +1,60 @@
+{
+  "route": {
+    "slug": "arlington-to-vollmer",
+    "source": "gpx_data\\Arli-griz_to_Vollmer_Peak.gpx",
+    "title": "Arli-griz to Vollmer Peak",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1597,
+    "segment_count": 1596,
+    "distance_m": 38528.72,
+    "distance_mi": 23.94,
+    "elevation_gain_m": 1241.3,
+    "elevation_gain_ft": 4072.51,
+    "elevation_loss_m": 1241.3,
+    "elevation_loss_ft": 4072.51,
+    "max_elevation_m": 558.5,
+    "max_elevation_ft": 1832.35,
+    "start": {
+      "lat": 37.92525,
+      "lon": -122.31637
+    },
+    "end": {
+      "lat": 37.92525,
+      "lon": -122.31637
+    },
+    "gravel_percent": 42.3,
+    "cycleway_percent": 0.0,
+    "road_quality_score": 76,
+    "route_tags": [
+      {
+        "label": "Wildcat Creek Trail",
+        "distance_ft": 21490.8,
+        "threshold_ft": 20000.0
+      },
+      {
+        "label": "Seaview Trail",
+        "distance_ft": 15132.5,
+        "threshold_ft": 15000.0
+      },
+      {
+        "label": "Meadows Canyon Trail",
+        "distance_ft": 7749.0,
+        "threshold_ft": 7000.0
+      }
+    ],
+    "start_bart_station": "El Cerrito del Norte",
+    "end_bart_station": "El Cerrito del Norte",
+    "bart_station": "El Cerrito del Norte",
+    "estimated_time_min": 179.0,
+    "estimated_time_display": "3:00"
+  }
+}

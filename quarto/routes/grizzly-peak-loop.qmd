@@ -2,10 +2,26 @@
 title: "Grizzly Peak Loop"
 ---
 
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".quarto-title h1.title");
+  if (!title) {
+    return;
+  }
+  title.innerHTML = title.textContent.replace(
+    /(\d+% Gravel)/g,
+    '<span style="color: chocolate;">$1</span>',
+  );
+});
+</script>
+```
+
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70" data-time="95" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70" data-time="95" data-road-quality="78" data-has-gravel="false">
+
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/grizzly-peak-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">

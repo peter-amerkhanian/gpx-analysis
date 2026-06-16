@@ -82,6 +82,27 @@
   text-decoration: underline;
 }
 
+.mobile-route-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: -0.3rem 0 0.65rem;
+}
+
+.mobile-route-tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.78);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .mobile-route-elevation {
   margin-bottom: 0.75rem;
 }

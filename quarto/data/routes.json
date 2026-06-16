@@ -1,110 +1,6 @@
 {
   "routes": [
     {
-      "slug": "arlington-gravel-loop",
-      "title": "Arlington Loop (29% Gravel)",
-      "title_html": "Arlington Loop <span>(<span style=\"color: chocolate;\">29% Gravel</span>)</span>",
-      "source": "gpx_data/arlington_gravel_loop.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": "https://www.strava.com/activities/18162634293"
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 883,
-        "segment_count": 882,
-        "distance_m": 23955.45,
-        "distance_mi": 14.89,
-        "elevation_gain_m": 585.8,
-        "elevation_gain_ft": 1921.92,
-        "elevation_loss_m": 583.0,
-        "elevation_loss_ft": 1912.73,
-        "max_elevation_m": 278.5,
-        "max_elevation_ft": 913.71,
-        "start": {
-          "lat": 37.95096,
-          "lon": -122.32259
-        },
-        "end": {
-          "lat": 37.95144,
-          "lon": -122.32191
-        },
-        "gravel_percent": 29.0,
-        "cycleway_percent": 0.0,
-        "road_quality_score": 84,
-        "start_bart_station": "El Cerrito del Norte",
-        "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte",
-        "estimated_time_min": 106.0,
-        "estimated_time_display": "1:50"
-      },
-      "paths": {
-        "summary": "data/routes/arlington-gravel-loop/summary.json",
-        "hazards": "data/routes/arlington-gravel-loop/hazards.json",
-        "points": "data/routes/arlington-gravel-loop/points.geojson",
-        "segments": "data/routes/arlington-gravel-loop/segments.geojson",
-        "map": "data/routes/arlington-gravel-loop/map.html",
-        "road_quality_map": "data/routes/arlington-gravel-loop/road_quality_map.html",
-        "chunk_map": "data/routes/arlington-gravel-loop/chunk_map.html",
-        "profile_svg": "data/routes/arlington-gravel-loop/profile.svg",
-        "page": "routes/arlington-gravel-loop.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 11905.0,
-          "percent": 50.0,
-          "distance_mi": 7.4
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 4618.0,
-          "percent": 19.0,
-          "distance_mi": 2.87
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3233.0,
-          "percent": 13.0,
-          "distance_mi": 2.01
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 2081.0,
-          "percent": 9.0,
-          "distance_mi": 1.29
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 1893.0,
-          "percent": 8.0,
-          "distance_mi": 1.18
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 225.0,
-          "percent": 1.0,
-          "distance_mi": 0.14
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 23955.0,
-          "percent": 100.0,
-          "distance_mi": 14.88
-        }
-      ]
-    },
-    {
       "slug": "grizzly-peak-loop",
       "title": "Grizzly Peak Loop",
       "title_html": "Grizzly Peak Loop",
@@ -139,6 +35,7 @@
         "gravel_percent": 0.0,
         "cycleway_percent": 0.4,
         "road_quality_score": 78,
+        "route_tags": [],
         "start_bart_station": "North Berkeley",
         "end_bart_station": "North Berkeley",
         "bart_station": "North Berkeley",
@@ -243,6 +140,18 @@
         "gravel_percent": 53.3,
         "cycleway_percent": 18.8,
         "road_quality_score": 29,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 32306.1,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Meadows Canyon Trail",
+            "distance_ft": 7387.9,
+            "threshold_ft": 7000.0
+          }
+        ],
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
@@ -347,6 +256,18 @@
         "gravel_percent": 58.8,
         "cycleway_percent": 12.3,
         "road_quality_score": 32,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 33160.4,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Meadows Canyon Trail",
+            "distance_ft": 7387.9,
+            "threshold_ft": 7000.0
+          }
+        ],
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
@@ -451,6 +372,7 @@
         "gravel_percent": 0.0,
         "cycleway_percent": 48.7,
         "road_quality_score": 18,
+        "route_tags": [],
         "start_bart_station": "Richmond",
         "end_bart_station": "Embarcadero",
         "bart_station": "Richmond",
@@ -521,110 +443,6 @@
       ]
     },
     {
-      "slug": "tunnel-pinehurst-loop-sheps",
-      "title": "Tunnel to Pinehurst w/ Shepards Canyon Descent",
-      "title_html": "Tunnel to Pinehurst w/ Shepards Canyon Descent",
-      "source": "gpx_data/tunnel_to_pinehurst_skyline_to_shepards.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1661,
-        "segment_count": 1660,
-        "distance_m": 44991.43,
-        "distance_mi": 27.96,
-        "elevation_gain_m": 1096.1,
-        "elevation_gain_ft": 3596.13,
-        "elevation_loss_m": 1095.7,
-        "elevation_loss_ft": 3594.82,
-        "max_elevation_m": 445.4,
-        "max_elevation_ft": 1461.29,
-        "start": {
-          "lat": 37.82933,
-          "lon": -122.26592
-        },
-        "end": {
-          "lat": 37.82927,
-          "lon": -122.26554
-        },
-        "gravel_percent": 0.0,
-        "cycleway_percent": 1.5,
-        "road_quality_score": 65,
-        "start_bart_station": "MacArthur",
-        "end_bart_station": "MacArthur",
-        "bart_station": "MacArthur",
-        "estimated_time_min": 197.0,
-        "estimated_time_display": "3:20"
-      },
-      "paths": {
-        "summary": "data/routes/tunnel-pinehurst-loop-sheps/summary.json",
-        "hazards": "data/routes/tunnel-pinehurst-loop-sheps/hazards.json",
-        "points": "data/routes/tunnel-pinehurst-loop-sheps/points.geojson",
-        "segments": "data/routes/tunnel-pinehurst-loop-sheps/segments.geojson",
-        "map": "data/routes/tunnel-pinehurst-loop-sheps/map.html",
-        "road_quality_map": "data/routes/tunnel-pinehurst-loop-sheps/road_quality_map.html",
-        "chunk_map": "data/routes/tunnel-pinehurst-loop-sheps/chunk_map.html",
-        "profile_svg": "data/routes/tunnel-pinehurst-loop-sheps/profile.svg",
-        "page": "routes/tunnel-pinehurst-loop-sheps.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 24581.0,
-          "percent": 55.0,
-          "distance_mi": 15.27
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 6623.0,
-          "percent": 15.0,
-          "distance_mi": 4.12
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 5239.0,
-          "percent": 12.0,
-          "distance_mi": 3.26
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 4167.0,
-          "percent": 9.0,
-          "distance_mi": 2.59
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 3665.0,
-          "percent": 8.0,
-          "distance_mi": 2.28
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 716.0,
-          "percent": 2.0,
-          "distance_mi": 0.44
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 44991.0,
-          "percent": 100.0,
-          "distance_mi": 27.96
-        }
-      ]
-    },
-    {
       "slug": "spruce-up-euclid-down",
       "title": "Spruce up, Euclid Down",
       "title_html": "Spruce up, Euclid Down",
@@ -659,6 +477,7 @@
         "gravel_percent": 0.7,
         "cycleway_percent": 0.0,
         "road_quality_score": 82,
+        "route_tags": [],
         "start_bart_station": "North Berkeley",
         "end_bart_station": "Ashby",
         "bart_station": "North Berkeley",
@@ -730,9 +549,9 @@
     },
     {
       "slug": "wildwood-bbr-loop",
-      "title": "Wildwood to BBR Loop",
-      "title_html": "Wildwood to BBR Loop",
-      "source": "gpx_data/Wildwood_to_bbr_loop.gpx",
+      "title": "OAK Hills Skyline Loop",
+      "title_html": "OAK Hills Skyline Loop",
+      "source": "gpx_data\\OAK_Hills_Skyline_Loop.gpx",
       "reverse": false,
       "links": {
         "strava_effort": null
@@ -742,32 +561,33 @@
         "gallery": []
       },
       "summary": {
-        "point_count": 1094,
-        "segment_count": 1093,
-        "distance_m": 28013.15,
-        "distance_mi": 17.41,
-        "elevation_gain_m": 745.0,
-        "elevation_gain_ft": 2444.23,
-        "elevation_loss_m": 743.5,
-        "elevation_loss_ft": 2439.3,
-        "max_elevation_m": 447.7,
-        "max_elevation_ft": 1468.83,
+        "point_count": 2946,
+        "segment_count": 2945,
+        "distance_m": 31366.2,
+        "distance_mi": 19.49,
+        "elevation_gain_m": 806.5,
+        "elevation_gain_ft": 2646.0,
+        "elevation_loss_m": 794.5,
+        "elevation_loss_ft": 2606.63,
+        "max_elevation_m": 450.5,
+        "max_elevation_ft": 1478.02,
         "start": {
-          "lat": 37.82895,
-          "lon": -122.26357
+          "lat": 37.82936,
+          "lon": -122.2661
         },
         "end": {
-          "lat": 37.82971,
-          "lon": -122.2627
+          "lat": 37.85256,
+          "lon": -122.26979
         },
-        "gravel_percent": 0.0,
-        "cycleway_percent": 1.9,
-        "road_quality_score": 48,
+        "gravel_percent": 0.5,
+        "cycleway_percent": 0.0,
+        "road_quality_score": 55,
+        "route_tags": [],
         "start_bart_station": "MacArthur",
-        "end_bart_station": "MacArthur",
+        "end_bart_station": "Ashby",
         "bart_station": "MacArthur",
-        "estimated_time_min": 125.0,
-        "estimated_time_display": "2:00"
+        "estimated_time_min": 138.0,
+        "estimated_time_display": "2:20"
       },
       "paths": {
         "summary": "data/routes/wildwood-bbr-loop/summary.json",
@@ -784,51 +604,51 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 13648.0,
-          "percent": 49.0,
-          "distance_mi": 8.48
+          "distance_m": 16825.0,
+          "percent": 54.0,
+          "distance_mi": 10.45
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 4441.0,
-          "percent": 16.0,
-          "distance_mi": 2.76
+          "distance_m": 4346.0,
+          "percent": 14.0,
+          "distance_mi": 2.7
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 4120.0,
-          "percent": 15.0,
-          "distance_mi": 2.56
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 2813.0,
-          "percent": 10.0,
-          "distance_mi": 1.75
+          "distance_m": 3547.0,
+          "percent": 11.0,
+          "distance_mi": 2.2
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2490.0,
-          "percent": 9.0,
-          "distance_mi": 1.55
+          "distance_m": 3233.0,
+          "percent": 10.0,
+          "distance_mi": 2.01
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3192.0,
+          "percent": 10.0,
+          "distance_mi": 1.98
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 500.0,
-          "percent": 2.0,
-          "distance_mi": 0.31
+          "distance_m": 223.0,
+          "percent": 1.0,
+          "distance_mi": 0.14
         },
         {
           "hazard": "TOTAL",
           "hazard_label": "TOTAL",
-          "distance_m": 28013.0,
+          "distance_m": 31366.0,
           "percent": 100.0,
-          "distance_mi": 17.41
+          "distance_mi": 19.49
         }
       ]
     },
@@ -867,6 +687,7 @@
         "gravel_percent": 0.0,
         "cycleway_percent": 0.7,
         "road_quality_score": 52,
+        "route_tags": [],
         "start_bart_station": "MacArthur",
         "end_bart_station": "MacArthur",
         "bart_station": "MacArthur",
@@ -937,114 +758,10 @@
       ]
     },
     {
-      "slug": "san-pedro-loop",
-      "title": "San Pedro Loop (42% Cycleway)",
-      "title_html": "San Pedro Loop <span>(<span style=\"color: forestgreen;\">42% Cycleway</span>)</span>",
-      "source": "gpx_data/Point_San_Pedro_Loop.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 2949,
-        "segment_count": 2948,
-        "distance_m": 57426.15,
-        "distance_mi": 35.68,
-        "elevation_gain_m": 482.9,
-        "elevation_gain_ft": 1584.32,
-        "elevation_loss_m": 484.4,
-        "elevation_loss_ft": 1589.24,
-        "max_elevation_m": 62.7,
-        "max_elevation_ft": 205.71,
-        "start": {
-          "lat": 37.93683,
-          "lon": -122.35426
-        },
-        "end": {
-          "lat": 37.9361,
-          "lon": -122.35522
-        },
-        "gravel_percent": 0.4,
-        "cycleway_percent": 42.2,
-        "road_quality_score": 31,
-        "start_bart_station": "Richmond",
-        "end_bart_station": "Richmond",
-        "bart_station": "Richmond",
-        "estimated_time_min": 201.0,
-        "estimated_time_display": "3:20"
-      },
-      "paths": {
-        "summary": "data/routes/san-pedro-loop/summary.json",
-        "hazards": "data/routes/san-pedro-loop/hazards.json",
-        "points": "data/routes/san-pedro-loop/points.geojson",
-        "segments": "data/routes/san-pedro-loop/segments.geojson",
-        "map": "data/routes/san-pedro-loop/map.html",
-        "road_quality_map": "data/routes/san-pedro-loop/road_quality_map.html",
-        "chunk_map": "data/routes/san-pedro-loop/chunk_map.html",
-        "profile_svg": "data/routes/san-pedro-loop/profile.svg",
-        "page": "routes/san-pedro-loop.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 51531.0,
-          "percent": 90.0,
-          "distance_mi": 32.02
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 1618.0,
-          "percent": 3.0,
-          "distance_mi": 1.01
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 1546.0,
-          "percent": 3.0,
-          "distance_mi": 0.96
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 1379.0,
-          "percent": 2.0,
-          "distance_mi": 0.86
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 1179.0,
-          "percent": 2.0,
-          "distance_mi": 0.73
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 173.0,
-          "percent": 0.0,
-          "distance_mi": 0.11
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 57426.0,
-          "percent": 100.0,
-          "distance_mi": 35.68
-        }
-      ]
-    },
-    {
       "slug": "three-bears-gravel-loop",
-      "title": "Three Wild Bears (13% Gravel)",
-      "title_html": "Three Wild Bears <span>(<span style=\"color: chocolate;\">13% Gravel</span>)</span>",
-      "source": "gpx_data/three_bears_with_gravel.gpx",
+      "title": "Three Wild Bears (20% Gravel)",
+      "title_html": "Three Wild Bears <span>(<span style=\"color: chocolate;\">20% Gravel</span>)</span>",
+      "source": "gpx_data\\Three_Wild_Bears.gpx",
       "reverse": false,
       "links": {
         "strava_effort": null
@@ -1054,32 +771,44 @@
         "gallery": []
       },
       "summary": {
-        "point_count": 1380,
-        "segment_count": 1379,
-        "distance_m": 52294.47,
-        "distance_mi": 32.49,
-        "elevation_gain_m": 1012.3,
-        "elevation_gain_ft": 3321.19,
-        "elevation_loss_m": 1013.6,
-        "elevation_loss_ft": 3325.46,
-        "max_elevation_m": 324.1,
-        "max_elevation_ft": 1063.32,
+        "point_count": 5476,
+        "segment_count": 5475,
+        "distance_m": 50765.0,
+        "distance_mi": 31.54,
+        "elevation_gain_m": 1653.2,
+        "elevation_gain_ft": 5423.88,
+        "elevation_loss_m": 1653.2,
+        "elevation_loss_ft": 5423.88,
+        "max_elevation_m": 319.5,
+        "max_elevation_ft": 1048.23,
         "start": {
-          "lat": 37.92511,
-          "lon": -122.31685
+          "lat": 37.92601,
+          "lon": -122.31568
         },
         "end": {
-          "lat": 37.92424,
-          "lon": -122.31615
+          "lat": 37.92601,
+          "lon": -122.31568
         },
-        "gravel_percent": 13.4,
+        "gravel_percent": 20.5,
         "cycleway_percent": 0.0,
-        "road_quality_score": 88,
+        "road_quality_score": 91,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 21406.3,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Meadows Canyon Trail",
+            "distance_ft": 7548.5,
+            "threshold_ft": 7000.0
+          }
+        ],
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
-        "estimated_time_min": 203.0,
-        "estimated_time_display": "3:20"
+        "estimated_time_min": 219.0,
+        "estimated_time_display": "3:40"
       },
       "paths": {
         "summary": "data/routes/three-bears-gravel-loop/summary.json",
@@ -1096,58 +825,58 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 35394.0,
-          "percent": 68.0,
-          "distance_mi": 21.99
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 5263.0,
-          "percent": 10.0,
-          "distance_mi": 3.27
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 4986.0,
-          "percent": 10.0,
-          "distance_mi": 3.1
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 3921.0,
-          "percent": 7.0,
-          "distance_mi": 2.44
+          "distance_m": 29580.0,
+          "percent": 58.0,
+          "distance_mi": 18.38
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 2447.0,
-          "percent": 5.0,
-          "distance_mi": 1.52
+          "distance_m": 5479.0,
+          "percent": 11.0,
+          "distance_mi": 3.4
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 5254.0,
+          "percent": 10.0,
+          "distance_mi": 3.26
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 4584.0,
+          "percent": 9.0,
+          "distance_mi": 2.85
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 3826.0,
+          "percent": 8.0,
+          "distance_mi": 2.38
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 284.0,
-          "percent": 1.0,
-          "distance_mi": 0.18
+          "distance_m": 2042.0,
+          "percent": 4.0,
+          "distance_mi": 1.27
         },
         {
           "hazard": "TOTAL",
           "hazard_label": "TOTAL",
-          "distance_m": 52294.0,
+          "distance_m": 50765.0,
           "percent": 100.0,
-          "distance_mi": 32.49
+          "distance_mi": 31.54
         }
       ]
     },
     {
       "slug": "arlington-to-southpark",
-      "title": "Arlington into Tilden (46% Gravel)",
-      "title_html": "Arlington into Tilden <span>(<span style=\"color: chocolate;\">46% Gravel</span>)</span>",
+      "title": "Arli-griz Plays Golf (46% Gravel)",
+      "title_html": "Arli-griz Plays Golf <span>(<span style=\"color: chocolate;\">46% Gravel</span>)</span>",
       "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
       "reverse": false,
       "links": {
@@ -1179,6 +908,18 @@
         "gravel_percent": 46.0,
         "cycleway_percent": 0.0,
         "road_quality_score": 74,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 21490.8,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Meadows Canyon Trail",
+            "distance_ft": 7749.0,
+            "threshold_ft": 7000.0
+          }
+        ],
         "start_bart_station": "El Cerrito del Norte",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "El Cerrito del Norte",
@@ -1249,9 +990,241 @@
       ]
     },
     {
+      "slug": "arlington-to-wildcat-creek",
+      "title": "Arli-spruce to Wildcat Creek (25% Gravel)",
+      "title_html": "Arli-spruce to Wildcat Creek <span>(<span style=\"color: chocolate;\">25% Gravel</span>)</span>",
+      "source": "gpx_data\\Arli-Spruce_to_Wildcat_Creek.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": "https://www.strava.com/activities/18162634293"
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1226,
+        "segment_count": 1225,
+        "distance_m": 31954.21,
+        "distance_mi": 19.86,
+        "elevation_gain_m": 929.2,
+        "elevation_gain_ft": 3048.56,
+        "elevation_loss_m": 927.7,
+        "elevation_loss_ft": 3043.64,
+        "max_elevation_m": 278.1,
+        "max_elevation_ft": 912.4,
+        "start": {
+          "lat": 37.92517,
+          "lon": -122.31669
+        },
+        "end": {
+          "lat": 37.92497,
+          "lon": -122.31654
+        },
+        "gravel_percent": 24.9,
+        "cycleway_percent": 0.0,
+        "road_quality_score": 79,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 21490.9,
+            "threshold_ft": 20000.0
+          }
+        ],
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 144.0,
+        "estimated_time_display": "2:20"
+      },
+      "paths": {
+        "summary": "data/routes/arlington-to-wildcat-creek/summary.json",
+        "hazards": "data/routes/arlington-to-wildcat-creek/hazards.json",
+        "points": "data/routes/arlington-to-wildcat-creek/points.geojson",
+        "segments": "data/routes/arlington-to-wildcat-creek/segments.geojson",
+        "map": "data/routes/arlington-to-wildcat-creek/map.html",
+        "road_quality_map": "data/routes/arlington-to-wildcat-creek/road_quality_map.html",
+        "chunk_map": "data/routes/arlington-to-wildcat-creek/chunk_map.html",
+        "profile_svg": "data/routes/arlington-to-wildcat-creek/profile.svg",
+        "page": "routes/arlington-to-wildcat-creek.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 16063.0,
+          "percent": 50.0,
+          "distance_mi": 9.98
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 4791.0,
+          "percent": 15.0,
+          "distance_mi": 2.98
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4272.0,
+          "percent": 13.0,
+          "distance_mi": 2.65
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3484.0,
+          "percent": 11.0,
+          "distance_mi": 2.16
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 2945.0,
+          "percent": 9.0,
+          "distance_mi": 1.83
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 398.0,
+          "percent": 1.0,
+          "distance_mi": 0.25
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 31954.0,
+          "percent": 100.0,
+          "distance_mi": 19.86
+        }
+      ]
+    },
+    {
+      "slug": "arlington-to-vollmer",
+      "title": "Arli-griz to Vollmer Peak (42% Gravel)",
+      "title_html": "Arli-griz to Vollmer Peak <span>(<span style=\"color: chocolate;\">42% Gravel</span>)</span>",
+      "source": "gpx_data\\Arli-griz_to_Vollmer_Peak.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1597,
+        "segment_count": 1596,
+        "distance_m": 38528.72,
+        "distance_mi": 23.94,
+        "elevation_gain_m": 1241.3,
+        "elevation_gain_ft": 4072.51,
+        "elevation_loss_m": 1241.3,
+        "elevation_loss_ft": 4072.51,
+        "max_elevation_m": 558.5,
+        "max_elevation_ft": 1832.35,
+        "start": {
+          "lat": 37.92525,
+          "lon": -122.31637
+        },
+        "end": {
+          "lat": 37.92525,
+          "lon": -122.31637
+        },
+        "gravel_percent": 42.3,
+        "cycleway_percent": 0.0,
+        "road_quality_score": 76,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 21490.8,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Seaview Trail",
+            "distance_ft": 15132.5,
+            "threshold_ft": 15000.0
+          },
+          {
+            "label": "Meadows Canyon Trail",
+            "distance_ft": 7749.0,
+            "threshold_ft": 7000.0
+          }
+        ],
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 179.0,
+        "estimated_time_display": "3:00"
+      },
+      "paths": {
+        "summary": "data/routes/arlington-to-vollmer/summary.json",
+        "hazards": "data/routes/arlington-to-vollmer/hazards.json",
+        "points": "data/routes/arlington-to-vollmer/points.geojson",
+        "segments": "data/routes/arlington-to-vollmer/segments.geojson",
+        "map": "data/routes/arlington-to-vollmer/map.html",
+        "road_quality_map": "data/routes/arlington-to-vollmer/road_quality_map.html",
+        "chunk_map": "data/routes/arlington-to-vollmer/chunk_map.html",
+        "profile_svg": "data/routes/arlington-to-vollmer/profile.svg",
+        "page": "routes/arlington-to-vollmer.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 17803.0,
+          "percent": 46.0,
+          "distance_mi": 11.06
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 6023.0,
+          "percent": 16.0,
+          "distance_mi": 3.74
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 4886.0,
+          "percent": 13.0,
+          "distance_mi": 3.04
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 4397.0,
+          "percent": 11.0,
+          "distance_mi": 2.73
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4129.0,
+          "percent": 11.0,
+          "distance_mi": 2.57
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 1291.0,
+          "percent": 3.0,
+          "distance_mi": 0.8
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 38529.0,
+          "percent": 100.0,
+          "distance_mi": 23.94
+        }
+      ]
+    },
+    {
       "slug": "big-redwood-to-tilden",
-      "title": "Redwood Road to Tilden (24% Gravel)",
-      "title_html": "Redwood Road to Tilden <span>(<span style=\"color: chocolate;\">24% Gravel</span>)</span>",
+      "title": "Redwood Road to Vollmer Peak (24% Gravel)",
+      "title_html": "Redwood Road to Vollmer Peak <span>(<span style=\"color: chocolate;\">24% Gravel</span>)</span>",
       "source": "gpx_data\\redwood_big_gravel_ride.gpx",
       "reverse": false,
       "links": {
@@ -1283,6 +1256,28 @@
         "gravel_percent": 24.3,
         "cycleway_percent": 0.0,
         "road_quality_score": 76,
+        "route_tags": [
+          {
+            "label": "Redwood Road",
+            "distance_ft": 56561.7,
+            "threshold_ft": 54000.0
+          },
+          {
+            "label": "Wildcat Creek Trail",
+            "distance_ft": 21491.1,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Seaview Trail",
+            "distance_ft": 15132.2,
+            "threshold_ft": 15000.0
+          },
+          {
+            "label": "Meadows Canyon Trail",
+            "distance_ft": 7749.0,
+            "threshold_ft": 7000.0
+          }
+        ],
         "start_bart_station": "San Leandro",
         "end_bart_station": "El Cerrito del Norte",
         "bart_station": "San Leandro",
@@ -1387,6 +1382,7 @@
         "gravel_percent": 78.4,
         "cycleway_percent": 2.6,
         "road_quality_score": 34,
+        "route_tags": [],
         "start_bart_station": "Union City",
         "end_bart_station": "Union City",
         "bart_station": "Union City",
@@ -1491,6 +1487,13 @@
         "gravel_percent": 0.0,
         "cycleway_percent": 0.0,
         "road_quality_score": 84,
+        "route_tags": [
+          {
+            "label": "Redwood Road",
+            "distance_ft": 56398.2,
+            "threshold_ft": 54000.0
+          }
+        ],
         "start_bart_station": "San Leandro",
         "end_bart_station": "MacArthur",
         "bart_station": "San Leandro",

@@ -38,6 +38,12 @@ PROFILE_FIXED_YLIM_MAX_ELEVATION_FT = 250.0
 PROFILE_FIXED_YLIM_FT = (0.0, 500.0)
 GRAVEL_HIGHLIGHT_COLOR = "chocolate"
 CYCLEWAY_HIGHLIGHT_COLOR = "forestgreen"
+ROUTE_TAG_THRESHOLDS_FT = {
+    "Redwood Road": 54000,
+    "Wildcat Creek Trail": 20000,
+    "Seaview Trail": 15000,
+    "Meadows Canyon Trail": 7000,
+}
 
 
 @dataclass(frozen=True)
@@ -302,6 +308,40 @@ def total_estimated_time_minutes(chunk_sections_summary: pd.DataFrame) -> float:
     return float(total_time.split()[0])
 
 
+def route_tags_from_segments(
+    segments: pd.DataFrame,
+    tag_thresholds_ft: dict[str, float] | None = None,
+) -> list[dict[str, object]]:
+    """Return route tags for named roads/trails whose total distance passes a threshold."""
+    thresholds = tag_thresholds_ft or ROUTE_TAG_THRESHOLDS_FT
+    if "osm_name" not in segments.columns or "step_dist_f" not in segments.columns:
+        return []
+
+    frame = segments[["osm_name", "step_dist_f"]].copy()
+    frame["osm_name"] = frame["osm_name"].astype("string").str.strip()
+    frame["step_dist_f"] = pd.to_numeric(frame["step_dist_f"], errors="coerce").fillna(0)
+    distance_by_name = (
+        frame.dropna(subset=["osm_name"])
+        .groupby("osm_name")["step_dist_f"]
+        .sum()
+        .sort_values(ascending=False)
+    )
+
+    tags: list[dict[str, object]] = []
+    for road_name, distance_ft in distance_by_name.items():
+        threshold_ft = thresholds.get(str(road_name))
+        if threshold_ft is None or float(distance_ft) < float(threshold_ft):
+            continue
+        tags.append(
+            {
+                "label": str(road_name),
+                "distance_ft": round(float(distance_ft), 1),
+                "threshold_ft": float(threshold_ft),
+            }
+        )
+    return tags
+
+
 def route_display_title(
     base_title: str,
     gravel_percent: float,
@@ -376,6 +416,7 @@ def build_route(
     summary["gravel_percent"] = round(gravel_percent, 1)
     summary["cycleway_percent"] = round(cycleway_percent, 1)
     summary["road_quality_score"] = int(round(road_quality_score(segments) * 100))
+    summary["route_tags"] = route_tags_from_segments(segments)
     summary["start_bart_station"] = add_bart_station(points_gdf, step=0)
     summary["end_bart_station"] = add_bart_station(points_gdf, step=len(points_gdf) - 1)
     summary["bart_station"] = summary["start_bart_station"]

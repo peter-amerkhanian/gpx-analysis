@@ -21,18 +21,20 @@ format:
 <option value="elev_desc">Elevation: highest</option>
 <option value="time_asc">Time: shortest</option>
 <option value="time_desc">Time: longest</option>
+<option value="road_quality_desc">Road Quality: highest</option>
+<option value="road_quality_asc">Road Quality: lowest</option>
 </select>
 </div>
 <div class="mobile-route-control">
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
-<option value="Union City">Union City</option>
-<option value="North Berkeley">North Berkeley</option>
 <option value="El Cerrito del Norte">El Cerrito del Norte</option>
-<option value="MacArthur">MacArthur</option>
 <option value="San Leandro">San Leandro</option>
 <option value="Richmond">Richmond</option>
+<option value="MacArthur">MacArthur</option>
+<option value="North Berkeley">North Berkeley</option>
+<option value="Union City">Union City</option>
 </select>
 </div>
 <div class="mobile-route-control">
@@ -44,8 +46,9 @@ format:
 </div>
 </div>
 <div class="mobile-route-grid" id="mobile-route-grid">
-<article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1246.39" data-time="78" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="11.59" data-elevation="1246.39" data-time="78" data-road-quality="82" data-has-gravel="false">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/spruce-up-euclid-down.html">Spruce up, Euclid Down</a></p>
+
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/spruce-up-euclid-down/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
@@ -56,8 +59,9 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">82%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70" data-time="95" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="13.91" data-elevation="1747.70" data-time="95" data-road-quality="78" data-has-gravel="false">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/grizzly-peak-loop.html">Grizzly Peak Loop</a></p>
+
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/grizzly-peak-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
@@ -68,8 +72,9 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">78%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54" data-time="98" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54" data-time="98" data-road-quality="52" data-has-gravel="false">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tunnel-to-claremont-loop.html">Tunnel to Claremont Loop</a></p>
+
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/tunnel-to-claremont-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
@@ -80,32 +85,9 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">52%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="14.89" data-elevation="1921.92" data-time="106" data-has-gravel="true">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/arlington-gravel-loop.html">Arlington Loop <span>(<span style="color: chocolate;">29% Gravel</span>)</span></a></p>
-<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/arlington-gravel-loop/profile.svg" alt="" loading="lazy"></div>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
-<p><span class="mobile-route-label">Miles</span><br>14.89</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>1921.92 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~1:50</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.14 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">84%</span></p>
-</div>
-</article>
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="17.41" data-elevation="2444.23" data-time="125" data-has-gravel="false">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/wildwood-bbr-loop.html">Wildwood to BBR Loop</a></p>
-<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/wildwood-bbr-loop/profile.svg" alt="" loading="lazy"></div>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
-<p><span class="mobile-route-label">Miles</span><br>17.41</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>2444.23 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~2:00</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.31 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">48%</span></p>
-</div>
-</article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.05" data-elevation="2176.84" data-time="122" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.05" data-elevation="2176.84" data-time="122" data-road-quality="32" data-has-gravel="true">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/wildcat-conlon-nimitz-meadow-loop.html">Conlon Trail Loop <span>(<span style="color: chocolate;">59% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildcat Creek Trail</span><span class="mobile-route-tag">Meadows Canyon Trail</span></div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/wildcat-conlon-nimitz-meadow-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
@@ -116,8 +98,9 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">32%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.83" data-elevation="2072.18" data-time="122" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="18.83" data-elevation="2072.18" data-time="122" data-road-quality="29" data-has-gravel="true">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/wildcat-havey-nimitz-meadow-loop.html">Havey Canyon Loop <span>(<span style="color: chocolate;">53% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildcat Creek Trail</span><span class="mobile-route-tag">Meadows Canyon Trail</span></div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/wildcat-havey-nimitz-meadow-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
@@ -128,8 +111,35 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">29%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="20.09" data-elevation="3712.93" data-time="153" data-has-gravel="true">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/arlington-to-southpark.html">Arlington into Tilden <span>(<span style="color: chocolate;">46% Gravel</span>)</span></a></p>
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="19.49" data-elevation="2646.00" data-time="138" data-road-quality="55" data-has-gravel="false">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/wildwood-bbr-loop.html">OAK Hills Skyline Loop</a></p>
+
+<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/wildwood-bbr-loop/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
+<p><span class="mobile-route-label">Miles</span><br>19.49</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2646.0 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~2:20</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.14 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">55%</span></p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="19.86" data-elevation="3048.56" data-time="144" data-road-quality="79" data-has-gravel="true">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/arlington-to-wildcat-creek.html">Arli-spruce to Wildcat Creek <span>(<span style="color: chocolate;">25% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildcat Creek Trail</span></div>
+<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/arlington-to-wildcat-creek/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>19.86</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>3048.56 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~2:20</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.25 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">79%</span></p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="20.09" data-elevation="3712.93" data-time="153" data-road-quality="74" data-has-gravel="true">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/arlington-to-southpark.html">Arli-griz Plays Golf <span>(<span style="color: chocolate;">46% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildcat Creek Trail</span><span class="mobile-route-tag">Meadows Canyon Trail</span></div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/arlington-to-southpark/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
@@ -140,8 +150,22 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">74%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2958.33" data-time="167" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="23.94" data-elevation="4072.51" data-time="179" data-road-quality="76" data-has-gravel="true">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/arlington-to-vollmer.html">Arli-griz to Vollmer Peak <span>(<span style="color: chocolate;">42% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildcat Creek Trail</span><span class="mobile-route-tag">Seaview Trail</span><span class="mobile-route-tag">Meadows Canyon Trail</span></div>
+<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/arlington-to-vollmer/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>23.94</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>4072.51 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~3:00</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.80 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">76%</span></p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2958.33" data-time="167" data-road-quality="84" data-has-gravel="false">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/redwood-san-leandro-macarthur-bart.html">Redwood Road to Temescal</a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Redwood Road</span></div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/redwood-san-leandro-macarthur-bart/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>
@@ -152,8 +176,9 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">84%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="Union City" data-miles="25.21" data-elevation="548.88" data-time="135" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="Union City" data-miles="25.21" data-elevation="548.88" data-time="135" data-road-quality="34" data-has-gravel="true">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/coyote-union-city.html">Coyote Hills Loop <span>(<span style="color: chocolate;">78% Gravel</span>)</span></a></p>
+
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/coyote-union-city/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>Union City</p>
@@ -164,20 +189,9 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">34%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="27.96" data-elevation="3596.13" data-time="197" data-has-gravel="false">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/tunnel-pinehurst-loop-sheps.html">Tunnel to Pinehurst w/ Shepards Canyon Descent</a></p>
-<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/tunnel-pinehurst-loop-sheps/profile.svg" alt="" loading="lazy"></div>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>MacArthur</p>
-<p><span class="mobile-route-label">Miles</span><br>27.96</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>3596.13 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~3:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.44 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">65%</span></p>
-</div>
-</article>
-<article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86" data-time="170" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86" data-time="170" data-road-quality="18" data-has-gravel="false">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/richmond-marin-conzelman-emb.html">Richmond to EMB <span>(<span style="color: forestgreen;">49% Cycleway</span>)</span></a></p>
+
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/richmond-marin-conzelman-emb/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>Richmond</p>
@@ -188,32 +202,22 @@ format:
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fc8d59;">18%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="32.49" data-elevation="3321.19" data-time="203" data-has-gravel="true">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/three-bears-gravel-loop.html">Three Wild Bears <span>(<span style="color: chocolate;">13% Gravel</span>)</span></a></p>
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="31.54" data-elevation="5423.88" data-time="219" data-road-quality="91" data-has-gravel="true">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/three-bears-gravel-loop.html">Three Wild Bears <span>(<span style="color: chocolate;">20% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildcat Creek Trail</span><span class="mobile-route-tag">Meadows Canyon Trail</span></div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/three-bears-gravel-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
-<p><span class="mobile-route-label">Miles</span><br>32.49</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>3321.19 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~3:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.18 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">88%</span></p>
+<p><span class="mobile-route-label">Miles</span><br>31.54</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>5423.88 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~3:40</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>1.27 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">91%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="Richmond" data-miles="35.68" data-elevation="1584.32" data-time="201" data-has-gravel="false">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/san-pedro-loop.html">San Pedro Loop <span>(<span style="color: forestgreen;">42% Cycleway</span>)</span></a></p>
-<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/san-pedro-loop/profile.svg" alt="" loading="lazy"></div>
-<div class="mobile-route-metrics">
-<p><span class="mobile-route-label">BART</span><br>Richmond</p>
-<p><span class="mobile-route-label">Miles</span><br>35.68</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>1584.32 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~3:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.11 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">31%</span></p>
-</div>
-</article>
-<article class="mobile-route-card" data-bart="San Leandro" data-miles="38.61" data-elevation="5624.67" data-time="271" data-has-gravel="true">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/big-redwood-to-tilden.html">Redwood Road to Tilden <span>(<span style="color: chocolate;">24% Gravel</span>)</span></a></p>
+<article class="mobile-route-card" data-bart="San Leandro" data-miles="38.61" data-elevation="5624.67" data-time="271" data-road-quality="76" data-has-gravel="true">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/big-redwood-to-tilden.html">Redwood Road to Vollmer Peak <span>(<span style="color: chocolate;">24% Gravel</span>)</span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Redwood Road</span><span class="mobile-route-tag">Wildcat Creek Trail</span><span class="mobile-route-tag">Seaview Trail</span><span class="mobile-route-tag">Meadows Canyon Trail</span></div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/big-redwood-to-tilden/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>San Leandro</p>

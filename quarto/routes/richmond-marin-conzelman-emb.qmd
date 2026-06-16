@@ -2,10 +2,26 @@
 title: "Richmond to EMB (49% Cycleway)"
 ---
 
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".quarto-title h1.title");
+  if (!title) {
+    return;
+  }
+  title.innerHTML = title.textContent.replace(
+    /(\d+% Gravel)/g,
+    '<span style="color: chocolate;">$1</span>',
+  );
+});
+</script>
+```
+
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86" data-time="170" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="1466.86" data-time="170" data-road-quality="18" data-has-gravel="false">
+
 
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/richmond-marin-conzelman-emb/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">

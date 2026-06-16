@@ -2,7 +2,7 @@
   "route": {
     "slug": "big-redwood-to-tilden",
     "source": "gpx_data\\redwood_big_gravel_ride.gpx",
-    "title": "Redwood Road to Tilden",
+    "title": "Redwood Road to Vollmer Peak",
     "reverse": false,
     "links": {
       "strava_effort": null
@@ -34,6 +34,28 @@
     "gravel_percent": 24.3,
     "cycleway_percent": 0.0,
     "road_quality_score": 76,
+    "route_tags": [
+      {
+        "label": "Redwood Road",
+        "distance_ft": 56561.7,
+        "threshold_ft": 54000.0
+      },
+      {
+        "label": "Wildcat Creek Trail",
+        "distance_ft": 21491.1,
+        "threshold_ft": 20000.0
+      },
+      {
+        "label": "Seaview Trail",
+        "distance_ft": 15132.2,
+        "threshold_ft": 15000.0
+      },
+      {
+        "label": "Meadows Canyon Trail",
+        "distance_ft": 7749.0,
+        "threshold_ft": 7000.0
+      }
+    ],
     "start_bart_station": "San Leandro",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "San Leandro",

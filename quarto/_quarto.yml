@@ -18,8 +18,6 @@ website:
       text: About
     - text: Route Notes
       menu:
-      - href: routes/arlington-gravel-loop.qmd
-        text: Arlington Loop
       - href: routes/grizzly-peak-loop.qmd
         text: Grizzly Peak Loop
       - href: routes/wildcat-havey-nimitz-meadow-loop.qmd
@@ -28,22 +26,22 @@ website:
         text: Conlon Trail Loop
       - href: routes/richmond-marin-conzelman-emb.qmd
         text: Richmond to EMB
-      - href: routes/tunnel-pinehurst-loop-sheps.qmd
-        text: Tunnel to Pinehurst w/ Shepards Canyon Descent
       - href: routes/spruce-up-euclid-down.qmd
         text: Spruce up, Euclid Down
       - href: routes/wildwood-bbr-loop.qmd
-        text: Wildwood to BBR Loop
+        text: OAK Hills Skyline Loop
       - href: routes/tunnel-to-claremont-loop.qmd
         text: Tunnel to Claremont Loop
-      - href: routes/san-pedro-loop.qmd
-        text: San Pedro Loop
       - href: routes/three-bears-gravel-loop.qmd
         text: Three Wild Bears
       - href: routes/arlington-to-southpark.qmd
-        text: Arlington into Tilden
+        text: Arli-griz Plays Golf
+      - href: routes/arlington-to-wildcat-creek.qmd
+        text: Arli-spruce to Wildcat Creek
+      - href: routes/arlington-to-vollmer.qmd
+        text: Arli-griz to Vollmer Peak
       - href: routes/big-redwood-to-tilden.qmd
-        text: Redwood Road to Tilden
+        text: Redwood Road to Vollmer Peak
       - href: routes/coyote-union-city.qmd
         text: Coyote Hills Loop
       - href: routes/redwood-san-leandro-macarthur-bart.qmd
