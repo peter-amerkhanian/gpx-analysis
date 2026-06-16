@@ -43,6 +43,12 @@ ROUTE_TAG_THRESHOLDS_FT = {
     "Wildcat Creek Trail": 20000,
     "Seaview Trail": 15000,
     "Meadows Canyon Trail": 7000,
+    "Grizzly Peak Boulevard": 24000,
+    "Arlington Boulevard": 18000,
+    "Claremont Avenue": 10000,
+    "Wildwood Avenue": 5000,
+    "Butters Drive": 4000,
+    "Leimert Boulevard": 3500
 }
 
 
