@@ -36,13 +36,15 @@
     "road_quality_score": 29,
     "route_tags": [
       {
-        "label": "Wildcat Creek Trail",
+        "label": "Wildcat Creek \u2193",
         "distance_ft": 32306.1,
+        "elevation_ft": -214.2,
         "threshold_ft": 20000.0
       },
       {
-        "label": "Meadows Canyon Trail",
+        "label": "Meadows Canyon \u2193",
         "distance_ft": 7387.9,
+        "elevation_ft": -383.9,
         "threshold_ft": 7000.0
       }
     ],

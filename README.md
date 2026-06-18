@@ -39,6 +39,7 @@ For each route slug, the build writes a folder under `quarto/data/routes/<slug>/
 - `hazards.json`: aggregate miles and percentages by hazard bucket
 - `points.geojson`: per-point GPX data after analysis
 - `segments.geojson`: per-segment geometry plus hazard and OSM enrichment columns
+- `segments_enriched.geojson`: cached OSM/MTC-enriched segments reused by later builds; delete it to force fresh road-data matching
 - `map.html`: embeddable Folium route map
 
 It also writes:

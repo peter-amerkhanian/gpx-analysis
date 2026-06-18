@@ -34,7 +34,14 @@
     "gravel_percent": 78.4,
     "cycleway_percent": 2.6,
     "road_quality_score": 34,
-    "route_tags": [],
+    "route_tags": [
+      {
+        "label": "Alameda Creek",
+        "distance_ft": 41202.3,
+        "elevation_ft": 17.7,
+        "threshold_ft": 37000.0
+      }
+    ],
     "start_bart_station": "Union City",
     "end_bart_station": "Union City",
     "bart_station": "Union City",

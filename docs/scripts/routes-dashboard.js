@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
 
     setSharedMinHeight(
       cards
-        .map((card) => card.querySelector(".mobile-route-title"))
+        .map((card) => card.querySelector(".mobile-route-heading"))
         .filter(Boolean),
     );
     setSharedMinHeight(

@@ -20,7 +20,7 @@ routes:
     source: gpx_data/richmond_to_marin.gpx
 
   - slug: spruce-up-euclid-down
-    title: Spruce up, Euclid Down
+    title: Short Spr-euclid
     source: gpx_data/spruce_up_euclid_down.gpx
 
   - slug: wildwood-bbr-loop
@@ -28,29 +28,29 @@ routes:
     source: gpx_data\OAK_Hills_Skyline_Loop.gpx
 
   - slug: tunnel-to-claremont-loop
-    title: Tunnel to Claremont Loop
-    source: gpx_data/Tunnel to Claremont Loop.gpx
+    title: Quick Tunnel Trip
+    source: gpx_data\tunnel_up_claremont_down.gpx
   
   - slug: three-bears-gravel-loop
     title: Three Wild Bears
     source: gpx_data\Three_Wild_Bears.gpx
 
   - slug: arlington-to-southpark
-    title: Arli-griz Plays Golf
+    title: Arli-griz plays Golf
     source: gpx_data\Arlington_to_Southpark_with_Gravel.gpx
 
   - slug: arlington-to-wildcat-creek
-    title: Arli-spruce to Wildcat Creek
+    title: Arli-spruce 
     source: gpx_data\Arli-Spruce_to_Wildcat_Creek.gpx
     links:
       strava_effort: https://www.strava.com/activities/18162634293
   
   - slug: arlington-to-vollmer
-    title: Arli-griz to Vollmer Peak
+    title: Arli-griz to Vollmer
     source: gpx_data\Arli-griz_to_Vollmer_Peak.gpx
 
   - slug: big-redwood-to-tilden
-    title: Redwood Road to Vollmer Peak
+    title: Redwood to Richmond
     source: gpx_data\redwood_big_gravel_ride.gpx
   
   - slug: coyote-union-city
@@ -58,7 +58,7 @@ routes:
     source: gpx_data\union_city_gravel.gpx
 
   - slug: redwood-san-leandro-macarthur-bart
-    title: Redwood Road to Temescal
+    title: Redwood to Temescal
     source: gpx_data/redwood_to_macarthur.gpx
     links:
       strava_effort: https://www.strava.com/activities/18234048917

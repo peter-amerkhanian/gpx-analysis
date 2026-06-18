@@ -2,7 +2,7 @@
   "route": {
     "slug": "arlington-to-southpark",
     "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
-    "title": "Arli-griz Plays Golf",
+    "title": "Arli-griz plays Golf",
     "reverse": false,
     "links": {
       "strava_effort": null
@@ -36,14 +36,28 @@
     "road_quality_score": 74,
     "route_tags": [
       {
-        "label": "Wildcat Creek Trail",
-        "distance_ft": 21490.8,
-        "threshold_ft": 20000.0
+        "label": "Arlington \u2191",
+        "distance_ft": 18805.7,
+        "elevation_ft": 589.6,
+        "threshold_ft": 18000.0
       },
       {
-        "label": "Meadows Canyon Trail",
+        "label": "Golf Course Trail",
+        "distance_ft": 4189.5,
+        "elevation_ft": 44.3,
+        "threshold_ft": 4000.0
+      },
+      {
+        "label": "Meadows Canyon \u2193",
         "distance_ft": 7749.0,
+        "elevation_ft": -359.3,
         "threshold_ft": 7000.0
+      },
+      {
+        "label": "Wildcat Creek \u2193",
+        "distance_ft": 21490.8,
+        "elevation_ft": -232.9,
+        "threshold_ft": 20000.0
       }
     ],
     "start_bart_station": "El Cerrito del Norte",

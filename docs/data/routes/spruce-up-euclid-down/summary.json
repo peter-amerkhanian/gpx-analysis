@@ -2,7 +2,7 @@
   "route": {
     "slug": "spruce-up-euclid-down",
     "source": "gpx_data/spruce_up_euclid_down.gpx",
-    "title": "Spruce up, Euclid Down",
+    "title": "Short Spr-euclid",
     "reverse": false,
     "links": {
       "strava_effort": null
@@ -34,7 +34,20 @@
     "gravel_percent": 0.7,
     "cycleway_percent": 0.0,
     "road_quality_score": 82,
-    "route_tags": [],
+    "route_tags": [
+      {
+        "label": "Spruce \u2191",
+        "distance_ft": 7318.5,
+        "elevation_ft": 371.1,
+        "threshold_ft": 7000.0
+      },
+      {
+        "label": "Euclid \u2193",
+        "distance_ft": 11961.0,
+        "elevation_ft": -561.0,
+        "threshold_ft": 11000.0
+      }
+    ],
     "start_bart_station": "North Berkeley",
     "end_bart_station": "Ashby",
     "bart_station": "North Berkeley",

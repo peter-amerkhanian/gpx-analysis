@@ -2,7 +2,7 @@
   "route": {
     "slug": "big-redwood-to-tilden",
     "source": "gpx_data\\redwood_big_gravel_ride.gpx",
-    "title": "Redwood Road to Vollmer Peak",
+    "title": "Redwood to Richmond",
     "reverse": false,
     "links": {
       "strava_effort": null
@@ -36,24 +36,28 @@
     "road_quality_score": 76,
     "route_tags": [
       {
-        "label": "Redwood Road",
+        "label": "Redwood Road \u2191",
         "distance_ft": 56561.7,
+        "elevation_ft": 583.3,
         "threshold_ft": 54000.0
       },
       {
-        "label": "Wildcat Creek Trail",
-        "distance_ft": 21491.1,
-        "threshold_ft": 20000.0
-      },
-      {
-        "label": "Seaview Trail",
+        "label": "Seaview \u2193",
         "distance_ft": 15132.2,
+        "elevation_ft": -651.9,
         "threshold_ft": 15000.0
       },
       {
-        "label": "Meadows Canyon Trail",
+        "label": "Meadows Canyon \u2193",
         "distance_ft": 7749.0,
+        "elevation_ft": -359.3,
         "threshold_ft": 7000.0
+      },
+      {
+        "label": "Wildcat Creek \u2193",
+        "distance_ft": 21491.1,
+        "elevation_ft": -232.9,
+        "threshold_ft": 20000.0
       }
     ],
     "start_bart_station": "San Leandro",

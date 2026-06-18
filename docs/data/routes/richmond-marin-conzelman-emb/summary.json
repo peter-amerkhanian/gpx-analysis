@@ -34,7 +34,20 @@
     "gravel_percent": 0.0,
     "cycleway_percent": 48.7,
     "road_quality_score": 18,
-    "route_tags": [],
+    "route_tags": [
+      {
+        "label": "Richmond Bridge",
+        "distance_ft": 23067.5,
+        "elevation_ft": -7.2,
+        "threshold_ft": 23000.0
+      },
+      {
+        "label": "Golden Gate Bridge",
+        "distance_ft": 9134.4,
+        "elevation_ft": -42.0,
+        "threshold_ft": 9000.0
+      }
+    ],
     "start_bart_station": "Richmond",
     "end_bart_station": "Embarcadero",
     "bart_station": "Richmond",

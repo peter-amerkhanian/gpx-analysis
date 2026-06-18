@@ -65,6 +65,10 @@
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
 }
 
+.mobile-route-heading {
+  margin-bottom: 0.65rem;
+}
+
 .mobile-route-title {
   margin-top: 0;
   margin-bottom: 0.65rem;
@@ -86,7 +90,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  margin: -0.3rem 0 0.65rem;
+  margin: -0.3rem 0 0;
 }
 
 .mobile-route-tag {
@@ -98,7 +102,7 @@
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.78);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 700;
   line-height: 1.2;
 }

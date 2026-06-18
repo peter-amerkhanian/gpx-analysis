@@ -136,10 +136,14 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         f'data-has-gravel="{str(float(route["summary"]["gravel_percent"]) > 10).lower()}">'
     ),
     (
+        '<div class="mobile-route-heading">'
+    ),
+    (
         f'<p class="mobile-route-title"><a style="color:DodgerBlue;" href="{page_href}">'
         f'{title_html}</a></p>'
     ) if title else '',
     tags_html,
+    "</div>",
     (
         '<div class="mobile-route-elevation" aria-hidden="true">'
         f'<img src="{profile_src}" alt="" loading="lazy">'

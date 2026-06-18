@@ -35,7 +35,26 @@
         "gravel_percent": 0.0,
         "cycleway_percent": 0.4,
         "road_quality_score": 78,
-        "route_tags": [],
+        "route_tags": [
+          {
+            "label": "Spruce \u2191",
+            "distance_ft": 10466.8,
+            "elevation_ft": 544.0,
+            "threshold_ft": 7000.0
+          },
+          {
+            "label": "Grizzly Peak \u2191",
+            "distance_ft": 27920.1,
+            "elevation_ft": 459.3,
+            "threshold_ft": 24000.0
+          },
+          {
+            "label": "Claremont \u2193",
+            "distance_ft": 10876.7,
+            "elevation_ft": -958.7,
+            "threshold_ft": 10000.0
+          }
+        ],
         "start_bart_station": "North Berkeley",
         "end_bart_station": "North Berkeley",
         "bart_station": "North Berkeley",
@@ -108,7 +127,7 @@
     {
       "slug": "wildcat-havey-nimitz-meadow-loop",
       "title": "Havey Canyon Loop (53% Gravel)",
-      "title_html": "Havey Canyon Loop <span>(<span style=\"color: chocolate;\">53% Gravel</span>)</span>",
+      "title_html": "Havey Canyon Loop <span><span style=\"color: chocolate;\">(53% Gravel)</span></span>",
       "source": "gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx",
       "reverse": false,
       "links": {
@@ -142,13 +161,15 @@
         "road_quality_score": 29,
         "route_tags": [
           {
-            "label": "Wildcat Creek Trail",
+            "label": "Wildcat Creek \u2193",
             "distance_ft": 32306.1,
+            "elevation_ft": -214.2,
             "threshold_ft": 20000.0
           },
           {
-            "label": "Meadows Canyon Trail",
+            "label": "Meadows Canyon \u2193",
             "distance_ft": 7387.9,
+            "elevation_ft": -383.9,
             "threshold_ft": 7000.0
           }
         ],
@@ -224,7 +245,7 @@
     {
       "slug": "wildcat-conlon-nimitz-meadow-loop",
       "title": "Conlon Trail Loop (59% Gravel)",
-      "title_html": "Conlon Trail Loop <span>(<span style=\"color: chocolate;\">59% Gravel</span>)</span>",
+      "title_html": "Conlon Trail Loop <span><span style=\"color: chocolate;\">(59% Gravel)</span></span>",
       "source": "gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx",
       "reverse": false,
       "links": {
@@ -258,13 +279,15 @@
         "road_quality_score": 32,
         "route_tags": [
           {
-            "label": "Wildcat Creek Trail",
+            "label": "Wildcat Creek",
             "distance_ft": 33160.4,
+            "elevation_ft": -123.7,
             "threshold_ft": 20000.0
           },
           {
-            "label": "Meadows Canyon Trail",
+            "label": "Meadows Canyon \u2193",
             "distance_ft": 7387.9,
+            "elevation_ft": -383.5,
             "threshold_ft": 7000.0
           }
         ],
@@ -340,7 +363,7 @@
     {
       "slug": "richmond-marin-conzelman-emb",
       "title": "Richmond to EMB (49% Cycleway)",
-      "title_html": "Richmond to EMB <span>(<span style=\"color: forestgreen;\">49% Cycleway</span>)</span>",
+      "title_html": "Richmond to EMB <span><span style=\"color: forestgreen;\">(49% Cycleway)</span></span>",
       "source": "gpx_data/richmond_to_marin.gpx",
       "reverse": false,
       "links": {
@@ -372,7 +395,20 @@
         "gravel_percent": 0.0,
         "cycleway_percent": 48.7,
         "road_quality_score": 18,
-        "route_tags": [],
+        "route_tags": [
+          {
+            "label": "Richmond Bridge",
+            "distance_ft": 23067.5,
+            "elevation_ft": -7.2,
+            "threshold_ft": 23000.0
+          },
+          {
+            "label": "Golden Gate Bridge",
+            "distance_ft": 9134.4,
+            "elevation_ft": -42.0,
+            "threshold_ft": 9000.0
+          }
+        ],
         "start_bart_station": "Richmond",
         "end_bart_station": "Embarcadero",
         "bart_station": "Richmond",
@@ -444,8 +480,8 @@
     },
     {
       "slug": "spruce-up-euclid-down",
-      "title": "Spruce up, Euclid Down",
-      "title_html": "Spruce up, Euclid Down",
+      "title": "Short Spr-euclid",
+      "title_html": "Short Spr-euclid",
       "source": "gpx_data/spruce_up_euclid_down.gpx",
       "reverse": false,
       "links": {
@@ -477,7 +513,20 @@
         "gravel_percent": 0.7,
         "cycleway_percent": 0.0,
         "road_quality_score": 82,
-        "route_tags": [],
+        "route_tags": [
+          {
+            "label": "Spruce \u2191",
+            "distance_ft": 7318.5,
+            "elevation_ft": 371.1,
+            "threshold_ft": 7000.0
+          },
+          {
+            "label": "Euclid \u2193",
+            "distance_ft": 11961.0,
+            "elevation_ft": -561.0,
+            "threshold_ft": 11000.0
+          }
+        ],
         "start_bart_station": "North Berkeley",
         "end_bart_station": "Ashby",
         "bart_station": "North Berkeley",
@@ -582,7 +631,26 @@
         "gravel_percent": 0.5,
         "cycleway_percent": 0.0,
         "road_quality_score": 55,
-        "route_tags": [],
+        "route_tags": [
+          {
+            "label": "Wildwood \u2191",
+            "distance_ft": 6457.2,
+            "elevation_ft": 339.9,
+            "threshold_ft": 5000.0
+          },
+          {
+            "label": "Butters Canyon \u2191",
+            "distance_ft": 4431.6,
+            "elevation_ft": 200.8,
+            "threshold_ft": 4000.0
+          },
+          {
+            "label": "Claremont \u2193",
+            "distance_ft": 10864.3,
+            "elevation_ft": -963.3,
+            "threshold_ft": 10000.0
+          }
+        ],
         "start_bart_station": "MacArthur",
         "end_bart_station": "Ashby",
         "bart_station": "MacArthur",
@@ -654,9 +722,9 @@
     },
     {
       "slug": "tunnel-to-claremont-loop",
-      "title": "Tunnel to Claremont Loop",
-      "title_html": "Tunnel to Claremont Loop",
-      "source": "gpx_data/Tunnel to Claremont Loop.gpx",
+      "title": "Quick Tunnel Trip",
+      "title_html": "Quick Tunnel Trip",
+      "source": "gpx_data\\tunnel_up_claremont_down.gpx",
       "reverse": false,
       "links": {
         "strava_effort": null
@@ -666,33 +734,33 @@
         "gallery": []
       },
       "summary": {
-        "point_count": 845,
-        "segment_count": 844,
-        "distance_m": 22786.99,
-        "distance_mi": 14.16,
-        "elevation_gain_m": 523.2,
-        "elevation_gain_ft": 1716.54,
-        "elevation_loss_m": 523.9,
-        "elevation_loss_ft": 1718.83,
-        "max_elevation_m": 446.2,
-        "max_elevation_ft": 1463.91,
+        "point_count": 2096,
+        "segment_count": 2095,
+        "distance_m": 21125.24,
+        "distance_mi": 13.13,
+        "elevation_gain_m": 490.2,
+        "elevation_gain_ft": 1608.27,
+        "elevation_loss_m": 472.6,
+        "elevation_loss_ft": 1550.52,
+        "max_elevation_m": 443.8,
+        "max_elevation_ft": 1456.04,
         "start": {
-          "lat": 37.82936,
-          "lon": -122.26615
+          "lat": 37.829471,
+          "lon": -122.266013
         },
         "end": {
-          "lat": 37.82929,
-          "lon": -122.26566
+          "lat": 37.852749,
+          "lon": -122.269572
         },
-        "gravel_percent": 0.0,
-        "cycleway_percent": 0.7,
-        "road_quality_score": 52,
+        "gravel_percent": 2.6,
+        "cycleway_percent": 0.8,
+        "road_quality_score": 54,
         "route_tags": [],
         "start_bart_station": "MacArthur",
-        "end_bart_station": "MacArthur",
+        "end_bart_station": "Ashby",
         "bart_station": "MacArthur",
-        "estimated_time_min": 98.0,
-        "estimated_time_display": "1:40"
+        "estimated_time_min": 89.0,
+        "estimated_time_display": "1:30"
       },
       "paths": {
         "summary": "data/routes/tunnel-to-claremont-loop/summary.json",
@@ -709,58 +777,58 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 12661.0,
-          "percent": 56.0,
-          "distance_mi": 7.87
+          "distance_m": 11339.0,
+          "percent": 54.0,
+          "distance_mi": 7.05
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 3709.0,
-          "percent": 16.0,
-          "distance_mi": 2.3
+          "distance_m": 4061.0,
+          "percent": 19.0,
+          "distance_mi": 2.52
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 2476.0,
-          "percent": 11.0,
-          "distance_mi": 1.54
+          "distance_m": 2598.0,
+          "percent": 12.0,
+          "distance_mi": 1.61
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2034.0,
-          "percent": 9.0,
-          "distance_mi": 1.26
+          "distance_m": 2091.0,
+          "percent": 10.0,
+          "distance_mi": 1.3
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 1699.0,
-          "percent": 7.0,
-          "distance_mi": 1.06
+          "distance_m": 985.0,
+          "percent": 5.0,
+          "distance_mi": 0.61
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 208.0,
-          "percent": 1.0,
-          "distance_mi": 0.13
+          "distance_m": 51.0,
+          "percent": 0.0,
+          "distance_mi": 0.03
         },
         {
           "hazard": "TOTAL",
           "hazard_label": "TOTAL",
-          "distance_m": 22787.0,
+          "distance_m": 21125.0,
           "percent": 100.0,
-          "distance_mi": 14.16
+          "distance_mi": 13.13
         }
       ]
     },
     {
       "slug": "three-bears-gravel-loop",
       "title": "Three Wild Bears (20% Gravel)",
-      "title_html": "Three Wild Bears <span>(<span style=\"color: chocolate;\">20% Gravel</span>)</span>",
+      "title_html": "Three Wild Bears <span><span style=\"color: chocolate;\">(20% Gravel)</span></span>",
       "source": "gpx_data\\Three_Wild_Bears.gpx",
       "reverse": false,
       "links": {
@@ -794,14 +862,22 @@
         "road_quality_score": 91,
         "route_tags": [
           {
-            "label": "Wildcat Creek Trail",
-            "distance_ft": 21406.3,
-            "threshold_ft": 20000.0
+            "label": "3 Bears",
+            "distance_ft": 44156.1,
+            "elevation_ft": 67.6,
+            "threshold_ft": 36000.0
           },
           {
-            "label": "Meadows Canyon Trail",
+            "label": "Meadows Canyon \u2193",
             "distance_ft": 7548.5,
+            "elevation_ft": -394.0,
             "threshold_ft": 7000.0
+          },
+          {
+            "label": "Wildcat Creek \u2193",
+            "distance_ft": 21406.3,
+            "elevation_ft": -271.0,
+            "threshold_ft": 20000.0
           }
         ],
         "start_bart_station": "El Cerrito del Norte",
@@ -875,8 +951,8 @@
     },
     {
       "slug": "arlington-to-southpark",
-      "title": "Arli-griz Plays Golf (46% Gravel)",
-      "title_html": "Arli-griz Plays Golf <span>(<span style=\"color: chocolate;\">46% Gravel</span>)</span>",
+      "title": "Arli-griz plays Golf (46% Gravel)",
+      "title_html": "Arli-griz plays Golf <span><span style=\"color: chocolate;\">(46% Gravel)</span></span>",
       "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
       "reverse": false,
       "links": {
@@ -910,14 +986,28 @@
         "road_quality_score": 74,
         "route_tags": [
           {
-            "label": "Wildcat Creek Trail",
-            "distance_ft": 21490.8,
-            "threshold_ft": 20000.0
+            "label": "Arlington \u2191",
+            "distance_ft": 18805.7,
+            "elevation_ft": 589.6,
+            "threshold_ft": 18000.0
           },
           {
-            "label": "Meadows Canyon Trail",
+            "label": "Golf Course Trail",
+            "distance_ft": 4189.5,
+            "elevation_ft": 44.3,
+            "threshold_ft": 4000.0
+          },
+          {
+            "label": "Meadows Canyon \u2193",
             "distance_ft": 7749.0,
+            "elevation_ft": -359.3,
             "threshold_ft": 7000.0
+          },
+          {
+            "label": "Wildcat Creek \u2193",
+            "distance_ft": 21490.8,
+            "elevation_ft": -232.9,
+            "threshold_ft": 20000.0
           }
         ],
         "start_bart_station": "El Cerrito del Norte",
@@ -991,8 +1081,8 @@
     },
     {
       "slug": "arlington-to-wildcat-creek",
-      "title": "Arli-spruce to Wildcat Creek (25% Gravel)",
-      "title_html": "Arli-spruce to Wildcat Creek <span>(<span style=\"color: chocolate;\">25% Gravel</span>)</span>",
+      "title": "Arli-spruce (25% Gravel)",
+      "title_html": "Arli-spruce <span><span style=\"color: chocolate;\">(25% Gravel)</span></span>",
       "source": "gpx_data\\Arli-Spruce_to_Wildcat_Creek.gpx",
       "reverse": false,
       "links": {
@@ -1026,8 +1116,21 @@
         "road_quality_score": 79,
         "route_tags": [
           {
-            "label": "Wildcat Creek Trail",
+            "label": "Arlington \u2191",
+            "distance_ft": 19131.3,
+            "elevation_ft": 519.4,
+            "threshold_ft": 18000.0
+          },
+          {
+            "label": "Spruce \u2191",
+            "distance_ft": 7308.3,
+            "elevation_ft": 372.7,
+            "threshold_ft": 7000.0
+          },
+          {
+            "label": "Wildcat Creek \u2193",
             "distance_ft": 21490.9,
+            "elevation_ft": -232.9,
             "threshold_ft": 20000.0
           }
         ],
@@ -1102,8 +1205,8 @@
     },
     {
       "slug": "arlington-to-vollmer",
-      "title": "Arli-griz to Vollmer Peak (42% Gravel)",
-      "title_html": "Arli-griz to Vollmer Peak <span>(<span style=\"color: chocolate;\">42% Gravel</span>)</span>",
+      "title": "Arli-griz to Vollmer (42% Gravel)",
+      "title_html": "Arli-griz to Vollmer <span><span style=\"color: chocolate;\">(42% Gravel)</span></span>",
       "source": "gpx_data\\Arli-griz_to_Vollmer_Peak.gpx",
       "reverse": false,
       "links": {
@@ -1137,19 +1240,34 @@
         "road_quality_score": 76,
         "route_tags": [
           {
-            "label": "Wildcat Creek Trail",
-            "distance_ft": 21490.8,
-            "threshold_ft": 20000.0
+            "label": "Arlington \u2191",
+            "distance_ft": 18805.7,
+            "elevation_ft": 589.6,
+            "threshold_ft": 18000.0
           },
           {
-            "label": "Seaview Trail",
+            "label": "Grizzly Peak \u2191",
+            "distance_ft": 24017.3,
+            "elevation_ft": 792.3,
+            "threshold_ft": 24000.0
+          },
+          {
+            "label": "Seaview \u2193",
             "distance_ft": 15132.5,
+            "elevation_ft": -651.9,
             "threshold_ft": 15000.0
           },
           {
-            "label": "Meadows Canyon Trail",
+            "label": "Meadows Canyon \u2193",
             "distance_ft": 7749.0,
+            "elevation_ft": -359.3,
             "threshold_ft": 7000.0
+          },
+          {
+            "label": "Wildcat Creek \u2193",
+            "distance_ft": 21490.8,
+            "elevation_ft": -232.9,
+            "threshold_ft": 20000.0
           }
         ],
         "start_bart_station": "El Cerrito del Norte",
@@ -1223,8 +1341,8 @@
     },
     {
       "slug": "big-redwood-to-tilden",
-      "title": "Redwood Road to Vollmer Peak (24% Gravel)",
-      "title_html": "Redwood Road to Vollmer Peak <span>(<span style=\"color: chocolate;\">24% Gravel</span>)</span>",
+      "title": "Redwood to Richmond (24% Gravel)",
+      "title_html": "Redwood to Richmond <span><span style=\"color: chocolate;\">(24% Gravel)</span></span>",
       "source": "gpx_data\\redwood_big_gravel_ride.gpx",
       "reverse": false,
       "links": {
@@ -1258,24 +1376,28 @@
         "road_quality_score": 76,
         "route_tags": [
           {
-            "label": "Redwood Road",
+            "label": "Redwood Road \u2191",
             "distance_ft": 56561.7,
+            "elevation_ft": 583.3,
             "threshold_ft": 54000.0
           },
           {
-            "label": "Wildcat Creek Trail",
-            "distance_ft": 21491.1,
-            "threshold_ft": 20000.0
-          },
-          {
-            "label": "Seaview Trail",
+            "label": "Seaview \u2193",
             "distance_ft": 15132.2,
+            "elevation_ft": -651.9,
             "threshold_ft": 15000.0
           },
           {
-            "label": "Meadows Canyon Trail",
+            "label": "Meadows Canyon \u2193",
             "distance_ft": 7749.0,
+            "elevation_ft": -359.3,
             "threshold_ft": 7000.0
+          },
+          {
+            "label": "Wildcat Creek \u2193",
+            "distance_ft": 21491.1,
+            "elevation_ft": -232.9,
+            "threshold_ft": 20000.0
           }
         ],
         "start_bart_station": "San Leandro",
@@ -1350,7 +1472,7 @@
     {
       "slug": "coyote-union-city",
       "title": "Coyote Hills Loop (78% Gravel)",
-      "title_html": "Coyote Hills Loop <span>(<span style=\"color: chocolate;\">78% Gravel</span>)</span>",
+      "title_html": "Coyote Hills Loop <span><span style=\"color: chocolate;\">(78% Gravel)</span></span>",
       "source": "gpx_data\\union_city_gravel.gpx",
       "reverse": false,
       "links": {
@@ -1382,7 +1504,14 @@
         "gravel_percent": 78.4,
         "cycleway_percent": 2.6,
         "road_quality_score": 34,
-        "route_tags": [],
+        "route_tags": [
+          {
+            "label": "Alameda Creek",
+            "distance_ft": 41202.3,
+            "elevation_ft": 17.7,
+            "threshold_ft": 37000.0
+          }
+        ],
         "start_bart_station": "Union City",
         "end_bart_station": "Union City",
         "bart_station": "Union City",
@@ -1454,8 +1583,8 @@
     },
     {
       "slug": "redwood-san-leandro-macarthur-bart",
-      "title": "Redwood Road to Temescal",
-      "title_html": "Redwood Road to Temescal",
+      "title": "Redwood to Temescal",
+      "title_html": "Redwood to Temescal",
       "source": "gpx_data/redwood_to_macarthur.gpx",
       "reverse": false,
       "links": {
@@ -1489,9 +1618,16 @@
         "road_quality_score": 84,
         "route_tags": [
           {
-            "label": "Redwood Road",
+            "label": "Redwood Road \u2191",
             "distance_ft": 56398.2,
+            "elevation_ft": 570.2,
             "threshold_ft": 54000.0
+          },
+          {
+            "label": "Wildwood \u2193",
+            "distance_ft": 6784.3,
+            "elevation_ft": -326.8,
+            "threshold_ft": 5000.0
           }
         ],
         "start_bart_station": "San Leandro",

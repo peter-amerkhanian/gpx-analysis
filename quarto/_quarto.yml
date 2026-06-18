@@ -27,25 +27,25 @@ website:
       - href: routes/richmond-marin-conzelman-emb.qmd
         text: Richmond to EMB
       - href: routes/spruce-up-euclid-down.qmd
-        text: Spruce up, Euclid Down
+        text: Short Spr-euclid
       - href: routes/wildwood-bbr-loop.qmd
         text: OAK Hills Skyline Loop
       - href: routes/tunnel-to-claremont-loop.qmd
-        text: Tunnel to Claremont Loop
+        text: Quick Tunnel Trip
       - href: routes/three-bears-gravel-loop.qmd
         text: Three Wild Bears
       - href: routes/arlington-to-southpark.qmd
-        text: Arli-griz Plays Golf
+        text: Arli-griz plays Golf
       - href: routes/arlington-to-wildcat-creek.qmd
-        text: Arli-spruce to Wildcat Creek
+        text: Arli-spruce
       - href: routes/arlington-to-vollmer.qmd
-        text: Arli-griz to Vollmer Peak
+        text: Arli-griz to Vollmer
       - href: routes/big-redwood-to-tilden.qmd
-        text: Redwood Road to Vollmer Peak
+        text: Redwood to Richmond
       - href: routes/coyote-union-city.qmd
         text: Coyote Hills Loop
       - href: routes/redwood-san-leandro-macarthur-bart.qmd
-        text: Redwood Road to Temescal
+        text: Redwood to Temescal
 format:
   html:
     theme: cosmo

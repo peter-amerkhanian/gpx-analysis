@@ -39,16 +39,100 @@ PROFILE_FIXED_YLIM_FT = (0.0, 500.0)
 GRAVEL_HIGHLIGHT_COLOR = "chocolate"
 CYCLEWAY_HIGHLIGHT_COLOR = "forestgreen"
 ROUTE_TAG_THRESHOLDS_FT = {
-    "Redwood Road": 54000,
-    "Wildcat Creek Trail": 20000,
-    "Seaview Trail": 15000,
-    "Meadows Canyon Trail": 7000,
-    "Grizzly Peak Boulevard": 24000,
-    "Arlington Boulevard": 18000,
-    "Claremont Avenue": 10000,
-    "Wildwood Avenue": 5000,
-    "Butters Drive": 4000,
-    "Leimert Boulevard": 3500
+    "Redwood Road": {
+        "threshold_ft": 54000,
+        "display_name": "Redwood Road",
+    },
+    "Wildcat Creek Trail": {
+        "threshold_ft": 20000,
+        "display_name": "Wildcat Creek",
+    },
+    "Seaview Trail": {
+        "threshold_ft": 15000,
+        "display_name": "Seaview",
+    },
+    "Meadows Canyon Trail": {
+        "threshold_ft": 7000,
+        "display_name": "Meadows Canyon",
+    },
+    "Grizzly Peak Boulevard": {
+        "threshold_ft": 24000,
+        "display_name": "Grizzly Peak",
+    },
+    "Arlington Boulevard": {
+        "threshold_ft": 18000,
+        "display_name": "Arlington",
+    },
+    "Claremont Avenue": {
+        "threshold_ft": 10000,
+        "display_name": "Claremont",
+    },
+    "Wildwood Avenue": {
+        "threshold_ft": 5000,
+        "display_name": "Wildwood",
+    },
+    "Butters Drive": {
+        "threshold_ft": 4000,
+        "display_name": "Butters Canyon",
+    },
+    "Bear Creek Road": {
+        "threshold_ft": 36000,
+        "display_name": "3 Bears",
+    },
+    "Tunnel Road": {
+        "threshold_ft": 9000,
+        "display_name": "Tunnel",
+    },
+    "Richmond-San Rafael Bridge Bicycle and Pedestrian Path": {
+        "threshold_ft": 23000,
+        "display_name": "Richmond Bridge",
+    },
+    "Golden Gate Bridge West Sidewalk": {
+        "threshold_ft": 9000,
+        "display_name": "Golden Gate Bridge",
+    },
+    "Euclid Avenue": {
+        "threshold_ft": 11000,
+        "display_name": "Euclid",
+    },
+    "Spruce Street": {
+        "threshold_ft": 7000,
+        "display_name": "Spruce",
+    },
+    "Alameda Creek Trail": {
+        "threshold_ft": 37000,
+        "display_name": "Alameda Creek",
+    },
+    "Golf Course Trail": 4000,
+}
+ROUTE_TAG_ELEVATION_ARROW_THRESHOLD_FT = 200.0
+ENRICHED_SEGMENTS_CACHE_NAME = "segments_enriched.geojson"
+ENRICHED_SEGMENTS_DERIVED_PREFIXES = ("chunk_", "candidate_chunk_", "section_")
+ENRICHED_SEGMENTS_DERIVED_COLUMNS = {
+    "Segment",
+    "More Details",
+    "Turn",
+    "Grade",
+    "Hazard Grade",
+    "Ride Type",
+    "Road Name",
+    "Road Type",
+    "Speed Limit",
+    "Section",
+    "Distance (mi)",
+    "Climb (ft)",
+    "Average Grade",
+    "Median Grade",
+    "Section Road Name",
+    "Section Distance (mi)",
+    "Section Time (min)",
+    "Chunk Avg Grade",
+    "Chunk Distance (ft)",
+    "Candidate Chunk Distance (ft)",
+    "_display_color",
+    "section_id",
+    "route_part",
+    "section_label",
 }
 
 
@@ -171,6 +255,35 @@ def write_geojson(path: Path, frame: gpd.GeoDataFrame) -> None:
 
 def write_text(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
+
+
+def load_or_build_enriched_segments(
+    segments: gpd.GeoDataFrame,
+    cache_path: Path,
+) -> gpd.GeoDataFrame:
+    """Load cached OSM/MTC-enriched segments, or build and cache them."""
+    if cache_path.exists():
+        return strip_enriched_segment_derived_columns(gpd.read_file(cache_path))
+
+    enriched_segments = enrich_segments_with_osm_edges(segments)
+    enriched_segments = enrich_segments_with_mtc_streets(enriched_segments)
+    write_geojson(cache_path, enriched_segments)
+    return enriched_segments
+
+
+def strip_enriched_segment_derived_columns(
+    segments: gpd.GeoDataFrame,
+) -> gpd.GeoDataFrame:
+    """Remove columns recomputed after OSM/MTC enrichment."""
+    drop_columns = [
+        column
+        for column in segments.columns
+        if column in ENRICHED_SEGMENTS_DERIVED_COLUMNS
+        or any(column.startswith(prefix) for prefix in ENRICHED_SEGMENTS_DERIVED_PREFIXES)
+    ]
+    if not drop_columns:
+        return segments
+    return segments.drop(columns=drop_columns)
 
 
 def _route_elevation_ylim(elevation: pd.Series) -> tuple[float, float] | None:
@@ -316,32 +429,58 @@ def total_estimated_time_minutes(chunk_sections_summary: pd.DataFrame) -> float:
 
 def route_tags_from_segments(
     segments: pd.DataFrame,
-    tag_thresholds_ft: dict[str, float] | None = None,
+    tag_thresholds_ft: dict[str, float | dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
     """Return route tags for named roads/trails whose total distance passes a threshold."""
     thresholds = tag_thresholds_ft or ROUTE_TAG_THRESHOLDS_FT
     if "osm_name" not in segments.columns or "step_dist_f" not in segments.columns:
         return []
 
-    frame = segments[["osm_name", "step_dist_f"]].copy()
+    source_columns = ["osm_name", "step_dist_f"]
+    if "step_elevation_f" in segments.columns:
+        source_columns.append("step_elevation_f")
+    frame = segments[source_columns].copy()
     frame["osm_name"] = frame["osm_name"].astype("string").str.strip()
     frame["step_dist_f"] = pd.to_numeric(frame["step_dist_f"], errors="coerce").fillna(0)
-    distance_by_name = (
+    if "step_elevation_f" not in frame.columns:
+        frame["step_elevation_f"] = 0.0
+    frame["step_elevation_f"] = pd.to_numeric(frame["step_elevation_f"], errors="coerce").fillna(0)
+    totals_by_name = (
         frame.dropna(subset=["osm_name"])
-        .groupby("osm_name")["step_dist_f"]
+        .groupby("osm_name", sort=False)[["step_dist_f", "step_elevation_f"]]
         .sum()
-        .sort_values(ascending=False)
     )
 
     tags: list[dict[str, object]] = []
-    for road_name, distance_ft in distance_by_name.items():
-        threshold_ft = thresholds.get(str(road_name))
-        if threshold_ft is None or float(distance_ft) < float(threshold_ft):
+    for road_name, totals in totals_by_name.iterrows():
+        road_name = str(road_name)
+        config = thresholds.get(road_name)
+        if config is None:
             continue
+
+        if isinstance(config, dict):
+            threshold_ft = config.get("threshold_ft", config.get("threshold"))
+            display_name = str(config.get("display_name", road_name)).strip() or road_name
+        else:
+            threshold_ft = config
+            display_name = road_name
+
+        if threshold_ft is None:
+            continue
+
+        distance_ft = float(totals["step_dist_f"])
+        if distance_ft < float(threshold_ft):
+            continue
+        elevation_ft = float(totals["step_elevation_f"])
+        if elevation_ft > ROUTE_TAG_ELEVATION_ARROW_THRESHOLD_FT:
+            display_name = f"{display_name} \u2191"
+        elif elevation_ft < -ROUTE_TAG_ELEVATION_ARROW_THRESHOLD_FT:
+            display_name = f"{display_name} \u2193"
         tags.append(
             {
-                "label": str(road_name),
-                "distance_ft": round(float(distance_ft), 1),
+                "label": display_name,
+                "distance_ft": round(distance_ft, 1),
+                "elevation_ft": round(elevation_ft, 1),
                 "threshold_ft": float(threshold_ft),
             }
         )
@@ -373,14 +512,14 @@ def route_display_title_html(
     notes: list[str] = []
     if gravel_percent > GRAVEL_TITLE_THRESHOLD_PERCENT:
         notes.append(
-            f'<span style="color: {GRAVEL_HIGHLIGHT_COLOR};">{round(gravel_percent)}% Gravel</span>'
+            f'<span style="color: {GRAVEL_HIGHLIGHT_COLOR};">({round(gravel_percent)}% Gravel)</span>'
         )
     if cycleway_percent > CYCLEWAY_TITLE_THRESHOLD_PERCENT:
         notes.append(
-            f'<span style="color: {CYCLEWAY_HIGHLIGHT_COLOR};">{round(cycleway_percent)}% Cycleway</span>'
+            f'<span style="color: {CYCLEWAY_HIGHLIGHT_COLOR};">({round(cycleway_percent)}% Cycleway)</span>'
         )
     if notes:
-        return f'{base_title} <span>({", ".join(notes)})</span>'
+        return f'{base_title} <span>{", ".join(notes)}</span>'
     return base_title
 
 
@@ -398,8 +537,10 @@ def build_route(
     analyzed = analyze_steps(points, rolling_window=3)
     points_gdf = points_frame(analyzed)
     segments = points_to_segments(points_gdf)
-    segments = enrich_segments_with_osm_edges(segments)
-    segments = enrich_segments_with_mtc_streets(segments)
+    segments = load_or_build_enriched_segments(
+        segments,
+        route_dir / ENRICHED_SEGMENTS_CACHE_NAME,
+    )
     segments = prepare_segment_display_columns(segments, hazard_profile=hazard_profile)
     segments = attach_chunk_section_details(segments)
 
