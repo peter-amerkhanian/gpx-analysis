@@ -1,0 +1,69 @@
+{
+  "route": {
+    "slug": "oak-hills-pinehurst",
+    "source": "gpx_data\\Oak_Hills_Loop_w__Pinehurst.gpx",
+    "title": "OAK Hills Loop +",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1849,
+    "segment_count": 1848,
+    "distance_m": 41194.96,
+    "distance_mi": 25.6,
+    "elevation_gain_m": 1047.2,
+    "elevation_gain_ft": 3435.7,
+    "elevation_loss_m": 1034.3,
+    "elevation_loss_ft": 3393.37,
+    "max_elevation_m": 442.8,
+    "max_elevation_ft": 1452.76,
+    "start": {
+      "lat": 37.82869,
+      "lon": -122.26627
+    },
+    "end": {
+      "lat": 37.8531,
+      "lon": -122.26968
+    },
+    "gravel_percent": 0.0,
+    "cycleway_percent": 0.0,
+    "road_quality_score": 78,
+    "route_tags": [
+      {
+        "label": "Wildwood+Leimert \u2191",
+        "distance_ft": 6693.3,
+        "elevation_ft": 321.2,
+        "threshold_ft": 5000.0
+      },
+      {
+        "label": "Butters Canyon \u2191",
+        "distance_ft": 4486.9,
+        "elevation_ft": 207.3,
+        "threshold_ft": 4000.0
+      },
+      {
+        "label": "Pinehurst \u2191",
+        "distance_ft": 34963.9,
+        "elevation_ft": 700.5,
+        "threshold_ft": 34000.0
+      },
+      {
+        "label": "Claremont \u2193",
+        "distance_ft": 10864.2,
+        "elevation_ft": -963.3,
+        "threshold_ft": 10000.0
+      }
+    ],
+    "start_bart_station": "MacArthur",
+    "end_bart_station": "Ashby",
+    "bart_station": "MacArthur",
+    "estimated_time_min": 181.0,
+    "estimated_time_display": "3:00"
+  }
+}

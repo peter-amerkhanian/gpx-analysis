@@ -249,6 +249,7 @@ def write_route_page(
             hero_image=route.media.hero_image,
             strava_effort=route.links.strava_effort,
             summary_card_html="\n".join(summary_card(route_bundle, path_prefix="../", title=False)),
+            overview_map_src=f"../{route_bundle['paths']['overview_map']}",
             map_src=f"../{route_bundle['paths']['map']}",
             road_quality_map_src=f"../{route_bundle['paths']['road_quality_map']}",
             chunk_map_src=f"../{route_bundle['paths']['chunk_map']}",

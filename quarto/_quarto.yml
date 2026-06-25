@@ -20,6 +20,8 @@ website:
       menu:
       - href: routes/grizzly-peak-loop.qmd
         text: Grizzly Peak Loop
+      - href: routes/oak-hills-pinehurst.qmd
+        text: OAK Hills Loop +
       - href: routes/wildcat-havey-nimitz-meadow-loop.qmd
         text: Havey Canyon Loop
       - href: routes/wildcat-conlon-nimitz-meadow-loop.qmd
@@ -29,13 +31,13 @@ website:
       - href: routes/spruce-up-euclid-down.qmd
         text: Short Spr-euclid
       - href: routes/wildwood-bbr-loop.qmd
-        text: OAK Hills Skyline Loop
+        text: OAK Hills Loop
       - href: routes/tunnel-to-claremont-loop.qmd
         text: Quick Tunnel Trip
       - href: routes/three-bears-gravel-loop.qmd
         text: Three Wild Bears
       - href: routes/arlington-to-southpark.qmd
-        text: Arli-griz plays Golf
+        text: Arli-griz to Golf
       - href: routes/arlington-to-wildcat-creek.qmd
         text: Arli-spruce
       - href: routes/arlington-to-vollmer.qmd

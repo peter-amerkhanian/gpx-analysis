@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2958.33" data-time="167" data-road-quality="84" data-has-gravel="false">
 <div class="mobile-route-heading">
 
-<div class="mobile-route-tags"><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">Wildwood ↓</span></div>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">Wildwood+Leimert ↓</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/redwood-san-leandro-macarthur-bart/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
@@ -41,12 +41,27 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 ::: {.panel-tabset}
 
+## Map
+
+<iframe
+  src="../data/routes/redwood-san-leandro-macarthur-bart/overview_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
 ## Hazards
 
 <iframe
   src="../data/routes/redwood-san-leandro-macarthur-bart/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -100,6 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/redwood-san-leandro-macarthur-bart/chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -303,6 +321,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/redwood-san-leandro-macarthur-bart/road_quality_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 

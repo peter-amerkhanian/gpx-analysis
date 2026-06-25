@@ -2,7 +2,7 @@
   "route": {
     "slug": "arlington-to-southpark",
     "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
-    "title": "Arli-griz plays Golf",
+    "title": "Arli-griz to Golf",
     "reverse": false,
     "links": {
       "strava_effort": null

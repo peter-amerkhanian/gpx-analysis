@@ -1,7 +1,7 @@
 {
   "route": {
     "slug": "tunnel-to-claremont-loop",
-    "source": "gpx_data\\tunnel_up_claremont_down.gpx",
+    "source": "gpx_data\\Tunnel to Claremont Loop.gpx",
     "title": "Quick Tunnel Trip",
     "reverse": false,
     "links": {
@@ -13,32 +13,45 @@
     }
   },
   "summary": {
-    "point_count": 2096,
-    "segment_count": 2095,
-    "distance_m": 21125.24,
-    "distance_mi": 13.13,
-    "elevation_gain_m": 490.2,
-    "elevation_gain_ft": 1608.27,
-    "elevation_loss_m": 472.6,
-    "elevation_loss_ft": 1550.52,
-    "max_elevation_m": 443.8,
-    "max_elevation_ft": 1456.04,
+    "point_count": 845,
+    "segment_count": 844,
+    "distance_m": 22786.99,
+    "distance_mi": 14.16,
+    "elevation_gain_m": 523.2,
+    "elevation_gain_ft": 1716.54,
+    "elevation_loss_m": 523.9,
+    "elevation_loss_ft": 1718.83,
+    "max_elevation_m": 446.2,
+    "max_elevation_ft": 1463.91,
     "start": {
-      "lat": 37.829471,
-      "lon": -122.266013
+      "lat": 37.82936,
+      "lon": -122.26615
     },
     "end": {
-      "lat": 37.852749,
-      "lon": -122.269572
+      "lat": 37.82929,
+      "lon": -122.26566
     },
-    "gravel_percent": 2.6,
-    "cycleway_percent": 0.8,
-    "road_quality_score": 54,
-    "route_tags": [],
+    "gravel_percent": 0.0,
+    "cycleway_percent": 0.7,
+    "road_quality_score": 52,
+    "route_tags": [
+      {
+        "label": "Tunnel \u2191",
+        "distance_ft": 9403.9,
+        "elevation_ft": 409.4,
+        "threshold_ft": 9000.0
+      },
+      {
+        "label": "Claremont \u2193",
+        "distance_ft": 14923.3,
+        "elevation_ft": -1096.5,
+        "threshold_ft": 10000.0
+      }
+    ],
     "start_bart_station": "MacArthur",
-    "end_bart_station": "Ashby",
+    "end_bart_station": "MacArthur",
     "bart_station": "MacArthur",
-    "estimated_time_min": 89.0,
-    "estimated_time_display": "1:30"
+    "estimated_time_min": 98.0,
+    "estimated_time_display": "1:40"
   }
 }

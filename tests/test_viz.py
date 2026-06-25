@@ -3,7 +3,7 @@ import unittest
 import geopandas as gpd
 from shapely.geometry import LineString
 
-from gpx_analysis.viz import _frames_share_route_overlap, make_chunk_map
+from gpx_analysis.viz import _frames_share_route_overlap, make_chunk_map, make_route_map, make_route_overview_map
 
 
 class RouteOverlapTests(unittest.TestCase):
@@ -48,6 +48,48 @@ class RouteOverlapTests(unittest.TestCase):
                 ignore_value="flat",
             )
         )
+
+
+class RouteMapTests(unittest.TestCase):
+    def test_overview_map_shows_road_name_and_elevation_interactions(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step_dist_m": [100.0],
+                "osm_name": ["Pinehurst Road"],
+                "elevation_f": [742.4],
+            },
+            geometry=[LineString([(-122.0, 37.0), (-122.1, 37.1)])],
+            crs=4326,
+        )
+
+        html = make_route_overview_map(frame).get_root().render()
+
+        self.assertIn('"Road Name"', html)
+        self.assertIn('"Elevation (ft)"', html)
+        self.assertIn("Pinehurst Road", html)
+        self.assertIn("742 ft", html)
+
+    def test_hazard_map_shows_road_name_in_tooltip_and_popup(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1],
+                "lat": [37.0],
+                "lon": [-122.0],
+                "step_dist_m": [100.0],
+                "step_turn": [0.0],
+                "step_grade": [0.04],
+                "hazard_grade": [0.04],
+                "hazard": ["climb"],
+                "osm_name": ["Pinehurst Road"],
+            },
+            geometry=[LineString([(-122.0, 37.0), (-122.1, 37.1)])],
+            crs=4326,
+        )
+
+        html = make_route_map(frame).get_root().render()
+
+        self.assertIn('"Road Name"', html)
+        self.assertIn("Pinehurst Road", html)
 
 
 class ChunkMapTests(unittest.TestCase):
@@ -126,6 +168,56 @@ class ChunkMapTests(unittest.TestCase):
 
         self.assertIn("1. Tunnel Road (5% avg)", html)
         self.assertNotIn("1. Caldecott Lane (5% avg)", html)
+
+    def test_chunk_map_adds_route_pass_control_for_overlaps(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1, 2, 3, 4],
+                "lat": [37.0, 37.0, 37.0, 37.0],
+                "lon": [-122.0, -122.01, -122.02, -122.01],
+                "osm_name": ["Pinehurst Road"] * 4,
+                "step_turn": [0.0, 0.0, 0.0, 0.0],
+                "step_grade": [0.05, 0.05, -0.05, -0.05],
+                "step_dist_m": [1000.0, 1000.0, 1000.0, 1000.0],
+                "step_dist_f": [3280.8, 3280.8, 3280.8, 3280.8],
+                "step_elevation_f": [164.0, 164.0, -164.0, -164.0],
+                "chunk_state": [
+                    "climb (medium)",
+                    "climb (medium)",
+                    "flat or descent",
+                    "flat or descent",
+                ],
+                "chunk_avg_grade": [0.05, 0.05, None, None],
+                "chunk_median_grade": [0.05, 0.05, None, None],
+                "chunk_dist_ft": [6561.6, 6561.6, None, None],
+                "candidate_chunk_dist_ft": [6561.6, 6561.6, None, None],
+                "chunk_id": [1, 1, None, None],
+                "section_id": [1, 1, 2, 2],
+                "section_label": [
+                    "1. Pinehurst Road: climb (medium)",
+                    "1. Pinehurst Road: climb (medium)",
+                    "flat or descent",
+                    "flat or descent",
+                ],
+                "section_climb_gain_ft": [328.0, 328.0, 0.0, 0.0],
+                "section_distance_mi": [1.2, 1.2, 1.2, 1.2],
+                "section_time_min": ["8 +/- 2", "8 +/- 2", "6", "6"],
+            },
+            geometry=[
+                LineString([(-122.0, 37.0), (-122.01, 37.0)]),
+                LineString([(-122.01, 37.0), (-122.02, 37.0)]),
+                LineString([(-122.02, 37.0), (-122.01, 37.0)]),
+                LineString([(-122.01, 37.0), (-122.0, 37.0)]),
+            ],
+            crs=4326,
+        )
+
+        html = make_chunk_map(frame).get_root().render()
+
+        self.assertIn("Route Pass", html)
+        self.assertIn("Outbound", html)
+        self.assertIn("Return", html)
+        self.assertIn("1. Pinehurst Road (5% avg)", html)
 
 
 if __name__ == "__main__":

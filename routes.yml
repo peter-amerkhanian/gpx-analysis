@@ -7,6 +7,10 @@ routes:
     title: Grizzly Peak Loop
     source: gpx_data/classic_grizzly.gpx
 
+  - slug: oak-hills-pinehurst
+    title: OAK Hills Loop +
+    source: gpx_data\Oak_Hills_Loop_w__Pinehurst.gpx
+
   - slug: wildcat-havey-nimitz-meadow-loop
     title: Havey Canyon Loop
     source: gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx
@@ -24,19 +28,19 @@ routes:
     source: gpx_data/spruce_up_euclid_down.gpx
 
   - slug: wildwood-bbr-loop
-    title: OAK Hills Skyline Loop
+    title: OAK Hills Loop
     source: gpx_data\OAK_Hills_Skyline_Loop.gpx
 
   - slug: tunnel-to-claremont-loop
     title: Quick Tunnel Trip
-    source: gpx_data\tunnel_up_claremont_down.gpx
+    source: gpx_data\Tunnel to Claremont Loop.gpx
   
   - slug: three-bears-gravel-loop
     title: Three Wild Bears
     source: gpx_data\Three_Wild_Bears.gpx
 
   - slug: arlington-to-southpark
-    title: Arli-griz plays Golf
+    title: Arli-griz to Golf
     source: gpx_data\Arlington_to_Southpark_with_Gravel.gpx
 
   - slug: arlington-to-wildcat-creek

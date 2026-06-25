@@ -20,23 +20,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="13.13" data-elevation="1608.27" data-time="89" data-road-quality="54" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54" data-time="98" data-road-quality="52" data-has-gravel="false">
 <div class="mobile-route-heading">
 
-
+<div class="mobile-route-tags"><span class="mobile-route-tag">Tunnel ↑</span><span class="mobile-route-tag">Claremont ↓</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/tunnel-to-claremont-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
-<p><span class="mobile-route-label">Miles</span><br>13.13</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>1608.27 ft</p>
-<p><span class="mobile-route-label">Time</span><br>~1:30</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.03 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">54%</span></p>
+<p><span class="mobile-route-label">Miles</span><br>14.16</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>1716.54 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~1:40</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.13 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">52%</span></p>
 </div>
 </article>
 ```
 ::: {.panel-tabset}
+
+## Map
+
+<iframe
+  src="../data/routes/tunnel-to-claremont-loop/overview_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
 
 ## Hazards
 
@@ -44,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/tunnel-to-claremont-loop/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -59,33 +74,33 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>Flat</td>
-      <td>7.05</td>
-      <td>54.0</td>
+      <td>7.87</td>
+      <td>56.0</td>
     </tr>
     <tr>
       <td>Climb</td>
-      <td>2.52</td>
-      <td>19.0</td>
+      <td>2.30</td>
+      <td>16.0</td>
     </tr>
     <tr>
       <td>Light Descent</td>
-      <td>1.61</td>
-      <td>12.0</td>
+      <td>1.54</td>
+      <td>11.0</td>
     </tr>
     <tr>
       <td>Descent</td>
-      <td>1.30</td>
-      <td>10.0</td>
+      <td>1.26</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
-      <td>0.61</td>
-      <td>5.0</td>
+      <td>1.06</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <td>Steep Descent</td>
-      <td>0.03</td>
-      <td>0.0</td>
+      <td>0.13</td>
+      <td>1.0</td>
     </tr>
   </tbody>
 </table>
@@ -97,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/tunnel-to-claremont-loop/chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -117,33 +135,27 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,477</td>
-      <td>6.8</td>
-      <td>57 ± 23</td>
+      <td>1,362</td>
+      <td>5.1</td>
+      <td>50 ± 24</td>
     </tr>
     <tr>
-      <td>1. Keith Avenue (3% avg)</td>
-      <td>347</td>
-      <td>2.3</td>
-      <td>16 ± 6</td>
+      <td>1. Broadway (4% avg)</td>
+      <td>87</td>
+      <td>0.4</td>
+      <td>4 ± 1</td>
     </tr>
     <tr>
       <td>2. Broadway (7% avg)</td>
-      <td>219</td>
-      <td>0.6</td>
-      <td>7 ± 4</td>
+      <td>132</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
-      <td>3. Caldecott Tunnel (5% avg)</td>
-      <td>845</td>
-      <td>3.4</td>
-      <td>30 ± 12</td>
-    </tr>
-    <tr>
-      <td>4. Grizzly Peak Boulevard (2% avg)</td>
-      <td>66</td>
-      <td>0.5</td>
-      <td>3 ± 1</td>
+      <td>3. Tunnel Road (5% avg)</td>
+      <td>1,142</td>
+      <td>4.3</td>
+      <td>42 ± 20</td>
     </tr>
   </tbody>
 </table>
@@ -164,27 +176,27 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,477</td>
-      <td>13.1</td>
-      <td>89 ± 32</td>
+      <td>1,362</td>
+      <td>14.3</td>
+      <td>98 ± 38</td>
     </tr>
     <tr>
       <td>flat or descent</td>
       <td></td>
-      <td>0.5</td>
-      <td>3</td>
+      <td>1.9</td>
+      <td>10</td>
     </tr>
     <tr>
-      <td>1. Keith Avenue (3% avg)</td>
-      <td>347</td>
-      <td>2.3</td>
-      <td>16 ± 6</td>
+      <td>1. Broadway (4% avg)</td>
+      <td>87</td>
+      <td>0.4</td>
+      <td>4 ± 1</td>
     </tr>
     <tr>
       <td>2. Broadway (7% avg)</td>
-      <td>219</td>
-      <td>0.6</td>
-      <td>7 ± 4</td>
+      <td>132</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -193,28 +205,16 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>1</td>
     </tr>
     <tr>
-      <td>3. Caldecott Tunnel (5% avg)</td>
-      <td>845</td>
-      <td>3.4</td>
-      <td>30 ± 12</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
-      <td>1.3</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>4. Grizzly Peak Boulevard (2% avg)</td>
-      <td>66</td>
-      <td>0.5</td>
-      <td>3 ± 1</td>
-    </tr>
-    <tr>
-      <td>flat or descent</td>
-      <td></td>
+      <td>3. Tunnel Road (5% avg)</td>
+      <td>1,142</td>
       <td>4.3</td>
-      <td>21</td>
+      <td>42 ± 20</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>7.1</td>
+      <td>38</td>
     </tr>
   </tbody>
 </table>
@@ -228,6 +228,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/tunnel-to-claremont-loop/road_quality_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -243,48 +246,43 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>Poor</td>
-      <td>2.9</td>
-      <td>22.2</td>
-    </tr>
-    <tr>
-      <td>Fair</td>
-      <td>2.1</td>
-      <td>16.3</td>
+      <td>3.5</td>
+      <td>24.7</td>
     </tr>
     <tr>
       <td>Very Good</td>
-      <td>2.1</td>
-      <td>15.7</td>
+      <td>2.3</td>
+      <td>16.3</td>
     </tr>
     <tr>
       <td>Excellent</td>
-      <td>1.7</td>
+      <td>2.1</td>
+      <td>14.8</td>
+    </tr>
+    <tr>
+      <td>Fair</td>
+      <td>1.8</td>
       <td>12.7</td>
     </tr>
     <tr>
+      <td>Failed</td>
+      <td>1.3</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
       <td>At Risk</td>
-      <td>1.5</td>
-      <td>11.1</td>
+      <td>1.3</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <td>Good</td>
-      <td>1.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <td>Failed</td>
-      <td>0.9</td>
-      <td>6.9</td>
-    </tr>
-    <tr>
-      <td>Gravel</td>
-      <td>0.3</td>
-      <td>2.6</td>
+      <td>1.2</td>
+      <td>8.6</td>
     </tr>
     <tr>
       <td>Cycleway</td>
       <td>0.1</td>
-      <td>0.8</td>
+      <td>0.7</td>
     </tr>
     <tr>
       <td>Unknown</td>

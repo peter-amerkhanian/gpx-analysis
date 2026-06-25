@@ -22,6 +22,7 @@ from .. import (
     enrich_segments_with_mtc_streets,
     make_chunk_map,
     make_road_quality_map,
+    make_route_overview_map,
     make_route_map,
     points_to_segments,
     prepare_segment_display_columns,
@@ -67,13 +68,25 @@ ROUTE_TAG_THRESHOLDS_FT = {
         "threshold_ft": 10000,
         "display_name": "Claremont",
     },
+    "Havey Canyon Trail": {
+        "threshold_ft": 7000,
+        "display_name": "Havey Canyon",
+    },
+    "Conlon Trail": {
+        "threshold_ft": 9900,
+        "display_name": "Conlon Trail",
+    },
     "Wildwood Avenue": {
         "threshold_ft": 5000,
-        "display_name": "Wildwood",
+        "display_name": "Wildwood+Leimert",
     },
     "Butters Drive": {
         "threshold_ft": 4000,
         "display_name": "Butters Canyon",
+    },
+    "Pinehurst Road": {
+        "threshold_ft": 34000,
+        "display_name": "Pinehurst",
     },
     "Bear Creek Road": {
         "threshold_ft": 36000,
@@ -116,6 +129,7 @@ ENRICHED_SEGMENTS_DERIVED_COLUMNS = {
     "Hazard Grade",
     "Ride Type",
     "Road Name",
+    "Elevation (ft)",
     "Road Type",
     "Speed Limit",
     "Section",
@@ -577,10 +591,10 @@ def build_route(
         columns={"step_dist_m": "distance_m"}
     )
     hazard_summary["distance_mi"] = (hazard_summary["distance_m"] / 1609.344).round(2)
-    ride_cols = ["Ride Type", "Turn", "Grade", "More Details"]
+    overview_map = make_route_overview_map(segments)
     route_map = make_route_map(
         segments,
-        popup_cols=ride_cols,
+        popup_cols=["Road Name", "Ride Type", "Turn", "Grade", "More Details"],
         hazard_profile=hazard_profile,
     )
     road_quality_map = make_road_quality_map(segments)
@@ -607,6 +621,7 @@ def build_route(
     write_geojson(route_dir / "segments.geojson", segments)
     elevation_profile_svg = route_elevation_svg(segments)
     write_text(route_dir / "profile.svg", elevation_profile_svg)
+    overview_map.save(str(route_dir / "overview_map.html"))
     route_map.save(str(route_dir / "map.html"))
     road_quality_map.save(str(route_dir / "road_quality_map.html"))
     chunk_map.save(str(route_dir / "chunk_map.html"))
@@ -629,6 +644,7 @@ def build_route(
             "points": f"data/routes/{route.slug}/points.geojson",
             "segments": f"data/routes/{route.slug}/segments.geojson",
             "map": f"data/routes/{route.slug}/map.html",
+            "overview_map": f"data/routes/{route.slug}/overview_map.html",
             "road_quality_map": f"data/routes/{route.slug}/road_quality_map.html",
             "chunk_map": f"data/routes/{route.slug}/chunk_map.html",
             "profile_svg": f"data/routes/{route.slug}/profile.svg",

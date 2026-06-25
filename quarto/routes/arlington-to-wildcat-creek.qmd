@@ -41,12 +41,27 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 ::: {.panel-tabset}
 
+## Map
+
+<iframe
+  src="../data/routes/arlington-to-wildcat-creek/overview_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
 ## Hazards
 
 <iframe
   src="../data/routes/arlington-to-wildcat-creek/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -100,6 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/arlington-to-wildcat-creek/chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -237,6 +255,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/arlington-to-wildcat-creek/road_quality_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 

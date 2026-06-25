@@ -212,6 +212,13 @@ def prepare_segment_display_columns(
         pd.to_numeric(hazard_grade_source, errors="coerce").multiply(100).round(2).astype(str) + "%"
     )
     frame["Ride Type"] = frame["hazard_label"]
+    if "osm_name" in frame.columns:
+        frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
+    if "elevation_f" in frame.columns:
+        frame["Elevation (ft)"] = pd.to_numeric(
+            frame["elevation_f"],
+            errors="coerce",
+        ).round(0).astype("Int64").astype(str) + " ft"
     frame["_display_color"] = frame["hazard"].map(colors).fillna("#8a8a8a")
     return frame
 
@@ -680,6 +687,41 @@ def _disable_tooltips_on_touch(m: folium.Map) -> None:
     m.add_child(style_element)
 
 
+def _add_fullscreen_mobile_fallback(m: folium.Map) -> None:
+    """Open the standalone map when fullscreen is unavailable in an iframe."""
+    script = Template(
+        """
+        {% macro script(this, kwargs) %}
+        (function() {
+            var canFullscreen = document.fullscreenEnabled
+                || document.webkitFullscreenEnabled
+                || document.mozFullScreenEnabled
+                || document.msFullscreenEnabled;
+            if (canFullscreen) {
+                return;
+            }
+
+            var controls = document.querySelectorAll(
+                ".leaflet-control-fullscreen a, .leaflet-control-fullscreen-button, .fullscreen-icon"
+            );
+            controls.forEach(function(control) {
+                control.setAttribute("title", "Open full map");
+                control.setAttribute("aria-label", "Open full map");
+                control.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    window.open(window.location.href, "_blank");
+                }, true);
+            });
+        })();
+        {% endmacro %}
+        """
+    )
+    fallback = MacroElement()
+    fallback._template = script
+    m.add_child(fallback)
+
+
 def _route_is_close_ended(frame: gpd.GeoDataFrame, close_distance_m: float = 250.0) -> bool:
     """Return True when the route end is close enough to the start to treat it as a loop."""
     if frame.empty:
@@ -880,6 +922,7 @@ def add_map_elements(
         title_cancel="Exit fullscreen",
         force_separate_button=True,
     ).add_to(m)
+    _add_fullscreen_mobile_fallback(m)
     # Start / end
     start = frame.iloc[0].geometry.coords[0]
     folium.Marker(
@@ -928,8 +971,8 @@ def add_map_elements(
 def make_route_map(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
-    popup_cols: list[str] | None = ["Ride Type", "Turn", "Grade", "Hazard Grade", "More Details"],
-    tooltip_fields: list[str] | None = ['Segment', 'Ride Type'],
+    popup_cols: list[str] | None = ["Road Name", "Ride Type", "Turn", "Grade", "Hazard Grade", "More Details"],
+    tooltip_fields: list[str] | None = ['Segment', 'Road Name', 'Ride Type'],
     tiles: str = "CartoDB Voyager",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
 ) -> folium.Map:
@@ -945,6 +988,7 @@ def make_route_map(
             "geometry",
             "step_dist_m",
             "Segment",
+            "Road Name",
             "Ride Type",
             "Turn",
             "Grade",
@@ -981,6 +1025,54 @@ def make_route_map(
         cmap=list(colors.values()),
         style_kwds={"weight": 4},
         escape=False,
+    )
+    return m
+
+
+def make_route_overview_map(
+    gdf_segments: gpd.GeoDataFrame,
+    tiles: str = "CartoDB Voyager",
+) -> folium.Map:
+    """Build a simple route overview map with direction arrows."""
+    frame = gdf_segments.copy()
+    if "osm_name" in frame.columns:
+        frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
+    if "elevation_f" in frame.columns:
+        frame["Elevation (ft)"] = pd.to_numeric(
+            frame["elevation_f"],
+            errors="coerce",
+        ).round(0).astype("Int64").astype(str) + " ft"
+    frame = _select_present_columns(
+        frame,
+        [
+            "geometry",
+            "step_dist_m",
+            "Road Name",
+            "Elevation (ft)",
+        ],
+    )
+    frame = gpd.GeoDataFrame(frame, geometry="geometry", crs=gdf_segments.crs)
+    interaction_fields = ["Road Name", "Elevation (ft)"]
+    m = frame.explore(
+        tooltip=_present_interaction_fields(frame, interaction_fields),
+        popup=_present_interaction_fields(frame, interaction_fields),
+        tiles=tiles,
+        color="#48aeea",
+        style_kwds={
+            "weight": 5,
+            "opacity": 0.92,
+            "line_cap": "round",
+            "line_join": "round",
+        },
+        escape=False,
+    )
+
+    add_map_elements(
+        m,
+        frame,
+        show_numbers=False,
+        popup_cols=interaction_fields,
+        tooltip_fields=interaction_fields,
     )
     return m
 
@@ -1229,6 +1321,38 @@ def _chunk_section_map_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(rows, geometry="geometry", crs=frame.crs)
 
 
+def _add_chunk_section_display_columns(
+    frame: gpd.GeoDataFrame,
+    section_frame: gpd.GeoDataFrame,
+) -> gpd.GeoDataFrame:
+    """Attach section-level popup fields to each segment for split pass layers."""
+    display_columns = [
+        "section_id",
+        "Section",
+        "Distance (mi)",
+        "Climb (ft)",
+        "Average Grade",
+        "Median Grade",
+        "Section Time (min)",
+    ]
+    section_display = section_frame[
+        [column for column in display_columns if column in section_frame.columns]
+    ].copy()
+    if "section_id" not in frame.columns or "section_id" not in section_display.columns:
+        return frame
+
+    frame_without_display = frame.drop(
+        columns=[
+            column
+            for column in section_display.columns
+            if column != "section_id" and column in frame.columns
+        ],
+        errors="ignore",
+    )
+    merged = frame_without_display.merge(section_display, on="section_id", how="left")
+    return gpd.GeoDataFrame(merged, geometry="geometry", crs=frame.crs)
+
+
 def make_chunk_map(
     gdf_segments: gpd.GeoDataFrame,
     popup_cols: list[str] | None = None,
@@ -1260,6 +1384,7 @@ def make_chunk_map(
         frame["Section Time (min)"] = frame["section_time_min"].fillna("")
     frame["_display_color"] = frame["chunk_state"].map(CHUNK_STATE_COLORS).fillna("#8a8a8a")
     section_frame = _chunk_section_map_frame(frame)
+    interaction_frame = _add_chunk_section_display_columns(frame, section_frame)
 
     if tooltip_fields is None:
         tooltip_fields = [
@@ -1293,9 +1418,14 @@ def make_chunk_map(
     )
     m = add_map_elements(
         m,
-        frame,
+        interaction_frame,
+        show_route_pass_control=True,
+        layer_column="chunk_state",
         popup_cols=popup_cols,
         tooltip_fields=tooltip_fields,
+        categories=list(CHUNK_STATE_COLORS.keys()),
+        cmap=list(CHUNK_STATE_COLORS.values()),
+        style_kwds={"weight": 4},
         touch_target_frame=section_frame,
     )
     return m

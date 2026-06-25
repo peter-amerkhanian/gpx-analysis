@@ -26,6 +26,7 @@ from .viz import (
     google_maps_link,
     make_chunk_map,
     make_road_quality_map,
+    make_route_overview_map,
     make_route_map,
     prepare_segment_display_columns,
     prepare_osm_columns
@@ -58,6 +59,7 @@ __all__ = [
     "google_maps_link",
     "make_chunk_map",
     "make_road_quality_map",
+    "make_route_overview_map",
     "prepare_osm_columns",
     "prepare_segment_display_columns",
     "make_route_map",

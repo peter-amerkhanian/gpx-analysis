@@ -1,5 +1,5 @@
 ---
-title: "Arli-griz plays Golf (46% Gravel)"
+title: "Arli-griz to Golf (46% Gravel)"
 ---
 
 ```{=html}
@@ -38,12 +38,27 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 ::: {.panel-tabset}
 
+## Map
+
+<iframe
+  src="../data/routes/arlington-to-southpark/overview_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
 ## Hazards
 
 <iframe
   src="../data/routes/arlington-to-southpark/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -97,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/arlington-to-southpark/chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -282,6 +300,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/arlington-to-southpark/road_quality_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 

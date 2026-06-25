@@ -38,12 +38,27 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 ::: {.panel-tabset}
 
+## Map
+
+<iframe
+  src="../data/routes/three-bears-gravel-loop/overview_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
 ## Hazards
 
 <iframe
   src="../data/routes/three-bears-gravel-loop/map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -97,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/three-bears-gravel-loop/chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 
@@ -228,6 +246,9 @@ document.addEventListener("DOMContentLoaded", function () {
   src="../data/routes/three-bears-gravel-loop/road_quality_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
   allowfullscreen
 ></iframe>
 

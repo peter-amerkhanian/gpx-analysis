@@ -2,50 +2,50 @@
   {
     "hazard": "flat",
     "hazard_label": "Flat",
-    "distance_m": 11339.0,
-    "percent": 54.0,
-    "distance_mi": 7.05
+    "distance_m": 12661.0,
+    "percent": 56.0,
+    "distance_mi": 7.87
   },
   {
     "hazard": "climb",
     "hazard_label": "Climb",
-    "distance_m": 4061.0,
-    "percent": 19.0,
-    "distance_mi": 2.52
+    "distance_m": 3709.0,
+    "percent": 16.0,
+    "distance_mi": 2.3
   },
   {
     "hazard": "light_descent",
     "hazard_label": "Light Descent",
-    "distance_m": 2598.0,
-    "percent": 12.0,
-    "distance_mi": 1.61
+    "distance_m": 2476.0,
+    "percent": 11.0,
+    "distance_mi": 1.54
   },
   {
     "hazard": "descent",
     "hazard_label": "Descent",
-    "distance_m": 2091.0,
-    "percent": 10.0,
-    "distance_mi": 1.3
+    "distance_m": 2034.0,
+    "percent": 9.0,
+    "distance_mi": 1.26
   },
   {
     "hazard": "steep_climb",
     "hazard_label": "Steep Climb",
-    "distance_m": 985.0,
-    "percent": 5.0,
-    "distance_mi": 0.61
+    "distance_m": 1699.0,
+    "percent": 7.0,
+    "distance_mi": 1.06
   },
   {
     "hazard": "steep_descent",
     "hazard_label": "Steep Descent",
-    "distance_m": 51.0,
-    "percent": 0.0,
-    "distance_mi": 0.03
+    "distance_m": 208.0,
+    "percent": 1.0,
+    "distance_mi": 0.13
   },
   {
     "hazard": "TOTAL",
     "hazard_label": "TOTAL",
-    "distance_m": 21125.0,
+    "distance_m": 22787.0,
     "percent": 100.0,
-    "distance_mi": 13.13
+    "distance_mi": 14.16
   }
 ]
