@@ -37,9 +37,9 @@
     "route_tags": [
       {
         "label": "Alameda Creek",
-        "distance_ft": 41202.3,
-        "elevation_ft": 17.7,
-        "threshold_ft": 37000.0
+        "distance_ft": 21340.0,
+        "elevation_ft": 31.0,
+        "threshold_ft": 21000.0
       }
     ],
     "start_bart_station": "Union City",

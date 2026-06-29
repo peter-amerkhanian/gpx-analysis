@@ -36,22 +36,22 @@
     "road_quality_score": 29,
     "route_tags": [
       {
-        "label": "Wildcat Creek \u2193",
-        "distance_ft": 32306.1,
-        "elevation_ft": -214.2,
-        "threshold_ft": 20000.0
-      },
-      {
         "label": "Havey Canyon \u2191",
-        "distance_ft": 7640.8,
-        "elevation_ft": 489.8,
+        "distance_ft": 7641.0,
+        "elevation_ft": 490.0,
         "threshold_ft": 7000.0
       },
       {
         "label": "Meadows Canyon \u2193",
-        "distance_ft": 7387.9,
-        "elevation_ft": -383.9,
+        "distance_ft": 7388.0,
+        "elevation_ft": -384.0,
         "threshold_ft": 7000.0
+      },
+      {
+        "label": "Wildcat Creek \u2193",
+        "distance_ft": 21588.0,
+        "elevation_ft": -271.0,
+        "threshold_ft": 20000.0
       }
     ],
     "start_bart_station": "El Cerrito del Norte",

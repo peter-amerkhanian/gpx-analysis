@@ -15,7 +15,9 @@ from .geo import (
     enrich_segments_with_mtc_streets,
 )
 from .io import read_simple_gpx
-from .analytics import detect_hazards, analyze_steps, detect_chunks, analyze_chunks
+from .analytics import analyze_steps, analyze_chunks
+from .chunks import detect_chunks
+from .hazards import detect_hazards
 
 from .viz import (
     DEFAULT_HAZARD_COLORS,

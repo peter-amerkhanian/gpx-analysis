@@ -37,26 +37,26 @@
     "route_tags": [
       {
         "label": "Arlington \u2191",
-        "distance_ft": 18805.7,
-        "elevation_ft": 589.6,
+        "distance_ft": 18806.0,
+        "elevation_ft": 590.0,
         "threshold_ft": 18000.0
       },
       {
         "label": "Golf Course Trail",
-        "distance_ft": 4189.5,
-        "elevation_ft": 44.3,
+        "distance_ft": 4019.0,
+        "elevation_ft": 42.0,
         "threshold_ft": 4000.0
       },
       {
         "label": "Meadows Canyon \u2193",
         "distance_ft": 7749.0,
-        "elevation_ft": -359.3,
+        "elevation_ft": -359.0,
         "threshold_ft": 7000.0
       },
       {
         "label": "Wildcat Creek \u2193",
-        "distance_ft": 21490.8,
-        "elevation_ft": -232.9,
+        "distance_ft": 21491.0,
+        "elevation_ft": -233.0,
         "threshold_ft": 20000.0
       }
     ],

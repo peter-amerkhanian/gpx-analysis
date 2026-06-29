@@ -37,20 +37,20 @@
     "route_tags": [
       {
         "label": "Spruce \u2191",
-        "distance_ft": 10466.8,
+        "distance_ft": 10467.0,
         "elevation_ft": 544.0,
         "threshold_ft": 7000.0
       },
       {
         "label": "Grizzly Peak \u2191",
-        "distance_ft": 27920.1,
-        "elevation_ft": 459.3,
+        "distance_ft": 27920.0,
+        "elevation_ft": 459.0,
         "threshold_ft": 24000.0
       },
       {
         "label": "Claremont \u2193",
-        "distance_ft": 10876.7,
-        "elevation_ft": -958.7,
+        "distance_ft": 10877.0,
+        "elevation_ft": -959.0,
         "threshold_ft": 10000.0
       }
     ],

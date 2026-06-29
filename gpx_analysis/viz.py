@@ -1363,7 +1363,7 @@ def make_chunk_map(
     if "chunk_state" in gdf_segments.columns:
         frame = gdf_segments.copy()
     else:
-        from .analytics import detect_chunks
+        from .chunks import detect_chunks
         frame = detect_chunks(gdf_segments)
     frame["Segment"] = frame["step"].astype("Int64").astype(str)
     frame["More Details"] = google_maps_link(frame["lat"], frame["lon"])

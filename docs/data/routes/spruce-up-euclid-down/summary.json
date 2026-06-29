@@ -37,8 +37,8 @@
     "route_tags": [
       {
         "label": "Spruce \u2191",
-        "distance_ft": 7318.5,
-        "elevation_ft": 371.1,
+        "distance_ft": 7318.0,
+        "elevation_ft": 371.0,
         "threshold_ft": 7000.0
       },
       {

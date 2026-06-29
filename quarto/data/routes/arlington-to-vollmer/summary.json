@@ -37,32 +37,32 @@
     "route_tags": [
       {
         "label": "Arlington \u2191",
-        "distance_ft": 18805.7,
-        "elevation_ft": 589.6,
+        "distance_ft": 18806.0,
+        "elevation_ft": 590.0,
         "threshold_ft": 18000.0
       },
       {
         "label": "Grizzly Peak \u2191",
-        "distance_ft": 24017.3,
-        "elevation_ft": 792.3,
+        "distance_ft": 24017.0,
+        "elevation_ft": 792.0,
         "threshold_ft": 24000.0
       },
       {
         "label": "Seaview \u2193",
-        "distance_ft": 15132.5,
-        "elevation_ft": -651.9,
+        "distance_ft": 15133.0,
+        "elevation_ft": -652.0,
         "threshold_ft": 15000.0
       },
       {
         "label": "Meadows Canyon \u2193",
         "distance_ft": 7749.0,
-        "elevation_ft": -359.3,
+        "elevation_ft": -359.0,
         "threshold_ft": 7000.0
       },
       {
         "label": "Wildcat Creek \u2193",
-        "distance_ft": 21490.8,
-        "elevation_ft": -232.9,
+        "distance_ft": 21491.0,
+        "elevation_ft": -233.0,
         "threshold_ft": 20000.0
       }
     ],

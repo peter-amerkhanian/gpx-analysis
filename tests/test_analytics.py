@@ -2,7 +2,8 @@ import unittest
 
 import pandas as pd
 
-from gpx_analysis.analytics import detect_chunks, detect_hazards
+from gpx_analysis.chunks import detect_chunks
+from gpx_analysis.hazards import detect_hazards
 
 
 class DetectHazardsTests(unittest.TestCase):

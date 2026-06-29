@@ -108,13 +108,25 @@ ROUTE_TAG_THRESHOLDS_FT = {
         "threshold_ft": 11000,
         "display_name": "Euclid",
     },
+    "Lake Chabot Road": {
+        "threshold_ft": 16000,
+        "display_name": "Lake Chabot",
+    },
+    "Joaquin Miller Road": {
+        "threshold_ft": 5900,
+        "display_name": "Joaquin Miller",
+    },
     "Spruce Street": {
         "threshold_ft": 7000,
         "display_name": "Spruce",
     },
     "Alameda Creek Trail": {
-        "threshold_ft": 37000,
+        "threshold_ft": 21000,
         "display_name": "Alameda Creek",
+    },
+    "Skyline Boulevard": {
+        "threshold_ft": 27000,
+        "display_name": "Skyline",
     },
     "Golf Course Trail": 4000,
 }
@@ -445,7 +457,7 @@ def route_tags_from_segments(
     segments: pd.DataFrame,
     tag_thresholds_ft: dict[str, float | dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
-    """Return route tags for named roads/trails whose total distance passes a threshold."""
+    """Return route tags for consecutive named road/trail runs above threshold."""
     thresholds = tag_thresholds_ft or ROUTE_TAG_THRESHOLDS_FT
     if "osm_name" not in segments.columns or "step_dist_f" not in segments.columns:
         return []
@@ -459,15 +471,23 @@ def route_tags_from_segments(
     if "step_elevation_f" not in frame.columns:
         frame["step_elevation_f"] = 0.0
     frame["step_elevation_f"] = pd.to_numeric(frame["step_elevation_f"], errors="coerce").fillna(0)
-    totals_by_name = (
-        frame.dropna(subset=["osm_name"])
-        .groupby("osm_name", sort=False)[["step_dist_f", "step_elevation_f"]]
-        .sum()
+    road_name_run_changed = frame["osm_name"].fillna("").ne(frame["osm_name"].shift().fillna(""))
+    frame["seg_id"] = road_name_run_changed.astype("int64").cumsum()
+    road_runs = (
+        frame[frame["osm_name"].notna() & frame["osm_name"].ne("")]
+        .groupby(["osm_name", "seg_id"], sort=False)
+        .agg(
+            step_dist_f=("step_dist_f", "sum"),
+            step_elevation_f=("step_elevation_f", "sum"),
+        )
+        .round(0)
+        .reset_index()
+        .sort_values(by="seg_id", kind="stable")
     )
 
     tags: list[dict[str, object]] = []
-    for road_name, totals in totals_by_name.iterrows():
-        road_name = str(road_name)
+    for row in road_runs.itertuples(index=False):
+        road_name = str(row.osm_name)
         config = thresholds.get(road_name)
         if config is None:
             continue
@@ -482,10 +502,10 @@ def route_tags_from_segments(
         if threshold_ft is None:
             continue
 
-        distance_ft = float(totals["step_dist_f"])
+        distance_ft = float(row.step_dist_f)
         if distance_ft < float(threshold_ft):
             continue
-        elevation_ft = float(totals["step_elevation_f"])
+        elevation_ft = float(row.step_elevation_f)
         if elevation_ft > ROUTE_TAG_ELEVATION_ARROW_THRESHOLD_FT:
             display_name = f"{display_name} \u2191"
         elif elevation_ft < -ROUTE_TAG_ELEVATION_ARROW_THRESHOLD_FT:

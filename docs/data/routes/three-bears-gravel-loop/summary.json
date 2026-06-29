@@ -37,21 +37,15 @@
     "route_tags": [
       {
         "label": "3 Bears",
-        "distance_ft": 44156.1,
-        "elevation_ft": 67.6,
+        "distance_ft": 44156.0,
+        "elevation_ft": 68.0,
         "threshold_ft": 36000.0
       },
       {
         "label": "Meadows Canyon \u2193",
-        "distance_ft": 7548.5,
+        "distance_ft": 7549.0,
         "elevation_ft": -394.0,
         "threshold_ft": 7000.0
-      },
-      {
-        "label": "Wildcat Creek \u2193",
-        "distance_ft": 21406.3,
-        "elevation_ft": -271.0,
-        "threshold_ft": 20000.0
       }
     ],
     "start_bart_station": "El Cerrito del Norte",

@@ -37,13 +37,13 @@
     "route_tags": [
       {
         "label": "Richmond Bridge",
-        "distance_ft": 23067.5,
-        "elevation_ft": -7.2,
+        "distance_ft": 23068.0,
+        "elevation_ft": -7.0,
         "threshold_ft": 23000.0
       },
       {
         "label": "Golden Gate Bridge",
-        "distance_ft": 9134.4,
+        "distance_ft": 9134.0,
         "elevation_ft": -42.0,
         "threshold_ft": 9000.0
       }

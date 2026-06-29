@@ -37,14 +37,14 @@
     "route_tags": [
       {
         "label": "Tunnel \u2191",
-        "distance_ft": 9403.9,
-        "elevation_ft": 409.4,
+        "distance_ft": 9404.0,
+        "elevation_ft": 409.0,
         "threshold_ft": 9000.0
       },
       {
         "label": "Claremont \u2193",
-        "distance_ft": 14923.3,
-        "elevation_ft": -1096.5,
+        "distance_ft": 14923.0,
+        "elevation_ft": -1096.0,
         "threshold_ft": 10000.0
       }
     ],

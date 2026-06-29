@@ -2,7 +2,8 @@ from typing import Literal
 
 import pandas as pd
 
-from .analytics import detect_chunks, detect_hazards
+from .chunks import detect_chunks
+from .hazards import detect_hazards
 from .viz import DEFAULT_HAZARD_PROFILE, apply_hazard_profile
 
 

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><span class="mobile-route-label">Miles</span><br>23.94</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>4072.51 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:00</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.80 mi</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>1.15 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">76%</span></p>
 </div>
 </article>
@@ -74,13 +74,18 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>Flat</td>
-      <td>11.06</td>
-      <td>46.0</td>
+      <td>9.95</td>
+      <td>42.0</td>
     </tr>
     <tr>
       <td>Climb</td>
       <td>3.74</td>
       <td>16.0</td>
+    </tr>
+    <tr>
+      <td>Light Descent</td>
+      <td>3.24</td>
+      <td>14.0</td>
     </tr>
     <tr>
       <td>Steep Climb</td>
@@ -89,18 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>Descent</td>
-      <td>2.73</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <td>Light Descent</td>
-      <td>2.57</td>
-      <td>11.0</td>
+      <td>2.82</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <td>Steep Descent</td>
-      <td>0.80</td>
-      <td>3.0</td>
+      <td>1.15</td>
+      <td>5.0</td>
     </tr>
   </tbody>
 </table>

@@ -29,17 +29,18 @@ class RouteElevationSvgTests(unittest.TestCase):
 
 
 class RouteTagsFromSegmentsTests(unittest.TestCase):
-    def test_returns_tags_above_thresholds_in_route_order(self) -> None:
+    def test_returns_consecutive_run_tags_above_thresholds_in_route_order(self) -> None:
         segments = pd.DataFrame(
             {
                 "osm_name": [
                     "Wildcat Creek Trail",
                     "Redwood Road",
-                    "Meadows Canyon Trail",
                     "Redwood Road",
+                    "Meadows Canyon Trail",
+                    "Wildcat Creek Trail",
                 ],
-                "step_dist_f": [21000, 40000, 7500, 15000],
-                "step_elevation_f": [100.0, 100.0, 100.0, 100.0],
+                "step_dist_f": [21000, 40000, 15000, 7500, 22000],
+                "step_elevation_f": [100.0, 100.0, 100.0, 100.0, -250.0],
             }
         )
 
@@ -47,11 +48,24 @@ class RouteTagsFromSegmentsTests(unittest.TestCase):
 
         self.assertEqual(
             [tag["label"] for tag in result],
-            ["Wildcat Creek", "Redwood Road", "Meadows Canyon"],
+            ["Wildcat Creek", "Redwood Road", "Meadows Canyon", "Wildcat Creek \u2193"],
         )
         self.assertEqual(result[1]["distance_ft"], 55000.0)
         self.assertEqual(result[1]["elevation_ft"], 200.0)
         self.assertEqual(result[1]["threshold_ft"], 54000.0)
+
+    def test_does_not_combine_nonconsecutive_road_runs(self) -> None:
+        segments = pd.DataFrame(
+            {
+                "osm_name": ["Redwood Road", "Other Road", "Redwood Road"],
+                "step_dist_f": [40000.0, 100.0, 15000.0],
+                "step_elevation_f": [100.0, 0.0, 100.0],
+            }
+        )
+
+        result = route_tags_from_segments(segments)
+
+        self.assertEqual(result, [])
 
     def test_uses_optional_display_name_and_appends_climb_arrow(self) -> None:
         segments = pd.DataFrame(
@@ -73,7 +87,7 @@ class RouteTagsFromSegmentsTests(unittest.TestCase):
         )
 
         self.assertEqual(result[0]["label"], "Big Redwood \u2191")
-        self.assertEqual(result[0]["elevation_ft"], 550.1)
+        self.assertEqual(result[0]["elevation_ft"], 550.0)
 
     def test_appends_descent_arrow_to_default_label(self) -> None:
         segments = pd.DataFrame(
