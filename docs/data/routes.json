@@ -18,10 +18,10 @@
         "segment_count": 835,
         "distance_m": 22389.47,
         "distance_mi": 13.91,
-        "elevation_gain_m": 532.7,
-        "elevation_gain_ft": 1747.7,
-        "elevation_loss_m": 533.2,
-        "elevation_loss_ft": 1749.34,
+        "elevation_gain_m": 507.49,
+        "elevation_gain_ft": 1664.99,
+        "elevation_loss_m": 509.1,
+        "elevation_loss_ft": 1670.26,
         "max_elevation_m": 509.0,
         "max_elevation_ft": 1669.95,
         "start": {
@@ -77,9 +77,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 11400.0,
-          "percent": 51.0,
-          "distance_mi": 7.08
+          "distance_m": 10345.0,
+          "percent": 46.0,
+          "distance_mi": 6.43
         },
         {
           "hazard": "climb",
@@ -91,16 +91,16 @@
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2598.0,
-          "percent": 12.0,
-          "distance_mi": 1.61
+          "distance_m": 3308.0,
+          "percent": 15.0,
+          "distance_mi": 2.06
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 2396.0,
-          "percent": 11.0,
-          "distance_mi": 1.49
+          "distance_m": 2693.0,
+          "percent": 12.0,
+          "distance_mi": 1.67
         },
         {
           "hazard": "steep_climb",
@@ -112,9 +112,9 @@
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 231.0,
+          "distance_m": 277.0,
           "percent": 1.0,
-          "distance_mi": 0.14
+          "distance_mi": 0.17
         },
         {
           "hazard": "TOTAL",
@@ -143,10 +143,10 @@
         "segment_count": 1848,
         "distance_m": 41194.96,
         "distance_mi": 25.6,
-        "elevation_gain_m": 1047.2,
-        "elevation_gain_ft": 3435.7,
-        "elevation_loss_m": 1034.3,
-        "elevation_loss_ft": 3393.37,
+        "elevation_gain_m": 791.82,
+        "elevation_gain_ft": 2597.84,
+        "elevation_loss_m": 779.74,
+        "elevation_loss_ft": 2558.19,
         "max_elevation_m": 442.8,
         "max_elevation_ft": 1452.76,
         "start": {
@@ -165,13 +165,13 @@
             "label": "Wildwood+Leimert \u2191",
             "distance_ft": 6693.0,
             "elevation_ft": 321.0,
-            "threshold_ft": 5000.0
+            "threshold_ft": 4000.0
           },
           {
             "label": "Butters Canyon \u2191",
             "distance_ft": 4487.0,
             "elevation_ft": 207.0,
-            "threshold_ft": 4000.0
+            "threshold_ft": 3000.0
           },
           {
             "label": "Pinehurst \u2191",
@@ -208,9 +208,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 21630.0,
-          "percent": 53.0,
-          "distance_mi": 13.44
+          "distance_m": 19115.0,
+          "percent": 46.0,
+          "distance_mi": 11.88
         },
         {
           "hazard": "climb",
@@ -222,16 +222,16 @@
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 5457.0,
-          "percent": 13.0,
-          "distance_mi": 3.39
+          "distance_m": 6598.0,
+          "percent": 16.0,
+          "distance_mi": 4.1
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 3559.0,
-          "percent": 9.0,
-          "distance_mi": 2.21
+          "distance_m": 4803.0,
+          "percent": 12.0,
+          "distance_mi": 2.98
         },
         {
           "hazard": "steep_climb",
@@ -243,9 +243,9 @@
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 294.0,
+          "distance_m": 425.0,
           "percent": 1.0,
-          "distance_mi": 0.18
+          "distance_mi": 0.26
         },
         {
           "hazard": "TOTAL",
@@ -253,256 +253,6 @@
           "distance_m": 41195.0,
           "percent": 100.0,
           "distance_mi": 25.6
-        }
-      ]
-    },
-    {
-      "slug": "wildcat-havey-nimitz-meadow-loop",
-      "title": "Havey Canyon Loop (53% Gravel)",
-      "title_html": "Havey Canyon Loop <span><span style=\"color: chocolate;\">(53% Gravel)</span></span>",
-      "source": "gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 978,
-        "segment_count": 977,
-        "distance_m": 30304.15,
-        "distance_mi": 18.83,
-        "elevation_gain_m": 631.6,
-        "elevation_gain_ft": 2072.18,
-        "elevation_loss_m": 632.3,
-        "elevation_loss_ft": 2074.48,
-        "max_elevation_m": 324.1,
-        "max_elevation_ft": 1063.32,
-        "start": {
-          "lat": 37.92608,
-          "lon": -122.31583
-        },
-        "end": {
-          "lat": 37.92623,
-          "lon": -122.31614
-        },
-        "gravel_percent": 53.3,
-        "cycleway_percent": 18.8,
-        "road_quality_score": 29,
-        "route_tags": [
-          {
-            "label": "Havey Canyon \u2191",
-            "distance_ft": 7641.0,
-            "elevation_ft": 490.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Meadows Canyon \u2193",
-            "distance_ft": 7388.0,
-            "elevation_ft": -384.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Wildcat Creek \u2193",
-            "distance_ft": 21588.0,
-            "elevation_ft": -271.0,
-            "threshold_ft": 20000.0
-          }
-        ],
-        "start_bart_station": "El Cerrito del Norte",
-        "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte",
-        "estimated_time_min": 122.0,
-        "estimated_time_display": "2:00"
-      },
-      "paths": {
-        "summary": "data/routes/wildcat-havey-nimitz-meadow-loop/summary.json",
-        "hazards": "data/routes/wildcat-havey-nimitz-meadow-loop/hazards.json",
-        "points": "data/routes/wildcat-havey-nimitz-meadow-loop/points.geojson",
-        "segments": "data/routes/wildcat-havey-nimitz-meadow-loop/segments.geojson",
-        "map": "data/routes/wildcat-havey-nimitz-meadow-loop/map.html",
-        "overview_map": "data/routes/wildcat-havey-nimitz-meadow-loop/overview_map.html",
-        "road_quality_map": "data/routes/wildcat-havey-nimitz-meadow-loop/road_quality_map.html",
-        "chunk_map": "data/routes/wildcat-havey-nimitz-meadow-loop/chunk_map.html",
-        "profile_svg": "data/routes/wildcat-havey-nimitz-meadow-loop/profile.svg",
-        "page": "routes/wildcat-havey-nimitz-meadow-loop.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 19219.0,
-          "percent": 63.0,
-          "distance_mi": 11.94
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 3735.0,
-          "percent": 12.0,
-          "distance_mi": 2.32
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3160.0,
-          "percent": 10.0,
-          "distance_mi": 1.96
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 2022.0,
-          "percent": 7.0,
-          "distance_mi": 1.26
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 1677.0,
-          "percent": 6.0,
-          "distance_mi": 1.04
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 489.0,
-          "percent": 2.0,
-          "distance_mi": 0.3
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 30304.0,
-          "percent": 100.0,
-          "distance_mi": 18.83
-        }
-      ]
-    },
-    {
-      "slug": "wildcat-conlon-nimitz-meadow-loop",
-      "title": "Conlon Trail Loop (59% Gravel)",
-      "title_html": "Conlon Trail Loop <span><span style=\"color: chocolate;\">(59% Gravel)</span></span>",
-      "source": "gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 965,
-        "segment_count": 964,
-        "distance_m": 29042.34,
-        "distance_mi": 18.05,
-        "elevation_gain_m": 663.5,
-        "elevation_gain_ft": 2176.84,
-        "elevation_loss_m": 664.4,
-        "elevation_loss_ft": 2179.79,
-        "max_elevation_m": 346.4,
-        "max_elevation_ft": 1136.48,
-        "start": {
-          "lat": 37.92594,
-          "lon": -122.31571
-        },
-        "end": {
-          "lat": 37.92619,
-          "lon": -122.31606
-        },
-        "gravel_percent": 58.8,
-        "cycleway_percent": 12.3,
-        "road_quality_score": 32,
-        "route_tags": [
-          {
-            "label": "Conlon Trail \u2191",
-            "distance_ft": 9952.0,
-            "elevation_ft": 576.0,
-            "threshold_ft": 9900.0
-          },
-          {
-            "label": "Meadows Canyon \u2193",
-            "distance_ft": 7388.0,
-            "elevation_ft": -384.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Wildcat Creek \u2193",
-            "distance_ft": 21589.0,
-            "elevation_ft": -272.0,
-            "threshold_ft": 20000.0
-          }
-        ],
-        "start_bart_station": "El Cerrito del Norte",
-        "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte",
-        "estimated_time_min": 122.0,
-        "estimated_time_display": "2:00"
-      },
-      "paths": {
-        "summary": "data/routes/wildcat-conlon-nimitz-meadow-loop/summary.json",
-        "hazards": "data/routes/wildcat-conlon-nimitz-meadow-loop/hazards.json",
-        "points": "data/routes/wildcat-conlon-nimitz-meadow-loop/points.geojson",
-        "segments": "data/routes/wildcat-conlon-nimitz-meadow-loop/segments.geojson",
-        "map": "data/routes/wildcat-conlon-nimitz-meadow-loop/map.html",
-        "overview_map": "data/routes/wildcat-conlon-nimitz-meadow-loop/overview_map.html",
-        "road_quality_map": "data/routes/wildcat-conlon-nimitz-meadow-loop/road_quality_map.html",
-        "chunk_map": "data/routes/wildcat-conlon-nimitz-meadow-loop/chunk_map.html",
-        "profile_svg": "data/routes/wildcat-conlon-nimitz-meadow-loop/profile.svg",
-        "page": "routes/wildcat-conlon-nimitz-meadow-loop.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 17524.0,
-          "percent": 60.0,
-          "distance_mi": 10.89
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 3062.0,
-          "percent": 11.0,
-          "distance_mi": 1.9
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3008.0,
-          "percent": 10.0,
-          "distance_mi": 1.87
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 2579.0,
-          "percent": 9.0,
-          "distance_mi": 1.6
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 2357.0,
-          "percent": 8.0,
-          "distance_mi": 1.46
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 513.0,
-          "percent": 2.0,
-          "distance_mi": 0.32
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 29042.0,
-          "percent": 100.0,
-          "distance_mi": 18.05
         }
       ]
     },
@@ -524,10 +274,10 @@
         "segment_count": 1287,
         "distance_m": 47735.06,
         "distance_mi": 29.66,
-        "elevation_gain_m": 447.1,
-        "elevation_gain_ft": 1466.86,
-        "elevation_loss_m": 455.2,
-        "elevation_loss_ft": 1493.44,
+        "elevation_gain_m": 285.83,
+        "elevation_gain_ft": 937.75,
+        "elevation_loss_m": 294.2,
+        "elevation_loss_ft": 965.21,
         "max_elevation_m": 74.3,
         "max_elevation_ft": 243.77,
         "start": {
@@ -577,16 +327,16 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 41966.0,
-          "percent": 88.0,
-          "distance_mi": 26.08
+          "distance_m": 40700.0,
+          "percent": 85.0,
+          "distance_mi": 25.29
         },
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 1744.0,
-          "percent": 4.0,
-          "distance_mi": 1.08
+          "distance_m": 2512.0,
+          "percent": 5.0,
+          "distance_mi": 1.56
         },
         {
           "hazard": "climb",
@@ -605,16 +355,16 @@
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 874.0,
-          "percent": 2.0,
-          "distance_mi": 0.54
+          "distance_m": 1297.0,
+          "percent": 3.0,
+          "distance_mi": 0.81
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 111.0,
+          "distance_m": 186.0,
           "percent": 0.0,
-          "distance_mi": 0.07
+          "distance_mi": 0.12
         },
         {
           "hazard": "TOTAL",
@@ -622,125 +372,6 @@
           "distance_m": 47735.0,
           "percent": 100.0,
           "distance_mi": 29.66
-        }
-      ]
-    },
-    {
-      "slug": "spruce-up-euclid-down",
-      "title": "Short Spr-euclid",
-      "title_html": "Short Spr-euclid",
-      "source": "gpx_data/spruce_up_euclid_down.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 780,
-        "segment_count": 779,
-        "distance_m": 18647.9,
-        "distance_mi": 11.59,
-        "elevation_gain_m": 379.9,
-        "elevation_gain_ft": 1246.39,
-        "elevation_loss_m": 371.0,
-        "elevation_loss_ft": 1217.19,
-        "max_elevation_m": 337.9,
-        "max_elevation_ft": 1108.6,
-        "start": {
-          "lat": 37.87458,
-          "lon": -122.28393
-        },
-        "end": {
-          "lat": 37.85289,
-          "lon": -122.26781
-        },
-        "gravel_percent": 0.7,
-        "cycleway_percent": 0.0,
-        "road_quality_score": 82,
-        "route_tags": [
-          {
-            "label": "Spruce \u2191",
-            "distance_ft": 7318.0,
-            "elevation_ft": 371.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Euclid \u2193",
-            "distance_ft": 11961.0,
-            "elevation_ft": -561.0,
-            "threshold_ft": 11000.0
-          }
-        ],
-        "start_bart_station": "North Berkeley",
-        "end_bart_station": "Ashby",
-        "bart_station": "North Berkeley",
-        "estimated_time_min": 78.0,
-        "estimated_time_display": "1:20"
-      },
-      "paths": {
-        "summary": "data/routes/spruce-up-euclid-down/summary.json",
-        "hazards": "data/routes/spruce-up-euclid-down/hazards.json",
-        "points": "data/routes/spruce-up-euclid-down/points.geojson",
-        "segments": "data/routes/spruce-up-euclid-down/segments.geojson",
-        "map": "data/routes/spruce-up-euclid-down/map.html",
-        "overview_map": "data/routes/spruce-up-euclid-down/overview_map.html",
-        "road_quality_map": "data/routes/spruce-up-euclid-down/road_quality_map.html",
-        "chunk_map": "data/routes/spruce-up-euclid-down/chunk_map.html",
-        "profile_svg": "data/routes/spruce-up-euclid-down/profile.svg",
-        "page": "routes/spruce-up-euclid-down.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 10791.0,
-          "percent": 58.0,
-          "distance_mi": 6.71
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 3407.0,
-          "percent": 18.0,
-          "distance_mi": 2.12
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 2577.0,
-          "percent": 14.0,
-          "distance_mi": 1.6
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 908.0,
-          "percent": 5.0,
-          "distance_mi": 0.56
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 857.0,
-          "percent": 5.0,
-          "distance_mi": 0.53
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 108.0,
-          "percent": 1.0,
-          "distance_mi": 0.07
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 18648.0,
-          "percent": 100.0,
-          "distance_mi": 11.59
         }
       ]
     },
@@ -758,14 +389,14 @@
         "gallery": []
       },
       "summary": {
-        "point_count": 2946,
-        "segment_count": 2945,
-        "distance_m": 31366.2,
-        "distance_mi": 19.49,
-        "elevation_gain_m": 806.5,
-        "elevation_gain_ft": 2646.0,
-        "elevation_loss_m": 794.5,
-        "elevation_loss_ft": 2606.63,
+        "point_count": 2717,
+        "segment_count": 2716,
+        "distance_m": 31337.5,
+        "distance_mi": 19.47,
+        "elevation_gain_m": 603.63,
+        "elevation_gain_ft": 1980.4,
+        "elevation_loss_m": 592.53,
+        "elevation_loss_ft": 1944.0,
         "max_elevation_m": 450.5,
         "max_elevation_ft": 1478.02,
         "start": {
@@ -778,13 +409,19 @@
         },
         "gravel_percent": 0.5,
         "cycleway_percent": 0.0,
-        "road_quality_score": 55,
+        "road_quality_score": 54,
         "route_tags": [
+          {
+            "label": "Wildwood+Leimert \u2191",
+            "distance_ft": 6674.0,
+            "elevation_ft": 340.0,
+            "threshold_ft": 4000.0
+          },
           {
             "label": "Butters Canyon \u2191",
             "distance_ft": 4432.0,
             "elevation_ft": 201.0,
-            "threshold_ft": 4000.0
+            "threshold_ft": 3000.0
           },
           {
             "label": "Claremont \u2193",
@@ -796,7 +433,7 @@
         "start_bart_station": "MacArthur",
         "end_bart_station": "Ashby",
         "bart_station": "MacArthur",
-        "estimated_time_min": 138.0,
+        "estimated_time_min": 137.0,
         "estimated_time_display": "2:20"
       },
       "paths": {
@@ -815,51 +452,51 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 16825.0,
-          "percent": 54.0,
-          "distance_mi": 10.45
+          "distance_m": 15273.0,
+          "percent": 49.0,
+          "distance_mi": 9.49
         },
         {
           "hazard": "climb",
           "hazard_label": "Climb",
-          "distance_m": 4346.0,
-          "percent": 14.0,
-          "distance_mi": 2.7
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3547.0,
-          "percent": 11.0,
-          "distance_mi": 2.2
+          "distance_m": 4571.0,
+          "percent": 15.0,
+          "distance_mi": 2.84
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 3233.0,
-          "percent": 10.0,
-          "distance_mi": 2.01
+          "distance_m": 4149.0,
+          "percent": 13.0,
+          "distance_mi": 2.58
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4033.0,
+          "percent": 13.0,
+          "distance_mi": 2.51
         },
         {
           "hazard": "steep_climb",
           "hazard_label": "Steep Climb",
-          "distance_m": 3192.0,
+          "distance_m": 3022.0,
           "percent": 10.0,
-          "distance_mi": 1.98
+          "distance_mi": 1.88
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 223.0,
+          "distance_m": 291.0,
           "percent": 1.0,
-          "distance_mi": 0.14
+          "distance_mi": 0.18
         },
         {
           "hazard": "TOTAL",
           "hazard_label": "TOTAL",
-          "distance_m": 31366.0,
+          "distance_m": 31337.0,
           "percent": 100.0,
-          "distance_mi": 19.49
+          "distance_mi": 19.47
         }
       ]
     },
@@ -881,10 +518,10 @@
         "segment_count": 844,
         "distance_m": 22786.99,
         "distance_mi": 14.16,
-        "elevation_gain_m": 523.2,
-        "elevation_gain_ft": 1716.54,
-        "elevation_loss_m": 523.9,
-        "elevation_loss_ft": 1718.83,
+        "elevation_gain_m": 442.66,
+        "elevation_gain_ft": 1452.29,
+        "elevation_loss_m": 442.46,
+        "elevation_loss_ft": 1451.64,
         "max_elevation_m": 446.2,
         "max_elevation_ft": 1463.91,
         "start": {
@@ -934,9 +571,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 12661.0,
-          "percent": 56.0,
-          "distance_mi": 7.87
+          "distance_m": 11666.0,
+          "percent": 51.0,
+          "distance_mi": 7.25
         },
         {
           "hazard": "climb",
@@ -946,18 +583,18 @@
           "distance_mi": 2.3
         },
         {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 2476.0,
-          "percent": 11.0,
-          "distance_mi": 1.54
-        },
-        {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2034.0,
-          "percent": 9.0,
-          "distance_mi": 1.26
+          "distance_m": 2763.0,
+          "percent": 12.0,
+          "distance_mi": 1.72
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 2701.0,
+          "percent": 12.0,
+          "distance_mi": 1.68
         },
         {
           "hazard": "steep_climb",
@@ -969,9 +606,9 @@
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 208.0,
+          "distance_m": 249.0,
           "percent": 1.0,
-          "distance_mi": 0.13
+          "distance_mi": 0.15
         },
         {
           "hazard": "TOTAL",
@@ -979,6 +616,530 @@
           "distance_m": 22787.0,
           "percent": 100.0,
           "distance_mi": 14.16
+        }
+      ]
+    },
+    {
+      "slug": "merrit-to-lamorinda",
+      "title": "Lake Merritt to Lamorinda (27% Cycleway)",
+      "title_html": "Lake Merritt to Lamorinda <span><span style=\"color: forestgreen;\">(27% Cycleway)</span></span>",
+      "source": "gpx_data\\Lake_Merritt_to_Moraga.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1654,
+        "segment_count": 1653,
+        "distance_m": 38142.51,
+        "distance_mi": 23.7,
+        "elevation_gain_m": 580.78,
+        "elevation_gain_ft": 1905.44,
+        "elevation_loss_m": 487.86,
+        "elevation_loss_ft": 1600.58,
+        "max_elevation_m": 350.2,
+        "max_elevation_ft": 1148.95,
+        "start": {
+          "lat": 37.79718,
+          "lon": -122.26533
+        },
+        "end": {
+          "lat": 37.89367,
+          "lon": -122.12495
+        },
+        "gravel_percent": 0.0,
+        "cycleway_percent": 26.7,
+        "road_quality_score": 54,
+        "route_tags": [
+          {
+            "label": "Wildwood+Leimert \u2191",
+            "distance_ft": 6694.0,
+            "elevation_ft": 321.0,
+            "threshold_ft": 4000.0
+          },
+          {
+            "label": "Butters Canyon \u2191",
+            "distance_ft": 3920.0,
+            "elevation_ft": 207.0,
+            "threshold_ft": 3000.0
+          },
+          {
+            "label": "La-Moraga Trail",
+            "distance_ft": 31100.0,
+            "elevation_ft": -186.0,
+            "threshold_ft": 6000.0
+          }
+        ],
+        "start_bart_station": "Lake Merritt",
+        "end_bart_station": "Lafayette",
+        "bart_station": "Lake Merritt",
+        "estimated_time_min": 158.0,
+        "estimated_time_display": "2:40"
+      },
+      "paths": {
+        "summary": "data/routes/merrit-to-lamorinda/summary.json",
+        "hazards": "data/routes/merrit-to-lamorinda/hazards.json",
+        "points": "data/routes/merrit-to-lamorinda/points.geojson",
+        "segments": "data/routes/merrit-to-lamorinda/segments.geojson",
+        "map": "data/routes/merrit-to-lamorinda/map.html",
+        "overview_map": "data/routes/merrit-to-lamorinda/overview_map.html",
+        "road_quality_map": "data/routes/merrit-to-lamorinda/road_quality_map.html",
+        "chunk_map": "data/routes/merrit-to-lamorinda/chunk_map.html",
+        "profile_svg": "data/routes/merrit-to-lamorinda/profile.svg",
+        "page": "routes/merrit-to-lamorinda.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 22337.0,
+          "percent": 59.0,
+          "distance_mi": 13.88
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 5921.0,
+          "percent": 16.0,
+          "distance_mi": 3.68
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 5217.0,
+          "percent": 14.0,
+          "distance_mi": 3.24
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 2401.0,
+          "percent": 6.0,
+          "distance_mi": 1.49
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 1965.0,
+          "percent": 5.0,
+          "distance_mi": 1.22
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 303.0,
+          "percent": 1.0,
+          "distance_mi": 0.19
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 38143.0,
+          "percent": 100.0,
+          "distance_mi": 23.7
+        }
+      ]
+    },
+    {
+      "slug": "bbr-skyline-chabot",
+      "title": "OAK Hills into Chabot (13% Gravel)",
+      "title_html": "OAK Hills into Chabot <span><span style=\"color: chocolate;\">(13% Gravel)</span></span>",
+      "source": "gpx_data\\Skyline_Ridge_to_Chabot.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1919,
+        "segment_count": 1918,
+        "distance_m": 43699.95,
+        "distance_mi": 27.15,
+        "elevation_gain_m": 789.25,
+        "elevation_gain_ft": 2589.41,
+        "elevation_loss_m": 798.96,
+        "elevation_loss_ft": 2621.27,
+        "max_elevation_m": 436.9,
+        "max_elevation_ft": 1433.4,
+        "start": {
+          "lat": 37.82892,
+          "lon": -122.26621
+        },
+        "end": {
+          "lat": 37.72135,
+          "lon": -122.15918
+        },
+        "gravel_percent": 13.1,
+        "cycleway_percent": 0.3,
+        "road_quality_score": 72,
+        "route_tags": [
+          {
+            "label": "Tunnel \u2191",
+            "distance_ft": 9562.0,
+            "elevation_ft": 471.0,
+            "threshold_ft": 9000.0
+          },
+          {
+            "label": "Pinehurst \u2193",
+            "distance_ft": 35210.0,
+            "elevation_ft": -702.0,
+            "threshold_ft": 34000.0
+          },
+          {
+            "label": "Goldenrod Trail \u2193",
+            "distance_ft": 6509.0,
+            "elevation_ft": -388.0,
+            "threshold_ft": 5500.0
+          }
+        ],
+        "start_bart_station": "MacArthur",
+        "end_bart_station": "San Leandro",
+        "bart_station": "MacArthur",
+        "estimated_time_min": 186.0,
+        "estimated_time_display": "3:10"
+      },
+      "paths": {
+        "summary": "data/routes/bbr-skyline-chabot/summary.json",
+        "hazards": "data/routes/bbr-skyline-chabot/hazards.json",
+        "points": "data/routes/bbr-skyline-chabot/points.geojson",
+        "segments": "data/routes/bbr-skyline-chabot/segments.geojson",
+        "map": "data/routes/bbr-skyline-chabot/map.html",
+        "overview_map": "data/routes/bbr-skyline-chabot/overview_map.html",
+        "road_quality_map": "data/routes/bbr-skyline-chabot/road_quality_map.html",
+        "chunk_map": "data/routes/bbr-skyline-chabot/chunk_map.html",
+        "profile_svg": "data/routes/bbr-skyline-chabot/profile.svg",
+        "page": "routes/bbr-skyline-chabot.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 22579.0,
+          "percent": 52.0,
+          "distance_mi": 14.03
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 6031.0,
+          "percent": 14.0,
+          "distance_mi": 3.75
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 5436.0,
+          "percent": 12.0,
+          "distance_mi": 3.38
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4971.0,
+          "percent": 11.0,
+          "distance_mi": 3.09
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3665.0,
+          "percent": 8.0,
+          "distance_mi": 2.28
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 1018.0,
+          "percent": 2.0,
+          "distance_mi": 0.63
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 43700.0,
+          "percent": 100.0,
+          "distance_mi": 27.15
+        }
+      ]
+    },
+    {
+      "slug": "whole-ridge-and-back",
+      "title": "Whole Ridge & Back (21% Gravel)",
+      "title_html": "Whole Ridge & Back <span><span style=\"color: chocolate;\">(21% Gravel)</span></span>",
+      "source": "gpx_data\\Whole_Ridge_and_Back.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 4275,
+        "segment_count": 4274,
+        "distance_m": 101898.96,
+        "distance_mi": 63.32,
+        "elevation_gain_m": 1710.57,
+        "elevation_gain_ft": 5612.09,
+        "elevation_loss_m": 1710.6,
+        "elevation_loss_ft": 5612.21,
+        "max_elevation_m": 510.4,
+        "max_elevation_ft": 1674.54,
+        "start": {
+          "lat": 37.92516,
+          "lon": -122.3166
+        },
+        "end": {
+          "lat": 37.92516,
+          "lon": -122.3166
+        },
+        "gravel_percent": 21.1,
+        "cycleway_percent": 3.7,
+        "road_quality_score": 77,
+        "route_tags": [
+          {
+            "label": "Arlington \u2191",
+            "distance_ft": 19766.0,
+            "elevation_ft": 523.0,
+            "threshold_ft": 18000.0
+          },
+          {
+            "label": "Grizzly Peak \u2191",
+            "distance_ft": 42861.0,
+            "elevation_ft": 554.0,
+            "threshold_ft": 24000.0
+          },
+          {
+            "label": "Goldenrod Trail \u2193",
+            "distance_ft": 6509.0,
+            "elevation_ft": -388.0,
+            "threshold_ft": 5500.0
+          },
+          {
+            "label": "Redwood Road \u2191",
+            "distance_ft": 40744.0,
+            "elevation_ft": 294.0,
+            "threshold_ft": 40000.0
+          },
+          {
+            "label": "La-Moraga Trail",
+            "distance_ft": 6575.0,
+            "elevation_ft": -44.0,
+            "threshold_ft": 6000.0
+          },
+          {
+            "label": "Meadows Canyon \u2193",
+            "distance_ft": 7749.0,
+            "elevation_ft": -359.0,
+            "threshold_ft": 7000.0
+          },
+          {
+            "label": "Wildcat Creek \u2193",
+            "distance_ft": 21491.0,
+            "elevation_ft": -233.0,
+            "threshold_ft": 18000.0
+          }
+        ],
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 437.0,
+        "estimated_time_display": "7:20"
+      },
+      "paths": {
+        "summary": "data/routes/whole-ridge-and-back/summary.json",
+        "hazards": "data/routes/whole-ridge-and-back/hazards.json",
+        "points": "data/routes/whole-ridge-and-back/points.geojson",
+        "segments": "data/routes/whole-ridge-and-back/segments.geojson",
+        "map": "data/routes/whole-ridge-and-back/map.html",
+        "overview_map": "data/routes/whole-ridge-and-back/overview_map.html",
+        "road_quality_map": "data/routes/whole-ridge-and-back/road_quality_map.html",
+        "chunk_map": "data/routes/whole-ridge-and-back/chunk_map.html",
+        "profile_svg": "data/routes/whole-ridge-and-back/profile.svg",
+        "page": "routes/whole-ridge-and-back.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 52543.0,
+          "percent": 52.0,
+          "distance_mi": 32.65
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 14064.0,
+          "percent": 14.0,
+          "distance_mi": 8.74
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 13508.0,
+          "percent": 13.0,
+          "distance_mi": 8.39
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 10387.0,
+          "percent": 10.0,
+          "distance_mi": 6.45
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 8802.0,
+          "percent": 9.0,
+          "distance_mi": 5.47
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 2595.0,
+          "percent": 3.0,
+          "distance_mi": 1.61
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 101899.0,
+          "percent": 100.0,
+          "distance_mi": 63.32
+        }
+      ]
+    },
+    {
+      "slug": "whole-ridge-southbound",
+      "title": "Whole Ridge Southbound (12% Gravel)",
+      "title_html": "Whole Ridge Southbound <span><span style=\"color: chocolate;\">(12% Gravel)</span></span>",
+      "source": "gpx_data\\Whole_Ridge.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 2053,
+        "segment_count": 2052,
+        "distance_m": 48950.54,
+        "distance_mi": 30.42,
+        "elevation_gain_m": 877.56,
+        "elevation_gain_ft": 2879.14,
+        "elevation_loss_m": 883.11,
+        "elevation_loss_ft": 2897.34,
+        "max_elevation_m": 510.4,
+        "max_elevation_ft": 1674.54,
+        "start": {
+          "lat": 37.92516,
+          "lon": -122.3166
+        },
+        "end": {
+          "lat": 37.72179,
+          "lon": -122.16045
+        },
+        "gravel_percent": 12.0,
+        "cycleway_percent": 0.1,
+        "road_quality_score": 70,
+        "route_tags": [
+          {
+            "label": "Arlington \u2191",
+            "distance_ft": 19766.0,
+            "elevation_ft": 523.0,
+            "threshold_ft": 18000.0
+          },
+          {
+            "label": "Grizzly Peak \u2191",
+            "distance_ft": 42861.0,
+            "elevation_ft": 554.0,
+            "threshold_ft": 24000.0
+          },
+          {
+            "label": "Goldenrod Trail \u2193",
+            "distance_ft": 6509.0,
+            "elevation_ft": -388.0,
+            "threshold_ft": 5500.0
+          }
+        ],
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "San Leandro",
+        "bart_station": "El Cerrito del Norte",
+        "estimated_time_min": 211.0,
+        "estimated_time_display": "3:30"
+      },
+      "paths": {
+        "summary": "data/routes/whole-ridge-southbound/summary.json",
+        "hazards": "data/routes/whole-ridge-southbound/hazards.json",
+        "points": "data/routes/whole-ridge-southbound/points.geojson",
+        "segments": "data/routes/whole-ridge-southbound/segments.geojson",
+        "map": "data/routes/whole-ridge-southbound/map.html",
+        "overview_map": "data/routes/whole-ridge-southbound/overview_map.html",
+        "road_quality_map": "data/routes/whole-ridge-southbound/road_quality_map.html",
+        "chunk_map": "data/routes/whole-ridge-southbound/chunk_map.html",
+        "profile_svg": "data/routes/whole-ridge-southbound/profile.svg",
+        "page": "routes/whole-ridge-southbound.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 24448.0,
+          "percent": 50.0,
+          "distance_mi": 15.19
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 6883.0,
+          "percent": 14.0,
+          "distance_mi": 4.28
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 6540.0,
+          "percent": 13.0,
+          "distance_mi": 4.06
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 5701.0,
+          "percent": 12.0,
+          "distance_mi": 3.54
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 4436.0,
+          "percent": 9.0,
+          "distance_mi": 2.76
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 943.0,
+          "percent": 2.0,
+          "distance_mi": 0.59
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 48951.0,
+          "percent": 100.0,
+          "distance_mi": 30.42
         }
       ]
     },
@@ -1000,10 +1161,10 @@
         "segment_count": 5475,
         "distance_m": 50765.0,
         "distance_mi": 31.54,
-        "elevation_gain_m": 1653.2,
-        "elevation_gain_ft": 5423.88,
-        "elevation_loss_m": 1653.2,
-        "elevation_loss_ft": 5423.88,
+        "elevation_gain_m": 903.15,
+        "elevation_gain_ft": 2963.08,
+        "elevation_loss_m": 903.11,
+        "elevation_loss_ft": 2962.96,
         "max_elevation_m": 319.5,
         "max_elevation_ft": 1048.23,
         "start": {
@@ -1053,9 +1214,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 29580.0,
-          "percent": 58.0,
-          "distance_mi": 18.38
+          "distance_m": 27544.0,
+          "percent": 54.0,
+          "distance_mi": 17.12
         },
         {
           "hazard": "steep_climb",
@@ -1072,25 +1233,25 @@
           "distance_mi": 3.26
         },
         {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 4584.0,
-          "percent": 9.0,
-          "distance_mi": 2.85
-        },
-        {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 3826.0,
-          "percent": 8.0,
-          "distance_mi": 2.38
+          "distance_m": 4982.0,
+          "percent": 10.0,
+          "distance_mi": 3.1
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 4669.0,
+          "percent": 9.0,
+          "distance_mi": 2.9
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 2042.0,
-          "percent": 4.0,
-          "distance_mi": 1.27
+          "distance_m": 2837.0,
+          "percent": 6.0,
+          "distance_mi": 1.76
         },
         {
           "hazard": "TOTAL",
@@ -1098,137 +1259,6 @@
           "distance_m": 50765.0,
           "percent": 100.0,
           "distance_mi": 31.54
-        }
-      ]
-    },
-    {
-      "slug": "arlington-to-southpark",
-      "title": "Arli-griz to Golf (46% Gravel)",
-      "title_html": "Arli-griz to Golf <span><span style=\"color: chocolate;\">(46% Gravel)</span></span>",
-      "source": "gpx_data\\Arlington_to_Southpark_with_Gravel.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1397,
-        "segment_count": 1396,
-        "distance_m": 32326.08,
-        "distance_mi": 20.09,
-        "elevation_gain_m": 1131.7,
-        "elevation_gain_ft": 3712.93,
-        "elevation_loss_m": 1099.1,
-        "elevation_loss_ft": 3605.97,
-        "max_elevation_m": 379.8,
-        "max_elevation_ft": 1246.06,
-        "start": {
-          "lat": 37.92525,
-          "lon": -122.31637
-        },
-        "end": {
-          "lat": 37.95169,
-          "lon": -122.32115
-        },
-        "gravel_percent": 46.0,
-        "cycleway_percent": 0.0,
-        "road_quality_score": 74,
-        "route_tags": [
-          {
-            "label": "Arlington \u2191",
-            "distance_ft": 18806.0,
-            "elevation_ft": 590.0,
-            "threshold_ft": 18000.0
-          },
-          {
-            "label": "Golf Course Trail",
-            "distance_ft": 4019.0,
-            "elevation_ft": 42.0,
-            "threshold_ft": 4000.0
-          },
-          {
-            "label": "Meadows Canyon \u2193",
-            "distance_ft": 7749.0,
-            "elevation_ft": -359.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Wildcat Creek \u2193",
-            "distance_ft": 21491.0,
-            "elevation_ft": -233.0,
-            "threshold_ft": 20000.0
-          }
-        ],
-        "start_bart_station": "El Cerrito del Norte",
-        "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte",
-        "estimated_time_min": 153.0,
-        "estimated_time_display": "2:30"
-      },
-      "paths": {
-        "summary": "data/routes/arlington-to-southpark/summary.json",
-        "hazards": "data/routes/arlington-to-southpark/hazards.json",
-        "points": "data/routes/arlington-to-southpark/points.geojson",
-        "segments": "data/routes/arlington-to-southpark/segments.geojson",
-        "map": "data/routes/arlington-to-southpark/map.html",
-        "overview_map": "data/routes/arlington-to-southpark/overview_map.html",
-        "road_quality_map": "data/routes/arlington-to-southpark/road_quality_map.html",
-        "chunk_map": "data/routes/arlington-to-southpark/chunk_map.html",
-        "profile_svg": "data/routes/arlington-to-southpark/profile.svg",
-        "page": "routes/arlington-to-southpark.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 14257.0,
-          "percent": 44.0,
-          "distance_mi": 8.86
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 4738.0,
-          "percent": 15.0,
-          "distance_mi": 2.94
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 4600.0,
-          "percent": 14.0,
-          "distance_mi": 2.86
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 4081.0,
-          "percent": 13.0,
-          "distance_mi": 2.54
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 3674.0,
-          "percent": 11.0,
-          "distance_mi": 2.28
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 976.0,
-          "percent": 3.0,
-          "distance_mi": 0.61
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 32326.0,
-          "percent": 100.0,
-          "distance_mi": 20.09
         }
       ]
     },
@@ -1250,10 +1280,10 @@
         "segment_count": 1225,
         "distance_m": 31954.21,
         "distance_mi": 19.86,
-        "elevation_gain_m": 929.2,
-        "elevation_gain_ft": 3048.56,
-        "elevation_loss_m": 927.7,
-        "elevation_loss_ft": 3043.64,
+        "elevation_gain_m": 553.54,
+        "elevation_gain_ft": 1816.08,
+        "elevation_loss_m": 553.98,
+        "elevation_loss_ft": 1817.53,
         "max_elevation_m": 278.1,
         "max_elevation_ft": 912.4,
         "start": {
@@ -1284,7 +1314,7 @@
             "label": "Wildcat Creek \u2193",
             "distance_ft": 21491.0,
             "elevation_ft": -233.0,
-            "threshold_ft": 20000.0
+            "threshold_ft": 18000.0
           }
         ],
         "start_bart_station": "El Cerrito del Norte",
@@ -1309,9 +1339,16 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 16063.0,
-          "percent": 50.0,
-          "distance_mi": 9.98
+          "distance_m": 13996.0,
+          "percent": 44.0,
+          "distance_mi": 8.7
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 5504.0,
+          "percent": 17.0,
+          "distance_mi": 3.42
         },
         {
           "hazard": "climb",
@@ -1319,13 +1356,6 @@
           "distance_m": 4791.0,
           "percent": 15.0,
           "distance_mi": 2.98
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 4272.0,
-          "percent": 13.0,
-          "distance_mi": 2.65
         },
         {
           "hazard": "steep_climb",
@@ -1337,16 +1367,16 @@
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 2945.0,
-          "percent": 9.0,
-          "distance_mi": 1.83
+          "distance_m": 3411.0,
+          "percent": 11.0,
+          "distance_mi": 2.12
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 398.0,
-          "percent": 1.0,
-          "distance_mi": 0.25
+          "distance_m": 768.0,
+          "percent": 2.0,
+          "distance_mi": 0.48
         },
         {
           "hazard": "TOTAL",
@@ -1375,10 +1405,10 @@
         "segment_count": 1596,
         "distance_m": 38528.72,
         "distance_mi": 23.94,
-        "elevation_gain_m": 1241.3,
-        "elevation_gain_ft": 4072.51,
-        "elevation_loss_m": 1241.3,
-        "elevation_loss_ft": 4072.51,
+        "elevation_gain_m": 812.86,
+        "elevation_gain_ft": 2666.86,
+        "elevation_loss_m": 813.16,
+        "elevation_loss_ft": 2667.84,
         "max_elevation_m": 558.5,
         "max_elevation_ft": 1832.35,
         "start": {
@@ -1421,7 +1451,7 @@
             "label": "Wildcat Creek \u2193",
             "distance_ft": 21491.0,
             "elevation_ft": -233.0,
-            "threshold_ft": 20000.0
+            "threshold_ft": 18000.0
           }
         ],
         "start_bart_station": "El Cerrito del Norte",
@@ -1446,9 +1476,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 17803.0,
-          "percent": 46.0,
-          "distance_mi": 11.06
+          "distance_m": 16021.0,
+          "percent": 42.0,
+          "distance_mi": 9.95
         },
         {
           "hazard": "climb",
@@ -1456,6 +1486,13 @@
           "distance_m": 6023.0,
           "percent": 16.0,
           "distance_mi": 3.74
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 5211.0,
+          "percent": 14.0,
+          "distance_mi": 3.24
         },
         {
           "hazard": "steep_climb",
@@ -1467,23 +1504,16 @@
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 4397.0,
-          "percent": 11.0,
-          "distance_mi": 2.73
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 4129.0,
-          "percent": 11.0,
-          "distance_mi": 2.57
+          "distance_m": 4544.0,
+          "percent": 12.0,
+          "distance_mi": 2.82
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 1291.0,
-          "percent": 3.0,
-          "distance_mi": 0.8
+          "distance_m": 1844.0,
+          "percent": 5.0,
+          "distance_mi": 1.15
         },
         {
           "hazard": "TOTAL",
@@ -1512,10 +1542,10 @@
         "segment_count": 2922,
         "distance_m": 62134.7,
         "distance_mi": 38.61,
-        "elevation_gain_m": 1714.4,
-        "elevation_gain_ft": 5624.67,
-        "elevation_loss_m": 1708.8,
-        "elevation_loss_ft": 5606.3,
+        "elevation_gain_m": 1123.45,
+        "elevation_gain_ft": 3685.86,
+        "elevation_loss_m": 1117.89,
+        "elevation_loss_ft": 3667.6,
         "max_elevation_m": 558.5,
         "max_elevation_ft": 1832.35,
         "start": {
@@ -1531,10 +1561,16 @@
         "road_quality_score": 76,
         "route_tags": [
           {
+            "label": "Lake Chabot",
+            "distance_ft": 16136.0,
+            "elevation_ft": 109.0,
+            "threshold_ft": 16000.0
+          },
+          {
             "label": "Redwood Road \u2191",
             "distance_ft": 56562.0,
             "elevation_ft": 583.0,
-            "threshold_ft": 54000.0
+            "threshold_ft": 40000.0
           },
           {
             "label": "Seaview \u2193",
@@ -1552,7 +1588,7 @@
             "label": "Wildcat Creek \u2193",
             "distance_ft": 21491.0,
             "elevation_ft": -233.0,
-            "threshold_ft": 20000.0
+            "threshold_ft": 18000.0
           }
         ],
         "start_bart_station": "San Leandro",
@@ -1577,9 +1613,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 33326.0,
-          "percent": 54.0,
-          "distance_mi": 20.71
+          "distance_m": 30701.0,
+          "percent": 49.0,
+          "distance_mi": 19.08
         },
         {
           "hazard": "climb",
@@ -1591,16 +1627,16 @@
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 6689.0,
-          "percent": 11.0,
-          "distance_mi": 4.16
+          "distance_m": 8119.0,
+          "percent": 13.0,
+          "distance_mi": 5.04
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 5591.0,
-          "percent": 9.0,
-          "distance_mi": 3.47
+          "distance_m": 6133.0,
+          "percent": 10.0,
+          "distance_mi": 3.81
         },
         {
           "hazard": "steep_climb",
@@ -1612,9 +1648,9 @@
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 1410.0,
-          "percent": 2.0,
-          "distance_mi": 0.88
+          "distance_m": 2063.0,
+          "percent": 3.0,
+          "distance_mi": 1.28
         },
         {
           "hazard": "TOTAL",
@@ -1643,10 +1679,10 @@
         "segment_count": 1977,
         "distance_m": 40576.46,
         "distance_mi": 25.21,
-        "elevation_gain_m": 167.3,
-        "elevation_gain_ft": 548.88,
-        "elevation_loss_m": 167.4,
-        "elevation_loss_ft": 549.21,
+        "elevation_gain_m": 63.66,
+        "elevation_gain_ft": 208.87,
+        "elevation_loss_m": 62.6,
+        "elevation_loss_ft": 205.38,
         "max_elevation_m": 49.6,
         "max_elevation_ft": 162.73,
         "start": {
@@ -1660,7 +1696,14 @@
         "gravel_percent": 78.4,
         "cycleway_percent": 2.6,
         "road_quality_score": 34,
-        "route_tags": [],
+        "route_tags": [
+          {
+            "label": "Alameda Creek",
+            "distance_ft": 21340.0,
+            "elevation_ft": 31.0,
+            "threshold_ft": 21000.0
+          }
+        ],
         "start_bart_station": "Union City",
         "end_bart_station": "Union City",
         "bart_station": "Union City",
@@ -1683,9 +1726,16 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 39318.0,
-          "percent": 97.0,
-          "distance_mi": 24.43
+          "distance_m": 39009.0,
+          "percent": 96.0,
+          "distance_mi": 24.24
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 475.0,
+          "percent": 1.0,
+          "distance_mi": 0.3
         },
         {
           "hazard": "climb",
@@ -1702,25 +1752,18 @@
           "distance_mi": 0.19
         },
         {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 227.0,
-          "percent": 1.0,
-          "distance_mi": 0.14
-        },
-        {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 223.0,
+          "distance_m": 240.0,
           "percent": 1.0,
-          "distance_mi": 0.14
+          "distance_mi": 0.15
         },
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 112.0,
+          "distance_m": 156.0,
           "percent": 0.0,
-          "distance_mi": 0.07
+          "distance_mi": 0.1
         },
         {
           "hazard": "TOTAL",
@@ -1749,10 +1792,10 @@
         "segment_count": 1319,
         "distance_m": 39506.21,
         "distance_mi": 24.55,
-        "elevation_gain_m": 901.7,
-        "elevation_gain_ft": 2958.33,
-        "elevation_loss_m": 893.9,
-        "elevation_loss_ft": 2932.74,
+        "elevation_gain_m": 708.23,
+        "elevation_gain_ft": 2323.61,
+        "elevation_loss_m": 700.72,
+        "elevation_loss_ft": 2298.96,
         "max_elevation_m": 350.1,
         "max_elevation_ft": 1148.62,
         "start": {
@@ -1768,16 +1811,28 @@
         "road_quality_score": 84,
         "route_tags": [
           {
+            "label": "Lake Chabot",
+            "distance_ft": 16134.0,
+            "elevation_ft": 88.0,
+            "threshold_ft": 16000.0
+          },
+          {
             "label": "Redwood Road \u2191",
             "distance_ft": 56398.0,
             "elevation_ft": 570.0,
-            "threshold_ft": 54000.0
+            "threshold_ft": 40000.0
+          },
+          {
+            "label": "Joaquin Miller \u2193",
+            "distance_ft": 5983.0,
+            "elevation_ft": -480.0,
+            "threshold_ft": 5900.0
           },
           {
             "label": "Wildwood+Leimert \u2193",
             "distance_ft": 6784.0,
             "elevation_ft": -327.0,
-            "threshold_ft": 5000.0
+            "threshold_ft": 4000.0
           }
         ],
         "start_bart_station": "San Leandro",
@@ -1802,9 +1857,9 @@
         {
           "hazard": "flat",
           "hazard_label": "Flat",
-          "distance_m": 21538.0,
-          "percent": 55.0,
-          "distance_mi": 13.38
+          "distance_m": 19167.0,
+          "percent": 49.0,
+          "distance_mi": 11.91
         },
         {
           "hazard": "climb",
@@ -1816,16 +1871,16 @@
         {
           "hazard": "light_descent",
           "hazard_label": "Light Descent",
-          "distance_m": 5207.0,
-          "percent": 13.0,
-          "distance_mi": 3.24
+          "distance_m": 6361.0,
+          "percent": 16.0,
+          "distance_mi": 3.95
         },
         {
           "hazard": "descent",
           "hazard_label": "Descent",
-          "distance_m": 3123.0,
-          "percent": 8.0,
-          "distance_mi": 1.94
+          "distance_m": 4149.0,
+          "percent": 11.0,
+          "distance_mi": 2.58
         },
         {
           "hazard": "steep_climb",
@@ -1837,9 +1892,9 @@
         {
           "hazard": "steep_descent",
           "hazard_label": "Steep Descent",
-          "distance_m": 405.0,
-          "percent": 1.0,
-          "distance_mi": 0.25
+          "distance_m": 596.0,
+          "percent": 2.0,
+          "distance_mi": 0.37
         },
         {
           "hazard": "TOTAL",

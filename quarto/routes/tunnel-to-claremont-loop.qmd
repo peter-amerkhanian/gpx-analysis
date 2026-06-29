@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1716.54" data-time="98" data-road-quality="52" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="14.16" data-elevation="1452.29" data-time="98" data-road-quality="52" data-has-gravel="false">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">Tunnel ↑</span><span class="mobile-route-tag">Claremont ↓</span></div>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
 <p><span class="mobile-route-label">Miles</span><br>14.16</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>1716.54 ft</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>1452.29 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~1:40</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>0.15 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">52%</span></p>
@@ -135,25 +135,25 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,362</td>
+      <td>1,218</td>
       <td>5.1</td>
       <td>50 ± 24</td>
     </tr>
     <tr>
       <td>1. Broadway (4% avg)</td>
-      <td>87</td>
+      <td>89</td>
       <td>0.4</td>
       <td>4 ± 1</td>
     </tr>
     <tr>
       <td>2. Broadway (7% avg)</td>
-      <td>132</td>
+      <td>115</td>
       <td>0.4</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
       <td>3. Tunnel Road (5% avg)</td>
-      <td>1,142</td>
+      <td>1,015</td>
       <td>4.3</td>
       <td>42 ± 20</td>
     </tr>
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>1,362</td>
+      <td>1,218</td>
       <td>14.3</td>
       <td>98 ± 38</td>
     </tr>
@@ -188,13 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>1. Broadway (4% avg)</td>
-      <td>87</td>
+      <td>89</td>
       <td>0.4</td>
       <td>4 ± 1</td>
     </tr>
     <tr>
       <td>2. Broadway (7% avg)</td>
-      <td>132</td>
+      <td>115</td>
       <td>0.4</td>
       <td>4 ± 2</td>
     </tr>
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>3. Tunnel Road (5% avg)</td>
-      <td>1,142</td>
+      <td>1,015</td>
       <td>4.3</td>
       <td>42 ± 20</td>
     </tr>

@@ -11,21 +11,9 @@ routes:
     title: OAK Hills Loop +
     source: gpx_data\Oak_Hills_Loop_w__Pinehurst.gpx
 
-  - slug: wildcat-havey-nimitz-meadow-loop
-    title: Havey Canyon Loop
-    source: gpx_data/alvarado_gravel_wildcat_havey_nimitz_meadow.gpx
-
-  - slug: wildcat-conlon-nimitz-meadow-loop
-    title: Conlon Trail Loop
-    source: gpx_data/alvarado_gravel_wildcat_conlon_nimitz_meadow.gpx
-
   - slug: richmond-marin-conzelman-emb
     title: Richmond to EMB
     source: gpx_data/richmond_to_marin.gpx
-
-  - slug: spruce-up-euclid-down
-    title: Short Spr-euclid
-    source: gpx_data/spruce_up_euclid_down.gpx
 
   - slug: wildwood-bbr-loop
     title: OAK Hills Loop
@@ -35,13 +23,25 @@ routes:
     title: Quick Tunnel Trip
     source: gpx_data\Tunnel to Claremont Loop.gpx
   
+  - slug: merrit-to-lamorinda
+    title: Lake Merritt to Lamorinda
+    source: gpx_data\Lake_Merritt_to_Moraga.gpx
+  
+  - slug: bbr-skyline-chabot
+    title: OAK Hills into Chabot
+    source: gpx_data\Skyline_Ridge_to_Chabot.gpx
+  
+  - slug: whole-ridge-and-back
+    title: Whole Ridge & Back
+    source: gpx_data\Whole_Ridge_and_Back.gpx
+  
+  - slug: whole-ridge-southbound
+    title: Whole Ridge Southbound
+    source: gpx_data\Whole_Ridge.gpx
+  
   - slug: three-bears-gravel-loop
     title: Three Wild Bears
     source: gpx_data\Three_Wild_Bears.gpx
-
-  - slug: arlington-to-southpark
-    title: Arli-griz to Golf
-    source: gpx_data\Arlington_to_Southpark_with_Gravel.gpx
 
   - slug: arlington-to-wildcat-creek
     title: Arli-spruce 

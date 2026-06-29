@@ -1,0 +1,428 @@
+---
+title: "Whole Ridge Southbound (12% Gravel)"
+---
+
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".quarto-title h1.title");
+  if (!title) {
+    return;
+  }
+  title.innerHTML = title.textContent.replace(
+    /(\d+% Gravel)/g,
+    '<span style="color: chocolate;">$1</span>',
+  );
+});
+</script>
+```
+
+
+
+```{=html}
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="30.42" data-elevation="2879.14" data-time="211" data-road-quality="70" data-has-gravel="true">
+<div class="mobile-route-heading">
+
+<div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Goldenrod Trail ↓</span></div>
+</div>
+<div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/whole-ridge-southbound/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
+<p><span class="mobile-route-label">Miles</span><br>30.42</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2879.14 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~3:30</p>
+<p><span class="mobile-route-label">Steep Descent</span><br>0.59 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">70%</span></p>
+</div>
+</article>
+```
+::: {.panel-tabset}
+
+## Map
+
+<iframe
+  src="../data/routes/whole-ridge-southbound/overview_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+## Hazards
+
+<iframe
+  src="../data/routes/whole-ridge-southbound/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+```{=html}
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Hazard</th>
+      <th>Distance (mi)</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flat</td>
+      <td>15.19</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>Climb</td>
+      <td>4.28</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <td>Light Descent</td>
+      <td>4.06</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <td>Descent</td>
+      <td>3.54</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td>Steep Climb</td>
+      <td>2.76</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>Steep Descent</td>
+      <td>0.59</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Climbs
+
+<iframe
+  src="../data/routes/whole-ridge-southbound/chunk_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+::: {.panel-tabset}
+
+### Climbs Only
+
+```{=html}
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section (avg grade)</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>2,180</td>
+      <td>9.7</td>
+      <td>93 ± 46</td>
+    </tr>
+    <tr>
+      <td>1. Arlington Boulevard (5% avg)</td>
+      <td>368</td>
+      <td>1.5</td>
+      <td>16 ± 8</td>
+    </tr>
+    <tr>
+      <td>2. Arlington Boulevard (8% avg)</td>
+      <td>361</td>
+      <td>0.8</td>
+      <td>12 ± 7</td>
+    </tr>
+    <tr>
+      <td>3. Ye Olde School Trail (3% avg)</td>
+      <td>163</td>
+      <td>1.1</td>
+      <td>9 ± 4</td>
+    </tr>
+    <tr>
+      <td>4. Grizzly Peak Boulevard (6% avg)</td>
+      <td>115</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>5. Grizzly Peak Boulevard (4% avg)</td>
+      <td>160</td>
+      <td>0.8</td>
+      <td>7 ± 3</td>
+    </tr>
+    <tr>
+      <td>6. Grizzly Peak Boulevard (5% avg)</td>
+      <td>581</td>
+      <td>2.2</td>
+      <td>22 ± 11</td>
+    </tr>
+    <tr>
+      <td>7. Grizzly Peak Boulevard (6% avg)</td>
+      <td>84</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>8. Skyline Boulevard (2% avg)</td>
+      <td>188</td>
+      <td>1.5</td>
+      <td>12 ± 6</td>
+    </tr>
+    <tr>
+      <td>9. Skyline Boulevard (2% avg)</td>
+      <td>83</td>
+      <td>0.7</td>
+      <td>5 ± 2</td>
+    </tr>
+    <tr>
+      <td>10. Skyline Boulevard (4% avg)</td>
+      <td>78</td>
+      <td>0.4</td>
+      <td>3 ± 1</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### With Rest Periods
+
+```{=html}
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section (avg grade)</th>
+      <th>Climb (ft)</th>
+      <th>Distance (mi)</th>
+      <th>Time (Min)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL</td>
+      <td>2,180</td>
+      <td>30.3</td>
+      <td>211 ± 84</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>2.0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>1. Arlington Boulevard (5% avg)</td>
+      <td>368</td>
+      <td>1.5</td>
+      <td>16 ± 8</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2. Arlington Boulevard (8% avg)</td>
+      <td>361</td>
+      <td>0.8</td>
+      <td>12 ± 7</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>1.0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>3. Ye Olde School Trail (3% avg)</td>
+      <td>163</td>
+      <td>1.1</td>
+      <td>9 ± 4</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4. Grizzly Peak Boulevard (6% avg)</td>
+      <td>115</td>
+      <td>0.4</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>5. Grizzly Peak Boulevard (4% avg)</td>
+      <td>160</td>
+      <td>0.8</td>
+      <td>7 ± 3</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>6. Grizzly Peak Boulevard (5% avg)</td>
+      <td>581</td>
+      <td>2.2</td>
+      <td>22 ± 11</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>1.6</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>7. Grizzly Peak Boulevard (6% avg)</td>
+      <td>84</td>
+      <td>0.3</td>
+      <td>4 ± 2</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>3.4</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>8. Skyline Boulevard (2% avg)</td>
+      <td>188</td>
+      <td>1.5</td>
+      <td>12 ± 6</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>0.2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>9. Skyline Boulevard (2% avg)</td>
+      <td>83</td>
+      <td>0.7</td>
+      <td>5 ± 2</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>2.9</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>10. Skyline Boulevard (4% avg)</td>
+      <td>78</td>
+      <td>0.4</td>
+      <td>3 ± 1</td>
+    </tr>
+    <tr>
+      <td>flat or descent</td>
+      <td></td>
+      <td>8.5</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+:::
+
+## Street Quality
+
+<iframe
+  src="../data/routes/whole-ridge-southbound/road_quality_map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+```{=html}
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>mtc_pci_info</th>
+      <th>Miles</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Good</td>
+      <td>11.0</td>
+      <td>36.2</td>
+    </tr>
+    <tr>
+      <td>Poor</td>
+      <td>5.4</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <td>Gravel</td>
+      <td>3.7</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <td>Very Good</td>
+      <td>3.6</td>
+      <td>11.7</td>
+    </tr>
+    <tr>
+      <td>Fair</td>
+      <td>3.1</td>
+      <td>10.3</td>
+    </tr>
+    <tr>
+      <td>At Risk</td>
+      <td>1.5</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <td>Excellent</td>
+      <td>1.1</td>
+      <td>3.7</td>
+    </tr>
+    <tr>
+      <td>Cycleway</td>
+      <td>0.0</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <td>Unknown</td>
+      <td>1.1</td>
+      <td>3.5</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+:::

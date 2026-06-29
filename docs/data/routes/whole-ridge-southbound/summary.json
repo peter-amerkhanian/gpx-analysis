@@ -1,0 +1,63 @@
+{
+  "route": {
+    "slug": "whole-ridge-southbound",
+    "source": "gpx_data\\Whole_Ridge.gpx",
+    "title": "Whole Ridge Southbound",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 2053,
+    "segment_count": 2052,
+    "distance_m": 48950.54,
+    "distance_mi": 30.42,
+    "elevation_gain_m": 877.56,
+    "elevation_gain_ft": 2879.14,
+    "elevation_loss_m": 883.11,
+    "elevation_loss_ft": 2897.34,
+    "max_elevation_m": 510.4,
+    "max_elevation_ft": 1674.54,
+    "start": {
+      "lat": 37.92516,
+      "lon": -122.3166
+    },
+    "end": {
+      "lat": 37.72179,
+      "lon": -122.16045
+    },
+    "gravel_percent": 12.0,
+    "cycleway_percent": 0.1,
+    "road_quality_score": 70,
+    "route_tags": [
+      {
+        "label": "Arlington \u2191",
+        "distance_ft": 19766.0,
+        "elevation_ft": 523.0,
+        "threshold_ft": 18000.0
+      },
+      {
+        "label": "Grizzly Peak \u2191",
+        "distance_ft": 42861.0,
+        "elevation_ft": 554.0,
+        "threshold_ft": 24000.0
+      },
+      {
+        "label": "Goldenrod Trail \u2193",
+        "distance_ft": 6509.0,
+        "elevation_ft": -388.0,
+        "threshold_ft": 5500.0
+      }
+    ],
+    "start_bart_station": "El Cerrito del Norte",
+    "end_bart_station": "San Leandro",
+    "bart_station": "El Cerrito del Norte",
+    "estimated_time_min": 211.0,
+    "estimated_time_display": "3:30"
+  }
+}

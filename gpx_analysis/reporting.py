@@ -4,6 +4,7 @@ import pandas as pd
 
 from .chunks import detect_chunks
 from .hazards import detect_hazards
+from .physics import compute_adjusted_elevation_deltas
 from .viz import DEFAULT_HAZARD_PROFILE, apply_hazard_profile
 
 
@@ -20,6 +21,22 @@ DEFAULT_HAZARD_SPEED_RANGES_MPH = {
     "climb": (4.0, 7.0),
     "steep_climb": (2.0, 5.0),
 }
+
+
+def _adjusted_climb_gain_ft(frame: pd.DataFrame) -> pd.Series:
+    """Return per-row climb gain in feet using the shared elevation-total method."""
+    if "elevation_m" in frame.columns or "step_elevation_m" in frame.columns:
+        return compute_adjusted_elevation_deltas(frame).clip(lower=0) * 3.28084
+    if "elevation_f" in frame.columns or "step_elevation_f" in frame.columns:
+        return compute_adjusted_elevation_deltas(
+            frame,
+            elevation_column="elevation_f",
+            elevation_delta_column="step_elevation_f",
+            distance_column="step_dist_f",
+            smoothing_window_m=230.0 * 3.28084,
+            reversal_threshold_m=4.0 * 3.28084,
+        ).clip(lower=0)
+    return pd.Series(0.0, index=frame.index, dtype=float)
 
 
 def _middle_non_empty_value(values: pd.Series, fallback: str = "Unknown Road") -> str:
@@ -101,7 +118,7 @@ def _resolve_chunk_section_frame(
         frame = frame.sort_index(kind="stable")
 
     frame["section_id"] = frame["chunk_state"].ne(frame["chunk_state"].shift()).cumsum()
-    frame["climb_gain_ft"] = pd.to_numeric(frame.get("step_elevation_f"), errors="coerce").clip(lower=0).fillna(0)
+    frame["climb_gain_ft"] = _adjusted_climb_gain_ft(frame)
     if "chunk_avg_grade" not in frame.columns:
         frame["chunk_avg_grade"] = pd.NA
     summary = (

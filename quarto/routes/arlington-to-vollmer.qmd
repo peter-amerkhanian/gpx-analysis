@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="23.94" data-elevation="4072.51" data-time="179" data-road-quality="76" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="23.94" data-elevation="2666.86" data-time="179" data-road-quality="76" data-has-gravel="true">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Seaview ↓</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>23.94</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>4072.51 ft</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2666.86 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:00</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>1.15 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">76%</span></p>
@@ -135,61 +135,61 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,275</td>
+      <td>2,019</td>
       <td>7.9</td>
       <td>79 ± 41</td>
     </tr>
     <tr>
       <td>1. Arlington Boulevard (4% avg)</td>
-      <td>431</td>
+      <td>377</td>
       <td>1.7</td>
       <td>16 ± 8</td>
     </tr>
     <tr>
       <td>2. Arlington Boulevard (8% avg)</td>
-      <td>372</td>
+      <td>361</td>
       <td>0.8</td>
       <td>12 ± 7</td>
     </tr>
     <tr>
       <td>3. Arlington Boulevard (3% avg)</td>
-      <td>69</td>
+      <td>61</td>
       <td>0.4</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
       <td>4. Terrace Drive (4% avg)</td>
-      <td>123</td>
+      <td>83</td>
       <td>0.4</td>
       <td>4 ± 2</td>
     </tr>
     <tr>
       <td>5. Grizzly Peak Boulevard (6% avg)</td>
-      <td>105</td>
+      <td>87</td>
       <td>0.3</td>
       <td>3 ± 2</td>
     </tr>
     <tr>
       <td>6. Grizzly Peak Boulevard (4% avg)</td>
-      <td>195</td>
+      <td>176</td>
       <td>1.0</td>
       <td>8 ± 3</td>
     </tr>
     <tr>
       <td>7. Grizzly Peak Boulevard (4% avg)</td>
-      <td>633</td>
+      <td>596</td>
       <td>2.5</td>
       <td>23 ± 11</td>
     </tr>
     <tr>
       <td>8. Seaview Trail (8% avg)</td>
-      <td>199</td>
+      <td>167</td>
       <td>0.4</td>
       <td>6 ± 4</td>
     </tr>
     <tr>
       <td>9. Seaview Trail (7% avg)</td>
-      <td>147</td>
+      <td>111</td>
       <td>0.4</td>
       <td>5 ± 3</td>
     </tr>
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>2,275</td>
+      <td>2,019</td>
       <td>24.1</td>
       <td>179 ± 77</td>
     </tr>
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>1. Arlington Boulevard (4% avg)</td>
-      <td>431</td>
+      <td>377</td>
       <td>1.7</td>
       <td>16 ± 8</td>
     </tr>
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>2. Arlington Boulevard (8% avg)</td>
-      <td>372</td>
+      <td>361</td>
       <td>0.8</td>
       <td>12 ± 7</td>
     </tr>
@@ -248,13 +248,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>3. Arlington Boulevard (3% avg)</td>
-      <td>69</td>
+      <td>61</td>
       <td>0.4</td>
       <td>3 ± 1</td>
     </tr>
     <tr>
       <td>4. Terrace Drive (4% avg)</td>
-      <td>123</td>
+      <td>83</td>
       <td>0.4</td>
       <td>4 ± 2</td>
     </tr>
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>5. Grizzly Peak Boulevard (6% avg)</td>
-      <td>105</td>
+      <td>87</td>
       <td>0.3</td>
       <td>3 ± 2</td>
     </tr>
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>6. Grizzly Peak Boulevard (4% avg)</td>
-      <td>195</td>
+      <td>176</td>
       <td>1.0</td>
       <td>8 ± 3</td>
     </tr>
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>7. Grizzly Peak Boulevard (4% avg)</td>
-      <td>633</td>
+      <td>596</td>
       <td>2.5</td>
       <td>23 ± 11</td>
     </tr>
@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>8. Seaview Trail (8% avg)</td>
-      <td>199</td>
+      <td>167</td>
       <td>0.4</td>
       <td>6 ± 4</td>
     </tr>
@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>9. Seaview Trail (7% avg)</td>
-      <td>147</td>
+      <td>111</td>
       <td>0.4</td>
       <td>5 ± 3</td>
     </tr>

@@ -39,97 +39,7 @@ PROFILE_FIXED_YLIM_MAX_ELEVATION_FT = 250.0
 PROFILE_FIXED_YLIM_FT = (0.0, 500.0)
 GRAVEL_HIGHLIGHT_COLOR = "chocolate"
 CYCLEWAY_HIGHLIGHT_COLOR = "forestgreen"
-ROUTE_TAG_THRESHOLDS_FT = {
-    "Redwood Road": {
-        "threshold_ft": 54000,
-        "display_name": "Redwood Road",
-    },
-    "Wildcat Creek Trail": {
-        "threshold_ft": 20000,
-        "display_name": "Wildcat Creek",
-    },
-    "Seaview Trail": {
-        "threshold_ft": 15000,
-        "display_name": "Seaview",
-    },
-    "Meadows Canyon Trail": {
-        "threshold_ft": 7000,
-        "display_name": "Meadows Canyon",
-    },
-    "Grizzly Peak Boulevard": {
-        "threshold_ft": 24000,
-        "display_name": "Grizzly Peak",
-    },
-    "Arlington Boulevard": {
-        "threshold_ft": 18000,
-        "display_name": "Arlington",
-    },
-    "Claremont Avenue": {
-        "threshold_ft": 10000,
-        "display_name": "Claremont",
-    },
-    "Havey Canyon Trail": {
-        "threshold_ft": 7000,
-        "display_name": "Havey Canyon",
-    },
-    "Conlon Trail": {
-        "threshold_ft": 9900,
-        "display_name": "Conlon Trail",
-    },
-    "Wildwood Avenue": {
-        "threshold_ft": 5000,
-        "display_name": "Wildwood+Leimert",
-    },
-    "Butters Drive": {
-        "threshold_ft": 4000,
-        "display_name": "Butters Canyon",
-    },
-    "Pinehurst Road": {
-        "threshold_ft": 34000,
-        "display_name": "Pinehurst",
-    },
-    "Bear Creek Road": {
-        "threshold_ft": 36000,
-        "display_name": "3 Bears",
-    },
-    "Tunnel Road": {
-        "threshold_ft": 9000,
-        "display_name": "Tunnel",
-    },
-    "Richmond-San Rafael Bridge Bicycle and Pedestrian Path": {
-        "threshold_ft": 23000,
-        "display_name": "Richmond Bridge",
-    },
-    "Golden Gate Bridge West Sidewalk": {
-        "threshold_ft": 9000,
-        "display_name": "Golden Gate Bridge",
-    },
-    "Euclid Avenue": {
-        "threshold_ft": 11000,
-        "display_name": "Euclid",
-    },
-    "Lake Chabot Road": {
-        "threshold_ft": 16000,
-        "display_name": "Lake Chabot",
-    },
-    "Joaquin Miller Road": {
-        "threshold_ft": 5900,
-        "display_name": "Joaquin Miller",
-    },
-    "Spruce Street": {
-        "threshold_ft": 7000,
-        "display_name": "Spruce",
-    },
-    "Alameda Creek Trail": {
-        "threshold_ft": 21000,
-        "display_name": "Alameda Creek",
-    },
-    "Skyline Boulevard": {
-        "threshold_ft": 27000,
-        "display_name": "Skyline",
-    },
-    "Golf Course Trail": 4000,
-}
+DEFAULT_ROUTE_TAGS_PATH = "route_tags.yml"
 ROUTE_TAG_ELEVATION_ARROW_THRESHOLD_FT = 200.0
 ENRICHED_SEGMENTS_CACHE_NAME = "segments_enriched.geojson"
 ENRICHED_SEGMENTS_DERIVED_PREFIXES = ("chunk_", "candidate_chunk_", "section_")
@@ -256,6 +166,37 @@ def load_routes(manifest_path: Path, root: Path) -> list[RouteConfig]:
         seen_slugs.add(slug)
 
     return routes
+
+
+def load_route_tag_thresholds(path: Path) -> dict[str, dict[str, object]]:
+    """Load route tag segment thresholds from YAML."""
+    payload = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    raw_tags = payload.get("route_tags", payload)
+    if not isinstance(raw_tags, list):
+        raise ValueError(f"{path} must define a 'route_tags' list")
+
+    thresholds: dict[str, dict[str, object]] = {}
+    for index, raw_tag in enumerate(raw_tags, start=1):
+        if not isinstance(raw_tag, dict):
+            raise ValueError(f"Route tag entry #{index} in {path} must be a mapping")
+
+        name = str(raw_tag.get("name", "")).strip()
+        if not name:
+            raise ValueError(f"Route tag entry #{index} in {path} is missing 'name'")
+        if name in thresholds:
+            raise ValueError(f"Duplicate route tag name '{name}' in {path}")
+
+        threshold_ft = raw_tag.get("threshold_ft", raw_tag.get("threshold"))
+        if threshold_ft is None:
+            raise ValueError(f"Route tag '{name}' in {path} is missing 'threshold_ft'")
+
+        config: dict[str, object] = {"threshold_ft": float(threshold_ft)}
+        display_name = str(raw_tag.get("display_name", "")).strip()
+        if display_name:
+            config["display_name"] = display_name
+        thresholds[name] = config
+
+    return thresholds
 
 
 def ensure_dir(path: Path) -> None:
@@ -458,9 +399,11 @@ def route_tags_from_segments(
     tag_thresholds_ft: dict[str, float | dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
     """Return route tags for consecutive named road/trail runs above threshold."""
-    thresholds = tag_thresholds_ft or ROUTE_TAG_THRESHOLDS_FT
+    thresholds = tag_thresholds_ft
     if "osm_name" not in segments.columns or "step_dist_f" not in segments.columns:
         return []
+    if thresholds is None:
+        thresholds = load_route_tag_thresholds(Path(DEFAULT_ROUTE_TAGS_PATH))
 
     source_columns = ["osm_name", "step_dist_f"]
     if "step_elevation_f" in segments.columns:
@@ -597,7 +540,8 @@ def build_route(
     summary["gravel_percent"] = round(gravel_percent, 1)
     summary["cycleway_percent"] = round(cycleway_percent, 1)
     summary["road_quality_score"] = int(round(road_quality_score(segments) * 100))
-    summary["route_tags"] = route_tags_from_segments(segments)
+    route_tag_thresholds = load_route_tag_thresholds(root / DEFAULT_ROUTE_TAGS_PATH)
+    summary["route_tags"] = route_tags_from_segments(segments, route_tag_thresholds)
     summary["start_bart_station"] = add_bart_station(points_gdf, step=0)
     summary["end_bart_station"] = add_bart_station(points_gdf, step=len(points_gdf) - 1)
     summary["bart_station"] = summary["start_bart_station"]

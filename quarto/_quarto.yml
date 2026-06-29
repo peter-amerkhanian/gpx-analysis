@@ -22,22 +22,22 @@ website:
         text: Grizzly Peak Loop
       - href: routes/oak-hills-pinehurst.qmd
         text: OAK Hills Loop +
-      - href: routes/wildcat-havey-nimitz-meadow-loop.qmd
-        text: Havey Canyon Loop
-      - href: routes/wildcat-conlon-nimitz-meadow-loop.qmd
-        text: Conlon Trail Loop
       - href: routes/richmond-marin-conzelman-emb.qmd
         text: Richmond to EMB
-      - href: routes/spruce-up-euclid-down.qmd
-        text: Short Spr-euclid
       - href: routes/wildwood-bbr-loop.qmd
         text: OAK Hills Loop
       - href: routes/tunnel-to-claremont-loop.qmd
         text: Quick Tunnel Trip
+      - href: routes/merrit-to-lamorinda.qmd
+        text: Lake Merritt to Lamorinda
+      - href: routes/bbr-skyline-chabot.qmd
+        text: OAK Hills into Chabot
+      - href: routes/whole-ridge-and-back.qmd
+        text: Whole Ridge & Back
+      - href: routes/whole-ridge-southbound.qmd
+        text: Whole Ridge Southbound
       - href: routes/three-bears-gravel-loop.qmd
         text: Three Wild Bears
-      - href: routes/arlington-to-southpark.qmd
-        text: Arli-griz to Golf
       - href: routes/arlington-to-wildcat-creek.qmd
         text: Arli-spruce
       - href: routes/arlington-to-vollmer.qmd

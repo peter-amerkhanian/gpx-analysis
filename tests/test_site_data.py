@@ -9,6 +9,7 @@ from shapely.geometry import LineString
 
 from gpx_analysis.site.data import (
     _route_elevation_ylim,
+    load_route_tag_thresholds,
     load_or_build_enriched_segments,
     route_tags_from_segments,
     strip_enriched_segment_derived_columns,
@@ -29,6 +30,28 @@ class RouteElevationSvgTests(unittest.TestCase):
 
 
 class RouteTagsFromSegmentsTests(unittest.TestCase):
+    def test_loads_route_tag_thresholds_from_yaml(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "route_tags.yml"
+            path.write_text(
+                "\n".join(
+                    [
+                        "route_tags:",
+                        "  - name: Test Road",
+                        "    threshold_ft: 1234",
+                        "    display_name: Test",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            result = load_route_tag_thresholds(path)
+
+        self.assertEqual(
+            result,
+            {"Test Road": {"threshold_ft": 1234.0, "display_name": "Test"}},
+        )
+
     def test_returns_consecutive_run_tags_above_thresholds_in_route_order(self) -> None:
         segments = pd.DataFrame(
             {

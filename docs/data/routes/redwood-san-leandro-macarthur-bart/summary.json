@@ -17,10 +17,10 @@
     "segment_count": 1319,
     "distance_m": 39506.21,
     "distance_mi": 24.55,
-    "elevation_gain_m": 901.7,
-    "elevation_gain_ft": 2958.33,
-    "elevation_loss_m": 893.9,
-    "elevation_loss_ft": 2932.74,
+    "elevation_gain_m": 708.23,
+    "elevation_gain_ft": 2323.61,
+    "elevation_loss_m": 700.72,
+    "elevation_loss_ft": 2298.96,
     "max_elevation_m": 350.1,
     "max_elevation_ft": 1148.62,
     "start": {
@@ -36,16 +36,28 @@
     "road_quality_score": 84,
     "route_tags": [
       {
+        "label": "Lake Chabot",
+        "distance_ft": 16134.0,
+        "elevation_ft": 88.0,
+        "threshold_ft": 16000.0
+      },
+      {
         "label": "Redwood Road \u2191",
         "distance_ft": 56398.0,
         "elevation_ft": 570.0,
-        "threshold_ft": 54000.0
+        "threshold_ft": 40000.0
+      },
+      {
+        "label": "Joaquin Miller \u2193",
+        "distance_ft": 5983.0,
+        "elevation_ft": -480.0,
+        "threshold_ft": 5900.0
       },
       {
         "label": "Wildwood+Leimert \u2193",
         "distance_ft": 6784.0,
         "elevation_ft": -327.0,
-        "threshold_ft": 5000.0
+        "threshold_ft": 4000.0
       }
     ],
     "start_bart_station": "San Leandro",

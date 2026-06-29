@@ -1,0 +1,87 @@
+{
+  "route": {
+    "slug": "whole-ridge-and-back",
+    "source": "gpx_data\\Whole_Ridge_and_Back.gpx",
+    "title": "Whole Ridge & Back",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 4275,
+    "segment_count": 4274,
+    "distance_m": 101898.96,
+    "distance_mi": 63.32,
+    "elevation_gain_m": 1710.57,
+    "elevation_gain_ft": 5612.09,
+    "elevation_loss_m": 1710.6,
+    "elevation_loss_ft": 5612.21,
+    "max_elevation_m": 510.4,
+    "max_elevation_ft": 1674.54,
+    "start": {
+      "lat": 37.92516,
+      "lon": -122.3166
+    },
+    "end": {
+      "lat": 37.92516,
+      "lon": -122.3166
+    },
+    "gravel_percent": 21.1,
+    "cycleway_percent": 3.7,
+    "road_quality_score": 77,
+    "route_tags": [
+      {
+        "label": "Arlington \u2191",
+        "distance_ft": 19766.0,
+        "elevation_ft": 523.0,
+        "threshold_ft": 18000.0
+      },
+      {
+        "label": "Grizzly Peak \u2191",
+        "distance_ft": 42861.0,
+        "elevation_ft": 554.0,
+        "threshold_ft": 24000.0
+      },
+      {
+        "label": "Goldenrod Trail \u2193",
+        "distance_ft": 6509.0,
+        "elevation_ft": -388.0,
+        "threshold_ft": 5500.0
+      },
+      {
+        "label": "Redwood Road \u2191",
+        "distance_ft": 40744.0,
+        "elevation_ft": 294.0,
+        "threshold_ft": 40000.0
+      },
+      {
+        "label": "La-Moraga Trail",
+        "distance_ft": 6575.0,
+        "elevation_ft": -44.0,
+        "threshold_ft": 6000.0
+      },
+      {
+        "label": "Meadows Canyon \u2193",
+        "distance_ft": 7749.0,
+        "elevation_ft": -359.0,
+        "threshold_ft": 7000.0
+      },
+      {
+        "label": "Wildcat Creek \u2193",
+        "distance_ft": 21491.0,
+        "elevation_ft": -233.0,
+        "threshold_ft": 18000.0
+      }
+    ],
+    "start_bart_station": "El Cerrito del Norte",
+    "end_bart_station": "El Cerrito del Norte",
+    "bart_station": "El Cerrito del Norte",
+    "estimated_time_min": 437.0,
+    "estimated_time_display": "7:20"
+  }
+}

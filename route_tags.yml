@@ -1,0 +1,73 @@
+route_tags:
+  - name: Redwood Road
+    threshold_ft: 40000
+    display_name: Redwood Road
+  - name: Wildcat Creek Trail
+    threshold_ft: 18000
+    display_name: Wildcat Creek
+  - name: Seaview Trail
+    threshold_ft: 15000
+    display_name: Seaview
+  - name: Lafayette-Moraga Trail
+    threshold_ft: 6000
+    display_name: La-Moraga Trail
+  - name: Meadows Canyon Trail
+    threshold_ft: 7000
+    display_name: Meadows Canyon
+  - name: Grizzly Peak Boulevard
+    threshold_ft: 24000
+    display_name: Grizzly Peak
+  - name: Arlington Boulevard
+    threshold_ft: 18000
+    display_name: Arlington
+  - name: Goldenrod Trail
+    threshold_ft: 5500
+    display_name: Goldenrod Trail
+  - name: Claremont Avenue
+    threshold_ft: 10000
+    display_name: Claremont
+  - name: Havey Canyon Trail
+    threshold_ft: 7000
+    display_name: Havey Canyon
+  - name: Conlon Trail
+    threshold_ft: 9900
+    display_name: Conlon Trail
+  - name: Wildwood Avenue
+    threshold_ft: 4000
+    display_name: Wildwood+Leimert
+  - name: Butters Drive
+    threshold_ft: 3000
+    display_name: Butters Canyon
+  - name: Pinehurst Road
+    threshold_ft: 34000
+    display_name: Pinehurst
+  - name: Bear Creek Road
+    threshold_ft: 36000
+    display_name: 3 Bears
+  - name: Tunnel Road
+    threshold_ft: 9000
+    display_name: Tunnel
+  - name: Richmond-San Rafael Bridge Bicycle and Pedestrian Path
+    threshold_ft: 23000
+    display_name: Richmond Bridge
+  - name: Golden Gate Bridge West Sidewalk
+    threshold_ft: 9000
+    display_61cm bikename: Golden Gate Bridge
+  - name: Euclid Avenue
+    threshold_ft: 11000
+    display_name: Euclid
+  - name: Lake Chabot Road
+    threshold_ft: 16000
+    display_name: Lake Chabot
+  - name: Joaquin Miller Road
+    threshold_ft: 5900
+    display_name: Joaquin Miller
+  - name: Spruce Street
+    threshold_ft: 7000
+    display_name: Spruce
+  - name: Alameda Creek Trail
+    threshold_ft: 21000
+    display_name: Alameda Creek
+
+  - name: Golf Course Trail
+    threshold_ft: 4000

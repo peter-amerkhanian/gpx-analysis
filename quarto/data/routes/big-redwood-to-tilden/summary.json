@@ -17,10 +17,10 @@
     "segment_count": 2922,
     "distance_m": 62134.7,
     "distance_mi": 38.61,
-    "elevation_gain_m": 1714.4,
-    "elevation_gain_ft": 5624.67,
-    "elevation_loss_m": 1708.8,
-    "elevation_loss_ft": 5606.3,
+    "elevation_gain_m": 1123.45,
+    "elevation_gain_ft": 3685.86,
+    "elevation_loss_m": 1117.89,
+    "elevation_loss_ft": 3667.6,
     "max_elevation_m": 558.5,
     "max_elevation_ft": 1832.35,
     "start": {
@@ -36,16 +36,16 @@
     "road_quality_score": 76,
     "route_tags": [
       {
+        "label": "Lake Chabot",
+        "distance_ft": 16136.0,
+        "elevation_ft": 109.0,
+        "threshold_ft": 16000.0
+      },
+      {
         "label": "Redwood Road \u2191",
         "distance_ft": 56562.0,
         "elevation_ft": 583.0,
-        "threshold_ft": 54000.0
-      },
-      {
-        "label": "Skyline \u2191",
-        "distance_ft": 30457.0,
-        "elevation_ft": 428.0,
-        "threshold_ft": 27000.0
+        "threshold_ft": 40000.0
       },
       {
         "label": "Seaview \u2193",
@@ -63,7 +63,7 @@
         "label": "Wildcat Creek \u2193",
         "distance_ft": 21491.0,
         "elevation_ft": -233.0,
-        "threshold_ft": 20000.0
+        "threshold_ft": 18000.0
       }
     ],
     "start_bart_station": "San Leandro",

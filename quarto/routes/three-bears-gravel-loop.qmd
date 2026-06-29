@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="31.54" data-elevation="5423.88" data-time="219" data-road-quality="91" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="31.54" data-elevation="2963.08" data-time="219" data-road-quality="91" data-has-gravel="true">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">3 Bears</span><span class="mobile-route-tag">Meadows Canyon ↓</span></div>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
 <p><span class="mobile-route-label">Miles</span><br>31.54</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>5423.88 ft</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2963.08 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:40</p>
 <p><span class="mobile-route-label">Steep Descent</span><br>1.76 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">91%</span></p>
@@ -135,31 +135,31 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>3,135</td>
+      <td>2,105</td>
       <td>12.3</td>
       <td>99 ± 47</td>
     </tr>
     <tr>
       <td>1. Alhambra Valley Road (2% avg)</td>
-      <td>989</td>
+      <td>752</td>
       <td>5.8</td>
       <td>41 ± 17</td>
     </tr>
     <tr>
       <td>2. Bear Creek Road (1% avg)</td>
-      <td>961</td>
+      <td>445</td>
       <td>2.4</td>
       <td>22 ± 12</td>
     </tr>
     <tr>
       <td>3. Bear Creek Road (5% avg)</td>
-      <td>307</td>
+      <td>185</td>
       <td>0.4</td>
       <td>5 ± 3</td>
     </tr>
     <tr>
       <td>4. Wildcat Canyon Road (3% avg)</td>
-      <td>878</td>
+      <td>723</td>
       <td>3.7</td>
       <td>31 ± 15</td>
     </tr>
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <tbody>
     <tr>
       <td>TOTAL</td>
-      <td>3,135</td>
+      <td>2,105</td>
       <td>31.5</td>
       <td>219 ± 91</td>
     </tr>
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>1. Alhambra Valley Road (2% avg)</td>
-      <td>989</td>
+      <td>752</td>
       <td>5.8</td>
       <td>41 ± 17</td>
     </tr>
@@ -206,13 +206,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>2. Bear Creek Road (1% avg)</td>
-      <td>961</td>
+      <td>445</td>
       <td>2.4</td>
       <td>22 ± 12</td>
     </tr>
     <tr>
       <td>3. Bear Creek Road (5% avg)</td>
-      <td>307</td>
+      <td>185</td>
       <td>0.4</td>
       <td>5 ± 3</td>
     </tr>
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>4. Wildcat Canyon Road (3% avg)</td>
-      <td>878</td>
+      <td>723</td>
       <td>3.7</td>
       <td>31 ± 15</td>
     </tr>

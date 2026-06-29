@@ -17,10 +17,10 @@
     "segment_count": 977,
     "distance_m": 30304.15,
     "distance_mi": 18.83,
-    "elevation_gain_m": 631.6,
-    "elevation_gain_ft": 2072.18,
-    "elevation_loss_m": 632.3,
-    "elevation_loss_ft": 2074.48,
+    "elevation_gain_m": 427.84,
+    "elevation_gain_ft": 1403.66,
+    "elevation_loss_m": 428.02,
+    "elevation_loss_ft": 1404.25,
     "max_elevation_m": 324.1,
     "max_elevation_ft": 1063.32,
     "start": {
@@ -51,7 +51,7 @@
         "label": "Wildcat Creek \u2193",
         "distance_ft": 21588.0,
         "elevation_ft": -271.0,
-        "threshold_ft": 20000.0
+        "threshold_ft": 18000.0
       }
     ],
     "start_bart_station": "El Cerrito del Norte",
