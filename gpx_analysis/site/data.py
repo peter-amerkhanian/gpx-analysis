@@ -23,7 +23,7 @@ from .. import (
     make_chunk_map,
     make_road_quality_map,
     make_route_overview_map,
-    make_route_map,
+    make_hazard_map,
     points_to_segments,
     prepare_segment_display_columns,
     read_simple_gpx,
@@ -556,7 +556,7 @@ def build_route(
     )
     hazard_summary["distance_mi"] = (hazard_summary["distance_m"] / 1609.344).round(2)
     overview_map = make_route_overview_map(segments)
-    route_map = make_route_map(
+    route_map = make_hazard_map(
         segments,
         popup_cols=["Road Name", "Ride Type", "Turn", "Grade", "More Details"],
         hazard_profile=hazard_profile,

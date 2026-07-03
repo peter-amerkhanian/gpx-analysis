@@ -3,7 +3,7 @@ import unittest
 import geopandas as gpd
 from shapely.geometry import LineString
 
-from gpx_analysis.viz import _frames_share_route_overlap, make_chunk_map, make_route_map, make_route_overview_map
+from gpx_analysis.viz import _frames_share_route_overlap, make_chunk_map, make_hazard_map, make_route_overview_map
 
 
 class RouteOverlapTests(unittest.TestCase):
@@ -86,7 +86,7 @@ class RouteMapTests(unittest.TestCase):
             crs=4326,
         )
 
-        html = make_route_map(frame).get_root().render()
+        html = make_hazard_map(frame).get_root().render()
 
         self.assertIn('"Road Name"', html)
         self.assertIn("Pinehurst Road", html)

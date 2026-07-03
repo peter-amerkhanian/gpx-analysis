@@ -29,7 +29,7 @@ from .viz import (
     make_chunk_map,
     make_road_quality_map,
     make_route_overview_map,
-    make_route_map,
+    make_hazard_map,
     prepare_segment_display_columns,
     prepare_osm_columns
 )
@@ -64,5 +64,5 @@ __all__ = [
     "make_route_overview_map",
     "prepare_osm_columns",
     "prepare_segment_display_columns",
-    "make_route_map",
+    "make_hazard_map",
 ]

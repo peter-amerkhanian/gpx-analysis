@@ -968,7 +968,7 @@ def add_map_elements(
     _disable_tooltips_on_touch(m)
     return m
 
-def make_route_map(
+def make_hazard_map(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
     popup_cols: list[str] | None = ["Road Name", "Ride Type", "Turn", "Grade", "Hazard Grade", "More Details"],
@@ -1031,7 +1031,7 @@ def make_route_map(
 
 def make_route_overview_map(
     gdf_segments: gpd.GeoDataFrame,
-    tiles: str = "CartoDB Voyager",
+    tiles: str = "openstreetmap",
 ) -> folium.Map:
     """Build a simple route overview map with direction arrows."""
     frame = gdf_segments.copy()
@@ -1048,18 +1048,18 @@ def make_route_overview_map(
             "geometry",
             "step_dist_m",
             "Road Name",
-            "Elevation (ft)",
+            "step"
         ],
     )
     frame = gpd.GeoDataFrame(frame, geometry="geometry", crs=gdf_segments.crs)
-    interaction_fields = ["Road Name", "Elevation (ft)"]
+    interaction_fields = ["Road Name", "Elevation (ft)", "step"]
     m = frame.explore(
         tooltip=_present_interaction_fields(frame, interaction_fields),
         popup=_present_interaction_fields(frame, interaction_fields),
         tiles=tiles,
-        color="#48aeea",
+        color="#1da0eb",
         style_kwds={
-            "weight": 5,
+            "weight": 4,
             "opacity": 0.92,
             "line_cap": "round",
             "line_join": "round",
