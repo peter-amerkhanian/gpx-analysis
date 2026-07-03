@@ -91,6 +91,30 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn('"Road Name"', html)
         self.assertIn("Pinehurst Road", html)
 
+    def test_gravel_overlay_is_opt_in_and_dashed(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1],
+                "lat": [37.0],
+                "lon": [-122.0],
+                "step_dist_m": [100.0],
+                "step_turn": [0.0],
+                "step_grade": [0.0],
+                "hazard_grade": [0.0],
+                "hazard": ["flat"],
+                "osm_name": ["Pinehurst Road"],
+                "road_type": ["gravel"],
+            },
+            geometry=[LineString([(-122.0, 37.0), (-122.1, 37.1)])],
+            crs=4326,
+        )
+
+        default_html = make_hazard_map(frame).get_root().render()
+        overlay_html = make_hazard_map(frame, show_gravel_overlay=True).get_root().render()
+
+        self.assertNotIn("route-gravel-overlay", default_html)
+        self.assertIn("route-gravel-overlay", overlay_html)
+
 
 class ChunkMapTests(unittest.TestCase):
     def test_chunk_touch_target_uses_section_popup_fields(self) -> None:
@@ -218,6 +242,46 @@ class ChunkMapTests(unittest.TestCase):
         self.assertIn("Outbound", html)
         self.assertIn("Return", html)
         self.assertIn("1. Pinehurst Road (5% avg)", html)
+
+    def test_chunk_map_split_layers_have_section_fields_without_seeded_section_id(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1, 2, 3, 4],
+                "lat": [37.0, 37.0, 37.0, 37.0],
+                "lon": [-122.0, -122.01, -122.02, -122.01],
+                "osm_name": ["Pinehurst Road"] * 4,
+                "road_type": ["road", "gravel", "gravel", "road"],
+                "step_turn": [0.0, 0.0, 0.0, 0.0],
+                "step_grade": [0.05, 0.05, -0.05, -0.05],
+                "step_dist_m": [1000.0, 1000.0, 1000.0, 1000.0],
+                "step_dist_f": [3280.8, 3280.8, 3280.8, 3280.8],
+                "step_elevation_f": [164.0, 164.0, -164.0, -164.0],
+                "chunk_state": [
+                    "climb (medium)",
+                    "climb (medium)",
+                    "flat or descent",
+                    "flat or descent",
+                ],
+                "chunk_avg_grade": [0.05, 0.05, None, None],
+                "chunk_median_grade": [0.05, 0.05, None, None],
+                "chunk_dist_ft": [6561.6, 6561.6, None, None],
+                "candidate_chunk_dist_ft": [6561.6, 6561.6, None, None],
+                "chunk_id": [1, 1, None, None],
+            },
+            geometry=[
+                LineString([(-122.0, 37.0), (-122.01, 37.0)]),
+                LineString([(-122.01, 37.0), (-122.02, 37.0)]),
+                LineString([(-122.02, 37.0), (-122.01, 37.0)]),
+                LineString([(-122.01, 37.0), (-122.0, 37.0)]),
+            ],
+            crs=4326,
+        )
+
+        html = make_chunk_map(frame, show_gravel_overlay=True).get_root().render()
+
+        self.assertIn("Route Pass", html)
+        self.assertIn('"Section"', html)
+        self.assertIn("route-gravel-overlay", html)
 
 
 if __name__ == "__main__":

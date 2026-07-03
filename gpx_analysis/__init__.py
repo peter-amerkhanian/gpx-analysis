@@ -1,4 +1,4 @@
-from .physics import compute_elevation_totals, compute_step_metrics
+from .physics import compute_coast_speed, compute_elevation_totals, compute_step_metrics
 from .reporting import (
     aggregate_by_hazard,
     aggregate_by_road_quality,
@@ -17,6 +17,7 @@ from .geo import (
 from .io import read_simple_gpx
 from .analytics import analyze_steps, analyze_chunks
 from .chunks import detect_chunks
+from .descent_chunks import detect_descent_chunks, make_descent_chunk_map
 from .hazards import detect_hazards
 
 from .viz import (
@@ -38,8 +39,10 @@ __all__ = [
     "analyze_steps",
     "analyze_chunks",
     "compute_elevation_totals",
+    "compute_coast_speed",
     "compute_step_metrics",
     "detect_chunks",
+    "detect_descent_chunks",
     "detect_hazards",
     "points_frame",
     "aggregate_by_hazard",
@@ -60,6 +63,7 @@ __all__ = [
     "apply_hazard_profile",
     "google_maps_link",
     "make_chunk_map",
+    "make_descent_chunk_map",
     "make_road_quality_map",
     "make_route_overview_map",
     "prepare_osm_columns",

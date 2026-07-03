@@ -4,6 +4,7 @@ from gpx_analysis import compute_elevation_totals
 def test_data_set(paths):
     points = gpxa.io.read_simple_gpx(paths[0])
     points = gpxa.physics.compute_step_metrics(points)
+    points = gpxa.physics.compute_coast_speed(points)
     points = gpxa.analytics.analyze_steps(points, rolling_window = 5, short_segment_threshold_m=80.0)
     points_gdf = gpxa.geo.points_frame(points)
     segments = gpxa.geo.points_to_segments(points_gdf)

@@ -22,9 +22,12 @@ In code, `build_quarto_data.py` orchestrates the pipeline:
 
 - `gpx_analysis.io.read_simple_gpx()` parses GPX track points into a flat DataFrame.
 - `gpx_analysis.physics.compute_step_metrics()` computes per-step distance, elevation delta, grade, bearing, and turn signals.
-- `gpx_analysis.analytics.detect_hazards()` labels each step with ride/hazard categories.
+- `gpx_analysis.physics.compute_coast_speed()` estimates per-step coasting speed from the grade and distance metrics.
 - `gpx_analysis.geo.points_to_segments()` converts points into route segments.
 - `gpx_analysis.geo.enrich_segments_with_osm_edges()` matches route segments to a locally cached Bay Area OSM network and adds attributes like `osm_highway`, `osm_name`, and `road_type`.
+- `gpx_analysis.geo.enrich_segments_with_mtc_streets()` matches route segments to local MTC Vital Signs road-quality data.
+- `gpx_analysis.hazards.detect_hazards()` labels each enriched segment with ride/hazard categories.
+- `gpx_analysis.chunks.detect_chunks()` groups enriched segments into sustained climb/rest chunks.
 - `gpx_analysis.geo.add_bart_station()` finds the nearest BART station to the start and end of each route.
 - `gpx_analysis.reporting.aggregate_by_hazard()` summarizes route distance by hazard class.
 - `gpx_analysis.viz.make_route_map()` builds a Folium map colored by hazard profile.

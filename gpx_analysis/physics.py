@@ -332,7 +332,8 @@ def compute_coast_speed(df, v0=0.0,
     """
     m = m_lb * 0.45359237 # kg
     L = df["step_dist_m"].fillna(0).to_numpy(dtype=float)
-    raw_grade = df["step_grade"].fillna(0).to_numpy(dtype=float)
+    grade_column = "avg_step_grade" if "avg_step_grade" in df.columns else "step_grade"
+    raw_grade = df[grade_column].fillna(0).to_numpy(dtype=float)
     grade = _smooth_grade_by_distance(raw_grade, L, grade_smoothing_window_m)
     speeds = np.empty(len(df), dtype=float)
     v = float(v0)

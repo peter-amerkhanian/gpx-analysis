@@ -3,7 +3,25 @@ import unittest
 import pandas as pd
 
 from gpx_analysis.io import read_simple_gpx
-from gpx_analysis.physics import compute_elevation_totals, compute_step_metrics
+from gpx_analysis.physics import compute_coast_speed, compute_elevation_totals, compute_step_metrics
+
+
+class ComputeCoastSpeedTests(unittest.TestCase):
+    def test_runs_after_step_metrics_without_hazard_columns(self) -> None:
+        points = pd.DataFrame(
+            {
+                "lat": [37.0, 37.001, 37.002],
+                "lon": [-122.0, -122.0, -122.0],
+                "elevation_m": [100.0, 95.0, 90.0],
+                "elevation_f": [328.084, 311.6798, 295.2756],
+            }
+        )
+
+        result = compute_coast_speed(compute_step_metrics(points))
+
+        self.assertIn("coast_speed_mps", result.columns)
+        self.assertIn("coast_speed_mph", result.columns)
+        self.assertTrue(result["coast_speed_mps"].ge(0).all())
 
 
 class ComputeElevationTotalsTests(unittest.TestCase):

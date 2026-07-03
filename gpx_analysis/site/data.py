@@ -14,9 +14,11 @@ import yaml
 from .. import (
     aggregate_by_hazard,
     aggregate_by_road_quality,
-    analyze_steps,
     attach_chunk_section_details,
+    compute_coast_speed,
     compute_elevation_totals,
+    compute_step_metrics,
+    detect_hazards,
     points_frame,
     enrich_segments_with_osm_edges,
     enrich_segments_with_mtc_streets,
@@ -50,6 +52,12 @@ ENRICHED_SEGMENTS_DERIVED_COLUMNS = {
     "Grade",
     "Hazard Grade",
     "Ride Type",
+    "avg_bearing_change",
+    "avg_step_grade",
+    "hazard",
+    "hazard_grade",
+    "hazard_label",
+    "hazard_raw",
     "Road Name",
     "Elevation (ft)",
     "Road Type",
@@ -511,17 +519,22 @@ def build_route(
     ensure_dir(route_dir)
 
     points = read_simple_gpx(str(source_path), reverse=route.reverse)
-    analyzed = analyze_steps(points, rolling_window=3)
-    points_gdf = points_frame(analyzed)
-    segments = points_to_segments(points_gdf)
+    step_metrics = compute_coast_speed(compute_step_metrics(points))
+    points_gdf = points_frame(step_metrics)
+    step_segments = points_to_segments(points_gdf)
     segments = load_or_build_enriched_segments(
-        segments,
+        step_segments,
         route_dir / ENRICHED_SEGMENTS_CACHE_NAME,
     )
+    for column in ["coast_speed_mps", "coast_speed_mph"]:
+        if column not in segments.columns and column in step_segments.columns and len(segments) == len(step_segments):
+            segments[column] = step_segments[column].to_numpy()
+    segments = detect_hazards(segments, rolling_window=3)
+    hazard_segments = segments.copy()
     segments = prepare_segment_display_columns(segments, hazard_profile=hazard_profile)
     segments = attach_chunk_section_details(segments)
 
-    summary = compute_route_summary(analyzed, segments)
+    summary = compute_route_summary(step_metrics, segments)
     total_segment_distance_m = float(pd.to_numeric(segments.get("step_dist_m"), errors="coerce").fillna(0).sum())
     gravel_distance_m = float(
         pd.to_numeric(
@@ -548,7 +561,7 @@ def build_route(
     display_title = route_display_title(route.display_title, gravel_percent, cycleway_percent)
     display_title_html = route_display_title_html(route.display_title, gravel_percent, cycleway_percent)
     hazard_summary = aggregate_by_hazard(
-        analyzed,
+        hazard_segments,
         column="step_dist_m",
         hazard_profile=hazard_profile,
     ).rename(

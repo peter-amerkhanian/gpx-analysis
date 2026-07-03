@@ -790,6 +790,41 @@ def _add_touch_target_layer(
     ).add_to(parent)
 
 
+def _gravel_overlay_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Return route segments that should be marked as gravel."""
+    if frame.empty:
+        return frame.iloc[0:0].copy()
+
+    gravel_mask = pd.Series(False, index=frame.index)
+    if "road_type" in frame.columns:
+        gravel_mask = gravel_mask | frame["road_type"].fillna("").astype(str).str.lower().eq("gravel")
+    if "mtc_pci_info" in frame.columns:
+        gravel_mask = gravel_mask | frame["mtc_pci_info"].fillna("").astype(str).str.lower().eq("gravel")
+    return frame.loc[gravel_mask, ["geometry"]].copy()
+
+
+def _add_gravel_overlay(m: folium.Map, frame: gpd.GeoDataFrame) -> None:
+    """Add a subtle dashed overlay for gravel route segments."""
+    gravel = _gravel_overlay_frame(frame)
+    if gravel.empty:
+        return
+
+    _ensure_map_pane(m, pane_name="route-gravel-overlay", z_index=-1)
+    folium.GeoJson(
+        data=gravel.to_json(),
+        name="Gravel Overlay",
+        control=False,
+        style_function=lambda _: {
+            "color": "#b37400",
+            "weight": 9,
+            "opacity": 1,
+            "className": "route-gravel-overlay",
+        },
+        pane="route-gravel-overlay",
+        interactive=False,
+    ).add_to(m)
+
+
 def _enable_touch_target_styles(m: folium.Map) -> None:
     """Make wide route hit targets interactive only on coarse pointers."""
     _ensure_map_pane(m, pane_name="route-touch-targets", z_index=575)
@@ -893,6 +928,7 @@ def add_map_elements(
     style_kwds: dict[str, object] | None = None,
     touch_target_frame: gpd.GeoDataFrame | None = None,
     escape: bool = False,
+    show_gravel_overlay: bool = False,
 ) -> None:
     has_split_direction_layers = False
     if show_route_pass_control and layer_column:
@@ -915,6 +951,8 @@ def add_map_elements(
             popup_cols,
             tooltip_fields,
         )
+    if show_gravel_overlay:
+        _add_gravel_overlay(m, frame)
     # Fullscreen control
     Fullscreen(
         position="topleft",
@@ -975,6 +1013,7 @@ def make_hazard_map(
     tooltip_fields: list[str] | None = ['Segment', 'Road Name', 'Ride Type'],
     tiles: str = "CartoDB Voyager",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
+    show_gravel_overlay: bool = False,
 ) -> folium.Map:
     """Build a Folium map with hazard-colored segments and route popups/tooltips."""
     frame = prepare_segment_display_columns(
@@ -995,6 +1034,8 @@ def make_hazard_map(
             "Hazard Grade",
             "More Details",
             "hazard",
+            "road_type",
+            "mtc_pci_info",
             "_display_color",
         ],
     )
@@ -1025,6 +1066,7 @@ def make_hazard_map(
         cmap=list(colors.values()),
         style_kwds={"weight": 4},
         escape=False,
+        show_gravel_overlay=show_gravel_overlay,
     )
     return m
 
@@ -1032,6 +1074,7 @@ def make_hazard_map(
 def make_route_overview_map(
     gdf_segments: gpd.GeoDataFrame,
     tiles: str = "openstreetmap",
+    show_gravel_overlay: bool = False,
 ) -> folium.Map:
     """Build a simple route overview map with direction arrows."""
     frame = gdf_segments.copy()
@@ -1048,7 +1091,10 @@ def make_route_overview_map(
             "geometry",
             "step_dist_m",
             "Road Name",
-            "step"
+            "Elevation (ft)",
+            "step",
+            "road_type",
+            "mtc_pci_info",
         ],
     )
     frame = gpd.GeoDataFrame(frame, geometry="geometry", crs=gdf_segments.crs)
@@ -1073,6 +1119,7 @@ def make_route_overview_map(
         show_numbers=False,
         popup_cols=interaction_fields,
         tooltip_fields=interaction_fields,
+        show_gravel_overlay=show_gravel_overlay,
     )
     return m
 
@@ -1082,6 +1129,7 @@ def make_road_quality_map(
     tooltip_fields: list[str] | None = ['Segment', 'Road Quality'],
     tiles: str = "Cartodb Positron",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
+    show_gravel_overlay: bool = False,
 ) -> folium.Map:
     """Build a Folium map with hazard-colored segments and route popups/tooltips."""
     frame = prepare_segment_display_columns(
@@ -1106,6 +1154,7 @@ def make_road_quality_map(
             "mtc_road_name",
             "mtc_pci_info",
             "mtc_pci_date",
+            "road_type",
             "Ride Type",
             "Turn",
             "Grade",
@@ -1131,6 +1180,7 @@ def make_road_quality_map(
         frame,
         popup_cols=popup_cols,
         tooltip_fields=tooltip_fields,
+        show_gravel_overlay=show_gravel_overlay,
     )
     return m
 
@@ -1326,6 +1376,10 @@ def _add_chunk_section_display_columns(
     section_frame: gpd.GeoDataFrame,
 ) -> gpd.GeoDataFrame:
     """Attach section-level popup fields to each segment for split pass layers."""
+    frame = frame.copy()
+    if "section_id" not in frame.columns and "chunk_state" in frame.columns:
+        frame["section_id"] = frame["chunk_state"].ne(frame["chunk_state"].shift()).cumsum()
+
     display_columns = [
         "section_id",
         "Section",
@@ -1358,6 +1412,7 @@ def make_chunk_map(
     popup_cols: list[str] | None = None,
     tooltip_fields: list[str] | None = None,
     tiles: str = "CartoDB Voyager",
+    show_gravel_overlay: bool = False,
 ) -> folium.Map:
     """Build a Folium map with chunk-state colored segments and chunk detail popups/tooltips."""
     if "chunk_state" in gdf_segments.columns:
@@ -1427,5 +1482,6 @@ def make_chunk_map(
         cmap=list(CHUNK_STATE_COLORS.values()),
         style_kwds={"weight": 4},
         touch_target_frame=section_frame,
+        show_gravel_overlay=show_gravel_overlay,
     )
     return m

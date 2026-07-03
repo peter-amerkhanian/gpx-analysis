@@ -194,6 +194,8 @@ class EnrichedSegmentsCacheTests(unittest.TestCase):
         segments = gpd.GeoDataFrame(
             {
                 "osm_name": ["Cached Road"],
+                "hazard": ["flat"],
+                "hazard_grade": [0.0],
                 "chunk_state": ["flat or descent"],
                 "section_id": [1],
                 "Ride Type": ["Steep"],
@@ -205,6 +207,8 @@ class EnrichedSegmentsCacheTests(unittest.TestCase):
         result = strip_enriched_segment_derived_columns(segments)
 
         self.assertIn("osm_name", result.columns)
+        self.assertNotIn("hazard", result.columns)
+        self.assertNotIn("hazard_grade", result.columns)
         self.assertNotIn("chunk_state", result.columns)
         self.assertNotIn("section_id", result.columns)
         self.assertNotIn("Ride Type", result.columns)
