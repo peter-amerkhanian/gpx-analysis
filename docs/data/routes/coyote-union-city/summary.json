@@ -1,0 +1,51 @@
+{
+  "route": {
+    "slug": "coyote-union-city",
+    "source": "gpx_data\\union_city_gravel.gpx",
+    "title": "Coyote Hills Loop",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1978,
+    "segment_count": 1977,
+    "distance_m": 40576.46,
+    "distance_mi": 25.21,
+    "elevation_gain_m": 63.66,
+    "elevation_gain_ft": 208.87,
+    "elevation_loss_m": 62.6,
+    "elevation_loss_ft": 205.38,
+    "max_elevation_m": 49.6,
+    "max_elevation_ft": 162.73,
+    "start": {
+      "lat": 37.59052,
+      "lon": -122.01756
+    },
+    "end": {
+      "lat": 37.59043,
+      "lon": -122.01745
+    },
+    "gravel_percent": 78.4,
+    "cycleway_percent": 2.6,
+    "road_quality_score": 34,
+    "route_tags": [
+      {
+        "label": "Alameda Creek",
+        "distance_ft": 21340.0,
+        "elevation_ft": 31.0,
+        "threshold_ft": 21000.0
+      }
+    ],
+    "start_bart_station": "Union City",
+    "end_bart_station": "Union City",
+    "bart_station": "Union City",
+    "estimated_time_min": 135.0,
+    "estimated_time_display": "2:20"
+  }
+}
