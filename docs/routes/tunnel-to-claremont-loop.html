@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </article>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hazards</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Climbs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Street Quality</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Grade</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Descents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Ascents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Street Quality</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <iframe src="../data/routes/tunnel-to-claremont-loop/overview_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
@@ -237,49 +237,46 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <iframe src="../data/routes/tunnel-to-claremont-loop/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<iframe src="../data/routes/tunnel-to-claremont-loop/descent_chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+</iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Hazard</th>
+<th data-quarto-table-cell-role="th">Section</th>
+<th data-quarto-table-cell-role="th">Average Grade</th>
+<th data-quarto-table-cell-role="th">Max Coast Speed</th>
+<th data-quarto-table-cell-role="th">Good+ Pavement</th>
 <th data-quarto-table-cell-role="th">Distance (mi)</th>
-<th data-quarto-table-cell-role="th">Percent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Flat</td>
-<td>7.25</td>
-<td>51.0</td>
+<td>TOTAL</td>
+<td>-6.1%</td>
+<td>43.0 mph</td>
+<td>59%</td>
+<td>4.2</td>
 </tr>
 <tr class="even">
-<td>Climb</td>
-<td>2.30</td>
-<td>16.0</td>
+<td>1. Grizzly Peak Boulevard: light descent</td>
+<td>-3.1%</td>
+<td>25.3 mph</td>
+<td>88%</td>
+<td>0.6</td>
 </tr>
 <tr class="odd">
-<td>Descent</td>
-<td>1.72</td>
-<td>12.0</td>
-</tr>
-<tr class="even">
-<td>Light Descent</td>
-<td>1.68</td>
-<td>12.0</td>
-</tr>
-<tr class="odd">
-<td>Steep Climb</td>
-<td>1.06</td>
-<td>7.0</td>
-</tr>
-<tr class="even">
-<td>Steep Descent</td>
-<td>0.15</td>
-<td>1.0</td>
+<td>2. Claremont Avenue: steep descent</td>
+<td>-6.6%</td>
+<td>43.0 mph</td>
+<td>54%</td>
+<td>3.5</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <iframe src="../data/routes/tunnel-to-claremont-loop/chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -374,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <td>flat or descent</td>
 <td></td>
 <td>7.1</td>
-<td>38</td>
+<td>37</td>
 </tr>
 </tbody>
 </table>
@@ -382,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <iframe src="../data/routes/tunnel-to-claremont-loop/road_quality_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">

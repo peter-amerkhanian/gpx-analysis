@@ -50,10 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
   allowfullscreen
 ></iframe>
 
-## Hazards
+## Grade
 
 <iframe
   src="../data/routes/merrit-to-lamorinda/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+## Descents
+
+<iframe
+  src="../data/routes/merrit-to-lamorinda/descent_chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allow="fullscreen"
@@ -66,47 +78,89 @@ document.addEventListener("DOMContentLoaded", function () {
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Hazard</th>
+      <th>Section</th>
+      <th>Average Grade</th>
+      <th>Max Coast Speed</th>
+      <th>Good+ Pavement</th>
       <th>Distance (mi)</th>
-      <th>Percent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Flat</td>
-      <td>13.88</td>
-      <td>59.0</td>
+      <td>TOTAL</td>
+      <td>-4.2%</td>
+      <td>34.5 mph</td>
+      <td>80%</td>
+      <td>6.5</td>
     </tr>
     <tr>
-      <td>Light Descent</td>
-      <td>3.68</td>
-      <td>16.0</td>
+      <td>1. Saint James Drive: light descent</td>
+      <td>-4.0%</td>
+      <td>26.6 mph</td>
+      <td>66%</td>
+      <td>0.3</td>
     </tr>
     <tr>
-      <td>Climb</td>
-      <td>3.24</td>
-      <td>14.0</td>
+      <td>2. Leimert Boulevard: descent</td>
+      <td>-4.6%</td>
+      <td>32.1 mph</td>
+      <td>100%</td>
+      <td>0.3</td>
     </tr>
     <tr>
-      <td>Steep Climb</td>
-      <td>1.49</td>
-      <td>6.0</td>
+      <td>3. Skyline Boulevard: light descent</td>
+      <td>-3.7%</td>
+      <td>23.4 mph</td>
+      <td>79%</td>
+      <td>0.2</td>
     </tr>
     <tr>
-      <td>Descent</td>
-      <td>1.22</td>
-      <td>5.0</td>
+      <td>4. Redwood Road: descent</td>
+      <td>-4.1%</td>
+      <td>33.0 mph</td>
+      <td>94%</td>
+      <td>2.7</td>
     </tr>
     <tr>
-      <td>Steep Descent</td>
-      <td>0.19</td>
-      <td>1.0</td>
+      <td>5. Pinehurst Road: descent</td>
+      <td>-4.6%</td>
+      <td>33.4 mph</td>
+      <td>100%</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <td>6. Canyon Road: light descent</td>
+      <td>-3.8%</td>
+      <td>29.1 mph</td>
+      <td>100%</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>7. Lafayette-Moraga Trail: descent</td>
+      <td>-5.5%</td>
+      <td>34.5 mph</td>
+      <td>0%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>8. Lafayette-Moraga Trail: light descent</td>
+      <td>-4.3%</td>
+      <td>29.1 mph</td>
+      <td>0%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>9. Lafayette-Moraga Trail: light descent</td>
+      <td>-3.1%</td>
+      <td>23.7 mph</td>
+      <td>0%</td>
+      <td>0.4</td>
     </tr>
   </tbody>
 </table>
 ```
 
-## Climbs
+## Ascents
 
 <iframe
   src="../data/routes/merrit-to-lamorinda/chunk_map.html"

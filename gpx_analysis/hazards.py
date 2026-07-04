@@ -29,7 +29,7 @@ def _smooth_short_segment_grades(
 
 def detect_hazards(
     df: pd.DataFrame,
-    rolling_window: int = 5,
+    rolling_window: int = 10,
     short_segment_threshold_m: float = DEFAULT_HAZARD_SHORT_SEGMENT_M,
 ) -> pd.DataFrame:
     """Classify each step from one effective grade signal plus same-step turns."""

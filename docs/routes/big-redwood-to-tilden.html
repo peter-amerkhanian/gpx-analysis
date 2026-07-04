@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 });
 </script>
-<article class="mobile-route-card" data-bart="San Leandro" data-miles="38.61" data-elevation="3685.86" data-time="271" data-road-quality="76" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="San Leandro" data-miles="38.61" data-elevation="3685.86" data-time="270" data-road-quality="76" data-has-gravel="true">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">Lake Chabot</span><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">Seaview ↓</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </article>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hazards</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Climbs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Street Quality</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Grade</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Descents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Ascents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Street Quality</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <iframe src="../data/routes/big-redwood-to-tilden/overview_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
@@ -237,49 +237,179 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <iframe src="../data/routes/big-redwood-to-tilden/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<iframe src="../data/routes/big-redwood-to-tilden/descent_chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+</iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Hazard</th>
+<th data-quarto-table-cell-role="th">Section</th>
+<th data-quarto-table-cell-role="th">Average Grade</th>
+<th data-quarto-table-cell-role="th">Max Coast Speed</th>
+<th data-quarto-table-cell-role="th">Good+ Pavement</th>
 <th data-quarto-table-cell-role="th">Distance (mi)</th>
-<th data-quarto-table-cell-role="th">Percent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Flat</td>
-<td>19.08</td>
-<td>49.0</td>
+<td>TOTAL</td>
+<td>-6.0%</td>
+<td>48.6 mph</td>
+<td>38%</td>
+<td>10.7</td>
 </tr>
 <tr class="even">
-<td>Climb</td>
-<td>6.02</td>
-<td>16.0</td>
+<td>1. Lake Chabot Road: light descent</td>
+<td>-5.5%</td>
+<td>30.9 mph</td>
+<td>100%</td>
+<td>0.3</td>
 </tr>
 <tr class="odd">
-<td>Light Descent</td>
-<td>5.04</td>
-<td>13.0</td>
+<td>2. Lake Chabot Road: steep descent</td>
+<td>-9.4%</td>
+<td>45.0 mph</td>
+<td>100%</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
-<td>Descent</td>
-<td>3.81</td>
-<td>10.0</td>
+<td>3. Proctor Road: descent</td>
+<td>-5.3%</td>
+<td>39.1 mph</td>
+<td>100%</td>
+<td>1.0</td>
 </tr>
 <tr class="odd">
-<td>Steep Climb</td>
-<td>3.38</td>
-<td>9.0</td>
+<td>4. Redwood Road: descent</td>
+<td>-5.1%</td>
+<td>33.8 mph</td>
+<td>100%</td>
+<td>0.7</td>
 </tr>
 <tr class="even">
-<td>Steep Descent</td>
-<td>1.28</td>
-<td>3.0</td>
+<td>5. Redwood Road: descent</td>
+<td>-5.4%</td>
+<td>33.9 mph</td>
+<td>100%</td>
+<td>0.6</td>
+</tr>
+<tr class="odd">
+<td>6. Redwood Road: descent</td>
+<td>-4.6%</td>
+<td>34.6 mph</td>
+<td>100%</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>7. Skyline Boulevard: light descent</td>
+<td>-3.9%</td>
+<td>23.8 mph</td>
+<td>0%</td>
+<td>0.4</td>
+</tr>
+<tr class="odd">
+<td>8. Skyline Boulevard: descent</td>
+<td>-4.3%</td>
+<td>32.4 mph</td>
+<td>0%</td>
+<td>0.8</td>
+</tr>
+<tr class="even">
+<td>9. Grizzly Peak Boulevard: light descent</td>
+<td>-2.8%</td>
+<td>21.3 mph</td>
+<td>81%</td>
+<td>0.3</td>
+</tr>
+<tr class="odd">
+<td>10. Grizzly Peak Boulevard: light descent</td>
+<td>-4.5%</td>
+<td>28.0 mph</td>
+<td>100%</td>
+<td>0.4</td>
+</tr>
+<tr class="even">
+<td>11. Seaview Trail: descent</td>
+<td>-8.4%</td>
+<td>38.2 mph</td>
+<td>Gravel</td>
+<td>0.8</td>
+</tr>
+<tr class="odd">
+<td>12. Seaview Trail: steep descent</td>
+<td>-9.0%</td>
+<td>46.3 mph</td>
+<td>Gravel</td>
+<td>0.7</td>
+</tr>
+<tr class="even">
+<td>13. Meadows Canyon Trail: steep descent</td>
+<td>-7.6%</td>
+<td>46.0 mph</td>
+<td>0%</td>
+<td>1.5</td>
+</tr>
+<tr class="odd">
+<td>14. Meadows Canyon Trail: descent</td>
+<td>-7.0%</td>
+<td>37.2 mph</td>
+<td>Gravel</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>15. Loop Road: light descent</td>
+<td>-4.4%</td>
+<td>28.0 mph</td>
+<td>Gravel</td>
+<td>0.4</td>
+</tr>
+<tr class="odd">
+<td>16. Wildcat Creek Trail: light descent</td>
+<td>-3.0%</td>
+<td>26.1 mph</td>
+<td>Gravel</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>17. Wildcat Creek Trail: light descent</td>
+<td>-3.3%</td>
+<td>26.6 mph</td>
+<td>Gravel</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>18. Wildcat Creek Trail: descent</td>
+<td>-6.1%</td>
+<td>37.7 mph</td>
+<td>Gravel</td>
+<td>0.3</td>
+</tr>
+<tr class="even">
+<td>19. Wildcat Creek Trail: steep descent</td>
+<td>-8.2%</td>
+<td>48.6 mph</td>
+<td>Gravel</td>
+<td>0.3</td>
+</tr>
+<tr class="odd">
+<td>20. Wildcat Canyon Parkway: steep descent</td>
+<td>-10.9%</td>
+<td>47.0 mph</td>
+<td>0%</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>21. Key Boulevard: light descent</td>
+<td>-3.0%</td>
+<td>25.1 mph</td>
+<td>6%</td>
+<td>0.3</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <iframe src="../data/routes/big-redwood-to-tilden/chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -374,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <td>TOTAL</td>
 <td>2,894</td>
 <td>38.7</td>
-<td>271 ± 108</td>
+<td>270 ± 107</td>
 </tr>
 <tr class="even">
 <td>flat or descent</td>
@@ -496,7 +626,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <iframe src="../data/routes/big-redwood-to-tilden/road_quality_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">

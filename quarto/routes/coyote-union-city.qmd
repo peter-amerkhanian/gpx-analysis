@@ -50,10 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
   allowfullscreen
 ></iframe>
 
-## Hazards
+## Grade
 
 <iframe
   src="../data/routes/coyote-union-city/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+## Descents
+
+<iframe
+  src="../data/routes/coyote-union-city/descent_chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allow="fullscreen"
@@ -66,47 +78,40 @@ document.addEventListener("DOMContentLoaded", function () {
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Hazard</th>
+      <th>Section</th>
+      <th>Average Grade</th>
+      <th>Max Coast Speed</th>
+      <th>Good+ Pavement</th>
       <th>Distance (mi)</th>
-      <th>Percent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Flat</td>
-      <td>24.24</td>
-      <td>96.0</td>
+      <td>TOTAL</td>
+      <td>-5.7%</td>
+      <td>45.7 mph</td>
+      <td>Gravel</td>
+      <td>0.6</td>
     </tr>
     <tr>
-      <td>Light Descent</td>
-      <td>0.30</td>
-      <td>1.0</td>
+      <td>1. Apay Way: steep descent</td>
+      <td>-7.7%</td>
+      <td>45.7 mph</td>
+      <td>Gravel</td>
+      <td>0.3</td>
     </tr>
     <tr>
-      <td>Climb</td>
-      <td>0.24</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Steep Climb</td>
-      <td>0.19</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Descent</td>
-      <td>0.15</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Steep Descent</td>
-      <td>0.10</td>
-      <td>0.0</td>
+      <td>2. Apay Way: light descent</td>
+      <td>-3.0%</td>
+      <td>25.6 mph</td>
+      <td>Gravel</td>
+      <td>0.2</td>
     </tr>
   </tbody>
 </table>
 ```
 
-## Climbs
+## Ascents
 
 <iframe
   src="../data/routes/coyote-union-city/chunk_map.html"

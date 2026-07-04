@@ -17,7 +17,7 @@ from .geo import (
 from .io import read_simple_gpx
 from .analytics import analyze_steps, analyze_chunks
 from .chunks import detect_chunks
-from .descent_chunks import detect_descent_chunks, make_descent_chunk_map
+from .descent_chunks import detect_descent_chunks, make_descent_chunk_map, summarize_descent_chunk_sections
 from .hazards import detect_hazards
 
 from .viz import (
@@ -28,6 +28,7 @@ from .viz import (
     apply_hazard_profile,
     google_maps_link,
     make_chunk_map,
+    make_grade_map,
     make_road_quality_map,
     make_route_overview_map,
     make_hazard_map,
@@ -50,6 +51,7 @@ __all__ = [
     "attach_chunk_section_details",
     "road_quality_score",
     "summarize_chunk_sections",
+    "summarize_descent_chunk_sections",
     "points_to_segments",
     "stop_signs_on_segments",
     "build_route_graph",
@@ -64,6 +66,7 @@ __all__ = [
     "google_maps_link",
     "make_chunk_map",
     "make_descent_chunk_map",
+    "make_grade_map",
     "make_road_quality_map",
     "make_route_overview_map",
     "prepare_osm_columns",

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="25.60" data-elevation="2597.84" data-time="181" data-road-quality="78" data-has-gravel="false">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="25.60" data-elevation="2597.84" data-time="180" data-road-quality="78" data-has-gravel="false">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">Wildwood+Leimert ↑</span><span class="mobile-route-tag">Butters Canyon ↑</span><span class="mobile-route-tag">Pinehurst ↑</span><span class="mobile-route-tag">Claremont ↓</span></div>
@@ -50,10 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
   allowfullscreen
 ></iframe>
 
-## Hazards
+## Grade
 
 <iframe
   src="../data/routes/oak-hills-pinehurst/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+## Descents
+
+<iframe
+  src="../data/routes/oak-hills-pinehurst/descent_chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allow="fullscreen"
@@ -66,47 +78,89 @@ document.addEventListener("DOMContentLoaded", function () {
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Hazard</th>
+      <th>Section</th>
+      <th>Average Grade</th>
+      <th>Max Coast Speed</th>
+      <th>Good+ Pavement</th>
       <th>Distance (mi)</th>
-      <th>Percent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Flat</td>
-      <td>11.88</td>
-      <td>46.0</td>
+      <td>TOTAL</td>
+      <td>-5.2%</td>
+      <td>42.3 mph</td>
+      <td>80%</td>
+      <td>8.4</td>
     </tr>
     <tr>
-      <td>Climb</td>
-      <td>4.18</td>
-      <td>16.0</td>
+      <td>1. Linda Avenue: light descent</td>
+      <td>-3.8%</td>
+      <td>20.0 mph</td>
+      <td>19%</td>
+      <td>0.2</td>
     </tr>
     <tr>
-      <td>Light Descent</td>
-      <td>4.10</td>
-      <td>16.0</td>
+      <td>2. Linda Avenue: light descent</td>
+      <td>-4.7%</td>
+      <td>25.4 mph</td>
+      <td>83%</td>
+      <td>0.4</td>
     </tr>
     <tr>
-      <td>Descent</td>
-      <td>2.98</td>
-      <td>12.0</td>
+      <td>3. Saint James Drive: light descent</td>
+      <td>-4.0%</td>
+      <td>26.6 mph</td>
+      <td>66%</td>
+      <td>0.3</td>
     </tr>
     <tr>
-      <td>Steep Climb</td>
-      <td>2.19</td>
-      <td>9.0</td>
+      <td>4. Leimert Boulevard: descent</td>
+      <td>-4.6%</td>
+      <td>32.7 mph</td>
+      <td>100%</td>
+      <td>0.3</td>
     </tr>
     <tr>
-      <td>Steep Descent</td>
-      <td>0.26</td>
-      <td>1.0</td>
+      <td>5. Redwood Road: descent</td>
+      <td>-3.9%</td>
+      <td>32.8 mph</td>
+      <td>93%</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>6. Pinehurst Road: descent</td>
+      <td>-4.6%</td>
+      <td>33.4 mph</td>
+      <td>100%</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <td>7. Grizzly Peak Boulevard: light descent</td>
+      <td>-2.8%</td>
+      <td>21.3 mph</td>
+      <td>81%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>8. Claremont Avenue: steep descent</td>
+      <td>-8.2%</td>
+      <td>42.3 mph</td>
+      <td>63%</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>9. Russell Street: light descent</td>
+      <td>-3.1%</td>
+      <td>26.0 mph</td>
+      <td>80%</td>
+      <td>0.7</td>
     </tr>
   </tbody>
 </table>
 ```
 
-## Climbs
+## Ascents
 
 <iframe
   src="../data/routes/oak-hills-pinehurst/chunk_map.html"
@@ -155,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>3. Butters Drive (4% avg)</td>
       <td>436</td>
       <td>2.3</td>
-      <td>21 ± 10</td>
+      <td>20 ± 10</td>
     </tr>
     <tr>
       <td>4. Pinehurst Road (4% avg)</td>
@@ -196,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>TOTAL</td>
       <td>2,138</td>
       <td>25.5</td>
-      <td>181 ± 72</td>
+      <td>180 ± 71</td>
     </tr>
     <tr>
       <td>flat or descent</td>
@@ -214,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>flat or descent</td>
       <td></td>
       <td>1.2</td>
-      <td>8</td>
+      <td>7</td>
     </tr>
     <tr>
       <td>2. Leimert Boulevard (6% avg)</td>
@@ -232,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>3. Butters Drive (4% avg)</td>
       <td>436</td>
       <td>2.3</td>
-      <td>21 ± 10</td>
+      <td>20 ± 10</td>
     </tr>
     <tr>
       <td>flat or descent</td>

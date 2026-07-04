@@ -63,7 +63,7 @@
     "start_bart_station": "MacArthur",
     "end_bart_station": "Ashby",
     "bart_station": "MacArthur",
-    "estimated_time_min": 181.0,
+    "estimated_time_min": 180.0,
     "estimated_time_display": "3:00"
   }
 }

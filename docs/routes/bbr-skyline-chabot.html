@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </article>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hazards</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Climbs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Street Quality</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Grade</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Descents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Ascents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Street Quality</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <iframe src="../data/routes/bbr-skyline-chabot/overview_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
@@ -237,49 +237,137 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <iframe src="../data/routes/bbr-skyline-chabot/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<iframe src="../data/routes/bbr-skyline-chabot/descent_chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+</iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Hazard</th>
+<th data-quarto-table-cell-role="th">Section</th>
+<th data-quarto-table-cell-role="th">Average Grade</th>
+<th data-quarto-table-cell-role="th">Max Coast Speed</th>
+<th data-quarto-table-cell-role="th">Good+ Pavement</th>
 <th data-quarto-table-cell-role="th">Distance (mi)</th>
-<th data-quarto-table-cell-role="th">Percent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Flat</td>
-<td>14.03</td>
-<td>52.0</td>
+<td>TOTAL</td>
+<td>-5.3%</td>
+<td>46.1 mph</td>
+<td>62%</td>
+<td>9.1</td>
 </tr>
 <tr class="even">
-<td>Climb</td>
-<td>3.75</td>
-<td>14.0</td>
+<td>1. Skyline Boulevard: descent</td>
+<td>-5.0%</td>
+<td>33.6 mph</td>
+<td>60%</td>
+<td>0.7</td>
 </tr>
 <tr class="odd">
-<td>Descent</td>
-<td>3.38</td>
-<td>12.0</td>
+<td>2. Pinehurst Road: descent</td>
+<td>-5.5%</td>
+<td>39.7 mph</td>
+<td>95%</td>
+<td>1.7</td>
 </tr>
 <tr class="even">
-<td>Light Descent</td>
-<td>3.09</td>
-<td>11.0</td>
+<td>3. Pinehurst Road: light descent</td>
+<td>-2.5%</td>
+<td>20.4 mph</td>
+<td>100%</td>
+<td>0.5</td>
 </tr>
 <tr class="odd">
-<td>Steep Climb</td>
-<td>2.28</td>
-<td>8.0</td>
+<td>4. Pinehurst Road: light descent</td>
+<td>-3.2%</td>
+<td>25.7 mph</td>
+<td>100%</td>
+<td>0.3</td>
 </tr>
 <tr class="even">
-<td>Steep Descent</td>
-<td>0.63</td>
-<td>2.0</td>
+<td>5. Pinehurst Road: light descent</td>
+<td>-2.6%</td>
+<td>21.6 mph</td>
+<td>100%</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>6. Pinehurst Road: light descent</td>
+<td>-4.6%</td>
+<td>30.2 mph</td>
+<td>100%</td>
+<td>1.3</td>
+</tr>
+<tr class="even">
+<td>7. Skyline Boulevard: light descent</td>
+<td>-3.3%</td>
+<td>27.7 mph</td>
+<td>100%</td>
+<td>0.5</td>
+</tr>
+<tr class="odd">
+<td>8. Hansom Drive: descent</td>
+<td>-6.4%</td>
+<td>33.1 mph</td>
+<td>60%</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>9. Skyline Boulevard: descent</td>
+<td>-6.2%</td>
+<td>34.1 mph</td>
+<td>100%</td>
+<td>0.4</td>
+</tr>
+<tr class="odd">
+<td>10. Skyline Boulevard: light descent</td>
+<td>-4.2%</td>
+<td>26.5 mph</td>
+<td>0%</td>
+<td>0.3</td>
+</tr>
+<tr class="even">
+<td>11. Skyline Boulevard: descent</td>
+<td>-5.8%</td>
+<td>35.0 mph</td>
+<td>0%</td>
+<td>0.8</td>
+</tr>
+<tr class="odd">
+<td>12. Goldenrod Trail: steep descent</td>
+<td>-10.7%</td>
+<td>41.8 mph</td>
+<td>Gravel</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>13. Goldenrod Trail: steep descent</td>
+<td>-8.0%</td>
+<td>46.1 mph</td>
+<td>Gravel</td>
+<td>0.6</td>
+</tr>
+<tr class="odd">
+<td>14. Goldenrod Trail: descent</td>
+<td>-4.5%</td>
+<td>33.0 mph</td>
+<td>Gravel</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>15. West Shore Trail: descent</td>
+<td>-7.1%</td>
+<td>38.9 mph</td>
+<td>0%</td>
+<td>0.6</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <iframe src="../data/routes/bbr-skyline-chabot/chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -442,7 +530,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <iframe src="../data/routes/bbr-skyline-chabot/road_quality_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">

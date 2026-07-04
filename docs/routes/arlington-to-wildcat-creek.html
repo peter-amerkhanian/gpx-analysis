@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </article>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hazards</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Climbs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Street Quality</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Map</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Grade</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Descents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Ascents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Street Quality</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <iframe src="../data/routes/arlington-to-wildcat-creek/overview_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
@@ -238,49 +238,116 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <iframe src="../data/routes/arlington-to-wildcat-creek/map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<iframe src="../data/routes/arlington-to-wildcat-creek/descent_chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+</iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Hazard</th>
+<th data-quarto-table-cell-role="th">Section</th>
+<th data-quarto-table-cell-role="th">Average Grade</th>
+<th data-quarto-table-cell-role="th">Max Coast Speed</th>
+<th data-quarto-table-cell-role="th">Good+ Pavement</th>
 <th data-quarto-table-cell-role="th">Distance (mi)</th>
-<th data-quarto-table-cell-role="th">Percent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Flat</td>
-<td>8.70</td>
-<td>44.0</td>
+<td>TOTAL</td>
+<td>-5.1%</td>
+<td>48.6 mph</td>
+<td>49%</td>
+<td>5.9</td>
 </tr>
 <tr class="even">
-<td>Light Descent</td>
-<td>3.42</td>
-<td>17.0</td>
+<td>1. Arlington Boulevard: descent</td>
+<td>-5.3%</td>
+<td>33.4 mph</td>
+<td>100%</td>
+<td>0.5</td>
 </tr>
 <tr class="odd">
-<td>Climb</td>
-<td>2.98</td>
-<td>15.0</td>
+<td>2. Arlington Boulevard: light descent</td>
+<td>-3.7%</td>
+<td>26.8 mph</td>
+<td>100%</td>
+<td>0.4</td>
 </tr>
 <tr class="even">
-<td>Steep Climb</td>
-<td>2.16</td>
-<td>11.0</td>
+<td>3. Arlington Avenue: light descent</td>
+<td>-4.2%</td>
+<td>30.4 mph</td>
+<td>100%</td>
+<td>1.2</td>
 </tr>
 <tr class="odd">
-<td>Descent</td>
-<td>2.12</td>
-<td>11.0</td>
+<td>4. Arlington Avenue: light descent</td>
+<td>-4.0%</td>
+<td>28.8 mph</td>
+<td>100%</td>
+<td>0.8</td>
 </tr>
 <tr class="even">
-<td>Steep Descent</td>
-<td>0.48</td>
-<td>2.0</td>
+<td>5. Central Park Drive: steep descent</td>
+<td>-6.6%</td>
+<td>46.0 mph</td>
+<td>3%</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td>6. Loop Road: light descent</td>
+<td>-4.4%</td>
+<td>28.2 mph</td>
+<td>Gravel</td>
+<td>0.4</td>
+</tr>
+<tr class="even">
+<td>7. Wildcat Creek Trail: light descent</td>
+<td>-3.0%</td>
+<td>26.1 mph</td>
+<td>Gravel</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>8. Wildcat Creek Trail: light descent</td>
+<td>-3.3%</td>
+<td>26.6 mph</td>
+<td>Gravel</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>9. Wildcat Creek Trail: descent</td>
+<td>-6.1%</td>
+<td>37.4 mph</td>
+<td>Gravel</td>
+<td>0.3</td>
+</tr>
+<tr class="odd">
+<td>10. Wildcat Creek Trail: steep descent</td>
+<td>-8.2%</td>
+<td>48.6 mph</td>
+<td>Gravel</td>
+<td>0.3</td>
+</tr>
+<tr class="even">
+<td>11. Wildcat Canyon Parkway: steep descent</td>
+<td>-10.9%</td>
+<td>47.0 mph</td>
+<td>0%</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>12. Key Boulevard: light descent</td>
+<td>-2.7%</td>
+<td>22.9 mph</td>
+<td>0%</td>
+<td>0.3</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <iframe src="../data/routes/arlington-to-wildcat-creek/chunk_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -387,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <td>flat or descent</td>
 <td></td>
 <td>2.5</td>
-<td>13</td>
+<td>12</td>
 </tr>
 <tr class="odd">
 <td>4. Spruce Street (5% avg)</td>
@@ -407,7 +474,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <iframe src="../data/routes/arlington-to-wildcat-creek/road_quality_map.html" style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;" loading="lazy" allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
 </iframe>
 <table class="dataframe table table-striped table-sm caption-top small" data-quarto-postprocess="true">

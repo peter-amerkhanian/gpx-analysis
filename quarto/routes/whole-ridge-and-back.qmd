@@ -50,10 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
   allowfullscreen
 ></iframe>
 
-## Hazards
+## Grade
 
 <iframe
   src="../data/routes/whole-ridge-and-back/map.html"
+  style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
+  loading="lazy"
+  allow="fullscreen"
+  webkitallowfullscreen
+  mozallowfullscreen
+  allowfullscreen
+></iframe>
+
+## Descents
+
+<iframe
+  src="../data/routes/whole-ridge-and-back/descent_chunk_map.html"
   style="width:100%; height:min(70vh, 560px); min-height:360px; border:none;"
   loading="lazy"
   allow="fullscreen"
@@ -66,47 +78,285 @@ document.addEventListener("DOMContentLoaded", function () {
 <table class="dataframe table table-striped table-sm">
   <thead>
     <tr style="text-align: left;">
-      <th>Hazard</th>
+      <th>Section</th>
+      <th>Average Grade</th>
+      <th>Max Coast Speed</th>
+      <th>Good+ Pavement</th>
       <th>Distance (mi)</th>
-      <th>Percent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Flat</td>
-      <td>32.65</td>
-      <td>52.0</td>
+      <td>TOTAL</td>
+      <td>-5.0%</td>
+      <td>48.6 mph</td>
+      <td>54%</td>
+      <td>19.6</td>
     </tr>
     <tr>
-      <td>Climb</td>
-      <td>8.74</td>
-      <td>14.0</td>
+      <td>1. Arlington Boulevard: descent</td>
+      <td>-5.3%</td>
+      <td>33.4 mph</td>
+      <td>100%</td>
+      <td>0.5</td>
     </tr>
     <tr>
-      <td>Light Descent</td>
-      <td>8.39</td>
-      <td>13.0</td>
+      <td>2. Arlington Boulevard: light descent</td>
+      <td>-3.7%</td>
+      <td>27.1 mph</td>
+      <td>100%</td>
+      <td>0.4</td>
     </tr>
     <tr>
-      <td>Descent</td>
-      <td>6.45</td>
-      <td>10.0</td>
+      <td>3. Arlington Boulevard: light descent</td>
+      <td>-3.2%</td>
+      <td>26.3 mph</td>
+      <td>100%</td>
+      <td>0.3</td>
     </tr>
     <tr>
-      <td>Steep Climb</td>
-      <td>5.47</td>
-      <td>9.0</td>
+      <td>4. Grizzly Peak Boulevard: descent</td>
+      <td>-5.1%</td>
+      <td>37.0 mph</td>
+      <td>70%</td>
+      <td>1.3</td>
     </tr>
     <tr>
-      <td>Steep Descent</td>
-      <td>1.61</td>
-      <td>3.0</td>
+      <td>5. Grizzly Peak Boulevard: light descent</td>
+      <td>-3.9%</td>
+      <td>27.4 mph</td>
+      <td>100%</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>6. Skyline Boulevard: descent</td>
+      <td>-4.6%</td>
+      <td>33.3 mph</td>
+      <td>50%</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>7. Skyline Boulevard: descent</td>
+      <td>-5.8%</td>
+      <td>32.5 mph</td>
+      <td>23%</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td>8. Skyline Boulevard: light descent</td>
+      <td>-5.0%</td>
+      <td>30.9 mph</td>
+      <td>100%</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>9. Skyline Boulevard: light descent</td>
+      <td>-3.3%</td>
+      <td>27.7 mph</td>
+      <td>100%</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>10. Skyline Boulevard: descent</td>
+      <td>-5.3%</td>
+      <td>33.6 mph</td>
+      <td>100%</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>11. Skyline Boulevard: descent</td>
+      <td>-6.2%</td>
+      <td>34.1 mph</td>
+      <td>100%</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>12. Skyline Boulevard: light descent</td>
+      <td>-4.0%</td>
+      <td>26.5 mph</td>
+      <td>0%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>13. Skyline Boulevard: descent</td>
+      <td>-5.7%</td>
+      <td>35.0 mph</td>
+      <td>0%</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>14. Goldenrod Trail: steep descent</td>
+      <td>-10.7%</td>
+      <td>41.7 mph</td>
+      <td>Gravel</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>15. Goldenrod Trail: steep descent</td>
+      <td>-8.0%</td>
+      <td>46.1 mph</td>
+      <td>Gravel</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>16. Goldenrod Trail: descent</td>
+      <td>-4.5%</td>
+      <td>33.0 mph</td>
+      <td>Gravel</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>17. Ten Hills Trail: descent</td>
+      <td>-6.0%</td>
+      <td>34.6 mph</td>
+      <td>0%</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>18. Ten Hills Trail: light descent</td>
+      <td>-2.2%</td>
+      <td>25.6 mph</td>
+      <td>Gravel</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>19. Unknown Road: descent</td>
+      <td>-6.0%</td>
+      <td>33.3 mph</td>
+      <td>Gravel</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>20. Unknown Road: descent</td>
+      <td>-5.4%</td>
+      <td>38.6 mph</td>
+      <td>30%</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>21. Redwood Road: descent</td>
+      <td>-5.1%</td>
+      <td>33.8 mph</td>
+      <td>100%</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <td>22. Redwood Road: descent</td>
+      <td>-5.4%</td>
+      <td>33.9 mph</td>
+      <td>100%</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <td>23. Redwood Road: descent</td>
+      <td>-4.6%</td>
+      <td>34.6 mph</td>
+      <td>100%</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>24. Pinehurst Road: descent</td>
+      <td>-4.6%</td>
+      <td>33.4 mph</td>
+      <td>100%</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <td>25. Lafayette-Moraga Trail: light descent</td>
+      <td>-2.8%</td>
+      <td>20.9 mph</td>
+      <td>40%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>26. Lafayette-Moraga Trail: descent</td>
+      <td>-6.4%</td>
+      <td>31.3 mph</td>
+      <td>0%</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>27. Moraga Way: light descent</td>
+      <td>-2.8%</td>
+      <td>24.9 mph</td>
+      <td>100%</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>28. Camino Pablo: light descent</td>
+      <td>-2.9%</td>
+      <td>21.7 mph</td>
+      <td>100%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>29. Camino Pablo: light descent</td>
+      <td>-2.4%</td>
+      <td>20.5 mph</td>
+      <td>100%</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>30. Meadows Canyon Trail: descent</td>
+      <td>-5.0%</td>
+      <td>36.7 mph</td>
+      <td>8%</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td>31. Meadows Canyon Trail: descent</td>
+      <td>-7.0%</td>
+      <td>37.2 mph</td>
+      <td>Gravel</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>32. Loop Road: light descent</td>
+      <td>-4.4%</td>
+      <td>28.2 mph</td>
+      <td>Gravel</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>33. Wildcat Creek Trail: light descent</td>
+      <td>-3.0%</td>
+      <td>26.1 mph</td>
+      <td>Gravel</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>34. Wildcat Creek Trail: light descent</td>
+      <td>-3.3%</td>
+      <td>26.6 mph</td>
+      <td>Gravel</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>35. Wildcat Creek Trail: descent</td>
+      <td>-6.1%</td>
+      <td>37.4 mph</td>
+      <td>Gravel</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>36. Wildcat Creek Trail: steep descent</td>
+      <td>-8.2%</td>
+      <td>48.6 mph</td>
+      <td>Gravel</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>37. Wildcat Canyon Parkway: steep descent</td>
+      <td>-10.9%</td>
+      <td>47.0 mph</td>
+      <td>0%</td>
+      <td>0.2</td>
     </tr>
   </tbody>
 </table>
 ```
 
-## Climbs
+## Ascents
 
 <iframe
   src="../data/routes/whole-ridge-and-back/chunk_map.html"

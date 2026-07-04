@@ -23,14 +23,16 @@ from .. import (
     enrich_segments_with_osm_edges,
     enrich_segments_with_mtc_streets,
     make_chunk_map,
+    make_descent_chunk_map,
+    make_grade_map,
     make_road_quality_map,
     make_route_overview_map,
-    make_hazard_map,
     points_to_segments,
     prepare_segment_display_columns,
     read_simple_gpx,
     road_quality_score,
     summarize_chunk_sections,
+    summarize_descent_chunk_sections,
 )
 from ..geo import add_bart_station
 
@@ -569,14 +571,12 @@ def build_route(
     )
     hazard_summary["distance_mi"] = (hazard_summary["distance_m"] / 1609.344).round(2)
     overview_map = make_route_overview_map(segments)
-    route_map = make_hazard_map(
-        segments,
-        popup_cols=["Road Name", "Ride Type", "Turn", "Grade", "More Details"],
-        hazard_profile=hazard_profile,
-    )
+    route_map = make_grade_map(segments)
+    descent_chunk_map = make_descent_chunk_map(segments)
     road_quality_map = make_road_quality_map(segments)
     chunk_map = make_chunk_map(segments)
     road_quality_summary = aggregate_by_road_quality(segments).reset_index()
+    descent_chunks_summary = summarize_descent_chunk_sections(segments)
     chunk_sections_summary = summarize_chunk_sections(segments)
     climb_only_sections_summary = summarize_chunk_sections(segments, include_rest_periods=False)
     estimated_time_min = total_estimated_time_minutes(chunk_sections_summary)
@@ -600,6 +600,7 @@ def build_route(
     write_text(route_dir / "profile.svg", elevation_profile_svg)
     overview_map.save(str(route_dir / "overview_map.html"))
     route_map.save(str(route_dir / "map.html"))
+    descent_chunk_map.save(str(route_dir / "descent_chunk_map.html"))
     road_quality_map.save(str(route_dir / "road_quality_map.html"))
     chunk_map.save(str(route_dir / "chunk_map.html"))
 
@@ -622,6 +623,7 @@ def build_route(
             "segments": f"data/routes/{route.slug}/segments.geojson",
             "map": f"data/routes/{route.slug}/map.html",
             "overview_map": f"data/routes/{route.slug}/overview_map.html",
+            "descent_chunk_map": f"data/routes/{route.slug}/descent_chunk_map.html",
             "road_quality_map": f"data/routes/{route.slug}/road_quality_map.html",
             "chunk_map": f"data/routes/{route.slug}/chunk_map.html",
             "profile_svg": f"data/routes/{route.slug}/profile.svg",
@@ -655,6 +657,7 @@ def build_route(
             }
         )[["Hazard", "Distance (mi)", "Percent"]],
         "road_quality_table": road_quality_summary,
+        "descent_chunks_table": descent_chunks_summary,
         "chunk_sections_table": chunk_sections_summary,
         "climb_only_sections_table": climb_only_sections_summary,
     }

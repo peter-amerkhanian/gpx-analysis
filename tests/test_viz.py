@@ -3,7 +3,14 @@ import unittest
 import geopandas as gpd
 from shapely.geometry import LineString
 
-from gpx_analysis.viz import _frames_share_route_overlap, make_chunk_map, make_hazard_map, make_route_overview_map
+from gpx_analysis.viz import (
+    _frames_share_route_overlap,
+    make_chunk_map,
+    make_grade_map,
+    make_hazard_map,
+    make_road_quality_map,
+    make_route_overview_map,
+)
 
 
 class RouteOverlapTests(unittest.TestCase):
@@ -114,6 +121,56 @@ class RouteMapTests(unittest.TestCase):
 
         self.assertNotIn("route-gravel-overlay", default_html)
         self.assertIn("route-gravel-overlay", overlay_html)
+
+    def test_grade_map_renders_smoothed_grade(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1, 2, 3],
+                "step_dist_m": [100.0, 100.0, 100.0],
+                "step_grade": [-0.08, 0.0, 0.08],
+                "avg_step_grade": [-0.06, 0.0, 0.06],
+                "osm_name": ["Pinehurst Road"] * 3,
+                "road_type": ["road", "gravel", "road"],
+            },
+            geometry=[
+                LineString([(-122.0, 37.0), (-122.01, 37.01)]),
+                LineString([(-122.01, 37.01), (-122.02, 37.02)]),
+                LineString([(-122.02, 37.02), (-122.03, 37.03)]),
+            ],
+            crs=4326,
+        )
+
+        html = make_grade_map(frame, smoothing_window_m=250.0).get_root().render()
+
+        self.assertIn("Smoothed Grade", html)
+        self.assertIn("smooth_grade", html)
+        self.assertIn("Pinehurst Road", html)
+        self.assertIn("light_all", html)
+        self.assertIn("route-gravel-overlay", html)
+
+    def test_road_quality_map_does_not_show_gravel_overlay_by_default(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1],
+                "lat": [37.0],
+                "lon": [-122.0],
+                "step_dist_m": [100.0],
+                "step_turn": [0.0],
+                "step_grade": [0.0],
+                "hazard": ["flat"],
+                "osm_name": ["Pinehurst Road"],
+                "road_type": ["gravel"],
+                "mtc_road_name": ["Pinehurst Road"],
+                "mtc_pci_info": ["Gravel"],
+                "mtc_pci_date": ["2026"],
+            },
+            geometry=[LineString([(-122.0, 37.0), (-122.1, 37.1)])],
+            crs=4326,
+        )
+
+        html = make_road_quality_map(frame).get_root().render()
+
+        self.assertNotIn("route-gravel-overlay", html)
 
 
 class ChunkMapTests(unittest.TestCase):
@@ -277,7 +334,7 @@ class ChunkMapTests(unittest.TestCase):
             crs=4326,
         )
 
-        html = make_chunk_map(frame, show_gravel_overlay=True).get_root().render()
+        html = make_chunk_map(frame).get_root().render()
 
         self.assertIn("Route Pass", html)
         self.assertIn('"Section"', html)

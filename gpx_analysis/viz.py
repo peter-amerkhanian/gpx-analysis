@@ -1123,6 +1123,112 @@ def make_route_overview_map(
     )
     return m
 
+
+def _smooth_grade_by_distance(
+    frame: gpd.GeoDataFrame,
+    grade_column: str,
+    distance_column: str,
+    smoothing_window_m: float,
+) -> pd.Series:
+    """Return a centered, distance-weighted grade average."""
+    grade = pd.to_numeric(frame[grade_column], errors="coerce")
+    distance = pd.to_numeric(frame[distance_column], errors="coerce").fillna(0)
+    if smoothing_window_m <= 0 or frame.empty:
+        return grade
+
+    weighted_grade = grade.fillna(0).mul(distance.where(grade.notna(), 0))
+    valid_distance = distance.where(grade.notna(), 0)
+    positions = distance.cumsum()
+    half_window_m = smoothing_window_m / 2.0
+    smoothed: list[float] = []
+
+    for center in positions:
+        in_window = positions.sub(center).abs().le(half_window_m)
+        window_distance = float(valid_distance.loc[in_window].sum())
+        if window_distance > 0:
+            smoothed.append(float(weighted_grade.loc[in_window].sum() / window_distance))
+        else:
+            smoothed.append(float("nan"))
+    return pd.Series(smoothed, index=frame.index, dtype="float64")
+
+
+def make_grade_map(
+    gdf_segments: gpd.GeoDataFrame,
+    grade_column: str = "avg_step_grade",
+    smoothing_window_m: float = 180.0,
+    popup_cols: list[str] | None = None,
+    tooltip_fields: list[str] | None = None,
+    tiles: str = "CartoDB Positron",
+    cmap: str = "RdYlGn",
+    vmin: float = -0.1,
+    vmax: float = 0.1,
+    show_gravel_overlay: bool = True,
+) -> folium.Map:
+    """Build a continuous-color map of smoothed route grade."""
+    frame = gdf_segments.copy()
+    if grade_column not in frame.columns:
+        if grade_column == "avg_step_grade" and "step_grade" in frame.columns:
+            grade_column = "step_grade"
+        else:
+            raise ValueError(f"make_grade_map requires a {grade_column!r} column.")
+    if "step_dist_m" not in frame.columns:
+        raise ValueError("make_grade_map requires a 'step_dist_m' column.")
+
+    frame["smooth_grade"] = _smooth_grade_by_distance(
+        frame,
+        grade_column=grade_column,
+        distance_column="step_dist_m",
+        smoothing_window_m=smoothing_window_m,
+    )
+    frame["Grade"] = pd.to_numeric(frame.get("step_grade"), errors="coerce").multiply(100).round(2).astype(str) + "%"
+    frame["Smoothed Grade"] = frame["smooth_grade"].multiply(100).round(2).astype(str) + "%"
+    frame["Segment"] = frame["step"].astype("Int64").astype(str) if "step" in frame.columns else frame.index.astype(str)
+    if "osm_name" in frame.columns:
+        frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
+
+    if tooltip_fields is None:
+        tooltip_fields = ["Segment", "Road Name", "Smoothed Grade"]
+    if popup_cols is None:
+        popup_cols = ["Road Name", "Smoothed Grade", "Grade"]
+
+    frame = _select_present_columns(
+        frame,
+        [
+            "geometry",
+            "step_dist_m",
+            "Segment",
+            "Road Name",
+            "Grade",
+            "Smoothed Grade",
+            "smooth_grade",
+            "road_type",
+            "mtc_pci_info",
+        ],
+    )
+    frame = gpd.GeoDataFrame(frame, geometry="geometry", crs=gdf_segments.crs)
+    m = frame.explore(
+        column="smooth_grade",
+        tooltip=_present_interaction_fields(frame, tooltip_fields),
+        popup=_present_interaction_fields(frame, popup_cols),
+        tiles=tiles,
+        cmap=cmap,
+        vmin=vmin,
+        vmax=vmax,
+        legend=True,
+        style_kwds={"weight": 4},
+        escape=False,
+    )
+    add_map_elements(
+        m,
+        frame,
+        show_route_pass_control=False,
+        popup_cols=popup_cols,
+        tooltip_fields=tooltip_fields,
+        show_gravel_overlay=show_gravel_overlay,
+    )
+    return m
+
+
 def make_road_quality_map(
     gdf_segments: gpd.GeoDataFrame,
     popup_cols: list[str] | None = ["mtc_road_name", 'Road Quality', 'mtc_pci_info', 'mtc_pci_date',"Ride Type", "Turn", "Grade", "More Details"],
@@ -1412,7 +1518,7 @@ def make_chunk_map(
     popup_cols: list[str] | None = None,
     tooltip_fields: list[str] | None = None,
     tiles: str = "CartoDB Voyager",
-    show_gravel_overlay: bool = False,
+    show_gravel_overlay: bool = True,
 ) -> folium.Map:
     """Build a Folium map with chunk-state colored segments and chunk detail popups/tooltips."""
     if "chunk_state" in gdf_segments.columns:
