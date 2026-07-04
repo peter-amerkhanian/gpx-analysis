@@ -834,7 +834,7 @@ def _add_gravel_overlay(m: folium.Map, frame: gpd.GeoDataFrame) -> None:
     if gravel.empty:
         return
 
-    _ensure_map_pane(m, pane_name="route-gravel-overlay", z_index=-1)
+    _ensure_map_pane(m, pane_name="route-gravel-overlay", z_index=0)
     folium.GeoJson(
         data=gravel.to_json(),
         name="Gravel Overlay",

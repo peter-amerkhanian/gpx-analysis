@@ -4,7 +4,6 @@ project:
   resources:
   - data/**
   - images/**
-  post-render: python ../scripts/prune_published_site.py
   render:
   - index.qmd
   - about.qmd
