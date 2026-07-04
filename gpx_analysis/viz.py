@@ -188,6 +188,31 @@ def google_maps_link(lat: pd.Series, lon: pd.Series) -> pd.Series:
     return gmaps_link
 
 
+def _add_google_maps_details(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Add a Google Maps link column using lat/lon columns or segment geometry."""
+    if {"lat", "lon"}.issubset(frame.columns):
+        frame["More Details"] = google_maps_link(frame["lat"], frame["lon"])
+        return frame
+
+    if "geometry" not in frame.columns:
+        return frame
+
+    coords = frame.geometry.apply(
+        lambda geometry: (
+            geometry.coords[0][1],
+            geometry.coords[0][0],
+        )
+        if geometry is not None and not geometry.is_empty and hasattr(geometry, "coords")
+        else (pd.NA, pd.NA)
+    )
+    lat = coords.apply(lambda value: value[0])
+    lon = coords.apply(lambda value: value[1])
+    valid = lat.notna() & lon.notna()
+    frame["More Details"] = ""
+    frame.loc[valid, "More Details"] = google_maps_link(lat.loc[valid], lon.loc[valid])
+    return frame
+
+
 def prepare_segment_display_columns(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
@@ -200,7 +225,7 @@ def prepare_segment_display_columns(
         hazard_colors=hazard_colors,
     )
     frame["Segment"] = frame["step"].astype("Int64").astype(str)
-    frame["More Details"] = google_maps_link(frame['lat'], frame['lon'])
+    frame = _add_google_maps_details(frame)
     frame["Turn"] = (
         frame["step_turn"].round(2).astype(str) + "°"
     )
@@ -1010,7 +1035,7 @@ def make_hazard_map(
     gdf_segments: gpd.GeoDataFrame,
     hazard_colors: Mapping[str, str] | None = None,
     popup_cols: list[str] | None = ["Road Name", "Ride Type", "Turn", "Grade", "Hazard Grade", "More Details"],
-    tooltip_fields: list[str] | None = ['Segment', 'Road Name', 'Ride Type'],
+    tooltip_fields: list[str] | None = ['Segment', 'Road Name', 'Ride Type', "More Details"],
     tiles: str = "CartoDB Voyager",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
     show_gravel_overlay: bool = False,
@@ -1085,6 +1110,7 @@ def make_route_overview_map(
             frame["elevation_f"],
             errors="coerce",
         ).round(0).astype("Int64").astype(str) + " ft"
+    frame = _add_google_maps_details(frame)
     frame = _select_present_columns(
         frame,
         [
@@ -1093,12 +1119,13 @@ def make_route_overview_map(
             "Road Name",
             "Elevation (ft)",
             "step",
+            "More Details",
             "road_type",
             "mtc_pci_info",
         ],
     )
     frame = gpd.GeoDataFrame(frame, geometry="geometry", crs=gdf_segments.crs)
-    interaction_fields = ["Road Name", "Elevation (ft)", "step"]
+    interaction_fields = ["Road Name", "Elevation (ft)", "step", "More Details"]
     m = frame.explore(
         tooltip=_present_interaction_fields(frame, interaction_fields),
         popup=_present_interaction_fields(frame, interaction_fields),
@@ -1185,11 +1212,12 @@ def make_grade_map(
     frame["Segment"] = frame["step"].astype("Int64").astype(str) if "step" in frame.columns else frame.index.astype(str)
     if "osm_name" in frame.columns:
         frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
+    frame = _add_google_maps_details(frame)
 
     if tooltip_fields is None:
-        tooltip_fields = ["Segment", "Road Name", "Smoothed Grade"]
+        tooltip_fields = ["Segment", "Road Name", "Smoothed Grade", "More Details"]
     if popup_cols is None:
-        popup_cols = ["Road Name", "Smoothed Grade", "Grade"]
+        popup_cols = ["Road Name", "Smoothed Grade", "Grade", "More Details"]
 
     frame = _select_present_columns(
         frame,
@@ -1200,6 +1228,7 @@ def make_grade_map(
             "Road Name",
             "Grade",
             "Smoothed Grade",
+            "More Details",
             "smooth_grade",
             "road_type",
             "mtc_pci_info",
@@ -1232,7 +1261,7 @@ def make_grade_map(
 def make_road_quality_map(
     gdf_segments: gpd.GeoDataFrame,
     popup_cols: list[str] | None = ["mtc_road_name", 'Road Quality', 'mtc_pci_info', 'mtc_pci_date',"Ride Type", "Turn", "Grade", "More Details"],
-    tooltip_fields: list[str] | None = ['Segment', 'Road Quality'],
+    tooltip_fields: list[str] | None = ['Segment', 'Road Quality', "More Details"],
     tiles: str = "Cartodb Positron",
     hazard_profile: HazardProfileName = DEFAULT_HAZARD_PROFILE,
     show_gravel_overlay: bool = False,
@@ -1470,6 +1499,10 @@ def _chunk_section_map_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
             "Average Grade": _format_percent(first.get("chunk_avg_grade")) if is_climb else "",
             "Median Grade": _format_percent(first.get("chunk_median_grade")) if is_climb else "",
             "Section Time (min)": first.get("section_time_min", ""),
+            "More Details": _middle_non_empty_value(
+                group["More Details"] if "More Details" in group.columns else pd.Series(dtype="object"),
+                fallback="",
+            ),
             "_display_color": CHUNK_STATE_COLORS.get(route_part, "#8a8a8a"),
             "geometry": _combine_linestrings(group.geometry),
         })
@@ -1494,6 +1527,7 @@ def _add_chunk_section_display_columns(
         "Average Grade",
         "Median Grade",
         "Section Time (min)",
+        "More Details",
     ]
     section_display = section_frame[
         [column for column in display_columns if column in section_frame.columns]
@@ -1527,7 +1561,7 @@ def make_chunk_map(
         from .chunks import detect_chunks
         frame = detect_chunks(gdf_segments)
     frame["Segment"] = frame["step"].astype("Int64").astype(str)
-    frame["More Details"] = google_maps_link(frame["lat"], frame["lon"])
+    frame = _add_google_maps_details(frame)
     frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
     frame["Turn"] = frame["step_turn"].round(2).astype(str) + "°"
     frame["Grade"] = frame["step_grade"].multiply(100).round(2).astype(str) + "%"
@@ -1554,6 +1588,7 @@ def make_chunk_map(
             "Climb (ft)",
             "Average Grade",
             "Median Grade",
+            "More Details",
         ]
     if popup_cols is None:
         popup_cols = [
@@ -1563,6 +1598,7 @@ def make_chunk_map(
             "Average Grade",
             "Median Grade",
             "Section Time (min)",
+            "More Details",
         ]
 
     m = section_frame.explore(

@@ -4,7 +4,7 @@ import geopandas as gpd
 import pandas as pd
 import folium
 
-from .viz import add_map_elements, google_maps_link
+from .viz import _add_google_maps_details, add_map_elements
 
 DESCENT_CHUNK_STATE_COLORS = {
     "other": "#bdbdbd",
@@ -154,6 +154,17 @@ def _weighted_average(values: pd.Series, weights: pd.Series) -> float | object:
     return float((numeric.fillna(0) * valid_weights).sum() / total_weight)
 
 
+def _middle_non_empty_value(values: pd.Series, fallback: str = "") -> str:
+    filtered = [
+        str(value).strip()
+        for value in values
+        if pd.notna(value) and str(value).strip()
+    ]
+    if not filtered:
+        return fallback
+    return filtered[len(filtered) // 2]
+
+
 def _descent_road_quality_label(group: pd.DataFrame, distance_column: str = "step_dist_f") -> str:
     distance = pd.to_numeric(group[distance_column], errors="coerce").fillna(0)
     total_distance = float(distance.sum())
@@ -211,6 +222,10 @@ def _descent_section_frame(frame: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
                 "Max Coast Speed": _format_mph(max_speed_mph) if is_descent else "",
                 "Average Coast Speed": _format_mph(avg_speed_mph) if is_descent else "",
                 "Average Grade": _format_percent(avg_grade) if is_descent else "",
+                "More Details": _middle_non_empty_value(
+                    group["More Details"] if "More Details" in group.columns else pd.Series(dtype="object"),
+                    fallback="",
+                ),
                 "_display_color": DESCENT_CHUNK_STATE_COLORS.get(state, "#8a8a8a"),
                 "geometry": _combine_linestrings(group.geometry),
             }
@@ -314,6 +329,7 @@ def _add_descent_section_display_columns(
         "Max Coast Speed",
         "Average Coast Speed",
         "Average Grade",
+        "More Details",
     ]
     section_display = section_frame[[column for column in display_columns if column in section_frame.columns]].copy()
     if "descent_section_id" not in frame.columns:
@@ -341,8 +357,7 @@ def make_descent_chunk_map(
         frame = detect_descent_chunks(gdf_segments)
 
     frame["Segment"] = frame["step"].astype("Int64").astype(str) if "step" in frame.columns else frame.index.astype(str)
-    if {"lat", "lon"}.issubset(frame.columns):
-        frame["More Details"] = google_maps_link(frame["lat"], frame["lon"])
+    frame = _add_google_maps_details(frame)
     if "osm_name" in frame.columns:
         frame["Road Name"] = frame["osm_name"].fillna("Unknown Road")
     frame["_display_color"] = frame["descent_chunk_state"].map(DESCENT_CHUNK_STATE_COLORS).fillna("#8a8a8a")
@@ -351,9 +366,9 @@ def make_descent_chunk_map(
     interaction_frame = _add_descent_section_display_columns(frame, section_frame)
 
     if tooltip_fields is None:
-        tooltip_fields = ["Section", "Distance (mi)", "Max Coast Speed", "Average Coast Speed", "Average Grade"]
+        tooltip_fields = ["Section", "Distance (mi)", "Max Coast Speed", "Average Coast Speed", "Average Grade", "More Details"]
     if popup_cols is None:
-        popup_cols = ["Section", "Distance (mi)", "Max Coast Speed", "Average Coast Speed", "Average Grade"]
+        popup_cols = ["Section", "Distance (mi)", "Max Coast Speed", "Average Coast Speed", "Average Grade", "More Details"]
 
     m = section_frame.explore(
         column="descent_chunk_state",

@@ -105,6 +105,8 @@ class DescentChunkMapTests(unittest.TestCase):
         self.assertIn("Max Coast Speed", html)
         self.assertIn("Average Coast Speed", html)
         self.assertIn("Average Grade", html)
+        self.assertIn('"More Details"', html)
+        self.assertIn("google.com/maps", html)
         self.assertIn("1. Pinehurst Road: light descent", html)
         self.assertIn("route-gravel-overlay", html)
 

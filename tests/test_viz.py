@@ -75,6 +75,8 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn('"Elevation (ft)"', html)
         self.assertIn("Pinehurst Road", html)
         self.assertIn("742 ft", html)
+        self.assertIn('"More Details"', html)
+        self.assertIn("google.com/maps", html)
 
     def test_hazard_map_shows_road_name_in_tooltip_and_popup(self) -> None:
         frame = gpd.GeoDataFrame(
@@ -96,7 +98,9 @@ class RouteMapTests(unittest.TestCase):
         html = make_hazard_map(frame).get_root().render()
 
         self.assertIn('"Road Name"', html)
+        self.assertIn('"More Details"', html)
         self.assertIn("Pinehurst Road", html)
+        self.assertIn("google.com/maps", html)
 
     def test_gravel_overlay_is_opt_in_and_dashed(self) -> None:
         frame = gpd.GeoDataFrame(
@@ -145,6 +149,8 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn("Smoothed Grade", html)
         self.assertIn("smooth_grade", html)
         self.assertIn("Pinehurst Road", html)
+        self.assertIn('"More Details"', html)
+        self.assertIn("google.com/maps", html)
         self.assertIn("light_all", html)
         self.assertIn("route-gravel-overlay", html)
 
@@ -170,6 +176,8 @@ class RouteMapTests(unittest.TestCase):
 
         html = make_road_quality_map(frame).get_root().render()
 
+        self.assertIn('"More Details"', html)
+        self.assertIn("google.com/maps", html)
         self.assertNotIn("route-gravel-overlay", html)
 
 
@@ -208,6 +216,8 @@ class ChunkMapTests(unittest.TestCase):
         html = make_chunk_map(frame).get_root().render()
 
         self.assertIn('"className": "route-touch-target"', html)
+        self.assertIn('"More Details"', html)
+        self.assertIn("google.com/maps", html)
         self.assertIn('"Section Time (min)"', html)
         self.assertIn("4 +/- 1", html)
         self.assertIn("1. Pinehurst Road (5% avg)", html)
