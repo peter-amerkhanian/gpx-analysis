@@ -36,6 +36,12 @@
     "road_quality_score": 34,
     "route_tags": [
       {
+        "label": "Shoreline Trail",
+        "distance_ft": 21559.0,
+        "elevation_ft": 8.0,
+        "threshold_ft": 20000.0
+      },
+      {
         "label": "Alameda Creek",
         "distance_ft": 21340.0,
         "elevation_ft": 31.0,

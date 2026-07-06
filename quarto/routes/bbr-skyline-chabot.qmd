@@ -1,5 +1,5 @@
 ---
-title: "OAK Hills into Chabot (13% Gravel)"
+title: "OAK Hills Ridge Ride (13% Gravel)"
 ---
 
 ```{=html}
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>15. West Shore Trail: descent</td>
       <td>-7.1%</td>
       <td>38.9 mph</td>
-      <td>0%</td>
+      <td>Gravel</td>
       <td>0.6</td>
     </tr>
   </tbody>

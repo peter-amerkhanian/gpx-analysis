@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="63.32" data-elevation="5612.09" data-time="437" data-road-quality="77" data-has-gravel="true">
 <div class="mobile-route-heading">
 
-<div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Goldenrod Trail ↓</span><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">La-Moraga Trail</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">La-Moraga Trail</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="../data/routes/whole-ridge-and-back/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>17. Ten Hills Trail: descent</td>
       <td>-6.0%</td>
       <td>34.6 mph</td>
-      <td>0%</td>
+      <td>Gravel</td>
       <td>0.4</td>
     </tr>
     <tr>
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>20. Unknown Road: descent</td>
       <td>-5.4%</td>
       <td>38.6 mph</td>
-      <td>30%</td>
+      <td>Gravel</td>
       <td>0.4</td>
     </tr>
     <tr>
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>30. Meadows Canyon Trail: descent</td>
       <td>-5.0%</td>
       <td>36.7 mph</td>
-      <td>8%</td>
+      <td>Gravel</td>
       <td>1.2</td>
     </tr>
     <tr>

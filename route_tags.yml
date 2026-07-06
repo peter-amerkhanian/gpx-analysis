@@ -56,6 +56,9 @@ route_tags:
   - name: Euclid Avenue
     threshold_ft: 11000
     display_name: Euclid
+  - name: Skyline Boulevard
+    threshold_ft: 20000
+    display_name: Skyline
   - name: Lake Chabot Road
     threshold_ft: 16000
     display_name: Lake Chabot
@@ -68,6 +71,15 @@ route_tags:
   - name: Alameda Creek Trail
     threshold_ft: 21000
     display_name: Alameda Creek
+  - name: San Francisco Bay Trail
+    threshold_ft: 30000
+    display_name: SF Bay Trail
+  - name: Shoreline Trail
+    threshold_ft: 20000
+    display_name: Shoreline Trail
+  - name: Brandon Trail
+    threshold_ft: 15000
+    display_name: Brandon Trail
 
   - name: Golf Course Trail
     threshold_ft: 4000

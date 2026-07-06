@@ -5,6 +5,7 @@ from shapely.geometry import LineString
 
 from gpx_analysis.viz import (
     _frames_share_route_overlap,
+    _route_overlap_pass_indexes,
     make_chunk_map,
     make_grade_map,
     make_hazard_map,
@@ -14,6 +15,25 @@ from gpx_analysis.viz import (
 
 
 class RouteOverlapTests(unittest.TestCase):
+    def test_route_overlap_pass_indexes_only_include_overlapping_passes(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {},
+            geometry=[
+                LineString([(-200, 0), (-100, 0)]),
+                LineString([(0, 0), (100, 0)]),
+                LineString([(200, 0), (300, 0)]),
+                LineString([(100, 0), (0, 0)]),
+                LineString([(400, 0), (500, 0)]),
+            ],
+            index=["unique-start", "earlier-overlap", "unique-middle", "later-overlap", "unique-end"],
+            crs=3857,
+        )
+
+        earlier, later = _route_overlap_pass_indexes(frame)
+
+        self.assertEqual(earlier, {"earlier-overlap"})
+        self.assertEqual(later, {"later-overlap"})
+
     def test_flat_shared_overlap_does_not_trigger_direction_split(self) -> None:
         left = gpd.GeoDataFrame(
             {"hazard": ["flat"]},
@@ -125,6 +145,9 @@ class RouteMapTests(unittest.TestCase):
 
         self.assertNotIn("route-gravel-overlay", default_html)
         self.assertIn("route-gravel-overlay", overlay_html)
+        self.assertIn("style.zIndex = 390", overlay_html)
+        self.assertIn('"color": "#b37400"', overlay_html)
+        self.assertIn('"weight": 9', overlay_html)
 
     def test_grade_map_renders_smoothed_grade(self) -> None:
         frame = gpd.GeoDataFrame(
@@ -153,6 +176,30 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn("google.com/maps", html)
         self.assertIn("light_all", html)
         self.assertIn("route-gravel-overlay", html)
+
+    def test_grade_map_adds_route_pass_control_for_overlaps(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1, 2, 3, 4],
+                "step_dist_m": [1000.0, 1000.0, 1000.0, 1000.0],
+                "step_grade": [0.02, 0.06, 0.01, -0.04],
+                "avg_step_grade": [0.02, 0.06, 0.01, -0.04],
+                "osm_name": ["Pinehurst Road"] * 4,
+            },
+            geometry=[
+                LineString([(-122.0, 37.0), (-122.01, 37.0)]),
+                LineString([(-122.01, 37.0), (-122.02, 37.0)]),
+                LineString([(-122.02, 37.0), (-122.03, 37.0)]),
+                LineString([(-122.02, 37.0), (-122.01, 37.0)]),
+            ],
+            crs=4326,
+        )
+
+        html = make_grade_map(frame).get_root().render()
+
+        self.assertIn("Route Pass", html)
+        self.assertIn("Outbound", html)
+        self.assertIn("Return", html)
 
     def test_road_quality_map_does_not_show_gravel_overlay_by_default(self) -> None:
         frame = gpd.GeoDataFrame(

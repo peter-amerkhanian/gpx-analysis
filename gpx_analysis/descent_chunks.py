@@ -176,7 +176,7 @@ def _descent_road_quality_label(group: pd.DataFrame, distance_column: str = "ste
         gravel = gravel | group["road_type"].fillna("").astype(str).str.lower().eq("gravel")
     if "mtc_pci_info" in group.columns:
         gravel = gravel | group["mtc_pci_info"].fillna("").astype(str).eq("Gravel")
-    if bool(gravel.all()):
+    if (gravel.mean() > .5):
         return "Gravel"
 
     if "mtc_pci_info" not in group.columns:

@@ -131,7 +131,7 @@ def _is_excluded_match_highway(value: object) -> bool:
 def _road_type_from_osm_highway(value: object) -> str:
     """Collapse detailed OSM highway tags into a simple road/gravel label."""
     tags = set(_highway_tags(value))
-    if {"track", "path", "footway"} & tags:
+    if {"track", "path"} & tags:
         return "gravel"
     return "road"
 

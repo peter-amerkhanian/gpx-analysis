@@ -153,14 +153,14 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>9. Meadows Canyon Trail: descent</td>
       <td>-5.2%</td>
       <td>34.5 mph</td>
-      <td>2%</td>
+      <td>Gravel</td>
       <td>1.1</td>
     </tr>
     <tr>
       <td>10. Meadows Canyon Trail: descent</td>
       <td>-6.3%</td>
       <td>34.4 mph</td>
-      <td>0%</td>
+      <td>Gravel</td>
       <td>0.5</td>
     </tr>
     <tr>

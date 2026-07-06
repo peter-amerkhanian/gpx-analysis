@@ -28,7 +28,7 @@ routes:
     source: gpx_data\Lake_Merritt_to_Moraga.gpx
   
   - slug: bbr-skyline-chabot
-    title: OAK Hills into Chabot
+    title: OAK Hills Ridge Ride
     source: gpx_data\Skyline_Ridge_to_Chabot.gpx
   
   - slug: whole-ridge-and-back
@@ -42,6 +42,14 @@ routes:
   - slug: three-bears-gravel-loop
     title: Three Wild Bears
     source: gpx_data\Three_Wild_Bears.gpx
+  
+  - slug: fruitvale-to-union-city
+    title: Some South Bay
+    source: gpx_data\Some_South_Bay.gpx
+  
+  - slug: bbr-skyline-brandon
+    title: OAK Hills round Lake Chabot
+    source: gpx_data\Butters_Canyon_to_Skyline_Ridge_to_Chabot_Loop.gpx
 
   - slug: arlington-to-wildcat-creek
     title: Arli-spruce 
@@ -49,10 +57,6 @@ routes:
     links:
       strava_effort: https://www.strava.com/activities/18162634293
   
-  - slug: arlington-to-vollmer
-    title: Arli-griz to Vollmer
-    source: gpx_data\Arli-griz_to_Vollmer_Peak.gpx
-
   - slug: big-redwood-to-tilden
     title: Redwood to Richmond
     source: gpx_data\redwood_big_gravel_ride.gpx

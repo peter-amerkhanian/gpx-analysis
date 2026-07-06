@@ -427,6 +427,12 @@
             "threshold_ft": 3000.0
           },
           {
+            "label": "Skyline \u2191",
+            "distance_ft": 28124.0,
+            "elevation_ft": 316.0,
+            "threshold_ft": 20000.0
+          },
+          {
             "label": "Claremont \u2193",
             "distance_ft": 10864.0,
             "elevation_ft": -963.0,
@@ -752,8 +758,8 @@
     },
     {
       "slug": "bbr-skyline-chabot",
-      "title": "OAK Hills into Chabot (13% Gravel)",
-      "title_html": "OAK Hills into Chabot <span><span style=\"color: chocolate;\">(13% Gravel)</span></span>",
+      "title": "OAK Hills Ridge Ride (13% Gravel)",
+      "title_html": "OAK Hills Ridge Ride <span><span style=\"color: chocolate;\">(13% Gravel)</span></span>",
       "source": "gpx_data\\Skyline_Ridge_to_Chabot.gpx",
       "reverse": false,
       "links": {
@@ -925,6 +931,12 @@
             "threshold_ft": 24000.0
           },
           {
+            "label": "Skyline \u2193",
+            "distance_ft": 55121.0,
+            "elevation_ft": -790.0,
+            "threshold_ft": 20000.0
+          },
+          {
             "label": "Goldenrod Trail \u2193",
             "distance_ft": 6509.0,
             "elevation_ft": -388.0,
@@ -1073,6 +1085,12 @@
             "distance_ft": 42861.0,
             "elevation_ft": 554.0,
             "threshold_ft": 24000.0
+          },
+          {
+            "label": "Skyline \u2193",
+            "distance_ft": 55122.0,
+            "elevation_ft": -790.0,
+            "threshold_ft": 20000.0
           },
           {
             "label": "Goldenrod Trail \u2193",
@@ -1273,6 +1291,258 @@
       ]
     },
     {
+      "slug": "fruitvale-to-union-city",
+      "title": "Some South Bay (49% Gravel)",
+      "title_html": "Some South Bay <span><span style=\"color: chocolate;\">(49% Gravel)</span></span>",
+      "source": "gpx_data\\Some_South_Bay.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1847,
+        "segment_count": 1846,
+        "distance_m": 73835.08,
+        "distance_mi": 45.88,
+        "elevation_gain_m": 77.96,
+        "elevation_gain_ft": 255.76,
+        "elevation_loss_m": 75.3,
+        "elevation_loss_ft": 247.06,
+        "max_elevation_m": 41.7,
+        "max_elevation_ft": 136.81,
+        "start": {
+          "lat": 37.77606,
+          "lon": -122.2241
+        },
+        "end": {
+          "lat": 37.59049,
+          "lon": -122.01777
+        },
+        "gravel_percent": 49.4,
+        "cycleway_percent": 15.7,
+        "road_quality_score": 30,
+        "route_tags": [
+          {
+            "label": "Alameda Creek",
+            "distance_ft": 26864.0,
+            "elevation_ft": -22.0,
+            "threshold_ft": 21000.0
+          },
+          {
+            "label": "Shoreline Trail",
+            "distance_ft": 21432.0,
+            "elevation_ft": 7.0,
+            "threshold_ft": 20000.0
+          }
+        ],
+        "start_bart_station": "Fruitvale",
+        "end_bart_station": "Union City",
+        "bart_station": "Fruitvale",
+        "estimated_time_min": 242.0,
+        "estimated_time_display": "4:00"
+      },
+      "paths": {
+        "summary": "data/routes/fruitvale-to-union-city/summary.json",
+        "hazards": "data/routes/fruitvale-to-union-city/hazards.json",
+        "points": "data/routes/fruitvale-to-union-city/points.geojson",
+        "segments": "data/routes/fruitvale-to-union-city/segments.geojson",
+        "map": "data/routes/fruitvale-to-union-city/map.html",
+        "overview_map": "data/routes/fruitvale-to-union-city/overview_map.html",
+        "descent_chunk_map": "data/routes/fruitvale-to-union-city/descent_chunk_map.html",
+        "road_quality_map": "data/routes/fruitvale-to-union-city/road_quality_map.html",
+        "chunk_map": "data/routes/fruitvale-to-union-city/chunk_map.html",
+        "profile_svg": "data/routes/fruitvale-to-union-city/profile.svg",
+        "page": "routes/fruitvale-to-union-city.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 72265.0,
+          "percent": 98.0,
+          "distance_mi": 44.9
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 640.0,
+          "percent": 1.0,
+          "distance_mi": 0.4
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 416.0,
+          "percent": 1.0,
+          "distance_mi": 0.26
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 300.0,
+          "percent": 0.0,
+          "distance_mi": 0.19
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 113.0,
+          "percent": 0.0,
+          "distance_mi": 0.07
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 101.0,
+          "percent": 0.0,
+          "distance_mi": 0.06
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 73835.0,
+          "percent": 100.0,
+          "distance_mi": 45.88
+        }
+      ]
+    },
+    {
+      "slug": "bbr-skyline-brandon",
+      "title": "OAK Hills round Lake Chabot (19% Gravel)",
+      "title_html": "OAK Hills round Lake Chabot <span><span style=\"color: chocolate;\">(19% Gravel)</span></span>",
+      "source": "gpx_data\\Butters_Canyon_to_Skyline_Ridge_to_Chabot_Loop.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1594,
+        "segment_count": 1593,
+        "distance_m": 38707.61,
+        "distance_mi": 24.05,
+        "elevation_gain_m": 694.08,
+        "elevation_gain_ft": 2277.16,
+        "elevation_loss_m": 704.19,
+        "elevation_loss_ft": 2310.33,
+        "max_elevation_m": 365.4,
+        "max_elevation_ft": 1198.82,
+        "start": {
+          "lat": 37.82792,
+          "lon": -122.26496
+        },
+        "end": {
+          "lat": 37.7217,
+          "lon": -122.1604
+        },
+        "gravel_percent": 18.7,
+        "cycleway_percent": 7.3,
+        "road_quality_score": 58,
+        "route_tags": [
+          {
+            "label": "Wildwood+Leimert \u2191",
+            "distance_ft": 6694.0,
+            "elevation_ft": 321.0,
+            "threshold_ft": 4000.0
+          },
+          {
+            "label": "Butters Canyon \u2191",
+            "distance_ft": 4487.0,
+            "elevation_ft": 207.0,
+            "threshold_ft": 3000.0
+          },
+          {
+            "label": "Skyline \u2193",
+            "distance_ft": 24699.0,
+            "elevation_ft": -370.0,
+            "threshold_ft": 20000.0
+          },
+          {
+            "label": "Brandon Trail \u2191",
+            "distance_ft": 16473.0,
+            "elevation_ft": 388.0,
+            "threshold_ft": 15000.0
+          }
+        ],
+        "start_bart_station": "MacArthur",
+        "end_bart_station": "San Leandro",
+        "bart_station": "MacArthur",
+        "estimated_time_min": 169.0,
+        "estimated_time_display": "2:50"
+      },
+      "paths": {
+        "summary": "data/routes/bbr-skyline-brandon/summary.json",
+        "hazards": "data/routes/bbr-skyline-brandon/hazards.json",
+        "points": "data/routes/bbr-skyline-brandon/points.geojson",
+        "segments": "data/routes/bbr-skyline-brandon/segments.geojson",
+        "map": "data/routes/bbr-skyline-brandon/map.html",
+        "overview_map": "data/routes/bbr-skyline-brandon/overview_map.html",
+        "descent_chunk_map": "data/routes/bbr-skyline-brandon/descent_chunk_map.html",
+        "road_quality_map": "data/routes/bbr-skyline-brandon/road_quality_map.html",
+        "chunk_map": "data/routes/bbr-skyline-brandon/chunk_map.html",
+        "profile_svg": "data/routes/bbr-skyline-brandon/profile.svg",
+        "page": "routes/bbr-skyline-brandon.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 19201.0,
+          "percent": 50.0,
+          "distance_mi": 11.93
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 5789.0,
+          "percent": 15.0,
+          "distance_mi": 3.6
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4708.0,
+          "percent": 12.0,
+          "distance_mi": 2.93
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 4163.0,
+          "percent": 11.0,
+          "distance_mi": 2.59
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3621.0,
+          "percent": 9.0,
+          "distance_mi": 2.25
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 1225.0,
+          "percent": 3.0,
+          "distance_mi": 0.76
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 38708.0,
+          "percent": 100.0,
+          "distance_mi": 24.05
+        }
+      ]
+    },
+    {
       "slug": "arlington-to-wildcat-creek",
       "title": "Arli-spruce (25% Gravel)",
       "title_html": "Arli-spruce <span><span style=\"color: chocolate;\">(25% Gravel)</span></span>",
@@ -1399,144 +1669,6 @@
       ]
     },
     {
-      "slug": "arlington-to-vollmer",
-      "title": "Arli-griz to Vollmer (42% Gravel)",
-      "title_html": "Arli-griz to Vollmer <span><span style=\"color: chocolate;\">(42% Gravel)</span></span>",
-      "source": "gpx_data\\Arli-griz_to_Vollmer_Peak.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1597,
-        "segment_count": 1596,
-        "distance_m": 38528.72,
-        "distance_mi": 23.94,
-        "elevation_gain_m": 812.86,
-        "elevation_gain_ft": 2666.86,
-        "elevation_loss_m": 813.16,
-        "elevation_loss_ft": 2667.84,
-        "max_elevation_m": 558.5,
-        "max_elevation_ft": 1832.35,
-        "start": {
-          "lat": 37.92525,
-          "lon": -122.31637
-        },
-        "end": {
-          "lat": 37.92525,
-          "lon": -122.31637
-        },
-        "gravel_percent": 42.3,
-        "cycleway_percent": 0.0,
-        "road_quality_score": 76,
-        "route_tags": [
-          {
-            "label": "Arlington \u2191",
-            "distance_ft": 18806.0,
-            "elevation_ft": 590.0,
-            "threshold_ft": 18000.0
-          },
-          {
-            "label": "Grizzly Peak \u2191",
-            "distance_ft": 24017.0,
-            "elevation_ft": 792.0,
-            "threshold_ft": 24000.0
-          },
-          {
-            "label": "Seaview \u2193",
-            "distance_ft": 15133.0,
-            "elevation_ft": -652.0,
-            "threshold_ft": 15000.0
-          },
-          {
-            "label": "Meadows Canyon \u2193",
-            "distance_ft": 7749.0,
-            "elevation_ft": -359.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Wildcat Creek \u2193",
-            "distance_ft": 21491.0,
-            "elevation_ft": -233.0,
-            "threshold_ft": 18000.0
-          }
-        ],
-        "start_bart_station": "El Cerrito del Norte",
-        "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "El Cerrito del Norte",
-        "estimated_time_min": 178.0,
-        "estimated_time_display": "3:00"
-      },
-      "paths": {
-        "summary": "data/routes/arlington-to-vollmer/summary.json",
-        "hazards": "data/routes/arlington-to-vollmer/hazards.json",
-        "points": "data/routes/arlington-to-vollmer/points.geojson",
-        "segments": "data/routes/arlington-to-vollmer/segments.geojson",
-        "map": "data/routes/arlington-to-vollmer/map.html",
-        "overview_map": "data/routes/arlington-to-vollmer/overview_map.html",
-        "descent_chunk_map": "data/routes/arlington-to-vollmer/descent_chunk_map.html",
-        "road_quality_map": "data/routes/arlington-to-vollmer/road_quality_map.html",
-        "chunk_map": "data/routes/arlington-to-vollmer/chunk_map.html",
-        "profile_svg": "data/routes/arlington-to-vollmer/profile.svg",
-        "page": "routes/arlington-to-vollmer.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 16021.0,
-          "percent": 42.0,
-          "distance_mi": 9.95
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 6023.0,
-          "percent": 16.0,
-          "distance_mi": 3.74
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 5211.0,
-          "percent": 14.0,
-          "distance_mi": 3.24
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 4886.0,
-          "percent": 13.0,
-          "distance_mi": 3.04
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 4544.0,
-          "percent": 12.0,
-          "distance_mi": 2.82
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 1844.0,
-          "percent": 5.0,
-          "distance_mi": 1.15
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 38529.0,
-          "percent": 100.0,
-          "distance_mi": 23.94
-        }
-      ]
-    },
-    {
       "slug": "big-redwood-to-tilden",
       "title": "Redwood to Richmond (24% Gravel)",
       "title_html": "Redwood to Richmond <span><span style=\"color: chocolate;\">(24% Gravel)</span></span>",
@@ -1583,6 +1715,12 @@
             "distance_ft": 56562.0,
             "elevation_ft": 583.0,
             "threshold_ft": 40000.0
+          },
+          {
+            "label": "Skyline \u2191",
+            "distance_ft": 30457.0,
+            "elevation_ft": 428.0,
+            "threshold_ft": 20000.0
           },
           {
             "label": "Seaview \u2193",
@@ -1710,6 +1848,12 @@
         "cycleway_percent": 2.6,
         "road_quality_score": 34,
         "route_tags": [
+          {
+            "label": "Shoreline Trail",
+            "distance_ft": 21559.0,
+            "elevation_ft": 8.0,
+            "threshold_ft": 20000.0
+          },
           {
             "label": "Alameda Creek",
             "distance_ft": 21340.0,

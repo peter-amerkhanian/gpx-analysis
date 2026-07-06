@@ -48,6 +48,12 @@
         "threshold_ft": 3000.0
       },
       {
+        "label": "Skyline \u2191",
+        "distance_ft": 28124.0,
+        "elevation_ft": 316.0,
+        "threshold_ft": 20000.0
+      },
+      {
         "label": "Claremont \u2193",
         "distance_ft": 10864.0,
         "elevation_ft": -963.0,

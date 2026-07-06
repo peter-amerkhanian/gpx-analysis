@@ -31,17 +31,19 @@ website:
       - href: routes/merrit-to-lamorinda.qmd
         text: Lake Merritt to Lamorinda
       - href: routes/bbr-skyline-chabot.qmd
-        text: OAK Hills into Chabot
+        text: OAK Hills Ridge Ride
       - href: routes/whole-ridge-and-back.qmd
         text: Whole Ridge & Back
       - href: routes/whole-ridge-southbound.qmd
         text: Whole Ridge Southbound
       - href: routes/three-bears-gravel-loop.qmd
         text: Three Wild Bears
+      - href: routes/fruitvale-to-union-city.qmd
+        text: Some South Bay
+      - href: routes/bbr-skyline-brandon.qmd
+        text: OAK Hills round Lake Chabot
       - href: routes/arlington-to-wildcat-creek.qmd
         text: Arli-spruce
-      - href: routes/arlington-to-vollmer.qmd
-        text: Arli-griz to Vollmer
       - href: routes/big-redwood-to-tilden.qmd
         text: Redwood to Richmond
       - href: routes/coyote-union-city.qmd

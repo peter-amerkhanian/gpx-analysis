@@ -488,6 +488,71 @@ def _frames_share_route_overlap(
     return False if has_meaningful_overlap else False
 
 
+def _route_overlap_pass_indexes(
+    projected: gpd.GeoDataFrame,
+    overlap_proximity_m: float = 20.0,
+    min_shared_length_m: float = 25.0,
+    column: str | None = None,
+    ignore_value: str | None = None,
+) -> tuple[set[object], set[object]]:
+    """Return earlier/later route-pass indexes for segments that overlap another pass."""
+    if projected.empty:
+        return set(), set()
+
+    buffered = projected[["geometry"]].copy()
+    buffered["geometry"] = buffered.geometry.buffer(overlap_proximity_m)
+    joined = gpd.sjoin(
+        projected[["geometry"]],
+        buffered[["geometry"]],
+        how="inner",
+        predicate="intersects",
+        lsuffix="left",
+        rsuffix="right",
+    )
+    route_positions = {index: position for position, index in enumerate(projected.index)}
+    joined["_left_pos"] = joined.index.map(route_positions)
+    joined["_right_pos"] = joined["index_right"].map(route_positions)
+    joined = joined[
+        (joined.index != joined["index_right"])
+        & ((joined["_left_pos"] - joined["_right_pos"]).abs() > 1)
+    ]
+    if joined.empty:
+        return set(), set()
+
+    geometries = projected.geometry
+    earlier_pass: set[object] = set()
+    later_pass: set[object] = set()
+    seen_pairs: set[frozenset[object]] = set()
+    for left_index, right_index in joined[["index_right"]].itertuples(index=True, name=None):
+        pair = frozenset((left_index, right_index))
+        if pair in seen_pairs:
+            continue
+        seen_pairs.add(pair)
+
+        left = geometries.loc[left_index]
+        right = geometries.loc[right_index]
+        shared_left_length_m = left.intersection(right.buffer(overlap_proximity_m)).length
+        shared_right_length_m = right.intersection(left.buffer(overlap_proximity_m)).length
+        shared_length_m = min(shared_left_length_m, shared_right_length_m)
+        if shared_length_m < min_shared_length_m:
+            continue
+
+        if column is not None and ignore_value is not None and column in projected.columns:
+            left_value = projected.loc[left_index, column]
+            right_value = projected.loc[right_index, column]
+            if left_value == ignore_value and right_value == ignore_value:
+                continue
+
+        if route_positions[left_index] < route_positions[right_index]:
+            earlier_pass.add(left_index)
+            later_pass.add(right_index)
+        else:
+            earlier_pass.add(right_index)
+            later_pass.add(left_index)
+
+    return earlier_pass, later_pass
+
+
 def _overlap_ignore_value(column: str | None) -> str | None:
     """Return the route category that should not trigger pass splitting on shared geometry."""
     if column == "hazard":
@@ -834,7 +899,7 @@ def _add_gravel_overlay(m: folium.Map, frame: gpd.GeoDataFrame) -> None:
     if gravel.empty:
         return
 
-    _ensure_map_pane(m, pane_name="route-gravel-overlay", z_index=0)
+    _ensure_map_pane(m, pane_name="route-gravel-overlay", z_index=390)
     folium.GeoJson(
         data=gravel.to_json(),
         name="Gravel Overlay",
@@ -881,38 +946,41 @@ def _add_direction_layers(
     tooltip_fields: list[str] | None,
     popup_cols: list[str] | None,
     categories: list[str] | None,
-    cmap: list[str] | None,
+    cmap: object | None,
     style_kwds: dict[str, object] | None,
     escape: bool,
+    categorical: bool = True,
+    vmin: float | None = None,
+    vmax: float | None = None,
 ) -> tuple[folium.Map, bool]:
-    """Replace the default route layer with outbound/return overlays when the route overlaps itself."""
+    """Replace only overlapping route sections with outbound/return toggle overlays."""
     projected = frame[["geometry"]].to_crs(3857)
-    outbound, returning = _split_outbound_return(frame)
-    if outbound.empty or returning.empty:
-        return m, False
-    projected_outbound = outbound[["geometry"]].to_crs(3857)
-    projected_returning = returning[["geometry"]].to_crs(3857)
     overlap_column = column if column in frame.columns else None
     ignore_value = _overlap_ignore_value(column)
     if overlap_column is not None:
-        projected_outbound[overlap_column] = outbound[overlap_column]
-        projected_returning[overlap_column] = returning[overlap_column]
-    if not _frames_share_route_overlap(
-        projected_outbound,
-        projected_returning,
+        projected[overlap_column] = frame[overlap_column]
+    outbound_indexes, return_indexes = _route_overlap_pass_indexes(
+        projected,
         column=overlap_column,
         ignore_value=ignore_value,
-    ):
+    )
+    if not outbound_indexes or not return_indexes:
+        return m, False
+
+    overlap_indexes = outbound_indexes | return_indexes
+    base = frame.loc[~frame.index.isin(overlap_indexes)].copy()
+    outbound = frame.loc[frame.index.isin(outbound_indexes)].copy()
+    returning = frame.loc[frame.index.isin(return_indexes)].copy()
+    if outbound.empty or returning.empty:
         return m, False
 
     _remove_geojson_layers(m)
-    _add_whole_route_backdrop(m, frame)
     _enable_touch_target_styles(m)
     explore_kwargs = {
         "column": column,
         "tooltip": tooltip_fields,
         "popup": popup_cols,
-        "categorical": True,
+        "categorical": categorical,
         "legend": False,
         "style_kwds": style_kwds or {"weight": 4},
         "escape": escape,
@@ -921,6 +989,17 @@ def _add_direction_layers(
         explore_kwargs["categories"] = categories
     if cmap is not None:
         explore_kwargs["cmap"] = cmap
+    if vmin is not None:
+        explore_kwargs["vmin"] = vmin
+    if vmax is not None:
+        explore_kwargs["vmax"] = vmax
+
+    if not base.empty:
+        base.explore(
+            m=m,
+            **explore_kwargs,
+        )
+        _add_touch_target_layer(m, base, popup_cols, tooltip_fields)
 
     outbound_layer = folium.FeatureGroup(name="Outbound", overlay=True, control=False, show=True)
     outbound_layer.add_to(m)
@@ -949,11 +1028,14 @@ def add_map_elements(
     tooltip_fields: list[str] | None = None,
     popup_cols: list[str] | None = None,
     categories: list[str] | None = None,
-    cmap: list[str] | None = None,
+    cmap: object | None = None,
     style_kwds: dict[str, object] | None = None,
     touch_target_frame: gpd.GeoDataFrame | None = None,
     escape: bool = False,
     show_gravel_overlay: bool = False,
+    categorical: bool = True,
+    vmin: float | None = None,
+    vmax: float | None = None,
 ) -> None:
     has_split_direction_layers = False
     if show_route_pass_control and layer_column:
@@ -967,6 +1049,9 @@ def add_map_elements(
             cmap=cmap,
             style_kwds=style_kwds,
             escape=escape,
+            categorical=categorical,
+            vmin=vmin,
+            vmax=vmax,
         )
     if not has_split_direction_layers:
         _enable_touch_target_styles(m)
@@ -1250,9 +1335,15 @@ def make_grade_map(
     add_map_elements(
         m,
         frame,
-        show_route_pass_control=False,
+        show_route_pass_control=True,
+        layer_column="smooth_grade",
         popup_cols=popup_cols,
         tooltip_fields=tooltip_fields,
+        cmap=cmap,
+        style_kwds={"weight": 4},
+        categorical=False,
+        vmin=vmin,
+        vmax=vmax,
         show_gravel_overlay=show_gravel_overlay,
     )
     return m
