@@ -52,7 +52,7 @@ route_tags:
     display_name: Richmond Bridge
   - name: Golden Gate Bridge West Sidewalk
     threshold_ft: 9000
-    display_61cm bikename: Golden Gate Bridge
+    display_name: Golden Gate Bridge
   - name: Euclid Avenue
     threshold_ft: 11000
     display_name: Euclid
@@ -60,7 +60,7 @@ route_tags:
     threshold_ft: 20000
     display_name: Skyline
   - name: Lake Chabot Road
-    threshold_ft: 16000
+    threshold_ft: 12000
     display_name: Lake Chabot
   - name: Joaquin Miller Road
     threshold_ft: 5900

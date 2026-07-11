@@ -84,6 +84,7 @@ class RouteMapTests(unittest.TestCase):
                 "step_dist_m": [100.0],
                 "osm_name": ["Pinehurst Road"],
                 "elevation_f": [742.4],
+                "road_type": ["gravel"],
             },
             geometry=[LineString([(-122.0, 37.0), (-122.1, 37.1)])],
             crs=4326,
@@ -97,6 +98,9 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn("742 ft", html)
         self.assertIn('"More Details"', html)
         self.assertIn("google.com/maps", html)
+        self.assertNotIn("Route Numbers", html)
+        self.assertIn("Gravel Segments", html)
+        self.assertIn("layer_control", html)
 
     def test_hazard_map_shows_road_name_in_tooltip_and_popup(self) -> None:
         frame = gpd.GeoDataFrame(
@@ -121,6 +125,11 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn('"More Details"', html)
         self.assertIn("Pinehurst Road", html)
         self.assertIn("google.com/maps", html)
+        self.assertIn("Route Numbers", html)
+        self.assertIn("Route", html)
+        self.assertIn("layer_control", html)
+        self.assertNotIn('"cartodbvoyager"', html.lower())
+        self.assertIn(".addTo(geo_json_", html)
 
     def test_gravel_overlay_is_opt_in_and_dashed(self) -> None:
         frame = gpd.GeoDataFrame(
@@ -145,6 +154,8 @@ class RouteMapTests(unittest.TestCase):
 
         self.assertNotIn("route-gravel-overlay", default_html)
         self.assertIn("route-gravel-overlay", overlay_html)
+        self.assertIn("Gravel Segments", overlay_html)
+        self.assertIn("layer_control", overlay_html)
         self.assertIn("style.zIndex = 390", overlay_html)
         self.assertIn('"color": "#b37400"', overlay_html)
         self.assertIn('"weight": 9', overlay_html)
@@ -176,6 +187,9 @@ class RouteMapTests(unittest.TestCase):
         self.assertIn("google.com/maps", html)
         self.assertIn("light_all", html)
         self.assertIn("route-gravel-overlay", html)
+        self.assertIn("Route Numbers", html)
+        self.assertIn("Gravel Segments", html)
+        self.assertNotIn('"cartodbpositron"', html.lower())
 
     def test_grade_map_adds_route_pass_control_for_overlaps(self) -> None:
         frame = gpd.GeoDataFrame(
@@ -229,6 +243,30 @@ class RouteMapTests(unittest.TestCase):
 
 
 class ChunkMapTests(unittest.TestCase):
+    def test_chunk_map_detects_chunks_when_chunk_columns_are_missing(self) -> None:
+        frame = gpd.GeoDataFrame(
+            {
+                "step": [1, 2],
+                "lat": [37.0, 37.1],
+                "lon": [-122.0, -122.1],
+                "osm_name": ["Pinehurst Road", "Pinehurst Road"],
+                "step_turn": [0.0, 0.0],
+                "step_grade": [0.05, 0.05],
+                "step_dist_m": [304.8, 304.8],
+                "step_dist_f": [1000.0, 1000.0],
+                "step_elevation_f": [50.0, 50.0],
+            },
+            geometry=[
+                LineString([(-122.0, 37.0), (-122.1, 37.1)]),
+                LineString([(-122.1, 37.1), (-122.2, 37.2)]),
+            ],
+            crs=4326,
+        )
+
+        html = make_chunk_map(frame).get_root().render()
+
+        self.assertIn("Route Numbers", html)
+
     def test_chunk_touch_target_uses_section_popup_fields(self) -> None:
         frame = gpd.GeoDataFrame(
             {

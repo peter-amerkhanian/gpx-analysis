@@ -58,6 +58,12 @@
         "distance_ft": 16473.0,
         "elevation_ft": 388.0,
         "threshold_ft": 15000.0
+      },
+      {
+        "label": "Lake Chabot \u2193",
+        "distance_ft": 12694.0,
+        "elevation_ft": -276.0,
+        "threshold_ft": 12000.0
       }
     ],
     "start_bart_station": "MacArthur",

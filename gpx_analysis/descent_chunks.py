@@ -4,7 +4,8 @@ import geopandas as gpd
 import pandas as pd
 import folium
 
-from .viz import _add_google_maps_details, add_map_elements
+from .viz.columns import _add_google_maps_details
+from .viz.folium_base import add_map_elements
 
 DESCENT_CHUNK_STATE_COLORS = {
     "other": "#bdbdbd",
@@ -372,6 +373,7 @@ def make_descent_chunk_map(
 
     m = section_frame.explore(
         column="descent_chunk_state",
+        name="Route",
         tooltip=tooltip_fields,
         popup=popup_cols,
         tiles=tiles,

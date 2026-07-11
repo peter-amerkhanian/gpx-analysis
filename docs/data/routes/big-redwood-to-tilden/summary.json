@@ -39,7 +39,7 @@
         "label": "Lake Chabot",
         "distance_ft": 16136.0,
         "elevation_ft": 109.0,
-        "threshold_ft": 16000.0
+        "threshold_ft": 12000.0
       },
       {
         "label": "Redwood Road \u2191",

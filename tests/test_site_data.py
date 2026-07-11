@@ -11,6 +11,7 @@ from gpx_analysis.site.data import (
     _route_elevation_ylim,
     load_route_tag_thresholds,
     load_or_build_enriched_segments,
+    route_tag_segments_table,
     route_tags_from_segments,
     strip_enriched_segment_derived_columns,
     write_geojson,
@@ -51,6 +52,37 @@ class RouteTagsFromSegmentsTests(unittest.TestCase):
             result,
             {"Test Road": {"threshold_ft": 1234.0, "display_name": "Test"}},
         )
+
+    def test_route_tag_segments_table_returns_consecutive_named_runs(self) -> None:
+        segments = pd.DataFrame(
+            {
+                "osm_name": ["Redwood Road", "Redwood Road", "Other Road", "Redwood Road", ""],
+                "step_dist_f": [1000.2, 999.8, 50.0, 3000.0, 100.0],
+                "step_elevation_f": [10.0, 20.0, 0.0, -40.0, 5.0],
+            }
+        )
+
+        result = route_tag_segments_table(
+            segments,
+            tag_thresholds_ft={
+                "Redwood Road": {
+                    "threshold_ft": 2500,
+                    "display_name": "Big Redwood",
+                }
+            },
+        )
+
+        self.assertEqual(
+            result[["osm_name", "seg_id", "step_dist_f", "step_elevation_f"]].to_dict(orient="records"),
+            [
+                {"osm_name": "Redwood Road", "seg_id": 1, "step_dist_f": 2000.0, "step_elevation_f": 30.0},
+                {"osm_name": "Other Road", "seg_id": 2, "step_dist_f": 50.0, "step_elevation_f": 0.0},
+                {"osm_name": "Redwood Road", "seg_id": 3, "step_dist_f": 3000.0, "step_elevation_f": -40.0},
+            ],
+        )
+        self.assertEqual(result.loc[0, "display_name"], "Big Redwood")
+        self.assertFalse(bool(result.loc[0, "qualifies_tag"]))
+        self.assertTrue(bool(result.loc[2, "qualifies_tag"]))
 
     def test_returns_consecutive_run_tags_above_thresholds_in_route_order(self) -> None:
         segments = pd.DataFrame(

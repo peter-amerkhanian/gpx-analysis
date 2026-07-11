@@ -301,7 +301,7 @@
             "threshold_ft": 23000.0
           },
           {
-            "label": "Golden Gate Bridge West Sidewalk",
+            "label": "Golden Gate Bridge",
             "distance_ft": 9134.0,
             "elevation_ft": -42.0,
             "threshold_ft": 9000.0
@@ -1469,6 +1469,12 @@
             "distance_ft": 16473.0,
             "elevation_ft": 388.0,
             "threshold_ft": 15000.0
+          },
+          {
+            "label": "Lake Chabot \u2193",
+            "distance_ft": 12694.0,
+            "elevation_ft": -276.0,
+            "threshold_ft": 12000.0
           }
         ],
         "start_bart_station": "MacArthur",
@@ -1708,7 +1714,7 @@
             "label": "Lake Chabot",
             "distance_ft": 16136.0,
             "elevation_ft": 109.0,
-            "threshold_ft": 16000.0
+            "threshold_ft": 12000.0
           },
           {
             "label": "Redwood Road \u2191",
@@ -1972,7 +1978,7 @@
             "label": "Lake Chabot",
             "distance_ft": 16134.0,
             "elevation_ft": 88.0,
-            "threshold_ft": 16000.0
+            "threshold_ft": 12000.0
           },
           {
             "label": "Redwood Road \u2191",
