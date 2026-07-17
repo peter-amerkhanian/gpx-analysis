@@ -51,12 +51,13 @@
         "label": "Wildcat Creek \u2193",
         "distance_ft": 21491.0,
         "elevation_ft": -233.0,
-        "threshold_ft": 18000.0
+        "threshold_ft": 10000.0
       }
     ],
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "El Cerrito del Norte",
+    "priority_descent_mi": 1.5,
     "estimated_time_min": 144.0,
     "estimated_time_display": "2:20"
   }

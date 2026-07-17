@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-11T13:13:42.458039</dc:date>
+    <dc:date>2026-07-17T09:09:48.089696</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -57,18 +57,7 @@ L 19.301199 50.096523
 L 19.523606 49.48991 
 L 19.78308 49.234315 
 L 20.11669 48.985535 
-L 20.264962 48.799803 
-L 20.264962 48.799803 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_2">
-    <path d="M 20.302029 48.757203 
-L 20.339097 48.718012 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_3">
-    <path d="M 20.376165 48.683933 
-L 20.672707 48.625998 
+L 20.487368 48.643037 
 L 20.820979 48.525464 
 L 21.63647 46.85387 
 L 22.044216 47.063458 
@@ -98,21 +87,9 @@ L 36.389451 49.268394
 L 36.723061 49.011095 
 L 36.982536 49.033246 
 L 37.279078 49.029838 
-L 37.612688 48.760611 
-L 37.612688 48.760611 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_4">
-    <path d="M 37.649756 48.740164 
-L 37.686824 48.72142 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_5">
-    <path d="M 37.723891 48.702676 
-L 38.094569 48.431745 
-L 38.539383 48.133551 
-L 38.798857 48.254532 
-L 39.058332 48.690749 
+L 37.835095 48.646445 
+L 38.687654 48.16763 
+L 38.947129 48.460713 
 L 39.243671 48.864553 
 L 39.391942 48.796395 
 L 39.725552 48.52376 
@@ -464,9 +441,9 @@ L 163.12423 3.09935
 L 163.531976 3.489558 
 L 163.754383 3.547493 
 L 163.754383 3.547493 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_6">
+   <g id="line2d_2">
     <path d="M 163.79145 3.596909 
 L 163.939722 3.999045 
 L 164.273332 6.071072 
@@ -503,9 +480,9 @@ L 174.689381 25.131671
 L 175.060059 26.574933 
 L 175.430737 27.812014 
 L 175.430737 27.812014 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_7">
+   <g id="line2d_3">
     <path d="M 175.467805 27.786455 
 L 175.504873 27.725112 
 L 175.54194 27.571755 
@@ -526,9 +503,9 @@ L 176.060889 24.882891
 L 176.097957 24.790877 
 L 176.135025 24.681823 
 L 176.172093 24.593217 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_8">
+   <g id="line2d_4">
     <path d="M 176.209161 24.536986 
 L 176.542771 24.112697 
 L 176.691042 24.214935 
@@ -565,14 +542,26 @@ L 183.919261 31.550523
 L 184.030465 31.840197 
 L 184.289939 32.503041 
 L 184.697685 32.978449 
+L 184.845956 33.344802 
+L 184.845956 33.344802 
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 184.883024 33.438521 
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 184.920092 33.522015 
 L 185.142498 33.821914 
-L 185.216634 33.736715 
-L 185.401973 33.307315 
-L 185.809719 32.342868 
-L 185.95799 32.349684 
-L 187.032956 34.368888 
-L 187.070024 34.309249 
-L 187.62604 33.363546 
+L 185.327837 33.55439 
+L 185.772651 32.387172 
+L 185.883854 32.284933 
+L 185.920922 32.317309 
+L 186.032125 32.504745 
+L 186.810549 34.203603 
+L 186.995888 34.385927 
+L 187.107091 34.229162 
+L 187.551905 33.406145 
 L 188.070854 32.947777 
 L 188.330328 32.620615 
 L 188.441532 32.823388 
@@ -625,9 +614,9 @@ L 198.486903 37.463296
 L 198.931717 38.782168 
 L 199.228259 42.839318 
 L 199.228259 42.839318 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #d2691e; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_9">
+   <g id="line2d_7">
     <path d="M 199.265327 43.207376 
 L 199.339463 43.652112 
 L 199.37653 43.63848 
@@ -668,18 +657,18 @@ L 212.127851 52.603062
 L 212.869206 52.887625 
 L 213.054545 52.887625 
 L 213.054545 52.887625 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2.5; stroke-linecap: square"/>
    </g>
-   <g id="line2d_10">
+   <g id="line2d_8">
     <path d="M 10.145455 52.92 
 L 213.054545 52.92 
 L 213.054545 52.92 
-" clip-path="url(#pccdb6eac99)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
+" clip-path="url(#p7af07305f5)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8d99ae; stroke-opacity: 0.7; stroke-width: 2"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pccdb6eac99">
+  <clipPath id="p7af07305f5">
    <rect x="0" y="-0" width="223.2" height="55.44"/>
   </clipPath>
  </defs>

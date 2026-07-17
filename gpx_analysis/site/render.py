@@ -124,7 +124,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
     title_html = str(route.get("title_html", route["title"]))
     road_quality_score = float(route["summary"]["road_quality_score"])
     road_quality_style = f"background-color:{road_quality_color(road_quality_score)};"
-    steep_descent_miles = route_hazard_miles(route, "steep_descent")
+    priority_descent_miles = float(route["summary"].get("priority_descent_mi", 0))
     tags_html = route_tags_html(route)
     return [(
         f'<article class="mobile-route-card" '
@@ -167,8 +167,8 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         f'~{route["summary"].get("estimated_time_display", "0:00")}</p>'
     ),
     (
-        f'<p><span class="mobile-route-label">Steep Descent</span><br>'
-        f'{steep_descent_miles:.2f} mi</p>'
+        f'<p><span class="mobile-route-label">Danger Zone</span><br>'
+        f'{priority_descent_miles:.2f} mi</p>'
     ),
     (
         f'<p><span class="mobile-route-label">Road Quality</span><br>'
@@ -235,6 +235,7 @@ def write_route_page(
     route_bundle: dict[str, object],
     hazards_table_html: str,
     road_quality_table_html: str,
+    priority_descents_table_html: str,
     descent_chunks_table_html: str,
     climb_only_sections_table_html: str,
     chunk_sections_table_html: str,
@@ -257,6 +258,7 @@ def write_route_page(
             chunk_map_src=f"../{route_bundle['paths']['chunk_map']}",
             hazards_table_html=hazards_table_html,
             road_quality_table_html=road_quality_table_html,
+            priority_descents_table_html=priority_descents_table_html,
             descent_chunks_table_html=descent_chunks_table_html,
             climb_only_sections_table_html=climb_only_sections_table_html,
             chunk_sections_table_html=chunk_sections_table_html,
@@ -271,13 +273,7 @@ def write_route_pages_index(route_pages_dir: Path, routes: list[RouteConfig]) ->
     keep = {route.slug for route in routes}
     remove_stale_children(route_pages_dir, keep=keep, suffix=".qmd")
 
-
-def write_dashboard_page(
-    quarto_dir: Path,
-    routes: list[dict[str, object]],
-    output_path: Path,
-    title: str,
-) -> None:
+def build_summary_table(routes: list[dict[str, object]]):
     summary_table = pd.DataFrame(
         [
             {
@@ -308,7 +304,16 @@ def write_dashboard_page(
             for route in routes
         ]
     ).sort_values(by="Miles")
+    return summary_table
 
+
+def write_dashboard_page(
+    quarto_dir: Path,
+    routes: list[dict[str, object]],
+    output_path: Path,
+    title: str,
+) -> None:
+    summary_table = build_summary_table(routes)
     write_text(
         output_path,
         render_template(

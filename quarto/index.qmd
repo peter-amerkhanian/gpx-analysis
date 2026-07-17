@@ -29,14 +29,14 @@ format:
 <label for="mobile-route-bart">BART station</label>
 <select id="mobile-route-bart" class="form-select">
 <option value="">All stations</option>
+<option value="MacArthur">MacArthur</option>
+<option value="Lake Merritt">Lake Merritt</option>
+<option value="El Cerrito del Norte">El Cerrito del Norte</option>
+<option value="Richmond">Richmond</option>
+<option value="Union City">Union City</option>
 <option value="North Berkeley">North Berkeley</option>
 <option value="Fruitvale">Fruitvale</option>
 <option value="San Leandro">San Leandro</option>
-<option value="Lake Merritt">Lake Merritt</option>
-<option value="Richmond">Richmond</option>
-<option value="El Cerrito del Norte">El Cerrito del Norte</option>
-<option value="MacArthur">MacArthur</option>
-<option value="Union City">Union City</option>
 </select>
 </div>
 <div class="mobile-route-control">
@@ -59,7 +59,7 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>13.91</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>1664.99 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~1:40</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.17 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">78%</span></p>
 </div>
 </article>
@@ -74,8 +74,23 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>14.16</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>1452.29 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~1:40</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.15 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">52%</span></p>
+</div>
+</article>
+<article class="mobile-route-card" data-bart="North Berkeley" data-miles="18.78" data-elevation="1661.29" data-time="134" data-road-quality="69" data-has-gravel="true">
+<div class="mobile-route-heading">
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/intro-to-tilden-gravel.html">Tilden Intro Trails <span><span style="color: chocolate;">(40% Gravel)</span></span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Spruce ↑</span><span class="mobile-route-tag">Golf Course Trail</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
+</div>
+<div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/intro-to-tilden-gravel/profile.svg" alt="" loading="lazy"></div>
+<div class="mobile-route-metrics">
+<p><span class="mobile-route-label">BART</span><br>North Berkeley</p>
+<p><span class="mobile-route-label">Miles</span><br>18.78</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>1661.29 ft</p>
+<p><span class="mobile-route-label">Time</span><br>~2:10</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.50 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">69%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="19.47" data-elevation="1980.40" data-time="137" data-road-quality="54" data-has-gravel="false">
@@ -89,7 +104,7 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>19.47</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>1980.4 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.18 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">54%</span></p>
 </div>
 </article>
@@ -104,7 +119,7 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>19.86</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>1816.08 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.48 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>1.50 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">79%</span></p>
 </div>
 </article>
@@ -119,23 +134,23 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>23.7</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>1905.44 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:40</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.19 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#ffffbf;">54%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="24.05" data-elevation="2277.16" data-time="169" data-road-quality="58" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="24.39" data-elevation="2301.24" data-time="172" data-road-quality="57" data-has-gravel="true">
 <div class="mobile-route-heading">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/bbr-skyline-brandon.html">OAK Hills round Lake Chabot <span><span style="color: chocolate;">(19% Gravel)</span></span></a></p>
-<div class="mobile-route-tags"><span class="mobile-route-tag">Wildwood+Leimert ↑</span><span class="mobile-route-tag">Butters Canyon ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Brandon Trail ↑</span><span class="mobile-route-tag">Lake Chabot ↓</span></div>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/bbr-skyline-brandon.html">OAK Hills round Lake Chabot <span><span style="color: chocolate;">(20% Gravel)</span></span></a></p>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Wildwood+Leimert ↑</span><span class="mobile-route-tag">Butters Canyon ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Brandon Trail ↑</span><span class="mobile-route-tag">Lake Chabot</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/bbr-skyline-brandon/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>MacArthur</p>
-<p><span class="mobile-route-label">Miles</span><br>24.05</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>2277.16 ft</p>
+<p><span class="mobile-route-label">Miles</span><br>24.39</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>2301.24 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:50</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.76 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">58%</span></p>
+<p><span class="mobile-route-label">Danger Zone</span><br>1.40 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">57%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="San Leandro" data-miles="24.55" data-elevation="2323.61" data-time="166" data-road-quality="84" data-has-gravel="false">
@@ -149,13 +164,13 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>24.55</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>2323.61 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:50</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.37 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">84%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="Union City" data-miles="25.21" data-elevation="208.87" data-time="135" data-road-quality="34" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="Union City" data-miles="25.21" data-elevation="208.87" data-time="135" data-road-quality="22" data-has-gravel="true">
 <div class="mobile-route-heading">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/coyote-union-city.html">Coyote Hills Loop <span><span style="color: chocolate;">(78% Gravel)</span></span></a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/coyote-union-city.html">Coyote Hills Loop <span><span style="color: chocolate;">(66% Gravel)</span></span></a></p>
 <div class="mobile-route-tags"><span class="mobile-route-tag">Shoreline Trail</span><span class="mobile-route-tag">Alameda Creek</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/coyote-union-city/profile.svg" alt="" loading="lazy"></div>
@@ -164,8 +179,8 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>25.21</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>208.87 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.10 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">34%</span></p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.30 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fc8d59;">22%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="MacArthur" data-miles="25.60" data-elevation="2597.84" data-time="180" data-road-quality="78" data-has-gravel="false">
@@ -179,13 +194,13 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>25.6</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>2597.84 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:00</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.26 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">78%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="27.15" data-elevation="2589.41" data-time="186" data-road-quality="72" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="27.15" data-elevation="2589.41" data-time="186" data-road-quality="70" data-has-gravel="true">
 <div class="mobile-route-heading">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/bbr-skyline-chabot.html">OAK Hills Ridge Ride <span><span style="color: chocolate;">(13% Gravel)</span></span></a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/bbr-skyline-chabot.html">OAK Hills Ridge Ride <span><span style="color: chocolate;">(11% Gravel)</span></span></a></p>
 <div class="mobile-route-tags"><span class="mobile-route-tag">Tunnel ↑</span><span class="mobile-route-tag">Pinehurst ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/bbr-skyline-chabot/profile.svg" alt="" loading="lazy"></div>
@@ -194,8 +209,8 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>27.15</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>2589.41 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:10</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.63 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">72%</span></p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.80 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">70%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="Richmond" data-miles="29.66" data-elevation="937.75" data-time="170" data-road-quality="18" data-has-gravel="false">
@@ -209,13 +224,13 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>29.66</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>937.75 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~2:50</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.12 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fc8d59;">18%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="30.42" data-elevation="2879.14" data-time="211" data-road-quality="70" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="30.42" data-elevation="2879.14" data-time="211" data-road-quality="69" data-has-gravel="true">
 <div class="mobile-route-heading">
-<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/whole-ridge-southbound.html">Whole Ridge Southbound <span><span style="color: chocolate;">(12% Gravel)</span></span></a></p>
+<p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/whole-ridge-southbound.html">Whole Ridge Southbound <span><span style="color: chocolate;">(11% Gravel)</span></span></a></p>
 <div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/whole-ridge-southbound/profile.svg" alt="" loading="lazy"></div>
@@ -224,14 +239,14 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>30.42</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>2879.14 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:30</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.59 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">70%</span></p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.80 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#d9ef8b;">69%</span></p>
 </div>
 </article>
 <article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="31.54" data-elevation="2963.08" data-time="219" data-road-quality="91" data-has-gravel="true">
 <div class="mobile-route-heading">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/three-bears-gravel-loop.html">Three Wild Bears <span><span style="color: chocolate;">(20% Gravel)</span></span></a></p>
-<div class="mobile-route-tags"><span class="mobile-route-tag">3 Bears</span><span class="mobile-route-tag">Meadows Canyon ↓</span></div>
+<div class="mobile-route-tags"><span class="mobile-route-tag">3 Bears</span><span class="mobile-route-tag">Wildcat Canyon ↑</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/three-bears-gravel-loop/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
@@ -239,7 +254,7 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>31.54</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>2963.08 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:40</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>1.76 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>1.00 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#1a9850;">91%</span></p>
 </div>
 </article>
@@ -254,7 +269,7 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>38.61</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>3685.86 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~4:30</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>1.28 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>2.70 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">76%</span></p>
 </div>
 </article>
@@ -269,23 +284,23 @@ format:
 <p><span class="mobile-route-label">Miles</span><br>45.88</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>255.76 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~4:00</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.06 mi</p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.30 mi</p>
 <p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#fee08b;">30%</span></p>
 </div>
 </article>
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="63.32" data-elevation="5612.09" data-time="437" data-road-quality="77" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="63.82" data-elevation="5646.86" data-time="439" data-road-quality="80" data-has-gravel="true">
 <div class="mobile-route-heading">
 <p class="mobile-route-title"><a style="color:DodgerBlue;" href="routes/whole-ridge-and-back.html">Whole Ridge & Back <span><span style="color: chocolate;">(21% Gravel)</span></span></a></p>
-<div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">La-Moraga Trail</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
+<div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">Wildcat Canyon ↑</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
 </div>
 <div class="mobile-route-elevation" aria-hidden="true"><img src="data/routes/whole-ridge-and-back/profile.svg" alt="" loading="lazy"></div>
 <div class="mobile-route-metrics">
 <p><span class="mobile-route-label">BART</span><br>El Cerrito del Norte</p>
-<p><span class="mobile-route-label">Miles</span><br>63.32</p>
-<p><span class="mobile-route-label">Elev. Gain</span><br>5612.09 ft</p>
+<p><span class="mobile-route-label">Miles</span><br>63.82</p>
+<p><span class="mobile-route-label">Elev. Gain</span><br>5646.86 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~7:20</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>1.61 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">77%</span></p>
+<p><span class="mobile-route-label">Danger Zone</span><br>1.30 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">80%</span></p>
 </div>
 </article>
 </div>

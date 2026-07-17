@@ -63,6 +63,7 @@
     "start_bart_station": "San Leandro",
     "end_bart_station": "MacArthur",
     "bart_station": "San Leandro",
+    "priority_descent_mi": 0.0,
     "estimated_time_min": 166.0,
     "estimated_time_display": "2:50"
   }

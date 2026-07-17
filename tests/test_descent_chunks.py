@@ -7,8 +7,38 @@ from shapely.geometry import LineString
 from gpx_analysis.descent_chunks import (
     detect_descent_chunks,
     make_descent_chunk_map,
+    priority_descent_chunk_sections,
     summarize_descent_chunk_sections,
 )
+
+
+class PriorityDescentChunkSectionsTests(unittest.TestCase):
+    def test_filters_by_severity_and_surface_quality(self) -> None:
+        summary = pd.DataFrame(
+            {
+                "Section": [
+                    "TOTAL",
+                    "1. Road A: dangerous descent",
+                    "2. Road B: steep descent",
+                    "3. Trail C: steep descent",
+                    "4. Road D: steep descent",
+                    "5. Road E: descent",
+                ],
+                "Good+ Pavement": ["75%", "90%", "50%", "Gravel", "51%", "25%"],
+                "Distance (mi)": [5.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            }
+        )
+
+        result = priority_descent_chunk_sections(summary)
+
+        self.assertEqual(
+            result["Section"].tolist(),
+            [
+                "1. Road A: dangerous descent",
+                "2. Road B: steep descent",
+                "3. Trail C: steep descent",
+            ],
+        )
 
 
 class DetectDescentChunksTests(unittest.TestCase):

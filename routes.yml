@@ -11,6 +11,10 @@ routes:
     title: OAK Hills Loop +
     source: gpx_data\Oak_Hills_Loop_w__Pinehurst.gpx
 
+  - slug: intro-to-tilden-gravel
+    title: Tilden Intro Trails
+    source: gpx_data\Intro_to_Tilden_Gravel.gpx
+
   - slug: richmond-marin-conzelman-emb
     title: Richmond to EMB
     source: gpx_data/richmond_to_marin.gpx
@@ -33,7 +37,7 @@ routes:
   
   - slug: whole-ridge-and-back
     title: Whole Ridge & Back
-    source: gpx_data\Whole_Ridge_and_Back.gpx
+    source: gpx_data\Whole_Ridge_Back.gpx
   
   - slug: whole-ridge-southbound
     title: Whole Ridge Southbound

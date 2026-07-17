@@ -31,9 +31,9 @@
       "lat": 37.72135,
       "lon": -122.15918
     },
-    "gravel_percent": 13.1,
+    "gravel_percent": 11.5,
     "cycleway_percent": 0.3,
-    "road_quality_score": 72,
+    "road_quality_score": 70,
     "route_tags": [
       {
         "label": "Tunnel \u2191",
@@ -57,6 +57,7 @@
     "start_bart_station": "MacArthur",
     "end_bart_station": "San Leandro",
     "bart_station": "MacArthur",
+    "priority_descent_mi": 0.8,
     "estimated_time_min": 186.0,
     "estimated_time_display": "3:10"
   }

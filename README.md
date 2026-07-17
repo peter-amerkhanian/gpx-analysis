@@ -28,9 +28,10 @@ In code, `build_quarto_data.py` orchestrates the pipeline:
 - `gpx_analysis.geo.enrich_segments_with_mtc_streets()` matches route segments to local MTC Vital Signs road-quality data.
 - `gpx_analysis.hazards.detect_hazards()` labels each enriched segment with ride/hazard categories.
 - `gpx_analysis.chunks.detect_chunks()` groups enriched segments into sustained climb/rest chunks.
+- `gpx_analysis.descent_chunks.detect_descent_chunks()` groups sustained fast descents from `coast_speed_mph`.
 - `gpx_analysis.geo.add_bart_station()` finds the nearest BART station to the start and end of each route.
 - `gpx_analysis.reporting.aggregate_by_hazard()` summarizes route distance by hazard class.
-- `gpx_analysis.viz.make_route_map()` builds a Folium map colored by hazard profile.
+- `gpx_analysis.viz.make_grade_map()`, `make_chunk_map()`, `make_road_quality_map()`, and `make_route_overview_map()` build the embedded Folium maps.
 - `gpx_analysis.site.data.build_route()` writes the data bundle for each route.
 - `gpx_analysis.site.render.*` regenerates route pages, the dashboard page, and `_quarto.yml`.
 
@@ -43,7 +44,12 @@ For each route slug, the build writes a folder under `quarto/data/routes/<slug>/
 - `points.geojson`: per-point GPX data after analysis
 - `segments.geojson`: per-segment geometry plus hazard and OSM enrichment columns
 - `segments_enriched.geojson`: cached OSM/MTC-enriched segments reused by later builds; delete it to force fresh road-data matching
-- `map.html`: embeddable Folium route map
+- `profile.svg`: route elevation profile
+- `overview_map.html`: simple route overview map
+- `map.html`: smooth grade map used as the main route map
+- `descent_chunk_map.html`: descending chunk map
+- `chunk_map.html`: climbing/ascent chunk map
+- `road_quality_map.html`: MTC road-quality map
 
 It also writes:
 
@@ -57,7 +63,9 @@ When you run Quarto, those generated sources render into `docs/`, which is the p
 ## Repo Structure
 
 - `gpx_analysis/`: reusable route-analysis package
-- `gpx_analysis/site/`: site-specific build helpers for route bundles and Quarto page generation
+- `gpx_analysis/geo/`: geospatial helpers for point/segment construction, BART lookup, OSM matching, MTC matching, and traffic-control lookup
+- `gpx_analysis/viz/`: Folium map builders, display-column helpers, palettes, geometry helpers, and overlays
+- `gpx_analysis/site/`: site-specific build helpers for route bundles, route tags, profiles, summaries, caching, and Quarto page generation
 - `gpx_data/`: curated GPX source files
 - `data/`: non-GPX reference data, including BART stations and the local OSM cache
 - `quarto/`: generated Quarto source plus checked-in site assets
@@ -146,6 +154,18 @@ Treat these as generated artifacts:
 
 If you want a structural change to the route pages or dashboard to persist, prefer editing `quarto/templates/` and `quarto/partials/` first. Use `gpx_analysis/site/` when you need to change the data passed into those templates.
 
+## Maps
+
+Route pages currently render a Quarto tabset with:
+
+- an overview map
+- a smooth grade map
+- a descent chunk map
+- an ascent chunk map
+- a street-quality map
+
+The grade, descent chunk, and ascent chunk maps show gravel segments by default as a brown route-underlay layer that can be toggled in the layer control. The street-quality map does not show that gravel overlay by default, because gravel is already represented by the road-quality styling. Route-number markers are also a toggleable map layer.
+
 ## Route Manifest
 
 `routes.yml` is the source of truth for published routes. Each route supports:
@@ -159,6 +179,10 @@ If you want a structural change to the route pages or dashboard to persist, pref
 - `media.gallery`: optional list of image paths relative to `quarto/`
 
 The loader validates duplicate slugs, missing GPX files, and missing media files before the build continues.
+
+## Route Tags
+
+`route_tags.yml` defines named road or route sections that can be surfaced on the site when a route contains a long enough contiguous run. The callable helper `gpx_analysis.site.data.route_tag_segments_table()` returns the intermediate segment table used for those labels, which is useful for notebook debugging.
 
 ## Hazard Model
 

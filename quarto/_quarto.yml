@@ -22,6 +22,8 @@ website:
         text: Grizzly Peak Loop
       - href: routes/oak-hills-pinehurst.qmd
         text: OAK Hills Loop +
+      - href: routes/intro-to-tilden-gravel.qmd
+        text: Tilden Intro Trails
       - href: routes/richmond-marin-conzelman-emb.qmd
         text: Richmond to EMB
       - href: routes/wildwood-bbr-loop.qmd

@@ -31,7 +31,7 @@
       "lat": 37.92601,
       "lon": -122.31568
     },
-    "gravel_percent": 20.5,
+    "gravel_percent": 20.4,
     "cycleway_percent": 0.0,
     "road_quality_score": 91,
     "route_tags": [
@@ -42,15 +42,28 @@
         "threshold_ft": 36000.0
       },
       {
+        "label": "Wildcat Canyon \u2191",
+        "distance_ft": 14402.0,
+        "elevation_ft": 586.0,
+        "threshold_ft": 13000.0
+      },
+      {
         "label": "Meadows Canyon \u2193",
         "distance_ft": 7549.0,
         "elevation_ft": -394.0,
         "threshold_ft": 7000.0
+      },
+      {
+        "label": "Wildcat Creek",
+        "distance_ft": 16617.0,
+        "elevation_ft": -194.0,
+        "threshold_ft": 10000.0
       }
     ],
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "El Cerrito del Norte",
     "bart_station": "El Cerrito del Norte",
+    "priority_descent_mi": 1.0,
     "estimated_time_min": 219.0,
     "estimated_time_display": "3:40"
   }

@@ -3,7 +3,7 @@ route_tags:
     threshold_ft: 40000
     display_name: Redwood Road
   - name: Wildcat Creek Trail
-    threshold_ft: 18000
+    threshold_ft: 10000
     display_name: Wildcat Creek
   - name: Seaview Trail
     threshold_ft: 15000
@@ -44,6 +44,9 @@ route_tags:
   - name: Bear Creek Road
     threshold_ft: 36000
     display_name: 3 Bears
+  - name: Wildcat Canyon Road
+    threshold_ft: 13000
+    display_name: Wildcat Canyon
   - name: Tunnel Road
     threshold_ft: 9000
     display_name: Tunnel

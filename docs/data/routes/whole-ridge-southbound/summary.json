@@ -31,9 +31,9 @@
       "lat": 37.72179,
       "lon": -122.16045
     },
-    "gravel_percent": 12.0,
+    "gravel_percent": 10.5,
     "cycleway_percent": 0.1,
-    "road_quality_score": 70,
+    "road_quality_score": 69,
     "route_tags": [
       {
         "label": "Arlington \u2191",
@@ -63,6 +63,7 @@
     "start_bart_station": "El Cerrito del Norte",
     "end_bart_station": "San Leandro",
     "bart_station": "El Cerrito del Norte",
+    "priority_descent_mi": 0.8,
     "estimated_time_min": 211.0,
     "estimated_time_display": "3:30"
   }

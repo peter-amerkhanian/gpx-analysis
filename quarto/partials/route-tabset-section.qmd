@@ -36,7 +36,21 @@
   allowfullscreen
 ></iframe>
 
+Note that maximum speeds are based on a physical model of a rider, subjected to an assumed weight and rolling resistance, coasting down the entire descent without applying the brakes.  
+
+::: {.panel-tabset}
+
+### Danger Zone
+
+"Danger Zone" descents are those where maximum modeled coasting speed reaches above 50mph on any road, or else above 40mph on gravel roads, or those with low-quality pavement (<50% passing).  
+
+{{ priority_descents_table_html }}
+
+### All Descents
+
 {{ descent_chunks_table_html }}
+
+:::
 
 ## Ascents
 

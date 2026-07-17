@@ -2476,6 +2476,9 @@
       <trkpt lat="37.75881" lon="-122.12182">
         <ele>230.1</ele>
       </trkpt>
+      <trkpt lat="37.75881" lon="-122.12182">
+        <ele>230.1</ele>
+      </trkpt>
       <trkpt lat="37.75851" lon="-122.12177">
         <ele>229.5</ele>
       </trkpt>
@@ -2512,6 +2515,60 @@
       <trkpt lat="37.75435" lon="-122.11854">
         <ele>191.7</ele>
       </trkpt>
+      <trkpt lat="37.75429" lon="-122.1185">
+        <ele>191.3</ele>
+      </trkpt>
+      <trkpt lat="37.75422" lon="-122.11849">
+        <ele>190.8</ele>
+      </trkpt>
+      <trkpt lat="37.75415" lon="-122.11848">
+        <ele>190.4</ele>
+      </trkpt>
+      <trkpt lat="37.75409" lon="-122.1185">
+        <ele>189.7</ele>
+      </trkpt>
+      <trkpt lat="37.75385" lon="-122.1182">
+        <ele>190.9</ele>
+      </trkpt>
+      <trkpt lat="37.75378" lon="-122.11826">
+        <ele>189.7</ele>
+      </trkpt>
+      <trkpt lat="37.75369" lon="-122.11831">
+        <ele>188.4</ele>
+      </trkpt>
+      <trkpt lat="37.75343" lon="-122.11819">
+        <ele>188.0</ele>
+      </trkpt>
+      <trkpt lat="37.7531" lon="-122.11799">
+        <ele>190.2</ele>
+      </trkpt>
+      <trkpt lat="37.75245" lon="-122.1175">
+        <ele>198.4</ele>
+      </trkpt>
+      <trkpt lat="37.75218" lon="-122.1173">
+        <ele>200.8</ele>
+      </trkpt>
+      <trkpt lat="37.75248" lon="-122.11737">
+        <ele>198.9</ele>
+      </trkpt>
+      <trkpt lat="37.75295" lon="-122.11754">
+        <ele>191.4</ele>
+      </trkpt>
+      <trkpt lat="37.75342" lon="-122.11772">
+        <ele>188.1</ele>
+      </trkpt>
+      <trkpt lat="37.75361" lon="-122.11782">
+        <ele>191.0</ele>
+      </trkpt>
+      <trkpt lat="37.75368" lon="-122.11784">
+        <ele>192.2</ele>
+      </trkpt>
+      <trkpt lat="37.75407" lon="-122.11805">
+        <ele>194.2</ele>
+      </trkpt>
+      <trkpt lat="37.75433" lon="-122.11823">
+        <ele>193.8</ele>
+      </trkpt>
       <trkpt lat="37.75454" lon="-122.11843">
         <ele>193.2</ele>
       </trkpt>
@@ -2532,6 +2589,9 @@
       </trkpt>
       <trkpt lat="37.75554" lon="-122.11799">
         <ele>181.1</ele>
+      </trkpt>
+      <trkpt lat="37.75576" lon="-122.11766">
+        <ele>180.3</ele>
       </trkpt>
       <trkpt lat="37.75576" lon="-122.11766">
         <ele>180.3</ele>

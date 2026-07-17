@@ -31,7 +31,7 @@
       "lat": 37.85256,
       "lon": -122.26979
     },
-    "gravel_percent": 0.5,
+    "gravel_percent": 0.0,
     "cycleway_percent": 0.0,
     "road_quality_score": 54,
     "route_tags": [
@@ -63,6 +63,7 @@
     "start_bart_station": "MacArthur",
     "end_bart_station": "Ashby",
     "bart_station": "MacArthur",
+    "priority_descent_mi": 0.0,
     "estimated_time_min": 137.0,
     "estimated_time_display": "2:20"
   }

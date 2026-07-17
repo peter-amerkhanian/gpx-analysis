@@ -31,9 +31,9 @@
       "lat": 37.59043,
       "lon": -122.01745
     },
-    "gravel_percent": 78.4,
+    "gravel_percent": 65.5,
     "cycleway_percent": 2.6,
-    "road_quality_score": 34,
+    "road_quality_score": 22,
     "route_tags": [
       {
         "label": "Shoreline Trail",
@@ -51,6 +51,7 @@
     "start_bart_station": "Union City",
     "end_bart_station": "Union City",
     "bart_station": "Union City",
+    "priority_descent_mi": 0.3,
     "estimated_time_min": 135.0,
     "estimated_time_display": "2:20"
   }

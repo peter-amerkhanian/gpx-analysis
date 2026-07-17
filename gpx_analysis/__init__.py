@@ -17,7 +17,12 @@ from .geo import (
 from .io import read_simple_gpx
 from .analytics import analyze_steps, analyze_chunks
 from .chunks import detect_chunks
-from .descent_chunks import detect_descent_chunks, make_descent_chunk_map, summarize_descent_chunk_sections
+from .descent_chunks import (
+    detect_descent_chunks,
+    make_descent_chunk_map,
+    priority_descent_chunk_sections,
+    summarize_descent_chunk_sections,
+)
 from .hazards import detect_hazards
 
 from .viz import (
@@ -52,6 +57,7 @@ __all__ = [
     "road_quality_score",
     "summarize_chunk_sections",
     "summarize_descent_chunk_sections",
+    "priority_descent_chunk_sections",
     "points_to_segments",
     "stop_signs_on_segments",
     "build_route_graph",

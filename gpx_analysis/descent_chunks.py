@@ -319,6 +319,23 @@ def summarize_descent_chunk_sections(
     return result[columns]
 
 
+def priority_descent_chunk_sections(summary: pd.DataFrame) -> pd.DataFrame:
+    """Return dangerous descents and steep descents with poor or gravel surfaces."""
+    if summary.empty:
+        return summary.copy()
+
+    section = summary["Section"].fillna("").astype(str).str.lower()
+    quality = summary["Good+ Pavement"].fillna("").astype(str).str.strip()
+    quality_percent = pd.to_numeric(
+        quality.str.removesuffix("%"),
+        errors="coerce",
+    )
+    dangerous = section.str.endswith(": dangerous descent")
+    steep = section.str.endswith(": steep descent")
+    poor_or_gravel = quality.str.casefold().eq("gravel") | quality_percent.le(50)
+    return summary.loc[dangerous | (steep & poor_or_gravel)].copy()
+
+
 def _add_descent_section_display_columns(
     frame: gpd.GeoDataFrame,
     section_frame: gpd.GeoDataFrame,

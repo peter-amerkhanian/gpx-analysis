@@ -84,6 +84,42 @@ class RouteTagsFromSegmentsTests(unittest.TestCase):
         self.assertFalse(bool(result.loc[0, "qualifies_tag"]))
         self.assertTrue(bool(result.loc[2, "qualifies_tag"]))
 
+    def test_route_tag_segments_table_bridges_unnamed_gap_on_same_road(self) -> None:
+        segments = pd.DataFrame(
+            {
+                "osm_name": ["Bear Creek Road", None, "", "Bear Creek Road"],
+                "step_dist_f": [1000.0, 100.0, 200.0, 2000.0],
+                "step_elevation_f": [10.0, 1.0, 2.0, 20.0],
+            }
+        )
+
+        result = route_tag_segments_table(segments)
+
+        self.assertEqual(
+            result[["osm_name", "seg_id", "step_dist_f", "step_elevation_f"]].to_dict(orient="records"),
+            [
+                {
+                    "osm_name": "Bear Creek Road",
+                    "seg_id": 1,
+                    "step_dist_f": 3300.0,
+                    "step_elevation_f": 33.0,
+                }
+            ],
+        )
+
+    def test_route_tag_segments_table_does_not_bridge_different_roads(self) -> None:
+        segments = pd.DataFrame(
+            {
+                "osm_name": ["Bear Creek Road", None, "San Pablo Dam Road"],
+                "step_dist_f": [1000.0, 100.0, 2000.0],
+            }
+        )
+
+        result = route_tag_segments_table(segments)
+
+        self.assertEqual(result["osm_name"].tolist(), ["Bear Creek Road", "San Pablo Dam Road"])
+        self.assertEqual(result["step_dist_f"].tolist(), [1000.0, 2000.0])
+
     def test_returns_consecutive_run_tags_above_thresholds_in_route_order(self) -> None:
         segments = pd.DataFrame(
             {
@@ -193,7 +229,7 @@ class EnrichedSegmentsCacheTests(unittest.TestCase):
             cache_path = Path(temp_dir) / "segments_enriched.geojson"
             write_geojson(cache_path, cached)
 
-            with patch("gpx_analysis.site.data.enrich_segments_with_osm_edges") as osm_edges:
+            with patch("gpx_analysis.site.cache.enrich_segments_with_osm_edges") as osm_edges:
                 result = load_or_build_enriched_segments(source, cache_path)
 
             osm_edges.assert_not_called()
@@ -212,8 +248,8 @@ class EnrichedSegmentsCacheTests(unittest.TestCase):
         with TemporaryDirectory() as temp_dir:
             cache_path = Path(temp_dir) / "segments_enriched.geojson"
             with (
-                patch("gpx_analysis.site.data.enrich_segments_with_osm_edges", return_value=osm_result) as osm_edges,
-                patch("gpx_analysis.site.data.enrich_segments_with_mtc_streets", return_value=mtc_result) as mtc_streets,
+                patch("gpx_analysis.site.cache.enrich_segments_with_osm_edges", return_value=osm_result) as osm_edges,
+                patch("gpx_analysis.site.cache.enrich_segments_with_mtc_streets", return_value=mtc_result) as mtc_streets,
             ):
                 result = load_or_build_enriched_segments(source, cache_path)
 

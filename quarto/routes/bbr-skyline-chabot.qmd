@@ -1,5 +1,5 @@
 ---
-title: "OAK Hills Ridge Ride (13% Gravel)"
+title: "OAK Hills Ridge Ride (11% Gravel)"
 ---
 
 ```{=html}
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="MacArthur" data-miles="27.15" data-elevation="2589.41" data-time="186" data-road-quality="72" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="MacArthur" data-miles="27.15" data-elevation="2589.41" data-time="186" data-road-quality="70" data-has-gravel="true">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">Tunnel ↑</span><span class="mobile-route-tag">Pinehurst ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span></div>
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><span class="mobile-route-label">Miles</span><br>27.15</p>
 <p><span class="mobile-route-label">Elev. Gain</span><br>2589.41 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~3:10</p>
-<p><span class="mobile-route-label">Steep Descent</span><br>0.63 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">72%</span></p>
+<p><span class="mobile-route-label">Danger Zone</span><br>0.80 mi</p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">70%</span></p>
 </div>
 </article>
 ```
@@ -73,6 +73,46 @@ document.addEventListener("DOMContentLoaded", function () {
   mozallowfullscreen
   allowfullscreen
 ></iframe>
+
+Note that maximum speeds are based on a physical model of a rider, subjected to an assumed weight and rolling resistance, coasting down the entire descent without applying the brakes.  
+
+::: {.panel-tabset}
+
+### Danger Zone
+
+"Danger Zone" descents are those where maximum modeled coasting speed reaches above 50mph on any road, or else above 40mph on gravel roads, or those with low-quality pavement (<50% passing).  
+
+```{=html}
+<table class="dataframe table table-striped table-sm">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Section</th>
+      <th>Average Grade</th>
+      <th>Max Coast Speed</th>
+      <th>Good+ Pavement</th>
+      <th>Distance (mi)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>12. Goldenrod Trail: steep descent</td>
+      <td>-10.7%</td>
+      <td>41.8 mph</td>
+      <td>Gravel</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>13. Goldenrod Trail: steep descent</td>
+      <td>-8.0%</td>
+      <td>46.1 mph</td>
+      <td>Gravel</td>
+      <td>0.6</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### All Descents
 
 ```{=html}
 <table class="dataframe table table-striped table-sm">
@@ -195,12 +235,14 @@ document.addEventListener("DOMContentLoaded", function () {
       <td>15. West Shore Trail: descent</td>
       <td>-7.1%</td>
       <td>38.9 mph</td>
-      <td>Gravel</td>
+      <td>0%</td>
       <td>0.6</td>
     </tr>
   </tbody>
 </table>
 ```
+
+:::
 
 ## Ascents
 
@@ -422,8 +464,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>Gravel</td>
-      <td>3.6</td>
-      <td>13.1</td>
+      <td>3.1</td>
+      <td>11.5</td>
     </tr>
     <tr>
       <td>At Risk</td>
@@ -447,8 +489,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>Unknown</td>
-      <td>0.3</td>
-      <td>1.1</td>
+      <td>0.7</td>
+      <td>2.7</td>
     </tr>
   </tbody>
 </table>

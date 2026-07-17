@@ -51,6 +51,7 @@
     "start_bart_station": "Richmond",
     "end_bart_station": "Embarcadero",
     "bart_station": "Richmond",
+    "priority_descent_mi": 0.0,
     "estimated_time_min": 170.0,
     "estimated_time_display": "2:50"
   }
