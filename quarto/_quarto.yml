@@ -22,6 +22,8 @@ website:
         text: Grizzly Peak Loop
       - href: routes/weeknight-bonita.qmd
         text: Point Bonita Loop
+      - href: routes/weeknight-rodeo-loop.qmd
+        text: Rodeo Lagoon Loop
       - href: routes/weeknight-alvarado-meadows-conlon.qmd
         text: Weeknight Alvarado Up-Downer
       - href: routes/oak-hills-pinehurst.qmd

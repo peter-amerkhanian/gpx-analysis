@@ -2,7 +2,31 @@ import unittest
 
 import pandas as pd
 
-from gpx_analysis.reporting import summarize_chunk_sections
+from gpx_analysis.reporting import road_quality_score, summarize_chunk_sections
+
+
+class RoadQualityScoreTests(unittest.TestCase):
+    def test_excludes_unknown_road_miles_from_score(self) -> None:
+        frame = pd.DataFrame(
+            {
+                "step_dist_f": [5280.0, 5280.0, 8 * 5280.0],
+                "pci_available": ["PCI Available", "PCI Available", "PCI Unknown"],
+                "mtc_pci_info": ["Good", "Poor", "Roadway (Unknown)"],
+            }
+        )
+
+        self.assertEqual(road_quality_score(frame), 0.5)
+
+    def test_returns_zero_when_no_road_miles_are_rated(self) -> None:
+        frame = pd.DataFrame(
+            {
+                "step_dist_f": [5280.0, 5280.0],
+                "pci_available": ["PCI Unknown", "PCI Unknown"],
+                "mtc_pci_info": ["Roadway (Unknown)", "Cycleway (Unknown)"],
+            }
+        )
+
+        self.assertEqual(road_quality_score(frame), 0.0)
 
 
 class SummarizeChunkSectionsTests(unittest.TestCase):

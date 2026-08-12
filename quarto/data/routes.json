@@ -34,7 +34,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 0.4,
-        "road_quality_score": 78,
+        "road_quality_score": 82,
         "route_tags": [
           {
             "label": "Spruce \u2191",
@@ -161,7 +161,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 16.9,
-        "road_quality_score": 26,
+        "road_quality_score": 59,
         "route_tags": [
           {
             "label": "Hawk Hill \u2191",
@@ -255,6 +255,121 @@
       ]
     },
     {
+      "slug": "weeknight-rodeo-loop",
+      "title": "Rodeo Lagoon Loop",
+      "title_html": "Rodeo Lagoon Loop",
+      "source": "gpx_data\\rodeo_lagoon_loop.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1248,
+        "segment_count": 1247,
+        "distance_m": 40130.89,
+        "distance_mi": 24.94,
+        "elevation_gain_m": 424.0,
+        "elevation_gain_ft": 1393.0,
+        "elevation_loss_m": 424.0,
+        "elevation_loss_ft": 1390.0,
+        "max_elevation_m": 104.0,
+        "max_elevation_ft": 341.0,
+        "start": {
+          "lat": 37.77953,
+          "lon": -122.41386
+        },
+        "end": {
+          "lat": 37.77883,
+          "lon": -122.41476
+        },
+        "gravel_percent": 6.4,
+        "cycleway_percent": 16.1,
+        "road_quality_score": 61,
+        "route_tags": [
+          {
+            "label": "Golden Gate Bridge",
+            "distance_ft": 9134.0,
+            "elevation_ft": -42.0,
+            "threshold_ft": 9000.0
+          }
+        ],
+        "start_bart_station": "Civic Center/UN Plaza",
+        "end_bart_station": "Civic Center/UN Plaza",
+        "bart_station": "Civic Center/UN Plaza",
+        "priority_descent_mi": 0.0,
+        "estimated_time_min": 151.0,
+        "estimated_time_display": "2:30"
+      },
+      "paths": {
+        "summary": "data/routes/weeknight-rodeo-loop/summary.json",
+        "hazards": "data/routes/weeknight-rodeo-loop/hazards.json",
+        "points": "data/routes/weeknight-rodeo-loop/points.geojson",
+        "segments": "data/routes/weeknight-rodeo-loop/segments.geojson",
+        "map": "data/routes/weeknight-rodeo-loop/map.html",
+        "overview_map": "data/routes/weeknight-rodeo-loop/overview_map.html",
+        "descent_chunk_map": "data/routes/weeknight-rodeo-loop/descent_chunk_map.html",
+        "road_quality_map": "data/routes/weeknight-rodeo-loop/road_quality_map.html",
+        "chunk_map": "data/routes/weeknight-rodeo-loop/chunk_map.html",
+        "profile_svg": "data/routes/weeknight-rodeo-loop/profile.svg",
+        "page": "routes/weeknight-rodeo-loop.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 28303.0,
+          "percent": 71.0,
+          "distance_mi": 17.59
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 4819.0,
+          "percent": 12.0,
+          "distance_mi": 2.99
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 3183.0,
+          "percent": 8.0,
+          "distance_mi": 1.98
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 2021.0,
+          "percent": 5.0,
+          "distance_mi": 1.26
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 1572.0,
+          "percent": 4.0,
+          "distance_mi": 0.98
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 233.0,
+          "percent": 1.0,
+          "distance_mi": 0.14
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 40131.0,
+          "percent": 100.0,
+          "distance_mi": 24.94
+        }
+      ]
+    },
+    {
       "slug": "weeknight-alvarado-meadows-conlon",
       "title": "Weeknight Alvarado Up-Downer (60% Gravel)",
       "title_html": "Weeknight Alvarado Up-Downer <span><span style=\"color: chocolate;\">(60% Gravel)</span></span>",
@@ -288,7 +403,7 @@
         },
         "gravel_percent": 59.9,
         "cycleway_percent": 12.9,
-        "road_quality_score": 42,
+        "road_quality_score": 43,
         "route_tags": [
           {
             "label": "Wildcat Creek \u2191",
@@ -421,7 +536,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 0.0,
-        "road_quality_score": 78,
+        "road_quality_score": 81,
         "route_tags": [
           {
             "label": "Wildwood+Leimert \u2191",
@@ -554,7 +669,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 48.7,
-        "road_quality_score": 18,
+        "road_quality_score": 21,
         "route_tags": [
           {
             "label": "Richmond Bridge",
@@ -675,7 +790,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 0.0,
-        "road_quality_score": 54,
+        "road_quality_score": 56,
         "route_tags": [
           {
             "label": "Wildwood+Leimert \u2191",
@@ -808,7 +923,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 0.7,
-        "road_quality_score": 52,
+        "road_quality_score": 54,
         "route_tags": [
           {
             "label": "Tunnel \u2191",
@@ -1056,7 +1171,7 @@
         },
         "gravel_percent": 11.5,
         "cycleway_percent": 0.3,
-        "road_quality_score": 70,
+        "road_quality_score": 73,
         "route_tags": [
           {
             "label": "Tunnel \u2191",
@@ -1183,7 +1298,7 @@
         },
         "gravel_percent": 20.9,
         "cycleway_percent": 1.7,
-        "road_quality_score": 80,
+        "road_quality_score": 83,
         "route_tags": [
           {
             "label": "Arlington \u2191",
@@ -1340,7 +1455,7 @@
         },
         "gravel_percent": 10.5,
         "cycleway_percent": 0.1,
-        "road_quality_score": 69,
+        "road_quality_score": 73,
         "route_tags": [
           {
             "label": "Arlington \u2191",
@@ -1473,7 +1588,7 @@
         },
         "gravel_percent": 20.4,
         "cycleway_percent": 0.0,
-        "road_quality_score": 91,
+        "road_quality_score": 92,
         "route_tags": [
           {
             "label": "3 Bears",
@@ -1606,7 +1721,7 @@
         },
         "gravel_percent": 49.4,
         "cycleway_percent": 15.7,
-        "road_quality_score": 30,
+        "road_quality_score": 41,
         "route_tags": [
           {
             "label": "Alameda Creek",
@@ -1727,7 +1842,7 @@
         },
         "gravel_percent": 19.6,
         "cycleway_percent": 7.2,
-        "road_quality_score": 57,
+        "road_quality_score": 60,
         "route_tags": [
           {
             "label": "Wildwood+Leimert \u2191",
@@ -1866,7 +1981,7 @@
         },
         "gravel_percent": 24.9,
         "cycleway_percent": 0.0,
-        "road_quality_score": 79,
+        "road_quality_score": 86,
         "route_tags": [
           {
             "label": "Arlington \u2191",
@@ -1993,7 +2108,7 @@
         },
         "gravel_percent": 24.3,
         "cycleway_percent": 0.0,
-        "road_quality_score": 76,
+        "road_quality_score": 79,
         "route_tags": [
           {
             "label": "Lake Chabot",
@@ -2138,7 +2253,7 @@
         },
         "gravel_percent": 65.5,
         "cycleway_percent": 2.6,
-        "road_quality_score": 22,
+        "road_quality_score": 56,
         "route_tags": [
           {
             "label": "Shoreline Trail",
@@ -2259,7 +2374,7 @@
         },
         "gravel_percent": 0.0,
         "cycleway_percent": 0.0,
-        "road_quality_score": 84,
+        "road_quality_score": 85,
         "route_tags": [
           {
             "label": "Lake Chabot",

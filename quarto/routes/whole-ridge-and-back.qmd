@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 ```{=html}
-<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="63.82" data-elevation="5647.00" data-time="439" data-danger-zone="1.30" data-road-quality="80" data-has-gravel="true">
+<article class="mobile-route-card" data-bart="El Cerrito del Norte" data-miles="63.82" data-elevation="5647.00" data-time="439" data-danger-zone="1.30" data-road-quality="83" data-has-gravel="true">
 <div class="mobile-route-heading">
 
 <div class="mobile-route-tags"><span class="mobile-route-tag">Arlington ↑</span><span class="mobile-route-tag">Grizzly Peak ↑</span><span class="mobile-route-tag">Skyline ↓</span><span class="mobile-route-tag">Goldenrod Trail ↓</span><span class="mobile-route-tag">Redwood Road ↑</span><span class="mobile-route-tag">Wildcat Canyon ↑</span><span class="mobile-route-tag">Meadows Canyon ↓</span><span class="mobile-route-tag">Wildcat Creek ↓</span></div>
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><span class="mobile-route-label">Elev. Gain</span><br>5647.0 ft</p>
 <p><span class="mobile-route-label">Time</span><br>~7:20</p>
 <p><span class="mobile-route-label">Danger Zone</span><br>1.30 mi</p>
-<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">80%</span></p>
+<p><span class="mobile-route-label">Road Quality</span><br><span class="mobile-route-quality" style="background-color:#91cf60;">83%</span></p>
 </div>
 </article>
 ```

@@ -68,9 +68,8 @@ The detailed pavement labels are simplified on the map:
 - `Cycleway`: route segments identified as cycleways.
 - `Roadway (Unknown)` or `Cycleway (Unknown)`: places where the route is known but pavement condition is not.
 
-The road-quality score shown on route cards is the share of rated, non-gravel roadway miles that are Excellent, Very Good, Good, or Fair. Gravel and unknown cycleway miles are excluded from that denominator so mixed-surface routes are not automatically penalized for being intentionally off-road or separated from the street network.
+The road-quality score shown on route cards is the share of rated, non-gravel roadway miles that are Excellent, Very Good, Good, or Fair. Gravel and roads with unknown quality are excluded from that denominator, so routes are scored only on roadway miles with a known pavement rating.
 
 ## Direction Markers
 
 Some routes overlap themselves. When the outbound and return portions share meaningful geometry, the map may show a Route Pass control so only one direction is highlighted at a time. Number markers and chevrons are added to help show route order and direction, especially on loopier routes.
-

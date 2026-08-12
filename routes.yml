@@ -11,6 +11,10 @@ routes:
     title: Point Bonita Loop
     source: gpx_data\civic_center_to_point_bonita.gpx
 
+  - slug: weeknight-rodeo-loop
+    title: Rodeo Lagoon Loop
+    source: gpx_data\rodeo_lagoon_loop.gpx
+
   - slug: weeknight-alvarado-meadows-conlon
     title: Weeknight Alvarado Up-Downer
     source: gpx_data\meadows_up_conlon_down.gpx

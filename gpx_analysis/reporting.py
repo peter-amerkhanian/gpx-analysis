@@ -317,7 +317,7 @@ def road_quality_score(
     df: pd.DataFrame,
     column: str = "step_dist_f",
 ) -> float:
-    """Return the share of ride miles on good PCI-rated roads, excluding gravel and cycleway-unknown miles."""
+    """Return the share of rated, non-gravel miles on roads with good PCI."""
     pci_report = aggregate_by_road_quality(df, column=column)
     good_roads = [
         "Excellent",
@@ -327,8 +327,8 @@ def road_quality_score(
     ]
     miles = pci_report["Miles"].to_dict()
     gravel = miles.get("Gravel", 0.0) or 0.0
-    cycleway = miles.get("Cycleway (Unknown)", 0.0) or 0.0
-    denominator = float(pci_report["Miles"].sum() - gravel - cycleway)
+    unknown = miles.get("Unknown", 0.0) or 0.0
+    denominator = float(pci_report["Miles"].sum() - gravel - unknown)
     if denominator <= 0:
         return 0.0
 
