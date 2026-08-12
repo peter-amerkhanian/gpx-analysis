@@ -17,12 +17,12 @@
     "segment_count": 1918,
     "distance_m": 43699.95,
     "distance_mi": 27.15,
-    "elevation_gain_m": 789.25,
-    "elevation_gain_ft": 2589.41,
-    "elevation_loss_m": 798.96,
-    "elevation_loss_ft": 2621.27,
-    "max_elevation_m": 436.9,
-    "max_elevation_ft": 1433.4,
+    "elevation_gain_m": 789.0,
+    "elevation_gain_ft": 2589.0,
+    "elevation_loss_m": 799.0,
+    "elevation_loss_ft": 2621.0,
+    "max_elevation_m": 437.0,
+    "max_elevation_ft": 1433.0,
     "start": {
       "lat": 37.82892,
       "lon": -122.26621

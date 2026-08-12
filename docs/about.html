@@ -107,12 +107,16 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Grizzly Peak Loop</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./routes/oak-hills-pinehurst.html">
- <span class="dropdown-text">OAK Hills Loop +</span></a>
+    <a class="dropdown-item" href="./routes/weeknight-bonita.html">
+ <span class="dropdown-text">Point Bonita Loop</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./routes/intro-to-tilden-gravel.html">
- <span class="dropdown-text">Tilden Intro Trails</span></a>
+    <a class="dropdown-item" href="./routes/weeknight-alvarado-meadows-conlon.html">
+ <span class="dropdown-text">Weeknight Alvarado Up-Downer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./routes/oak-hills-pinehurst.html">
+ <span class="dropdown-text">OAK Hills Loop +</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./routes/richmond-marin-conzelman-emb.html">
@@ -218,20 +222,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This site turns GPX rides into route notes for BART-accessible cycling. Each route page starts from the recorded track points in the source GPX file, computes per-step distance, grade, bearing change, and elevation gain, then converts adjacent points into mapped route segments.</p>
-<p>The maps are meant to help compare routes before a ride. They are not turn-by-turn navigation, and they inherit the usual limitations of GPS tracks, barometric or device elevation data, OpenStreetMap coverage, and public pavement-condition datasets.</p>
+<p>This site is a collection of maps and analysis of some of my favorite bike rides in the Bay Area. I primarily use the website for planning rides with friends who live throughout the Bay Area, so everything is designed around that use-case. Key features:</p>
 <section id="route-processing" class="level2">
 <h2 class="anchored" data-anchor-id="route-processing">Route Processing</h2>
-<p>For each published route, the build process:</p>
+<p>For each published route, the build process does the following:</p>
 <ul>
-<li>reads the GPX track points, optionally reversing the route when configured in <code>routes.yml</code>;</li>
-<li>computes step distance, elevation change, grade, and bearing change between adjacent points;</li>
-<li>converts point pairs into route segments;</li>
-<li>enriches those segments with nearby OpenStreetMap road attributes;</li>
-<li>enriches roadway segments with MTC pavement-condition records where a good match is available;</li>
-<li>writes the route maps, summary tables, elevation profile, and route data files used by the Quarto site.</li>
+<li>read .gpx data, typically from ridewithgps, strava, or garmin.</li>
+<li>compute step distance, elevation change, grade, and bearing changes between adjacent points. Apply a basic physics model of rider weight, rolling resistance, and grade to model bike speed across route.</li>
+<li>enrich those segments with nearby OpenStreetMap road attributes;</li>
+<li>enrich roadway segments with MTC pavement-condition records where a good match is available;</li>
+<li>Flag notable features of route, e.g.&nbsp;high speed descents, gravel descents, tough climbs.</li>
 </ul>
-<p>Distances are summed from the step distances. Elevation gain is the sum of positive elevation changes, so it depends on the source GPX elevation signal and any noise in that signal.</p>
 </section>
 <section id="hazards-map" class="level2">
 <h2 class="anchored" data-anchor-id="hazards-map">Hazards Map</h2>

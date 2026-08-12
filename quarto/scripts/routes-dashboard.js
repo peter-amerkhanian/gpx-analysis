@@ -29,6 +29,10 @@ window.addEventListener("load", function () {
     elev_desc: (a, b) => Number(b.dataset.elevation) - Number(a.dataset.elevation),
     time_asc: (a, b) => Number(a.dataset.time) - Number(b.dataset.time),
     time_desc: (a, b) => Number(b.dataset.time) - Number(a.dataset.time),
+    danger_zone_asc: (a, b) =>
+      Number(a.dataset.dangerZone) - Number(b.dataset.dangerZone),
+    danger_zone_desc: (a, b) =>
+      Number(b.dataset.dangerZone) - Number(a.dataset.dangerZone),
     road_quality_asc: (a, b) =>
       Number(a.dataset.roadQuality) - Number(b.dataset.roadQuality),
     road_quality_desc: (a, b) =>

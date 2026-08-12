@@ -11,6 +11,9 @@ route_tags:
   - name: Lafayette-Moraga Trail
     threshold_ft: 6000
     display_name: La-Moraga Trail
+  - name: Conzelman Road
+    threshold_ft: 6000
+    display_name: Hawk Hill
   - name: Meadows Canyon Trail
     threshold_ft: 7000
     display_name: Meadows Canyon

@@ -132,6 +132,7 @@ def summary_card(route: dict[str, object], path_prefix: str = "", title=True) ->
         f'data-miles="{float(route["summary"]["distance_mi"]):.2f}" '
         f'data-elevation="{float(route["summary"]["elevation_gain_ft"]):.2f}" '
         f'data-time="{float(route["summary"].get("estimated_time_min", 0)):.0f}" '
+        f'data-danger-zone="{priority_descent_miles:.2f}" '
         f'data-road-quality="{road_quality_score:.0f}" '
         f'data-has-gravel="{str(float(route["summary"]["gravel_percent"]) > 10).lower()}">'
     ),
@@ -200,6 +201,8 @@ def mobile_summary_cards(routes: list[dict[str, object]]) -> str:
         '<option value="elev_desc">Elevation: highest</option>',
         '<option value="time_asc">Time: shortest</option>',
         '<option value="time_desc">Time: longest</option>',
+        '<option value="danger_zone_asc">Danger Zone: shortest</option>',
+        '<option value="danger_zone_desc">Danger Zone: longest</option>',
         '<option value="road_quality_desc">Road Quality: highest</option>',
         '<option value="road_quality_asc">Road Quality: lowest</option>',
         "</select>",

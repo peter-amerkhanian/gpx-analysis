@@ -18,12 +18,12 @@
         "segment_count": 835,
         "distance_m": 22389.47,
         "distance_mi": 13.91,
-        "elevation_gain_m": 507.49,
-        "elevation_gain_ft": 1664.99,
-        "elevation_loss_m": 509.1,
-        "elevation_loss_ft": 1670.26,
+        "elevation_gain_m": 507.0,
+        "elevation_gain_ft": 1665.0,
+        "elevation_loss_m": 509.0,
+        "elevation_loss_ft": 1670.0,
         "max_elevation_m": 509.0,
-        "max_elevation_ft": 1669.95,
+        "max_elevation_ft": 1670.0,
         "start": {
           "lat": 37.87472,
           "lon": -122.2835
@@ -128,6 +128,266 @@
       ]
     },
     {
+      "slug": "weeknight-bonita",
+      "title": "Point Bonita Loop",
+      "title_html": "Point Bonita Loop",
+      "source": "gpx_data\\civic_center_to_point_bonita.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1409,
+        "segment_count": 1408,
+        "distance_m": 40427.22,
+        "distance_mi": 25.12,
+        "elevation_gain_m": 585.0,
+        "elevation_gain_ft": 1918.0,
+        "elevation_loss_m": 585.0,
+        "elevation_loss_ft": 1920.0,
+        "max_elevation_m": 247.0,
+        "max_elevation_ft": 810.0,
+        "start": {
+          "lat": 37.77936,
+          "lon": -122.41407
+        },
+        "end": {
+          "lat": 37.77925,
+          "lon": -122.41399
+        },
+        "gravel_percent": 0.0,
+        "cycleway_percent": 16.9,
+        "road_quality_score": 26,
+        "route_tags": [
+          {
+            "label": "Hawk Hill \u2191",
+            "distance_ft": 6020.0,
+            "elevation_ft": 304.0,
+            "threshold_ft": 6000.0
+          },
+          {
+            "label": "Hawk Hill \u2193",
+            "distance_ft": 14931.0,
+            "elevation_ft": -429.0,
+            "threshold_ft": 6000.0
+          },
+          {
+            "label": "Golden Gate Bridge",
+            "distance_ft": 9134.0,
+            "elevation_ft": -42.0,
+            "threshold_ft": 9000.0
+          }
+        ],
+        "start_bart_station": "Civic Center/UN Plaza",
+        "end_bart_station": "Civic Center/UN Plaza",
+        "bart_station": "Civic Center/UN Plaza",
+        "priority_descent_mi": 1.5,
+        "estimated_time_min": 166.0,
+        "estimated_time_display": "2:50"
+      },
+      "paths": {
+        "summary": "data/routes/weeknight-bonita/summary.json",
+        "hazards": "data/routes/weeknight-bonita/hazards.json",
+        "points": "data/routes/weeknight-bonita/points.geojson",
+        "segments": "data/routes/weeknight-bonita/segments.geojson",
+        "map": "data/routes/weeknight-bonita/map.html",
+        "overview_map": "data/routes/weeknight-bonita/overview_map.html",
+        "descent_chunk_map": "data/routes/weeknight-bonita/descent_chunk_map.html",
+        "road_quality_map": "data/routes/weeknight-bonita/road_quality_map.html",
+        "chunk_map": "data/routes/weeknight-bonita/chunk_map.html",
+        "profile_svg": "data/routes/weeknight-bonita/profile.svg",
+        "page": "routes/weeknight-bonita.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 26296.0,
+          "percent": 65.0,
+          "distance_mi": 16.34
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 3790.0,
+          "percent": 9.0,
+          "distance_mi": 2.35
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 3323.0,
+          "percent": 8.0,
+          "distance_mi": 2.06
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3188.0,
+          "percent": 8.0,
+          "distance_mi": 1.98
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 3106.0,
+          "percent": 8.0,
+          "distance_mi": 1.93
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 725.0,
+          "percent": 2.0,
+          "distance_mi": 0.45
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 40427.0,
+          "percent": 100.0,
+          "distance_mi": 25.12
+        }
+      ]
+    },
+    {
+      "slug": "weeknight-alvarado-meadows-conlon",
+      "title": "Weeknight Alvarado Up-Downer (60% Gravel)",
+      "title_html": "Weeknight Alvarado Up-Downer <span><span style=\"color: chocolate;\">(60% Gravel)</span></span>",
+      "source": "gpx_data\\meadows_up_conlon_down.gpx",
+      "reverse": false,
+      "links": {
+        "strava_effort": null
+      },
+      "media": {
+        "hero_image": null,
+        "gallery": []
+      },
+      "summary": {
+        "point_count": 1233,
+        "segment_count": 1232,
+        "distance_m": 28709.3,
+        "distance_mi": 17.84,
+        "elevation_gain_m": 484.0,
+        "elevation_gain_ft": 1588.0,
+        "elevation_loss_m": 479.0,
+        "elevation_loss_ft": 1573.0,
+        "max_elevation_m": 351.0,
+        "max_elevation_ft": 1152.0,
+        "start": {
+          "lat": 37.92522,
+          "lon": -122.31665
+        },
+        "end": {
+          "lat": 37.92925,
+          "lon": -122.32008
+        },
+        "gravel_percent": 59.9,
+        "cycleway_percent": 12.9,
+        "road_quality_score": 42,
+        "route_tags": [
+          {
+            "label": "Wildcat Creek \u2191",
+            "distance_ft": 21338.0,
+            "elevation_ft": 206.0,
+            "threshold_ft": 10000.0
+          },
+          {
+            "label": "Meadows Canyon \u2191",
+            "distance_ft": 7514.0,
+            "elevation_ft": 406.0,
+            "threshold_ft": 7000.0
+          },
+          {
+            "label": "Conlon Trail \u2193",
+            "distance_ft": 10028.0,
+            "elevation_ft": -607.0,
+            "threshold_ft": 9900.0
+          },
+          {
+            "label": "Wildcat Creek",
+            "distance_ft": 12095.0,
+            "elevation_ft": -178.0,
+            "threshold_ft": 10000.0
+          }
+        ],
+        "start_bart_station": "El Cerrito del Norte",
+        "end_bart_station": "El Cerrito del Norte",
+        "bart_station": "El Cerrito del Norte",
+        "priority_descent_mi": 2.0,
+        "estimated_time_min": 130.0,
+        "estimated_time_display": "2:10"
+      },
+      "paths": {
+        "summary": "data/routes/weeknight-alvarado-meadows-conlon/summary.json",
+        "hazards": "data/routes/weeknight-alvarado-meadows-conlon/hazards.json",
+        "points": "data/routes/weeknight-alvarado-meadows-conlon/points.geojson",
+        "segments": "data/routes/weeknight-alvarado-meadows-conlon/segments.geojson",
+        "map": "data/routes/weeknight-alvarado-meadows-conlon/map.html",
+        "overview_map": "data/routes/weeknight-alvarado-meadows-conlon/overview_map.html",
+        "descent_chunk_map": "data/routes/weeknight-alvarado-meadows-conlon/descent_chunk_map.html",
+        "road_quality_map": "data/routes/weeknight-alvarado-meadows-conlon/road_quality_map.html",
+        "chunk_map": "data/routes/weeknight-alvarado-meadows-conlon/chunk_map.html",
+        "profile_svg": "data/routes/weeknight-alvarado-meadows-conlon/profile.svg",
+        "page": "routes/weeknight-alvarado-meadows-conlon.qmd"
+      },
+      "hazards": [
+        {
+          "hazard": "flat",
+          "hazard_label": "Flat",
+          "distance_m": 13218.0,
+          "percent": 46.0,
+          "distance_mi": 8.21
+        },
+        {
+          "hazard": "steep_climb",
+          "hazard_label": "Steep Climb",
+          "distance_m": 3738.0,
+          "percent": 13.0,
+          "distance_mi": 2.32
+        },
+        {
+          "hazard": "descent",
+          "hazard_label": "Descent",
+          "distance_m": 3684.0,
+          "percent": 13.0,
+          "distance_mi": 2.29
+        },
+        {
+          "hazard": "climb",
+          "hazard_label": "Climb",
+          "distance_m": 3616.0,
+          "percent": 13.0,
+          "distance_mi": 2.25
+        },
+        {
+          "hazard": "light_descent",
+          "hazard_label": "Light Descent",
+          "distance_m": 3090.0,
+          "percent": 11.0,
+          "distance_mi": 1.92
+        },
+        {
+          "hazard": "steep_descent",
+          "hazard_label": "Steep Descent",
+          "distance_m": 1364.0,
+          "percent": 5.0,
+          "distance_mi": 0.85
+        },
+        {
+          "hazard": "TOTAL",
+          "hazard_label": "TOTAL",
+          "distance_m": 28709.0,
+          "percent": 100.0,
+          "distance_mi": 17.84
+        }
+      ]
+    },
+    {
       "slug": "oak-hills-pinehurst",
       "title": "OAK Hills Loop +",
       "title_html": "OAK Hills Loop +",
@@ -145,12 +405,12 @@
         "segment_count": 1848,
         "distance_m": 41194.96,
         "distance_mi": 25.6,
-        "elevation_gain_m": 791.82,
-        "elevation_gain_ft": 2597.84,
-        "elevation_loss_m": 779.74,
-        "elevation_loss_ft": 2558.19,
-        "max_elevation_m": 442.8,
-        "max_elevation_ft": 1452.76,
+        "elevation_gain_m": 792.0,
+        "elevation_gain_ft": 2598.0,
+        "elevation_loss_m": 780.0,
+        "elevation_loss_ft": 2558.0,
+        "max_elevation_m": 443.0,
+        "max_elevation_ft": 1453.0,
         "start": {
           "lat": 37.82869,
           "lon": -122.26627
@@ -261,139 +521,6 @@
       ]
     },
     {
-      "slug": "intro-to-tilden-gravel",
-      "title": "Tilden Intro Trails (40% Gravel)",
-      "title_html": "Tilden Intro Trails <span><span style=\"color: chocolate;\">(40% Gravel)</span></span>",
-      "source": "gpx_data\\Intro_to_Tilden_Gravel.gpx",
-      "reverse": false,
-      "links": {
-        "strava_effort": null
-      },
-      "media": {
-        "hero_image": null,
-        "gallery": []
-      },
-      "summary": {
-        "point_count": 1520,
-        "segment_count": 1519,
-        "distance_m": 30226.33,
-        "distance_mi": 18.78,
-        "elevation_gain_m": 506.36,
-        "elevation_gain_ft": 1661.29,
-        "elevation_loss_m": 518.44,
-        "elevation_loss_ft": 1700.92,
-        "max_elevation_m": 379.8,
-        "max_elevation_ft": 1246.06,
-        "start": {
-          "lat": 37.87463,
-          "lon": -122.28442
-        },
-        "end": {
-          "lat": 37.92527,
-          "lon": -122.31656
-        },
-        "gravel_percent": 39.8,
-        "cycleway_percent": 0.2,
-        "road_quality_score": 69,
-        "route_tags": [
-          {
-            "label": "Spruce \u2191",
-            "distance_ft": 7067.0,
-            "elevation_ft": 392.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Golf Course Trail",
-            "distance_ft": 4729.0,
-            "elevation_ft": 49.0,
-            "threshold_ft": 4000.0
-          },
-          {
-            "label": "Meadows Canyon \u2193",
-            "distance_ft": 7749.0,
-            "elevation_ft": -359.0,
-            "threshold_ft": 7000.0
-          },
-          {
-            "label": "Wildcat Creek \u2193",
-            "distance_ft": 21491.0,
-            "elevation_ft": -233.0,
-            "threshold_ft": 10000.0
-          }
-        ],
-        "start_bart_station": "North Berkeley",
-        "end_bart_station": "El Cerrito del Norte",
-        "bart_station": "North Berkeley",
-        "priority_descent_mi": 0.5,
-        "estimated_time_min": 134.0,
-        "estimated_time_display": "2:10"
-      },
-      "paths": {
-        "summary": "data/routes/intro-to-tilden-gravel/summary.json",
-        "hazards": "data/routes/intro-to-tilden-gravel/hazards.json",
-        "points": "data/routes/intro-to-tilden-gravel/points.geojson",
-        "segments": "data/routes/intro-to-tilden-gravel/segments.geojson",
-        "map": "data/routes/intro-to-tilden-gravel/map.html",
-        "overview_map": "data/routes/intro-to-tilden-gravel/overview_map.html",
-        "descent_chunk_map": "data/routes/intro-to-tilden-gravel/descent_chunk_map.html",
-        "road_quality_map": "data/routes/intro-to-tilden-gravel/road_quality_map.html",
-        "chunk_map": "data/routes/intro-to-tilden-gravel/chunk_map.html",
-        "profile_svg": "data/routes/intro-to-tilden-gravel/profile.svg",
-        "page": "routes/intro-to-tilden-gravel.qmd"
-      },
-      "hazards": [
-        {
-          "hazard": "flat",
-          "hazard_label": "Flat",
-          "distance_m": 14189.0,
-          "percent": 47.0,
-          "distance_mi": 8.82
-        },
-        {
-          "hazard": "climb",
-          "hazard_label": "Climb",
-          "distance_m": 5181.0,
-          "percent": 17.0,
-          "distance_mi": 3.22
-        },
-        {
-          "hazard": "descent",
-          "hazard_label": "Descent",
-          "distance_m": 3634.0,
-          "percent": 12.0,
-          "distance_mi": 2.26
-        },
-        {
-          "hazard": "light_descent",
-          "hazard_label": "Light Descent",
-          "distance_m": 3194.0,
-          "percent": 11.0,
-          "distance_mi": 1.98
-        },
-        {
-          "hazard": "steep_climb",
-          "hazard_label": "Steep Climb",
-          "distance_m": 2868.0,
-          "percent": 9.0,
-          "distance_mi": 1.78
-        },
-        {
-          "hazard": "steep_descent",
-          "hazard_label": "Steep Descent",
-          "distance_m": 1161.0,
-          "percent": 4.0,
-          "distance_mi": 0.72
-        },
-        {
-          "hazard": "TOTAL",
-          "hazard_label": "TOTAL",
-          "distance_m": 30226.0,
-          "percent": 100.0,
-          "distance_mi": 18.78
-        }
-      ]
-    },
-    {
       "slug": "richmond-marin-conzelman-emb",
       "title": "Richmond to EMB (49% Cycleway)",
       "title_html": "Richmond to EMB <span><span style=\"color: forestgreen;\">(49% Cycleway)</span></span>",
@@ -411,12 +538,12 @@
         "segment_count": 1287,
         "distance_m": 47735.06,
         "distance_mi": 29.66,
-        "elevation_gain_m": 285.83,
-        "elevation_gain_ft": 937.75,
-        "elevation_loss_m": 294.2,
-        "elevation_loss_ft": 965.21,
-        "max_elevation_m": 74.3,
-        "max_elevation_ft": 243.77,
+        "elevation_gain_m": 286.0,
+        "elevation_gain_ft": 938.0,
+        "elevation_loss_m": 294.0,
+        "elevation_loss_ft": 965.0,
+        "max_elevation_m": 74.0,
+        "max_elevation_ft": 244.0,
         "start": {
           "lat": 37.93921,
           "lon": -122.35903
@@ -532,12 +659,12 @@
         "segment_count": 2716,
         "distance_m": 31337.5,
         "distance_mi": 19.47,
-        "elevation_gain_m": 603.63,
-        "elevation_gain_ft": 1980.4,
-        "elevation_loss_m": 592.53,
+        "elevation_gain_m": 604.0,
+        "elevation_gain_ft": 1980.0,
+        "elevation_loss_m": 593.0,
         "elevation_loss_ft": 1944.0,
-        "max_elevation_m": 450.5,
-        "max_elevation_ft": 1478.02,
+        "max_elevation_m": 450.0,
+        "max_elevation_ft": 1478.0,
         "start": {
           "lat": 37.82936,
           "lon": -122.2661
@@ -665,12 +792,12 @@
         "segment_count": 844,
         "distance_m": 22786.99,
         "distance_mi": 14.16,
-        "elevation_gain_m": 442.66,
-        "elevation_gain_ft": 1452.29,
-        "elevation_loss_m": 442.46,
-        "elevation_loss_ft": 1451.64,
-        "max_elevation_m": 446.2,
-        "max_elevation_ft": 1463.91,
+        "elevation_gain_m": 443.0,
+        "elevation_gain_ft": 1452.0,
+        "elevation_loss_m": 442.0,
+        "elevation_loss_ft": 1452.0,
+        "max_elevation_m": 446.0,
+        "max_elevation_ft": 1464.0,
         "start": {
           "lat": 37.82936,
           "lon": -122.26615
@@ -786,12 +913,12 @@
         "segment_count": 1653,
         "distance_m": 38142.51,
         "distance_mi": 23.7,
-        "elevation_gain_m": 580.78,
-        "elevation_gain_ft": 1905.44,
-        "elevation_loss_m": 487.86,
-        "elevation_loss_ft": 1600.58,
-        "max_elevation_m": 350.2,
-        "max_elevation_ft": 1148.95,
+        "elevation_gain_m": 581.0,
+        "elevation_gain_ft": 1905.0,
+        "elevation_loss_m": 488.0,
+        "elevation_loss_ft": 1601.0,
+        "max_elevation_m": 350.0,
+        "max_elevation_ft": 1149.0,
         "start": {
           "lat": 37.79718,
           "lon": -122.26533
@@ -913,12 +1040,12 @@
         "segment_count": 1918,
         "distance_m": 43699.95,
         "distance_mi": 27.15,
-        "elevation_gain_m": 789.25,
-        "elevation_gain_ft": 2589.41,
-        "elevation_loss_m": 798.96,
-        "elevation_loss_ft": 2621.27,
-        "max_elevation_m": 436.9,
-        "max_elevation_ft": 1433.4,
+        "elevation_gain_m": 789.0,
+        "elevation_gain_ft": 2589.0,
+        "elevation_loss_m": 799.0,
+        "elevation_loss_ft": 2621.0,
+        "max_elevation_m": 437.0,
+        "max_elevation_ft": 1433.0,
         "start": {
           "lat": 37.82892,
           "lon": -122.26621
@@ -1040,12 +1167,12 @@
         "segment_count": 4262,
         "distance_m": 102703.04,
         "distance_mi": 63.82,
-        "elevation_gain_m": 1721.16,
-        "elevation_gain_ft": 5646.86,
-        "elevation_loss_m": 1721.2,
-        "elevation_loss_ft": 5646.98,
-        "max_elevation_m": 510.4,
-        "max_elevation_ft": 1674.54,
+        "elevation_gain_m": 1721.0,
+        "elevation_gain_ft": 5647.0,
+        "elevation_loss_m": 1721.0,
+        "elevation_loss_ft": 5647.0,
+        "max_elevation_m": 510.0,
+        "max_elevation_ft": 1675.0,
         "start": {
           "lat": 37.92516,
           "lon": -122.3166
@@ -1197,12 +1324,12 @@
         "segment_count": 2052,
         "distance_m": 48950.54,
         "distance_mi": 30.42,
-        "elevation_gain_m": 877.56,
-        "elevation_gain_ft": 2879.14,
-        "elevation_loss_m": 883.11,
-        "elevation_loss_ft": 2897.34,
-        "max_elevation_m": 510.4,
-        "max_elevation_ft": 1674.54,
+        "elevation_gain_m": 878.0,
+        "elevation_gain_ft": 2879.0,
+        "elevation_loss_m": 883.0,
+        "elevation_loss_ft": 2897.0,
+        "max_elevation_m": 510.0,
+        "max_elevation_ft": 1675.0,
         "start": {
           "lat": 37.92516,
           "lon": -122.3166
@@ -1330,12 +1457,12 @@
         "segment_count": 5475,
         "distance_m": 50765.0,
         "distance_mi": 31.54,
-        "elevation_gain_m": 903.15,
-        "elevation_gain_ft": 2963.08,
-        "elevation_loss_m": 903.11,
-        "elevation_loss_ft": 2962.96,
-        "max_elevation_m": 319.5,
-        "max_elevation_ft": 1048.23,
+        "elevation_gain_m": 903.0,
+        "elevation_gain_ft": 2963.0,
+        "elevation_loss_m": 903.0,
+        "elevation_loss_ft": 2963.0,
+        "max_elevation_m": 320.0,
+        "max_elevation_ft": 1048.0,
         "start": {
           "lat": 37.92601,
           "lon": -122.31568
@@ -1463,12 +1590,12 @@
         "segment_count": 1846,
         "distance_m": 73835.08,
         "distance_mi": 45.88,
-        "elevation_gain_m": 77.96,
-        "elevation_gain_ft": 255.76,
-        "elevation_loss_m": 75.3,
-        "elevation_loss_ft": 247.06,
-        "max_elevation_m": 41.7,
-        "max_elevation_ft": 136.81,
+        "elevation_gain_m": 78.0,
+        "elevation_gain_ft": 256.0,
+        "elevation_loss_m": 75.0,
+        "elevation_loss_ft": 247.0,
+        "max_elevation_m": 42.0,
+        "max_elevation_ft": 137.0,
         "start": {
           "lat": 37.77606,
           "lon": -122.2241
@@ -1584,12 +1711,12 @@
         "segment_count": 1613,
         "distance_m": 39245.8,
         "distance_mi": 24.39,
-        "elevation_gain_m": 701.42,
-        "elevation_gain_ft": 2301.24,
-        "elevation_loss_m": 711.53,
-        "elevation_loss_ft": 2334.41,
-        "max_elevation_m": 365.4,
-        "max_elevation_ft": 1198.82,
+        "elevation_gain_m": 701.0,
+        "elevation_gain_ft": 2301.0,
+        "elevation_loss_m": 712.0,
+        "elevation_loss_ft": 2334.0,
+        "max_elevation_m": 365.0,
+        "max_elevation_ft": 1199.0,
         "start": {
           "lat": 37.82792,
           "lon": -122.26496
@@ -1723,12 +1850,12 @@
         "segment_count": 1225,
         "distance_m": 31954.21,
         "distance_mi": 19.86,
-        "elevation_gain_m": 553.54,
-        "elevation_gain_ft": 1816.08,
-        "elevation_loss_m": 553.98,
-        "elevation_loss_ft": 1817.53,
-        "max_elevation_m": 278.1,
-        "max_elevation_ft": 912.4,
+        "elevation_gain_m": 554.0,
+        "elevation_gain_ft": 1816.0,
+        "elevation_loss_m": 554.0,
+        "elevation_loss_ft": 1818.0,
+        "max_elevation_m": 278.0,
+        "max_elevation_ft": 912.0,
         "start": {
           "lat": 37.92517,
           "lon": -122.31669
@@ -1850,12 +1977,12 @@
         "segment_count": 2922,
         "distance_m": 62134.7,
         "distance_mi": 38.61,
-        "elevation_gain_m": 1123.45,
-        "elevation_gain_ft": 3685.86,
-        "elevation_loss_m": 1117.89,
-        "elevation_loss_ft": 3667.6,
-        "max_elevation_m": 558.5,
-        "max_elevation_ft": 1832.35,
+        "elevation_gain_m": 1123.0,
+        "elevation_gain_ft": 3686.0,
+        "elevation_loss_m": 1118.0,
+        "elevation_loss_ft": 3668.0,
+        "max_elevation_m": 558.0,
+        "max_elevation_ft": 1832.0,
         "start": {
           "lat": 37.72169,
           "lon": -122.16039
@@ -1995,12 +2122,12 @@
         "segment_count": 1977,
         "distance_m": 40576.46,
         "distance_mi": 25.21,
-        "elevation_gain_m": 63.66,
-        "elevation_gain_ft": 208.87,
-        "elevation_loss_m": 62.6,
-        "elevation_loss_ft": 205.38,
-        "max_elevation_m": 49.6,
-        "max_elevation_ft": 162.73,
+        "elevation_gain_m": 64.0,
+        "elevation_gain_ft": 209.0,
+        "elevation_loss_m": 63.0,
+        "elevation_loss_ft": 205.0,
+        "max_elevation_m": 50.0,
+        "max_elevation_ft": 163.0,
         "start": {
           "lat": 37.59052,
           "lon": -122.01756
@@ -2116,12 +2243,12 @@
         "segment_count": 1319,
         "distance_m": 39506.21,
         "distance_mi": 24.55,
-        "elevation_gain_m": 708.23,
-        "elevation_gain_ft": 2323.61,
-        "elevation_loss_m": 700.72,
-        "elevation_loss_ft": 2298.96,
-        "max_elevation_m": 350.1,
-        "max_elevation_ft": 1148.62,
+        "elevation_gain_m": 708.0,
+        "elevation_gain_ft": 2324.0,
+        "elevation_loss_m": 701.0,
+        "elevation_loss_ft": 2299.0,
+        "max_elevation_m": 350.0,
+        "max_elevation_ft": 1149.0,
         "start": {
           "lat": 37.72499,
           "lon": -122.15587

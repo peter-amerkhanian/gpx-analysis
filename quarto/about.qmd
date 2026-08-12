@@ -2,22 +2,17 @@
 title: "About the Maps"
 ---
 
-This site turns GPX rides into route notes for BART-accessible cycling. Each route page starts from the recorded track points in the source GPX file, computes per-step distance, grade, bearing change, and elevation gain, then converts adjacent points into mapped route segments.
-
-The maps are meant to help compare routes before a ride. They are not turn-by-turn navigation, and they inherit the usual limitations of GPS tracks, barometric or device elevation data, OpenStreetMap coverage, and public pavement-condition datasets.
+This site is a collection of maps and analysis of some of my favorite bike rides in the Bay Area. I primarily use the website for planning rides with friends who live throughout the Bay Area, so everything is designed around that use-case. Key features:  
 
 ## Route Processing
 
-For each published route, the build process:
+For each published route, the build process does the following:
 
-- reads the GPX track points, optionally reversing the route when configured in `routes.yml`;
-- computes step distance, elevation change, grade, and bearing change between adjacent points;
-- converts point pairs into route segments;
-- enriches those segments with nearby OpenStreetMap road attributes;
-- enriches roadway segments with MTC pavement-condition records where a good match is available;
-- writes the route maps, summary tables, elevation profile, and route data files used by the Quarto site.
-
-Distances are summed from the step distances. Elevation gain is the sum of positive elevation changes, so it depends on the source GPX elevation signal and any noise in that signal.
+- read .gpx data, typically from ridewithgps, strava, or garmin.
+- compute step distance, elevation change, grade, and bearing changes between adjacent points. Apply a basic physics model of rider weight, rolling resistance, and grade to model bike speed across route.
+- enrich those segments with nearby OpenStreetMap road attributes;
+- enrich roadway segments with MTC pavement-condition records where a good match is available;
+- Flag notable features of route, e.g. high speed descents, gravel descents, tough climbs.
 
 ## Hazards Map
 

@@ -1,0 +1,70 @@
+{
+  "route": {
+    "slug": "weeknight-alvarado-meadows-conlon",
+    "source": "gpx_data\\meadows_up_conlon_down.gpx",
+    "title": "Weeknight Alvarado Up-Downer",
+    "reverse": false,
+    "links": {
+      "strava_effort": null
+    },
+    "media": {
+      "hero_image": null,
+      "gallery": []
+    }
+  },
+  "summary": {
+    "point_count": 1233,
+    "segment_count": 1232,
+    "distance_m": 28709.3,
+    "distance_mi": 17.84,
+    "elevation_gain_m": 484.0,
+    "elevation_gain_ft": 1588.0,
+    "elevation_loss_m": 479.0,
+    "elevation_loss_ft": 1573.0,
+    "max_elevation_m": 351.0,
+    "max_elevation_ft": 1152.0,
+    "start": {
+      "lat": 37.92522,
+      "lon": -122.31665
+    },
+    "end": {
+      "lat": 37.92925,
+      "lon": -122.32008
+    },
+    "gravel_percent": 59.9,
+    "cycleway_percent": 12.9,
+    "road_quality_score": 42,
+    "route_tags": [
+      {
+        "label": "Wildcat Creek \u2191",
+        "distance_ft": 21338.0,
+        "elevation_ft": 206.0,
+        "threshold_ft": 10000.0
+      },
+      {
+        "label": "Meadows Canyon \u2191",
+        "distance_ft": 7514.0,
+        "elevation_ft": 406.0,
+        "threshold_ft": 7000.0
+      },
+      {
+        "label": "Conlon Trail \u2193",
+        "distance_ft": 10028.0,
+        "elevation_ft": -607.0,
+        "threshold_ft": 9900.0
+      },
+      {
+        "label": "Wildcat Creek",
+        "distance_ft": 12095.0,
+        "elevation_ft": -178.0,
+        "threshold_ft": 10000.0
+      }
+    ],
+    "start_bart_station": "El Cerrito del Norte",
+    "end_bart_station": "El Cerrito del Norte",
+    "bart_station": "El Cerrito del Norte",
+    "priority_descent_mi": 2.0,
+    "estimated_time_min": 130.0,
+    "estimated_time_display": "2:10"
+  }
+}

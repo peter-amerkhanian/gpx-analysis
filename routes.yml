@@ -7,13 +7,17 @@ routes:
     title: Grizzly Peak Loop
     source: gpx_data/classic_grizzly.gpx
 
+  - slug: weeknight-bonita
+    title: Point Bonita Loop
+    source: gpx_data\civic_center_to_point_bonita.gpx
+
+  - slug: weeknight-alvarado-meadows-conlon
+    title: Weeknight Alvarado Up-Downer
+    source: gpx_data\meadows_up_conlon_down.gpx
+
   - slug: oak-hills-pinehurst
     title: OAK Hills Loop +
     source: gpx_data\Oak_Hills_Loop_w__Pinehurst.gpx
-
-  - slug: intro-to-tilden-gravel
-    title: Tilden Intro Trails
-    source: gpx_data\Intro_to_Tilden_Gravel.gpx
 
   - slug: richmond-marin-conzelman-emb
     title: Richmond to EMB
