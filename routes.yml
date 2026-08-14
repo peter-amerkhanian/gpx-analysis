@@ -3,25 +3,9 @@ routes:
   # Optional: title, reverse, links.strava_effort, media.hero_image, media.gallery.
   # Image paths are relative to quarto/, so a hero image might be images/routes/grizzly/hero.jpg.
 
-  - slug: grizzly-peak-loop
-    title: Grizzly Peak Loop
-    source: gpx_data/classic_grizzly.gpx
-
-  - slug: weeknight-bonita
-    title: Point Bonita Loop
-    source: gpx_data\civic_center_to_point_bonita.gpx
-
-  - slug: weeknight-rodeo-loop
-    title: Rodeo Lagoon Loop
-    source: gpx_data\rodeo_lagoon_loop.gpx
-
   - slug: weeknight-alvarado-meadows-conlon
-    title: Weeknight Alvarado Up-Downer
+    title: Weeknight Alvarado Gravel
     source: gpx_data\meadows_up_conlon_down.gpx
-
-  - slug: oak-hills-pinehurst
-    title: OAK Hills Loop +
-    source: gpx_data\Oak_Hills_Loop_w__Pinehurst.gpx
 
   - slug: richmond-marin-conzelman-emb
     title: Richmond to EMB
@@ -43,21 +27,9 @@ routes:
     title: OAK Hills Ridge Ride
     source: gpx_data\Skyline_Ridge_to_Chabot.gpx
   
-  - slug: whole-ridge-and-back
-    title: Whole Ridge & Back
-    source: gpx_data\Whole_Ridge_Back.gpx
-  
-  - slug: whole-ridge-southbound
-    title: Whole Ridge Southbound
-    source: gpx_data\Whole_Ridge.gpx
-  
   - slug: three-bears-gravel-loop
     title: Three Wild Bears
     source: gpx_data\Three_Wild_Bears.gpx
-  
-  - slug: fruitvale-to-union-city
-    title: Some South Bay
-    source: gpx_data\Some_South_Bay.gpx
   
   - slug: bbr-skyline-brandon
     title: OAK Hills round Lake Chabot
@@ -68,10 +40,6 @@ routes:
     source: gpx_data\Arli-Spruce_to_Wildcat_Creek.gpx
     links:
       strava_effort: https://www.strava.com/activities/18162634293
-  
-  - slug: big-redwood-to-tilden
-    title: Redwood to Richmond
-    source: gpx_data\redwood_big_gravel_ride.gpx
   
   - slug: coyote-union-city
     title: Coyote Hills Loop
